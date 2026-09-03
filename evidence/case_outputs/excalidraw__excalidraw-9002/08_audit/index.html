@@ -1,0 +1,10 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>excalidraw__excalidraw-9002 · test provenance</title>
+<style>
+body{font:13px/1.4 system-ui,sans-serif;margin:18px;color:#172033}h1{font-size:20px;margin:0 0 6px}p{margin:5px 0 12px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #d8dee9;padding:6px;vertical-align:top;text-align:left}th{position:sticky;top:0;background:#f5f7fa}code{font-size:11px;overflow-wrap:anywhere}.pill{border-radius:10px;padding:2px 7px;font-weight:700}.f2p{background:#ffe4e1;color:#9b2c1f}.p2p{background:#dcfce7;color:#166534}.evidence{font-size:11px;color:#526070;min-width:190px}
+</style>
+<h1>excalidraw__excalidraw-9002</h1>
+<p>Active: 2 · F2P 1 · P2P 1 · checksum-neutral outputs audit</p>
+<p><b>边界：</b>来源只说明测试由谁提供；F2P/P2P 分类只来自 Base/Gold 实际执行结果。</p>
+<table><thead><tr><th>Class</th><th>Source</th><th>Test ID</th><th>功能目的</th><th>Purpose</th><th>Evidence</th></tr></thead><tbody><tr><td><span class='pill f2p'>F2P</span></td><td><code>curator_revised</code></td><td><code>[excalidraw__excalidraw-9002::constraint_001] reroutes an elbow arrow when bound text shrinks</code></td><td>验证缩小绑定文本后会重新计算肘形箭头起点，同时保留绑定关系与正交路径。</td><td>Verify that decreasing bound text size recomputes the elbow-arrow start point while preserving its binding and orthogonal route.</td><td class='evidence'>meta/03_test_construction/20_11_verifier_run_01/20_11_06_result.json:one-test proposal<br>task/tests/payload/elbowArrowFontSize.test.tsx:final two-test payload<br>meta/03_test_construction/test_inventory.json:author_test_change_detected=false</td></tr><tr><td><span class='pill p2p'>P2P</span></td><td><code>curator_revised</code></td><td><code>[excalidraw__excalidraw-9002::p2p_text_resize] resizes standalone text itself</code></td><td>验证同一字号操作仍能正确缩小独立文本。</td><td>Verify that the same font-size action continues to shrink standalone text.</td><td class='evidence'>meta/03_test_construction/20_11_verifier_run_01/20_11_06_result.json:one-test proposal<br>task/tests/payload/elbowArrowFontSize.test.tsx:final two-test payload<br>meta/03_test_construction/test_inventory.json:author_test_change_detected=false</td></tr></tbody></table>

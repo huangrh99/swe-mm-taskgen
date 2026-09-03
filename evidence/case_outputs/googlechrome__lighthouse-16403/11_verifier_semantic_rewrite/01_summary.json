@@ -1,0 +1,55 @@
+{
+  "schema_version": "lighthouse-16403-verifier-semantic-rewrite-v1",
+  "instance_id": "googlechrome__lighthouse-16403",
+  "recorded_at": "2026-09-03",
+  "purpose": "Replace exact Gold CSS and DOM assertions with deterministic rendered-behavior contracts.",
+  "bindings": {
+    "config_sha256": "89a2b63ec7ccee3a6c3198b7ed60b827a6ddfff9d0fd8de57eecd61ac705f9a6",
+    "test_payload_sha256": "6bce17749b03555e358163b38cca08e3b19aeae38af508cede6fcdd67b29c4b4",
+    "replayed_codex_patch_sha256": "b40cb2a7d31b5d895af54a60cecd3cb0b52f2a1c1c3521152af871b914510080"
+  },
+  "contract_changes": [
+    "Title and logo use visibility, emphasis, separation, and bounded-size checks instead of exact CSS constants.",
+    "A hidden aggregate caption is accepted; bundle facts and visual hierarchy are checked independently of exact child count and margins.",
+    "Top-level colors use distinct computed RGB values and WCAG contrast; parent-child depth uses hue and lightness relationships without exact Gold HSL constants.",
+    "Selected-bundle details and preservation of the report-wide header total are separate tests.",
+    "The resource table is checked for semantic headings, minimum row count, fixture leaves, and a formatted size without fixing row order or exact DOM tags."
+  ],
+  "measured_classification": {
+    "FAIL_TO_PASS": [
+      "LHM-16403-TITLE-VISUAL",
+      "LHM-16403-CAPTION-CONTENT",
+      "LHM-16403-CAPTION-HIERARCHY",
+      "LHM-16403-DEPTH-COLOR",
+      "LHM-16403-HEADER-TOTAL"
+    ],
+    "PASS_TO_PASS": [
+      "LHM-16403-COLOR-FAMILIES",
+      "LHM-16403-SELECTION-DETAILS",
+      "LHM-16403-TABLE-P2P"
+    ]
+  },
+  "validation": {
+    "gold": {"runs": 2, "reward_each": 1, "tests_passed_each": 8},
+    "base": {"runs": 2, "reward_each": 0, "tests_passed_each": 3, "tests_failed_each": 5},
+    "codex_pass1_replay": {
+      "runs": 1,
+      "reward": 0,
+      "tests_passed": 4,
+      "tests_failed": 4,
+      "accepted_equivalent_behaviors": [
+        "aggregate caption hidden with CSS",
+        "distinct readable top-level colors",
+        "parent-child depth color encoding",
+        "selected bundle details"
+      ],
+      "remaining_failures": [
+        "title font weight remained 400",
+        "bundle name and metrics had no distinct visual emphasis",
+        "bundle selection replaced the report total 3.5 MiB with 900.0 KiB",
+        "the resource table contained zero rows"
+      ]
+    }
+  },
+  "scope": "Direct Docker replay with the case task image. Existing frozen manifests and Harbor controls predate this checksum and must be regenerated before final Pass@5."
+}

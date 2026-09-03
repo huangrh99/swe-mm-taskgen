@@ -1,0 +1,209 @@
+{
+  "schema_version": "case-test-provenance-audit-v1",
+  "instance_id": "mermaid-js__mermaid-7711",
+  "active_config": "task/tests/config.json",
+  "active_config_sha256": "2daffa0c85629c0494d65fd7a54ffe19e6aa015c80d7e277c23d955f27a20eec",
+  "boundary": "Source identifies who supplied the active test; F2P/P2P class is based only on executed Base/Gold outcomes.",
+  "counts": {
+    "f2p": 2,
+    "p2p": 16,
+    "total": 18
+  },
+  "tests": [
+    {
+      "test_id": "logical self-loop rendering contract renders one logical SVG path for a flowchart self-loop",
+      "class": "F2P",
+      "source": "verifier_generated",
+      "purpose_en": "Verify rendered SVG behavior: renders one logical SVG path for a flowchart self-loop.",
+      "purpose_zh": "验证 flowchart 自环只渲染一条逻辑 SVG 路径，并保留边标签。",
+      "evidence": [
+        "task/tests/test.patch:new benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "logical self-loop rendering contract renders one logical SVG path for a state-diagram self-loop",
+      "class": "F2P",
+      "source": "verifier_generated",
+      "purpose_en": "Verify rendered SVG behavior: renders one logical SVG path for a state-diagram self-loop.",
+      "purpose_zh": "验证 state diagram 自环只渲染一条逻辑 SVG 路径，并保留边标签。",
+      "evidence": [
+        "task/tests/test.patch:new benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "logical self-loop rendering contract preserves a labeled non-cyclic flowchart edge",
+      "class": "P2P",
+      "source": "verifier_generated",
+      "purpose_en": "Verify rendered SVG behavior: preserves a labeled non-cyclic flowchart edge.",
+      "purpose_zh": "验证带标签的非循环 flowchart 边仍渲染为一条有效 SVG 路径。",
+      "evidence": [
+        "task/tests/test.patch:new benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate Validate should detect edges between clusters",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate Validate should detect edges between clusters.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate Validate should detect edges between clusters。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate Validate should not detect edges between clusters after adjustment",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate Validate should not detect edges between clusters after adjustment.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate Validate should not detect edges between clusters after adjustment。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate Validate should detect edges between clusters and transform clusters GLB4",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate Validate should detect edges between clusters and transform clusters GLB4.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate Validate should detect edges between clusters and transform clusters GLB4。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate Validate should detect edges between clusters and transform clusters GLB5",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate Validate should detect edges between clusters and transform clusters GLB5.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate Validate should detect edges between clusters and transform clusters GLB5。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate adjustClustersAndEdges GLB6",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate adjustClustersAndEdges GLB6.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate adjustClustersAndEdges GLB6。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate adjustClustersAndEdges GLB7",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate adjustClustersAndEdges GLB7.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate adjustClustersAndEdges GLB7。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate adjustClustersAndEdges GLB8",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate adjustClustersAndEdges GLB8.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate adjustClustersAndEdges GLB8。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct data GLB10",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct data GLB10.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct data GLB10。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct data GLB11",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct data GLB11.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct data GLB11。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct links  GLB20",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct links  GLB20.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct links  GLB20。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct links  GLB21",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct links  GLB21.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct links  GLB21。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "Graphlib decorations adjustClustersAndEdges should handle nesting GLB77",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: Graphlib decorations adjustClustersAndEdges should handle nesting GLB77.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：Graphlib decorations adjustClustersAndEdges should handle nesting GLB77。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "extractDescendants Simple case of one level descendants GLB9",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: extractDescendants Simple case of one level descendants GLB9.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：extractDescendants Simple case of one level descendants GLB9。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "sortNodesByHierarchy should sort proper en nodes are in reverse order",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: sortNodesByHierarchy should sort proper en nodes are in reverse order.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：sortNodesByHierarchy should sort proper en nodes are in reverse order。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    },
+    {
+      "test_id": "sortNodesByHierarchy should sort proper en nodes are in correct order",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the repository-existing Mermaid Graphlib regression behavior: sortNodesByHierarchy should sort proper en nodes are in correct order.",
+      "purpose_zh": "保留仓库既有 Mermaid Graphlib 回归行为：sortNodesByHierarchy should sort proper en nodes are in correct order。",
+      "evidence": [
+        "task/tests/test_manifest.json:selected_suites includes mermaid-graphlib.spec.js",
+        "task/tests/test.patch:adds only benchmark-self-loop.spec.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "lighthouse-16403-harbor-result-v1",
+  "status": "test_failure",
+  "reward": 0,
+  "failure_ledger": "semantic",
+  "tests": [
+    {
+      "test_id": "LHM-16403-TITLE-VISUAL",
+      "status": "fail",
+      "evidence_lines": [
+        "1) [LHM-16403-TITLE-VISUAL] renders a visible, emphasized title and logo",
+        "[LHM-16403-TITLE-VISUAL] renders a visible, emphasized title and logo:",
+        "= [LHM-16403-TITLE-VISUAL] renders a visible, emphasized title and logo"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-CAPTION-CONTENT",
+      "status": "fail",
+      "evidence_lines": [
+        "2) [LHM-16403-CAPTION-CONTENT] removes the redundant root caption and preserves bundle facts",
+        "[LHM-16403-CAPTION-CONTENT] removes the redundant root caption and preserves bundle facts:",
+        "= [LHM-16403-CAPTION-CONTENT] removes the redundant root caption and preserves bundle facts"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-CAPTION-HIERARCHY",
+      "status": "fail",
+      "evidence_lines": [
+        "3) [LHM-16403-CAPTION-HIERARCHY] gives names and metrics distinct readable emphasis",
+        "[LHM-16403-CAPTION-HIERARCHY] gives names and metrics distinct readable emphasis:",
+        "= [LHM-16403-CAPTION-HIERARCHY] gives names and metrics distinct readable emphasis"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-DEPTH-COLOR",
+      "status": "fail",
+      "evidence_lines": [
+        "4) [LHM-16403-DEPTH-COLOR] encodes depth within each bundle color family",
+        "[LHM-16403-DEPTH-COLOR] encodes depth within each bundle color family:",
+        "= [LHM-16403-DEPTH-COLOR] encodes depth within each bundle color family"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-HEADER-TOTAL",
+      "status": "fail",
+      "evidence_lines": [
+        "5) [LHM-16403-HEADER-TOTAL] preserves the report total after bundle selection",
+        "[LHM-16403-HEADER-TOTAL] preserves the report total after bundle selection:",
+        "= [LHM-16403-HEADER-TOTAL] preserves the report total after bundle selection"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-COLOR-FAMILIES",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-COLOR-FAMILIES] keeps top-level bundles distinct and readable"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-SELECTION-DETAILS",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-SELECTION-DETAILS] shows the selected bundle details"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-TABLE-P2P",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-TABLE-P2P] keeps the resource table populated"
+      ]
+    }
+  ],
+  "started_at_unix": 1788412386.0941193,
+  "counts": {
+    "pass": 3,
+    "fail": 5,
+    "missing": 0
+  },
+  "runner_exit_code": 1,
+  "FAIL_TO_PASS": [
+    "LHM-16403-TITLE-VISUAL",
+    "LHM-16403-CAPTION-CONTENT",
+    "LHM-16403-CAPTION-HIERARCHY",
+    "LHM-16403-DEPTH-COLOR",
+    "LHM-16403-HEADER-TOTAL"
+  ],
+  "PASS_TO_PASS": [
+    "LHM-16403-COLOR-FAMILIES",
+    "LHM-16403-SELECTION-DETAILS",
+    "LHM-16403-TABLE-P2P"
+  ],
+  "finished_at_unix": 1788412391.143213
+}

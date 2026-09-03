@@ -1,0 +1,130 @@
+{
+  "schema_version": "runtime-network-policy-audit-v1",
+  "generated_at": "2026-09-03T08:20:35+08:00",
+  "case_id": "googlechrome__lighthouse-16403",
+  "scope": "Harbor K3 and Codex Pass@1/Pass@5 job directories under outputs/07_pass5",
+  "policy": {
+    "environment_extra_allowed_hosts": [],
+    "forbidden_runtime_hosts": [
+      "github.com",
+      "raw.githubusercontent.com",
+      "nodejs.org",
+      "registry.npmjs.org"
+    ],
+    "agent_hosts": {
+      "kimi-k3": [
+        "ark-gateway.invalid"
+      ],
+      "codex-luna-max": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ]
+    },
+    "invalidations_do_not_count_as_model_failures": true
+  },
+  "summary": {
+    "jobs_scanned": 3,
+    "trials_scanned": 7,
+    "policy_invalid_jobs": 2,
+    "policy_invalid_trials": 2,
+    "valid_trials_from_policy_invalid_jobs": 0,
+    "answer_leakage_trials": 1
+  },
+  "invalid_jobs": [
+    {
+      "provider": "kimi-k3",
+      "job_name": "lighthouse-16403-k3-pass1-horizontal-01",
+      "path": "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01",
+      "classifications": [
+        "invalid_answer_leakage",
+        "interrupted",
+        "infrastructure_invalid",
+        "invalid_runtime_network_policy"
+      ],
+      "valid_trial_count": 0,
+      "invalid_trial_count": 1,
+      "forbidden_hosts": [
+        "github.com",
+        "nodejs.org",
+        "raw.githubusercontent.com",
+        "registry.npmjs.org"
+      ],
+      "environment_hosts": [
+        "github.com",
+        "nodejs.org",
+        "raw.githubusercontent.com",
+        "registry.npmjs.org"
+      ],
+      "agent_hosts": [
+        "ark-gateway.invalid"
+      ],
+      "evidence": [
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/config.json"
+      ],
+      "answer_leakage_trials": [
+        "task__oS68iBt"
+      ],
+      "answer_leakage_evidence": [
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/task__oS68iBt/agent/kimi-code.txt:98",
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/task__oS68iBt/agent/kimi-code.txt:107",
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/task__oS68iBt/agent/kimi-code.txt:125",
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/task__oS68iBt/agent/kimi-code.txt:127"
+      ]
+    },
+    {
+      "provider": "kimi-k3",
+      "job_name": "lighthouse-16403-kimi-k3-pass5-retry-01",
+      "path": "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-kimi-k3-pass5-retry-01",
+      "classifications": [
+        "invalid_runtime_network_policy"
+      ],
+      "valid_trial_count": 0,
+      "invalid_trial_count": 1,
+      "forbidden_hosts": [
+        "github.com",
+        "nodejs.org",
+        "raw.githubusercontent.com",
+        "registry.npmjs.org"
+      ],
+      "environment_hosts": [
+        "github.com",
+        "nodejs.org",
+        "raw.githubusercontent.com",
+        "registry.npmjs.org"
+      ],
+      "agent_hosts": [
+        "ark-gateway.invalid"
+      ],
+      "evidence": [
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-kimi-k3-pass5-retry-01/config.json"
+      ]
+    }
+  ],
+  "not_policy_invalidated": [
+    {
+      "provider": "kimi-k3",
+      "job_name": "lighthouse-16403-kimi-k3-pass5-01",
+      "path": "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-kimi-k3-pass5-01",
+      "note": "No forbidden host was found in the resolved job config; this is not a validity claim."
+    }
+  ],
+  "original_outputs_preserved": true,
+  "answer_leakage_trials": [
+    {
+      "provider": "kimi-k3",
+      "job_name": "lighthouse-16403-k3-pass1-horizontal-01",
+      "trial_name": "task__oS68iBt",
+      "classification": "invalid_answer_leakage",
+      "observed_reward": null,
+      "counted_reward": null,
+      "reason": "Agent tool calls accessed upstream release, PR, diff, raw implementation, or upstream tests during the trial.",
+      "evidence": [
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/task__oS68iBt/agent/kimi-code.txt:98",
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/task__oS68iBt/agent/kimi-code.txt:107",
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/task__oS68iBt/agent/kimi-code.txt:125",
+        "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-k3-pass1-horizontal-01/task__oS68iBt/agent/kimi-code.txt:127"
+      ]
+    }
+  ]
+}

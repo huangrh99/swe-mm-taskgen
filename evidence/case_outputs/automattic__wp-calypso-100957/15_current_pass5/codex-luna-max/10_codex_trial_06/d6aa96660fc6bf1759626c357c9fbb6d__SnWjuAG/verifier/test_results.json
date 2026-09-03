@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "error": 0,
+    "failed": 2,
+    "missing": 0,
+    "passed": 2,
+    "skip": 0
+  },
+  "reward": 0,
+  "runner_exit_code": 1,
+  "schema_version": "sweb-grade-jest-v1",
+  "status": "failed",
+  "tests": [
+    {
+      "classification": "F2P",
+      "status": "failed",
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract separates both swatches from the light card background shown in the PR"
+    },
+    {
+      "classification": "F2P",
+      "status": "failed",
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract separates both swatches from the lilac card background shown in the PR"
+    },
+    {
+      "classification": "P2P",
+      "status": "passed",
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract preserves the configured preview background color"
+    },
+    {
+      "classification": "P2P",
+      "status": "passed",
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract preserves the configured heading color used by the title frame"
+    }
+  ]
+}

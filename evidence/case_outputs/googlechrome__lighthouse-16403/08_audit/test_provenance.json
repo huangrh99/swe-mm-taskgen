@@ -1,0 +1,69 @@
+{
+  "schema_version": "case-test-provenance-audit-v1",
+  "instance_id": "googlechrome__lighthouse-16403",
+  "active_config": "task/tests/config.json",
+  "active_config_sha256": "74f727c0dbe58b9d7cee07409b36e4cd7756e258eeeba29ad9e7a91164f4fedd",
+  "boundary": "Source identifies who supplied the active test; F2P/P2P class is based only on executed Base/Gold outcomes.",
+  "counts": {
+    "f2p": 4,
+    "p2p": 1,
+    "total": 5
+  },
+  "tests": [
+    {
+      "test_id": "LHM-16403-TITLE",
+      "class": "F2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify the rendered title typography and logo size match the visual contract.",
+      "purpose_zh": "验证渲染后的标题字形与 Logo 尺寸符合视觉契约。",
+      "evidence": [
+        "task/tests/test_manifest.json:source=curator rewrite replacing the rejected Gemini bundle",
+        "task/tests/config.json:test_purposes"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-CAPTION",
+      "class": "F2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify the aggregate root caption is removed and each bundle caption retains separate, readable name/value styling.",
+      "purpose_zh": "验证移除聚合根节点标题，并分别保留清晰可读的 bundle 名称与数值样式。",
+      "evidence": [
+        "task/tests/test_manifest.json:source=curator rewrite replacing the rejected Gemini bundle",
+        "task/tests/config.json:test_purposes"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-COLOR",
+      "class": "F2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify bundles use distinct pastel families, descendants darken within the same hue, and aggregate-view borders are removed.",
+      "purpose_zh": "验证 bundle 使用不同的柔和色系、同一色相内的后代节点逐层加深，且聚合视图不显示边框。",
+      "evidence": [
+        "task/tests/test_manifest.json:source=curator rewrite replacing the rejected Gemini bundle",
+        "task/tests/config.json:test_purposes"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-SELECTION",
+      "class": "F2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify choosing a bundle reveals its details without replacing the report-wide total in the header.",
+      "purpose_zh": "验证选择 bundle 后展示其详情，同时页头仍保留报告总量。",
+      "evidence": [
+        "task/tests/test_manifest.json:source=curator rewrite replacing the rejected Gemini bundle",
+        "task/tests/config.json:test_purposes"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-TABLE-P2P",
+      "class": "P2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify the existing resource table remains populated with all fixture leaves and byte values.",
+      "purpose_zh": "验证既有资源表仍完整显示 fixture 中的叶节点及字节数。",
+      "evidence": [
+        "task/tests/test_manifest.json:source=curator rewrite replacing the rejected Gemini bundle",
+        "task/tests/config.json:test_purposes"
+      ]
+    }
+  ]
+}

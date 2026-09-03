@@ -1,0 +1,47 @@
+{
+  "schema_version": "case-test-provenance-audit-v1",
+  "instance_id": "automattic__wp-calypso-99049",
+  "active_config": "task/tests/config.json",
+  "active_config_sha256": "5bca6762f632489de023086c90add17867da85826c5457a049725363180047d7",
+  "boundary": "Source identifies who supplied the active test; F2P/P2P class is based only on executed Base/Gold outcomes.",
+  "counts": {
+    "f2p": 1,
+    "p2p": 2,
+    "total": 3
+  },
+  "tests": [
+    {
+      "test_id": "WPC-99049-LINK-COLOR",
+      "class": "F2P",
+      "source": "verifier_generated",
+      "purpose_en": "Compile the real SCSS and use Chromium getComputedStyle to verify that + Add forward resolves to --color-link.",
+      "purpose_zh": "编译真实 SCSS，并通过 Chromium 的 getComputedStyle 验证“+ Add forward”解析为 --color-link。",
+      "evidence": [
+        "task/tests/config.json:test_purposes",
+        "meta/03_test_construction/03_01_test_plan.json"
+      ]
+    },
+    {
+      "test_id": "WPC-99049-P2P-COLOR-SCOPE",
+      "class": "P2P",
+      "source": "verifier_generated",
+      "purpose_en": "Reject an over-broad implementation by checking that an unrelated link-button keeps its original computed color.",
+      "purpose_zh": "验证无关的 link-button 保持原有计算颜色，防止修复范围过宽。",
+      "evidence": [
+        "task/tests/config.json:test_purposes",
+        "meta/03_test_construction/03_01_test_plan.json"
+      ]
+    },
+    {
+      "test_id": "WPC-99049-P2P-DOMAIN-OVERVIEW",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Run the existing DomainOverviewPane test suite to preserve previously supported rendering and behavior.",
+      "purpose_zh": "运行仓库既有 DomainOverviewPane 测试套件，保护原有渲染与交互行为。",
+      "evidence": [
+        "task/tests/config.json:test_purposes",
+        "meta/03_test_construction/03_01_test_plan.json"
+      ]
+    }
+  ]
+}

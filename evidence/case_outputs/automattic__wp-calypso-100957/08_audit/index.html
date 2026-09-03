@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>automattic__wp-calypso-100957 · v3 测试审计</title>
+<style>
+body{font:14px/1.45 system-ui,sans-serif;margin:20px;color:#172033;background:#f6f7fa}main{max-width:1180px;margin:auto}h1{font-size:22px;margin:0 0 8px}.note,.card{background:#fff;border:1px solid #d9deea;border-radius:10px;padding:12px;margin:10px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid img{width:100%;height:300px;object-fit:contain;background:#fff}.pill{display:inline-block;padding:2px 8px;border-radius:99px;background:#e8eefc}.ok{color:#08783f}.bad{color:#b42318}table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:8px;border:1px solid #d9deea;text-align:left;vertical-align:top}code{font-size:12px;word-break:break-word}a{color:#174ea6}@media(max-width:760px){.grid{grid-template-columns:1fr}.grid img{height:auto}}
+</style></head><body><main>
+<h1>automattic__wp-calypso-100957 · v3 测试审计</h1>
+<div class="note"><b>验收 seam：</b>卡片必须渲染恰好两个圆点，且每个圆点的填充色与卡片背景至少达到 <code>2:1</code>。阈值由人工校准，不限定字段或实现；隐藏圆点、隐藏卡片或仅加描边均不能代替填充色对比。</div>
+<div class="grid"><div class="card"><b>Before（PR 原图）</b><img src="../12_contrast_verifier_v3/source_images/01_tt5_before.png" alt="Before"></div><div class="card"><b>After（仅供 curator 验证）</b><img src="../12_contrast_verifier_v3/source_images/02_tt5_after.png" alt="After"></div></div>
+<div class="card"><b>结果：</b> Base <span class="bad">0,0,0</span>；Gold <span class="ok">1,1,1</span>；冻结后回放 Codex <span class="bad">0,0,0</span>；回放 Kimi K3 <span class="bad">0</span>。Codex 会过滤卡片内的低对比色，最终只剩一个圆点；K3 则过滤整个 style variation，没有修正保留下来的卡片中两个圆点与背景的关系。</div>
+<table><thead><tr><th>Class</th><th>来源</th><th>Test ID</th><th>测试目的</th></tr></thead><tbody>
+<tr><td><span class="pill">F2P</span></td><td>截图证据人工改写</td><td><code>separates both swatches from the light card background shown in the PR</code></td><td>浅色卡片保留两个圆点，且二者分别与背景可辨识。</td></tr>
+<tr><td><span class="pill">F2P</span></td><td>截图证据人工改写</td><td><code>separates both swatches from the lilac card background shown in the PR</code></td><td>淡紫卡片保留两个圆点，且二者分别与背景可辨识。</td></tr>
+<tr><td><span class="pill">P2P</span></td><td>curator revised</td><td><code>preserves the configured preview background color</code></td><td>保留卡片背景色。</td></tr>
+<tr><td><span class="pill">P2P</span></td><td>curator revised</td><td><code>preserves the configured heading color used by the title frame</code></td><td>保留标题颜色。</td></tr>
+</tbody></table>
+<div class="card"><a href="../12_contrast_verifier_v3/12_02_screenshot_measurements.json">截图测量</a> · <a href="../14_contrast_verifier_v4/14_01_threshold_decision.json">2:1 人工阈值决定</a> · <a href="../14_contrast_verifier_v4/14_02_validation_summary.json">v4 Base/Gold 复核</a> · <a href="../../tests/acceptance.test.tsx">当前测试代码</a></div>
+</main></body></html>

@@ -1,0 +1,38 @@
+{
+  "schema_version": "case-test-provenance-audit-v1",
+  "instance_id": "excalidraw__excalidraw-9002",
+  "active_config": "task/tests/config.json",
+  "active_config_sha256": "847b07bc71dcc49ece3bead42a972defbc802bfe410b1b90155175e46bc0e6aa",
+  "boundary": "Source identifies who supplied the active test; F2P/P2P class is based only on executed Base/Gold outcomes.",
+  "counts": {
+    "f2p": 1,
+    "p2p": 1,
+    "total": 2
+  },
+  "tests": [
+    {
+      "test_id": "[excalidraw__excalidraw-9002::constraint_001] reroutes an elbow arrow when bound text shrinks",
+      "class": "F2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify that decreasing bound text size recomputes the elbow-arrow start point while preserving its binding and orthogonal route.",
+      "purpose_zh": "验证缩小绑定文本后会重新计算肘形箭头起点，同时保留绑定关系与正交路径。",
+      "evidence": [
+        "meta/03_test_construction/20_11_verifier_run_01/20_11_06_result.json:one-test proposal",
+        "task/tests/payload/elbowArrowFontSize.test.tsx:final two-test payload",
+        "meta/03_test_construction/test_inventory.json:author_test_change_detected=false"
+      ]
+    },
+    {
+      "test_id": "[excalidraw__excalidraw-9002::p2p_text_resize] resizes standalone text itself",
+      "class": "P2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify that the same font-size action continues to shrink standalone text.",
+      "purpose_zh": "验证同一字号操作仍能正确缩小独立文本。",
+      "evidence": [
+        "meta/03_test_construction/20_11_verifier_run_01/20_11_06_result.json:one-test proposal",
+        "task/tests/payload/elbowArrowFontSize.test.tsx:final two-test payload",
+        "meta/03_test_construction/test_inventory.json:author_test_change_detected=false"
+      ]
+    }
+  ]
+}

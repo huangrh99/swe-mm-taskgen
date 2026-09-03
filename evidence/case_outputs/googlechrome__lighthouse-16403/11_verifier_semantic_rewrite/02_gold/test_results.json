@@ -1,0 +1,84 @@
+{
+  "schema": "lighthouse-16403-harbor-result-v1",
+  "status": "passed",
+  "reward": 1,
+  "failure_ledger": null,
+  "tests": [
+    {
+      "test_id": "LHM-16403-TITLE-VISUAL",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-TITLE-VISUAL] renders a visible, emphasized title and logo"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-CAPTION-CONTENT",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-CAPTION-CONTENT] removes the redundant root caption and preserves bundle facts"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-CAPTION-HIERARCHY",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-CAPTION-HIERARCHY] gives names and metrics distinct readable emphasis"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-DEPTH-COLOR",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-DEPTH-COLOR] encodes depth within each bundle color family"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-HEADER-TOTAL",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-HEADER-TOTAL] preserves the report total after bundle selection"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-COLOR-FAMILIES",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-COLOR-FAMILIES] keeps top-level bundles distinct and readable"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-SELECTION-DETAILS",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-SELECTION-DETAILS] shows the selected bundle details"
+      ]
+    },
+    {
+      "test_id": "LHM-16403-TABLE-P2P",
+      "status": "pass",
+      "evidence_lines": [
+        "✔ [LHM-16403-TABLE-P2P] keeps the resource table populated"
+      ]
+    }
+  ],
+  "started_at_unix": 1788412380.1427827,
+  "counts": {
+    "pass": 8,
+    "fail": 0,
+    "missing": 0
+  },
+  "runner_exit_code": 0,
+  "FAIL_TO_PASS": [
+    "LHM-16403-TITLE-VISUAL",
+    "LHM-16403-CAPTION-CONTENT",
+    "LHM-16403-CAPTION-HIERARCHY",
+    "LHM-16403-DEPTH-COLOR",
+    "LHM-16403-HEADER-TOTAL"
+  ],
+  "PASS_TO_PASS": [
+    "LHM-16403-COLOR-FAMILIES",
+    "LHM-16403-SELECTION-DETAILS",
+    "LHM-16403-TABLE-P2P"
+  ],
+  "finished_at_unix": 1788412385.8614414
+}

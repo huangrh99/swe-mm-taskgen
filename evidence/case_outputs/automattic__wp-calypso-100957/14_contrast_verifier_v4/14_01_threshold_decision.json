@@ -1,0 +1,21 @@
+{
+  "schema_version": "wp-calypso-100957-contrast-threshold-decision-v1",
+  "instance_id": "automattic__wp-calypso-100957",
+  "decision": {
+    "minimum_contrast_ratio": 2.0,
+    "authority": "human_calibration",
+    "reason": "Use 2:1 as the minimum acceptable distinction between each circular swatch fill and its card background."
+  },
+  "unchanged_contract": [
+    "exactly two circular swatches remain rendered",
+    "each swatch fill is compared with its card background",
+    "hiding a swatch or the entire variation is not an equivalent repair",
+    "outline-only changes do not replace fill-to-background contrast",
+    "color sources and production implementation remain unconstrained"
+  ],
+  "measurement_context": {
+    "before_ratios_are_below_threshold": true,
+    "weakest_matching_after_ratio": 4.2554,
+    "source": "../12_contrast_verifier_v3/12_02_screenshot_measurements.json"
+  }
+}

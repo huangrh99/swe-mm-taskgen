@@ -1,0 +1,41 @@
+{
+  "schema_version": "wp-calypso-99049-verifier-v2-validation-v1",
+  "instance_id": "automattic__wp-calypso-99049",
+  "reason": "The v1 verifier compiled only domain-overview-pane/style.scss and therefore could not observe a functionally equivalent repair in settings/cards/style.scss.",
+  "verifier_change": {
+    "behavior_under_test": "Final Chromium computed color for the Domain Forwarding + Add forward control.",
+    "production_scss_sources": [
+      "client/my-sites/domains/domain-management/settings/cards/style.scss",
+      "client/my-sites/domains/domain-management/domain-overview-pane/style.scss"
+    ],
+    "compiler_contract": "Each SCSS module is compiled with Calypso's webpack Sass prelude before the resulting CSS participates in the browser cascade.",
+    "implementation_independent": true
+  },
+  "validation": {
+    "base": {
+      "reward": 0,
+      "link_color": "rgb(6, 117, 196)",
+      "expected": "rgb(17, 34, 51)",
+      "result": "valid_negative"
+    },
+    "gold": {
+      "reward": 1,
+      "link_color": "rgb(17, 34, 51)",
+      "result": "valid_positive"
+    },
+    "saved_codex_patch": {
+      "reward": 1,
+      "link_color": "rgb(17, 34, 51)",
+      "scope_control": "pass",
+      "repository_existing_suite": "pass",
+      "result": "functionally_equivalent_positive"
+    }
+  },
+  "historical_result": {
+    "path": "outputs/10_pass1/codex-luna-max/automattic__wp-calypso-99049-codex-luna-max-pass1/e94c9a7d023e2945f31759e1a432e106__6nkGqUA",
+    "old_reward": 0,
+    "status": "invalidated_by_verifier_coverage_bug",
+    "counts_as_model_failure": false
+  },
+  "admission_status": "provisional_until_frozen_harbor_controls_are_rerun"
+}

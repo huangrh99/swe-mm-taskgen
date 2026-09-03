@@ -1,0 +1,36 @@
+{
+  "schema_version": "harbor-functional-test-result-v1",
+  "status": "passed",
+  "reward": 1,
+  "tests": [
+    {
+      "test_id": "[excalidraw__excalidraw-9002::constraint_001] reroutes an elbow arrow when bound text shrinks",
+      "class": "F2P",
+      "status": "pass",
+      "duration_ms": 171,
+      "failure_messages": []
+    },
+    {
+      "test_id": "[excalidraw__excalidraw-9002::p2p_text_resize] resizes standalone text itself",
+      "class": "P2P",
+      "status": "pass",
+      "duration_ms": 86,
+      "failure_messages": []
+    }
+  ],
+  "started_at_unix": 1788403811.8664722,
+  "counts": {
+    "pass": 2,
+    "fail": 0
+  },
+  "runner_exit_code": 0,
+  "f2p": [
+    "[excalidraw__excalidraw-9002::constraint_001] reroutes an elbow arrow when bound text shrinks"
+  ],
+  "p2p": [
+    "[excalidraw__excalidraw-9002::p2p_text_resize] resizes standalone text itself"
+  ],
+  "config_sha256": "847b07bc71dcc49ece3bead42a972defbc802bfe410b1b90155175e46bc0e6aa",
+  "test_payload_sha256": "bf1613a6d731875d048c3c3af131b0aa39bc05e5c75173f44afd5e5f81fbebb8",
+  "finished_at_unix": 1788403816.421305
+}

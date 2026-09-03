@@ -1,0 +1,38 @@
+{
+  "schema_version": "harbor-functional-test-result-v1",
+  "status": "test_failure",
+  "reward": 0,
+  "tests": [
+    {
+      "test_id": "[excalidraw__excalidraw-9002::constraint_001] reroutes an elbow arrow when bound text shrinks",
+      "class": "F2P",
+      "status": "fail",
+      "duration_ms": 153,
+      "failure_messages": [
+        "AssertionError: expected 5.5 to be less than 1\n    at /app/packages/excalidraw/tests/elbowArrowFontSize.test.tsx:143:59\n    at runTest (file:///app/node_modules/@vitest/runner/dist/index.js:960:11)\n    at runSuite (file:///app/node_modules/@vitest/runner/dist/index.js:1116:15)\n    at runSuite (file:///app/node_modules/@vitest/runner/dist/index.js:1116:15)\n    at runFiles (file:///app/node_modules/@vitest/runner/dist/index.js:1173:5)\n    at startTests (file:///app/node_modules/@vitest/runner/dist/index.js:1182:3)\n    at file:///app/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:130:11\n    at withEnv (file:///app/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:94:5)\n    at run (file:///app/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:116:3)\n    at runBaseTests (file:///app/node_modules/vitest/dist/chunks/base.CC5R_kgU.js:31:3)"
+      ]
+    },
+    {
+      "test_id": "[excalidraw__excalidraw-9002::p2p_text_resize] resizes standalone text itself",
+      "class": "P2P",
+      "status": "pass",
+      "duration_ms": 60,
+      "failure_messages": []
+    }
+  ],
+  "started_at_unix": 1788418705.630568,
+  "counts": {
+    "pass": 1,
+    "fail": 1
+  },
+  "runner_exit_code": 1,
+  "f2p": [
+    "[excalidraw__excalidraw-9002::constraint_001] reroutes an elbow arrow when bound text shrinks"
+  ],
+  "p2p": [
+    "[excalidraw__excalidraw-9002::p2p_text_resize] resizes standalone text itself"
+  ],
+  "config_sha256": "847b07bc71dcc49ece3bead42a972defbc802bfe410b1b90155175e46bc0e6aa",
+  "test_payload_sha256": "bf1613a6d731875d048c3c3af131b0aa39bc05e5c75173f44afd5e5f81fbebb8",
+  "finished_at_unix": 1788418709.9684083
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "mermaid-self-loop-gold-v3-validation-v1",
+  "instance_id": "mermaid-js__mermaid-7711",
+  "contract": {
+    "input": "stateDiagram-v2\n[*] --> Node\nNode --> Node: Self Edge",
+    "requirements": [
+      "the self-loop is a single rendered logical edge",
+      "the self-loop lies on the left or right of the state node",
+      "the sampled path does not enter the node interior",
+      "the maximum local turn is at most 45 degrees at approximately one-pixel arc-length sampling",
+      "the Self Edge label is present"
+    ],
+    "explicit_non_requirements": [
+      "exact SVG path data",
+      "exact coordinates or dimensions",
+      "matching the Gold implementation",
+      "a prescribed left-versus-right side"
+    ]
+  },
+  "runs": {
+    "base": {
+      "result_path": "red_base/logs/verifier/test_results.json",
+      "reward": 0.0,
+      "passed": 17,
+      "failed": 1,
+      "interpretation": "expected negative control"
+    },
+    "archived_v2_gold": {
+      "result_path": "red_old_gold/logs/verifier/test_results.json",
+      "reward": 0.0,
+      "passed": 17,
+      "failed": 1,
+      "failure": "only 0.42105263157894735 of interior samples were consistently on either side; the loop remained below the node"
+    },
+    "corrected_v3_gold": {
+      "result_path": "gold_final/logs/verifier/test_results.json",
+      "reward": 1.0,
+      "passed": 18,
+      "failed": 0,
+      "geometry": {
+        "path_count": 2,
+        "label_present": true,
+        "right_side_ratio": 1.0,
+        "left_side_ratio": 0.0,
+        "enters_node": false,
+        "maximum_local_turn_degrees": 7.431012352725926
+      }
+    },
+    "codex_pass1_replay": {
+      "patch_path": "codex_pass1.patch",
+      "source_trajectory": "../10_pass1/codex-luna-max/mermaid-js__mermaid-7711-codex-luna-max-pass1/4ed1e0d667d795e74f00a0ab888873d4__a84D8Gt/agent/trajectory.json",
+      "result_path": "codex_replay/logs/verifier/test_results.json",
+      "reward": 1.0,
+      "passed": 18,
+      "failed": 0,
+      "geometry": {
+        "path_count": 2,
+        "label_present": true,
+        "right_side_ratio": 1.0,
+        "left_side_ratio": 0.0,
+        "enters_node": false,
+        "maximum_local_turn_degrees": 4.900869641278996
+      }
+    }
+  },
+  "sha256": {
+    "solution/gold.patch": "ff29f41caed3ac07220c59c034bd66b2dd886b7bc11c8218173b4b0eeb490c0b",
+    "tests/config.json": "082929f924d5827bdafcaf3dc2706db8395b4dcd8493fb4f776dae1e42c290c6",
+    "tests/test.patch": "e99f587ac7d51bfdc80a6457523dbac5fc300a87347d71b179e1d1f589957b48",
+    "tests/test_manifest.json": "b692c2da43d44f6650e31effe0d883c8a2f4df5a71f8de217fd1da62982410e7",
+    "codex_pass1.patch": "19f05ae6a962a5abedfc8bc51ef7f19332926e4261cdddd470489c36fb882332"
+  },
+  "conclusion": "The corrected Gold and the structurally different Codex patch both satisfy the same public SVG behavior. The archived Gold does not. This supports the verifier as an implementation-independent functional check rather than a Gold-code matcher."
+}

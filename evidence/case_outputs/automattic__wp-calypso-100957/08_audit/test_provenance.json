@@ -1,0 +1,43 @@
+{
+  "schema_version": "case-test-provenance-audit-v4",
+  "instance_id": "automattic__wp-calypso-100957",
+  "active_config": "tests/config.json",
+  "active_config_sha256": "a7fc40066333ed371196a9c317ceff8b5d6dfced1905a90e00e44c584321d754",
+  "boundary": "Source identifies who supplied the active test; F2P/P2P class is based only on executed Base/Gold outcomes.",
+  "counts": {"f2p": 2, "p2p": 2, "total": 4},
+  "tests": [
+    {
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract separates both swatches from the light card background shown in the PR",
+      "class": "F2P",
+      "source": "curator_revised_from_screenshot_evidence",
+      "purpose_en": "Verify that the light card retains two circular swatches and that each is visually distinct from its background.",
+      "purpose_zh": "验证浅色卡片保留两个圆形色块，并且两个色块分别与卡片背景形成可辨识区分。",
+      "evidence": ["tests/acceptance.test.tsx", "outputs/12_contrast_verifier_v3/12_02_screenshot_measurements.json", "outputs/14_contrast_verifier_v4/14_01_threshold_decision.json"]
+    },
+    {
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract separates both swatches from the lilac card background shown in the PR",
+      "class": "F2P",
+      "source": "curator_revised_from_screenshot_evidence",
+      "purpose_en": "Verify that the lilac card retains two circular swatches and that each is visually distinct from its background.",
+      "purpose_zh": "验证淡紫卡片保留两个圆形色块，并且两个色块分别与卡片背景形成可辨识区分。",
+      "evidence": ["tests/acceptance.test.tsx", "outputs/12_contrast_verifier_v3/12_02_screenshot_measurements.json", "outputs/14_contrast_verifier_v4/14_01_threshold_decision.json"]
+    },
+    {
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract preserves the configured preview background color",
+      "class": "P2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify that GlobalStylesVariationPreview preserves the configured preview background color.",
+      "purpose_zh": "验证预览继续保留已配置的背景色。",
+      "evidence": ["tests/acceptance.test.tsx"]
+    },
+    {
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract preserves the configured heading color used by the title frame",
+      "class": "P2P",
+      "source": "curator_revised",
+      "purpose_en": "Verify that GlobalStylesVariationPreview preserves the configured heading color used by the title frame.",
+      "purpose_zh": "验证标题框继续使用已配置的 heading 颜色。",
+      "evidence": ["tests/acceptance.test.tsx"]
+    }
+  ],
+  "validation": "outputs/14_contrast_verifier_v4/14_02_validation_summary.json"
+}

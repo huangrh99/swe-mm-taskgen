@@ -1,0 +1,73 @@
+{
+  "schema_version": "wp-calypso-100957-contrast-verifier-v3-validation-v1",
+  "instance_id": "automattic__wp-calypso-100957",
+  "acceptance_contract": {
+    "observable": "Each of exactly two rendered circular swatches is visually distinguishable from the card background.",
+    "implementation_independent": true,
+    "forbidden_shortcut": "Removing a low-contrast swatch or rendering fewer than two swatches does not pass.",
+    "minimum_contrast_ratio": 2.19,
+    "threshold_source": "Geometric midpoint of the measured separation between the highlighted Before and After PR screenshots.",
+    "curator_only_sources": [
+      "source_images/01_tt5_before.png",
+      "source_images/02_tt5_after.png",
+      "source_images/03_tt5_core.png"
+    ],
+    "measurement_evidence": "12_02_screenshot_measurements.json",
+    "pre_agent_freeze": "12_03_frozen_contract.json"
+  },
+  "stable_validation": {
+    "base": {
+      "rewards": [0, 0, 0],
+      "f2p_failed_each_run": 2,
+      "p2p_passed_each_run": 2,
+      "result": "stable_valid_negative",
+      "evidence": [
+        "base_pre_agent/verifier/test_results.json",
+        "base_repeat_02/verifier/test_results.json",
+        "base_repeat_03/verifier/test_results.json"
+      ]
+    },
+    "gold": {
+      "rewards": [1, 1, 1],
+      "f2p_passed_each_run": 2,
+      "p2p_passed_each_run": 2,
+      "result": "stable_valid_positive",
+      "evidence": [
+        "gold_pre_agent/verifier/test_results.json",
+        "gold_repeat_02/verifier/test_results.json",
+        "gold_repeat_03/verifier/test_results.json"
+      ]
+    }
+  },
+  "saved_codex_patch_replay": {
+    "rewards": [0, 0, 0],
+    "f2p_failed_each_run": 2,
+    "p2p_passed_each_run": 2,
+    "result": "stable_functional_failure",
+    "reason": "The patch filters low-contrast palette entries. In both screenshot-derived cases this leaves only one swatch, violating the two-swatch visual contract.",
+    "test_changed_after_patch_generation": true,
+    "counts_as_formal_pass1": false,
+    "evidence": [
+      "codex_replay_after_freeze/verifier/test_results.json",
+      "codex_repeat_02/verifier/test_results.json",
+      "codex_repeat_03/verifier/test_results.json"
+    ]
+  },
+  "saved_kimi_k3_patch_replay": {
+    "rewards": [0],
+    "f2p_failed": 2,
+    "p2p_passed": 2,
+    "result": "functional_failure",
+    "reason": "The patch filters entire style variations by text/background contrast in the parent list, but does not correct the two circular swatches rendered inside a retained card. Hiding a problematic variation is not equivalent to making both swatches distinguishable.",
+    "original_trial_infrastructure_valid": true,
+    "counts_as_formal_pass1_under_v3": false,
+    "evidence": "kimi_k3_replay_after_freeze/verifier/test_results.json"
+  },
+  "v2_disposition": {
+    "status": "superseded_post_hoc_bias",
+    "reason": "v2 reused the agent's 3:1 choice and added fallback colors after observing the patch, so its Codex pass cannot support an unbiased model-quality claim.",
+    "archive": "archive_v2/"
+  },
+  "formal_admission": false,
+  "remaining": "Rebuild/freeze the Harbor task for the v3 checksum and rerun oracle, empty, nop, and empty-no-reply controls."
+}

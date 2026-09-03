@@ -1,0 +1,47 @@
+{
+  "schema_version": "wp-calypso-100957-contrast-verifier-v4-validation-v1",
+  "instance_id": "automattic__wp-calypso-100957",
+  "minimum_contrast_ratio": 2.0,
+  "execution": {
+    "image": "report-case:wp-calypso-100957",
+    "network_mode": "none",
+    "base_and_gold_parallel": true
+  },
+  "runs": {
+    "base": {
+      "reward": 0,
+      "passed": 2,
+      "failed": 2,
+      "result": "valid_negative",
+      "evidence": "base/verifier/test_results.json",
+      "evidence_sha256": "d269712d2774c9f7699e4f7b9f1ba20715a48e0a84b0822f8e866ef73b60bb0e"
+    },
+    "gold": {
+      "reward": 1,
+      "passed": 4,
+      "failed": 0,
+      "result": "valid_positive",
+      "evidence": "gold/verifier/test_results.json",
+      "evidence_sha256": "e2ca6009fcc2ee09326e90f0ae38e2de23e4744d705d96b5f3a22747e2f2ed41"
+    }
+  },
+  "saved_patch_disposition": {
+    "codex": {
+      "v3_observation": "both fixtures rendered only one swatch",
+      "v4_effect": "unchanged_failure",
+      "reason": "The swatch-count assertion fails before the numerical contrast threshold is evaluated."
+    },
+    "kimi_k3": {
+      "v3_observed_minimum_ratios": [1.052096250250116, 1.1267233845369462],
+      "v4_effect": "unchanged_failure",
+      "reason": "Both observed ratios remain below the human-calibrated 2:1 threshold."
+    }
+  },
+  "active_file_sha256": {
+    "tests/acceptance.test.tsx": "487dfb7ef7d5ea83cac7de455688a5b87b25dc0e2567834482ba46cae3158baa",
+    "tests/test_manifest.json": "f1782ff19eb7968404bbceb051475b3760a29d535ad3d51ce7c598ef04480c3a",
+    "tests/integrity.sha256": "cc869529b1542ee7a6b9d5fea9219899b4851917558c2666d2c838b076ee44b7"
+  },
+  "formal_admission": false,
+  "remaining": "Run oracle, empty, nop, and empty-no-reply through Harbor against one v4 task checksum before freezing."
+}

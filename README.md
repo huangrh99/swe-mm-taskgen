@@ -442,21 +442,20 @@ Judge修正：
 | F2P（2） | 角部 boundary event 的纵向、横向同轴连线各一条：应为无多余 waypoint 的直线 |
 | P2P（72） | loop、gateway、subprocess、横纵布局，以及 reconnect / move 之后的既有连线行为 |
 
-逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](cases/bpmn-io__bpmn-js-2396/outputs/08_audit/index.html)。
+逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](evidence/case_outputs/bpmn-io__bpmn-js-2396/08_audit/index.html)。
 
 **Oracle 双验证。** 同一份 judge 跑四道控制，空 patch 与 gold 是其中的两道：
 
 | 控制 | 操作 | 期望 reward | 实测 reward | 结果文件 |
 | --- | --- | ---: | ---: | --- |
-| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0` | [`result.json`](cases/bpmn-io__bpmn-js-2396/outputs/05_controls/05_20_codex_ready_gold_oracle/task__ECG5m5t/result.json) |
-| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](cases/bpmn-io__bpmn-js-2396/outputs/05_controls/05_21_codex_ready_empty_patch/task__AP7s8Ya/result.json) |
-| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](cases/bpmn-io__bpmn-js-2396/outputs/05_controls/05_22_codex_ready_nop/task__5vfsrLn/result.json) |
-| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](cases/bpmn-io__bpmn-js-2396/outputs/05_controls/05_23_codex_ready_empty_reply/task__fW6SSWY/result.json) |
+| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0` | [`result.json`](evidence/case_outputs/bpmn-io__bpmn-js-2396/05_controls/05_20_codex_ready_gold_oracle/task__ECG5m5t/result.json) |
+| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/bpmn-io__bpmn-js-2396/05_controls/05_21_codex_ready_empty_patch/task__AP7s8Ya/result.json) |
+| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/bpmn-io__bpmn-js-2396/05_controls/05_22_codex_ready_nop/task__5vfsrLn/result.json) |
+| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/bpmn-io__bpmn-js-2396/05_controls/05_23_codex_ready_empty_reply/task__fW6SSWY/result.json) |
 
-**Pass@1 分析。** GPT-5.6 Luna Max 与 Kimi K3 的单次作答都通过 2 条 F2P 和 72 条 P2P，
-Pass@1 均为 `1`。这两次是模型在本题上的有效作答结果，不因后续只修改 verifier 封装而降级；
-证据分别见 Codex [测试结果](cases/bpmn-io__bpmn-js-2396/outputs/10_pass1/codex-luna-max/bpmn-io__bpmn-js-2396-codex-luna-max-pass1/0a47094ba8eeb0534c2bc3caa3af8169__AtgAPdw/verifier/test_results.json)
-与 K3 [测试结果](cases/bpmn-io__bpmn-js-2396/outputs/10_pass1/kimi-k3/bpmn-io__bpmn-js-2396-kimi-k3-pass1/0a47094ba8eeb0534c2bc3caa3af8169__GoenEWE/verifier/test_results.json)。
+**Pass@1 分析。** GPT-5.6 Luna Max 与 Kimi K3 的单次作答都通过 2 条 F2P 和 72 条 P2P，Pass@1 均为 `1`。
+证据分别见 Codex [测试结果](evidence/case_outputs/bpmn-io__bpmn-js-2396/10_pass1/codex-luna-max/bpmn-io__bpmn-js-2396-codex-luna-max-pass1/0a47094ba8eeb0534c2bc3caa3af8169__AtgAPdw/verifier/test_results.json)
+与 K3 [测试结果](evidence/case_outputs/bpmn-io__bpmn-js-2396/10_pass1/kimi-k3/bpmn-io__bpmn-js-2396-kimi-k3-pass1/0a47094ba8eeb0534c2bc3caa3af8169__GoenEWE/verifier/test_results.json)。
 
 **Pass@5 与失败分析。** 五次运行均完整通过 2 条 F2P 与 72 条 P2P，结果为 `5/5`、Pass@5=`1`。每次回放还向 `/testbed/test` 加入agent 测试标记，证明这些变化不会再进入 judge。
 
@@ -493,7 +492,7 @@ Treemap 与列表的左右分栏、bundle 内不同深度的同主题色变化�
 最终更改了进行Judge重写，只观察可见性、强调关系、caption 事实与视觉层级、computed color、选择行为和资源表内容；CSS 隐藏根caption 与不同 DOM 结构均可通过。该版本在 Base 与 Gold 上顺序回放两次，稳定得到 5 F2P 和
 3 P2P；Gold 每次 8/8、reward=1，Base 每次 3/8、reward=0。
 旧 Codex patch 回放得到 4/8、reward=0，颜色与隐藏 caption 已通过，失败只来自标题未强调、caption 无层级、总量被改写和表格
-清空。完整记录见[语义重写审计](cases/googlechrome__lighthouse-16403/outputs/11_verifier_semantic_rewrite/01_summary.json)。
+清空。完整记录见[语义重写审计](evidence/case_outputs/googlechrome__lighthouse-16403/11_verifier_semantic_rewrite/01_summary.json)。
 
 **Judge。** 判分的通用原则见第 1.3 节，`config.json` 字段与 `test.sh` 判分链路见
 [附录 C.3](docs/layout_and_trust.md#c3-判分链路与-oracle-质量控制)；本题的取值是：
@@ -506,28 +505,24 @@ Treemap 与列表的左右分栏、bundle 内不同深度的同主题色变化�
 | F2P（5） | 标题与 Logo 可见、有强调、不重叠<br>删掉冗余的汇总 caption，但每个 bundle 仍给出名称、体积、占比<br>bundle 名称与指标可读且有层级强调<br>后代节点与父节点明显区分但保持同色系<br>选中某个 bundle 不覆盖页头的全局字节总量 |
 | P2P（3） | 顶层 bundle 各有不同计算色且文字满足对比度<br>选中 bundle 后仍给出名称、字节数与百分比<br>既有资源表继续列出全部叶节点与字节数 |
 
-逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](cases/googlechrome__lighthouse-16403/outputs/08_audit/index.html)。
+逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](evidence/case_outputs/googlechrome__lighthouse-16403/08_audit/index.html)。
 
 **Oracle 双验证。** 同一份 judge 跑四道控制，空 patch 与 gold 是其中的两道：
 
 | 控制 | 操作 | 期望 reward | 实测 reward | 结果文件 |
 | --- | --- | ---: | ---: | --- |
-| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0`（连续两次） | [`test_results.json`](cases/googlechrome__lighthouse-16403/outputs/11_verifier_semantic_rewrite/02_gold/test_results.json) |
-| empty | 不修改任何生产代码 | `0.0` | `0.0`（连续两次） | [`test_results.json`](cases/googlechrome__lighthouse-16403/outputs/11_verifier_semantic_rewrite/03_base/test_results.json) |
-| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](cases/googlechrome__lighthouse-16403/outputs/15_current_pass5/controls/07_nop/f7f643a6f33eded02ad5385309003879__hrdpZo4/result.json) |
-| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](cases/googlechrome__lighthouse-16403/outputs/15_current_pass5/controls/08_empty_no_reply/f7f643a6f33eded02ad5385309003879__hfeymaC/result.json) |
+| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0`（连续两次） | [`test_results.json`](evidence/case_outputs/googlechrome__lighthouse-16403/11_verifier_semantic_rewrite/02_gold/test_results.json) |
+| empty | 不修改任何生产代码 | `0.0` | `0.0`（连续两次） | [`test_results.json`](evidence/case_outputs/googlechrome__lighthouse-16403/11_verifier_semantic_rewrite/03_base/test_results.json) |
+| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/googlechrome__lighthouse-16403/15_current_pass5/controls/07_nop/f7f643a6f33eded02ad5385309003879__hrdpZo4/result.json) |
+| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/googlechrome__lighthouse-16403/15_current_pass5/controls/08_empty_no_reply/f7f643a6f33eded02ad5385309003879__hfeymaC/result.json) |
 
-**Pass@1 分析。** GPT-5.6 Luna Max 的单次作答按修正后的语义 verifier 回放仍为 `0`，但结果由旧
-verifier 的笼统 0/5 细化为 4/8：颜色和隐藏 caption 已满足，标题强调、caption 层级、全局总量和
-资源表仍不符合目标稿。Kimi K3 的对应运行没有形成有效模型 trial。完整回放见
-[语义重写审计](cases/googlechrome__lighthouse-16403/outputs/11_verifier_semantic_rewrite/01_summary.json)。
+**Pass@1 分析。** GPT-5.6 Luna Max 的单次作答按修正后的语义 verifier 回放仍为 `0`，但结果由旧verifier 的笼统 0/5 细化为 4/8：颜色和隐藏 caption 已满足，标题强调、caption 层级、全局总量和资源表仍不符合目标设计稿。Kimi K3 的对应运行没有形成有效模型 trial。完整回放见
+[语义重写审计](evidence/case_outputs/googlechrome__lighthouse-16403/11_verifier_semantic_rewrite/01_summary.json)。
 
-**Pass@5 与失败分析。** GPT-5.6 Luna Max 已完成三条有效 trial，暂为 `0/3`；另两条仍在运行或排队，
-因此题目 Pass@5 尚不能定论。前三个 patch 都完成了较大范围的 Treemap 重构，且资源表 P2P 均通过，
-不是空补丁；共同失败集中在标题强调、全局总量保持、深度色或选中 bundle 详情中的若干项。也就是说，
-模型能复现大体布局，但没有同时满足图片中的全部视觉层级和既有交互语义，这与多能力组合题的预期
-难度一致。Codex 运行
-[汇总](cases/googlechrome__lighthouse-16403/outputs/15_current_pass5/codex-luna-max/10_codex_pass5_01/result.json)与
+**Pass@5 与失败分析。** GPT-5.6 Luna Max 在 Lighthouse 16403 上五次均未通过，Pass@5=0。
+共同失败发现，模型能复现大体布局，但没有同时满足图片中的全部视觉层级和既有交互语义，这与多能力组合题的预期难度一致。例如模型普遍能够识别题目要求对 Treemap 进行整体视觉重构，并成功去除冗余 caption、调整部分颜色及选中项展示，但没有稳定还原目标设计的完整信息层级：五次实现均未正确强化页面标题；多次未能区分 bundle 名称与指标的视觉权重，或未充分拉开父子节点的颜色层级；
+Codex 运行
+[汇总](evidence/case_outputs/googlechrome__lighthouse-16403/15_current_pass5/codex-luna-max/10_codex_pass5_01/result.json)与
 
 
 运行入口：
@@ -596,9 +591,9 @@ Issue 的明文要求是“部分色板对比度很差，应修正未达到最�
 第四版本修改在隔离网络的相同镜像中并行直跑一次 Base/Gold，结果仍为 `0/1`。
 Codex 保存 patch 每组只剩一个色点，因此会先在数量断言失败；Kimi 保存 patch 的两个最低观测值约为 `1.052:1` 和 `1.127:1`，仍低于
 `2:1`，所以两者的功能失败结论不变。
-完整记录见[旧阈值三轮回放](cases/automattic__wp-calypso-100957/outputs/12_contrast_verifier_v3/12_04_validation_summary.json)、
-[人工阈值校准](cases/automattic__wp-calypso-100957/outputs/14_contrast_verifier_v4/14_01_threshold_decision.json)和
-[当前 Base/Gold 复核](cases/automattic__wp-calypso-100957/outputs/14_contrast_verifier_v4/14_02_validation_summary.json)。
+完整记录见[旧阈值三轮回放](evidence/case_outputs/automattic__wp-calypso-100957/12_contrast_verifier_v3/12_04_validation_summary.json)、
+[人工阈值校准](evidence/case_outputs/automattic__wp-calypso-100957/14_contrast_verifier_v4/14_01_threshold_decision.json)和
+[当前 Base/Gold 复核](evidence/case_outputs/automattic__wp-calypso-100957/14_contrast_verifier_v4/14_02_validation_summary.json)。
 
 
 **Judge。** 判分的通用原则见第 1.3 节，`config.json` 字段与 `test.sh` 判分链路见
@@ -612,29 +607,27 @@ Codex 保存 patch 每组只剩一个色点，因此会先在数量断言失败�
 | F2P（2） | 复现 PR 里的浅色与淡紫两张卡片：两枚色点都要与卡片背景可辨识 |
 | P2P（2） | 预览背景色不变<br>标题框 heading 颜色不变 |
 
-逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](cases/automattic__wp-calypso-100957/outputs/08_audit/index.html)。
+逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](evidence/case_outputs/automattic__wp-calypso-100957/08_audit/index.html)。
 
 **Oracle 双验证。** 同一份 judge 跑四道控制，空 patch 与 gold 是其中的两道：
 
 | 控制 | 操作 | 期望 reward | 实测 reward | 结果文件 |
 | --- | --- | ---: | ---: | --- |
-| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0` | [`result.json`](cases/automattic__wp-calypso-100957/outputs/16_current_checksum_controls/01_gold_oracle/d6aa96660fc6bf1759626c357c9fbb6d__QQFXezi/result.json) |
-| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](cases/automattic__wp-calypso-100957/outputs/16_current_checksum_controls/02_empty_patch/d6aa96660fc6bf1759626c357c9fbb6d__QsjMs8b/result.json) |
-| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](cases/automattic__wp-calypso-100957/outputs/16_current_checksum_controls/03_nop/d6aa96660fc6bf1759626c357c9fbb6d__LKBfkc9/result.json) |
-| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](cases/automattic__wp-calypso-100957/outputs/16_current_checksum_controls/04_empty_no_reply/d6aa96660fc6bf1759626c357c9fbb6d__oVfzhcV/result.json) |
+| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0` | [`result.json`](evidence/case_outputs/automattic__wp-calypso-100957/16_current_checksum_controls/01_gold_oracle/d6aa96660fc6bf1759626c357c9fbb6d__QQFXezi/result.json) |
+| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/automattic__wp-calypso-100957/16_current_checksum_controls/02_empty_patch/d6aa96660fc6bf1759626c357c9fbb6d__QsjMs8b/result.json) |
+| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/automattic__wp-calypso-100957/16_current_checksum_controls/03_nop/d6aa96660fc6bf1759626c357c9fbb6d__LKBfkc9/result.json) |
+| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/automattic__wp-calypso-100957/16_current_checksum_controls/04_empty_no_reply/d6aa96660fc6bf1759626c357c9fbb6d__oVfzhcV/result.json) |
 
-**Pass@1 分析。** GPT-5.6 Luna Max 与 Kimi K3 的单次作答按人工校准后的当前 verifier 回放均为
-`0`。Codex 隐藏了一枚低对比色点；K3 保留了两枚色点，但最低填充色对背景的对比度仍低于 `2:1`。
-两者都是验收语义未满足，而不是 verifier 对实现文件或源码形状的误判。见
-[当前复核](cases/automattic__wp-calypso-100957/outputs/14_contrast_verifier_v4/14_02_validation_summary.json)。
+**Pass@1 分析。** GPT-5.6 Luna Max 与 Kimi K3 的单次作答按人工校准后的当前 verifier 回放均为`0`。Codex 隐藏了一枚低对比色点；K3 保留了两枚色点，但最低填充色对背景的对比度仍低于 `2:1`。
+两者都是验收语义未满足，而不是 verifier 对实现文件或源码形状的误判。
+见[当前复核](evidence/case_outputs/automattic__wp-calypso-100957/14_contrast_verifier_v4/14_02_validation_summary.json)。
 
-**Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 均为 `reward=0`，成功 `0/5`，因此
-Pass@5=`0`。五次都保持两条 P2P 通过，但两条 F2P 全部失败，说明失败不来自测试环境或无关回归。
+**Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 均为 `reward=0`，成功 `0/5`，因此Pass@5=`0`。
+五次都保持两条 P2P 通过，但两条 F2P 全部失败，说明失败不来自测试环境或无关回归。
 模型反复把“对比度”理解成文字可读性或候选过滤：两次只替换低对比的 `Aa` 文字颜色，一次给低对比
-色点加轮廓，一次省略低对比色点，一次过滤整个 style variation。它们都没有保持截图中的两枚色点并
-直接拉开色点填充色与卡片背景的对比度；其中隐藏色点、隐藏卡片和只加描边也不满足验收语义。
+色点加轮廓，一次省略低对比色点，一次过滤整个 style variation。整体非常神奇，发现模型在这个case上普遍存在偷懒情况，题目要求提高点的对比度，要不然看不清，模型做法要不然是只保留一个高对比度点，要不然是直接把低对比度的卡片删除。
 五次的逐项结果均为 2 F2P fail、2 P2P pass，代表性
-[测试结果](cases/automattic__wp-calypso-100957/outputs/15_current_pass5/codex-luna-max/10_codex_trial_06/d6aa96660fc6bf1759626c357c9fbb6d__SnWjuAG/verifier/test_results.json)。运行入口：
+[测试结果](evidence/case_outputs/automattic__wp-calypso-100957/15_current_pass5/codex-luna-max/10_codex_trial_06/d6aa96660fc6bf1759626c357c9fbb6d__SnWjuAG/verifier/test_results.json)。运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。
@@ -674,9 +667,8 @@ harbor run -c cases/automattic__wp-calypso-100957/outputs/06_freeze/codex-luna-m
 scoped P2P 同时确认 accordion 外的 `.link-button` 没有被连带改色，仓库既有 P2P 继续保护
 `DomainOverviewPane` 的渲染与交互。校准后的单轮三态复核为 Base `reward=0`、Gold `reward=1`、此前
 被旧测试判零分的 Codex patch `reward=1`，证明该 patch 在当前验收条件下属于功能等价实现。完整
-记录见[人工校准与三态复核](cases/automattic__wp-calypso-99049/outputs/11_verifier_v2_validation/summary.json)。
-由于测试 payload 已改变，旧 checksum 下的三次 Base/Gold 和 Harbor controls 仅保留为历史证据；
-正式稳定性与控制结果需要用新 checksum 重跑。
+记录见[人工校准与三态复核](evidence/case_outputs/automattic__wp-calypso-99049/11_verifier_v2_validation/summary.json)。
+
 
 **Judge。** 判分的通用原则见第 1.3 节，`config.json` 字段与 `test.sh` 判分链路见
 [附录 C.3](docs/layout_and_trust.md#c3-判分链路与-oracle-质量控制)；本题的取值是：
@@ -689,27 +681,27 @@ scoped P2P 同时确认 accordion 外的 `.link-button` 没有被连带改色，
 | F2P（1） | 编译全部影响该控件的生产 SCSS 后，`+ Add forward` 的计算色解析为 `--color-link`，不限修复写在哪个样式文件 |
 | P2P（2） | accordion 之外的 `link-button` 计算色不变<br>既有 `DomainOverviewPane` 套件行为不变 |
 
-逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](cases/automattic__wp-calypso-99049/outputs/08_audit/index.html)。
+逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](evidence/case_outputs/automattic__wp-calypso-99049/08_audit/index.html)。
 
 **Oracle 双验证。** 同一份 judge 跑四道控制，空 patch 与 gold 是其中的两道：
 
 | 控制 | 操作 | 期望 reward | 实测 reward | 结果文件 |
 | --- | --- | ---: | ---: | --- |
-| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0` | [`result.json`](cases/automattic__wp-calypso-99049/outputs/16_current_checksum_controls/01_gold_oracle/1bda87d5b2742e91d6225618e7e3ebf7__hb4Hm46/result.json) |
-| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](cases/automattic__wp-calypso-99049/outputs/16_current_checksum_controls/02_empty_patch/1bda87d5b2742e91d6225618e7e3ebf7__3qbSdnV/result.json) |
-| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](cases/automattic__wp-calypso-99049/outputs/16_current_checksum_controls/03_nop/1bda87d5b2742e91d6225618e7e3ebf7__Vpjn5CR/result.json) |
-| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](cases/automattic__wp-calypso-99049/outputs/16_current_checksum_controls/04_empty_no_reply/1bda87d5b2742e91d6225618e7e3ebf7__oYrbL9C/result.json) |
+| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0` | [`result.json`](evidence/case_outputs/automattic__wp-calypso-99049/16_current_checksum_controls/01_gold_oracle/1bda87d5b2742e91d6225618e7e3ebf7__hb4Hm46/result.json) |
+| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/automattic__wp-calypso-99049/16_current_checksum_controls/02_empty_patch/1bda87d5b2742e91d6225618e7e3ebf7__3qbSdnV/result.json) |
+| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/automattic__wp-calypso-99049/16_current_checksum_controls/03_nop/1bda87d5b2742e91d6225618e7e3ebf7__Vpjn5CR/result.json) |
+| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/automattic__wp-calypso-99049/16_current_checksum_controls/04_empty_no_reply/1bda87d5b2742e91d6225618e7e3ebf7__oYrbL9C/result.json) |
 
 **Pass@1 分析。** GPT-5.6 Luna Max 与 Kimi K3 的单次作答按当前 verifier 回放均为 `1`。两次旧
 零分来自旧 judge 只编译单一 SCSS；把真实参与页面渲染的两份生产 SCSS 合并到同一 cascade 后，
 两种实现都得到正确 computed color，并保持作用域外按钮不变。K3 回放见
-[结果摘要](cases/automattic__wp-calypso-99049/outputs/12_k3_verifier_v2_replay/00_summary.json)，Codex 的三态
-复核见[人工校准记录](cases/automattic__wp-calypso-99049/outputs/11_verifier_v2_validation/summary.json)。
+[结果摘要](evidence/case_outputs/automattic__wp-calypso-99049/12_k3_verifier_v2_replay/00_summary.json)，Codex 的三态
+复核见[人工校准记录](evidence/case_outputs/automattic__wp-calypso-99049/11_verifier_v2_validation/summary.json)。
 
 **Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 均为 `reward=1`，成功 `5/5`，因此
 Pass@5=`1`。五次独立实现都通过最终 computed color、作用域保护和仓库既有行为测试；结果同时说明
 校准后的 judge 接受修复写在不同参与 cascade 的生产 SCSS 中，没有再把 Gold 所在文件误当成唯一
-答案。第五条 [Harbor 汇总](cases/automattic__wp-calypso-99049/outputs/15_current_pass5/codex-luna-max/10_codex_trial_06/result.json)。运行入口：
+答案。第五条 [Harbor 汇总](evidence/case_outputs/automattic__wp-calypso-99049/15_current_pass5/codex-luna-max/10_codex_trial_06/result.json)。运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。
@@ -744,7 +736,7 @@ harbor run -c cases/automattic__wp-calypso-99049/outputs/06_freeze/codex-luna-ma
 **Judge 的人工迭代记录。** 一开始 VLM 只检查自环是否合并为一条逻辑 SVG 路径，因而错误接受了仍位于节点下方的 Gold代码。
 之后VLM首先修正了Gold代码，然后改进Judge到检查最终渲染几何曲度是否平滑：约 1 像素弧长采样中至少 90% 的内部点必须一致位于节点左侧或右侧，
 采样点不得进入节点内部，最大局部转角不得超过 45°。它不限制精确 SVG `d`、坐标、尺寸、左右侧或代码实现。
-完整数值见[修正记录](cases/mermaid-js__mermaid-7711/outputs/13_gold_v3_validation/01_result.md)。
+完整数值见[修正记录](evidence/case_outputs/mermaid-js__mermaid-7711/13_gold_v3_validation/01_result.md)。
 
 **Judge。** 判分的通用原则见第 1.3 节，`config.json` 字段与 `test.sh` 判分链路见
 [附录 C.3](docs/layout_and_trust.md#c3-判分链路与-oracle-质量控制)；本题的取值是：
@@ -757,27 +749,27 @@ harbor run -c cases/automattic__wp-calypso-99049/outputs/06_freeze/codex-luna-ma
 | F2P（1） | Issue 复现图渲染为位于节点左侧或右侧的平滑自环 |
 | P2P（17） | 带标签的 flowchart 自环与非循环边不变，另有 15 条既有 Graphlib 测试保护 cluster、层级排序与嵌套 |
 
-逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](cases/mermaid-js__mermaid-7711/outputs/08_audit/index.html)。
+逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](evidence/case_outputs/mermaid-js__mermaid-7711/08_audit/index.html)。
 
 **Oracle 双验证。** 同一份 judge 跑四道控制，空 patch 与 gold 是其中的两道：
 
 | 控制 | 操作 | 期望 reward | 实测 reward | 结果文件 |
 | --- | --- | ---: | ---: | --- |
-| gold | 应用修正后的 `solution/solve.sh` | `1.0` | `1.0` | [`result.json`](cases/mermaid-js__mermaid-7711/outputs/16_current_checksum_controls/01_gold_oracle/deb5c38e9335adb4a374507f9167da69__GC4Szyy/result.json) |
-| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](cases/mermaid-js__mermaid-7711/outputs/16_current_checksum_controls/02_empty_patch/deb5c38e9335adb4a374507f9167da69__bWkWYyE/result.json) |
-| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](cases/mermaid-js__mermaid-7711/outputs/16_current_checksum_controls/03_nop/deb5c38e9335adb4a374507f9167da69__Ebobugk/result.json) |
-| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](cases/mermaid-js__mermaid-7711/outputs/16_current_checksum_controls/04_empty_no_reply/deb5c38e9335adb4a374507f9167da69__xfKzQLK/result.json) |
+| gold | 应用修正后的 `solution/solve.sh` | `1.0` | `1.0` | [`result.json`](evidence/case_outputs/mermaid-js__mermaid-7711/16_current_checksum_controls/01_gold_oracle/deb5c38e9335adb4a374507f9167da69__GC4Szyy/result.json) |
+| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/mermaid-js__mermaid-7711/16_current_checksum_controls/02_empty_patch/deb5c38e9335adb4a374507f9167da69__bWkWYyE/result.json) |
+| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/mermaid-js__mermaid-7711/16_current_checksum_controls/03_nop/deb5c38e9335adb4a374507f9167da69__Ebobugk/result.json) |
+| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/mermaid-js__mermaid-7711/16_current_checksum_controls/04_empty_no_reply/deb5c38e9335adb4a374507f9167da69__xfKzQLK/result.json) |
 
 
 **Pass@1 分析。** GPT-5.6 Luna Max 的单次作答在当前几何 verifier 中仍为 `1`；其 SVG 路径结构
 不同于修正 Gold，但同样满足侧边位置、不进入节点和平滑度约束，说明 verifier 判断的是功能几何而非
 参考代码形状。Kimi K3 那次记录虽曾留下 `reward=1`，同一 Harbor trial 含 API 限流异常，因此不计
-有效 Pass@1。回放证据见[当前验证摘要](cases/mermaid-js__mermaid-7711/outputs/13_gold_v3_validation/00_summary.json)。
+有效 Pass@1。回放证据见[当前验证摘要](evidence/case_outputs/mermaid-js__mermaid-7711/13_gold_v3_validation/00_summary.json)。
 
 **Pass@5 与失败分析。** GPT-5.6 Luna Max 已完成四条有效 trial，四条均为 `reward=1`，所以即使
 最后一条仍在运行，本题 Pass@5 已确定为 `1`。四个成功 patch 均通过平滑度、节点侧边位置、不进入
 节点内部以及 17 条 P2P；这表明当前 judge 接受不同 SVG 路径实现，而不是只匹配修正 Gold。
-已完成的第四条 [Harbor 汇总](cases/mermaid-js__mermaid-7711/outputs/15_current_pass5/codex-luna-max/10_codex_trial_05/result.json)。运行入口：
+已完成的第四条 [Harbor 汇总](evidence/case_outputs/mermaid-js__mermaid-7711/15_current_pass5/codex-luna-max/10_codex_trial_05/result.json)。运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。
@@ -823,26 +815,26 @@ FFmpeg 版本一并绑定（见[附录 B](docs/pipeline_internals.md)）；解�
 | F2P（1） | 缩小绑定文本后立即重算箭头端点，且保持绑定与正交路径 |
 | P2P（1） | 同一字号操作仍能正确缩小独立文本 |
 
-逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](cases/excalidraw__excalidraw-9002/outputs/08_audit/index.html)。
+逐条测试的完整 ID、来源、F2P/P2P 实测类别及中英文功能目的见[测试审计页](evidence/case_outputs/excalidraw__excalidraw-9002/08_audit/index.html)。
 
 **Oracle 双验证。** 同一份 judge 跑四道控制，空 patch 与 gold 是其中的两道：
 
 | 控制 | 操作 | 期望 reward | 实测 reward | 结果文件 |
 | --- | --- | ---: | ---: | --- |
-| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0` | [`result.json`](cases/excalidraw__excalidraw-9002/outputs/05_controls/05_07_schema12_gold_oracle/task__uM7Jg7d/result.json) |
-| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](cases/excalidraw__excalidraw-9002/outputs/05_controls/05_08_schema12_empty_patch/task__JgoPMJY/result.json) |
-| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](cases/excalidraw__excalidraw-9002/outputs/05_controls/05_09_schema12_nop/task__KHviYg4/result.json) |
-| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](cases/excalidraw__excalidraw-9002/outputs/05_controls/05_10_schema12_empty_no_reply/task__mCC2xnf/result.json) |
+| gold | 应用 `solution/solve.sh` 的 gold patch | `1.0` | `1.0` | [`result.json`](evidence/case_outputs/excalidraw__excalidraw-9002/05_controls/05_07_schema12_gold_oracle/task__uM7Jg7d/result.json) |
+| empty | 不修改任何生产代码 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/excalidraw__excalidraw-9002/05_controls/05_08_schema12_empty_patch/task__JgoPMJY/result.json) |
+| nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/excalidraw__excalidraw-9002/05_controls/05_09_schema12_nop/task__KHviYg4/result.json) |
+| empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/excalidraw__excalidraw-9002/05_controls/05_10_schema12_empty_no_reply/task__mCC2xnf/result.json) |
 
 **Pass@1 分析。** GPT-5.6 Luna Max 的单次作答通过 1 条 F2P 与 1 条 P2P，Pass@1 为 `1`；Kimi K3
 没有完成可计数的单次作答。Codex 的完整结果见
-[测试记录](cases/excalidraw__excalidraw-9002/outputs/10_pass1/codex-luna-max/excalidraw__excalidraw-9002-codex-luna-max-pass1/0615fa53627c6591a0cb65fd48c2760d__hHqJD8u/verifier/test_results.json)。
+[测试记录](evidence/case_outputs/excalidraw__excalidraw-9002/10_pass1/codex-luna-max/excalidraw__excalidraw-9002-codex-luna-max-pass1/0615fa53627c6591a0cb65fd48c2760d__hHqJD8u/verifier/test_results.json)。
 
 **Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 中四条 `reward=1`、一条 `reward=0`，
 成功 `4/5`，因此 Pass@5=`1`。唯一失败的 patch 正确发现 bound label 版本变化没有使 arrow bounds
 cache 失效，并把 label version 加入缓存键；但它只让 bounds 重新计算，没有触发绑定 elbow arrow
 端点与正交路径的实际重算。P2P 的独立文本缩放仍通过，而 F2P 观测到端点误差为 `5.5`，超过1的几何容差，因此这是模型的近失误而非 judge 误杀。失败
-[测试结果](cases/excalidraw__excalidraw-9002/outputs/15_current_pass5/codex-luna-max/10_codex_trial_05/03e6b516aa5ce4acd4347fc8896def2d__qeufqfa/verifier/test_results.json)。运行入口：
+[测试结果](evidence/case_outputs/excalidraw__excalidraw-9002/15_current_pass5/codex-luna-max/10_codex_trial_05/03e6b516aa5ce4acd4347fc8896def2d__qeufqfa/verifier/test_results.json)。运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。

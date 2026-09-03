@@ -1,0 +1,830 @@
+{
+  "schema_version": "case-test-provenance-audit-v1",
+  "instance_id": "bpmn-io__bpmn-js-2396",
+  "active_config": "task/tests/config.json",
+  "active_config_sha256": "2bd4bfece9ed5dee7d9392c2981b280955e55fe828adec462460c6239afa2413",
+  "boundary": "Source identifies who supplied the active test; F2P/P2P class is based only on executed Base/Gold outcomes.",
+  "counts": {
+    "f2p": 2,
+    "p2p": 72,
+    "total": 74
+  },
+  "tests": [
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for axis-aligned corner boundary event\"]",
+      "class": "F2P",
+      "source": "pr_author",
+      "purpose_en": "Verify that an axis-aligned connection from a corner boundary event is laid out as a straight line without an extra waypoint.",
+      "purpose_zh": "验证角点边界事件到同轴目标的连线为直线且不产生额外 waypoint。",
+      "evidence": [
+        "task/tests/test.patch:LayoutSequenceFlowSpec.js added test",
+        "meta/03_test_construction/14_author_tests.patch",
+        "meta/03_test_construction/14_case_manifest.json:author_test_paths"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]",
+      "class": "F2P",
+      "source": "pr_author",
+      "purpose_en": "Verify the horizontal counterpart: an axis-aligned connection from a corner boundary event is straight and has no extra waypoint.",
+      "purpose_zh": "验证水平方向的角点边界事件同轴连线为直线且不产生额外 waypoint。",
+      "evidence": [
+        "task/tests/test.patch:LayoutSequenceFlowSpec.js added test",
+        "meta/03_test_construction/14_author_tests.patch",
+        "meta/03_test_construction/14_case_manifest.json:author_test_paths"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached bottom left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached bottom right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached top left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached top right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached bottom center\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom center.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom center。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached center left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached center left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached center left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached center right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached center right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached center right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached top center\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top center.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top center。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached bottom center, orientation bottom\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom center, orientation bottom.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom center, orientation bottom。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached right center, orientation left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached right center, orientation left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached right center, orientation left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached right center, orientation right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached right center, orientation right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached right center, orientation right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top center, orientation top\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top center, orientation top.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top center, orientation top。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation bottom\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top right, orientation bottom.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top right, orientation bottom。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top right, orientation left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top right, orientation left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top right, orientation right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top right, orientation right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation top\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top right, orientation top.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top right, orientation top。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"gateway layout\"],\"should layout h:v before Gateway\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout h:v before Gateway.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout h:v before Gateway。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"gateway layout\"],\"should layout v:h after Gateway\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout v:h after Gateway.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout v:h after Gateway。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should NOT relayout loop\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should NOT relayout loop.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should NOT relayout loop。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should layout loop\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout loop.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout loop。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (b:l)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should relayout loop (b:l).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should relayout loop (b:l)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (l:t)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should relayout loop (l:t).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should relayout loop (l:t)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (t:r)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should relayout loop (t:r).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should relayout loop (t:r)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after IntermediateEvent (right to left)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout h:h after IntermediateEvent (right to left).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout h:h after IntermediateEvent (right to left)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after IntermediateEvent\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout h:h after IntermediateEvent.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout h:h after IntermediateEvent。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after StartEvent\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout h:h after StartEvent.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout h:h after StartEvent。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after Task\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout h:h after Task.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout h:h after Task。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after reconnect end\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should repair after reconnect end.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should repair after reconnect end。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after source move\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should repair after source move.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should repair after source move。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after target move\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should repair after target move.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should repair after target move。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task above (subProcess -> task)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcess and task above (subProcess -> task).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcess and task above (subProcess -> task)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task above (task -> subProcess)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcess and task above (task -> subProcess).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcess and task above (task -> subProcess)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task next to it (subProcess -> task)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcess and task next to it (subProcess -> task).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcess and task next to it (subProcess -> task)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task next to it (task -> subProcess)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcess and task next to it (task -> subProcess).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcess and task next to it (task -> subProcess)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcesses (bottom -> top)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcesses (bottom -> top).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcesses (bottom -> top)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcesses (top -> bottom)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcesses (top -> bottom).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcesses (top -> bottom)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached bottom left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached bottom right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached top left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached top right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached bottom center\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom center.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom center。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached center left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached center left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached center left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached center right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached center right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached center right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached top center\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached top center.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached top center。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom center, orientation bottom\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom center, orientation bottom.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom center, orientation bottom。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom center, orientation top\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom center, orientation top.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom center, orientation top。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation bottom\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom left, orientation bottom.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom left, orientation bottom。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom left, orientation left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom left, orientation left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom left, orientation right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom left, orientation right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation top\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached bottom left, orientation top.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached bottom left, orientation top。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached left center, orientation left\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached left center, orientation left.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached left center, orientation left。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached right center, orientation right\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: attached right center, orientation right.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：attached right center, orientation right。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"gateway layout\"],\"should layout h:v after Gateway\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout h:v after Gateway.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout h:v after Gateway。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"gateway layout\"],\"should layout v:h before Gateway\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout v:h before Gateway.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout v:h before Gateway。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should NOT relayout loop\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should NOT relayout loop.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should NOT relayout loop。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should layout loop\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout loop.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout loop。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (l:b)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should relayout loop (l:b).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should relayout loop (l:b)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (r:t)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should relayout loop (r:t).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should relayout loop (r:t)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (t:l)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should relayout loop (t:l).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should relayout loop (t:l)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after IntermediateEvent (bottom to top)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout v:v after IntermediateEvent (bottom to top).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout v:v after IntermediateEvent (bottom to top)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after IntermediateEvent\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout v:v after IntermediateEvent.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout v:v after IntermediateEvent。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after StartEvent\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout v:v after StartEvent.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout v:v after StartEvent。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after Task\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout v:v after Task.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout v:v after Task。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after reconnect end\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should repair after reconnect end.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should repair after reconnect end。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after source move\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should repair after source move.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should repair after source move。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after target move\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should repair after target move.",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should repair after target move。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task below (subProcess -> task)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcess and task below (subProcess -> task).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcess and task below (subProcess -> task)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task below (task -> subProcess)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcess and task below (task -> subProcess).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcess and task below (task -> subProcess)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task next to it (subProcess -> task)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcess and task next to it (subProcess -> task).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcess and task next to it (subProcess -> task)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task next to it (task -> subProcess)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcess and task next to it (task -> subProcess).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcess and task next to it (task -> subProcess)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcesses (left -> right)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcesses (left -> right).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcesses (left -> right)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcesses (right -> left)\"]",
+      "class": "P2P",
+      "source": "repository_existing",
+      "purpose_en": "Preserve the pre-existing BPMN layout regression behavior: should layout straight between subProcesses (right -> left).",
+      "purpose_zh": "保留仓库既有 BPMN 布局回归行为：should layout straight between subProcesses (right -> left)。",
+      "evidence": [
+        "task/tests/test.patch:only two test bodies added to LayoutSequenceFlowSpec.js",
+        "meta/03_test_construction/14_case_manifest.json:baseline tree proof"
+      ]
+    }
+  ]
+}

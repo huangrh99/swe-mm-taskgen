@@ -1,0 +1,114 @@
+{
+    "id": "18e395f0-0e0f-4a8d-85fe-3ae5bf7d868c",
+    "task_name": "swe-bench-multimodal/automattic__wp-calypso-99049",
+    "trial_name": "1bda87d5b2742e91d6225618e7e3ebf7__Vpjn5CR",
+    "trial_uri": "file:///Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-99049/outputs/16_current_checksum_controls/03_nop/1bda87d5b2742e91d6225618e7e3ebf7__Vpjn5CR",
+    "task_id": {
+        "path": ".runtime/tmp/harbor-task-projections/automattic__wp-calypso-99049/1bda87d5b2742e91d6225618e7e3ebf7fd4e2bc33309e89f535a8e6daf29a650"
+    },
+    "source": null,
+    "task_checksum": "07ebb411d191688ca024abc8640195e2b5ca384b360ccd446346d6450106ef5f",
+    "config": {
+        "task": {
+            "path": ".runtime/tmp/harbor-task-projections/automattic__wp-calypso-99049/1bda87d5b2742e91d6225618e7e3ebf7fd4e2bc33309e89f535a8e6daf29a650",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "1bda87d5b2742e91d6225618e7e3ebf7__Vpjn5CR",
+        "trials_dir": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-99049/outputs/16_current_checksum_controls/03_nop",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "e8252c01-166d-4753-bd33-46b0f7347eb4",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-09-03T08:00:29.305306Z",
+    "finished_at": "2026-09-03T08:01:21.384533Z",
+    "environment_setup": {
+        "started_at": "2026-09-03T08:00:29.453635Z",
+        "finished_at": "2026-09-03T08:00:43.348559Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-09-03T08:00:43.348662Z",
+        "finished_at": "2026-09-03T08:00:43.348737Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-09-03T08:00:43.348856Z",
+        "finished_at": "2026-09-03T08:00:43.348952Z"
+    },
+    "verifier": {
+        "started_at": "2026-09-03T08:00:43.721763Z",
+        "finished_at": "2026-09-03T08:01:09.384869Z"
+    },
+    "step_results": null
+}

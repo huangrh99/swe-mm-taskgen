@@ -1,0 +1,70 @@
+{
+  "schema_version": "wp-calypso-99049-k3-verifier-v2-replay-v1",
+  "instance_id": "automattic__wp-calypso-99049",
+  "executed_at_utc": "2026-09-03T03:43:00Z",
+  "execution": {
+    "working_directory": "/Users/bytedance/Documents/ChatGPT/kimi/report",
+    "parallel": true,
+    "network_mode": "none",
+    "image": "report-case:wp99049-codex-ready",
+    "image_id": "sha256:a662dc0fd7ee53253d054e987a044d4c913d5715280a0f5b1b5a89946e5b3abc"
+  },
+  "verifier_binding": {
+    "schema_version": "wp-calypso-99049-functional-results-v2",
+    "config_sha256": "6ede416a49b79a0930d49a893ba9e651975fd53bca2ac05ea16d00eed13d91f6",
+    "functional_mjs_sha256": "1c10e0f454ae738c609f5f6c67c0404fd033a337927a99bf5da60784ff2bba69",
+    "grade_mjs_sha256": "977e5f1fde98ea7855334aef7a0cf104a84536f72226f1975d1ebded6f301991",
+    "integrity_sha256_file_sha256": "f882b22cc3941a716fc3d0fd9d79ce683bf3a02a84d66258aad5aa85e3881406",
+    "test_sh_sha256": "179d823cceb329e71ee6cf69acdff76de777db3d800c5f05344bb8200ea25b9e"
+  },
+  "k3_patch_provenance": {
+    "source_trial": "outputs/10_pass1/kimi-k3-retry-01/automattic__wp-calypso-99049-kimi-k3-pass1-retry-01/4b01decdf4738658eb5958c6a407ecd1__3yn2XZb",
+    "source_agent_log": "agent/kimi-code.txt",
+    "source_agent_log_sha256": "cf3cdd715f314f2b17b1d5b0e9bffb65fc3160a93ab77c63efb818f2376b945a",
+    "source_old_verifier_result_sha256": "fabe69f906a4dc2a462338a8d59d38d1cfc3253f42fe73858ce07ee8df5702c7",
+    "patch": "k3_saved_patch.patch",
+    "patch_sha256": "dd25ddd7509a4f1492f921877b4c73e14eed1abdb7653661963ea2214a412c0e",
+    "extraction": "Reconstructed from the exact Edit old_string/new_string recorded by Kimi Code."
+  },
+  "runs": {
+    "base": {
+      "reward": 0,
+      "tests": {
+        "WPC-99049-LINK-COLOR": "fail",
+        "WPC-99049-P2P-COLOR-SCOPE": "pass",
+        "WPC-99049-P2P-DOMAIN-OVERVIEW": "pass"
+      },
+      "observed_target_color": "rgb(6, 117, 196)",
+      "test_results": "base_v2/logs/verifier/test_results.json",
+      "test_results_sha256": "c1e31539c58cc1af55d06f2aab61bc780ce758de8020aa1cbcb3f98774c373c4"
+    },
+    "gold": {
+      "reward": 1,
+      "tests": {
+        "WPC-99049-LINK-COLOR": "pass",
+        "WPC-99049-P2P-COLOR-SCOPE": "pass",
+        "WPC-99049-P2P-DOMAIN-OVERVIEW": "pass"
+      },
+      "observed_target_color": "rgb(17, 34, 51)",
+      "patch_sha256": "d16c3273737053e04d51651538bc8340d93ecfa885b1408a14c7315865ed25c8",
+      "test_results": "gold_v2/logs/verifier/test_results.json",
+      "test_results_sha256": "214d3965f7edc6e40d1ae36185d7baca28223ca97b83dafc5c6a48302d497973"
+    },
+    "k3_patch_replay": {
+      "reward": 1,
+      "tests": {
+        "WPC-99049-LINK-COLOR": "pass",
+        "WPC-99049-P2P-COLOR-SCOPE": "pass",
+        "WPC-99049-P2P-DOMAIN-OVERVIEW": "pass"
+      },
+      "observed_target_color": "rgb(17, 34, 51)",
+      "test_results": "k3_replay_v2/logs/verifier/test_results.json",
+      "test_results_sha256": "69b7c34b57261b60ad58dec59f1bce4f11dfb4a283d8ea77592fcca9e24a8147"
+    }
+  },
+  "conclusion": {
+    "k3_v2_result": "functionally_equivalent_positive",
+    "old_reward_zero_cause": "The former verifier compiled only domain-overview-pane/style.scss and could not observe K3's valid repair in settings/cards/style.scss.",
+    "counts_as_model_failure": false
+  }
+}
