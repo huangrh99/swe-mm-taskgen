@@ -395,12 +395,12 @@ DOM 层级、函数名、常量和文件组织都不是正确性定义，结构�
 包装成模型失败。一次 Pass@5 只要五条有效 trial 中至少一条 `reward=1` 即记为通过；成功次数仍
 保留五次中实际成功的条数，用于观察稳定性。
 
-Pass@5 目前只对 GPT-5.6 Luna Max 逐题执行。Kimi K3 有三题产生了有效的 Pass@1 结果、其余三题为基础设施无效，但受 API 调用速度限制还没有产生有效的 Pass@5 trial，因此各卡片不报告它的 Pass@5。
+Pass@5 目前只对 GPT-5.6 Luna Max 逐题执行。Kimi K3 有四题产生了有效的 Pass@1 结果；其中 Lighthouse 已有三条有效失败，但尚无任何一题凑齐五条有效 trial，因此各卡片不报告它的 Pass@5。
 
 | 模型 | Pass@1 运行过的题 / 成功 | Pass@5 有效 / 成功 |  Pass@5 |
 | --- | ---: | ---: | --- |
 | GPT-5.6 Luna Max | `6 / 4` | `30 / 20` | 66.7% |
-| Kimi K3 | `3 / 2` | -  | - |
+| Kimi K3 | `4 / 2` | -  | - |
 
 ### 2.3 `bpmn-io__bpmn-js-2396`
 
@@ -515,15 +515,32 @@ Treemap 与列表的左右分栏、bundle 内不同深度的同主题色变化�
 | nop | Agent 空转、不产出补丁 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/googlechrome__lighthouse-16403/15_current_pass5/controls/07_nop/f7f643a6f33eded02ad5385309003879__hrdpZo4/result.json) |
 | empty-no-reply | Agent 无回复即结束 | `0.0` | `0.0` | [`result.json`](evidence/case_outputs/googlechrome__lighthouse-16403/15_current_pass5/controls/08_empty_no_reply/f7f643a6f33eded02ad5385309003879__hfeymaC/result.json) |
 
-**Pass@1 分析。** GPT-5.6 Luna Max 的单次作答按修正后的语义 verifier 回放仍为 `0`，但结果由旧verifier 的笼统 0/5 细化为 4/8：颜色和隐藏 caption 已满足，标题强调、caption 层级、全局总量和资源表仍不符合目标设计稿。Kimi K3 的对应运行没有形成有效模型 trial。完整回放见
-[语义重写审计](evidence/case_outputs/googlechrome__lighthouse-16403/11_verifier_semantic_rewrite/01_summary.json)。
+**Pass@1 分析。** GPT-5.6 Luna Max 的单次作答按修正后的语义 verifier 回放仍为 `0`，但结果由旧verifier 的笼统 0/5 细化为 4/8：颜色和隐藏 caption 已满足，标题强调、caption 层级、全局总量和资源表仍不符合目标设计稿。Kimi K3 在接口修复后产生了三条无基础设施异常的有效作答，均为 `reward=0`；其中一条通过 5/8 测试，但仍未满足标题强调、全局总量和选择详情。Codex 完整回放见
+[语义重写审计](evidence/case_outputs/googlechrome__lighthouse-16403/11_verifier_semantic_rewrite/01_summary.json)，K3 的一条典型失败可在
+[Harbor Hub 查看完整轨迹](https://hub.harborframework.com/jobs/9eebe5f8-b24d-4c45-9cdc-a3a782445270)。
 
 **Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 均为 `reward=0`，成功 `0/5`，因此
 Pass@5=`0`。其中一条的 verifier 未观察到必需测试（`required_test_not_observed`），经人工核对是
 模型改动本身导致目标测试无法判定，因此仍按模型失败计入。
-共同失败发现，模型能复现大体布局，但没有同时满足图片中的全部视觉层级和既有交互语义，这与多能力组合题的预期难度一致。例如模型普遍能够识别题目要求对 Treemap 进行整体视觉重构，并成功去除冗余 caption、调整部分颜色及选中项展示，但没有稳定还原目标设计的完整信息层级：五次实现均未正确强化页面标题；多次未能区分 bundle 名称与指标的视觉权重，或未充分拉开父子节点的颜色层级；
-Codex 运行
-[汇总](evidence/case_outputs/googlechrome__lighthouse-16403/15_current_pass5/codex-luna-max/10_codex_pass5_01/result.json)与
+共同失败发现，模型能复现大体布局，但没有同时满足图片中的全部视觉层级和既有交互语义，这与多能力组合题的预期难度一致。例如模型普遍能够识别题目要求对 Treemap 进行整体视觉重构，并成功去除冗余 caption、调整部分颜色及选中项展示，但没有稳定还原目标设计的完整信息层级：五次实现均未正确强化页面标题；多次未能区分 bundle 名称与指标的视觉权重，或未充分拉开父子节点的颜色层级。完整结果见 Codex 运行
+[汇总](evidence/case_outputs/googlechrome__lighthouse-16403/15_current_pass5/codex-luna-max/10_codex_pass5_01/result.json)；其中一条无基础设施异常、4/8 测试通过的典型失败可在
+[Harbor Hub 查看完整轨迹](https://hub.harborframework.com/jobs/43923db0-9b7b-41c0-9c6b-cccb9c228636)。
+
+
+**两个模型的错误 Trace 分析：** 整体看，本题中两个模型都理解了视觉改造方向，但后续犯错位置不同：
+
+GPT 更常见的是：快速定位 Treemap 组件和需要重构的区域，但没有先把设计稿中的全部视觉要求整理成验收清单，进入实现后遗漏了部分视觉层级和原有功能。
+
+Kimi K3 更常见的是：在一开始更多去进行更细致的截图对比、颜色采样和像素分析，视觉还原相对完整；但过度关注静态外观，没有充分验证选中状态、全局总量等原有交互和信息是否保留。
+
+| 对比维度 | GPT-5.6 Luna Max | Kimi K3 |
+|---|---|---|
+| 需求理解 | 正确识别为布局、颜色和信息层级的整体重构 | 目标图明确时，能够较准确理解视觉要求 |
+| 实现方式 | 较快进入结构和样式修改，缺少完整约束清单 | 反复截图、采样颜色并进行像素级调整 |
+| 视觉表现 | 能复现大体布局，但容易遗漏标题强调和局部视觉层级 | 视觉还原相对完整，主要遗漏标题强调 |
+| 常见错误 | 视觉要求没有全部完成，同时可能破坏资源表等原有功能 | 将截图接近视为完成，没有充分检查交互状态和信息保持 |
+| 自我验证 | 验证范围较窄，未覆盖全部视觉和回归要求 | 静态视觉验证充分，但状态切换和回归验证不足 |
+| 一句话总结 | **方向正确，但实现和验收都不够完整** | **视觉还原较好，但功能回归检查不足** |
 
 
 运行入口：
@@ -621,14 +638,31 @@ Codex 保存 patch 每组只剩一个色点，因此会先在数量断言失败�
 
 **Pass@1 分析。** GPT-5.6 Luna Max 与 Kimi K3 的单次作答按人工校准后的当前 verifier 回放均为`0`。Codex 隐藏了一枚低对比色点；K3 保留了两枚色点，但最低填充色对背景的对比度仍低于 `2:1`。
 两者都是验收语义未满足，而不是 verifier 对实现文件或源码形状的误判。
-见[当前复核](evidence/case_outputs/automattic__wp-calypso-100957/14_contrast_verifier_v4/14_02_validation_summary.json)。
+见[当前复核](evidence/case_outputs/automattic__wp-calypso-100957/14_contrast_verifier_v4/14_02_validation_summary.json)；K3 的一条原始失败运行可在
+[Harbor Hub 查看完整轨迹](https://hub.harborframework.com/jobs/666a6429-0f7e-4eb9-9ddc-65203c683d80)。
 
 **Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 均为 `reward=0`，成功 `0/5`，因此Pass@5=`0`。
 五次都保持两条 P2P 通过，但两条 F2P 全部失败，说明失败不来自测试环境或无关回归。
 模型反复把“对比度”理解成文字可读性或候选过滤：两次只替换低对比的 `Aa` 文字颜色，一次给低对比
 色点加轮廓，一次省略低对比色点，一次过滤整个 style variation。整体非常神奇，发现模型在这个case上普遍存在偷懒情况，题目要求提高点的对比度，要不然看不清，模型做法要不然是只保留一个高对比度点，要不然是直接把低对比度的卡片删除。
-五次的逐项结果均为 2 F2P fail、2 P2P pass，代表性
-[测试结果](evidence/case_outputs/automattic__wp-calypso-100957/15_current_pass5/codex-luna-max/10_codex_trial_06/d6aa96660fc6bf1759626c357c9fbb6d__SnWjuAG/verifier/test_results.json)。运行入口：
+五次的逐项结果均为 2 F2P fail、2 P2P pass。代表性失败的
+[测试结果](evidence/case_outputs/automattic__wp-calypso-100957/15_current_pass5/codex-luna-max/10_codex_trial_06/d6aa96660fc6bf1759626c357c9fbb6d__SnWjuAG/verifier/test_results.json)
+保留在仓库内，其完整轨迹也可在 [Harbor Hub 查看](https://hub.harborframework.com/jobs/a3a85a43-abd9-4fac-8144-031c69f55d06)。
+
+**两个模型的错误Trace分析：**
+整体看，二者犯错位置不同：
+GPT 更常见的是：倾向先定位截图对应的组件和代码，再确定修改区域。目标基本找对了，但采用捷径，或者只完成了因果链的一部分。
+Kimi K3 更常见的是：倾向快速把现象归入熟悉的问题类型，但是错误的，然后非常认真地完成了这个错误目标。
+
+| 对比维度 | GPT-5.6 Luna Max | Kimi K3 |
+|---|---|---|
+| 需求理解 | 通常能找到正确目标 | 容易把视觉需求重新解释成熟悉的问题 |
+| 实现方式 | 偏向最短路径，容易采用隐藏、过滤等捷径 | 偏向深入探索，但可能沿错误方向持续实现 |
+| 常见错误 | 漏掉约束，或只完成因果链的一部分 | 目标发生偏移，正确完成了错误任务 |
+| 自我验证 | 验证范围偏窄，难以发现遗漏 | 验证很充分，但可能验证的是错误目标 |
+| 一句话总结 | **方向通常正确，但容易没做完整** | **实现可能很完整，但方向容易出错** |
+
+运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。
@@ -702,7 +736,9 @@ scoped P2P 同时确认 accordion 外的 `.link-button` 没有被连带改色，
 **Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 均为 `reward=1`，成功 `5/5`，因此
 Pass@5=`1`。五次独立实现都通过最终 computed color、作用域保护和仓库既有行为测试；结果同时说明
 校准后的 judge 接受修复写在不同参与 cascade 的生产 SCSS 中，没有再把 Gold 所在文件误当成唯一
-答案。第五条 [Harbor 汇总](evidence/case_outputs/automattic__wp-calypso-99049/15_current_pass5/codex-luna-max/10_codex_trial_06/result.json)。运行入口：
+答案。第五条 [Harbor 汇总](evidence/case_outputs/automattic__wp-calypso-99049/15_current_pass5/codex-luna-max/10_codex_trial_06/result.json)。
+
+运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。
@@ -769,7 +805,9 @@ harbor run -c cases/automattic__wp-calypso-99049/outputs/06_freeze/codex-luna-ma
 
 **Pass@5 与失败分析。** GPT-5.6 Luna Max 已完成五条有效 trial，五条均为 `reward=1`，本题 Pass@5 已确定为 `1`。五个 patch 均成功通过平滑度、节点侧边位置、不进入
 节点内部以及 17 条 P2P；这表明当前 judge 接受不同 SVG 路径实现，而不是只匹配修正 Gold。
-五条各自独立运行，其中一条的 [Harbor 汇总](evidence/case_outputs/mermaid-js__mermaid-7711/15_current_pass5/codex-luna-max/10_codex_trial_05/result.json)。运行入口：
+五条各自独立运行，其中一条的 [Harbor 汇总](evidence/case_outputs/mermaid-js__mermaid-7711/15_current_pass5/codex-luna-max/10_codex_trial_05/result.json)。
+
+运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。
@@ -831,10 +869,11 @@ FFmpeg 版本一并绑定（见[附录 B](docs/pipeline_internals.md)）；解�
 [测试记录](evidence/case_outputs/excalidraw__excalidraw-9002/10_pass1/codex-luna-max/excalidraw__excalidraw-9002-codex-luna-max-pass1/0615fa53627c6591a0cb65fd48c2760d__hHqJD8u/verifier/test_results.json)。
 
 **Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 中四条 `reward=1`、一条 `reward=0`，
-成功 `4/5`，因此 Pass@5=`1`。唯一失败的 patch 正确发现 bound label 版本变化没有使 arrow bounds
-cache 失效，并把 label version 加入缓存键；但它只让 bounds 重新计算，没有触发绑定 elbow arrow
-端点与正交路径的实际重算。P2P 的独立文本缩放仍通过，而 F2P 观测到端点误差为 `5.5`，超过1的几何容差，因此这是模型的近失误而非 judge 误杀。失败
-[测试结果](evidence/case_outputs/excalidraw__excalidraw-9002/15_current_pass5/codex-luna-max/10_codex_trial_05/03e6b516aa5ce4acd4347fc8896def2d__qeufqfa/verifier/test_results.json)。运行入口：
+成功 `4/5`，因此 Pass@5=`1`。唯一失败的 patch 正确发现 bound label 版本变化没有使 arrow bounds cache 失效，并把 label version 加入缓存键；但它只让 bounds 重新计算，没有触发绑定 elbow arrow 端点与正交路径的实际重算。P2P 的独立文本缩放仍通过，而 F2P 观测到端点误差为 `5.5`，超过1的几何容差，因此这是模型的近失误而非 judge 误杀。
+失败[测试结果](evidence/case_outputs/excalidraw__excalidraw-9002/15_current_pass5/codex-luna-max/10_codex_trial_05/03e6b516aa5ce4acd4347fc8896def2d__qeufqfa/verifier/test_results.json)
+保留在仓库内，其完整轨迹也可在 [Harbor Hub 查看](https://hub.harborframework.com/jobs/32191cc1-7baf-4707-a34f-9329ee46dd3b)。
+
+运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。
