@@ -179,7 +179,7 @@ trial 的 task container 必须断网，agent 只通模型/鉴权端点；发往
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=code \
-  python3 report/test.py --evidence
+  .runtime/venv/bin/python test.py --evidence
 
 python3 run.py audit-completion \
   --packet evidence/completion_packet.json \

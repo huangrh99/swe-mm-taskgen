@@ -18,7 +18,7 @@ from report_pipeline.paths import WORKSPACE_ROOT
 
 ROOT = WORKSPACE_ROOT
 PROFILES = {
-    'k3': {'protocol': 'responses', 'endpoint': 'https://ark-cn-beijing.bytedance.net/api/v3',
+    'k3': {'protocol': 'responses', 'endpoint': 'https://ark-gateway.invalid/api/v3',
            'model': 'ep-20260817150115-9fx8h', 'key_name': 'ARK_API_KEY', 'key_file': 'kimi_key_env.sh'},
     'gemini': {'protocol': 'chat', 'endpoint': 'https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl',
                'model': 'gemini-3.7-flash', 'api_version': '2024-03-01-preview',

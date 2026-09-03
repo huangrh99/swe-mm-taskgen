@@ -32,11 +32,11 @@ class TrialSecurityWorkflowTest(unittest.TestCase):
             "name": "kimi-code", "model_name": "ep-20260817150115-9fx8h",
             "n_concurrent": 1, "override_timeout_sec": 7200,
             "override_setup_timeout_sec": 1800,
-            "extra_allowed_hosts": ["ark-cn-beijing.bytedance.net"],
+            "extra_allowed_hosts": ["ark-gateway.invalid"],
             "kwargs": {"version": "0.29.0"},
             "env": {
                 "KIMI_MODEL_API_KEY": "${ARK_API_KEY}",
-                "KIMI_MODEL_BASE_URL": "https://ark-cn-beijing.bytedance.net/api/v3",
+                "KIMI_MODEL_BASE_URL": "https://ark-gateway.invalid/api/v3",
                 "KIMI_MODEL_MAX_CONTEXT_SIZE": "1048576",
                 "KIMI_MODEL_MAX_COMPLETION_TOKENS": "+131072",
                 "KIMI_MODEL_CAPABILITIES": "image_in,thinking",
@@ -60,7 +60,7 @@ class TrialSecurityWorkflowTest(unittest.TestCase):
             "model_id": "ep-20260817150115-9fx8h",
             "expected_test_ids": ["f", "p"],
             "network_policy": {"environment_hosts": [],
-                               "agent_hosts": ["ark-cn-beijing.bytedance.net"]},
+                               "agent_hosts": ["ark-gateway.invalid"]},
             "harbor_job_config": self._binding(path),
         }
         return config, source

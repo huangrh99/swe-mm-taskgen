@@ -49,8 +49,8 @@ class WorkflowTests(unittest.TestCase):
             "agent_version": "0.29.0",
             "provider_profile": {
                 "protocol": "responses",
-                "base_url": "https://ark-cn-beijing.bytedance.net/api/v3",
-                "allowed_host": "ark-cn-beijing.bytedance.net",
+                "base_url": "https://ark-gateway.invalid/api/v3",
+                "allowed_host": "ark-gateway.invalid",
                 "credential_env": "ARK_API_KEY",
                 "capabilities": ["image_in", "thinking"],
             },
@@ -63,7 +63,7 @@ class WorkflowTests(unittest.TestCase):
                 "setup_timeout_sec": 1800,
             },
             "network_policy": {"environment_hosts": [],
-                               "agent_hosts": ["ark-cn-beijing.bytedance.net"]},
+                               "agent_hosts": ["ark-gateway.invalid"]},
             "tool_policy": json.loads(json.dumps(OFFICIAL_K3_TOOL_POLICY)),
         }
         _require_official_k3_config(value)
@@ -202,8 +202,8 @@ class WorkflowTests(unittest.TestCase):
             "model_id": "mock-model", "agent": "mock-agent", "agent_version": "1.0",
             "provider_profile": {
                 "protocol": "responses",
-                "base_url": "https://ark-cn-beijing.bytedance.net/api/v3",
-                "allowed_host": "ark-cn-beijing.bytedance.net",
+                "base_url": "https://ark-gateway.invalid/api/v3",
+                "allowed_host": "ark-gateway.invalid",
                 "credential_env": "ARK_API_KEY",
                 "capabilities": ["image_in", "thinking"],
             },
@@ -297,11 +297,11 @@ class WorkflowTests(unittest.TestCase):
                 "name": "kimi-code", "model_name": "ep-20260817150115-9fx8h",
                 "n_concurrent": 2, "override_timeout_sec": 7200,
                 "override_setup_timeout_sec": 1800,
-                "extra_allowed_hosts": ["ark-cn-beijing.bytedance.net"],
+                "extra_allowed_hosts": ["ark-gateway.invalid"],
                 "kwargs": {"version": "0.29.0"},
                 "env": {
                     "KIMI_MODEL_API_KEY": "${ARK_API_KEY}",
-                    "KIMI_MODEL_BASE_URL": "https://ark-cn-beijing.bytedance.net/api/v3",
+                    "KIMI_MODEL_BASE_URL": "https://ark-gateway.invalid/api/v3",
                     "KIMI_MODEL_MAX_CONTEXT_SIZE": "1048576",
                     "KIMI_MODEL_MAX_COMPLETION_TOKENS": "+131072",
                     "KIMI_MODEL_CAPABILITIES": "image_in,thinking",
@@ -319,8 +319,8 @@ class WorkflowTests(unittest.TestCase):
             "harbor_job_config": self._binding(job),
             "provider_profile": {
                 "protocol": "responses",
-                "base_url": "https://ark-cn-beijing.bytedance.net/api/v3",
-                "allowed_host": "ark-cn-beijing.bytedance.net",
+                "base_url": "https://ark-gateway.invalid/api/v3",
+                "allowed_host": "ark-gateway.invalid",
                 "credential_env": "ARK_API_KEY",
                 "capabilities": ["image_in", "thinking"],
             },
@@ -330,7 +330,7 @@ class WorkflowTests(unittest.TestCase):
                 "timeout_sec": 7200, "setup_timeout_sec": 1800,
             },
             "network_policy": {"environment_hosts": [],
-                               "agent_hosts": ["ark-cn-beijing.bytedance.net"]},
+                               "agent_hosts": ["ark-gateway.invalid"]},
             "tool_policy": json.loads(json.dumps(OFFICIAL_K3_TOOL_POLICY)),
         })
         return config, job

@@ -76,8 +76,8 @@ OFFICIAL_K3_AGENT = "kimi-code"
 OFFICIAL_K3_AGENT_VERSION = "0.29.0"
 OFFICIAL_K3_PROVIDER_PROFILE = {
     "protocol": "responses",
-    "base_url": "https://ark-cn-beijing.bytedance.net/api/v3",
-    "allowed_host": "ark-cn-beijing.bytedance.net",
+    "base_url": "https://ark-gateway.invalid/api/v3",
+    "allowed_host": "ark-gateway.invalid",
     "credential_env": "ARK_API_KEY",
     "capabilities": ["image_in", "thinking"],
 }

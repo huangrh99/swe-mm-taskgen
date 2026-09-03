@@ -35,7 +35,7 @@ def _identity(result: dict[str, Any]) -> tuple[str | None, str | None]:
 
 
 _MODEL_HOSTS = {
-    "kimi-code": ("ark-cn-beijing.bytedance.net",),
+    "kimi-code": ("ark-gateway.invalid",),
     "codex": ("api.openai.com", "auth.openai.com", "chatgpt.com"),
 }
 

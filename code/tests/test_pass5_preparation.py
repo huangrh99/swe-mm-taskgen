@@ -91,7 +91,7 @@ class Pass5PreparationTests(unittest.TestCase):
         kimi = json.loads(
             (output / "kimi-k3/pass5_job.pending.json").read_text()
         )["agents"][0]
-        self.assertEqual(kimi["extra_allowed_hosts"], ["ark-cn-beijing.bytedance.net"])
+        self.assertEqual(kimi["extra_allowed_hosts"], ["ark-gateway.invalid"])
         self.assertEqual(kimi["env"]["KIMI_MODEL_MAX_CONTEXT_SIZE"], "1048576")
         self.assertEqual(kimi["env"]["KIMI_MODEL_MAX_COMPLETION_TOKENS"], "+131072")
 

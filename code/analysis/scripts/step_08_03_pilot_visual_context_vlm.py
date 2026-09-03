@@ -24,8 +24,8 @@ from pr_crawler.assets import bounded_download
 
 BASE = ROOT / 'crawler-output/multimodal-2025/image-screening'
 SOURCE = BASE / '06_merged_default_branch_images/06_prs_with_non_badge_images_merged_to_default_branch.jsonl'
-PROMPT = ROOT / 'analysis/prompts/08_01_visual_context_screening.system.md'
-SCHEMA = ROOT / 'analysis/prompts/08_02_visual_context_screening.schema.json'
+PROMPT = CODE_ROOT / 'analysis/prompts/08_01_visual_context_screening.system.md'
+SCHEMA = CODE_ROOT / 'analysis/prompts/08_02_visual_context_screening.schema.json'
 TMP = ROOT / 'tmp/multimodal-2025/05_vlm_screening'
 CACHE = ROOT / 'tmp/multimodal-2025/03_image_sample_preview/downloads'
 DEFAULT_PRS = ['chartjs/chart.js#11984', 'grommet/grommet#7655', 'eslint/eslint#20010',

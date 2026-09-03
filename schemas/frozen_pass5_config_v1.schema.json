@@ -17,8 +17,8 @@
           "required": ["protocol", "base_url", "allowed_host", "credential_env", "capabilities"],
           "properties": {
             "protocol": {"const": "responses"},
-            "base_url": {"const": "https://ark-cn-beijing.bytedance.net/api/v3"},
-            "allowed_host": {"const": "ark-cn-beijing.bytedance.net"},
+            "base_url": {"const": "https://ark-gateway.invalid/api/v3"},
+            "allowed_host": {"const": "ark-gateway.invalid"},
             "credential_env": {"const": "ARK_API_KEY"},
             "capabilities": {"const": ["image_in", "thinking"]}
           }
@@ -92,7 +92,7 @@
           "network_policy": {
             "properties": {
               "environment_hosts": {"const": []},
-              "agent_hosts": {"const": ["ark-cn-beijing.bytedance.net"]}
+              "agent_hosts": {"const": ["ark-gateway.invalid"]}
             }
           },
           "tool_policy": {"const": {

@@ -395,13 +395,12 @@ DOM 层级、函数名、常量和文件组织都不是正确性定义，结构�
 包装成模型失败。一次 Pass@5 只要五条有效 trial 中至少一条 `reward=1` 即记为通过；成功次数仍
 保留五次中实际成功的条数，用于观察稳定性。
 
-Pass@5 目前只对 GPT-5.6 Luna Max 逐题执行。Kimi K3 有三题产生了有效的 Pass@1 结果、其余三题为
-基础设施无效，但受 API 调用速度限制还没有产生有效的 Pass@5 trial，因此各卡片不报告它的 Pass@5。
+Pass@5 目前只对 GPT-5.6 Luna Max 逐题执行。Kimi K3 有三题产生了有效的 Pass@1 结果、其余三题为基础设施无效，但受 API 调用速度限制还没有产生有效的 Pass@5 trial，因此各卡片不报告它的 Pass@5。
 
 | 模型 | Pass@1 运行过的题 / 成功 | Pass@5 有效 / 成功 |  Pass@5 |
 | --- | ---: | ---: | --- |
-| GPT-5.6 Luna Max | `6 / 4` | `27 / 18` | 66.7% |
-| Kimi K3 | `3 / 2` | `0 / 0` | - |
+| GPT-5.6 Luna Max | `6 / 4` | `30 / 20` | 66.7% |
+| Kimi K3 | `3 / 2` | -  | - |
 
 ### 2.3 `bpmn-io__bpmn-js-2396`
 
@@ -519,7 +518,9 @@ Treemap 与列表的左右分栏、bundle 内不同深度的同主题色变化�
 **Pass@1 分析。** GPT-5.6 Luna Max 的单次作答按修正后的语义 verifier 回放仍为 `0`，但结果由旧verifier 的笼统 0/5 细化为 4/8：颜色和隐藏 caption 已满足，标题强调、caption 层级、全局总量和资源表仍不符合目标设计稿。Kimi K3 的对应运行没有形成有效模型 trial。完整回放见
 [语义重写审计](evidence/case_outputs/googlechrome__lighthouse-16403/11_verifier_semantic_rewrite/01_summary.json)。
 
-**Pass@5 与失败分析。** GPT-5.6 Luna Max 在 Lighthouse 16403 上五次均未通过，Pass@5=0。
+**Pass@5 与失败分析。** GPT-5.6 Luna Max 的五条有效 trial 均为 `reward=0`，成功 `0/5`，因此
+Pass@5=`0`。其中一条的 verifier 未观察到必需测试（`required_test_not_observed`），经人工核对是
+模型改动本身导致目标测试无法判定，因此仍按模型失败计入。
 共同失败发现，模型能复现大体布局，但没有同时满足图片中的全部视觉层级和既有交互语义，这与多能力组合题的预期难度一致。例如模型普遍能够识别题目要求对 Treemap 进行整体视觉重构，并成功去除冗余 caption、调整部分颜色及选中项展示，但没有稳定还原目标设计的完整信息层级：五次实现均未正确强化页面标题；多次未能区分 bundle 名称与指标的视觉权重，或未充分拉开父子节点的颜色层级；
 Codex 运行
 [汇总](evidence/case_outputs/googlechrome__lighthouse-16403/15_current_pass5/codex-luna-max/10_codex_pass5_01/result.json)与
@@ -766,10 +767,9 @@ harbor run -c cases/automattic__wp-calypso-99049/outputs/06_freeze/codex-luna-ma
 参考代码形状。Kimi K3 那次记录虽曾留下 `reward=1`，同一 Harbor trial 含 API 限流异常，因此不计
 有效 Pass@1。回放证据见[当前验证摘要](evidence/case_outputs/mermaid-js__mermaid-7711/13_gold_v3_validation/00_summary.json)。
 
-**Pass@5 与失败分析。** GPT-5.6 Luna Max 已完成四条有效 trial，四条均为 `reward=1`，所以即使
-最后一条仍在运行，本题 Pass@5 已确定为 `1`。四个成功 patch 均通过平滑度、节点侧边位置、不进入
+**Pass@5 与失败分析。** GPT-5.6 Luna Max 已完成五条有效 trial，五条均为 `reward=1`，本题 Pass@5 已确定为 `1`。五个 patch 均成功通过平滑度、节点侧边位置、不进入
 节点内部以及 17 条 P2P；这表明当前 judge 接受不同 SVG 路径实现，而不是只匹配修正 Gold。
-已完成的第四条 [Harbor 汇总](evidence/case_outputs/mermaid-js__mermaid-7711/15_current_pass5/codex-luna-max/10_codex_trial_05/result.json)。运行入口：
+五条各自独立运行，其中一条的 [Harbor 汇总](evidence/case_outputs/mermaid-js__mermaid-7711/15_current_pass5/codex-luna-max/10_codex_trial_05/result.json)。运行入口：
 
 ```bash
 # 1. Oracle：应用 gold solution 后执行测试；该题应得到 reward=1。
@@ -901,6 +901,23 @@ release 文档统一使用 `harbor run`，不暴露作者机器上的虚拟环�
 `requirements.txt` 与 `reproducibility/03_harbor_python.lock.txt` 固定；执行前应确认
 `harbor --version` 为 `0.22.0`。Python CLI 只负责构造、冻结与审计配置，不包装或代替 Harbor
 的执行生命周期。
+
+**从零启动。** `.runtime/` 不随仓库提交，克隆后需要自行创建；正式测试套件绑定仓库内的解释器
+路径，不接受系统 `python3`：
+
+```bash
+python3.12 -m venv .runtime/venv
+.runtime/venv/bin/python -m pip install -r requirements.txt
+mkdir -p .runtime/tmp
+
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=code \
+  .runtime/venv/bin/python test.py
+```
+
+Python 不能低于 `3.12`（见 `.python-version`），否则 `harbor==0.22.0` 无法解析。`test.py` 会
+检查解释器恰好是 `.runtime/venv/bin/python`、且 `PYTHONDONTWRITEBYTECODE=1` 与
+`PYTHONPATH=code` 均已设置，任一项不满足即拒绝运行；`.runtime/tmp` 必须预先存在，它是测试
+临时目录的父路径。
 
 **没有任何遗留的模型调用命令暴露在正式 CLI 中。** 编码 trial 使用 Harbor 自带的 agent 与生命
 周期。内部 endpoint 只通过一层薄 provider 配置接入：模型名、协议兼容的 base URL、凭据环境变量、

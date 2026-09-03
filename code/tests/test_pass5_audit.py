@@ -150,7 +150,7 @@ class Pass5AuditTest(unittest.TestCase):
             root = Path(raw); job = root / "job"
             self._trial(job, "task__safe", reward=1.0, tool_calls=[
                 ("Bash", {
-                    "command": "curl https://ark-cn-beijing.bytedance.net/api/v3/chat/completions",
+                    "command": "curl https://ark-gateway.invalid/api/v3/chat/completions",
                 }),
             ])
             value = run([job], root / "audit",
