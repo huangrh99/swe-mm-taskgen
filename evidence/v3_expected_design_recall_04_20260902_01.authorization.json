@@ -1,0 +1,77 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_text_only_verifier/20260902_expected_design_recall_04/20260902T152500874726Z",
+  "source_manifest_sha256": "8cdde9e79596f1c5e18e2937c2f9f0a69038e8d9cce09e6fca5fe3e6b32a9ddd",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "c2a003a53ce0ae30279373c5482d748f9bf969bd90308cbf4838fd1fd6d5f565",
+  "run_id": "v3_expected_design_recall_04_20260902_01",
+  "nonce": "expected-design-recall-04-20260902-01",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_expected_design_recall_04_run",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "mermaid-js__mermaid-7147",
+      "source_result_sha256": "d4818152c81619d7800125370b8ff6edcc8445e4a9217610c1a8c907bf3bd390",
+      "source_packet_sha256": "bea2ff827ca959c1295b5082401ea8affd7158227ba3473f0285f1397bc4835d",
+      "source_archive_sha256": "ee3653587c9b37975b6f1637bd212106e3da77f5ff8804b8c05c83a5e3f0433a",
+      "problem_statement_sha256": "264f06be9f30b9f3f4c564f07b7187ce1b922a60903d3951ebfced2ade92713b",
+      "available_asset_ids": [
+        "beac663aa08d1be82ef922ca200f74816575a861a51db57de36ae244053750ca"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "daa9258b3581a3b9b49904a47bd82797327daee3ba0c8e6b28748f7fd63fe90b"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6590",
+      "source_result_sha256": "304a931d702f6d9f74df2d912055d9ba5755e9c27d1e71796e120bf26b1b27df",
+      "source_packet_sha256": "12cdb697e2f68bbd04b0d817dda8f0f163554e6657c12d383823b74021562eef",
+      "source_archive_sha256": "25f8f097607daf06705f3c314e4a67fee7e91951741a8cd934e37d4a59cd5222",
+      "problem_statement_sha256": "db55358a9dc355ba7378449bee647255ca886d643e2d6a72e4904c888dfa4b73",
+      "available_asset_ids": [
+        "6dd1b7feebedf65fb51b32be9f7fe31f531d9704930061b5ee6c1e3bab6a424c",
+        "32881d0ba6a332e8d37921fd564a73af8a82fbb958f7e919eb5e3e2a937b56a3"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "cee63e8783f0b612d437c2b5321585db1de646ad19500ced3213254c9d824ea8"
+    }
+  ],
+  "expected_case_calls": 2,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 12,
+  "authorized": true
+}

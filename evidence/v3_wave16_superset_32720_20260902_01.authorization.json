@@ -1,0 +1,62 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave16_superset_32720_text_01/20260902T135258836186Z",
+  "source_manifest_sha256": "4095f9e9059a1e0d851c0859eebe2f0d45ee160e8d61a3f0f0ca7bbadaddf3f5",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "6ae4480437a8863bbcdd456c208bd3185302fa97e777f586ec10b6953bc155b9",
+  "run_id": "20260902-wave16-superset-32720-01",
+  "nonce": "fd07c339-8184-46e4-a04e-d325c7507cab",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave16_superset_32720_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "apache__superset-32720",
+      "source_result_sha256": "33e6f14d14dec35cb3fbc0799afe88abfc3bf9a3a4055d7493522d86ee377301",
+      "source_packet_sha256": "90a7c9f8eeddc0f0113337d48e0ed7a60cf3c81fd36fbd0794a47ae3c4a65013",
+      "source_archive_sha256": "d9bb793139090cc338799823c9c5f2fcd89c51eb17f37b7c32fa45c7f8f81190",
+      "problem_statement_sha256": "b7fbd31e289788d2fde64401bcf29360c7f3db3d07d4c32fe07da8b7492270b6",
+      "available_asset_ids": [
+        "85155a5b9fc7f536aa0b69bbfe64e141c47ad1e8dd3f126eea1d07ed7f089c24"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "1055ab4c1d16fcfb0b4eceee68dda48138cdfd895e9db7a871f483f8be077633"
+    }
+  ],
+  "expected_case_calls": 1,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 6,
+  "authorized": true
+}

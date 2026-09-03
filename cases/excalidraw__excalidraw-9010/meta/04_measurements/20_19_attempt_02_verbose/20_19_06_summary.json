@@ -1,0 +1,66 @@
+{
+  "schema_version": "v4-provisional-base-gold-measurement-v1",
+  "created_at": "2026-09-02T20:39:32.723832+00:00",
+  "campaign": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_campaign_snapshot_01/20_17_08_summary.json",
+    "sha256": "1142a31d8daf8415d924bd063819df3880857f67a6d6696b572bcede14a6019a",
+    "size_bytes": 892
+  },
+  "counts": {
+    "measured_provisional": 1
+  },
+  "records": [
+    {
+      "case_id": "excalidraw__excalidraw-9010",
+      "repository": "excalidraw/excalidraw",
+      "status": "measured_provisional",
+      "failure_ledger": null,
+      "inputs": {
+        "packet": {
+          "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_campaign_snapshot_01/20_17_02_model_runs/excalidraw__excalidraw-9010/20_17_01_packet.json",
+          "sha256": "584e98d8b349282351c0c54a3dae27dc6e4caaf52c2c15e861745d3496cfacb7",
+          "size_bytes": 23477
+        },
+        "model_result": {
+          "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_campaign_snapshot_01/20_17_02_model_runs/excalidraw__excalidraw-9010/20_17_06_final.json",
+          "sha256": "1c7b625659898f4caf47eb5db340b04e9f47ceda6f9ca08b14b17aca4d43ed26",
+          "size_bytes": 8146
+        }
+      },
+      "measurement_input": {
+        "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_docker_measurement_02/20_19_01_case_runs/excalidraw__excalidraw-9010/20_19_01_measurement_input.json",
+        "sha256": "7d8b2e35fbcff50c34de7889006e35af192b16062ef603de785c3066b55246dd",
+        "size_bytes": 5691
+      },
+      "base_run": {
+        "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_docker_measurement_02/20_19_01_case_runs/excalidraw__excalidraw-9010/20_19_04_base_run.json",
+        "sha256": "6316e9e5f8f297e6c904a304476a8f97b232994dd2d06460bcf52a711dd2318b",
+        "size_bytes": 2154
+      },
+      "gold_run": {
+        "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_docker_measurement_02/20_19_01_case_runs/excalidraw__excalidraw-9010/20_19_04_gold_run.json",
+        "sha256": "3e1819b95b5abe020570b81556669b503a272fdbaa3b2a7dead74427e2bf1e9e",
+        "size_bytes": 2153
+      },
+      "transitions": [
+        {
+          "test_id": "excalidraw-9010-endpoint-stability",
+          "base_status": "pass",
+          "gold_status": "pass",
+          "classification": "provisional_p2p"
+        }
+      ],
+      "provisional_FAIL_TO_PASS": [],
+      "provisional_PASS_TO_PASS": [
+        "excalidraw-9010-endpoint-stability"
+      ],
+      "unresolved": [],
+      "result": {
+        "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_docker_measurement_02/20_19_01_case_runs/excalidraw__excalidraw-9010/20_19_05_transitions.json",
+        "sha256": "ecb90e52e2b685de5472d2f014685118c8f27ab3b75ac2b46f6237cef2a774bb",
+        "size_bytes": 2177
+      }
+    }
+  ],
+  "boundary": "provisional measurement only; no human test approval, frozen task, or Harbor admission is implied"
+}

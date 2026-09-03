@@ -1,0 +1,79 @@
+<!doctype html><meta charset=utf-8><title>20_11 test coverage verifier</title>
+<style>body{font:13px/1.45 system-ui;margin:18px;color:#202124;background:#f6f7f8}main{max-width:1280px;margin:auto}section,.card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;padding:6px;text-align:left;vertical-align:top}pre{white-space:pre-wrap;max-height:420px;overflow:auto}.warn{color:#9a6700}</style>
+<main><h1>bpmn-io__bpmn-js-2396 · F2P/P2P 覆盖补全 Verifier</h1>
+<div class=card><b>结论：</b>no_additional_tests_needed<br>
+<b>已有实测：</b>2 F2P · 72 P2P，前后各 3 次<br>
+<span class=warn>模型只提出覆盖与测试补全建议；新增测试的 F2P/P2P 必须重新实测。正确性按功能行为，不按 gold 代码文本。</span></div>
+<section><h2>实现无关的行为契约</h2><table><tr><th>约束</th><th>可观察契约</th></tr><tr><td>constraint_001</td><td>When connecting a sequence flow from a corner-attached boundary event to a strictly axis-aligned target element (e.g. directly below or directly to the right), the sequence flow must form a direct straight connection between the boundary event edge and the target element edge, without inserting extraneous interior waypoints or routing into the element interior.</td></tr></table>
+<p><b>必须保持：</b>Sequence flow layout for boundary events attached to side centers of host activities remains unchanged.；Sequence flow layout for corner boundary events connecting to non-axis-aligned targets (requiring bendpoints) remains unchanged.；Self-loop routing and gateway docking rules remain unchanged.</p>
+<p><b>允许的实现差异：</b>Different layouter orientation helper structures, vector comparisons, or geometric condition checks that identify strictly axis-aligned target orientations for corner boundary events and output a straight 2-point waypoint line (&#x27;v&#x27; or &#x27;h&#x27;) are valid.</p></section>
+<section><h2>逐约束覆盖</h2><table><tr><th>约束</th><th>覆盖</th><th>当前断言</th><th>理由</th></tr><tr><td>constraint_001</td><td>直接覆盖</td><td>Verifies that connecting a corner boundary event to vertically and horizontally axis-aligned target tasks results in exact two-point straight waypoints ([{x: 909, y: 407}, {x: 909, y: 480}] and [{x: 927, y: 109}, {x: 1000, y: 109}]) without extra waypoints.</td><td>The existing suite already contains dedicated unit tests in LayoutSequenceFlowSpec.js asserting the exact waypoint coordinates for both vertical and horizontal axis-aligned corner boundary event connections, directly verifying constraint_001.</td></tr></table></section>
+<section><h2>Oracle-quality validation 计划</h2>
+<p class=warn>proposed_not_executed；仅供构造与审计，不暴露给 solver，未执行不得视为通过。</p>
+<table><tr><th>错误/不完整变体</th><th>应暴露的问题</th><th>应失败 test ID</th></tr><tr><td>neg_ignore_axis_aligned_vertical_target</td><td>Omits the verticalTargetOrientation check, causing vertical axis-aligned corner boundary connections to fall back to corner-axis comparison and produce invalid 3-point routes.</td><td>[[&quot;features/modeling - layout&quot;,&quot;boundary events&quot;,&quot;non-loops&quot;],&quot;should layout straight for axis-aligned corner boundary event&quot;]</td></tr><tr><td>neg_ignore_axis_aligned_horizontal_target</td><td>Omits the horizontalTargetOrientation check, causing horizontal axis-aligned corner boundary connections to generate unwanted interior waypoints.</td><td>[[&quot;features/modeling - layout&quot;,&quot;boundary events&quot;,&quot;non-loops&quot;],&quot;should layout straight for horizontally axis-aligned corner boundary event&quot;]</td></tr></table>
+<p><b>等价正确实现：</b>An implementation that uses bounding-box center alignment checks instead of orientation string splitting to determine whether target is strictly axis-aligned before selecting &#x27;v&#x27; or &#x27;h&#x27; layout.<br>
+<b>应通过：</b>[[&quot;features/modeling - layout&quot;,&quot;boundary events&quot;,&quot;non-loops&quot;],&quot;should layout straight for axis-aligned corner boundary event&quot;], [[&quot;features/modeling - layout&quot;,&quot;boundary events&quot;,&quot;non-loops&quot;],&quot;should layout straight for horizontally axis-aligned corner boundary event&quot;]</p></section>
+<details><summary>完整 Verifier JSON</summary><pre>{
+  &quot;schema_version&quot;: &quot;existing-tests-extension-v2&quot;,
+  &quot;task_id&quot;: &quot;bpmn-io__bpmn-js-2396&quot;,
+  &quot;status&quot;: &quot;no_additional_tests_needed&quot;,
+  &quot;behavioral_contract&quot;: {
+    &quot;observable_requirements&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+        &quot;contract&quot;: &quot;When connecting a sequence flow from a corner-attached boundary event to a strictly axis-aligned target element (e.g. directly below or directly to the right), the sequence flow must form a direct straight connection between the boundary event edge and the target element edge, without inserting extraneous interior waypoints or routing into the element interior.&quot;
+      }
+    ],
+    &quot;preserved_behaviors&quot;: [
+      &quot;Sequence flow layout for boundary events attached to side centers of host activities remains unchanged.&quot;,
+      &quot;Sequence flow layout for corner boundary events connecting to non-axis-aligned targets (requiring bendpoints) remains unchanged.&quot;,
+      &quot;Self-loop routing and gateway docking rules remain unchanged.&quot;
+    ],
+    &quot;implementation_variation&quot;: &quot;Different layouter orientation helper structures, vector comparisons, or geometric condition checks that identify strictly axis-aligned target orientations for corner boundary events and output a straight 2-point waypoint line (&#x27;v&#x27; or &#x27;h&#x27;) are valid.&quot;
+  },
+  &quot;coverage&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+      &quot;visual_category&quot;: &quot;空间布局与几何理解&quot;,
+      &quot;coverage&quot;: &quot;直接覆盖&quot;,
+      &quot;existing_test_ids&quot;: [
+        &quot;[[\&quot;features/modeling - layout\&quot;,\&quot;boundary events\&quot;,\&quot;non-loops\&quot;],\&quot;should layout straight for axis-aligned corner boundary event\&quot;]&quot;,
+        &quot;[[\&quot;features/modeling - layout\&quot;,\&quot;boundary events\&quot;,\&quot;non-loops\&quot;],\&quot;should layout straight for horizontally axis-aligned corner boundary event\&quot;]&quot;
+      ],
+      &quot;assertion_summary&quot;: &quot;Verifies that connecting a corner boundary event to vertically and horizontally axis-aligned target tasks results in exact two-point straight waypoints ([{x: 909, y: 407}, {x: 909, y: 480}] and [{x: 927, y: 109}, {x: 1000, y: 109}]) without extra waypoints.&quot;,
+      &quot;reason&quot;: &quot;The existing suite already contains dedicated unit tests in LayoutSequenceFlowSpec.js asserting the exact waypoint coordinates for both vertical and horizontal axis-aligned corner boundary event connections, directly verifying constraint_001.&quot;
+    }
+  ],
+  &quot;test_bundles&quot;: [],
+  &quot;oracle_quality_plan&quot;: {
+    &quot;status&quot;: &quot;proposed_not_executed&quot;,
+    &quot;curator_only&quot;: true,
+    &quot;negative_variants&quot;: [
+      {
+        &quot;variant_id&quot;: &quot;neg_ignore_axis_aligned_vertical_target&quot;,
+        &quot;defect_preserved_or_introduced&quot;: &quot;Omits the verticalTargetOrientation check, causing vertical axis-aligned corner boundary connections to fall back to corner-axis comparison and produce invalid 3-point routes.&quot;,
+        &quot;expected_failure_test_ids&quot;: [
+          &quot;[[\&quot;features/modeling - layout\&quot;,\&quot;boundary events\&quot;,\&quot;non-loops\&quot;],\&quot;should layout straight for axis-aligned corner boundary event\&quot;]&quot;
+        ]
+      },
+      {
+        &quot;variant_id&quot;: &quot;neg_ignore_axis_aligned_horizontal_target&quot;,
+        &quot;defect_preserved_or_introduced&quot;: &quot;Omits the horizontalTargetOrientation check, causing horizontal axis-aligned corner boundary connections to generate unwanted interior waypoints.&quot;,
+        &quot;expected_failure_test_ids&quot;: [
+          &quot;[[\&quot;features/modeling - layout\&quot;,\&quot;boundary events\&quot;,\&quot;non-loops\&quot;],\&quot;should layout straight for horizontally axis-aligned corner boundary event\&quot;]&quot;
+        ]
+      }
+    ],
+    &quot;equivalent_positive_variant&quot;: {
+      &quot;description&quot;: &quot;An implementation that uses bounding-box center alignment checks instead of orientation string splitting to determine whether target is strictly axis-aligned before selecting &#x27;v&#x27; or &#x27;h&#x27; layout.&quot;,
+      &quot;expected_pass_test_ids&quot;: [
+        &quot;[[\&quot;features/modeling - layout\&quot;,\&quot;boundary events\&quot;,\&quot;non-loops\&quot;],\&quot;should layout straight for axis-aligned corner boundary event\&quot;]&quot;,
+        &quot;[[\&quot;features/modeling - layout\&quot;,\&quot;boundary events\&quot;,\&quot;non-loops\&quot;],\&quot;should layout straight for horizontally axis-aligned corner boundary event\&quot;]&quot;
+      ]
+    }
+  },
+  &quot;missing_context&quot;: [],
+  &quot;summary&quot;: &quot;Existing unit tests in LayoutSequenceFlowSpec.js directly cover the geometric requirement for both vertically and horizontally axis-aligned corner boundary event connections. Both tests have been measured as F2P and all 72 surrounding regression tests remain stable P2P, so no additional test bundle is needed.&quot;,
+  &quot;human_review_required&quot;: false,
+  &quot;human_review_reasons&quot;: []
+}</pre></details></main>

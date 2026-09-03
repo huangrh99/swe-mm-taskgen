@@ -1,0 +1,97 @@
+{
+  "schema_version": "cleanup-migration-v1",
+  "scope": "report formal code snapshot",
+  "supported_entrypoint": {
+    "command": "VERIFIER_PYTHON report/run.py",
+    "module": "report/run.py -> report_pipeline.cli",
+    "status": "sole_supported_public_cli"
+  },
+  "reachability_method": {
+    "checks": [
+      "Python imports and direct module references under report/code",
+      "formal unittest imports under report/code/tests",
+      "formal command registry in report/code/report_pipeline/cli.py",
+      "supported commands and compatibility statements in report/README.md",
+      "SHA-256 comparison of all retained model prompt artifacts"
+    ],
+    "result": "Deleted files had no caller outside the deleted legacy families and their legacy-only tests.",
+    "limitation": "Dynamic external imports are not callers; immutable crawler-output artifacts are preservation inputs, never deletion targets."
+  },
+  "public_command_migrations": [
+    {"old": "python3 -m pr_crawler ...", "new": "VERIFIER_PYTHON report/run.py collect ...", "implementation": "report/code/pr_crawler", "disposition": "retained_internal_direct_entry_rejected"},
+    {"old": "analysis/scripts/step_09_04_export_verifier_decisions.py RUN", "new": "VERIFIER_PYTHON report/run.py export-visual RUN", "implementation": "analysis.scripts.step_09_03_run_visual_verifiers.export_results", "disposition": "deleted_wrapper"},
+    {"old": "analysis/scripts/step_00_01_collect_multimodal_prs.py", "new": "VERIFIER_PYTHON report/run.py collect ...", "implementation": "report_pipeline.cli.STAGES", "disposition": "deleted_trial_batch_wrapper"},
+    {"old": "analysis/scripts/step_14_*.py and step_15_*.py", "new": null, "implementation": null, "disposition": "deleted_bpmn_specific_legacy_family; historical artifacts retained outside report"},
+    {"old": "direct analysis/scripts/step_*.py invocation", "new": "VERIFIER_PYTHON report/run.py COMMAND ...", "implementation": "report_pipeline.cli.STAGES", "disposition": "unsupported_compatibility_surface"}
+  ],
+  "deleted": [
+    {"path": "report/code/analysis/scripts/step_09_04_export_verifier_decisions.py", "kind": "thin_trial_wrapper", "callers": [], "replacement": "report/run.py export-visual", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_export_visual_replaces_removed_wrapper", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/prompts/08_00_vlm_screening_guide.md", "kind": "misplaced usage guide, not a model prompt", "callers": [], "replacement": "report/README.md", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_list_is_the_single_public_command_index", "historical_evidence_preserved": true},
+    {"path": "report/code/report_pipeline/__main__.py", "kind": "alternate public entrypoint", "callers": [], "replacement": "report/run.py", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_public_wrapper_isolated_to_formal_tree", "historical_evidence_preserved": true},
+    {"path": "report/code/pr_crawler/archive_preview.py", "kind": "obsolete preview adapter", "callers": ["deleted tests.test_step_10_12_archive_engines_relations.PreviewTests"], "replacement": "report_pipeline.review_html", "replacement_test": "tests.test_review_html.ReviewHtmlTest.test_full_evidence_is_rendered_and_escaped", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_00_01_collect_multimodal_prs.py", "kind": "trial collection entrypoint", "callers": ["deleted tests.test_step_00_pr_collection"], "replacement": "report/run.py collect", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_public_wrapper_isolated_to_formal_tree", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_00_02_audit_pr_collection.py", "kind": "trial collection audit", "callers": ["deleted tests.test_step_00_pr_collection"], "replacement": "report/run.py collect plus collection manifest", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_public_wrapper_isolated_to_formal_tree", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_14_01_freeze_pr_test_pilot.py", "kind": "bpmn-specific legacy adapter", "callers": ["deleted tests.test_step_14_pilot_materialization"], "replacement": "report_pipeline.candidate and report_pipeline.source_tests", "replacement_test": "tests.test_candidate_dossier.CandidateDossierTest.test_v3_strict_candidate_can_enter_test_construction", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_14_02_materialize_pr_commits.py", "kind": "bpmn-specific legacy adapter", "callers": ["deleted step_14_04_generate_test_candidates", "deleted tests.test_step_14_pilot_materialization"], "replacement": "explicit repository adapter boundary in candidate dossiers", "replacement_test": "tests.test_candidate_dossier.CandidateDossierTest.test_v3_strict_candidate_can_enter_test_construction", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_14_03_run_bpmn_test_pair.py", "kind": "bpmn-specific legacy runtime adapter", "callers": ["deleted step_14_06", "deleted step_14_08", "deleted step_15_01", "deleted step_15_02", "deleted tests.test_step_14_execution_audit", "deleted tests.test_step_15_harbor_verifier"], "replacement": "report_pipeline.harbor_export and per-task tests/test.sh", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_deterministic_export_and_leakage_boundary", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_14_04_generate_test_candidates.py", "kind": "legacy model trial entrypoint", "callers": ["deleted step_14_05", "deleted tests.test_step_14_execution_audit"], "replacement": "report_pipeline.source_tests plus frozen test-coverage prompt evidence", "replacement_test": "tests.test_source_tests.SourceTestsTest.test_real_carbon_frozen_transitions", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_14_05_run_gemini_wave.py", "kind": "legacy model trial entrypoint", "callers": [], "replacement": "verifier-backed formal stages through report/run.py", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_legacy_model_call_commands_are_not_public", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_14_06_run_frozen_pilot_tests.py", "kind": "bpmn-specific legacy runtime entrypoint", "callers": [], "replacement": "Harbor task tests/test.sh", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_deterministic_export_and_leakage_boundary", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_14_07_audit_test_transitions.py", "kind": "legacy transition audit", "callers": ["deleted tests.test_step_14_execution_audit"], "replacement": "report_pipeline.harbor_export verifier contract", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_verifier_distinguishes_skip_missing_id_and_missing_source", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_14_08_archive_environments.py", "kind": "bpmn-specific legacy archive entrypoint", "callers": [], "replacement": "Harbor task manifest and reproducibility freeze", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_deterministic_export_and_leakage_boundary", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_15_01_export_harbor_task.py", "kind": "bpmn-specific legacy Harbor adapter", "callers": [], "replacement": "report_pipeline.harbor_export", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_deterministic_export_and_leakage_boundary", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_15_02_run_harbor_controls.py", "kind": "legacy Harbor control entrypoint", "callers": ["deleted tests.test_step_15_harbor_verifier"], "replacement": "report_pipeline.harbor_controls and report_pipeline.harbor_negative_controls", "replacement_test": "tests.test_harbor_negative_controls.HarborNegativeControlTests.test_skip_is_coherent_but_non_rewarding", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_15_03_preview_pilot_results.py", "kind": "legacy pilot preview", "callers": ["deleted tests.test_step_15_harbor_verifier"], "replacement": "report_pipeline.review_html", "replacement_test": "tests.test_review_html.ReviewHtmlTest.test_full_evidence_is_rendered_and_escaped", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_15_04_audit_preview.py", "kind": "legacy pilot preview audit", "callers": ["deleted tests.test_step_15_harbor_verifier"], "replacement": "report_pipeline.review_html static audit", "replacement_test": "tests.test_review_html.ReviewHtmlTest.test_full_evidence_is_rendered_and_escaped", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/scripts/step_16_07_recover_protocol_only_outputs.py", "kind": "one-off recovery entrypoint", "callers": [], "replacement": "rerun formal visual-necessity stage with persisted verifier records", "replacement_test": "tests.test_step_16_visual_necessity_funnel.PipelineTests.test_full_fixture_review_audit_and_human_import", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/templates/14_bpmn_runtime/14_03_base.Dockerfile", "kind": "bpmn-specific legacy template", "callers": ["deleted step_14_01_freeze_pr_test_pilot"], "replacement": "per-task Harbor environment/Dockerfile", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_deterministic_export_and_leakage_boundary", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/templates/14_bpmn_runtime/14_run_component_tests.cjs", "kind": "bpmn-specific legacy template", "callers": ["deleted step_14_01_freeze_pr_test_pilot"], "replacement": "per-task Harbor tests/test.sh", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_deterministic_export_and_leakage_boundary", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/templates/15_harbor/15_verify.py", "kind": "legacy Harbor verifier template", "callers": ["deleted step_15_01_export_harbor_task"], "replacement": "report_pipeline.harbor_export generated task verifier", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_deterministic_export_and_leakage_boundary", "historical_evidence_preserved": true},
+    {"path": "report/code/tests/test_step_00_pr_collection.py", "kind": "legacy-only test", "callers": [], "replacement": "tests.test_report_pipeline_cli", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_public_wrapper_isolated_to_formal_tree", "historical_evidence_preserved": true},
+    {"path": "report/code/tests/test_step_14_execution_audit.py", "kind": "legacy-only test", "callers": [], "replacement": "tests.test_source_tests and tests.test_harbor_export", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_verifier_distinguishes_skip_missing_id_and_missing_source", "historical_evidence_preserved": true},
+    {"path": "report/code/tests/test_step_14_pilot_materialization.py", "kind": "legacy-only test", "callers": [], "replacement": "tests.test_candidate_dossier", "replacement_test": "tests.test_candidate_dossier.CandidateDossierTest.test_v3_strict_candidate_can_enter_test_construction", "historical_evidence_preserved": true},
+    {"path": "report/code/tests/test_step_15_harbor_verifier.py", "kind": "legacy-only test", "callers": [], "replacement": "tests.test_harbor_export and tests.test_harbor_negative_controls", "replacement_test": "tests.test_harbor_export.HarborExportTests.test_deterministic_export_and_leakage_boundary", "historical_evidence_preserved": true},
+    {"path": "report/code/report_pipeline/aidp_gemini_agent.py", "kind": "obsolete custom model/tool loop", "callers": ["deleted report/code/harbor_tests/test_aidp_gemini_agent.py"], "replacement": "Harbor official kimi-code agent plus declarative provider configuration", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_legacy_model_call_commands_are_not_public", "historical_evidence_preserved": true},
+    {"path": "report/code/harbor_tests/test_aidp_gemini_agent.py", "kind": "obsolete custom-adapter test", "callers": [], "replacement": "official Harbor install/protocol and task controls", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_legacy_model_call_commands_are_not_public", "historical_evidence_preserved": true},
+    {"path": "report/code/analysis/prompts/18_01_aidp_gemini_swe_agent.system.md", "kind": "custom adapter-only prompt", "callers": ["deleted report/code/report_pipeline/aidp_gemini_agent.py"], "replacement": "canonical task instruction plus official agent behavior", "replacement_test": "tests.test_report_pipeline_cli.ReportPipelineCliTest.test_legacy_model_call_commands_are_not_public", "historical_evidence_preserved": true}
+  ],
+  "modified": [
+    {"path": "report/code/report_pipeline/cli.py", "removed": "legacy-bpmn command registrations and repository guard", "retained": "repository-neutral formal command registry", "replacement": null},
+    {"path": "report/README.md", "removed": "legacy compatibility claim", "retained": "single supported CLI and repository-adapter boundary", "replacement": null},
+    {"path": "report/code/tests/test_report_pipeline_cli.py", "removed": "legacy adapter execution test", "retained": "absence assertions for removed public commands", "replacement": null}
+  ],
+  "retained_adapters": [
+    {"path": "report/code/pr_crawler/api_engines.py", "reason": "reachable from active verifier-backed stages and formal tests", "status": "retained_required"},
+    {"path": "report/code/pr_crawler/verifier_backend.py", "reason": "reachable from the stage-09 runner and required for its Codex backend", "status": "retained_required"}
+  ],
+  "prompt_inventory": [
+    {"id": "01_source_scope", "system": "report/code/analysis/prompts/01_01_source_scope_verifier.system.md", "schema": "report/code/analysis/prompts/01_02_source_scope_verifier.schema.json", "semantic_role": "bounded parent-Issue source scope", "disposition": "retained_unique"},
+    {"id": "08_visual_context_screening", "system": "report/code/analysis/prompts/08_01_visual_context_screening.system.md", "schema": "report/code/analysis/prompts/08_02_visual_context_screening.schema.json", "semantic_role": "coarse visual content screening", "disposition": "retained_unique"},
+    {"id": "08_pr_image_role_leakage", "system": "report/code/analysis/prompts/08_04_pr_image_role_leakage.system.md", "schema": "report/code/analysis/prompts/08_05_pr_image_role_leakage.schema.json", "semantic_role": "curator-side Issue/PR image chronology and leakage routing before solver-input construction", "disposition": "retained_unique"},
+    {"id": "09_visual_verifier", "system": "report/code/analysis/prompts/09_01_visual_verifier.system.md", "schema": "report/code/analysis/prompts/09_02_visual_verifier.schema.json", "semantic_role": "visual necessity, OCR sufficiency and leakage", "disposition": "retained_unique"},
+    {"id": "12_repair_relation", "system": "report/code/analysis/prompts/12_01_repair_relation_verifier.system.md", "schema": "report/code/analysis/prompts/12_02_repair_relation_verifier.schema.json", "semantic_role": "follow-up repair relation", "disposition": "retained_unique_frozen_evidence"},
+    {"id": "14_test_coverage", "system": "report/code/analysis/prompts/14_04_test_coverage_verifier.system.md", "schema": "report/code/analysis/prompts/14_04_test_coverage_verifier.schema.json", "semantic_role": "historical executable F2P/P2P test-construction contract", "disposition": "retained_unique_frozen_evidence"},
+    {"id": "16_text_only_sufficiency", "system": "report/code/analysis/prompts/16_01_text_only_repair_sufficiency.system.md", "schema": "report/code/analysis/prompts/16_02_text_only_repair_sufficiency.schema.json", "semantic_role": "isolated text-only repair contract", "disposition": "retained_unique"},
+    {"id": "16_translation", "system": "report/code/analysis/prompts/16_04_01_translation.system.md", "schema": "report/code/analysis/prompts/16_04_02_translation.schema.json", "semantic_role": "review-only faithful Chinese translation", "disposition": "retained_unique"},
+    {"id": "20_visual_capability_v3", "system": "report/code/analysis/prompts/20_07_visual_capability_classifier_v3.system.md", "schema": "report/code/analysis/prompts/20_08_visual_capability_classifier_v3.schema.json", "semantic_role": "strict visual necessity and five-capability classification", "disposition": "retained_unique"},
+    {"id": "20_existing_tests_extension", "system": "report/code/analysis/prompts/20_09_existing_tests_extension.system.md", "schema": "report/code/analysis/prompts/20_10_existing_tests_extension.schema.json", "semantic_role": "executable F2P/P2P extension planning", "disposition": "retained_unique"}
+  ],
+  "agent_prompt_inventory": [],
+  "prompt_deduplication_result": {
+    "byte_identical_groups": [],
+    "deleted_model_prompts": [],
+    "reason": "All eighteen prompt/schema artifacts have different bytes and distinct decision contracts. The closed freeze inventory hashes every shipped system prompt and schema."
+  },
+  "retained_internal_families": [
+    {"paths": ["report/code/pr_crawler/*.py"], "reason": "collection, storage, media and verifier libraries reachable from public commands or formal tests"},
+    {"paths": ["report/code/analysis/scripts/step_01_*.py", "report/code/analysis/scripts/step_04_*.py", "report/code/analysis/scripts/step_06_*.py"], "reason": "deterministic collection and prefilter implementations"},
+    {"paths": ["report/code/analysis/scripts/step_08_03_*.py", "report/code/analysis/scripts/step_09_03_*.py", "report/code/analysis/scripts/step_11_*.py", "report/code/analysis/scripts/step_12_*.py", "report/code/analysis/scripts/step_16_*.py"], "reason": "active visual, text, source-provenance and relation implementations"},
+    {"paths": ["report/code/analysis/scripts/step_17_*.py"], "reason": "compact audit visualization and static verification"},
+    {"paths": ["report/code/tests/*.py"], "reason": "formal regression and security tests"}
+  ],
+  "preservation": {
+    "crawler_output_modified": false,
+    "historical_prompts_in_run_directories_modified": false,
+    "unrelated_root_worktree_files_modified": false
+  }
+}

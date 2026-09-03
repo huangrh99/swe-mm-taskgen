@@ -1,0 +1,134 @@
+{
+  "schema_version": "test-extension-verifier-packet-v1",
+  "task_id": "googlechrome__lighthouse-16403",
+  "admission_state": "visual_approved_for_test_construction_by_explicit_user_selection",
+  "solver_visible_problem_statement": "Update Treemap to new design\n\n[Figma](https://www.figma.com/design/YzfTbApaJu7ZnKpZGSAwjH/RPP?node-id=9418-218944&m=dev)\n\nexample:\n\n\n\n> **视觉材料 1**：见下方对应图片。",
+  "human_visual_input_check": {
+    "decision": "keep_for_test_construction",
+    "formal_visual_gate": "user_explicit_selection_recorded_in_request",
+    "solver_visible_asset_ids": [
+      "b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e"
+    ],
+    "boundary": "Human selection authorizes test construction only; it does not imply tests_approved, frozen, measured, or Harbor admission."
+  },
+  "frozen_visual_classification": {
+    "strict_multimodal_admission": "非文字视觉信息候选不可替代",
+    "primary_category": "混合视觉能力",
+    "atomic_visual_constraints": [
+      {
+        "constraint_id": "constraint_001",
+        "visual_category": "元素结构与视觉状态理解",
+        "requirement": "资源名称与资源大小必须渲染为可独立设置样式的两个 caption 元素；非根叶节点同时显示两者，而根 All scripts 节点不显示 caption。",
+        "decision_critical": "是"
+      },
+      {
+        "constraint_id": "constraint_002",
+        "visual_category": "空间布局与几何理解",
+        "requirement": "Treemap 与右侧 Resource/Size 资源列表保持目标图所示的左右分栏结构，列表不能挤压或覆盖 treemap。",
+        "decision_critical": "是"
+      },
+      {
+        "constraint_id": "constraint_003",
+        "visual_category": "外观与渲染属性理解",
+        "requirement": "同一 bundle 的节点共享可识别的主题 hue，并随嵌套深度产生可辨别的 saturation/lightness 层级差异。",
+        "decision_critical": "是"
+      }
+    ],
+    "source_review_summary": {
+      "schema_version": "case-visual-review-summary-v1",
+      "case_id": "googlechrome__lighthouse-16403",
+      "source_route": "issue_derived",
+      "category": "混合视觉能力",
+      "visual_evidence": "单张期望目标图",
+      "solver_visible_asset": "01_02_solver_visible.png",
+      "visual_constraints": [
+        "右侧 Resource/Size 资源列表结构",
+        "Treemap 与资源列表的左右分栏几何关系",
+        "不同 bundle 的主题色系与嵌套层级渲染"
+      ],
+      "admission": "user_selected_candidate",
+      "formal_visual_gate": "not_recorded",
+      "note": "用户在 2026-09-02 明确要求归档并继续测试；这不是 frozen 状态或正式人工门记录。"
+    }
+  },
+  "production_change_summary": {
+    "base_commit": "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+    "candidate_reference_commit": "cc05eab5272d191247834664bfc24a33c83e5bad",
+    "archived_pr_head": "cc05eab5272d191247834664bfc24a33c83e5bad",
+    "paths": [
+      "treemap/app/index.html",
+      "treemap/app/src/main.js",
+      "treemap/app/styles/treemap.css"
+    ],
+    "patch": "diff --git a/treemap/app/index.html b/treemap/app/index.html\nindex e3434f2aa..35dc76b85 100644\n--- a/treemap/app/index.html\n+++ b/treemap/app/index.html\n@@ -50,7 +50,7 @@ SPDX-License-Identifier: Apache-2.0\n           <path fill=\"#FF3\" d=\"M20.5 10h7v7h-7z\"/>\n         </svg>\n \n-        <span class=\"lh-header--title lh-text-dim\">Lighthouse Treemap</span>\n+        <span class=\"lh-header--title lh-text-bold\">Lighthouse Treemap</span>\n       </div>\n \n       <div class=\"lh-header__url\">\ndiff --git a/treemap/app/src/main.js b/treemap/app/src/main.js\nindex 20e256110..3e00e0ea4 100644\n--- a/treemap/app/src/main.js\n+++ b/treemap/app/src/main.js\n@@ -133,6 +133,8 @@ class TreemapViewer {\n     this.toggleTable(window.innerWidth >= 600);\n     this.initListeners();\n     this.setSelector({type: 'group', value: 'scripts'});\n+    dom.find('.lh-header--url-bytes').textContent =\n+      TreemapUtil.i18n.formatBytesWithBestUnit(this.currentTreemapRoot.resourceBytes);\n     this.render();\n   }\n \n@@ -468,14 +470,28 @@ class TreemapViewer {\n       this.treemap.render(this.el);\n       dom.find('.webtreemap-node').classList.add('webtreemap-node--root');\n \n+      // For the \"All\" selector, delete the root node caption since it duplicates the\n+      // information in the header.\n+      if (this.selector.type === 'group') {\n+        dom.find('.webtreemap-caption', this.el).remove();\n+      }\n+\n+      // Format the captions.\n+      // The webtreemap `caption` option can only return strings, but we need to\n+      // style portions of the caption differently.\n+      for (const el of dom.findAll('.webtreemap-caption', this.el)) {\n+        const parts = (el.textContent || '').split(' · ', 2);\n+        el.textContent = '';\n+        dom.createChildOf(el, 'span', 'lh-text-bold').textContent = parts[0];\n+        dom.createChildOf(el, 'span', 'lh-text-dim').textContent = parts[1];\n+      }\n+\n       this.createTable();\n     }\n \n     if (rootChanged || viewChanged) {\n       this.updateColors();\n       this.applyActiveViewModeClass();\n-      dom.find('.lh-header--url-bytes').textContent =\n-        TreemapUtil.i18n.formatBytesWithBestUnit(this.currentTreemapRoot.resourceBytes);\n     }\n \n     this.previousRenderState = {\n@@ -658,28 +674,34 @@ class TreemapViewer {\n \n   /**\n    * @param {number} hue\n+   * @param {number|null} depth\n    */\n-  getColorFromHue(hue) {\n-    return TreemapUtil.hsl(hue, 60, 90);\n+  getColorFromHue(hue, depth = null) {\n+    if (depth === null) {\n+      return TreemapUtil.hsl(hue, 60, 90);\n+    }\n+\n+    return TreemapUtil.hsl(hue, 20 + depth * 5, 90 - depth * 5);\n   }\n \n   updateColors() {\n-    TreemapUtil.walk(this.currentTreemapRoot, node => {\n+    TreemapUtil.walk(this.currentTreemapRoot, (node, path) => {\n+      if (!node.dom) return;\n+\n       // Color a depth one node and all children the same color.\n       const depthOneNode = this.nodeToDepthOneNodeMap.get(node);\n       const hue = depthOneNode &&\n         this.getHueForD1NodeName(depthOneNode ? depthOneNode.name : node.name);\n-      const depthOneNodeColor = hue !== undefined ? this.getColorFromHue(hue) : 'white';\n-\n-      if (!node.dom) return;\n \n       let backgroundColor;\n       if (this.currentViewMode.highlights) {\n         // A view can set nodes to highlight. If so, don't color anything else.\n-        const path = this.nodeToPathMap.get(node);\n-        const highlight = path && this.currentViewMode.highlights\n+        const highlight = this.currentViewMode.highlights\n           .find(highlight => TreemapUtil.pathsAreEqual(path, highlight.path));\n         if (highlight) {\n+          const depthOneNodeColor = hue !== undefined ?\n+            this.getColorFromHue(hue, null) :\n+            'white';\n           backgroundColor = highlight.color || depthOneNodeColor;\n         } else {\n           backgroundColor = 'white';\n@@ -688,6 +710,9 @@ class TreemapViewer {\n         return;\n       }\n \n+      const depthOneNodeColor = hue !== undefined ?\n+        this.getColorFromHue(hue, path.length) :\n+        'white';\n       node.dom.style.backgroundColor = depthOneNodeColor;\n \n       // Shade the element to communicate coverage.\ndiff --git a/treemap/app/styles/treemap.css b/treemap/app/styles/treemap.css\nindex 0b1b7a573..3691b1a84 100644\n--- a/treemap/app/styles/treemap.css\n+++ b/treemap/app/styles/treemap.css\n@@ -11,7 +11,8 @@\n   --color-gray-900: #212121;\n \n   --control-background-color: #e7f1fe;\n-  --text-color-secondary: var(--color-gray-600);\n+  --text-color-secondary: #474747;\n+\n   --text-color: var(--color-gray-900);\n   --text-color-active: #2a67ce;\n   --text-color-active-secondary: #4484f3c7;\n@@ -42,6 +43,11 @@ body {\n \n .lh-text-dim {\n   color: var(--text-color-secondary);\n+  font-weight: 400;\n+}\n+\n+.lh-text-bold {\n+  font-weight: 500;\n }\n \n .lh-main {\n@@ -96,11 +102,12 @@ body {\n .lh-header__logotitle {\n   display: flex;\n   align-items: center;\n+  font-size: 16px;\n }\n \n .lh-topbar__logo {\n-  width: 24px;\n-  height: 24px;\n+  width: 28px;\n+  height: 28px;\n   user-select: none;\n   flex: none;\n }\n@@ -211,6 +218,10 @@ header {\n   outline: 2px solid black;\n }\n \n+.lh-treemap--view-mode--all .webtreemap-node {\n+  border: none;\n+}\n+\n .lh-treemap--view-mode--unused-bytes .webtreemap-node::before {\n   position: absolute;\n   top: 0;\n@@ -233,6 +244,9 @@ header {\n   text-align: center;\n   word-break: break-word;\n }\n+.webtreemap-caption span {\n+  margin: 0 2px;\n+}\n \n /* Copied from viewer.css */\n \n",
+    "scope_boundary": "Base and candidate reference commits are archival hypotheses pending executable measurement and human F2P/P2P approval.",
+    "instruction": "Use the patch only to infer behavioral impact; test observable behavior and never require source equality."
+  },
+  "repository_test_context": {
+    "framework": "Mocha/Jest assertions with Puppeteer against the built Lighthouse treemap",
+    "working_directory": ".",
+    "target_command": "yarn build-treemap && yarn mocha --testMatch test/treemap-visual-contract-test.js --timeout 35000",
+    "selected_suites": [
+      "treemap/test/treemap-test-pptr.js",
+      "treemap/test/util-test.js"
+    ],
+    "environment_inputs": {
+      "base_commit": "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+      "candidate_reference_commit": "cc05eab5272d191247834664bfc24a33c83e5bad"
+    },
+    "writable_test_roots": [
+      "test/",
+      "tests/",
+      "spec/",
+      "src/"
+    ]
+  },
+  "existing_tests": {
+    "files": [
+      {
+        "path": "treemap/test/treemap-test-pptr.js",
+        "sha256": "abd894f67ac823c4015a6647ebfa9ab1715660adcd2d34eb5c0a486c28cbf1b9",
+        "content": "/**\n * @license\n * Copyright 2020 Google LLC\n * SPDX-License-Identifier: Apache-2.0\n */\n\nimport fs from 'fs';\n\nimport puppeteer from 'puppeteer';\nimport {getChromePath} from 'chrome-launcher';\n\nimport {Server} from '../../cli/test/fixtures/static-server.js';\nimport {LH_ROOT} from '../../shared/root.js';\n\nconst debugOptions = JSON.parse(\n  fs.readFileSync(LH_ROOT + '/treemap/app/debug.json', 'utf-8')\n);\nconst portNumber = 20202;\nconst treemapUrl = `http://localhost:${portNumber}/dist/gh-pages/treemap/index.html`;\n\nfunction getTextEncodingCode() {\n  const code = fs.readFileSync(LH_ROOT + '/report/renderer/text-encoding.js', 'utf-8');\n  return code.replace('export ', '');\n}\n\ndescribe('Lighthouse Treemap', () => {\n  // eslint-disable-next-line no-console\n  console.log('\\n✨ Be sure to have recently run this: yarn build-treemap');\n\n  /** @type {import('puppeteer').Browser} */\n  let browser;\n  /** @type {import('puppeteer').Page} */\n  let page;\n  /** @type {Array<string|Promise<string>>} */\n  let pageErrors = [];\n\n  let server;\n  before(async function() {\n    server = new Server(portNumber);\n    await server.listen(portNumber, 'localhost');\n  });\n\n  after(async function() {\n    await Promise.all([\n      server.close(),\n      browser && browser.close(),\n    ]);\n  });\n\n  beforeEach(async () => {\n    if (!browser) {\n      browser = await puppeteer.launch({\n        headless: process.env.DEBUG ? false : 'new',\n        executablePath: getChromePath(),\n      });\n    }\n    page = await browser.newPage();\n    page.on('pageerror', e => pageErrors.push(`${e.message} ${e.stack}`));\n    page.on('console', (e) => {\n      if (e.type() === 'error' || e.type() === 'warning') {\n        const describe = (jsHandle) => {\n          return jsHandle.executionContext().evaluate((obj) => {\n            return JSON.stringify(obj, null, 2);\n          }, jsHandle);\n        };\n        const promise = Promise.all(e.args().map(describe)).then(args => {\n          return `${e.text()} ${args.join(' ')} ${JSON.stringify(e.location(), null, 2)}`;\n        });\n        pageErrors.push(promise);\n      }\n    });\n  });\n\n  async function claimErrors() {\n    const theErrors = pageErrors;\n    pageErrors = [];\n    return await Promise.all(theErrors);\n  }\n\n  async function ensureNoErrors() {\n    await page.bringToFront();\n    await page.evaluate(() => new Promise(window.requestAnimationFrame));\n    const errors = (await claimErrors()).filter(error => {\n      // Filters out a cookie deprecation error that only occurs on ToT\n      // This error comes from gtag.js\n      // https://support.google.com/tagmanager/thread/288419928/error-failed-to-execute-getvalue-on-cookiedeprecationlabel?hl=en\n      return !error.match(\n        /Failed to execute 'getValue' on 'CookieDeprecationLabel': Illegal invocation/);\n    });\n    expect(errors).toHaveLength(0);\n  }\n\n  afterEach(async () => {\n    await ensureNoErrors();\n    await page.close();\n  });\n\n  describe('Recieves options', () => {\n    it('from debug data', async () => {\n      await page.goto(`${treemapUrl}?debug`, {\n        waitUntil: 'networkidle0',\n        timeout: 30000,\n      });\n      const options = await page.evaluate(() => window.__treemapOptions);\n      expect(options.lhr.finalDisplayedUrl).toBe(debugOptions.lhr.finalDisplayedUrl);\n    });\n\n    /**\n     * @param {{options: any, usesGzip: boolean}}\n     */\n    async function loadFromEncodedUrl({options, useGzip}) {\n      const json = JSON.stringify(options);\n      const encoded = await page.evaluate(`\n        ${getTextEncodingCode()}\n        TextEncoding.toBase64(${JSON.stringify(json)}, {gzip: ${useGzip}});\n      `);\n      await page.goto(`${treemapUrl}?gzip=${useGzip ? '1' : '0'}#${encoded}`);\n      await page.waitForFunction(() => {\n        if (window.__treemapOptions) return true;\n\n        const el = document.querySelector('#lh-log');\n        if (el && el.textContent.startsWith('Error')) return true;\n      });\n    }\n\n    it('from encoded fragment (no gzip)', async () => {\n      const options = JSON.parse(JSON.stringify(debugOptions));\n      options.lhr.finalDisplayedUrl += '😃😃😃';\n      await loadFromEncodedUrl({options, usesGzip: false});\n\n      const optionsInPage = await page.evaluate(() => window.__treemapOptions);\n      expect(optionsInPage.lhr.finalDisplayedUrl).toBe(options.lhr.finalDisplayedUrl);\n    });\n\n    it('from encoded fragment (gzip)', async () => {\n      const options = JSON.parse(JSON.stringify(debugOptions));\n      options.lhr.finalDisplayedUrl += '😃😃😃';\n      await loadFromEncodedUrl({options, usesGzip: true});\n\n      const optionsInPage = await page.evaluate(() => window.__treemapOptions);\n      expect(optionsInPage.lhr.finalDisplayedUrl).toBe(options.lhr.finalDisplayedUrl);\n    });\n\n    describe('handles errors', () => {\n      const errorTestCases = [\n        {\n          options: {lhr: 'lol'},\n          error: 'Error: provided json is not a Lighthouse result',\n        },\n        {\n          options: {lhr: {noaudits: {}}},\n          error: 'Error: provided json is not a Lighthouse result',\n        },\n        {\n          options: {lhr: {audits: {}}},\n          error: 'Error: provided Lighthouse result is missing audit: `script-treemap-data`',\n        },\n      ];\n      for (let i = 0; i < errorTestCases.length; i++) {\n        it(`case #${i + 1}`, async () => {\n          const testCase = errorTestCases[i];\n          await loadFromEncodedUrl({options: testCase.options, usesGzip: false});\n          const optionsInPage = await page.evaluate(() => window.__treemapOptions);\n          expect(optionsInPage).toBeUndefined();\n          const error = await page.evaluate(() => document.querySelector('#lh-log').textContent);\n          expect(error).toBe(testCase.error);\n          pageErrors = [];\n        });\n      }\n    });\n  });\n\n  describe('renders correctly', () => {\n    it('correctly shades coverage of gtm node', async () => {\n      await page.goto(`${treemapUrl}?debug`, {\n        waitUntil: 'networkidle0',\n        timeout: 30000,\n      });\n\n      await page.select('.view-mode-selector', '1'); // unused bytes\n      await page.waitForSelector('.lh-treemap--view-mode--unused-bytes');\n\n      // Identify the JS data.\n      const gtmNode = await page.evaluate(() => {\n        const d1Nodes = window.__treemapOptions.lhr.audits['script-treemap-data'].details.nodes;\n        const gtmNode = d1Nodes.find(n => n.name.includes('gtm.js'));\n        return gtmNode;\n      });\n\n      expect(gtmNode.unusedBytes).toBeGreaterThan(20_000);\n      expect(gtmNode.resourceBytes).toBeGreaterThan(20_000);\n\n      // Identify the DOM node.\n      const gtmElemHandle = await page.evaluateHandle(() => {\n        const captionEls = Array.from(document.querySelectorAll('.webtreemap-caption'));\n        return captionEls.find(el => el.textContent.includes('gtm.js')).parentElement;\n      });\n\n      expect(await gtmElemHandle.isIntersectingViewport()).toBeTruthy();\n\n      // Determine visual red shading percentage.\n      const percentRed = await gtmElemHandle.evaluate(node => {\n        const redWidthPx = parseInt(window.getComputedStyle(node, ':before').width);\n        const completeWidthPx = node.getBoundingClientRect().width;\n        return redWidthPx / completeWidthPx;\n      });\n\n      // Reminder! UNUSED == RED\n      const percentDataUnused = gtmNode.unusedBytes / gtmNode.resourceBytes;\n      expect(percentDataUnused).toBeGreaterThan(0);\n\n      // Assert 0.2520 ~= 0.2602 w/ 1 decimal place of precision.\n      // CSS pixels won't let us go to 2 decimal places.\n      expect(percentRed).toBeApproximately(percentDataUnused, 1);\n    });\n  });\n});\n"
+      },
+      {
+        "path": "treemap/test/util-test.js",
+        "sha256": "d4680ee1e69d16790cb4928838e8fd3200d80ef91284dffeec221e71d8f3ce2c",
+        "content": "/**\n * @license\n * Copyright 2020 Google LLC\n * SPDX-License-Identifier: Apache-2.0\n */\n\nimport assert from 'assert/strict';\nimport fs from 'fs';\n\nimport jsdom from 'jsdom';\n\nimport {TreemapUtil} from '../app/src/util.js';\nimport {LH_ROOT} from '../../shared/root.js';\n\ndescribe('TreemapUtil', () => {\n  it('pathsAreEqual works', () => {\n    // Paths are equal.\n    expect(TreemapUtil.pathsAreEqual([], [])).toBe(true);\n    expect(TreemapUtil.pathsAreEqual(['a', 'b'], ['a', 'b'])).toBe(true);\n    // Paths are not equal.\n    expect(TreemapUtil.pathsAreEqual(['b', 'a', 'c'], ['a', 'b', 'c'])).toBe(false);\n    expect(TreemapUtil.pathsAreEqual(['a', 'b'], ['a', 'b', 'c'])).toBe(false);\n    expect(TreemapUtil.pathsAreEqual(['a', 'b', 'c'], ['a', 'b'])).toBe(false);\n  });\n\n  it('pathIsSubpath works', () => {\n    // Subpath matches.\n    expect(TreemapUtil.pathIsSubpath([], [])).toBe(true);\n    expect(TreemapUtil.pathIsSubpath([], ['a', 'b', 'c'])).toBe(true);\n    expect(TreemapUtil.pathIsSubpath(['a'], ['a', 'b', 'c'])).toBe(true);\n    expect(TreemapUtil.pathIsSubpath(['a', 'b'], ['a', 'b'])).toBe(true);\n    expect(TreemapUtil.pathIsSubpath(['a', 'b'], ['a', 'b', 'c'])).toBe(true);\n    // Subpath mostly matches, but is longer than the path.\n    expect(TreemapUtil.pathIsSubpath(['a', 'b', 'c'], ['a', 'b'])).toBe(false);\n    // Subpath does not match.\n    expect(TreemapUtil.pathIsSubpath(['b', 'a'], ['a', 'b', 'c'])).toBe(false);\n  });\n\n  it('stableHasher works', () => {\n    const values = [1, 2, 3, 4, 5];\n    let hasher = TreemapUtil.stableHasher([1, 2, 3, 4, 5]);\n    const expectedValues = [\n      hasher('value0'),\n      hasher('value1'),\n      hasher('value2'),\n      hasher('value3'),\n      hasher('value4'),\n      hasher('value5'),\n    ];\n\n    for (const expectedValue of expectedValues) {\n      expect(values).toContain(expectedValue);\n    }\n\n    // Expect the same values using the same invocation.\n    expect(hasher('value0')).toBe(expectedValues[0]);\n    expect(hasher('value1')).toBe(expectedValues[1]);\n    expect(hasher('value2')).toBe(expectedValues[2]);\n    expect(hasher('value3')).toBe(expectedValues[3]);\n    expect(hasher('value4')).toBe(expectedValues[4]);\n    expect(hasher('value5')).toBe(expectedValues[5]);\n\n    // Repeat, expecting the same values.\n    hasher = TreemapUtil.stableHasher([1, 2, 3, 4, 5]);\n    expect(hasher('value0')).toBe(expectedValues[0]);\n    expect(hasher('value1')).toBe(expectedValues[1]);\n    expect(hasher('value2')).toBe(expectedValues[2]);\n    expect(hasher('value3')).toBe(expectedValues[3]);\n    expect(hasher('value4')).toBe(expectedValues[4]);\n    expect(hasher('value5')).toBe(expectedValues[5]);\n\n    // Expect values array is not modified.\n    expect(values).toEqual([1, 2, 3, 4, 5]);\n  });\n\n  describe('data-i18n', () => {\n    it('should have only valid data-i18n values in treemap html', () => {\n      const TREEMAP_INDEX = fs.readFileSync(LH_ROOT + '/treemap/app/index.html', 'utf8');\n      const dom = new jsdom.JSDOM(TREEMAP_INDEX);\n      for (const node of dom.window.document.querySelectorAll('[data-i18n]')) {\n        const val = node.getAttribute('data-i18n');\n        assert.ok(val in TreemapUtil.UIStrings, `Invalid data-i18n value of: \"${val}\" not found.`);\n      }\n    });\n  });\n});\n"
+      }
+    ],
+    "file_hashes": {
+      "treemap/test/treemap-test-pptr.js": "abd894f67ac823c4015a6647ebfa9ab1715660adcd2d34eb5c0a486c28cbf1b9",
+      "treemap/test/util-test.js": "d4680ee1e69d16790cb4928838e8fd3200d80ef91284dffeec221e71d8f3ce2c"
+    },
+    "author_test_patch": "",
+    "measured_transitions": [],
+    "measured_counts": {
+      "F2P": 0,
+      "P2P": 0
+    },
+    "repeats_per_state": 0
+  },
+  "measurement_boundary": {
+    "existing_labels_are_observed": false,
+    "new_bundle_labels_are_predictions_only": true,
+    "gold_scope_resolved": true,
+    "final_rule": {
+      "stable_fail_to_pass": "F2P",
+      "stable_pass_to_pass": "P2P",
+      "all_other_or_unstable_outcomes": "unclassified_or_blocked"
+    },
+    "correctness_target": "observable functional equivalence, not source-code equality",
+    "scope_boundary": "Base and candidate reference commits are archival hypotheses pending executable measurement and human F2P/P2P approval."
+  },
+  "provenance": {
+    "visual_packet": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/googlechrome__lighthouse-16403/01_visual_review/01_01_verifier_packet.json",
+    "visual_review_summary": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/googlechrome__lighthouse-16403/01_visual_review/01_03_review_summary.json",
+    "source_archive": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/googlechrome__lighthouse-16403/02_source_archive/02_01_pr_archive.json"
+  },
+  "verifier_rerun": {
+    "policy": "exclude_all_prior_verifier_generated_tests",
+    "removed_generated_inputs": [],
+    "requested_concurrency": 10,
+    "generated_at": "2026-09-02T16:49:38.129750+00:00"
+  }
+}

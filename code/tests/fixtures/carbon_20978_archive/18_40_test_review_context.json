@@ -1,0 +1,79 @@
+{
+  "schema_version": "human-test-review-context-v1",
+  "candidate_id": "carbon-design-system__carbon-20978",
+  "source_test_manifest_sha256": "e23ad505260b5551e44814308c18f5e4f5c73ff04e49d46fc25829825889dcce",
+  "tests": [
+    {
+      "test_id": "f2p_ai_gradient_decorator",
+      "class": "F2P",
+      "title": "AI 标签输入框应显示蓝色渐变装饰",
+      "purpose": "确认带有 AI 标签的组合框重新获得用于标识 AI 状态的渐变背景。",
+      "requirement_source": "Issue #20849：Web Components 版本缺少 React 版本已有的蓝色 AI styling/colors。",
+      "classification_reason": "修复前没有渐变，修复后出现渐变，因此应为 fail→pass。",
+      "observed_check": "在真实 Chromium 中读取 AI 装饰层的 computed background-image，结果不能为 none。"
+    },
+    {
+      "test_id": "f2p_ai_right_divider",
+      "class": "F2P",
+      "title": "AI 装饰器与下拉箭头之间应有分隔线",
+      "purpose": "确认 AI 标签右侧出现 1px 分隔线，并位于设计要求的位置。",
+      "requirement_source": "Issue #20849：AI decorator 与输入框中的 chevron 之间需要 divider。",
+      "classification_reason": "修复前缺少或位置错误，修复后宽度为 1px、右偏移为 -9px，因此应为 fail→pass。",
+      "observed_check": "读取 AI label 的 ::after 伪元素，检查 width=1px 且 right=-9px。"
+    },
+    {
+      "test_id": "f2p_invalid_ai_left_divider",
+      "class": "F2P",
+      "title": "无输入且 invalid 时，AI 标签左侧分隔线位置应正确",
+      "purpose": "确认 invalid 图标与 AI 标签组合时，左侧分隔线不会贴错位置。",
+      "requirement_source": "Issue #20120：invalid icon 与 ai-label 同时出现时定位异常；附图给出 expected/actual。",
+      "classification_reason": "修复前左侧分隔线位置不符合预期，修复后偏移为 -9px，因此应为 fail→pass。",
+      "observed_check": "读取 AI label 的 ::before 伪元素，检查 left=-9px。"
+    },
+    {
+      "test_id": "f2p_invalid_ai_closable_spacing",
+      "class": "F2P",
+      "title": "invalid、AI 标签和关闭按钮同时出现时，输入区间距应正确",
+      "purpose": "确认关闭按钮出现后，输入内容和 invalid 图标为 AI 装饰器留出正确空间。",
+      "requirement_source": "Issue #20849：close icon 出现时 spacing 不正确；Issue #20120 展示 invalid icon 定位异常。",
+      "classification_reason": "修复前 padding/图标位置错误，修复后达到指定间距，因此应为 fail→pass。",
+      "observed_check": "读取输入框 padding-right=141px，并检查 invalid icon 的 right=116px。"
+    },
+    {
+      "test_id": "p2p_disabled_selection_noninteractive",
+      "class": "P2P",
+      "title": "禁用组合框的清除/选择按钮仍不可交互",
+      "purpose": "防止本次 AI 标签样式修改意外恢复禁用控件的鼠标交互。",
+      "requirement_source": "相邻回归保护：disabled 组合框必须保持不可操作。",
+      "classification_reason": "该行为在修复前已经正确，修复后也必须继续正确，因此应为 pass→pass。",
+      "observed_check": "读取 disabled 组合框选择按钮的 pointer-events，必须为 none。"
+    },
+    {
+      "test_id": "p2p_invalid_helper_error_color",
+      "class": "P2P",
+      "title": "invalid 状态的帮助文字仍使用错误色",
+      "purpose": "防止调整 invalid/AI 标签布局时破坏原有错误提示颜色。",
+      "requirement_source": "相邻回归保护：invalid 状态必须继续保持错误视觉语义。",
+      "classification_reason": "错误色在修复前已正确，修复后仍应保持，因此应为 pass→pass。",
+      "observed_check": "读取 invalid helper text 的 computed color，必须为 rgb(218, 30, 40)。"
+    },
+    {
+      "test_id": "p2p_disabled_item_semantics",
+      "class": "P2P",
+      "title": "禁用选项仍显示不可操作光标",
+      "purpose": "防止组合框样式变更影响 disabled item 的交互语义。",
+      "requirement_source": "相邻回归保护：disabled item 必须继续明确表示不可操作。",
+      "classification_reason": "该行为在修复前已经正确，修复后也必须继续正确，因此应为 pass→pass。",
+      "observed_check": "读取 disabled item 的 computed cursor，必须为 not-allowed。"
+    },
+    {
+      "test_id": "p2p_selected_item_state",
+      "class": "P2P",
+      "title": "已选中的选项仍显示选中图标",
+      "purpose": "防止 AI 标签相关样式改动隐藏原有 selected 状态反馈。",
+      "requirement_source": "相邻回归保护：selected item 必须继续显示选中状态。",
+      "classification_reason": "选中图标在修复前可见，修复后也必须可见，因此应为 pass→pass。",
+      "observed_check": "读取 selected item 图标的 computed display，必须为 block。"
+    }
+  ]
+}

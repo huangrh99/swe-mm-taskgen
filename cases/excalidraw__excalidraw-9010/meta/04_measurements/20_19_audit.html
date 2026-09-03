@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>V4 test campaign audit</title>
+<style>
+body{font:14px system-ui;margin:24px;color:#172033;background:#f5f7fb}main{max-width:1180px;margin:auto}
+.case,section{background:white;border:1px solid #dbe1ea;border-radius:10px;padding:12px;margin:12px 0}
+summary{cursor:pointer;font-size:16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+.pill{display:inline-block;background:#eef2f7;border-radius:12px;padding:2px 8px;margin-left:6px;font-size:12px}
+.complete,.measured_provisional{background:#dff6e8;color:#176436}.technical_failure{background:#ffe7df;color:#913c20}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #dbe1ea;padding:6px;text-align:left;vertical-align:top}
+th{background:#f4f6f9}pre{white-space:pre-wrap}code{overflow-wrap:anywhere}ul{margin:6px 0;padding-left:22px}.muted{color:#697586}
+</style><main><h1>V4 test campaign audit</h1>
+<p>Read-only campaign view. Model proposals are not F2P/P2P until Base/Gold execution.</p>
+<p><b>Cases:</b> 1 · <b>Model status:</b> {
+  &quot;complete&quot;: 1
+}</p>
+        <details class="case" open>
+          <summary><strong>excalidraw__excalidraw-9010</strong>
+            <span class="pill">excalidraw/excalidraw</span>
+            <span class="pill complete">complete</span>
+            <span class="pill">test_bundle_proposed</span>
+          </summary>
+          <div class="grid">
+            <section><h3>V4 labels</h3><pre>{
+  &quot;schema_version&quot;: &quot;visual-capability-classifier-v4&quot;,
+  &quot;source_kind&quot;: &quot;deterministic_v3_conversion&quot;,
+  &quot;status&quot;: &quot;complete&quot;,
+  &quot;visual_capabilities&quot;: [
+    {
+      &quot;category&quot;: &quot;interaction_temporal_understanding&quot;,
+      &quot;importance&quot;: &quot;core&quot;,
+      &quot;visual_evidence&quot;: &quot;视频时序显示用户光标仅拖拽箭头的一端控制点，但在拖动过程中另一端原本固定的端点随着拖拽发生位置跳变并重新吸附到其他元素边界。&quot;,
+      &quot;task_relation&quot;: &quot;在拖拽调整箭头的一个控制端点时，另一端已绑定的锚点在拖拽交互过程中应保持静止，不得错误吸附或跳跃至其他元素&quot;
+    }
+  ],
+  &quot;multi_label&quot;: false,
+  &quot;source&quot;: {
+    &quot;pool_manifest&quot;: &quot;crawler-output/multimodal-2025/16_11_capability_candidate_pool/20260903_four_capabilities_target_5_run_01/16_11_07_manifest.json&quot;,
+    &quot;pool_manifest_sha256&quot;: &quot;8bf2935712dc98992c216b4d837de4bd46a8d0689e08abf0915b04033fdb486b&quot;,
+    &quot;classification&quot;: &quot;crawler-output/multimodal-2025/16_03_v3_runs/20260902_issue_first_reduction_03_run/16_03_08_pre_review_classifications.json&quot;,
+    &quot;classification_sha256&quot;: &quot;bb8a018d63a4b82f44de65f482513a987ff86e4a4493d347e4d27894e9c2588b&quot;,
+    &quot;packet&quot;: &quot;crawler-output/multimodal-2025/16_03_v3_runs/20260902_issue_first_reduction_03_run/16_03_07_packet_0003.json&quot;,
+    &quot;packet_sha256&quot;: &quot;1958793f29d30bd4d42e5cad1f50faf10adb19e5169c1c62ddefeb1e433c2028&quot;
+  },
+  &quot;warnings&quot;: []
+}</pre></section>
+            <section><h3>Model / technical status</h3>
+              <p><b>Model:</b> gpt-5.6-luna</p>
+              <p><b>Reasoning:</b> max</p>
+              <p><b>Technical failure:</b> —</p>
+              <p>Proposed one deterministic interaction test covering the sole V4 capability and the affected normal-arrow binding behavior. The fixture starts with one endpoint bound to a lower source rectangle and drags the other endpoint toward a higher destination rectangle, asserting that the untouched endpoint never jumps while final bindings remain correct.</p></section>
+          </div>
+          <section><h3>Behavioral contract</h3><article><strong>interaction_temporal_understanding</strong><p>During a pointer drag of one endpoint of an arrow, the global coordinates of the other endpoint, which was already bound to a source element, remain unchanged at every sampled move and at pointer-up.</p><p><b>Preserve:</b> The dragged endpoint can bind to the destination element, and both elements retain the expected reciprocal arrow binding references.</p><p><b>Oracle:</b> Numeric global endpoint geometry sampled before pointer-down, after pointer-down, during multiple pointer moves, and after pointer-up; final binding element IDs and reciprocal bound-element records.</p></article><article><strong>normal_arrow_binding_side_effects</strong><p>Binding an endpoint through the rendered editor interaction does not cause an unrelated already-bound endpoint to be recomputed.</p><p><b>Preserve:</b> Existing arrow binding semantics remain intact after the interaction.</p><p><b>Oracle:</b> The untouched endpoint stability assertion is the regression oracle; binding metadata assertions guard the preserved domain behavior.</p></article></section>
+          <div class="grid"><section><h3>Existing / nearby tests</h3><ul><li><code>packages/excalidraw/tests/binding.test.tsx</code></li><li><code>packages/excalidraw/element/routing.test.tsx</code></li><li><code>packages/excalidraw/tests/move.test.tsx</code></li><li><code>packages/excalidraw/data/transform.test.ts</code></li><li><code>packages/excalidraw/tests/history.test.tsx</code></li><li><code>packages/excalidraw/tests/linearElementEditor.test.tsx</code></li><li><code>packages/excalidraw/tests/helpers/api.ts</code></li><li><code>packages/excalidraw/tests/helpers/ui.ts</code></li><li><code>packages/excalidraw/tests/test-utils.ts</code></li></ul></section>
+          <section><h3>Author tests</h3><span class="muted">—</span></section></div>
+          <section><h3>Generated tests</h3>
+      <p><b>Purpose:</b> The test uses the existing rendered Excalidraw harness and Pointer helper, samples public domain geometry through global endpoint coordinates, and checks binding IDs plus reciprocal bound-element records. It does not use snapshots, source tokens, private patch text, arbitrary coordinate deltas, network calls, fixed ports, or new dependencies.</p>
+      <p><b>Collection:</b> The root package script test:app is exactly vitest, and the root test script only forwards to test:app. vitest.config.mts uses the default test discovery and has no wrapper that replaces positional arguments. The proposed command names the generated test file explicitly, so Vitest collects that file directly. No build step is required for this TypeScript test under Vitest.</p>
+      <table><thead><tr><th>Generated file</th><th>Operation</th></tr></thead><tbody><tr><td><code>packages/excalidraw/tests/arrowBinding9010.test.tsx</code></td><td>add</td></tr></tbody></table>
+      <p><b>Command:</b> <code>yarn test:app --run --reporter=verbose packages/excalidraw/tests/arrowBinding9010.test.tsx</code></p>
+      <p><b>Working directory:</b> <code>.</code></p>
+      <p><b>Stable IDs:</b></p><ul><li><code>excalidraw-9010-endpoint-stability</code></li></ul>
+    </section>
+          <section><h3>Base / Gold measurement</h3><p><b>Status:</b> measured_provisional · <b>Failure:</b> —</p><table><thead><tr><th>Test ID</th><th>Base</th><th>Gold</th><th>Transition</th></tr></thead><tbody><tr><td><code>excalidraw-9010-endpoint-stability</code></td><td>pass</td><td>pass</td><td>provisional_p2p</td></tr></tbody></table></section>
+        </details></main></html>

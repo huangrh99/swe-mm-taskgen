@@ -1,0 +1,647 @@
+{
+  "schema_version": "report-case-batch-audit-v1",
+  "generated_at": "2026-09-02T13:57:59.306172+00:00",
+  "cases_root": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases",
+  "expected_case_ids": [
+    "mermaid-js__mermaid-7711",
+    "excalidraw__excalidraw-9002"
+  ],
+  "case_count": 2,
+  "valid_archive_count": 2,
+  "cases": [
+    {
+      "case_id": "mermaid-js__mermaid-7711",
+      "repository": "mermaid-js/mermaid",
+      "pr_number": 7711,
+      "state": "candidate",
+      "valid": true,
+      "errors": [],
+      "sections": {
+        "visual_review": [
+          {
+            "path": "01_visual_review/solver_input_selection.json",
+            "sha256": "4bb8df332ac3c61b844e75f9a4a9ba57b1ad49d864d812c7c510b3b0895a7320",
+            "size_bytes": 1264,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/08_05_solver_inputs/20260902_wave_10_ready_gemini_restart_01/08_05_01_issue_derived_selected.jsonl",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/solver_input_selection.json",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/text_sufficiency_verifier.json",
+            "sha256": "b363f97ff8e0d7b751457b2045dcf8838d4cbccf33e6d8549949216cdab4e619",
+            "size_bytes": 6670,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_consolidated/20260902T103425452961Z/16_03_result_0011.json",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/text_sufficiency_verifier.json",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/classification_record.json",
+            "sha256": "56832a188d48f0bb951aae8de537ac2a62397487abf09bd5646ada122e146481",
+            "size_bytes": 2740,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_combined_210_audit_01/16_03_09_02_category_distribution.json",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/classification_record.json",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/assets/1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9.png",
+            "sha256": "1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9",
+            "size_bytes": 8529,
+            "storage": "hardlinked",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/assets/1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9.png",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/assets/4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3.png",
+            "sha256": "4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3",
+            "size_bytes": 40589,
+            "storage": "hardlinked",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/assets/4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3.png",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/assets/bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d.png",
+            "sha256": "bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d",
+            "size_bytes": 35775,
+            "storage": "hardlinked",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/assets/bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d.png",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/assets/f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd.png",
+            "sha256": "f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd",
+            "size_bytes": 18667,
+            "storage": "hardlinked",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/assets/f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd.png",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/assets/549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab.png",
+            "sha256": "549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab",
+            "size_bytes": 12519,
+            "storage": "hardlinked",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/assets/549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab.png",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/assets/2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d.png",
+            "sha256": "2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d",
+            "size_bytes": 8119,
+            "storage": "hardlinked",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/01_visual_review/assets/2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d.png",
+            "valid": true
+          }
+        ],
+        "source_archive": [
+          {
+            "path": "02_source_archive/source_archive.json",
+            "sha256": "785d9a0fcc119723d3c1f789bc7436647afbcfa82ae8327d9ef2a45a8406a13d",
+            "size_bytes": 1067590,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_record_0002.json",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/02_source_archive/source_archive.json",
+            "valid": true
+          }
+        ],
+        "test_construction": [
+          {
+            "path": "03_test_construction/source_test_manifest.json",
+            "sha256": "54ade3f9aaa6cc58491ec43cb997f86c447760a0590bcfdf34f938b582a7617c",
+            "size_bytes": 1123,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/source_test_manifest.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/test_inventory.json",
+            "sha256": "cd2aaad8017faa12725e83f5208703233cd609dda24c39888e911bda23ab2432",
+            "size_bytes": 701,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/test_inventory.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/reference.patch",
+            "sha256": "c6eaa7da9cae2ca47e5603b55478338802197ad15ef6ec166eed1d34c57bf749",
+            "size_bytes": 22845,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/reference.patch",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/author_tests.patch",
+            "sha256": "93f92e6847793c15be755a1a3390b1a4023ad1d55e49040ba39616a119563ed7",
+            "size_bytes": 10262,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/author_tests.patch",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+            "sha256": "39f236aa408e89bb9734154c0eac1529aa00c046355f5ca109ca3e39d39f9573",
+            "size_bytes": 89559,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+            "sha256": "26c27926ce33cd34f6a52413fc5ea5bb83e3458634a647e548ea4cff32a09e60",
+            "size_bytes": 6402,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+            "sha256": "ef539aa4a5336fd0ba620481a210182190727e7f832cc79ca9667f82b1788394",
+            "size_bytes": 4135,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+            "sha256": "22ec4c57923d137a06c362146a84dc883b29720c62cfa99814dc656e222c9535",
+            "size_bytes": 23797,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+            "sha256": "7952ecd32021dde57c7a42b01c0462b4444478c02a36f70d2e91c1ad81175c15",
+            "size_bytes": 12714,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+            "sha256": "15c7f801fe448bb27451cdb76a93c0add83b09e806bd3c5c129fdcc220eb125b",
+            "size_bytes": 613,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+            "sha256": "45fbfc39e973ec4b3f3e6b6365e3a5c5a2c219da68bdc8cce6293aa2bfd1b025",
+            "size_bytes": 103364,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+            "sha256": "03fd5032d7b2168e1f579887f2e89a930656016b9459b5a53ac036ea665e32ad",
+            "size_bytes": 156,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+            "sha256": "a0c7cda646162321df9a3a7149a6528728c15b745a0e39e8eb8a4426a4e13032",
+            "size_bytes": 39,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+            "sha256": "5ee17904039f19324dea34bcc0b237f5397b421b3a2867e15782a72717684c29",
+            "size_bytes": 69194,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+            "sha256": "71579c575788d3a17edc9c9089eec22e496d3676b313588c090118772f92f122",
+            "size_bytes": 13331,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_invocation.json",
+            "sha256": "9ee1aa6e4d8934f47b4286b0535b880be7f2ab277ff497e2564b114b2bde9f34",
+            "size_bytes": 613,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_invocation.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+            "sha256": "e306c48edd5bd52664f337e7f1bb391bbc544ab8cb5272da653a0712863e49b0",
+            "size_bytes": 104679,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_attempt_01.json",
+            "sha256": "6dba13efd79bd59254fc8c2238ef924dc68b4ca7e760c82a3ff86614fea81d3b",
+            "size_bytes": 157,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_attempt_01.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_invocation_started.json",
+            "sha256": "59631b976d1409e5f2e5c6790840e710eda73e81d468518e34e243b56a4daf83",
+            "size_bytes": 39,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_invocation_started.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+            "sha256": "62bd363cdc89920130bf036f2520070299e222b130932fb046700f07086e8cfd",
+            "size_bytes": 43244,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+            "sha256": "6c7b6024ae42c434082a3ed8dcf9bdbcedc56dc6fb74f9552cc5e11402c30898",
+            "size_bytes": 21061,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.js",
+            "sha256": "e94867a08366aa44500a2a34b4b579cf77d47fa4a438ae7584a05b5354c64d32",
+            "size_bytes": 8424,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.js",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+            "sha256": "d4678ae3706dc8012fe5545daef47e27d026d82f4627f93bd86c8ed5f2bb7083",
+            "size_bytes": 18788,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+            "sha256": "6b3377a75c62fc5dffd167a059b26147b007cc9b3100dafc4eee84b8be38f70b",
+            "size_bytes": 1258,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+            "valid": true
+          }
+        ],
+        "measurements": [
+          {
+            "path": "04_measurements/source_base_gold.json",
+            "sha256": "1cf87d4994e522e1917ec537649222e08bfc0bc26850082f66009daeace66513",
+            "size_bytes": 2431,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/04_measurements/source_base_gold.json",
+            "valid": true
+          },
+          {
+            "path": "04_measurements/mermaid_base_install_pinned_no_cypress.log",
+            "sha256": "bb2cf93871b13dfd23265f9778431ee1d6d3bbf5804d01214e05888a89e51465",
+            "size_bytes": 36064,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/logs/mermaid_base_install_pinned_no_cypress.log",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/04_measurements/mermaid_base_install_pinned_no_cypress.log",
+            "valid": true
+          },
+          {
+            "path": "04_measurements/mermaid_gold_install_pinned_no_cypress.log",
+            "sha256": "aac3e7300b160b2ddf801e3cb1013c10dbfe10d33a5926840615a5d749074a08",
+            "size_bytes": 36060,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/logs/mermaid_gold_install_pinned_no_cypress.log",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/04_measurements/mermaid_gold_install_pinned_no_cypress.log",
+            "valid": true
+          },
+          {
+            "path": "04_measurements/mermaid_base_author_tests.log",
+            "sha256": "3b944e3cc8cdfa5fb88e2dbfeb62d54630c65694efac10fa075e5ba563605809",
+            "size_bytes": 25065,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/logs/mermaid_base_with_gold_tests_vitest_final.log",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/04_measurements/mermaid_base_author_tests.log",
+            "valid": true
+          },
+          {
+            "path": "04_measurements/mermaid_gold_author_tests.log",
+            "sha256": "a800d609dd8ed114c925bee5aa8edaaedc27d721fbd85e6c944d79015039a661",
+            "size_bytes": 21155,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/logs/mermaid_merge_gold_vitest_final.log",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/04_measurements/mermaid_gold_author_tests.log",
+            "valid": true
+          },
+          {
+            "path": "04_measurements/author_test_base_gold.json",
+            "sha256": "10da6c4cdd16dd6fbd2b51b20217906faaa7986e1a83093c3fb5b03f8b675248",
+            "size_bytes": 1052,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/04_measurements/author_test_base_gold.json",
+            "valid": true
+          }
+        ],
+        "harbor": []
+      },
+      "pipeline_status": {
+        "source_archived": "complete",
+        "test_construction": "prepared",
+        "base_gold_measurement": "prepared",
+        "harbor_empty": "not_started",
+        "harbor_oracle": "not_started"
+      },
+      "blockers": [
+        {
+          "stage": "test_construction",
+          "code": "functional_oracle_pending",
+          "detail": "Source assertions are preliminary; rendered functional behavior and human F2P/P2P calibration are not complete."
+        },
+        {
+          "stage": "harbor",
+          "code": "task_not_exported",
+          "detail": "No checksum-bound Harbor task exists; empty/oracle controls cannot yet be counted."
+        }
+      ],
+      "verifier_runs": [
+        {
+          "status": "complete",
+          "verdict": "additional_tests_proposed",
+          "bundle_count": 1,
+          "human_review_required": false,
+          "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/03_test_construction/20_11_verifier_run_01/20_11_06_result.json"
+        }
+      ],
+      "manifest": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/00_case_manifest.json",
+      "manifest_sha256": "2225fbc55f030601b3e102fbc3a8c47820b56b204e29c9a633aa291143b81da5"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9002",
+      "repository": "excalidraw/excalidraw",
+      "pr_number": 9002,
+      "state": "candidate",
+      "valid": true,
+      "errors": [],
+      "sections": {
+        "visual_review": [
+          {
+            "path": "01_visual_review/solver_input_selection.json",
+            "sha256": "29c68d82ee0e85501d11138094e99b9fdf27daa14faf7b96ca269dadc4614502",
+            "size_bytes": 782,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/08_05_solver_input_selection/20260902_wave13_video_contact_06/08_05_01_issue_derived_selected.jsonl",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/01_visual_review/solver_input_selection.json",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/text_sufficiency_verifier.json",
+            "sha256": "6491bc1ca6cc1239abd48693534cd7eeb2b51eaa7adedb02b2e0b10cc4f83252",
+            "size_bytes": 6119,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_consolidated/20260902T120216225403Z/16_03_result_0001.json",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/01_visual_review/text_sufficiency_verifier.json",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/classification_record.json",
+            "sha256": "dcbfea6946d79b2ee63fa858bdcb6ef894b1804ab5d401674082636e105ad26b",
+            "size_bytes": 3123,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_combined_210_audit_01/16_03_09_02_category_distribution.json",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/01_visual_review/classification_record.json",
+            "valid": true
+          },
+          {
+            "path": "01_visual_review/assets/6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2.mov",
+            "sha256": "6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2",
+            "size_bytes": 3268232,
+            "storage": "hardlinked",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_13_visual_expansion_wave02_deficits/20260902T114613730990Z/11_http_archive/assets/6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/01_visual_review/assets/6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2.mov",
+            "valid": true
+          }
+        ],
+        "source_archive": [
+          {
+            "path": "02_source_archive/source_archive.json",
+            "sha256": "b9ddd8abe3d2e4f2007af4c3aec1f42cdabb316aa59304c1b27058873f98133f",
+            "size_bytes": 275876,
+            "storage": "copied",
+            "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_13_visual_expansion_wave02_deficits/20260902T114613730990Z/11_record_0001.json",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/02_source_archive/source_archive.json",
+            "valid": true
+          }
+        ],
+        "test_construction": [
+          {
+            "path": "03_test_construction/source_test_manifest.json",
+            "sha256": "a19f90f7590fc71c2feed548470fab7e456e5afc9da4d5de0d97b7bd570071e5",
+            "size_bytes": 1053,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/source_test_manifest.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/test_inventory.json",
+            "sha256": "4056a159c17d3182fdb36fdf855dbced7ca1542f160e5516ba93ea673843eb21",
+            "size_bytes": 464,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/test_inventory.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/reference.patch",
+            "sha256": "7fffde52ffaaa9ea728bc8525f456dd270f02c7e13415ce66fa8ffee05b82d94",
+            "size_bytes": 2875,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/reference.patch",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/author_tests.patch",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size_bytes": 0,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/author_tests.patch",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+            "sha256": "6cecc2fbf4066a94b06fb8c3e430a322a25c9241b87df7cd98b82e47494b0492",
+            "size_bytes": 188661,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+            "sha256": "26c27926ce33cd34f6a52413fc5ea5bb83e3458634a647e548ea4cff32a09e60",
+            "size_bytes": 6402,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+            "sha256": "ef539aa4a5336fd0ba620481a210182190727e7f832cc79ca9667f82b1788394",
+            "size_bytes": 4135,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+            "sha256": "22ec4c57923d137a06c362146a84dc883b29720c62cfa99814dc656e222c9535",
+            "size_bytes": 23797,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+            "sha256": "0c316bf5f947668b3549cf9286da9225476afe722a8c5765b1cd882ecfc723eb",
+            "size_bytes": 20616,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+            "sha256": "b3b6c3a4edcca86fbc7a2fe3d9cd3485aa4c62c671934e40ba4d819ec10ff3eb",
+            "size_bytes": 613,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+            "sha256": "b2520cd29fa89e24b50b234bbe803e44f23fda3659526e3edae3b188381bae1a",
+            "size_bytes": 208777,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+            "sha256": "5902d5a3ffd3f5a5f465013ef8393f88aba4f398311ee90dba0546bbd59b97dd",
+            "size_bytes": 157,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+            "sha256": "4d287c30078c2e4ab704d60497d3cab414296fa0e13107327db641609215456d",
+            "size_bytes": 39,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+            "sha256": "5271b5b1a3d3bb97af8269dcdd405533eed6d797dd19f028a77d34ea9fecf523",
+            "size_bytes": 98470,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+            "sha256": "78bbddc3bd2744a238fbd12d90e21c9795271ac09c79e35979d594583f897c14",
+            "size_bytes": 24873,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.tsx",
+            "sha256": "925908714e53673acf251b4a6a94c2c2eba017ca00249a497d61e611b8cd39e7",
+            "size_bytes": 14523,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.tsx",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+            "sha256": "5f864c44ec84008f8c0476527201c4dfffa2ec94baac2a186e2e8f09004292a4",
+            "size_bytes": 26483,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+            "valid": true
+          },
+          {
+            "path": "03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+            "sha256": "6c43df14c85e3080f1b30132d392f3c31afb99fb82010fe8a523170454322c97",
+            "size_bytes": 1267,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+            "valid": true
+          }
+        ],
+        "measurements": [
+          {
+            "path": "04_measurements/source_base_gold.json",
+            "sha256": "d4b57d965a73e30a5b6e62dffe75e4d691a76d8d9ffd8fbbcdbeee40fd658948",
+            "size_bytes": 2384,
+            "storage": "copied",
+            "resolved_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/04_measurements/source_base_gold.json",
+            "valid": true
+          }
+        ],
+        "harbor": []
+      },
+      "pipeline_status": {
+        "source_archived": "complete",
+        "test_construction": "prepared",
+        "base_gold_measurement": "prepared",
+        "harbor_empty": "not_started",
+        "harbor_oracle": "not_started"
+      },
+      "blockers": [
+        {
+          "stage": "test_construction",
+          "code": "functional_oracle_pending",
+          "detail": "Source assertions are preliminary; rendered functional behavior and human F2P/P2P calibration are not complete."
+        },
+        {
+          "stage": "harbor",
+          "code": "task_not_exported",
+          "detail": "No checksum-bound Harbor task exists; empty/oracle controls cannot yet be counted."
+        },
+        {
+          "stage": "test_construction",
+          "code": "author_test_missing",
+          "detail": "A geometric behavior test must create bound text and an elbow arrow, change font size, then assert rerouted endpoints/bindings."
+        }
+      ],
+      "verifier_runs": [
+        {
+          "status": "complete",
+          "verdict": "additional_tests_proposed",
+          "bundle_count": 1,
+          "human_review_required": false,
+          "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/03_test_construction/20_11_verifier_run_01/20_11_06_result.json"
+        }
+      ],
+      "manifest": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/00_case_manifest.json",
+      "manifest_sha256": "ffdd1b4c626d8b92992cf7d6d787df9642387ab4a30ffb70b2e7c3d019006133"
+    }
+  ]
+}

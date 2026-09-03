@@ -1,0 +1,17 @@
+{
+  "backend": "gemini",
+  "profile": {
+    "protocol": "chat",
+    "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+    "model": "gemini-3.7-flash",
+    "api_version": "2024-03-01-preview",
+    "key_name": "AIDP_API_KEY",
+    "key_file": "gemini_key_env.sh"
+  },
+  "timeout": 480,
+  "attempt_limit": 2,
+  "sdk_max_retries": 0,
+  "request_sha256": "1a2761838510b35d396a6489fe434155fc5fa837429bf5d11e44051f015d016c",
+  "prompt_sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+  "schema_sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff"
+}

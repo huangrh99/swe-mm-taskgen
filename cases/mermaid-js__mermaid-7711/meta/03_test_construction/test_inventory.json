@@ -1,0 +1,17 @@
+{
+  "schema_version": "candidate-test-inventory-v1",
+  "baseline_commit": "8b52e5378903e01f6da8c760717b3c80f41f9ffd",
+  "reference_commit": "f50fb4f0facfb432b27877921af2e30a01854265",
+  "author_test_paths": [
+    "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js",
+    "cypress/integration/rendering/flowchart/flowchart-v2.spec.js",
+    "cypress/integration/rendering/state/stateDiagram-v2.spec.js"
+  ],
+  "author_test_change_detected": true,
+  "preliminary_source_tests": [
+    "f2p_single_logical_self_loop_render_edge",
+    "p2p_recursive_dagre_render_entrypoint_retained"
+  ],
+  "functional_rendered_oracle_status": "pending",
+  "human_f2p_p2p_review_status": "pending"
+}

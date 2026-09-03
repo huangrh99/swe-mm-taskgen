@@ -1,0 +1,63 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave15_targeted_text_shard_05/20260902T131928553149Z",
+  "source_manifest_sha256": "00684214f9ecefe8bd89a0d89087f1bca2388d0d53c1db78b261faac1b49c715",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "6ae4480437a8863bbcdd456c208bd3185302fa97e777f586ec10b6953bc155b9",
+  "run_id": "v3-wave15-excalidraw9570-20260902-02",
+  "nonce": "wave15excalidraw9570_nonce02",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave15_excalidraw_9570_02",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "excalidraw__excalidraw-9570",
+      "source_result_sha256": "3d42e12825b7172d37be74dd36cee680cf3f0db6dd663f7aae7d4b2b8a97616c",
+      "source_packet_sha256": "7a7044f0c34f7bd34430b2ddb76a854374fbc7128efc7030f5d8fcc4e3d6de52",
+      "source_archive_sha256": "29807f33d8fffac5abbcd6a605ed8eb36f052fbf72be7ff378c4ceeae8b619ed",
+      "problem_statement_sha256": "e66e6bd402b8c95ca63524601e21e9185e94c9ea231cc74ecb6a04227dd2f6e3",
+      "available_asset_ids": [
+        "d5d0d9a68b9e7607548e5c4d1678be1b5c4d3408f4cb91b217df3e02b63b92a9",
+        "3b93de52d706282d0d4eacf4815f3ca8ac8a37ff962e7e7e807419afb7de9381"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "ff132ecd10338335688781e1a6d13e3595480df5a64863c02d624a0748e13b79"
+    }
+  ],
+  "expected_case_calls": 1,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 6,
+  "authorized": true
+}

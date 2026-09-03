@@ -1,0 +1,39 @@
+{
+  "schema_version": "case-environment-build-v1",
+  "status": "complete",
+  "instance_id": "mermaid-js__mermaid-7711",
+  "repository": "mermaid-js/mermaid",
+  "source_baseline_sha": "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e",
+  "image_id": "sha256:93acf0c18d0caddbf9446f7d55423c903311d60c3eb54d3ec4c4fdbeaefc82bc",
+  "build_reference": "visual-harbor-base:93acf0c18d0caddbf9446f7d55423c903311d60c3eb54d3ec4c4fdbeaefc82bc",
+  "architecture": "arm64",
+  "node_base": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "asset_inventory": [
+    {
+      "name": "asset_01.png",
+      "sha256": "1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9"
+    },
+    {
+      "name": "asset_02.png",
+      "sha256": "2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d"
+    },
+    {
+      "name": "asset_03.png",
+      "sha256": "4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3"
+    },
+    {
+      "name": "asset_04.png",
+      "sha256": "549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab"
+    },
+    {
+      "name": "asset_05.png",
+      "sha256": "bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d"
+    },
+    {
+      "name": "asset_06.png",
+      "sha256": "f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd"
+    }
+  ],
+  "built_at": "2026-09-02T16:20:58.399529+00:00",
+  "build_log": "meta/environment/build.log"
+}

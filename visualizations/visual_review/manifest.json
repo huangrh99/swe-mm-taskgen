@@ -1,0 +1,16 @@
+{
+  "schema_version": "self-contained-visual-review-v1",
+  "entrypoint": "index.html",
+  "entrypoint_sha256": "be01ee9bca66b68e1b811b46e368606a4ce0a6e66de4569a587daae30160b58f",
+  "metadata": "metadata.json",
+  "metadata_sha256": "713c9ba157d51cf6be8d501628a0b82d943c8b55f4f3acffec3aad25b11be31b",
+  "candidate_count": 39,
+  "unique_case_count": 39,
+  "asset_root": "16_04_02_assets",
+  "asset_reference_count": 79,
+  "asset_file_count": 79,
+  "asset_inventory_sha256": "e5b104d372c118c395766f4a3109bf1a4c96484563de8118153788607437bb92",
+  "source_manifest_sha256": "0c4ece0feea7db6cbb8e2f74da7139e86cd8227ae712a61e677cd53806022843",
+  "standalone_runtime": true,
+  "external_paths_are_provenance_only": true
+}

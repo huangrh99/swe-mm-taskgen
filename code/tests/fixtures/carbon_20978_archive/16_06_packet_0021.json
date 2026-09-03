@@ -1,0 +1,87 @@
+{
+  "schema_version": "text-only-repair-packet-v1",
+  "case_id": "carbon-design-system__carbon-20978",
+  "repository": "carbon-design-system/carbon",
+  "pr_number": 20978,
+  "baseline_sha": "b1d5ecd6a7e48d82f4469fd8aca74ab962a19f80",
+  "problem_sources": [
+    {
+      "source_id": "carbon-design-system/carbon#20120:title",
+      "kind": "issue",
+      "field": "title",
+      "relation": "closes",
+      "url": "https://github.com/carbon-design-system/carbon/issues/20120",
+      "created_at": "2025-08-07T17:40:11Z",
+      "updated_at": "2025-11-11T21:30:15Z",
+      "historical_version_verified": false,
+      "original_text_sha256": "1e5eba1df3e9080874a12dcfdcdd9572ca2c89a6c211472e441cf2287017c833",
+      "text": "[Bug]: Combobox styling issues with `invalid` icon and `ai-label`",
+      "text_sha256": "1e5eba1df3e9080874a12dcfdcdd9572ca2c89a6c211472e441cf2287017c833"
+    },
+    {
+      "source_id": "carbon-design-system/carbon#20120:body",
+      "kind": "issue",
+      "field": "body",
+      "relation": "closes",
+      "url": "https://github.com/carbon-design-system/carbon/issues/20120",
+      "created_at": "2025-08-07T17:40:11Z",
+      "updated_at": "2025-11-11T21:30:15Z",
+      "historical_version_verified": false,
+      "original_text_sha256": "ad3edf9e802e28e97b960103e472991cd8c52d1232fd698e600d60f0e155e668",
+      "text": "### Package\n\n@carbon/web-components\n\n\n### Package version\n\nlatest\n\n\n\n### Description\n\nThe invalid icon has buggy positioning when paired with an ai-label\n\n#### No Input\n\n**Expected (react):**\n\n\n**Actual:**\n\n\n#### With Input\n\n**Expected (react):**\n\n\n**Actual:**\n\n\n\n### Suggested Severity\n\nSeverity 3 = User can complete task, and/or has a workaround within the user experience of a given component.\n",
+      "text_sha256": "9e0c389b3961561581bc54d89fa5daa75ee361b43ff8af633b2223632b372d67"
+    },
+    {
+      "source_id": "carbon-design-system/carbon#20849:title",
+      "kind": "issue",
+      "field": "title",
+      "relation": "closes",
+      "url": "https://github.com/carbon-design-system/carbon/issues/20849",
+      "created_at": "2025-10-31T11:12:53Z",
+      "updated_at": "2025-11-11T21:30:16Z",
+      "historical_version_verified": false,
+      "original_text_sha256": "8cd2d8fca425fe7d96f8c78faa5ea7d56183cd5cda95010adc81d1c1e079cd82",
+      "text": "React|WC Parity: Combobox AI Label is missing gradient style",
+      "text_sha256": "8cd2d8fca425fe7d96f8c78faa5ea7d56183cd5cda95010adc81d1c1e079cd82"
+    },
+    {
+      "source_id": "carbon-design-system/carbon#20849:body",
+      "kind": "issue",
+      "field": "body",
+      "relation": "closes",
+      "url": "https://github.com/carbon-design-system/carbon/issues/20849",
+      "created_at": "2025-10-31T11:12:53Z",
+      "updated_at": "2025-11-11T21:30:16Z",
+      "historical_version_verified": false,
+      "original_text_sha256": "5889a9c851c8211ca34936a938e8ec8c268040b0e07ba08709e377ed74446cc3",
+      "text": "AI label story:\n\n- It does not have the blue AI styling/colors appearing on the input.\n- There needs to be a divider between the AI decorator and the chevron in the input.\n- When the close icon appears in the input, the spacing is off and there should be a divider between the AI decorator and the close icon in the input.\n\nSee parent issue https://github.com/carbon-design-system/carbon/issues/17992 for acceptance criteria.\n\n> [!IMPORTANT]  \n> Every PR needs a ux and visual review from the design team to ensure consistency. Please be sure PRs have https://github.com/carbon-design-system/carbon/labels/status%3A%20visual%20review%20%F0%9F%94%8D applied and request a review from @carbon-design-system/design\n\n",
+      "text_sha256": "5889a9c851c8211ca34936a938e8ec8c268040b0e07ba08709e377ed74446cc3"
+    }
+  ],
+  "baseline_file_index": [],
+  "withheld": [
+    "all_image_pixels",
+    "image_alt_text",
+    "pull_request_prose",
+    "comments",
+    "reviews",
+    "commits",
+    "diff",
+    "patch",
+    "tests",
+    "reference_code"
+  ],
+  "evidence_limits": {
+    "historical_problem_text_verified": false,
+    "baseline_file_contents_supplied": false,
+    "repository_navigation_executed": false
+  },
+  "provenance": {
+    "case_manifest": null,
+    "case_manifest_sha256": null,
+    "source_archive": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_source_archive/20260901T074547064254Z/11_record_0003.json",
+    "source_archive_sha256": "f1e610d7fb0d0479274a4817e89ebbe5ec40dce298036675dea1350afb3c31d0",
+    "baseline_archive": null,
+    "baseline_archive_sha256": null
+  }
+}

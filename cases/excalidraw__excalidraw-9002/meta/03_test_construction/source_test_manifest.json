@@ -1,0 +1,30 @@
+{
+  "schema_version": "source-test-manifest-v1",
+  "tests": [
+    {
+      "test_id": "f2p_font_resize_updates_bound_arrow",
+      "class": "FAIL_TO_PASS",
+      "path": "packages/excalidraw/actions/actionProperties.tsx",
+      "contains_all": [
+        "const updatedElementsMap = arrayToMap(updatedElements);",
+        "updateBoundElements(",
+        "updatedElementsMap as NonDeletedSceneElementsMap",
+        "elements: updatedElements"
+      ],
+      "contains_none": [],
+      "expected_transition": "fail->pass"
+    },
+    {
+      "test_id": "p2p_font_family_action_retained",
+      "class": "PASS_TO_PASS",
+      "path": "packages/excalidraw/actions/actionProperties.tsx",
+      "contains_all": [
+        "name: \"changeFontFamily\"",
+        "PanelComponent: ({ elements, appState, updateData, app }) =>"
+      ],
+      "contains_none": [],
+      "expected_transition": "pass->pass"
+    }
+  ],
+  "scope": "Executable source-level smoke assertions only; the PR added no author test and a geometric elbow-arrow behavior test is still required."
+}

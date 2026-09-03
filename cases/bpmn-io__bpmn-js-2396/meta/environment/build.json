@@ -1,0 +1,31 @@
+{
+  "schema_version": "case-environment-build-v1",
+  "status": "complete",
+  "instance_id": "bpmn-io__bpmn-js-2396",
+  "repository": "bpmn-io/bpmn-js",
+  "source_baseline_sha": "686561a9b9c733dc3a466a26e3803c5832b3c956",
+  "image_id": "sha256:28e5166eff9ff48bddbce76825305a2427504ea18cfe56cab12da6e9ba52ae7b",
+  "build_reference": "visual-harbor-base:28e5166eff9ff48bddbce76825305a2427504ea18cfe56cab12da6e9ba52ae7b",
+  "architecture": "arm64",
+  "node_base": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "asset_inventory": [
+    {
+      "name": "asset_01_44ed2f05e1eb.png",
+      "sha256": "44ed2f05e1eb28bcd064466ed33a79622d48bb9d27bc40594765da709de17ec6"
+    },
+    {
+      "name": "asset_02_ba179e3c63f8.gif",
+      "sha256": "ba179e3c63f874186ed5f782019bd713e7d9f0f58ca98a25edaec6899ce4fe53"
+    },
+    {
+      "name": "asset_03_a6b818fa6019.png",
+      "sha256": "a6b818fa60194dee719593e8a5a8fa9e3a7fc69e56e980f89605b435890d8692"
+    },
+    {
+      "name": "asset_04_1a6bc712a5d1.png",
+      "sha256": "1a6bc712a5d102889e542ee3d8c9e00850e998100ac58231028901e3ff1e7b30"
+    }
+  ],
+  "built_at": "2026-09-02T16:36:13.320685+00:00",
+  "build_log": "meta/environment/build.log"
+}

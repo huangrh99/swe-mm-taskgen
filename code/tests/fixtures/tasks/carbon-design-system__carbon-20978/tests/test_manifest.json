@@ -1,0 +1,122 @@
+{
+  "schema_version": "functional-test-manifest-v2",
+  "candidate_id": "carbon-design-system__carbon-20978",
+  "test_kind": "chromium_computed_style",
+  "execution": {
+    "kind": "command_json_v1",
+    "command": [
+      "/usr/bin/python3",
+      "-I",
+      "/tests/functional_runner.py"
+    ],
+    "runner": "tests/functional_runner.py",
+    "oracle_scope": "real Chromium computed style over a frozen minimal shadow-DOM fixture"
+  },
+  "limitations": [
+    "The reward uses compiled SCSS and real Chromium computed styles over a minimal fixture, not full-component screenshot/pixel equivalence.",
+    "contains_all fields are retained only as source diagnostics and are not reward-bearing for functional_result tests.",
+    "All F2P and P2P meanings remain pending independent human semantic calibration."
+  ],
+  "tests": [
+    {
+      "test_id": "f2p_ai_gradient_decorator",
+      "class": "F2P",
+      "kind": "functional_result",
+      "path": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "expected_transition": "fail->pass",
+      "contains_all": [
+        ".#{$prefix}--list-box__wrapper--decorator {\n    @include ai-gradient;"
+      ],
+      "contains_none": []
+    },
+    {
+      "test_id": "f2p_ai_right_divider",
+      "class": "F2P",
+      "kind": "functional_result",
+      "path": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "expected_transition": "fail->pass",
+      "contains_all": [
+        "::slotted(#{$prefix}-ai-label)::after",
+        "inline-size: to-rem(1px);",
+        "inset-inline-end: to-rem(-9px);"
+      ],
+      "contains_none": []
+    },
+    {
+      "test_id": "f2p_invalid_ai_left_divider",
+      "class": "F2P",
+      "kind": "functional_result",
+      "path": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "expected_transition": "fail->pass",
+      "contains_all": [
+        "::slotted(#{$prefix}-ai-label)::before",
+        "inset-inline-start: to-rem(-9px);"
+      ],
+      "contains_none": []
+    },
+    {
+      "test_id": "f2p_invalid_ai_closable_spacing",
+      "class": "F2P",
+      "kind": "functional_result",
+      "path": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "expected_transition": "fail->pass",
+      "contains_all": [
+        ":host(#{$prefix}-combo-box[invalid][ai-label][isClosable])",
+        "padding-inline-end: to-rem(141px);",
+        "inset-inline-end: to-rem(116px) !important;"
+      ],
+      "contains_none": []
+    },
+    {
+      "test_id": "p2p_disabled_selection_noninteractive",
+      "class": "P2P",
+      "kind": "functional_result",
+      "path": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "expected_transition": "pass->pass",
+      "contains_all": [
+        ":host(#{$prefix}-combo-box[disabled])",
+        ".#{$prefix}--list-box__selection {\n    pointer-events: none;"
+      ],
+      "contains_none": []
+    },
+    {
+      "test_id": "p2p_invalid_helper_error_color",
+      "class": "P2P",
+      "kind": "functional_result",
+      "path": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "expected_transition": "pass->pass",
+      "contains_all": [
+        ":host(#{$prefix}-combo-box[invalid])",
+        ".#{$prefix}--form__helper-text {\n    color: $text-error;"
+      ],
+      "contains_none": []
+    },
+    {
+      "test_id": "p2p_disabled_item_semantics",
+      "class": "P2P",
+      "kind": "functional_result",
+      "path": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "expected_transition": "pass->pass",
+      "contains_all": [
+        ":host(#{$prefix}-combo-box-item[disabled])",
+        "color: $text-disabled;",
+        "cursor: not-allowed;",
+        "text-decoration: none;"
+      ],
+      "contains_none": []
+    },
+    {
+      "test_id": "p2p_selected_item_state",
+      "class": "P2P",
+      "kind": "functional_result",
+      "path": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "expected_transition": "pass->pass",
+      "contains_all": [
+        ":host(#{$prefix}-combo-box-item[selected])",
+        "@extend .#{$prefix}--list-box__menu-item--active;",
+        ".#{$prefix}--list-box__menu-item__selected-icon {\n    display: block;"
+      ],
+      "contains_none": []
+    }
+  ]
+}

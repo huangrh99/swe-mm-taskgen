@@ -1,0 +1,22 @@
+{
+  "schema_version": "test-extension-verifier-run-v2",
+  "created_at": "2026-09-02T16:52:24.328109+00:00",
+  "status": "complete",
+  "model_invoked": true,
+  "packet": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-100957/meta/03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+    "sha256": "b293973da32903d209bd3268902b48f50fc4c9f0a04bc6ab42c008fc49e0aa5d"
+  },
+  "prompt_sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+  "schema_sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+  "runner_sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+  "result": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-100957/meta/03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+    "sha256": "1947fe7cad94423a71ced2b79705efe2ee86281825dbaae123ce7e16a78685dd"
+  },
+  "audit": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-100957/meta/03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+    "sha256": "a3f0cb22a7ab1ad4a62421ad8148a1e37d68a1c302c0a3b487b5f750d276a58f"
+  },
+  "boundary": "predicted transitions are never final F2P/P2P labels"
+}

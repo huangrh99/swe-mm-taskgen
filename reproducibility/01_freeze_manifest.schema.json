@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/visual-harbor/reproducibility-freeze-v1.schema.json",
+  "title": "Visual Harbor reproducibility freeze",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "freeze_status",
+    "observed_at",
+    "evidence_states",
+    "host",
+    "dependencies",
+    "schemas_and_prompts",
+    "harbor",
+    "docker",
+    "models",
+    "runtime_policy",
+    "verification_commands",
+    "secret_policy",
+    "open_items"
+  ],
+  "properties": {
+    "schema_version": {"const": "reproducibility-freeze-v1"},
+    "freeze_status": {"enum": ["partial", "complete"]},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "evidence_states": {
+      "type": "object",
+      "additionalProperties": {"type": "string"},
+      "required": ["realtime_verified", "historical_evidence", "pending", "unavailable"]
+    },
+    "host": {"type": "object"},
+    "dependencies": {"type": "object"},
+    "schemas_and_prompts": {"type": "array", "items": {"$ref": "#/$defs/fileEvidence"}},
+    "harbor": {"type": "object"},
+    "docker": {"type": "object"},
+    "models": {"type": "object"},
+    "runtime_policy": {"type": "object"},
+    "verification_commands": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "required": ["offline_manifest", "installed_versions", "functional_base"]
+    },
+    "secret_policy": {"type": "object"},
+    "open_items": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "fileEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "role", "state"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^(?!/)"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "role": {"type": "string"},
+        "state": {"enum": ["realtime_verified", "historical_evidence"]}
+      }
+    }
+  }
+}

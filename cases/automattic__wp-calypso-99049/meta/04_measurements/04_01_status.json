@@ -1,0 +1,18 @@
+{
+  "schema_version": "case-measurement-status-v2",
+  "case_id": "automattic__wp-calypso-99049",
+  "base_commit": "047aeef4a31c9e93ccb975adc77fb2107067fd6e",
+  "gold_commit": "c865012ecea983f5924e599fa5e472b52531a001",
+  "comparison_policy": "base_commit_to_final_pr_head",
+  "base_gold_measurement": "stale_after_verifier_v2_local_smoke_only",
+  "FAIL_TO_PASS": ["WPC-99049-LINK-COLOR"],
+  "PASS_TO_PASS": [
+    "WPC-99049-P2P-COLOR-SCOPE",
+    "WPC-99049-P2P-DOMAIN-OVERVIEW"
+  ],
+  "evidence": "../../outputs/11_verifier_v2_validation/summary.json",
+  "human_test_semantic_gate": "deferred",
+  "formal_admission": false,
+  "infra_failure": false,
+  "model_failure": false
+}

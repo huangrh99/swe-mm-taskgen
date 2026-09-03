@@ -1,0 +1,536 @@
+{
+  "schema_version": "reproducibility-freeze-v1",
+  "freeze_status": "partial",
+  "observed_at": "2026-09-01T11:14:49Z",
+  "evidence_states": {
+    "realtime_verified": "Observed read-only during this freeze pass.",
+    "historical_evidence": "Read from a named immutable prior-pilot artifact; not re-executed.",
+    "pending": "Must be resolved and hashed before the selected-task run.",
+    "unavailable": "Read-only verification was attempted but the component, command, or runtime was unavailable."
+  },
+  "host": {
+    "state": "realtime_verified",
+    "os": "macOS 26.5.1 build 25F80",
+    "kernel": "Darwin 25.5.0 arm64",
+    "architecture": "arm64",
+    "git": "2.50.1 (Apple Git-155)",
+    "workspace_head": "ee945d5a870d71246491419d58b09fb5a16498d7",
+    "host_python": "3.10.16",
+    "host_pip": "24.3.1",
+    "node": "20.20.2",
+    "npm": "11.15.0",
+    "uv": "0.11.21"
+  },
+  "dependencies": {
+    "status": "partial",
+    "harbor_runtime": {
+      "state": "realtime_verified",
+      "python": "3.12.13",
+      "lock_kind": "installed_distribution_snapshot",
+      "clean_resolution_proven": false
+    },
+    "verifier_runtime": {
+      "state": "realtime_verified",
+      "python": "3.12.13",
+      "lock_kind": "installed_distribution_snapshot",
+      "clean_resolution_proven": false,
+      "anomaly": "Duplicate pip distribution metadata (25.0.1 and 26.2.1) is preserved."
+    },
+    "formal_pipeline": {
+      "state": "pending",
+      "constraint_files_present": true,
+      "hash_locked_resolution_present": false,
+      "reason": "The current report/code tree is an unintegrated snapshot; its four requirement files are constraints, not a transitive lock."
+    },
+    "files": [
+      {
+        "path": "report/reproducibility/03_harbor_python.lock.txt",
+        "sha256": "3f5453b75fcdc20d908593d4e010bd7b8845430ab8db153f95febc4b176e3a29",
+        "role": "exact installed Harbor environment snapshot",
+        "state": "realtime_verified"
+      },
+      {
+        "path": "report/reproducibility/04_verifier_python.lock.txt",
+        "sha256": "75dc03fc58021fa3cfbf5b23c4f714d97f9f20d257059eb435e25b20bbac6762",
+        "role": "exact installed verifier/API environment snapshot",
+        "state": "realtime_verified"
+      },
+      {
+        "path": "report/code/pr_crawler/01_requirements_image_screening.txt",
+        "sha256": "2dcfad4b6d9d09290df19bca77cb4f10f93517fd37888015b6df13a98a75151d",
+        "role": "current optional parser constraint",
+        "state": "realtime_verified"
+      },
+      {
+        "path": "report/code/pr_crawler/08_requirements_vlm_screening.txt",
+        "sha256": "070f7f72f6eb827e650604ea1daaaa2a84364f35d3516ea3dc9838daee942858",
+        "role": "current VLM screening constraints",
+        "state": "realtime_verified"
+      },
+      {
+        "path": "report/code/pr_crawler/09_requirements_verifier.txt",
+        "sha256": "ecb15c2ca47f54f9e22ab34a4bdfbfdfa96a1a518686d1dd53232fac721b3d46",
+        "role": "current verifier constraints",
+        "state": "realtime_verified"
+      },
+      {
+        "path": "report/code/pr_crawler/10_requirements_api_engines.txt",
+        "sha256": "a2888e20f9d15da0cbaa8e3bdd2fc804f816e7d5a8bf5a02ea639281020afde3",
+        "role": "current API engine constraints",
+        "state": "realtime_verified"
+      }
+    ]
+  },
+  "schemas_and_prompts": [
+    {
+      "path": "report/code/analysis/prompts/01_01_source_scope_verifier.system.md",
+      "sha256": "1aca87dd1eb4e545fbbec61bcff244d2919e3b6c86128f4b75b1cccb4d055b21",
+      "role": "bounded parent Issue source-scope system prompt",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/01_02_source_scope_verifier.schema.json",
+      "sha256": "99cb3dffd70deb279532994a8c4085dacdde404e516add383b4cc5a208508dc2",
+      "role": "parent Issue source-scope output schema",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/08_01_visual_context_screening.system.md",
+      "sha256": "0db9a92027517e49dd4a292ab5fee29f2cc410e61025f676f6f344e99660b37a",
+      "role": "visual content system prompt",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/08_02_visual_context_screening.schema.json",
+      "sha256": "a3fbb01c900c6b88ac6f1f7f9c3f895110e5b3cd03f0939d3eb43982c2070606",
+      "role": "visual content output schema",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/09_01_visual_verifier.system.md",
+      "sha256": "f4d7b87f05f2793de04974b0dce8e0d94e1dec6fefa3fd246caddf8e8e0514b3",
+      "role": "visual necessity system prompt",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/09_02_visual_verifier.schema.json",
+      "sha256": "4a952e684642124798027f62daca57529ab5e872beafbf558b69d5b0e6612939",
+      "role": "visual necessity output schema",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/12_01_repair_relation_verifier.system.md",
+      "sha256": "3fb9a3445695c06d433431681d763ba2031032077d8f81bdaf849ffd21f70385",
+      "role": "repair relation system prompt",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/12_02_repair_relation_verifier.schema.json",
+      "sha256": "ab15737374a823b980e4bd84c500566778e1de03ab294dc45fe963d97f56ecb1",
+      "role": "repair relation output schema",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/14_04_test_coverage_verifier.system.md",
+      "sha256": "a7840367c0f9834e3fef3841765589b38c45749274e26962d12530c85f4b3f80",
+      "role": "test coverage system prompt",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/14_04_test_coverage_verifier.schema.json",
+      "sha256": "30dffc0ff3ba7e04b762fd81e5708712899ddbe411dc7b3513150814c3438169",
+      "role": "test coverage output schema",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/16_01_text_only_repair_sufficiency.system.md",
+      "sha256": "cf9310f5b3ba179ba3c3f92357211f26a8eb62efbf3f6c980d293f63ad1398f2",
+      "role": "text-only sufficiency system prompt",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/code/analysis/prompts/16_02_text_only_repair_sufficiency.schema.json",
+      "sha256": "b91962edb8ae74df469245ddeaa26f6247fbb2e80297a5d26f5741a085b94b4c",
+      "role": "text-only sufficiency output schema",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/schemas/dual_human_calibration_v1.schema.json",
+      "sha256": "e024ec178d0dd5b240e3d01ac3c2223887b16662e75e408d8896f1768dcc4a12",
+      "role": "legacy minimal independent visual-necessity and F2P/P2P human calibration schema",
+      "state": "realtime_verified"
+    },
+    {
+      "path": "report/schemas/dual_human_calibration_v2.schema.json",
+      "sha256": "d77157c6b34f5553a7fcb49b08c1c6b0ea835c39e7143fa9efab8d4c3b368717",
+      "role": "bound detailed visual-necessity and per-test F2P/P2P human calibration schema",
+      "state": "realtime_verified"
+    }
+  ],
+  "harbor": {
+    "installed_package": {
+      "state": "realtime_verified",
+      "version": "0.22.0",
+      "editable": false,
+      "direct_url_metadata": null,
+      "source_commit_independently_bound": false
+    },
+    "source_revision": {
+      "state": "historical_evidence",
+      "repository": "harbor-framework/harbor",
+      "commit": "d6514c49e3dc321df46c6653cb3ee8166ab12efe",
+      "note": "Pinned by prior source audit; installed wheel metadata does not independently prove this commit."
+    },
+    "task_contract": {
+      "state": "historical_evidence",
+      "schema_version": "1.4",
+      "mode": "single-step shared verifier",
+      "reward_file": "/logs/verifier/reward.txt",
+      "detail_file": "/logs/verifier/15_test_results.json",
+      "required_layout": [
+        "task.toml",
+        "instruction.md",
+        "environment/Dockerfile",
+        "solution/solve.sh",
+        "tests/test.sh"
+      ]
+    },
+    "exam_task_contract": {
+      "state": "realtime_verified",
+      "schema_version": "1.2",
+      "workdir": "/testbed",
+      "asset_root": "/testbed/assets",
+      "allow_internet": false,
+      "reward_file": "/logs/verifier/reward.txt",
+      "required_layout_source": "report/SUBMISSION_CONTRACT.md"
+    },
+    "prior_control_task": {
+      "state": "historical_evidence",
+      "repository": "bpmn-io/bpmn-js",
+      "pr_number": 2322,
+      "task_digest": "sha256:0a0561cbd72a12222b8b8dba2c65073f5bba43e8cc5d27e24a09493b20ff35a4",
+      "baseline_reward": 0,
+      "oracle_reward": 1,
+      "controls_passed": 7,
+      "not_reusable_as_selected_visual_task": true
+    },
+    "selected_visual_task": {
+      "state": "material_changed_controls_pending",
+      "repository": "carbon-design-system/carbon",
+      "pr_number": 20978,
+      "task_directory_checksum": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+      "task_schema_compatibility_verified": true,
+      "task_inventory": {
+        "path": "report/reproducibility/06_selected_task_inventory.json",
+        "sha256": "8c8d775bc9cf5cc682eb592964ea40a1708b97f560dce0626009157f811ca9aa",
+        "tests": 8
+      },
+      "control_evidence": {
+        "path": "report/evidence/oracle_summary.json",
+        "sha256": "801893d48c85823dce6efed5670d58e319364dd0a653553045b5a76bd8e8e404",
+        "status": "historical_checksum_rerun_required",
+        "bound_historical_task_checksum": "2e4464f3d74f076f45c686133e3405b6d8674589d8407427b3b678cf52a1ad6b",
+        "controls": 0,
+        "baseline_reward": 0,
+        "oracle_reward": 1
+      },
+      "negative_control_evidence": {
+        "state": "historical_checksum_rerun_required",
+        "path": "report/evidence/negative_controls_summary.json",
+        "sha256": "8fb11e8348772f9d53ade1d4319da41671d2f72be57e0893e7298198e4e85e08",
+        "bound_historical_task_checksum": "2e4464f3d74f076f45c686133e3405b6d8674589d8407427b3b678cf52a1ad6b",
+        "raw_run": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_43_exam_exact_negative_controls/negative_controls.json",
+        "controls": 10,
+        "passed": 10,
+        "invalid_attempt_preserved": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_38_exam_format_negative_controls/negative_controls.json"
+      },
+      "git_history_evidence": {
+        "state": "realtime_verified",
+        "path": "report/evidence/git_history_scrub.json",
+        "sha256": "1522421e135505ca2a5fa1533b54d3a7b217402fa007e47d6c48feef26c40c7f"
+      },
+      "agent_command": [
+        "tmp/multimodal-2025/15_harbor_runtime/venv/bin/harbor",
+        "run",
+        "-p",
+        "report/carbon-design-system__carbon-20978",
+        "--agent",
+        "kimi-code"
+      ],
+      "verifier_command": ["bash", "/tests/test.sh"],
+      "note": "Formal schema-1.2 layout is valid, but the complete-Issue instruction and deterministic Dockerfile changed task material. Current nop/oracle/negative controls, both human gates and five valid model trials remain pending."
+    },
+    "evidence_files": [
+      {
+        "path": "research/15_harbor_test_contract.md",
+        "sha256": "826295daf3f7b2f947e3118739695bb020d0c2db3dca1c22bf424625f50100a7",
+        "role": "Harbor source and task-contract audit",
+        "state": "historical_evidence"
+      },
+      {
+        "path": "crawler-output/multimodal-2025/15_harbor_pilot/15_acceptance.json",
+        "sha256": "76fe923d2df403d7ce7c99da5dfb0ab3fb532509c4ef4239700d186c3c7e0afd",
+        "role": "prior pilot acceptance summary",
+        "state": "historical_evidence"
+      },
+      {
+        "path": "crawler-output/multimodal-2025/15_harbor_pilot/15_bpmn_2322_v2/task.toml",
+        "sha256": "070153168d60c0ac7dd55e89fc83f542a2d83019bcff1d470319a00aa4a5b2cd",
+        "role": "prior task resource and timeout configuration",
+        "state": "historical_evidence"
+      },
+      {
+        "path": "crawler-output/multimodal-2025/15_harbor_pilot/15_bpmn_2322_v2/15_export_manifest.json",
+        "sha256": "b6d290a709e430c4016114ec9cad28075ba2ac0c59b4226221331a47bcf0dd47",
+        "role": "prior task image, network, and capability bindings",
+        "state": "historical_evidence"
+      },
+      {
+        "path": "crawler-output/multimodal-2025/15_harbor_pilot/15_jobs/15_baseline_v2/lock.json",
+        "sha256": "f22c1412316d577789b91a36a23601ef0842ab48aa02886d26b54a5d9172485f",
+        "role": "Harbor job lock and package version",
+        "state": "historical_evidence"
+      }
+    ]
+  },
+  "docker": {
+    "client": {
+      "state": "realtime_verified",
+      "version": "29.6.1",
+      "default_api_version": "1.55",
+      "negotiated_api_version": "1.54",
+      "git_commit": "8900f1d330",
+      "os": "darwin",
+      "architecture": "arm64",
+      "buildx": {
+        "state": "unavailable",
+        "reason": "docker buildx is not installed in the observed Docker CLI"
+      },
+      "compose": "5.2.0"
+    },
+    "daemon": {
+      "state": "realtime_verified",
+      "version": "29.5.2",
+      "api_version": "1.54",
+      "git_commit": "568f755",
+      "kernel": "6.8.0-117-generic",
+      "architecture": "aarch64",
+      "cpus": 6,
+      "memory_bytes": 12513603584,
+      "driver": "overlayfs",
+      "cgroup_version": "2",
+      "security_options": ["apparmor", "seccomp", "cgroupns"]
+    },
+    "colima": {
+      "cli_state": "realtime_verified",
+      "version": "0.10.3",
+      "prior_vm_state": "historical_evidence",
+      "prior_vm": {
+        "architecture": "arm64",
+        "cpus": 6,
+        "memory_gib": 12,
+        "disk_gib": 80,
+        "autostart": false
+      }
+    },
+    "prior_bpmn_image": {
+      "state": "historical_evidence",
+      "image_id": "sha256:bf19bfa1602b65956c47ba21fd856197a01515db027e7f36dee3161e9b70b649",
+      "archive_sha256": "4ff8a7b063395d7bc981484089c0dd9b23f06c08061c11c7db566e0e5ff4b1b4",
+      "architecture": "linux/arm64",
+      "node": "24.20.0",
+      "npm": "11.19.0",
+      "chromium": "151.0.7922.173",
+      "same_daemon_reload_only": true,
+      "not_selected_task_image": true
+    },
+    "functional_base_image": {
+      "state": "realtime_verified",
+      "local_reference": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+      "parent_local_reference": null,
+      "parent_image_id": null,
+      "produced_image_id": "sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+      "produced_repo_digest": "sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+      "architecture": "linux/arm64",
+      "size_bytes": 3049054489,
+      "app_tree": "2129bc7e29b4742ab75de5d29a8ad8bb7d915bf1",
+      "source_baseline_tree": "2129bc7e29b4742ab75de5d29a8ad8bb7d915bf1",
+      "chromium": "151.0.7922.173",
+      "node": "20.20.2",
+      "yarn": "4.10.3",
+      "sass": "1.93.2",
+      "inspection_evidence": {
+        "path": "report/reproducibility/07_functional_base_image_inspection.json",
+        "sha256": "98552462951ff6d5c689ea1800148446d68cf650546f7ed5dda00d5457dc531f",
+        "role": "functional base image identity and runtime version inspection",
+        "state": "realtime_verified"
+      },
+      "offline_archive_sha256": "287f6f570a6e27875ec49e11f14698a82fa50b02f05ceef1d074cd27bf8d27b3",
+      "offline_archive": {
+        "path": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_40_exact_baseline_base_archive/visual-harbor-base-aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9.tar",
+        "sha256": "287f6f570a6e27875ec49e11f14698a82fa50b02f05ceef1d074cd27bf8d27b3"
+      },
+      "note": "Exact source-tree base identity and offline archive are verified; an independent clean-host reload remains pending."
+    },
+    "selected_task_image": {
+      "state": "rebuild_required_after_dockerfile_change",
+      "base_digest": "sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+      "produced_image_id": "sha256:2d2bae49bcfaebaa7cf686750cc7e15e834d5a3dc47ceada8a13401b343addf7",
+      "produced_repo_digest": "sha256:2d2bae49bcfaebaa7cf686750cc7e15e834d5a3dc47ceada8a13401b343addf7",
+      "architecture": "linux/arm64",
+      "size_bytes": 7850025177,
+      "container_user": "10001:10001",
+      "workdir": "/testbed",
+      "build_command": ["docker", "build", "-t", "visual-harbor-carbon-20978-exam:strict", "report/carbon-design-system__carbon-20978/environment"],
+      "inspection_evidence": {
+        "path": "report/evidence/git_history_scrub.json",
+        "sha256": "1522421e135505ca2a5fa1533b54d3a7b217402fa007e47d6c48feef26c40c7f",
+        "role": "selected task image identity, non-root runtime and Git history scrub",
+        "state": "realtime_verified"
+      },
+      "offline_archive_sha256": null,
+      "note": "Current-daemon identity, non-root /testbed runtime and one-commit scrub are verified; the exact base archive plus frozen task directory deterministically rebuild this layer."
+    }
+  },
+  "models": {
+    "visual_content_classifier": {
+      "state": "realtime_verified",
+      "provider": "Codex CLI",
+      "model_id": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "invocation_policy": "read-only sandbox with a separate system instructions file",
+      "system_prompt_path": "report/code/analysis/prompts/08_01_visual_context_screening.system.md",
+      "prompt_sha256": "0db9a92027517e49dd4a292ab5fee29f2cc410e61025f676f6f344e99660b37a",
+      "schema_path": "report/code/analysis/prompts/08_02_visual_context_screening.schema.json",
+      "schema_sha256": "a3fbb01c900c6b88ac6f1f7f9c3f895110e5b3cd03f0939d3eb43982c2070606",
+      "note": "This pin describes the formal image-classification verifier, not the later Gemini coding agent."
+    },
+    "screening_verifier": {
+      "state": "historical_evidence",
+      "provider": "Gemini-compatible API through the archived engine",
+      "model_id": "gemini-3.7-flash",
+      "result_evidence": {
+        "path": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075905892457Z/16_03_result_0020.json",
+        "sha256": "57ae54ab22845df47cd5a1e32771aaf52c61b6298ef99b179efb48d5f2c58c36",
+        "note": "Successful same-run record proving the archived screening model ID; this is not Carbon #20978-specific evidence."
+      },
+      "text_only_prompt_sha256": "cf9310f5b3ba179ba3c3f92357211f26a8eb62efbf3f6c980d293f63ad1398f2",
+      "text_only_schema_sha256": "b91962edb8ae74df469245ddeaa26f6247fbb2e80297a5d26f5741a085b94b4c",
+      "coding_agent_equivalence": false
+    },
+    "coding_agent": {
+      "state": "pending_exact_checksum_authorization",
+      "provider": "internal ARK Responses-compatible endpoint",
+      "model_id": "ep-20260817150115-9fx8h",
+      "agent": "kimi-code",
+      "agent_version": "0.28.1",
+      "harbor_agent": "official installed agent",
+      "capabilities": ["image_in", "thinking"],
+      "credential_environment_variable": "ARK_API_KEY",
+      "credential_value_stored": false,
+      "instruction_path": "report/carbon-design-system__carbon-20978/instruction.md",
+      "instruction_sha256": "1eb832b5947a306d1ba7749b3b44deac7c2837bdbf46c0d34d6ebb726b277b9e",
+      "sampling": {"provider_default": true},
+      "seed": null,
+      "seed_exposed": false,
+      "tool_policy": "official kimi-code tools in /testbed; source history, hidden tests and oracle solution unavailable during agent phase",
+      "budget": {
+        "valid_trials": 5,
+        "maximum_replacement_attempts_per_invalid_trial": 3
+      },
+      "timeout_sec": 7200,
+      "trial_count": 5,
+      "expected_external_calls": null,
+      "authorization_record": null,
+      "note": "Install-only protocol smoke succeeded. A counted Pass@5 group still requires a job-level provider network contract and renewed authorization bound to checksum 7a09fc40."
+    }
+  },
+  "runtime_policy": {
+    "prior_task_limits": {
+      "state": "historical_evidence",
+      "agent_timeout_sec": 120,
+      "verifier_timeout_sec": 660,
+      "environment_build_timeout_sec": 600,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "workdir": "/app",
+      "network_mode": "none",
+      "capabilities_drop": ["ALL"],
+      "capabilities_add": ["FOWNER"],
+      "no_new_privileges": true,
+      "pids_limit": 512,
+      "shm_size": "512m"
+    },
+    "selected_task_limits": {
+      "state": "realtime_verified",
+      "agent_timeout_sec": 7200,
+      "verifier_timeout_sec": 3600,
+      "environment_build_timeout_sec": 1800,
+      "cpus": 6,
+      "memory_mb": 12288,
+      "storage_mb": 20480,
+      "workdir": "/testbed",
+      "network_mode": "none",
+      "capabilities_drop": ["ALL"],
+      "capabilities_add": ["FOWNER"],
+      "no_new_privileges": true,
+      "pids_limit": 512,
+      "shm_size": "1gb"
+    },
+    "pass_at_5": {
+      "valid_trials_required": 5,
+      "success_count_range": [0, 5],
+      "pass_at_5_rule": "1 iff at least one of five valid trial rewards is 1",
+      "infrastructure_invalid_counts_as_failure": false,
+      "clean_workspace_per_trial": true,
+      "shared_mutable_state": false
+    }
+  },
+  "verification_commands": {
+    "offline_manifest": [
+      ["tmp/multimodal-2025/09_verifier/venv/bin/python", "report/reproducibility/05_verify_freeze.py"],
+      ["tmp/multimodal-2025/09_verifier/venv/bin/python", "-m", "unittest", "report/reproducibility/test_verify_freeze.py"]
+    ],
+    "installed_versions": [
+      ["tmp/multimodal-2025/15_harbor_runtime/venv/bin/python", "-c", "import importlib.metadata as m,sys; print(sys.version.split()[0]); print(m.version('harbor'))"],
+      ["docker", "version", "--format", "{{json .}}"],
+      ["docker", "compose", "version"],
+      ["colima", "version"]
+    ],
+    "functional_base": [
+      ["python3", "report/reproducibility/08_verify_base_image.py"],
+      ["docker", "image", "inspect", "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9"],
+      ["docker", "run", "--rm", "--network", "none", "--read-only", "--entrypoint", "/bin/sh", "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9", "-lc", "chromium --version; node --version; yarn --version; /app/node_modules/.bin/sass --version; git -C /app rev-parse HEAD^{tree}; id"]
+    ]
+  },
+  "secret_policy": {
+    "state": "realtime_verified",
+    "included": [],
+    "excluded_categories": [
+      "API credentials and tokens",
+      "environment variable values",
+      "Docker client configuration",
+      "Docker and Colima sockets",
+      "credential files under envs",
+      "private keys",
+      "provider request headers"
+    ],
+    "allowed_model_metadata": [
+      "provider name",
+      "model identifier",
+      "official agent and version",
+      "sampling settings",
+      "budget and timeouts",
+      "usage counts",
+      "prompt and schema hashes"
+    ],
+    "validator": "report/reproducibility/05_verify_freeze.py"
+  },
+  "open_items": [
+    "Resolve the formal report CLI dependency graph into a clean hash-locked installation; current requirement files are constraints only.",
+    "Verify the bound exact-base archive by reload on an independent same-architecture Docker daemon; the final task layer is rebuilt from that base plus the frozen task directory.",
+    "Bind the installed Harbor 0.22.0 wheel to the audited source commit or retain the packaging provenance gap.",
+    "Complete independent human calibration for visual necessity and F2P/P2P semantic validity.",
+    "Freeze a job-level provider network contract, present the exact checksum/config/call budget, obtain renewed authorization, then run and validate five clean trials."
+  ]
+}

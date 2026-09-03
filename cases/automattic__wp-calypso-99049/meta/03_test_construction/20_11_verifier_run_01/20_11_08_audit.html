@@ -1,0 +1,155 @@
+<!doctype html><meta charset=utf-8><title>20_11 test coverage verifier</title>
+<style>body{font:13px/1.45 system-ui;margin:18px;color:#202124;background:#f6f7f8}main{max-width:1280px;margin:auto}section,.card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;padding:6px;text-align:left;vertical-align:top}pre{white-space:pre-wrap;max-height:420px;overflow:auto}.warn{color:#9a6700}</style>
+<main><h1>automattic__wp-calypso-99049 · F2P/P2P 覆盖补全 Verifier</h1>
+<div class=card><b>结论：</b>additional_tests_proposed<br>
+<b>已有实测：</b>0 F2P · 0 P2P，前后各 0 次<br>
+<span class=warn>模型只提出覆盖与测试补全建议；新增测试的 F2P/P2P 必须重新实测。正确性按功能行为，不按 gold 代码文本。</span></div>
+<section><h2>实现无关的行为契约</h2><table><tr><th>约束</th><th>可观察契约</th></tr><tr><td>constraint_001</td><td>In the Domain Overview pane, link buttons within the domain forwarding accordion section (.domain-forwarding-card__accordion .link-button, including &#x27;+ Add forward&#x27;, &#x27;Edit&#x27;, and &#x27;Remove forward&#x27;) must be styled with the page&#x27;s standard link color variable var(--color-link).</td></tr></table>
+<p><b>必须保持：</b>Other controls and navigation tabs in the Domain Overview pane remain unaffected and functional.；Domain forwarding card form states, validation rules, and mutations continue to operate normally.</p>
+<p><b>允许的实现差异：</b>The style rule can be nested under .hosting-dashboard-item-view__content or directly attached to .domain-forwarding-card__accordion .link-button, as long as the compiled stylesheet rules cascade color: var(--color-link) to link buttons in the domain forwarding card accordion.</p></section>
+<section><h2>逐约束覆盖</h2><table><tr><th>约束</th><th>覆盖</th><th>当前断言</th><th>理由</th></tr><tr><td>constraint_001</td><td>未覆盖</td><td>Existing unit tests check tab switching and button presence in DomainOverviewPane, but no tests assert compiled SCSS rules or rendered colors for domain forwarding link buttons.</td><td>Neither DOM style rules nor compiled stylesheet rules for domain forwarding link button colors are verified by existing test suites.</td></tr></table></section>
+<section><h3>bundle_domain_forwarding_link_color</h3><p><b>预测：</b>candidate_f2p · <b>oracle：</b>computed_style_or_rendered_property_assertion</p><p>The test inspects the compiled CSS stylesheet generated from client/my-sites/domains/domain-management/domain-overview-pane/style.scss to verify that the CSS rule targeting .domain-forwarding-card__accordion .link-button explicitly sets color: var(--color-link).</p><details><summary>完整测试补丁</summary><pre>diff --git a/test/client/domain-forwarding-link-color.test.mjs b/test/client/domain-forwarding-link-color.test.mjs
+new file mode 100644
+index 0000000..59654d6
+--- /dev/null
++++ b/test/client/domain-forwarding-link-color.test.mjs
+@@ -0,0 +1,28 @@
++import fs from &#x27;node:fs&#x27;;
++import assert from &#x27;node:assert&#x27;;
++
++const cssPath = process.argv[2] || &#x27;/tmp/domain-overview.css&#x27;;
++
++assert.ok(fs.existsSync(cssPath), `Compiled CSS file must exist at ${cssPath}`);
++const cssContent = fs.readFileSync(cssPath, &#x27;utf8&#x27;);
++assert.ok(cssContent.length &gt; 0, &#x27;Compiled CSS must not be empty&#x27;);
++
++// Match rule block targeting .domain-forwarding-card__accordion (or parent) and .link-button
++const linkButtonRuleRegex = /([^{}]*?\.domain-forwarding-card__accordion[^{}]*?\.link-button[^{}]*?)\{([^}]+)\}/g;
++let foundMatchingRule = false;
++let match;
++
++while ((match = linkButtonRuleRegex.exec(cssContent)) !== null) {
++	const declarations = match[2];
++	if (/color\s*:\s*var\(\s*--color-link\s*\)/.test(declarations)) {
++		foundMatchingRule = true;
++		break;
++	}
++}
++
++assert.ok(
++	foundMatchingRule,
++	&#x27;Expected compiled CSS to include a rule targeting .domain-forwarding-card__accordion .link-button setting color: var(--color-link)&#x27;
++);
++
++console.log(&#x27;PASS: domain forwarding link button color rule is present and sets var(--color-link)&#x27;);
+</pre></details></section><section><h2>Oracle-quality validation 计划</h2>
+<p class=warn>proposed_not_executed；仅供构造与审计，不暴露给 solver，未执行不得视为通过。</p>
+<table><tr><th>错误/不完整变体</th><th>应暴露的问题</th><th>应失败 test ID</th></tr><tr><td>hardcoded_hex_color_variant</td><td>Sets color: #0087be instead of var(--color-link), failing theme variable conformance.</td><td>test/client/domain-forwarding-link-color.test.mjs::domain forwarding link button color rule</td></tr><tr><td>unscoped_link_button_variant</td><td>Applies var(--color-link) to .link-button globally outside .domain-forwarding-card__accordion, failing the scoped accordion rule check.</td><td>test/client/domain-forwarding-link-color.test.mjs::domain forwarding link button color rule</td></tr></table>
+<p><b>等价正确实现：</b>Declares .domain-forwarding-card__accordion .link-button { color: var(--color-link); } directly at the root level of style.scss without wrapping in .hosting-dashboard-item-view__content div.<br>
+<b>应通过：</b>test/client/domain-forwarding-link-color.test.mjs::domain forwarding link button color rule</p></section>
+<details><summary>完整 Verifier JSON</summary><pre>{
+  &quot;schema_version&quot;: &quot;existing-tests-extension-v2&quot;,
+  &quot;task_id&quot;: &quot;automattic__wp-calypso-99049&quot;,
+  &quot;status&quot;: &quot;additional_tests_proposed&quot;,
+  &quot;behavioral_contract&quot;: {
+    &quot;observable_requirements&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+        &quot;contract&quot;: &quot;In the Domain Overview pane, link buttons within the domain forwarding accordion section (.domain-forwarding-card__accordion .link-button, including &#x27;+ Add forward&#x27;, &#x27;Edit&#x27;, and &#x27;Remove forward&#x27;) must be styled with the page&#x27;s standard link color variable var(--color-link).&quot;
+      }
+    ],
+    &quot;preserved_behaviors&quot;: [
+      &quot;Other controls and navigation tabs in the Domain Overview pane remain unaffected and functional.&quot;,
+      &quot;Domain forwarding card form states, validation rules, and mutations continue to operate normally.&quot;
+    ],
+    &quot;implementation_variation&quot;: &quot;The style rule can be nested under .hosting-dashboard-item-view__content or directly attached to .domain-forwarding-card__accordion .link-button, as long as the compiled stylesheet rules cascade color: var(--color-link) to link buttons in the domain forwarding card accordion.&quot;
+  },
+  &quot;coverage&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+      &quot;visual_category&quot;: &quot;外观与渲染属性理解&quot;,
+      &quot;coverage&quot;: &quot;未覆盖&quot;,
+      &quot;existing_test_ids&quot;: [
+        &quot;client/my-sites/domains/domain-management/domain-overview-pane/test/index.test.tsx::DomainOverviewPane renders the component with default tab selected&quot;,
+        &quot;client/my-sites/domains/domain-management/domain-overview-pane/test/index.test.tsx::DomainOverviewPane renders admin button with correct label&quot;
+      ],
+      &quot;assertion_summary&quot;: &quot;Existing unit tests check tab switching and button presence in DomainOverviewPane, but no tests assert compiled SCSS rules or rendered colors for domain forwarding link buttons.&quot;,
+      &quot;reason&quot;: &quot;Neither DOM style rules nor compiled stylesheet rules for domain forwarding link button colors are verified by existing test suites.&quot;
+    }
+  ],
+  &quot;test_bundles&quot;: [
+    {
+      &quot;bundle_id&quot;: &quot;bundle_domain_forwarding_link_color&quot;,
+      &quot;template_test_ids&quot;: [
+        &quot;client/my-sites/domains/domain-management/domain-overview-pane/test/index.test.tsx::DomainOverviewPane renders the component with default tab selected&quot;
+      ],
+      &quot;target_requirement_ids&quot;: [
+        &quot;constraint_001&quot;
+      ],
+      &quot;target_visual_capabilities&quot;: [
+        &quot;外观与渲染属性理解&quot;
+      ],
+      &quot;coverage_gap_reason&quot;: &quot;No existing test executes style compilation or verifies that the domain forwarding link button inherits var(--color-link).&quot;,
+      &quot;why_assertions_measure_requirements&quot;: &quot;The test inspects the compiled CSS stylesheet generated from client/my-sites/domains/domain-management/domain-overview-pane/style.scss to verify that the CSS rule targeting .domain-forwarding-card__accordion .link-button explicitly sets color: var(--color-link).&quot;,
+      &quot;oracle_type&quot;: &quot;computed_style_or_rendered_property_assertion&quot;,
+      &quot;predicted_transition&quot;: &quot;candidate_f2p&quot;,
+      &quot;predicted_base_behavior&quot;: &quot;Base branch does not define color: var(--color-link) for .domain-forwarding-card__accordion .link-button in style.scss, causing the test assertion to fail.&quot;,
+      &quot;predicted_reference_behavior&quot;: &quot;Reference branch defines the rule inside style.scss and compiles to CSS containing .domain-forwarding-card__accordion .link-button { color: var(--color-link); }, passing the assertion.&quot;,
+      &quot;working_directory&quot;: &quot;.&quot;,
+      &quot;test_command&quot;: &quot;node bin/render-stylesheet.js --in client/my-sites/domains/domain-management/domain-overview-pane/style.scss --out /tmp/domain-overview.css &amp;&amp; yarn workspace @automattic/calypso-e2e node ../../test/client/domain-forwarding-link-color.test.mjs /tmp/domain-overview.css&quot;,
+      &quot;stable_test_ids&quot;: [
+        &quot;test/client/domain-forwarding-link-color.test.mjs::domain forwarding link button color rule&quot;
+      ],
+      &quot;files&quot;: [
+        {
+          &quot;path&quot;: &quot;test/client/domain-forwarding-link-color.test.mjs&quot;,
+          &quot;operation&quot;: &quot;add&quot;,
+          &quot;content&quot;: &quot;import fs from &#x27;node:fs&#x27;;\nimport assert from &#x27;node:assert&#x27;;\n\nconst cssPath = process.argv[2] || &#x27;/tmp/domain-overview.css&#x27;;\n\nassert.ok(fs.existsSync(cssPath), `Compiled CSS file must exist at ${cssPath}`);\nconst cssContent = fs.readFileSync(cssPath, &#x27;utf8&#x27;);\nassert.ok(cssContent.length &gt; 0, &#x27;Compiled CSS must not be empty&#x27;);\n\n// Match rule block targeting .domain-forwarding-card__accordion (or parent) and .link-button\nconst linkButtonRuleRegex = /([^{}]*?\\.domain-forwarding-card__accordion[^{}]*?\\.link-button[^{}]*?)\\{([^}]+)\\}/g;\nlet foundMatchingRule = false;\nlet match;\n\nwhile ((match = linkButtonRuleRegex.exec(cssContent)) !== null) {\n\tconst declarations = match[2];\n\tif (/color\\s*:\\s*var\\(\\s*--color-link\\s*\\)/.test(declarations)) {\n\t\tfoundMatchingRule = true;\n\t\tbreak;\n\t}\n}\n\nassert.ok(\n\tfoundMatchingRule,\n\t&#x27;Expected compiled CSS to include a rule targeting .domain-forwarding-card__accordion .link-button setting color: var(--color-link)&#x27;\n);\n\nconsole.log(&#x27;PASS: domain forwarding link button color rule is present and sets var(--color-link)&#x27;);\n&quot;,
+          &quot;sha256_before&quot;: null
+        }
+      ],
+      &quot;unified_test_patch&quot;: &quot;diff --git a/test/client/domain-forwarding-link-color.test.mjs b/test/client/domain-forwarding-link-color.test.mjs\nnew file mode 100644\nindex 0000000..59654d6\n--- /dev/null\n+++ b/test/client/domain-forwarding-link-color.test.mjs\n@@ -0,0 +1,28 @@\n+import fs from &#x27;node:fs&#x27;;\n+import assert from &#x27;node:assert&#x27;;\n+\n+const cssPath = process.argv[2] || &#x27;/tmp/domain-overview.css&#x27;;\n+\n+assert.ok(fs.existsSync(cssPath), `Compiled CSS file must exist at ${cssPath}`);\n+const cssContent = fs.readFileSync(cssPath, &#x27;utf8&#x27;);\n+assert.ok(cssContent.length &gt; 0, &#x27;Compiled CSS must not be empty&#x27;);\n+\n+// Match rule block targeting .domain-forwarding-card__accordion (or parent) and .link-button\n+const linkButtonRuleRegex = /([^{}]*?\\.domain-forwarding-card__accordion[^{}]*?\\.link-button[^{}]*?)\\{([^}]+)\\}/g;\n+let foundMatchingRule = false;\n+let match;\n+\n+while ((match = linkButtonRuleRegex.exec(cssContent)) !== null) {\n+\tconst declarations = match[2];\n+\tif (/color\\s*:\\s*var\\(\\s*--color-link\\s*\\)/.test(declarations)) {\n+\t\tfoundMatchingRule = true;\n+\t\tbreak;\n+\t}\n+}\n+\n+assert.ok(\n+\tfoundMatchingRule,\n+\t&#x27;Expected compiled CSS to include a rule targeting .domain-forwarding-card__accordion .link-button setting color: var(--color-link)&#x27;\n+);\n+\n+console.log(&#x27;PASS: domain forwarding link button color rule is present and sets var(--color-link)&#x27;);\n&quot;,
+      &quot;result_parser&quot;: &quot;Standard Node process exit code: exit code 0 indicates PASS, non-zero code or uncaught AssertionError indicates FAIL.&quot;,
+      &quot;environment_assumptions&quot;: [
+        &quot;Node.js ES module runtime available&quot;,
+        &quot;bin/render-stylesheet.js compiles Sass successfully into /tmp/domain-overview.css&quot;
+      ],
+      &quot;equivalence_self_check&quot;: &quot;Alternative valid selectors (e.g. .hosting-dashboard-item-view__content div .domain-forwarding-card__accordion .link-button or direct .domain-forwarding-card__accordion .link-button) setting color: var(--color-link) match the regex and pass.&quot;,
+      &quot;vacuous_pass_checks&quot;: [
+        &quot;Missing stylesheet file or empty output throws an explicit AssertionError.&quot;,
+        &quot;Missing target selector or wrong property value (e.g. missing color or setting another color) throws an explicit AssertionError.&quot;
+      ],
+      &quot;surface_signal_resistance&quot;: &quot;A patch that merely adds comments or applies color to unrelated classes will not produce the required selector-declaration pair and will fail.&quot;
+    }
+  ],
+  &quot;oracle_quality_plan&quot;: {
+    &quot;status&quot;: &quot;proposed_not_executed&quot;,
+    &quot;curator_only&quot;: true,
+    &quot;negative_variants&quot;: [
+      {
+        &quot;variant_id&quot;: &quot;hardcoded_hex_color_variant&quot;,
+        &quot;defect_preserved_or_introduced&quot;: &quot;Sets color: #0087be instead of var(--color-link), failing theme variable conformance.&quot;,
+        &quot;expected_failure_test_ids&quot;: [
+          &quot;test/client/domain-forwarding-link-color.test.mjs::domain forwarding link button color rule&quot;
+        ]
+      },
+      {
+        &quot;variant_id&quot;: &quot;unscoped_link_button_variant&quot;,
+        &quot;defect_preserved_or_introduced&quot;: &quot;Applies var(--color-link) to .link-button globally outside .domain-forwarding-card__accordion, failing the scoped accordion rule check.&quot;,
+        &quot;expected_failure_test_ids&quot;: [
+          &quot;test/client/domain-forwarding-link-color.test.mjs::domain forwarding link button color rule&quot;
+        ]
+      }
+    ],
+    &quot;equivalent_positive_variant&quot;: {
+      &quot;description&quot;: &quot;Declares .domain-forwarding-card__accordion .link-button { color: var(--color-link); } directly at the root level of style.scss without wrapping in .hosting-dashboard-item-view__content div.&quot;,
+      &quot;expected_pass_test_ids&quot;: [
+        &quot;test/client/domain-forwarding-link-color.test.mjs::domain forwarding link button color rule&quot;
+      ]
+    }
+  },
+  &quot;missing_context&quot;: [],
+  &quot;summary&quot;: &quot;Proposed a deterministic stylesheet verification test bundle that compiles domain-overview-pane/style.scss and verifies that .domain-forwarding-card__accordion .link-button has color: var(--color-link).&quot;,
+  &quot;human_review_required&quot;: false,
+  &quot;human_review_reasons&quot;: []
+}</pre></details></main>

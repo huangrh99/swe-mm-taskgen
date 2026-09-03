@@ -1,0 +1,78 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave17_selected_02/16_06_01_text_sufficiency/20260902T144344955779Z",
+  "source_manifest_sha256": "be8187f79b4b34e103b4d968c00c9df9620b0a7922a8e07addb58ee1525bb967",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "1631b6fde1b9dca45e2e8fb320bef156c6e734f26001b77b2a50f58834676658",
+  "run_id": "v3-wave17-selected02-20260902-01",
+  "nonce": "wave17-selected02-20260902-nonce01",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave17_selected02_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "apache__echarts-20920",
+      "source_result_sha256": "25cfc0705b1dbb81edb0a11022c7198083cf0503292ab1c4ddac3c10cab0debf",
+      "source_packet_sha256": "72709ad91c8daa76e0c0e16f195064aaa597644a0152bd5206559c8fa398b909",
+      "source_archive_sha256": "1a42cfc5682e157ee3e7377a4844b66737702be1f9ca6d51a49331e9bfe7c8da",
+      "problem_statement_sha256": "44d5b5018640c41fbb68c7011a053f9278cbbceb014fb6cce6ae6ff27116b8b9",
+      "available_asset_ids": [
+        "fb9a6d7015e33338c8c0cd7918dd706bf15737b44aa5ec12ba3ba717f09c9fc2",
+        "83a8d74ffc9d9a27c36c277dc371fe3d4cd8e4e1a5f1b1d437dbbb2c1a17fe5a",
+        "481f33e4bd9dc875710596e02fe38efd1e2d4cc638f4585608d6b3e5f12e9a4a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "5df3a5fe3f0a9662db56ebb93d57108c4be162a9f225a8126e09bd3e4b530a14"
+    },
+    {
+      "case_id": "bpmn-io__form-js-1529",
+      "source_result_sha256": "59c1a6e66e7055e5e0be102648912e14dea332846fcdd4292a8cbb3e972849df",
+      "source_packet_sha256": "caa5348835077132dd3ed8e96680657f0ed87d42c07e3f70461790ccd66acd2d",
+      "source_archive_sha256": "ca3b5c75db20aba00895dff917219dd328ea98b9da21594520dbdb8df07eea8b",
+      "problem_statement_sha256": "203296ef07fd7d1b0949ac17f6aa45abb300bc6e35296eb1480a8fa31cfb5c86",
+      "available_asset_ids": [
+        "1bffa1e6afcc14fdfd89cf9280998de1b3514fdb3d61f85bfc3e311d556a8a5b"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "97ee672eae6b0798fda53a0ef277242531bc3dc8674070a14634e3312ff9eb97"
+    }
+  ],
+  "expected_case_calls": 2,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 12,
+  "authorized": true
+}

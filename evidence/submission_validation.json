@@ -1,0 +1,211 @@
+{
+  "schema_version": "exam-submission-validation-v1",
+  "validation_scope": "static_layout_only",
+  "status": "static_layout_complete_not_exam_ready",
+  "exam_readiness": "not_evaluated",
+  "exam_ready": false,
+  "runtime_acceptance_required": [
+    "empty_patch_reward_0",
+    "gold_patch_reward_1",
+    "negative_controls",
+    "visual_necessity_human_gate",
+    "f2p_p2p_human_gate",
+    "frozen_environment"
+  ],
+  "minimum_iid_tasks": 5,
+  "observed_iid_tasks": 7,
+  "tasks": [
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "task_path": ".",
+      "asset_count": 1,
+      "status": "valid_static_contract",
+      "errors": [],
+      "warnings": [
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive"
+        },
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive_sha256"
+        }
+      ]
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "task_path": ".",
+      "asset_count": 1,
+      "status": "valid_static_contract",
+      "errors": [],
+      "warnings": [
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive"
+        },
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive_sha256"
+        }
+      ]
+    },
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "task_path": ".",
+      "asset_count": 4,
+      "status": "valid_static_contract",
+      "errors": [],
+      "warnings": [
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive"
+        },
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive_sha256"
+        }
+      ]
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "task_path": ".",
+      "asset_count": 4,
+      "status": "valid_static_contract",
+      "errors": [],
+      "warnings": [
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive"
+        },
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive_sha256"
+        }
+      ]
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "task_path": ".",
+      "asset_count": 1,
+      "status": "valid_static_contract",
+      "errors": [],
+      "warnings": [
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive"
+        },
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive_sha256"
+        }
+      ]
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "task_path": ".",
+      "asset_count": 1,
+      "status": "valid_static_contract",
+      "errors": [],
+      "warnings": [
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive"
+        },
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive_sha256"
+        }
+      ]
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "task_path": ".",
+      "asset_count": 6,
+      "status": "valid_static_contract",
+      "errors": [],
+      "warnings": [
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive"
+        },
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive_sha256"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive_sha256"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive_sha256"
+    },
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive"
+    },
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive_sha256"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive_sha256"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive_sha256"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive_sha256"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive_sha256"
+    }
+  ]
+}

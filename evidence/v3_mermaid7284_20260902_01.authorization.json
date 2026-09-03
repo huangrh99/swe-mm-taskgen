@@ -1,0 +1,62 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_targeted_mermaid_7284/16_06_01_text_sufficiency/20260902T150700210219Z",
+  "source_manifest_sha256": "fe57737072adb0dc1d444878960b8f0cd277d797899c8514aafd4e38aefa5517",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "c2a003a53ce0ae30279373c5482d748f9bf969bd90308cbf4838fd1fd6d5f565",
+  "run_id": "v3-mermaid7284-20260902-01",
+  "nonce": "mermaid7284-20260902-nonce01",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_mermaid7284_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "mermaid-js__mermaid-7284",
+      "source_result_sha256": "aaee6407327b753f6e46e651a391f3f23616dcde964773a519f16412c58cf538",
+      "source_packet_sha256": "c55de16f4c86d2da03608756ba752b8929fc6e274a7ab83defb2ab99672c4e93",
+      "source_archive_sha256": "81fec00a3c954a73b5282ebf430726fbd943f6f0ae3a0944a1398a8f05f5a5b4",
+      "problem_statement_sha256": "ff77cc8b7b6bd88a27bf78b94604e361243413834e2ec7278c3262cc07cff826",
+      "available_asset_ids": [
+        "f8d9da6b8f62213dd5c37f9ea1a3e4afbf7459bab5da993a37de50d7778286b3"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "641f038a753b40642e56ed4995c673f25e19dfd0b1a3090479c8f1736eb2e5a8"
+    }
+  ],
+  "expected_case_calls": 1,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 6,
+  "authorized": true
+}

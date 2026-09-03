@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "case_id", "images", "source_path_recommendation", "before_candidate_asset_ids", "curator_only_asset_ids", "crop_review_asset_ids", "retry_asset_ids", "video_review_asset_ids", "problem_statement_action", "leakage_summary", "limitations"],
+  "properties": {
+    "schema_version": {"const": "pr-image-role-leakage-v1"},
+    "case_id": {"type": "string", "minLength": 1},
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["asset_id", "observed", "role", "role_evidence", "shows_actual_bug", "contains_fixed_after", "contains_solution_evidence", "task_relationship", "agent_visibility_recommendation", "crop", "requires_human_review", "reason", "confidence"],
+        "properties": {
+          "asset_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "observed": {"type": "boolean"},
+          "role": {"enum": ["before_only", "after_only", "before_after_composite", "expected_design", "temporal_sequence", "unclear"]},
+          "role_evidence": {"type": "string", "minLength": 1},
+          "shows_actual_bug": {"enum": ["yes", "no", "unknown"]},
+          "contains_fixed_after": {"enum": ["yes", "no", "unknown"]},
+          "contains_solution_evidence": {"enum": ["yes", "no", "unknown"]},
+          "task_relationship": {"enum": ["explicit", "weak", "unrelated", "unknown"]},
+          "agent_visibility_recommendation": {"enum": ["recommend_before_candidate", "exclude", "crop_then_review", "human_review", "retry_or_video_review"]},
+          "crop": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["needed", "feasible", "normalized_box", "reason"],
+            "properties": {
+              "needed": {"type": "boolean"},
+              "feasible": {"enum": ["yes", "no", "unknown"]},
+              "normalized_box": {
+                "anyOf": [
+                  {"type": "null"},
+                  {"type": "array", "prefixItems": [{"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}, {"type": "number", "exclusiveMinimum": 0, "maximum": 1}], "minItems": 4, "maxItems": 4}
+                ]
+              },
+              "reason": {"type": "string", "minLength": 1}
+            }
+          },
+          "requires_human_review": {"type": "boolean"},
+          "reason": {"type": "string", "minLength": 1},
+          "confidence": {"enum": ["high", "medium", "low"]}
+        }
+      }
+    },
+    "source_path_recommendation": {"enum": ["issue_derived", "pr_derived", "both", "no_candidate"]},
+    "before_candidate_asset_ids": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "uniqueItems": true},
+    "curator_only_asset_ids": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "uniqueItems": true},
+    "crop_review_asset_ids": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "uniqueItems": true},
+    "retry_asset_ids": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "uniqueItems": true},
+    "video_review_asset_ids": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "uniqueItems": true},
+    "problem_statement_action": {"enum": ["use_issue_text", "draft_pr_derived", "human_review", "unavailable"]},
+    "leakage_summary": {"type": "string", "minLength": 1},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

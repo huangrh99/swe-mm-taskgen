@@ -1,0 +1,2 @@
+# Optional PR-body screening parser; not needed by the core PR crawler.
+markdown-it-py==4.0.0

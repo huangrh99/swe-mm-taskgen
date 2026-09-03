@@ -1,0 +1,43 @@
+{
+  "schema_version": "carbon-provisional-artifact-index-v1",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "task_material_sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+  "artifacts": [
+    {
+      "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_polish/19_10_01_semantic_audit.json",
+      "sha256": "81072a016a9760dd796f11254310016fc78eeb835b2e1a4858f5c0ab8730989f"
+    },
+    {
+      "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_polish/19_10_02_human_gate_input_checklist.json",
+      "sha256": "ecf30df17b7f5747c6eb8c6865e45daa4a6288c0cea3cbba64c70b699d47a6d0"
+    },
+    {
+      "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_polish/19_10_03_kimi_k3_pass5_job.json",
+      "sha256": "183fb350fb5e809027de33a3c60c03c587465b59fc1ab2d15c29f040454e0706"
+    },
+    {
+      "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_polish/19_10_04_authorization_proposal.json",
+      "sha256": "54f06f0e607067429fd5b3207052b54ac156bdd343d13c5dd30286b3234f8fca"
+    },
+    {
+      "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_polish/19_10_05_local_validation.json",
+      "sha256": "44f161e50118180419d0fd2acd8daee120a4a7492224e8faaa14565c00bf0e4a"
+    },
+    {
+      "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_polish/README.md",
+      "sha256": "b46426f3fdf4855b901c1bcc210919b8598efba22568b080cf5029dabb3357f0"
+    },
+    {
+      "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_controls/19_10_carbon_provisional_nop/result.json",
+      "sha256": "75e4bbea35b2be77e3a6f34fa42496cb60c405f367c3c4ba5eebad9b419ae7b8"
+    },
+    {
+      "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_controls/19_10_carbon_provisional_nop/carbon-design-system__carbon-209__XGLNL2i/result.json",
+      "sha256": "60ba30868ee1415c16087ae8bbde39400a7dd1c59b17a632b4157d3a40b35f0c"
+    },
+    {
+      "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_controls/19_10_carbon_provisional_nop/carbon-design-system__carbon-209__XGLNL2i/exception.txt",
+      "sha256": "4a77fce8650eccff70771eeb65a9e1a9eabf465264d738ebff1f7a49d199ee7e"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+#0 building with "colima" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 474B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9
+#4 resolve docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9 0.0s done
+#4 DONE 0.0s
+
+#5 [2/7] RUN rm -rf /app
+#5 CACHED
+
+#6 [3/7] RUN corepack enable
+#6 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 58.78MB 5.0s
+#7 transferring context: 84.95MB 5.5s done
+#7 DONE 5.5s
+
+#8 [4/7] COPY app /app
+#8 DONE 0.4s
+
+#9 [5/7] WORKDIR /app
+#9 DONE 0.1s
+
+#10 [6/7] RUN corepack prepare yarn@1.22.22 --activate && yarn install --frozen-lockfile --ignore-scripts
+#10 0.392 Preparing yarn@1.22.22 for immediate activation...
+#10 2.964 yarn install v1.22.22
+#10 3.223 [1/5] Validating package.json...
+#10 3.256 [2/5] Resolving packages...
+#10 3.317 warning Resolution field "strip-ansi@6.0.1" is incompatible with requested version "strip-ansi@^7.0.1"
+#10 3.320 warning Resolution field "strip-ansi@6.0.1" is incompatible with requested version "strip-ansi@^7.0.1"
+#10 3.325 warning Resolution field "strip-ansi@6.0.1" is incompatible with requested version "strip-ansi@^7.0.1"
+#10 3.657 warning Resolution field "strip-ansi@6.0.1" is incompatible with requested version "strip-ansi@^3.0.0"
+#10 3.745 [3/5] Fetching packages...
+#10 93.30 warning vscode-languageclient@7.0.0: The engine "vscode" appears to be invalid.
+#10 93.30 [4/5] Linking dependencies...
+#10 93.30 warning " > @babel/plugin-proposal-private-property-in-object@7.21.11" has unmet peer dependency "@babel/core@^7.0.0-0".
+#10 93.30 warning "@babel/plugin-proposal-private-property-in-object > @babel/helper-create-class-features-plugin@7.24.6" has unmet peer dependency "@babel/core@^7.0.0".
+#10 93.30 warning "@babel/plugin-proposal-private-property-in-object > @babel/plugin-syntax-private-property-in-object@7.14.5" has unmet peer dependency "@babel/core@^7.0.0-0".
+#10 93.30 warning "@babel/plugin-proposal-private-property-in-object > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers@7.24.6" has unmet peer dependency "@babel/core@^7.0.0".
+#10 93.30 warning " > @excalidraw/eslint-config@1.0.3" has unmet peer dependency "@typescript-eslint/parser@>=4".
+#10 93.30 warning " > @excalidraw/eslint-config@1.0.3" has unmet peer dependency "@typescript-eslint/eslint-plugin@>=4".
+#10 93.30 warning " > @excalidraw/eslint-config@1.0.3" has unmet peer dependency "eslint@>=7".
+#10 93.30 warning " > @vitejs/plugin-react@3.1.0" has incorrect peer dependency "vite@^4.1.0-beta.0".
+#10 93.30 warning " > eslint-config-prettier@8.5.0" has unmet peer dependency "eslint@>=7.0.0".
+#10 93.30 warning " > eslint-config-react-app@7.0.1" has unmet peer dependency "eslint@^8.0.0".
+#10 93.30 warning "eslint-config-react-app > @babel/eslint-parser@7.24.6" has unmet peer dependency "eslint@^7.5.0 || ^8.0.0 || ^9.0.0".
+#10 93.30 warning "eslint-config-react-app > @typescript-eslint/eslint-plugin@5.62.0" has unmet peer dependency "eslint@^6.0.0 || ^7.0.0 || ^8.0.0".
+#10 93.30 warning "eslint-config-react-app > @typescript-eslint/parser@5.62.0" has unmet peer dependency "eslint@^6.0.0 || ^7.0.0 || ^8.0.0".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-flowtype@8.0.3" has unmet peer dependency "@babel/plugin-syntax-flow@^7.14.5".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-flowtype@8.0.3" has unmet peer dependency "@babel/plugin-transform-react-jsx@^7.14.9".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-flowtype@8.0.3" has unmet peer dependency "eslint@^8.1.0".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-import@2.29.1" has unmet peer dependency "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-jest@25.7.0" has unmet peer dependency "eslint@^6.0.0 || ^7.0.0 || ^8.0.0".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-jsx-a11y@6.8.0" has unmet peer dependency "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-react@7.34.1" has unmet peer dependency "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-react-hooks@4.6.2" has unmet peer dependency "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-testing-library@5.11.1" has unmet peer dependency "eslint@^7.5.0 || ^8.0.0".
+#10 93.30 warning "eslint-config-react-app > @typescript-eslint/eslint-plugin > @typescript-eslint/type-utils@5.62.0" has unmet peer dependency "eslint@*".
+#10 93.30 warning "eslint-config-react-app > @typescript-eslint/eslint-plugin > @typescript-eslint/utils@5.62.0" has unmet peer dependency "eslint@^6.0.0 || ^7.0.0 || ^8.0.0".
+#10 93.30 warning "eslint-config-react-app > eslint-plugin-jest > @typescript-eslint/experimental-utils@5.62.0" has unmet peer dependency "eslint@^6.0.0 || ^7.0.0 || ^8.0.0".
+#10 93.30 warning "eslint-config-react-app > @typescript-eslint/eslint-plugin > @typescript-eslint/utils > @eslint-community/eslint-utils@4.4.0" has unmet peer dependency "eslint@^6.0.0 || ^7.0.0 || >=8.0.0".
+#10 93.30 warning " > eslint-plugin-prettier@3.3.1" has unmet peer dependency "eslint@>=5.0.0".
+#10 93.30 warning " > vite-plugin-pwa@0.17.4" has unmet peer dependency "workbox-build@^7.0.0".
+#10 93.30 warning " > vite-plugin-pwa@0.17.4" has unmet peer dependency "workbox-window@^7.0.0".
+#10 93.30 warning " > @excalidraw/excalidraw@0.17.1" has unmet peer dependency "react@^17.0.2 || ^18.2.0".
+#10 93.30 warning " > @excalidraw/excalidraw@0.17.1" has unmet peer dependency "react-dom@^17.0.2 || ^18.2.0".
+#10 93.30 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover@1.0.3" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.30 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover@1.0.3" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.30 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-tabs@1.0.2" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-tabs@1.0.2" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @testing-library/react@16.0.0" has unmet peer dependency "react@^18.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @testing-library/react@16.0.0" has unmet peer dependency "react-dom@^18.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > autoprefixer@10.4.7" has unmet peer dependency "postcss@^8.1.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > babel-loader@8.2.5" has unmet peer dependency "webpack@>=2".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > css-loader@6.7.1" has unmet peer dependency "webpack@^5.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > eslint-plugin-react@7.32.2" has unmet peer dependency "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > mini-css-extract-plugin@2.6.1" has unmet peer dependency "webpack@^5.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > postcss-loader@7.0.1" has unmet peer dependency "postcss@^7.0.0 || ^8.0.1".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > postcss-loader@7.0.1" has unmet peer dependency "webpack@^5.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > sass-loader@13.0.2" has unmet peer dependency "webpack@^5.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > style-loader@3.3.3" has unmet peer dependency "webpack@^5.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > ts-loader@9.3.1" has unmet peer dependency "webpack@^5.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-compose-refs@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-context@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-dismissable-layer@1.0.2" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-dismissable-layer@1.0.2" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-focus-guards@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-focus-scope@1.0.1" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-focus-scope@1.0.1" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-id@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper@1.1.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper@1.1.0" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-portal@1.0.1" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-portal@1.0.1" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-presence@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-presence@1.0.0" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-primitive@1.0.1" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-primitive@1.0.1" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-slot@1.0.1" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-use-controllable-state@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > react-remove-scroll@2.5.5" has unmet peer dependency "react@^16.8.0 || ^17.0.0 || ^18.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-tabs > @radix-ui/react-direction@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-tabs > @radix-ui/react-roving-focus@1.0.2" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-tabs > @radix-ui/react-roving-focus@1.0.2" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-dismissable-layer > @radix-ui/react-use-callback-ref@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-dismissable-layer > @radix-ui/react-use-escape-keydown@1.0.2" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-id > @radix-ui/react-use-layout-effect@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper > @floating-ui/react-dom@0.7.2" has unmet peer dependency "react@>=16.8.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper > @floating-ui/react-dom@0.7.2" has unmet peer dependency "react-dom@>=16.8.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper > @radix-ui/react-arrow@1.0.1" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper > @radix-ui/react-arrow@1.0.1" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper > @radix-ui/react-use-rect@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper > @radix-ui/react-use-size@1.0.0" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > react-remove-scroll > react-remove-scroll-bar@2.3.6" has unmet peer dependency "react@^16.8.0 || ^17.0.0 || ^18.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > react-remove-scroll > react-style-singleton@2.2.1" has unmet peer dependency "react@^16.8.0 || ^17.0.0 || ^18.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > react-remove-scroll > use-callback-ref@1.3.2" has unmet peer dependency "react@^16.8.0 || ^17.0.0 || ^18.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > react-remove-scroll > use-sidecar@1.1.2" has unmet peer dependency "react@^16.8.0 || ^17.0.0 || ^18.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-tabs > @radix-ui/react-roving-focus > @radix-ui/react-collection@1.0.1" has unmet peer dependency "react@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-tabs > @radix-ui/react-roving-focus > @radix-ui/react-collection@1.0.1" has unmet peer dependency "react-dom@^16.8 || ^17.0 || ^18.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > tunnel-rat > zustand > use-sync-external-store@1.2.0" has unmet peer dependency "react@^16.8.0 || ^17.0.0 || ^18.0.0".
+#10 93.31 warning "workspace-aggregator-37d52ba8-4eef-498e-afb7-d1e6a3e80860 > @excalidraw/excalidraw > @radix-ui/react-popover > @radix-ui/react-popper > @floating-ui/react-dom > use-isomorphic-layout-effect@1.1.2" has unmet peer dependency "react@^16.8.0 || ^17.0.0 || ^18.0.0".
+#10 107.9 [5/5] Building fresh packages...
+#10 107.9 warning Ignored scripts due to flag.
+#10 107.9 Done in 104.97s.
+#10 DONE 108.3s
+
+#11 [7/7] RUN git reset --hard HEAD && test -z "$(git status --porcelain --untracked-files=all)" && test -z "$(git remote)"
+#11 1.246 HEAD is now at c92f3be fix: change cursor by tool change immediately (#8212)
+#11 DONE 1.6s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 234.6s done
+#12 exporting manifest sha256:7c4b9c46424d886e2a5c4d9fbbd91b46ac95eb9ffbd4e73a01d364118db7f701 done
+#12 exporting config sha256:00073fbe56b11a05b5a33064c2e7f02418bb828ece3ecf8f82c07f29ad166511 done
+#12 exporting attestation manifest sha256:77102c763b0a1ef78dff6e12bb1cf6c146cda263b4ec87d0010158c7b32e6234 done
+#12 exporting manifest list sha256:028af52db0d7fc592c95c5ea04d310e4b731ff62e22ca28967ec25c977499511 done
+#12 naming to docker.io/library/visual-env-build:excalidraw-excalidraw-9002 done
+#12 unpacking to docker.io/library/visual-env-build:excalidraw-excalidraw-9002
+#12 unpacking to docker.io/library/visual-env-build:excalidraw-excalidraw-9002 30.2s done
+#12 DONE 264.8s

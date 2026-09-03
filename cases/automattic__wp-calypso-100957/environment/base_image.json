@@ -1,0 +1,23 @@
+{
+  "schema_version": "harbor-case-image-binding-v1",
+  "status": "local_content_addressed_image",
+  "instance_id": "automattic__wp-calypso-100957",
+  "repository": "automattic/wp-calypso",
+  "source_base_commit": "e45ab9e16f64884309026fe8ab469d86adbe3671",
+  "image_id": "sha256:b9415f1d3f2c2833b4b7635f2780501ed9b53d669ddac0f1760c83bf99a2384e",
+  "build_reference": "report-case:wp-calypso-100957",
+  "architecture": "arm64",
+  "parent_image_id": "sha256:c5a1ad4c85bccd9b7ac8d94a94c628aeac53b75f61e09d8b05f99857b6018cd9",
+  "history_scrubbed": true,
+  "git_remote_count": 0,
+  "git_commit_count": 1,
+  "prerequisites": {
+    "curl": "/usr/bin/curl",
+    "bash": "/usr/bin/bash",
+    "node": "/usr/local/bin/node",
+    "npm": "/usr/local/bin/npm",
+    "rg": "/usr/local/bin/rg",
+    "python3": "/usr/bin/python3"
+  },
+  "credentials_embedded": false
+}

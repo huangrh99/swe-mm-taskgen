@@ -1,0 +1,4 @@
+# Standalone report runtime. The pinned environment includes Harbor 0.22.0,
+# jsonschema, dirhash, and every transitive dependency used by the public CLI.
+-r reproducibility/03_harbor_python.lock.txt
+Pillow==12.3.0

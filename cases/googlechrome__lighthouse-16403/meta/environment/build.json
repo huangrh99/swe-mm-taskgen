@@ -1,0 +1,19 @@
+{
+  "schema_version": "case-environment-build-v1",
+  "status": "complete",
+  "instance_id": "googlechrome__lighthouse-16403",
+  "repository": "googlechrome/lighthouse",
+  "source_baseline_sha": "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+  "image_id": "sha256:98cd04789d0f15a4c2710569645330438e8199edc59d2a5e3d402bcceb0e457d",
+  "build_reference": "visual-harbor-base:98cd04789d0f15a4c2710569645330438e8199edc59d2a5e3d402bcceb0e457d",
+  "architecture": "arm64",
+  "node_base": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "asset_inventory": [
+    {
+      "name": "asset_01.png",
+      "sha256": "b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e"
+    }
+  ],
+  "built_at": "2026-09-02T16:18:48.493562+00:00",
+  "build_log": "meta/environment/build.log"
+}

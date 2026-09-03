@@ -1,0 +1,7 @@
+services:
+  main:
+    cap_drop: [ALL]
+    user: "10001:10001"
+    security_opt: [no-new-privileges:true]
+    pids_limit: 512
+    shm_size: 1gb

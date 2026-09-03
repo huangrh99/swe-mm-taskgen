@@ -1,0 +1,27 @@
+schema_version = "1.2"
+
+[task]
+name = "swe-bench-multimodal/carbon-design-system__carbon-20978"
+description = "Resolve carbon-design-system__carbon-20978 with visual context in /testbed."
+authors = [{ name = "benchmark-construction" }]
+keywords = ["swe-bench", "swe-bench-multimodal", "javascript", "agentic"]
+
+[metadata]
+benchmark = "SWE-bench Multimodal"
+repo = "carbon-design-system/carbon"
+instance_id = "carbon-design-system__carbon-20978"
+pr_number = 20978
+
+[environment]
+build_timeout_sec = 1800.0
+cpus = 6
+memory_mb = 12288
+storage_mb = 20480
+allow_internet = false
+
+[agent]
+timeout_sec = 7200.0
+override_setup_timeout_sec = 1800.0
+
+[verifier]
+timeout_sec = 3600.0

@@ -1,0 +1,48 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pr_id", "images", "task", "quality"],
+  "properties": {
+    "schema_version": {"type": "string", "enum": ["visual-verifier-v1"]},
+    "pr_id": {"type": "string"},
+    "images": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["asset_id", "observed", "content_kind", "content_reason", "observation", "relevance", "temporal_role", "source_quote", "faithful_text_representation", "ocr_task_sufficient", "text_reason"],
+      "properties": {
+        "asset_id": {"type": "string"}, "observed": {"type": "boolean"},
+        "content_kind": {"type": ["string", "null"], "enum": ["code_snippet_screenshot", "web_interface", "map_geospatial", "diagram", "data_visualization", "artwork_photography", "error_message", "miscellaneous", null]},
+        "content_reason": {"type": "string", "minLength": 1},
+        "observation": {"type": "string", "minLength": 1},
+        "relevance": {"type": "string", "enum": ["relevant", "unrelated", "unknown"]},
+        "temporal_role": {"type": "string", "enum": ["before", "expected", "after", "mixed", "unknown"]},
+        "source_quote": {"type": ["string", "null"]},
+        "faithful_text_representation": {"type": "string", "enum": ["yes", "no", "unknown"]},
+        "ocr_task_sufficient": {"type": "string", "enum": ["yes", "no", "unknown"]},
+        "text_reason": {"type": "string", "minLength": 1}
+      }
+    }},
+    "task": {
+      "type": "object", "additionalProperties": false,
+      "required": ["necessity", "image_transcription_sufficient", "missing_visual_information", "evidence_asset_ids", "problem_evidence_quotes", "reason"],
+      "properties": {
+        "necessity": {"type": "string", "enum": ["necessary", "helpful", "redundant", "unrelated", "unknown"]},
+        "image_transcription_sufficient": {"type": "string", "enum": ["yes", "no", "unknown"]},
+        "missing_visual_information": {"type": "string"},
+        "evidence_asset_ids": {"type": "array", "items": {"type": "string"}},
+        "problem_evidence_quotes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "quality": {
+      "type": "object", "additionalProperties": false,
+      "required": ["problem_clarity", "evidence_sufficiency", "problem_evidence_separable", "leakage_risk", "missing_sources", "reason"],
+      "properties": {
+        "problem_clarity": {"type": "string", "enum": ["clear", "unclear", "unknown"]},
+        "evidence_sufficiency": {"type": "string", "enum": ["sufficient", "insufficient", "unknown"]},
+        "problem_evidence_separable": {"type": "string", "enum": ["yes", "no", "unknown"]},
+        "leakage_risk": {"type": "string", "enum": ["present", "unknown"]},
+        "missing_sources": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

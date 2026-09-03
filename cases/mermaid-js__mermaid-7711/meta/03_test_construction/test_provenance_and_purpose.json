@@ -1,0 +1,68 @@
+{
+  "schema_version": "test-provenance-purpose-v1",
+  "instance_id": "mermaid-js__mermaid-7711",
+  "comparison_boundary": {
+    "base_commit": "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e",
+    "final_pr_head": "9d83f061aad4afc126b434f0decd9013060ad62b",
+    "merge_parent_or_merge_commit_used": false
+  },
+  "repository_existing": [
+    {
+      "path": "packages/mermaid/src/rendering-util/layout-algorithms/dagre/mermaid-graphlib.spec.js",
+      "selected_for_final_judge": true,
+      "test_count": 15,
+      "purpose": "Protect existing graphlib cluster adjustment, descendant extraction, edge rewiring, nesting, and hierarchy sorting behavior while the dagre render path changes.",
+      "classification_basis": "Actual Base and Gold executions; both sides pass."
+    }
+  ],
+  "pr_author": [
+    {
+      "path": "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js",
+      "selected_for_final_judge": false,
+      "tests": [
+        {"name": "creates one compact render edge from self-loop layout segments", "purpose": "Merge three layout segments into one compact render edge while preserving edge identity, label, geometry, and label position."},
+        {"name": "places compact self-loops on the side chosen by the layout", "purpose": "Use layout hints to place the compact loop on the intended node side."},
+        {"name": "keeps regular edges unchanged", "purpose": "Protect ordinary non-self-loop edge objects from the merge logic."},
+        {"name": "keeps self-loop layout segments unchanged when merging is disabled", "purpose": "Preserve segmented behavior for diagram types or modes that opt out."},
+        {"name": "renders a flowchart self-loop as one SVG path", "purpose": "Verify public flowchart SVG output contains one logical self-loop path and no internal cyclic-special paths."}
+      ],
+      "observed_exact_boundary": "At exact Base all five tests fail; the first four call the patch-introduced getEdgesToRender export, while the public SVG test observes four paths instead of two. At exact PR head all five pass.",
+      "exclusion_reason": "The first four tests bind the oracle to a patch-introduced helper and its exact geometry. The one public SVG test is behaviorally appropriate but redundant with the selected verifier-generated black-box suite. Excluding this file keeps the judge implementation-independent rather than rewarding an identical helper API."
+    },
+    {
+      "path": "cypress/integration/rendering/flowchart/flowchart-v2.spec.js",
+      "selected_for_final_judge": false,
+      "tests": [
+        {"name": "Should render labeled self-loops", "purpose": "Snapshot labeled flowchart self-loops and their connection to a second node."},
+        {"name": "Should render self-loops in non-TB directions", "purpose": "Snapshot self-loop layout across LR, BT, and RL directions."}
+      ],
+      "exclusion_reason": "Cypress image snapshots are retained as author evidence but not used by the compact offline Harbor judge."
+    },
+    {
+      "path": "cypress/integration/rendering/state/stateDiagram-v2.spec.js",
+      "selected_for_final_judge": false,
+      "tests": [
+        {"name": "v2 should render a compact self-loop edge", "purpose": "Snapshot the Issue reproducer as a compact labeled state-diagram loop."}
+      ],
+      "exclusion_reason": "The same observable contract is encoded by the selected deterministic SVG DOM test without snapshot infrastructure."
+    }
+  ],
+  "verifier_generated": [
+    {
+      "path": "packages/mermaid/src/rendering-util/layout-algorithms/dagre/benchmark-self-loop.spec.js",
+      "selected_for_final_judge": true,
+      "tests": [
+        {"name": "renders one logical SVG path for a flowchart self-loop", "purpose": "Require one non-empty labeled flowchart self-loop path and reject leaked internal cyclic-special paths."},
+        {"name": "renders one logical SVG path for a state-diagram self-loop", "purpose": "Require the Issue reproducer to contain exactly the initial edge plus one labeled self-loop, with no internal segments in public SVG."},
+        {"name": "preserves a labeled non-cyclic flowchart edge", "purpose": "Ensure an ordinary labeled edge still renders as one non-empty path."}
+      ],
+      "oracle_scope": "Public rendered SVG DOM structure and visible labels; alternative implementations and path geometries may pass.",
+      "forbidden_proxy": "No source-token, function-name, exact source-code, or exact SVG path-d assertion."
+    }
+  ],
+  "human_review": {
+    "visual_gate": "human_review_deferred",
+    "f2p_p2p_semantic_gate": "human_review_deferred",
+    "formal_admission": false
+  }
+}

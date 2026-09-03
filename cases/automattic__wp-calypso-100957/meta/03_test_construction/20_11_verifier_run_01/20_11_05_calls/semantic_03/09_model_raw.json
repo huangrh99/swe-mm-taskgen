@@ -1,0 +1,119 @@
+{
+  "schema_version": "existing-tests-extension-v2",
+  "task_id": "automattic__wp-calypso-100957",
+  "status": "additional_tests_proposed",
+  "behavioral_contract": {
+    "observable_requirements": [
+      {
+        "requirement_id": "constraint_001",
+        "contract": "In the theme style variation preview, the two highlighted color swatches must prioritize the text color ('color.text') and button background color ('elements.button.color.background', falling back to link color 'elements.link.color.text'), excluding the card's background color ('color.background')."
+      },
+      {
+        "requirement_id": "constraint_002",
+        "contract": "When the candidate palette contains color items with identical slugs, the preview component must render both swatches without key collisions or React duplicate key warnings."
+      }
+    ],
+    "preserved_behaviors": [
+      "Variation title, inline CSS, container dimensions, and focus states continue to render correctly.",
+      "Colors matching the card background color are excluded from the highlighted swatches."
+    ],
+    "implementation_variation": "Different internal filtering, sorting, or swatch indexing strategies are valid as long as the text and button background colors take precedence over incidental palette ordering and duplicate slugs render stably without key collision."
+  },
+  "coverage": [
+    {
+      "requirement_id": "constraint_001",
+      "visual_category": "外观与渲染属性理解",
+      "coverage": "未覆盖",
+      "existing_test_ids": [],
+      "assertion_summary": "Existing unit tests do not inspect the selection or color values of the highlighted swatches rendered in GlobalStylesVariationPreview.",
+      "reason": "There are no existing tests asserting the color resolution and prioritization logic for variation preview swatches."
+    },
+    {
+      "requirement_id": "constraint_002",
+      "visual_category": "元素结构与视觉状态理解",
+      "coverage": "未覆盖",
+      "existing_test_ids": [],
+      "assertion_summary": "No tests verify swatch rendering when palette entries share identical slugs.",
+      "reason": "Key stability and duplicate slug handling for swatch elements are not tested in the existing test suite."
+    }
+  ],
+  "test_bundles": [
+    {
+      "bundle_id": "global_styles_variation_preview_swatches",
+      "template_test_ids": [],
+      "target_requirement_ids": [
+        "constraint_001",
+        "constraint_002"
+      ],
+      "target_visual_capabilities": [
+        "外观与渲染属性理解",
+        "元素结构与视觉状态理解"
+      ],
+      "coverage_gap_reason": "GlobalStylesVariationPreview was not covered by unit tests verifying the swatch prioritization of text/button colors over arbitrary palette colors, nor duplicate slug handling.",
+      "why_assertions_measure_requirements": "The tests mock the Gutenberg global styles and settings hooks with specific palettes, text colors, and button colors, then inspect the rendered swatch background colors and DOM keys to verify prioritization and key uniqueness.",
+      "oracle_type": "rendered_structure_state_assertion",
+      "predicted_transition": "candidate_f2p",
+      "predicted_base_behavior": "On base commit, highlightedColors selects the first two non-background palette items regardless of text/button styling, failing swatch color assertions, and uses duplicate slugs directly as React keys.",
+      "predicted_reference_behavior": "With the fix, highlightedColors prioritizes text and button background colors and renders both swatches with index-qualified unique keys.",
+      "working_directory": ".",
+      "test_command": "yarn jest --config test/client/jest.config.js --runTestsByPath test/client/global-styles-variation-preview.test.tsx",
+      "stable_test_ids": [
+        "GlobalStylesVariationPreview should prioritize text and button background colors in highlighted swatches",
+        "GlobalStylesVariationPreview should fallback button background to link color when button background is not explicitly defined",
+        "GlobalStylesVariationPreview should render swatches without key collisions when duplicate slugs exist"
+      ],
+      "files": [
+        {
+          "path": "test/client/global-styles-variation-preview.test.tsx",
+          "operation": "add",
+          "content": "import { render } from '@testing-library/react';\nimport React from 'react';\nimport GlobalStylesVariationPreview from '../../packages/global-styles/src/components/global-styles-variations/preview';\n\nconst mockGlobalStyles: Record<string, unknown> = {};\nconst mockGlobalSettings: Record<string, unknown> = {};\n\njest.mock('../../packages/global-styles/src/gutenberg-bridge', () => ({\n\tuseGlobalStyle: (path: string) => [mockGlobalStyles[path]],\n\tuseGlobalSetting: (path: string) => [mockGlobalSettings[path]],\n\tuseSafeGlobalStylesOutput: () => [[]],\n}));\n\njest.mock('../../packages/global-styles/src/components/global-styles-variation-container', () => {\n\treturn function MockContainer({ children }: { children: React.ReactNode }) {\n\t\treturn <div data-testid=\"variation-container\">{children}</div>;\n\t};\n});\n\njest.mock('framer-motion', () => ({\n\tmotion: {\n\t\tdiv: ({ style, ...props }: React.HTMLAttributes<HTMLDivElement>) => (\n\t\t\t<div data-testid=\"color-swatch\" style={style} {...props} />\n\t\t),\n\t},\n}));\n\ndescribe('GlobalStylesVariationPreview', () => {\n\tbeforeEach(() => {\n\t\tObject.keys(mockGlobalStyles).forEach((key) => delete mockGlobalStyles[key]);\n\t\tObject.keys(mockGlobalSettings).forEach((key) => delete mockGlobalSettings[key]);\n\t});\n\n\tit('should prioritize text and button background colors in highlighted swatches', () => {\n\t\tmockGlobalStyles['color.text'] = '#111111';\n\t\tmockGlobalStyles['color.background'] = '#ffffff';\n\t\tmockGlobalStyles['elements.button.color.background'] = '#0055ff';\n\t\tmockGlobalSettings['color.palette.theme'] = [\n\t\t\t{ slug: 'random-1', color: '#ff0000' },\n\t\t\t{ slug: 'random-2', color: '#00ff00' },\n\t\t\t{ slug: 'text', color: '#111111' },\n\t\t\t{ slug: 'button', color: '#0055ff' },\n\t\t];\n\n\t\tconst { getAllByTestId } = render(\n\t\t\t<GlobalStylesVariationPreview\n\t\t\t\ttitle=\"Test Variation\"\n\t\t\t\tinlineCss=\"\"\n\t\t\t\tisFocused={false}\n\t\t\t\tonFocusOut={jest.fn()}\n\t\t\t/>\n\t\t);\n\n\t\tconst swatches = getAllByTestId('color-swatch');\n\t\texpect(swatches).toHaveLength(2);\n\t\texpect(swatches[0].style.backgroundColor).toBe('rgb(17, 17, 17)');\n\t\texpect(swatches[1].style.backgroundColor).toBe('rgb(0, 85, 255)');\n\t});\n\n\tit('should fallback button background to link color when button background is not explicitly defined', () => {\n\t\tmockGlobalStyles['color.text'] = '#222222';\n\t\tmockGlobalStyles['color.background'] = '#ffffff';\n\t\tmockGlobalStyles['elements.link.color.text'] = '#00aa00';\n\t\tmockGlobalSettings['color.palette.theme'] = [\n\t\t\t{ slug: 'palette-1', color: '#ee0000' },\n\t\t\t{ slug: 'palette-link', color: '#00aa00' },\n\t\t\t{ slug: 'palette-text', color: '#222222' },\n\t\t];\n\n\t\tconst { getAllByTestId } = render(\n\t\t\t<GlobalStylesVariationPreview\n\t\t\t\ttitle=\"Link Fallback Variation\"\n\t\t\t\tinlineCss=\"\"\n\t\t\t\tisFocused={false}\n\t\t\t\tonFocusOut={jest.fn()}\n\t\t\t/>\n\t\t);\n\n\t\tconst swatches = getAllByTestId('color-swatch');\n\t\texpect(swatches).toHaveLength(2);\n\t\texpect(swatches[0].style.backgroundColor).toBe('rgb(34, 34, 34)');\n\t\texpect(swatches[1].style.backgroundColor).toBe('rgb(0, 170, 0)');\n\t});\n\n\tit('should render swatches without key collisions when duplicate slugs exist', () => {\n\t\tconst consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});\n\t\tmockGlobalStyles['color.text'] = '#111111';\n\t\tmockGlobalStyles['color.background'] = '#ffffff';\n\t\tmockGlobalSettings['color.palette.theme'] = [\n\t\t\t{ slug: 'duplicate-slug', color: '#111111' },\n\t\t\t{ slug: 'duplicate-slug', color: '#222222' },\n\t\t];\n\n\t\tconst { getAllByTestId } = render(\n\t\t\t<GlobalStylesVariationPreview\n\t\t\t\ttitle=\"Duplicate Slug Variation\"\n\t\t\t\tinlineCss=\"\"\n\t\t\t\tisFocused={false}\n\t\t\t\tonFocusOut={jest.fn()}\n\t\t\t/>\n\t\t);\n\n\t\tconst swatches = getAllByTestId('color-swatch');\n\t\texpect(swatches).toHaveLength(2);\n\t\texpect(consoleErrorSpy).not.toHaveBeenCalledWith(\n\t\t\texpect.stringContaining('Encountered two children with the same key')\n\t\t);\n\t\tconsoleErrorSpy.mockRestore();\n\t});\n});\n",
+          "sha256_before": null
+        }
+      ],
+      "unified_test_patch": "--- /dev/null\n+++ b/test/client/global-styles-variation-preview.test.tsx\n@@ -0,0 +1,96 @@\n+import { render } from '@testing-library/react';\n+import React from 'react';\n+import GlobalStylesVariationPreview from '../../packages/global-styles/src/components/global-styles-variations/preview';\n+\n+const mockGlobalStyles: Record<string, unknown> = {};\n+const mockGlobalSettings: Record<string, unknown> = {};\n+\n+jest.mock('../../packages/global-styles/src/gutenberg-bridge', () => ({\n+\tuseGlobalStyle: (path: string) => [mockGlobalStyles[path]],\n+\tuseGlobalSetting: (path: string) => [mockGlobalSettings[path]],\n+\tuseSafeGlobalStylesOutput: () => [[]],\n+}));\n+\n+jest.mock('../../packages/global-styles/src/components/global-styles-variation-container', () => {\n+\treturn function MockContainer({ children }: { children: React.ReactNode }) {\n+\t\treturn <div data-testid=\"variation-container\">{children}</div>;\n+\t};\n+});\n+\n+jest.mock('framer-motion', () => ({\n+\tmotion: {\n+\t\tdiv: ({ style, ...props }: React.HTMLAttributes<HTMLDivElement>) => (\n+\t\t\t<div data-testid=\"color-swatch\" style={style} {...props} />\n+\t\t),\n+\t},\n+}));\n+\n+describe('GlobalStylesVariationPreview', () => {\n+\tbeforeEach(() => {\n+\t\tObject.keys(mockGlobalStyles).forEach((key) => delete mockGlobalStyles[key]);\n+\t\tObject.keys(mockGlobalSettings).forEach((key) => delete mockGlobalSettings[key]);\n+\t});\n+\n+\tit('should prioritize text and button background colors in highlighted swatches', () => {\n+\t\tmockGlobalStyles['color.text'] = '#111111';\n+\t\tmockGlobalStyles['color.background'] = '#ffffff';\n+\t\tmockGlobalStyles['elements.button.color.background'] = '#0055ff';\n+\t\tmockGlobalSettings['color.palette.theme'] = [\n+\t\t\t{ slug: 'random-1', color: '#ff0000' },\n+\t\t\t{ slug: 'random-2', color: '#00ff00' },\n+\t\t\t{ slug: 'text', color: '#111111' },\n+\t\t\t{ slug: 'button', color: '#0055ff' },\n+\t\t];\n+\n+\t\tconst { getAllByTestId } = render(\n+\t\t\t<GlobalStylesVariationPreview\n+\t\t\t\ttitle=\"Test Variation\"\n+\t\t\t\tinlineCss=\"\"\n+\t\t\t\tisFocused={false}\n+\t\t\t\tonFocusOut={jest.fn()}\n+\t\t\t/>\n+\t\t);\n+\n+\t\tconst swatches = getAllByTestId('color-swatch');\n+\t\texpect(swatches).toHaveLength(2);\n+\t\texpect(swatches[0].style.backgroundColor).toBe('rgb(17, 17, 17)');\n+\t\texpect(swatches[1].style.backgroundColor).toBe('rgb(0, 85, 255)');\n+\t});\n+\n+\tit('should fallback button background to link color when button background is not explicitly defined', () => {\n+\t\tmockGlobalStyles['color.text'] = '#222222';\n+\t\tmockGlobalStyles['color.background'] = '#ffffff';\n+\t\tmockGlobalStyles['elements.link.color.text'] = '#00aa00';\n+\t\tmockGlobalSettings['color.palette.theme'] = [\n+\t\t\t{ slug: 'palette-1', color: '#ee0000' },\n+\t\t\t{ slug: 'palette-link', color: '#00aa00' },\n+\t\t\t{ slug: 'palette-text', color: '#222222' },\n+\t\t];\n+\n+\t\tconst { getAllByTestId } = render(\n+\t\t\t<GlobalStylesVariationPreview\n+\t\t\t\ttitle=\"Link Fallback Variation\"\n+\t\t\t\tinlineCss=\"\"\n+\t\t\t\tisFocused={false}\n+\t\t\t\tonFocusOut={jest.fn()}\n+\t\t\t/>\n+\t\t);\n+\n+\t\tconst swatches = getAllByTestId('color-swatch');\n+\t\texpect(swatches).toHaveLength(2);\n+\t\texpect(swatches[0].style.backgroundColor).toBe('rgb(34, 34, 34)');\n+\t\texpect(swatches[1].style.backgroundColor).toBe('rgb(0, 170, 0)');\n+\t});\n+\n+\tit('should render swatches without key collisions when duplicate slugs exist', () => {\n+\t\tconst consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});\n+\t\tmockGlobalStyles['color.text'] = '#111111';\n+\t\tmockGlobalStyles['color.background'] = '#ffffff';\n+\t\tmockGlobalSettings['color.palette.theme'] = [\n+\t\t\t{ slug: 'duplicate-slug', color: '#111111' },\n+\t\t\t{ slug: 'duplicate-slug', color: '#222222' },\n+\t\t];\n+\n+\t\tconst { getAllByTestId } = render(\n+\t\t\t<GlobalStylesVariationPreview\n+\t\t\t\ttitle=\"Duplicate Slug Variation\"\n+\t\t\t\tinlineCss=\"\"\n+\t\t\t\tisFocused={false}\n+\t\t\t\tonFocusOut={jest.fn()}\n+\t\t\t/>\n+\t\t);\n+\n+\t\tconst swatches = getAllByTestId('color-swatch');\n+\t\texpect(swatches).toHaveLength(2);\n+\t\texpect(consoleErrorSpy).not.toHaveBeenCalledWith(\n+\t\t\texpect.stringContaining('Encountered two children with the same key')\n+\t\t);\n+\t\tconsoleErrorSpy.mockRestore();\n+\t});\n+});\n",
+      "result_parser": "jest_default",
+      "environment_assumptions": [
+        "Repository dependencies are installed and test environment executes with Jest and jsdom."
+      ],
+      "equivalence_self_check": "Any implementation that prioritizes text and button background/link color over default palette order and provides distinct keys for rendered swatches will pass.",
+      "vacuous_pass_checks": [
+        "Swatches array length is explicitly asserted to be 2 before inspecting background colors.",
+        "Specific RGB background colors are checked against expected resolved values."
+      ],
+      "surface_signal_resistance": "Simply sorting paletteColors without checking text/button background tokens will fail the swatch color assertions."
+    }
+  ],
+  "oracle_quality_plan": {
+    "status": "proposed_not_executed",
+    "curator_only": true,
+    "negative_variants": [
+      {
+        "variant_id": "naive_palette_slicing_without_text_button_priority",
+        "defect_preserved_or_introduced": "Keep base behavior where highlightedColors simply filters out backgroundColor and headingColor from paletteColors and slices the first two.",
+        "expected_failure_test_ids": [
+          "GlobalStylesVariationPreview should prioritize text and button background colors in highlighted swatches",
+          "GlobalStylesVariationPreview should fallback button background to link color when button background is not explicitly defined"
+        ]
+      },
+      {
+        "variant_id": "duplicate_slug_key_collision",
+        "defect_preserved_or_introduced": "Use item.slug alone as React key in highlightedColors.map without index suffix.",
+        "expected_failure_test_ids": [
+          "GlobalStylesVariationPreview should render swatches without key collisions when duplicate slugs exist"
+        ]
+      }
+    ],
+    "equivalent_positive_variant": {
+      "description": "Construct highlightedColors using an explicit lookup function that searches for color.text and elements.button.color.background before appending remaining palette colors, assigning unique keys with index.",
+      "expected_pass_test_ids": [
+        "GlobalStylesVariationPreview should prioritize text and button background colors in highlighted swatches",
+        "GlobalStylesVariationPreview should fallback button background to link color when button background is not explicitly defined",
+        "GlobalStylesVariationPreview should render swatches without key collisions when duplicate slugs exist"
+      ]
+    }
+  },
+  "missing_context": [],
+  "summary": "Proposed a targeted unit test bundle for GlobalStylesVariationPreview verifying swatch prioritization of text and button background colors as well as duplicate slug rendering stability.",
+  "human_review_required": false,
+  "human_review_reasons": []
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "test-extension-verifier-run-v2",
+  "created_at": "2026-09-02T16:51:35.496355+00:00",
+  "status": "complete",
+  "model_invoked": true,
+  "packet": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/googlechrome__lighthouse-16403/meta/03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+    "sha256": "6510e9b848cd0bc637b27d9afd06976eabf9d679b698751892e922a8e11e39b3"
+  },
+  "prompt_sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+  "schema_sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+  "runner_sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+  "result": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/googlechrome__lighthouse-16403/meta/03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+    "sha256": "bc3d906bdc5c89356964967aedbba05b375cac34b5c38d4ffb7133c9fea6526c"
+  },
+  "audit": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/googlechrome__lighthouse-16403/meta/03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+    "sha256": "637352d7f5ce5aef1c284b8994485bd6f9bfe6e2f068a6458911960fdc6f9676"
+  },
+  "boundary": "predicted transitions are never final F2P/P2P labels"
+}

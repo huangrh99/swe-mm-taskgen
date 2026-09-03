@@ -1,0 +1,177 @@
+{
+  "case_id": "carbon-design-system__carbon-20978",
+  "repository": "carbon-design-system/carbon",
+  "pr_number": 20978,
+  "pr_id": "carbon-design-system/carbon#20978",
+  "status": "complete",
+  "ineligible_reason": null,
+  "packet": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_06_packet_0021.json",
+  "packet_sha256": "58bf6e14db1703a4140fab356bfc2776cf74f954073435d2ef070f9c63cdd809",
+  "curator_assets": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_06_curator_assets_0021.json",
+  "curator_assets_sha256": "dd43fab155a137bc85daeae9b0ad19f12ef6415cffa824515b2db6be3527bed0",
+  "bound_schema": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_06_bound_schema_0021.json",
+  "bound_schema_sha256": "bd7f63c6dde7487067d9ff1bb90048bde2603dcbc98498101cd1abe9ecd945f8",
+  "visual_verifier": {
+    "pr_id": "carbon-design-system/carbon#20978",
+    "decision": {
+      "bucket": "visual_necessary",
+      "reason_code": "necessary_nontext_visual_evidence",
+      "policy_version": "strict-nontext-visual-v1",
+      "training_ready": false,
+      "readiness_reason": "PR-only; issue/patch/history and execution not verified"
+    },
+    "annotation": {
+      "schema_version": "visual-verifier-v1",
+      "pr_id": "carbon-design-system/carbon#20978",
+      "images": [
+        {
+          "asset_id": "744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743",
+          "observed": true,
+          "content_kind": "diagram",
+          "content_reason": "包含组件设计规范标注图，标有尺寸间距（16px/1rem、8/.5 等）、图标排列顺序（invalid/warn 图标、AI 标签、下拉箭头）以及分割线与底纹渐变位置。",
+          "observation": "展示了 Multiselect/Combobox 在 :invalid 和 :warning 状态下的设计规范，标注了各个图标（错误/警告图标、AI 标签、下拉箭头）之间的具体间距、内外边距及分割线结构。",
+          "relevance": "relevant",
+          "temporal_role": "expected",
+          "source_quote": "- Verify if `Combobox` looks similar to the expected image (this is from MultiSelect, designs needs confirm if is ok):",
+          "faithful_text_representation": "no",
+          "ocr_task_sufficient": "no",
+          "text_reason": "图片不仅包含文字，关键信息在于标注的几何间距尺寸、图标对齐顺序、视觉分割线以及渐变高亮样式，单纯文字转录会丢失这些核心设计规范细节。"
+        },
+        {
+          "asset_id": "deca4e29038b19661875419ab194c6c78e0c666ee7dcbadeaf421449737b82c4",
+          "observed": true,
+          "content_kind": "web_interface",
+          "content_reason": "展示了 ComboBox 输入框在带有 AI 标签时的实际渲染效果截图。",
+          "observation": "ComboBox 输入框右侧显示 AI 标签、竖线分割线及下拉箭头，输入框底部带有蓝色渐变视觉效果。",
+          "relevance": "relevant",
+          "temporal_role": "after",
+          "source_quote": "e.g:",
+          "faithful_text_representation": "no",
+          "ocr_task_sufficient": "no",
+          "text_reason": "包含 AI 标签的边框、分割线及输入框的蓝色渐变视觉效果，单纯提取文本无法表达这些视觉渲染特征。"
+        }
+      ],
+      "task": {
+        "necessity": "necessary",
+        "image_transcription_sufficient": "no",
+        "missing_visual_information": "设计规范图中定义的错误/警告状态下图标排列顺序（invalid/warning 图标 -> AI 标签 -> 下拉箭头）、具体像素间距规范（8px/16px）以及分割线与渐变样式的视觉定位。",
+        "evidence_asset_ids": [
+          "744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743"
+        ],
+        "problem_evidence_quotes": [
+          "Fixes issues with `Combobox` `invalid and warn` icon positioning and `AI label` missing gradient and spacing.",
+          "- Verify if `Combobox` looks similar to the expected image (this is from MultiSelect, designs needs confirm if is ok):",
+          "- `Invalid/warn` states in `Default` and `With Ai Label` stories should fit the design spec."
+        ],
+        "reason": "PR 文本中仅提到了修复 Combobox 的 invalid/warn 图标位置及 AI label 间距问题，但各个图标的具体排列顺序、像素级间距（如 8px、16px）、分割线位置和渐变视觉规范仅在设计规范图片（744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743）中完整呈现，单纯通过文本转录无法还原该视觉布局要求。"
+      },
+      "quality": {
+        "problem_clarity": "clear",
+        "evidence_sufficiency": "sufficient",
+        "problem_evidence_separable": "yes",
+        "leakage_risk": "present",
+        "missing_sources": [
+          "issue",
+          "comments",
+          "patch",
+          "tests",
+          "history"
+        ],
+        "reason": "PR 正文中包含修复后的 Changelog 及渲染后截图（deca4e29038b19661875419ab194c6c78e0c666ee7dcbadeaf421449737b82c4），存在方案泄漏风险；但预期的设计规范图（744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743）清晰独立，提供了任务所需的视觉规范。"
+      }
+    },
+    "result_path": "code/tests/fixtures/carbon_20978_archive/09_result_0003.json",
+    "result_sha256": "50a3e2c90bc62ccd9449889f1580b0f4c88fc6d15b3f15fb232e6011e6e30b65",
+    "run_manifest_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/image-screening/09_single_call_verifier/20260901T073959507339Z/09_run_manifest.json",
+    "run_manifest_sha256": "cf9c3f619c57aacf97a5319fe84668952cadafbbf5b2b00bf63c2924b133f4e9"
+  },
+  "error": null,
+  "elapsed_seconds": 12.654,
+  "source_result": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_03_result_0021.json",
+  "source_result_sha256": "4a7e6413593eb81f55271a456d8da37f1a593de18727e7d441fa8e6cbadd8008",
+  "annotation": {
+    "schema_version": "text-only-repair-sufficiency-v1",
+    "case_id": "carbon-design-system__carbon-20978",
+    "evidence": {
+      "problem_sources_usable": "yes",
+      "evidence_quotes": [
+        {
+          "source_id": "carbon-design-system/carbon#20120:body",
+          "quote": "The invalid icon has buggy positioning when paired with an ai-label"
+        },
+        {
+          "source_id": "carbon-design-system/carbon#20849:body",
+          "quote": "It does not have the blue AI styling/colors appearing on the input.\n- There needs to be a divider between the AI decorator and the chevron in the input.\n- When the close icon appears in the input, the spacing is off and there should be a divider between the AI decorator and the close icon in the input."
+        }
+      ],
+      "limitations": [
+        "Issue 20120 中的预期和实际对比图片均被遮蔽且未包含文字描述",
+        "Issue 20849 提及的渐变色样式、具体间距数值和分割线样式均未给出具体 CSS 规范或设计 token",
+        "未提供文件索引列表，无法定位具体源代码文件"
+      ]
+    },
+    "localization": {
+      "target_localizable": "no",
+      "component": "Combobox (@carbon/web-components)",
+      "candidate_paths": [],
+      "reason": "提供的 baseline_file_index 为空，无法定位具体文件路径。"
+    },
+    "repair_contract": {
+      "completeness": "partial",
+      "current_behavior": "Combobox 与 AI Label 组合使用时缺少蓝色渐变/AI 样式，invalid 图标定位异常，AI 装饰器与 chevron/close 图标之间缺少分割线且间距异常。",
+      "expected_behavior": "Combobox 具有正确的 AI 蓝色渐变样式，AI 装饰器与 chevron 及 close 图标之间有分割线，图标间距与 invalid 图标位置正确。",
+      "explicit_constraints": [
+        "AI 装饰器与 chevron 之间需要有分割线",
+        "AI 装饰器与 close 图标之间需要有分割线"
+      ],
+      "unresolved_variables": [
+        "蓝色 AI 渐变具体的 CSS 属性/颜色/Token",
+        "分割线的宽度、颜色、高度及间距数值",
+        "invalid 图标的具体定位方式与偏移量"
+      ],
+      "reason": "文本仅给出了高层级的视觉需求描述（如缺少分割线、缺少蓝色渐变），缺少具体的 CSS 变量、数值和几何参数。"
+    },
+    "test_contract": {
+      "constructible": "no",
+      "assertions": [],
+      "missing_oracles": [
+        "AI 渐变样式对应的类名或 CSS 样式计算值",
+        "分割线元素的 DOM 结构及样式断言",
+        "invalid 状态下图标的具体位置坐标/间距预期值"
+      ],
+      "reason": "缺乏具体样式值与 DOM 结构契约，无法编写确定性的客观断言测试。"
+    },
+    "counterfactual": {
+      "multiple_repairs_fit_text": "yes",
+      "examples": [
+        "通过 CSS border-left 模拟 divider 分割线",
+        "通过独立的 DOM 分隔线元素及相应 class 渲染 divider"
+      ],
+      "reason": "文本未规定分割线的具体 DOM 实现方式（伪元素、独立元素或边框）以及确切的样式 token。"
+    },
+    "confidence": "high"
+  },
+  "text_decision": {
+    "policy_version": "visual-necessity-human-funnel-v1",
+    "empirical_visual_dependence": "not_tested",
+    "bucket": "visual_candidate",
+    "reason_code": "text_leaves_testable_contract_ambiguous"
+  },
+  "reconciliation": {
+    "policy_version": "visual-necessity-human-funnel-v1",
+    "visual_bucket": "visual_necessary",
+    "text_bucket": "visual_candidate",
+    "human_required_for_acceptance": true,
+    "agent_ablation_required_now": false,
+    "queue": "high_priority_human",
+    "reason_code": "independent_routes_agree_on_missing_visual_contract"
+  },
+  "protocol_recovery": {
+    "transform": "remove_exact_top_level_$schema_key_v1",
+    "removed_value": "https://json-schema.org/draft/2020-12/schema",
+    "semantic_fields_changed": false,
+    "raw_response": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_case_0021/16_06_model_raw.json",
+    "raw_response_sha256": "1ee74a9187839a5136b8ac20f0e0a26fd648a42cab1533311ccaec91ba61b1fc",
+    "source_failure_preserved": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_03_result_0021.json"
+  }
+}

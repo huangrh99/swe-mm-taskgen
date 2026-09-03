@@ -1,0 +1,92 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave17_selected_03/16_06_01_text_sufficiency/20260902T144726222926Z",
+  "source_manifest_sha256": "27343c32f8d682206c8df5ec532f0080a7ccefc277c2303a719ed14cd00b5be1",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "c2a003a53ce0ae30279373c5482d748f9bf969bd90308cbf4838fd1fd6d5f565",
+  "run_id": "v3-wave17-selected03-20260902-02",
+  "nonce": "wave17-selected03-20260902-nonce02",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave17_selected03_02",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "apache__echarts-21001",
+      "source_result_sha256": "da4e9d591671e7266e2fed7a4785895e840aae8073e0ac3ce98df7d11a174237",
+      "source_packet_sha256": "802431a3f2ce45c29ef5f0b9a98ee0c074bef47030475acb1283b5b1b91a345c",
+      "source_archive_sha256": "6b047f40358d9f0431ac50127151dc42c9b1a97892863c3f34544dce69def199",
+      "problem_statement_sha256": "028b7bf11d6bd7f93ea3b77913bcf7dbf1ab9a9656bd703e7d0fd5c74227962c",
+      "available_asset_ids": [
+        "6885211fea3f26de6c603187c7c6fec1299d15590682d9d75f2398c1453d4a69",
+        "35fec0dccc43325b6e91b763535b7164eb7659bd4cd95a09be291473466f33cf"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "3058359933cb705d00900bdf32fc392d79d212976e1801e679cfeb6b38f50c6a"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6517",
+      "source_result_sha256": "13277adfe1784a6aba7100783dcaa70899a1db1d7c023f04f5337ef405f316df",
+      "source_packet_sha256": "0f907cd345bffceb6624177d765ef10c511811d17b335eb62404c6332d835277",
+      "source_archive_sha256": "14919e8556afa6454599b24cc3aadd6f862502c182479aadb48f3bf5c4997f8f",
+      "problem_statement_sha256": "5768bf56c4bfadd95ec91f734cf10a16af90613963da8218b8cebf0e75d6f79d",
+      "available_asset_ids": [
+        "34a71dd720a8bdecb551ec82158b819c5400e3191d4dbf57e4bd9faeb85b64eb"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "5873cc9991baacab0b2cb88b76143a98f336898eb24dda916201b387d507dcb1"
+    },
+    {
+      "case_id": "xyflow__xyflow-4991",
+      "source_result_sha256": "de2106fe96d9ffc358a540b3a17c8f543eadaab1c8e85d9f537337b87ef18ab2",
+      "source_packet_sha256": "5f04ab1794a0d6f6875ba0938a510e4ad1ef40d3355b5ea7cadcd934e8149179",
+      "source_archive_sha256": "c7c90d9e55ce7d748d1d746e787adb4d1fa42864ab8d36a9ec92ecbe367fddad",
+      "problem_statement_sha256": "27afe4857baf7a5fcbe8dae3675481682359d7b6d3f11f1f56197fb9a2df1816",
+      "available_asset_ids": [
+        "08da91d3271cae240fa585582d40af5b1cd61f953ef752f6baacb43715c8316f",
+        "08da91d3271cae240fa585582d40af5b1cd61f953ef752f6baacb43715c8316f"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "2168a6e2dbeeefef63552115fcc65c65954f909564727bea1ac906d3d883717b"
+    }
+  ],
+  "expected_case_calls": 3,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 18,
+  "authorized": true
+}

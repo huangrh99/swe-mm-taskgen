@@ -1,0 +1,87 @@
+From e8ac5aa990251dca113a8407ca418bd014a85bd8 Mon Sep 17 00:00:00 2001
+From: Kelly Dwan <ryelle@users.noreply.github.com>
+Date: Thu, 6 Mar 2025 11:40:49 -0500
+Subject: [PATCH 1/2] Theme Previewer: Update variation cards to match style
+ editor
+
+---
+ .../global-styles-variations/preview.tsx      | 25 +++++++++++++++----
+ 1 file changed, 20 insertions(+), 5 deletions(-)
+
+diff --git a/packages/global-styles/src/components/global-styles-variations/preview.tsx b/packages/global-styles/src/components/global-styles-variations/preview.tsx
+index ac69e74d5264..076d2f428065 100644
+--- a/packages/global-styles/src/components/global-styles-variations/preview.tsx
++++ b/packages/global-styles/src/components/global-styles-variations/preview.tsx
+@@ -68,8 +68,12 @@ const GlobalStylesVariationPreview = ( { title, inlineCss, isFocused, onFocusOut
+ 		'elements.h1.typography.fontWeight'
+ 	);
+ 	const [ textColor = 'black' ] = useGlobalStyle( 'color.text' );
+-	const [ headingColor = textColor ] = useGlobalStyle( 'elements.h1.color.text' );
+ 	const [ backgroundColor = 'white' ] = useGlobalStyle( 'color.background' );
++	const [ headingColor = textColor ] = useGlobalStyle( 'elements.h1.color.text' );
++	const [ linkColor = headingColor ] = useGlobalStyle( 'elements.link.color.text' );
++	const [ buttonBackgroundColor = linkColor ] = useGlobalStyle(
++		'elements.button.color.background'
++	);
+ 	const [ gradientValue ] = useGlobalStyle( 'color.gradient' );
+ 	const disableMotion = useReducedMotion();
+ 	const [ coreColors ] = useGlobalSetting( 'color.palette.core' );
+@@ -81,12 +85,23 @@ const GlobalStylesVariationPreview = ( { title, inlineCss, isFocused, onFocusOut
+ 	const paletteColors = ( themeColors ?? [] )
+ 		.concat( customColors ?? [] )
+ 		.concat( coreColors ?? [] );
+-	const highlightedColors = paletteColors
++	const textColorObject = paletteColors.filter(
++		( { color }: { color: Color } ) => color === textColor
++	);
++	const buttonBackgroundColorObject = paletteColors.filter(
++		( { color }: { color: Color } ) => color === buttonBackgroundColor
++	);
++
++	// Prefer the text & button background (or link) color, then look through the full palette.
++	const highlightedColors = textColorObject
++		.concat( buttonBackgroundColorObject )
++		.concat( paletteColors )
+ 		.filter(
+-			// we exclude these two colors because they are already visible in the preview.
+-			( { color }: { color: Color } ) => color !== backgroundColor && color !== headingColor
++			// we exclude these background color because it is already visible in the preview.
++			( { color }: { color: Color } ) => color !== backgroundColor
+ 		)
+ 		.slice( 0, 2 );
++
+ 	return (
+ 		<GlobalStylesVariationContainer
+ 			width={ width }
+@@ -139,7 +154,7 @@ const GlobalStylesVariationPreview = ( { title, inlineCss, isFocused, onFocusOut
+ 							{ highlightedColors.map(
+ 								( { slug, color }: { slug: string; color: string }, index: number ) => (
+ 									<motion.div
+-										key={ slug }
++										key={ `${ slug }-${ index }` }
+ 										style={ {
+ 											height: normalizedColorSwatchSize * ratio,
+ 											width: normalizedColorSwatchSize * ratio,
+
+From 5137030cabd46f7b6efe629fc52b78913be10916 Mon Sep 17 00:00:00 2001
+From: Kelly Dwan <ryelle@users.noreply.github.com>
+Date: Wed, 12 Mar 2025 17:12:32 -0400
+Subject: [PATCH 2/2] Fix typo in comment
+
+---
+ .../src/components/global-styles-variations/preview.tsx         | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/global-styles/src/components/global-styles-variations/preview.tsx b/packages/global-styles/src/components/global-styles-variations/preview.tsx
+index 076d2f428065..9a2196fc7041 100644
+--- a/packages/global-styles/src/components/global-styles-variations/preview.tsx
++++ b/packages/global-styles/src/components/global-styles-variations/preview.tsx
+@@ -97,7 +97,7 @@ const GlobalStylesVariationPreview = ( { title, inlineCss, isFocused, onFocusOut
+ 		.concat( buttonBackgroundColorObject )
+ 		.concat( paletteColors )
+ 		.filter(
+-			// we exclude these background color because it is already visible in the preview.
++			// we exclude this background color because it is already visible in the preview.
+ 			( { color }: { color: Color } ) => color !== backgroundColor
+ 		)
+ 		.slice( 0, 2 );

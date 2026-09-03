@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["translations"],
+  "properties": {
+    "translations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case_id", "pr_title_zh", "problem_statement_zh"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "pr_title_zh": {"type": "string"},
+          "problem_statement_zh": {"type": "string"}
+        }
+      }
+    }
+  }
+}

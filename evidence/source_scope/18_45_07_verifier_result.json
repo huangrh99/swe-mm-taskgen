@@ -1,0 +1,66 @@
+{
+  "schema_version": "source-scope-verifier-v1",
+  "candidate_id": "carbon-design-system__carbon-20978",
+  "overall_decision": "curator_only",
+  "confidence": "high",
+  "expand_descendants": false,
+  "human_review_required": false,
+  "scope_blockers": [],
+  "ancestor_issues": [
+    {
+      "repository": "carbon-design-system/carbon",
+      "issue_number": 17992,
+      "relation": "acceptance_parent_reference",
+      "overall_decision": "curator_only",
+      "summary": "Umbrella tracking epic establishing general React to Web Components parity guidelines, acceptance criteria, and component review checklists.",
+      "descendants_excluded": true,
+      "reason": "Issue #17992 is a broad umbrella initiative for syncing all Carbon Web Components with React. Its contents provide high-level project context and review criteria rather than specific actionable requirements for the combo-box component fix.",
+      "requirements": [
+        {
+          "requirement": "General parity mandate to update web components to match React component implementations and visual styles.",
+          "source_quote": "Update existing web components to match React. Experimental components/features can be excluded until they reach stable status in React.",
+          "new_information": "no",
+          "patch_relevant": "unclear",
+          "executable": "no",
+          "currently_tested": "unknown",
+          "decision": "curator_only",
+          "requires_test_update": false,
+          "reason": "Provides general initiative context; concrete component-level styling requirements are already captured in direct issues #20120 and #20849."
+        },
+        {
+          "requirement": "Standard acceptance criteria across parity issues covering API updates, visual/style alignments, and Storybook documentation matching.",
+          "source_quote": "- update API for new/deprecated functionality\n  - in cases where this can cause breaking changes (like changing a property name), the old property name should be @deprecated in addition to adding a new one\n- update component visuals/styles\n- Storybook stories and documentation",
+          "new_information": "no",
+          "patch_relevant": "unclear",
+          "executable": "no",
+          "currently_tested": "unknown",
+          "decision": "curator_only",
+          "requires_test_update": false,
+          "reason": "Generic project-wide acceptance criteria checklist for parity issues, not specific to combo-box."
+        },
+        {
+          "requirement": "Procedural guidelines for PR reviews including theme checks, browser checks, and UX/design team review requirements.",
+          "source_quote": "Check against the four themes\n- Check against the different browsers\n- Storybooks need to match\n  - Controls - i.e. RTL - visually make they present. Also make sure they work!\n  - Ensure the prop tables have parity.",
+          "new_information": "no",
+          "patch_relevant": "no",
+          "executable": "no",
+          "currently_tested": "unknown",
+          "decision": "exclude",
+          "requires_test_update": false,
+          "reason": "Procedural review workflow guidance for human reviewers."
+        },
+        {
+          "requirement": "Umbrella list of web components to track parity across the entire library.",
+          "source_quote": "### existing web components\n- [ ] Ai-label\n- [ ] Aspect-ratio\n- [ ] Code-snippet",
+          "new_information": "no",
+          "patch_relevant": "no",
+          "executable": "no",
+          "currently_tested": "unknown",
+          "decision": "exclude",
+          "requires_test_update": false,
+          "reason": "Epic tracking checklist of unrelated sibling components."
+        }
+      ]
+    }
+  ]
+}

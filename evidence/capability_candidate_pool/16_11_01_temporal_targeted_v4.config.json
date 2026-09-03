@@ -1,0 +1,54 @@
+{
+  "schema_version": "capability-verifier-input-v1",
+  "records": [
+    {
+      "case_id": "excalidraw__excalidraw-9347",
+      "image_role_run": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave14_targeted_shard_04",
+      "asset_ids": [
+        "fc0e2fa80da4a1c32d7f2b063ec5010cffd151a6f917cfc0e9647c8db9993fe6",
+        "fc7937f03338d78423de0cc84256b67d2e813d1c34622cd70807c9936ae5ad41"
+      ]
+    },
+    {
+      "case_id": "fabricjs__fabric.js-10441",
+      "image_role_run": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave14_targeted_shard_04",
+      "asset_ids": ["3920f3905a0aba88947c748277ae7f7ef75a38183070900dbbd24f63ee8a3467"]
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6679",
+      "image_role_run": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave18_targeted_maplibre_6679",
+      "asset_ids": ["c0e89df6638f613a70a6cc87d819714399f042df180733b32cc3ea0cb14a0f73"]
+    },
+    {
+      "case_id": "xyflow__xyflow-4991",
+      "image_role_run": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave17_targeted_xyflow_4991",
+      "asset_ids": ["08da91d3271cae240fa585582d40af5b1cd61f953ef752f6baacb43715c8316f"]
+    },
+    {
+      "case_id": "tldraw__tldraw-5888",
+      "image_role_run": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave18_targeted_tldraw_5888",
+      "asset_ids": ["6cbe42344e86cf3ef4a1e002632e4b76387c8dfe7a9494f900b2d976c47119e6"]
+    },
+    {
+      "case_id": "apache__echarts-21001",
+      "image_role_run": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave17_targeted_echarts_21001",
+      "asset_ids": [
+        "35fec0dccc43325b6e91b763535b7164eb7659bd4cd95a09be291473466f33cf",
+        "6885211fea3f26de6c603187c7c6fec1299d15590682d9d75f2398c1453d4a69"
+      ]
+    },
+    {
+      "case_id": "leaflet__leaflet-9849",
+      "image_role_run": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave16_issue_media_targeted_shard_01",
+      "asset_ids": [
+        "10ac24e3be689a3cc19c81b9ea1438dd4bcd10e7c94bf1f664bedf0c59ea4568",
+        "968e970caf384164e622fbca7e485fa8a65885969065f11382dd9d8380d4c30a"
+      ]
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7410",
+      "image_role_run": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave20_targeted_mermaid_7410_02",
+      "asset_ids": ["5997cefc954a642268756115087155fa983d3726c6ff247085e86252d969910e"]
+    }
+  ]
+}

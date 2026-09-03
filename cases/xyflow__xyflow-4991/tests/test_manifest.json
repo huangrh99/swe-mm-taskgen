@@ -1,0 +1,14 @@
+{
+  "schema_version": "xyflow-browser-suite-v1",
+  "candidate_id": "xyflow__xyflow-4991",
+  "framework": "playwright",
+  "browser": "system-chromium",
+  "selected_suites": [
+    "tests/playwright/e2e/focus.spec.ts"
+  ],
+  "test_purposes": {
+    "xyflow-4991-focus-scroll-01": "At maximum zoom, tabbing from a visible node to an off-screen node must leave the wrapper scroll offset and React Flow transform unchanged.",
+    "xyflow-4991-focus-scroll-02": "At maximum zoom, directly calling element.focus() on an off-screen node must leave the wrapper scroll offset and React Flow transform unchanged.",
+    "xyflow-4991-focus-scroll-03": "The viewport-stability fix must preserve native wrapper scroll delivery to the public onScroll callback, including its target and currentTarget semantics."
+  }
+}

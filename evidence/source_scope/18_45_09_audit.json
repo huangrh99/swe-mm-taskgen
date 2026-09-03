@@ -1,0 +1,21 @@
+{
+  "schema_version": "source-scope-verifier-audit-v1",
+  "status": "passed",
+  "candidate_id": "carbon-design-system__carbon-20978",
+  "model_invoked": true,
+  "ancestor_inventory": [
+    {
+      "repository": "carbon-design-system/carbon",
+      "issue_number": 17992
+    }
+  ],
+  "maximum_depth": 1,
+  "descendants_fetched": false,
+  "siblings_fetched": false,
+  "result_validated": true,
+  "overall_decision": "curator_only",
+  "human_review_required": false,
+  "packet_sha256": "7fac50e26ee472f96cee1d63f09255e67eb516fc765b2c3b27ff78fd26dc588c",
+  "result_sha256": "22f5954a5442ba89ff5e2194cc7d95837706b36b12f884abbf987627e360ce6a",
+  "credential_fields_in_request": false
+}

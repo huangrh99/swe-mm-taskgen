@@ -1,0 +1,5 @@
+{"role":"meta","type":"system.version","version":"0.29.0"}
+{"role":"assistant","tool_calls":[{"type":"function","id":"call_probe","function":{"name":"FetchURL","arguments":"{\"url\":\"https://github.com/harbor-framework/harbor\"}"}}]}
+{"role":"tool","tool_call_id":"call_probe","content":"Failed to fetch URL due to network error: https://github.com/harbor-framework/harbor. fetch failed"}
+{"role":"assistant","content":"probe complete"}
+{"role":"meta","type":"session.resume_hint","session_id":"session_2fd0af2e-8093-4d4e-9e13-c431708fc991","command":"kimi -r session_2fd0af2e-8093-4d4e-9e13-c431708fc991","content":"To resume this session: kimi -r session_2fd0af2e-8093-4d4e-9e13-c431708fc991"}

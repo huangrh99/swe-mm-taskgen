@@ -1,0 +1,62 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_text_only_verifier/20260902_dynamic_maplibre_8154_10/20260902T153932424576Z",
+  "source_manifest_sha256": "daf48a51a178069b136ecbbd494abfe89aee449651d79bd1433025b1e0adcb63",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "c2a003a53ce0ae30279373c5482d748f9bf969bd90308cbf4838fd1fd6d5f565",
+  "run_id": "v3_dynamic_maplibre_8154_10_20260902_01",
+  "nonce": "dynamic-maplibre-8154-10-20260902-01",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_dynamic_maplibre_8154_10_run",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "maplibre__maplibre-gl-js-8154",
+      "source_result_sha256": "c6d9b7e1391545309275219a1646ddb1616cad9a8ab5ea893611d3c5cd921ef4",
+      "source_packet_sha256": "ec988c3e5fed9deb6aec24a6715e9293a469df9f731026b5e6fff1f5f6416b1a",
+      "source_archive_sha256": "26ff19928803c8a99ecc8c29c65fb65e681944dab6fadf7df8f3c2f4b07089e0",
+      "problem_statement_sha256": "d0f684be998ffc9927a7f760ee9db1fb0def8c1a66bc467e5dc7d20837214471",
+      "available_asset_ids": [
+        "7492ea273400d78be1eb6f6953fcd7b6c911162d952d73b55d4f07eda1f079a5"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "173dc76e2e634f42c31c7c84794e769ac6700da85a8dcca229aa159cf95cf16f"
+    }
+  ],
+  "expected_case_calls": 1,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 6,
+  "authorized": true
+}

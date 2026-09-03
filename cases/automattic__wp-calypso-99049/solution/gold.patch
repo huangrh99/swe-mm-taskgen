@@ -1,0 +1,159 @@
+From a6c0e50ce7a1cff446d12f8e1729588a65edbcfd Mon Sep 17 00:00:00 2001
+From: Imran Hossain <imranh920@gmail.com>
+Date: Wed, 29 Jan 2025 01:23:28 +0600
+Subject: [PATCH 1/2] Fix link button color in domain forward accordion
+
+---
+ .../domains/domain-management/domain-overview-pane/style.scss | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/client/my-sites/domains/domain-management/domain-overview-pane/style.scss b/client/my-sites/domains/domain-management/domain-overview-pane/style.scss
+index 068dd5336106..42b8b14584fe 100644
+--- a/client/my-sites/domains/domain-management/domain-overview-pane/style.scss
++++ b/client/my-sites/domains/domain-management/domain-overview-pane/style.scss
+@@ -210,6 +210,10 @@
+ 
+ 	.hosting-dashboard-item-view__content div {
+ 		flex-grow: 1;
++
++		.domain-forwarding-card__accordion .link-button {
++			color: var(--color-link);
++		}
+ 	}
+ 
+ 	.domain-settings-page {
+
+From c865012ecea983f5924e599fa5e472b52531a001 Mon Sep 17 00:00:00 2001
+From: Imran Hossain <imranh920@gmail.com>
+Date: Mon, 3 Feb 2025 21:16:50 +0600
+Subject: [PATCH 2/2] Show the "Add Forward" button in Domain Forward accordion
+ only when needed (#99055)
+
+* Don't show button when an empty form is already there
+
+* Fix the extra space when Add forward link is not shown
+
+* Redirect to domain list or side domains page after detach (#99059)
+
+* Fix spacings in domain forwarding card
+---
+ .../domain-info-card/disconnect/index.tsx     | 28 ++++++++++++++++---
+ .../domain-overview-pane/style.scss           | 12 +++++++-
+ .../settings/cards/domain-forwarding-card.tsx | 17 +++++------
+ 3 files changed, 44 insertions(+), 13 deletions(-)
+
+diff --git a/client/my-sites/domains/domain-management/components/domain/domain-info-card/disconnect/index.tsx b/client/my-sites/domains/domain-management/components/domain/domain-info-card/disconnect/index.tsx
+index abe11713d073..efe60ee6164a 100644
+--- a/client/my-sites/domains/domain-management/components/domain/domain-info-card/disconnect/index.tsx
++++ b/client/my-sites/domains/domain-management/components/domain/domain-info-card/disconnect/index.tsx
+@@ -1,3 +1,4 @@
++import page from '@automattic/calypso-router';
+ import { Dialog } from '@automattic/components';
+ import { CALYPSO_CONTACT } from '@automattic/urls';
+ import { useTranslate } from 'i18n-calypso';
+@@ -5,8 +6,11 @@ import { useState } from 'react';
+ import FormSectionHeading from 'calypso/components/forms/form-section-heading';
+ import { type as domainType } from 'calypso/lib/domains/constants';
+ import wpcom from 'calypso/lib/wp';
+-import { useDispatch } from 'calypso/state';
++import { domainManagementList, isUnderDomainSiteContext } from 'calypso/my-sites/domains/paths';
++import { showSitesPage } from 'calypso/sites/components/sites-dashboard';
++import { useDispatch, useSelector } from 'calypso/state';
+ import { errorNotice, successNotice } from 'calypso/state/notices/actions';
++import getCurrentRoute from 'calypso/state/selectors/get-current-route';
+ import { markAsPendingMove } from 'calypso/state/sites/domains/actions';
+ import DomainInfoCard from '..';
+ import type { DisconnectDomainResult } from './types';
+@@ -18,6 +22,7 @@ const DisconnectDomainCard = ( { domain, selectedSite }: DomainInfoCardProps ) =
+ 	const [ isDisconnecting, setDisconnecting ] = useState( false );
+ 	const translate = useTranslate();
+ 	const dispatch = useDispatch();
++	const currentRoute = useSelector( getCurrentRoute );
+ 
+ 	if (
+ 		! domain ||
+@@ -62,13 +67,28 @@ const DisconnectDomainCard = ( { domain, selectedSite }: DomainInfoCardProps ) =
+ 				return;
+ 			}
+ 
+-			dispatch( markAsPendingMove( selectedSite.ID, domain.name ) );
+-
+ 			dispatch(
+-				successNotice( translate( 'The domain will be detached from this site in a few minutes.' ) )
++				successNotice(
++					translate( 'The domain will be detached from this site in a few minutes.' ),
++					{
++						duration: 10000,
++						isPersistent: true,
++					}
++				)
+ 			);
++
++			await new Promise( ( resolve ) => setTimeout( resolve, 7000 ) );
++
++			dispatch( markAsPendingMove( selectedSite.ID, domain.name ) );
++
+ 			setDisconnecting( false );
+ 			setDialogVisible( false );
++
++			if ( isUnderDomainSiteContext( currentRoute ) ) {
++				showSitesPage( '/sites' );
++			} else {
++				page( domainManagementList( selectedSite.slug, currentRoute ) );
++			}
+ 		} catch ( e: any ) {
+ 			showErrorNotice( e?.message );
+ 		}
+diff --git a/client/my-sites/domains/domain-management/domain-overview-pane/style.scss b/client/my-sites/domains/domain-management/domain-overview-pane/style.scss
+index 42b8b14584fe..8dfee19851ea 100644
+--- a/client/my-sites/domains/domain-management/domain-overview-pane/style.scss
++++ b/client/my-sites/domains/domain-management/domain-overview-pane/style.scss
+@@ -208,9 +208,19 @@
+ 		flex-wrap: wrap;
+ 	}
+ 
+-	.hosting-dashboard-item-view__content div {
++	.hosting-dashboard-item-view__content > div {
+ 		flex-grow: 1;
+ 
++		.domain-forwarding-card__fields:last-child {
++			margin-bottom: 0;
++		}
++
++		.domain-forwarding-card__accordion .foldable-card__content {
++		   > :not(:last-child):not(.domain-forwarding-card-notice) {
++			  margin-bottom: 1.5rem;
++		   }
++		}
++
+ 		.domain-forwarding-card__accordion .link-button {
+ 			color: var(--color-link);
+ 		}
+diff --git a/client/my-sites/domains/domain-management/settings/cards/domain-forwarding-card.tsx b/client/my-sites/domains/domain-management/settings/cards/domain-forwarding-card.tsx
+index 54dd0aa89d0b..25399ce17388 100644
+--- a/client/my-sites/domains/domain-management/settings/cards/domain-forwarding-card.tsx
++++ b/client/my-sites/domains/domain-management/settings/cards/domain-forwarding-card.tsx
+@@ -626,14 +626,15 @@ export default function DomainForwardingCard( {
+ 						},
+ 					} ) }
+ 			</form>
+-
+-			<Button
+-				borderless
+-				className="add-forward-button  link-button"
+-				onClick={ () => handleAddForward() }
+-			>
+-				{ translate( '+ Add forward' ) }
+-			</Button>
++			{ editingId !== -1 && (
++				<Button
++					borderless
++					className="add-forward-button  link-button"
++					onClick={ () => handleAddForward() }
++				>
++					{ translate( '+ Add forward' ) }
++				</Button>
++			) }
+ 		</>
+ 	);
+ }

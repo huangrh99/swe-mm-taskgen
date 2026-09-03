@@ -1,0 +1,30 @@
+schema_version = "1.2"
+
+[task]
+name = "swe-bench-multimodal/automattic__wp-calypso-99049"
+description = "Correct the rendered color of the Domain Forwarding Add forward action."
+authors = [{ name = "benchmark-construction" }]
+keywords = ["swe-bench", "swe-bench-multimodal", "typescript", "scss", "computed-style"]
+
+[metadata]
+repository = "Automattic/wp-calypso"
+repo = "Automattic/wp-calypso"
+instance_id = "automattic__wp-calypso-99049"
+pr_number = 99049
+base_commit = "047aeef4a31c9e93ccb975adc77fb2107067fd6e"
+reference_commit = "c865012ecea983f5924e599fa5e472b52531a001"
+status = "human_review_deferred"
+
+[agent]
+timeout_sec = 7200.0
+override_setup_timeout_sec = 1800.0
+
+[verifier]
+timeout_sec = 3600.0
+
+[environment]
+build_timeout_sec = 1800.0
+cpus = 6
+memory_mb = 16384
+storage_mb = 24576
+allow_internet = false

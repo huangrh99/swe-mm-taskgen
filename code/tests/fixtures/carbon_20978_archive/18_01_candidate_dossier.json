@@ -1,0 +1,179 @@
+{
+  "schema_version": "visual-harbor-candidate-v1",
+  "candidate_id": "carbon-design-system__carbon-20978",
+  "status": "admitted_to_test_construction",
+  "repository": "carbon-design-system/carbon",
+  "pr_number": 20978,
+  "url": "https://github.com/carbon-design-system/carbon/pull/20978",
+  "title": "fix(combo-box): align invalid style and ai-label position",
+  "source_bindings": {
+    "archive_path": "code/tests/fixtures/carbon_20978_archive/11_record_0003.json",
+    "archive_sha256": "f1e610d7fb0d0479274a4817e89ebbe5ec40dce298036675dea1350afb3c31d0",
+    "verifier_path": "code/tests/fixtures/carbon_20978_archive/16_03_result_0021.json",
+    "verifier_sha256": "8af06635bcb77e66e1dbd9def075f0595552fb70984e6853f007f8e0211995a8",
+    "packet_path": "code/tests/fixtures/carbon_20978_archive/16_06_packet_0021.json",
+    "packet_sha256": "58bf6e14db1703a4140fab356bfc2776cf74f954073435d2ef070f9c63cdd809",
+    "curator_assets_path": "code/tests/fixtures/carbon_20978_archive/16_06_curator_assets_0021.json",
+    "curator_assets_sha256": "dd43fab155a137bc85daeae9b0ad19f12ef6415cffa824515b2db6be3527bed0"
+  },
+  "git": {
+    "default_branch": "main",
+    "api_base_sha_observation": "b1d5ecd6a7e48d82f4469fd8aca74ab962a19f80",
+    "pr_head_sha": "e9edd1387f27276d2e23cc2d99c419d754ad8ae4",
+    "reference_sha": "9a1475a6271f474762267134bc921c5a8aa8ca97",
+    "baseline_sha": "b2982e815c656aaa630c50231c70dc74945739e6",
+    "merge_method": "single-parent squash commit"
+  },
+  "changed_files": [
+    {
+      "filename": "packages/web-components/src/components/combo-box/combo-box.scss",
+      "status": "modified",
+      "additions": 82,
+      "deletions": 18
+    },
+    {
+      "filename": "packages/web-components/src/components/combo-box/combo-box.stories.ts",
+      "status": "modified",
+      "additions": 210,
+      "deletions": 64
+    }
+  ],
+  "author_test_change_detected": false,
+  "visual_admission": {
+    "decision": "auto_admit_high_confidence_verifier",
+    "admission_scope": "test_construction_and_measurement_only",
+    "selection_policy": {
+      "policy_id": "visual-auto-admit-v1",
+      "required_visual_bucket": "visual_necessary",
+      "required_text_only_bucket": "visual_candidate",
+      "required_confidence": "high",
+      "requires_complete_source_archive": true,
+      "requires_separable_agent_safe_assets": true
+    },
+    "human_calibration_state": "pending",
+    "human_calibration": {
+      "gate": "multimodal_necessity",
+      "state": "pending",
+      "decision": null,
+      "reviewer": null,
+      "reason": null,
+      "reviewed_at": null
+    },
+    "model_evidence_is_not_human_confirmation": true,
+    "visual_bucket": "visual_necessary",
+    "text_only_bucket": "visual_candidate",
+    "confidence": "high",
+    "reason": "independent_routes_agree_on_missing_visual_contract",
+    "raw_model_evidence": "code/tests/fixtures/carbon_20978_archive/09_result_0003.json"
+  },
+  "test_calibration": {
+    "f2p_generation_state": "measured_transition_verified",
+    "p2p_generation_state": "measured_transition_verified",
+    "measurement_state": "executed_all_transitions_match",
+    "human_semantic_calibration_state": "pending",
+    "human_semantic_calibration": {
+      "gate": "f2p_p2p_semantic_validity",
+      "state": "pending",
+      "decision": null,
+      "reviewer": null,
+      "reason": null,
+      "reviewed_at": null
+    },
+    "independent_from_visual_calibration": true,
+    "measurement_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_07_browser_f2p_p2p_measurement.json",
+    "measurement_sha256": "b8a27d2b3f7b2439858cc8be46fbb34505bcd77f833c19f963d6403a11e1a9a8"
+  },
+  "benchmark_eligibility": {
+    "current_stage": "executable_candidate",
+    "may_construct_and_measure_tests": true,
+    "may_enter_final_taskset": false,
+    "blocking_human_gates": [
+      "multimodal_necessity",
+      "f2p_p2p_semantic_validity"
+    ],
+    "rule": "final admission requires both independent human gates to be approved"
+  },
+  "leakage_policy": {
+    "risk": "present",
+    "separable": true,
+    "safe_agent_assets": [
+      {
+        "asset_id": "52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b",
+        "url": "https://github.com/user-attachments/assets/54537905-7e78-4b36-86b7-a9a3ac3d1650",
+        "status": "available",
+        "source_ids": [
+          "carbon-design-system/carbon#20120:body"
+        ],
+        "local_path": "code/tests/fixtures/tasks/carbon-design-system__carbon-20978/environment/assets/52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b.png",
+        "sha256": "52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b"
+      },
+      {
+        "asset_id": "8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a",
+        "url": "https://github.com/user-attachments/assets/84e9e209-d630-482c-9a5f-eb3be9767263",
+        "status": "available",
+        "source_ids": [
+          "carbon-design-system/carbon#20120:body"
+        ],
+        "local_path": "code/tests/fixtures/tasks/carbon-design-system__carbon-20978/environment/assets/8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a.png",
+        "sha256": "8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a"
+      },
+      {
+        "asset_id": "dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb",
+        "url": "https://github.com/user-attachments/assets/8895f43c-f0b4-452a-8e1b-38e99629c74d",
+        "status": "available",
+        "source_ids": [
+          "carbon-design-system/carbon#20120:body"
+        ],
+        "local_path": "code/tests/fixtures/tasks/carbon-design-system__carbon-20978/environment/assets/dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb.png",
+        "sha256": "dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb"
+      },
+      {
+        "asset_id": "a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352",
+        "url": "https://github.com/user-attachments/assets/542f6e7f-abf1-4eb2-b789-dd31f6362688",
+        "status": "available",
+        "source_ids": [
+          "carbon-design-system/carbon#20120:body"
+        ],
+        "local_path": "code/tests/fixtures/tasks/carbon-design-system__carbon-20978/environment/assets/a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352.png",
+        "sha256": "a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352"
+      }
+    ],
+    "curator_only_asset_ids": [
+      "4259895ffedfd056869bf22df958a219d5226dddfd2e54abcba1ece532609966",
+      "52cb8bea61b22d5eb208c30cdfdec6c4764ebd947347b51e3705a5ab3ecf4034",
+      "e1f180ace7fb2757681f75d437149caa20c3e183ca97622cb9d4a4af94902af2",
+      "e3cb8a67a4bdfdfb905788a8515d8709eb4b1fc1fb1fdd26b886f6cd59923859",
+      "863a2d52094082cbb092b46f422fe179456e955505ac038a38b28b9f8a4eaecb"
+    ],
+    "safe_agent_source_ids": [
+      "carbon-design-system/carbon#20120:title",
+      "carbon-design-system/carbon#20120:body",
+      "carbon-design-system/carbon#20849:title",
+      "carbon-design-system/carbon#20849:body"
+    ],
+    "excluded_source_categories": [
+      "all_image_pixels",
+      "image_alt_text",
+      "pull_request_prose",
+      "comments",
+      "reviews",
+      "commits",
+      "diff",
+      "patch",
+      "tests",
+      "reference_code"
+    ],
+    "exclude_from_agent_problem": [
+      "reference patch",
+      "reference commit",
+      "PR changelog/solution narrative",
+      "PR/comment images"
+    ],
+    "enforce_again_at_harbor_export": true
+  },
+  "next_gate": "construct identical executable tests, measure baseline/reference, then obtain independent F2P/P2P semantic calibration",
+  "calibration_binding": {
+    "decision_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_18_dual_human_calibration_pending.json",
+    "decision_sha256": "bb06663e6022ec60ffa6552a2ce3f4fd1e0f3fc811293a031567de85eea6293f"
+  }
+}

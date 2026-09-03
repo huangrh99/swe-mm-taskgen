@@ -1,0 +1,57 @@
+{
+  "schema_version": "v4-provisional-arm-run-v1",
+  "side": "base",
+  "backend": "docker",
+  "image": "v4-provisional-measure:excalidraw-excalidraw-9010-base-cd96320eeb28",
+  "started_at": "2026-09-02T20:38:30.547011+00:00",
+  "elapsed_seconds": 4.413,
+  "working_directory": ".",
+  "test_command": "yarn test:app --run packages/excalidraw/tests/arrowBinding9010.test.tsx",
+  "docker_argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--env",
+    "CI=1",
+    "--env",
+    "NO_COLOR=1",
+    "--env",
+    "FORCE_COLOR=0",
+    "--env",
+    "CHROME_BIN=/usr/local/bin/chromium-no-sandbox",
+    "--env",
+    "PUPPETEER_EXECUTABLE_PATH=/usr/local/bin/chromium-no-sandbox",
+    "--workdir",
+    "/app",
+    "--entrypoint",
+    "/bin/sh",
+    "v4-provisional-measure:excalidraw-excalidraw-9010-base-cd96320eeb28",
+    "-lc",
+    "yarn test:app --run packages/excalidraw/tests/arrowBinding9010.test.tsx"
+  ],
+  "network": "none",
+  "execution_status": "completed",
+  "evidence_status": "missing_test_ids",
+  "failure_class": null,
+  "return_code": 0,
+  "suite_total": null,
+  "stdout": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_docker_measurement_01/20_19_01_case_runs/excalidraw__excalidraw-9010/20_19_03_base_stdout.txt",
+    "sha256": "726d3bdc30d86d03562e3d36d6531281a1ba88ab07a23cf2d15a57d7bf3644e5",
+    "size_bytes": 380
+  },
+  "stderr": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/20_17_v4_f2p_p2p_luna/excalidraw9010_docker_measurement_01/20_19_01_case_runs/excalidraw__excalidraw-9010/20_19_03_base_stderr.txt",
+    "sha256": "1da7379f6ee74f6be272c802b7dfd86281e65997b7ded5e864515f812364b3ec",
+    "size_bytes": 119
+  },
+  "tests": [
+    {
+      "test_id": "excalidraw-9010-endpoint-stability",
+      "status": "missing",
+      "evidence_lines": []
+    }
+  ]
+}

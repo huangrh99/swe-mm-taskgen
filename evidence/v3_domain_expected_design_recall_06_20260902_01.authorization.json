@@ -1,0 +1,153 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_text_only_verifier/20260902_domain_expected_design_recall_06/20260902T153203731951Z",
+  "source_manifest_sha256": "4b8d4d8bc6f083b873d5d63287d380e0de2b2f30e69e07649d4650c1cb127dfe",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "c2a003a53ce0ae30279373c5482d748f9bf969bd90308cbf4838fd1fd6d5f565",
+  "run_id": "v3_domain_expected_design_recall_06_20260902_01",
+  "nonce": "domain-expected-design-recall-06-20260902-01",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_expected_design_recall_06_run",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "mermaid-js__mermaid-6371",
+      "source_result_sha256": "522a180606202d7955178fb062c126b91c9482145185332681fe001edcd519f9",
+      "source_packet_sha256": "d1b2465ba0566f987789e2e81e53b2e4e58ebf65a92cd84b2606fe761b6209a6",
+      "source_archive_sha256": "3ffce7125e4f35e60ef56c96d899937989bfc722947287deb033fead22987d9b",
+      "problem_statement_sha256": "e8f19a0ee33462a612ab7049eb9bba16e3599e05130917fa0b0067877c071e0c",
+      "available_asset_ids": [
+        "71d39f9e1fcb308fb309b663a96152fc8bae5f547130fcb5f1f5e334ee144c8d"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "e0c242a781dbdbbd78daf7df7d097470fb33c362f3f461f78e33da7183444ed0"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7265",
+      "source_result_sha256": "623191e434c1a0626ce49e8ed61a5a7faa925e06a8c2e946d59ca2988c6b8c81",
+      "source_packet_sha256": "36c604cfb1d57e1113ac3cc66e4e3dcd3f74e41731a99a81a19fd4dda3bb1577",
+      "source_archive_sha256": "4c67c9c8da59d870ee0e1d93da5aa826bef8422620a3abfda107d20ce0bdf090",
+      "problem_statement_sha256": "abfe98bc5a13c727285e17ee92bb2a3509ed50180690343449ecbbb6088a86e4",
+      "available_asset_ids": [
+        "63fd878b93a0427ece128d89bbad99ca34da10ffac376a1f25a85726e437b572",
+        "0b9f719e34f4cca22d32078bc8d2b282b8343a5d25ef0da093a1e49f8185339a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "300dff88e2cbe0a68df5615c2a1f7109cf3cef4a4cb6d70781fa6e88a1e07ad4"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7647",
+      "source_result_sha256": "57e1d159b4987a6c68f412e0ff45d1c2e43b7f7291509bb5f31afba9d8380616",
+      "source_packet_sha256": "8591790ecb216af75bdb54461974e1437c417c1edba901a53a51b2305d1d59ee",
+      "source_archive_sha256": "9ca1a74fc2078a5e6a6124aa223a9b18fd761060c972d23a05a38c972d2c29c4",
+      "problem_statement_sha256": "b431dd6e44e27b6ac78270428cdaa0698f04258e289aba0b1226d9799c85fb4d",
+      "available_asset_ids": [
+        "f1884661bf57f194a86814d713fc47ca252dda4b5c5f3506627b7d388e2678de",
+        "8e587ad66d0c8ad50cc97ce14c6d1621e1750f83224e4f7041ddd0ecf8823479",
+        "c4c7bc4d0e3f903b04a519e421df4a694e74a1a04a9001f49ec74bbf614f78f2"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "a20f7c863c03a6b8595ff7c98bc5755d87a8728fce981f2c14524aa34fed5a3d"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6440",
+      "source_result_sha256": "880d18e408bb281ab82e7fc9b5a2ffe0df135f248c3cf9bf1f860bc3840419c1",
+      "source_packet_sha256": "26cc5e431475cba6cdc219d2032a591d7ad57017ca6f0beddeb04bd1500a4a9a",
+      "source_archive_sha256": "326e56c0e387f38c550e5bbee87be13140456a18ff1830afa13a3eef46f4c843",
+      "problem_statement_sha256": "19781a49c8c60729b48ca94f99d606f40b8a239126563e2073bf3adf6063b82d",
+      "available_asset_ids": [
+        "44f6845080a49cc8e4228cb58ca655b08dbd71eaee0b805caeb9d71459976abe"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "0aee013bbca0a6cfe250266003e87475a68f8aad7ea82a519cffbd7859b4984d"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6479",
+      "source_result_sha256": "031a5ff0f65aa5aa31166e7848a92e7232f9c0896e31301c34e1d0ebf8398cf8",
+      "source_packet_sha256": "550f34befbedf0193cfaac84a547e6ad86062e5d7a34c812e193986affc490b6",
+      "source_archive_sha256": "cefe269cc0f4b6223e330502693254a3febb27b3247cb98c18d042e592236745",
+      "problem_statement_sha256": "e8f8407265275af96637c135ab1e2ad16054615653d071a997974be39f05b9fb",
+      "available_asset_ids": [
+        "2a819ed77d7add1a6f0f56491fb3dc2eb86e75a1407be95eebd790b02891fbbd"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "e88bc44ed1147257a854efb27697f7fd3afe2e9b93573bca9756ad73123fd86c"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6789",
+      "source_result_sha256": "524267e18e61c8f8eed93ce6687587fa59314afaa4f1d98d2f03b2141f9beb11",
+      "source_packet_sha256": "b300406ffc55ddfc72ad1716c7f46bb21d93382ab8c8a9ee671962aa5e7623eb",
+      "source_archive_sha256": "6462b32808455385ef78b13638c01a79233e643913f6776c81d5f884df69888b",
+      "problem_statement_sha256": "75249926ce03ac4db343c2d22e8d62bb119aa08f661df5c9e50996a932d462c6",
+      "available_asset_ids": [
+        "896323277ee2b29be4e9a6aa1dc1c1efd4ec28551c8c78ab144390f78a0e3eea",
+        "34610fe19ff2c03275c84bc16fac8d375adf1d9ab19f4ac1e1547b2b50b8e539",
+        "12c4486c75b2546402f8edc44ad87f77af671fc563ab66657a203dda0c9b68f8",
+        "dd5e457e8e65cc35241bb4befea19f5e38c4208ea4be5f406a105e62a853a020"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "5e5ed5e7df666354275d34f5708446920c46dfc37b6189e75ece07f6cd926ad3"
+    },
+    {
+      "case_id": "apache__echarts-21224",
+      "source_result_sha256": "b3415f46cc2279723da693f3a0aa783d53f4746ec1cd50b92f17a20eb1233116",
+      "source_packet_sha256": "a99baa25d2e0a7539eb60295eef96b667526fbbcd46995da147c387c52b60dc1",
+      "source_archive_sha256": "c91ec5a81e269de629d77cbef77d4a94773e397e029f5263e4e7580ae911abbb",
+      "problem_statement_sha256": "a13a7a8ee215f34c7413bfdf4d2afc28465ea234b46d2f8526c133bd5d3352fa",
+      "available_asset_ids": [
+        "ada4d387251cd41108e20b1aaea0b686e0e35f05cbbe4e737fa3ef128896cd1d",
+        "1f26981dcdb7871498ae4ea090d1a4abc14e7cd5045caf298b31059d028c40c6"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "3e32b5f89459933099abfb0fc4d64c0f78cc0f0b15fc1f873a7928f943969c8c"
+    }
+  ],
+  "expected_case_calls": 7,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 42,
+  "authorized": true
+}

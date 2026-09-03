@@ -1,0 +1,186 @@
+{
+  "schema_version": "test-extension-verifier-run-v2",
+  "task_id": "mermaid-js__mermaid-7711",
+  "status": "complete",
+  "annotation": {
+    "schema_version": "existing-tests-extension-v2",
+    "task_id": "mermaid-js__mermaid-7711",
+    "status": "additional_tests_proposed",
+    "behavioral_contract": {
+      "observable_requirements": [
+        {
+          "requirement_id": "constraint_001",
+          "contract": "When rendering a state diagram (e.g., stateDiagram-v2) containing a self-referential edge (Node --> Node), the rendered SVG output must produce exactly one logical SVG edge path representing the self-loop without leaking internal layout helper segments (such as cyclic-special dummy paths), and the associated edge label must remain visible and correctly placed."
+        }
+      ],
+      "preserved_behaviors": [
+        "Standard non-cyclic edges between distinct states and clusters must remain unaffected.",
+        "Self-loops in flowcharts and state diagrams must retain their correct label text and orientation.",
+        "Disabling self-loop segment merging where required (such as legacy or disabled modes) must preserve segment-level layout outputs."
+      ],
+      "implementation_variation": "Valid implementations may merge segments at the graphlib level, inside getEdgesToRender, or directly during recursiveRender/insertEdge, and may compute loop waypoints using geometric arcs or orthogonal offsets, as long as a single rendered path is emitted in the SVG and internal dummy edges are not exposed."
+    },
+    "coverage": [
+      {
+        "requirement_id": "constraint_001",
+        "visual_category": "空间布局与几何理解",
+        "coverage": "间接覆盖",
+        "existing_test_ids": [
+          "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender > renders a flowchart self-loop as one SVG path",
+          "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender > creates one compact render edge from self-loop layout segments"
+        ],
+        "assertion_summary": "Existing unit tests check the dagre helper getEdgesToRender with a synthetic mock graph and verify that flowchart diagrams merge self-loops, but do not directly test stateDiagram-v2 rendering via mermaidAPI.render.",
+        "reason": "The issue specifically addresses self-loops in state diagrams (stateDiagram-v2). If an implementation only enables self-loop merging for flowcharts and neglects state diagrams in shouldMergeSelfLoopSegments, the existing unit tests would pass while stateDiagram-v2 remains broken."
+      }
+    ],
+    "test_bundles": [
+      {
+        "bundle_id": "bundle_dagre_self_loop_state_diagram",
+        "template_test_ids": [
+          "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender > renders a flowchart self-loop as one SVG path"
+        ],
+        "target_requirement_ids": [
+          "constraint_001"
+        ],
+        "target_visual_capabilities": [
+          "空间布局与几何理解"
+        ],
+        "coverage_gap_reason": "Existing tests only execute mermaidAPI.render on flowchart TD definitions and mock Graph instances. The reported problem is on stateDiagram-v2 self-loops.",
+        "why_assertions_measure_requirements": "Rendering stateDiagram-v2 with an initial transition and a self-loop asserts that exactly two edge paths exist in total (one initial, one self-loop), no cyclic-special dummy segment paths leak into the SVG DOM, the self-loop path has a non-empty path 'd' attribute, and the edge label 'Self Edge' is rendered.",
+        "oracle_type": "rendered_structure_state_assertion",
+        "predicted_transition": "candidate_f2p",
+        "predicted_base_behavior": "Base implementation emits 4 edge paths (1 initial + 3 cyclic-special dummy segments) with leaked cyclic-special path IDs.",
+        "predicted_reference_behavior": "Merged self-loop rendering emits exactly 2 edge paths, 0 cyclic-special paths, and renders the self-loop edge label.",
+        "working_directory": "packages/mermaid",
+        "test_command": "pnpm exec vitest run src/rendering-util/layout-algorithms/dagre/index.spec.js",
+        "stable_test_ids": [
+          "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender > renders a stateDiagram-v2 self-loop as one SVG path"
+        ],
+        "files": [
+          {
+            "path": "src/rendering-util/layout-algorithms/dagre/index.spec.js",
+            "operation": "modify",
+            "sha256_before": "52bbac1e01e7d9818a36eb1654721a8e3bdaad5e6299a1a347caa559538d8f3c",
+            "content": "import { JSDOM } from 'jsdom';\nimport { describe, it, expect, beforeAll } from 'vitest';\nimport { Graph } from 'dagre-d3-es/src/graphlib/index.js';\nimport { getEdgesToRender } from './index.js';\nimport mermaid from '../../../mermaid.js';\nimport { mermaidAPI } from '../../../mermaidAPI.js';\n\nconst setupDom = () => {\n  const oldWindow = globalThis.window;\n  const oldDocument = globalThis.document;\n  const oldMutationObserver = globalThis.MutationObserver;\n  const dom = new JSDOM('<html lang=\"en\"><body><div id=\"container\"></div></body></html>', {\n    resources: 'usable',\n    beforeParse(window) {\n      window.Element.prototype.getBBox = () => ({\n        x: 0,\n        y: 0,\n        width: 100,\n        height: 50,\n      });\n      window.Element.prototype.getComputedTextLength = () => 50;\n    },\n  });\n\n  globalThis.window = dom.window;\n  globalThis.document = dom.window.document;\n  globalThis.MutationObserver = undefined;\n\n  return () => {\n    globalThis.window = oldWindow;\n    globalThis.document = oldDocument;\n    globalThis.MutationObserver = oldMutationObserver;\n  };\n};\n\ndescribe('getEdgesToRender', () => {\n  beforeAll(async () => {\n    await mermaid.registerExternalDiagrams([]);\n    mermaid.initialize({\n      deterministicIds: true,\n      deterministicIDSeed: '',\n      flowchart: { htmlLabels: false },\n      logLevel: 5,\n    });\n  });\n\n  it('creates one compact render edge from self-loop layout segments', () => {\n    const graph = new Graph({ multigraph: true, compound: true });\n    graph.setNode('A', { id: 'A', x: 10, y: 10, width: 20, height: 20 });\n\n    const originalEdge = {\n      id: 'A-A',\n      start: 'A',\n      end: 'A',\n      label: 'loop',\n      arrowTypeStart: 'normal',\n      arrowTypeEnd: 'normal',\n    };\n\n    const segment1 = {\n      ...originalEdge,\n      id: 'A-cyclic-special-1',\n      selfLoop: { id: 'A-A', order: 0 },\n      originalEdge,\n      points: [\n        { x: 0, y: 0 },\n        { x: 10, y: 0 },\n      ],\n    };\n    const segmentMid = {\n      ...originalEdge,\n      id: 'A-cyclic-special-mid',\n      selfLoop: { id: 'A-A', order: 1 },\n      originalEdge,\n      points: [\n        { x: 10, y: 0 },\n        { x: 20, y: 10 },\n      ],\n    };\n    const segment2 = {\n      ...originalEdge,\n      id: 'A-cyclic-special-2',\n      selfLoop: { id: 'A-A', order: 2 },\n      originalEdge,\n      points: [\n        { x: 20, y: 10 },\n        { x: 30, y: 10 },\n      ],\n    };\n\n    graph.setNode('A---A---1', { id: 'A---A---1' });\n    graph.setNode('A---A---2', { id: 'A---A---2' });\n    graph.setEdge('A', 'A---A---1', segment1, 'A-cyclic-special-0');\n    graph.setEdge('A---A---1', 'A---A---2', segmentMid, 'A-cyclic-special-1');\n    graph.setEdge('A---A---2', 'A', segment2, 'A-cyclic-special-2');\n\n    const edgesToRender = getEdgesToRender(graph);\n\n    expect(edgesToRender).toHaveLength(1);\n    expect(edgesToRender[0].edge.id).toBe('A-A');\n    expect(edgesToRender[0].edge.selfLoop).toBeUndefined();\n    expect(edgesToRender[0].edge.points).toEqual([\n      { x: -8, y: 0 },\n      { x: -8, y: -24 },\n      { x: 28, y: -24 },\n      { x: 28, y: 0 },\n    ]);\n    expect(edgesToRender[0].edge.x).toBe(10);\n    expect(edgesToRender[0].edge.y).toBe(-28);\n    expect(edgesToRender[0].edge.label).toBe('loop');\n  });\n\n  it('places compact self-loops on the side chosen by the layout', () => {\n    const graph = new Graph({ multigraph: true, compound: true });\n    graph.setNode('A', { id: 'A', x: 10, y: 10, width: 20, height: 20 });\n    graph.setNode('A---A---1', { id: 'A---A---1', x: 80, y: 5 });\n    graph.setNode('A---A---2', { id: 'A---A---2', x: 80, y: 15 });\n\n    const originalEdge = {\n      id: 'A-A',\n      start: 'A',\n      end: 'A',\n      label: 'loop',\n      arrowTypeStart: 'normal',\n      arrowTypeEnd: 'normal',\n    };\n    const segment1 = {\n      ...originalEdge,\n      id: 'A-cyclic-special-1',\n      selfLoop: { id: 'A-A', order: 0 },\n      originalEdge,\n      points: [],\n    };\n    const segmentMid = {\n      ...originalEdge,\n      id: 'A-cyclic-special-mid',\n      selfLoop: { id: 'A-A', order: 1 },\n      originalEdge,\n      points: [],\n      width: 20,\n      height: 10,\n    };\n    const segment2 = {\n      ...originalEdge,\n      id: 'A-cyclic-special-2',\n      selfLoop: { id: 'A-A', order: 2 },\n      originalEdge,\n      points: [],\n    };\n\n    graph.setEdge('A', 'A---A---1', segment1, 'A-cyclic-special-0');\n    graph.setEdge('A---A---1', 'A---A---2', segmentMid, 'A-cyclic-special-1');\n    graph.setEdge('A---A---2', 'A', segment2, 'A-cyclic-special-2');\n\n    const edgesToRender = getEdgesToRender(graph);\n\n    expect(edgesToRender[0].edge.points).toEqual([\n      { x: 20, y: -8 },\n      { x: 44, y: -8 },\n      { x: 44, y: 28 },\n      { x: 20, y: 28 },\n    ]);\n    expect(edgesToRender[0].edge.x).toBe(58);\n    expect(edgesToRender[0].edge.y).toBe(10);\n  });\n\n  it('keeps regular edges unchanged', () => {\n    const graph = new Graph({ multigraph: true, compound: true });\n    graph.setNode('A', { id: 'A' });\n    graph.setNode('B', { id: 'B' });\n    const edge = {\n      id: 'A-B',\n      start: 'A',\n      end: 'B',\n      points: [\n        { x: 0, y: 0 },\n        { x: 10, y: 10 },\n      ],\n    };\n    graph.setEdge('A', 'B', edge, 'A-B');\n\n    const edgesToRender = getEdgesToRender(graph);\n\n    expect(edgesToRender).toHaveLength(1);\n    expect(edgesToRender[0]).toEqual({ edge, start: 'A', end: 'B' });\n  });\n\n  it('keeps self-loop layout segments unchanged when merging is disabled', () => {\n    const graph = new Graph({ multigraph: true, compound: true });\n    graph.setNode('A', { id: 'A', x: 10, y: 10, width: 20, height: 20 });\n    graph.setNode('A---A---1', { id: 'A---A---1' });\n    graph.setNode('A---A---2', { id: 'A---A---2' });\n\n    const originalEdge = {\n      id: 'A-A',\n      start: 'A',\n      end: 'A',\n      label: 'loop',\n    };\n    const segment1 = {\n      ...originalEdge,\n      id: 'A-cyclic-special-1',\n      selfLoop: { id: 'A-A', order: 0 },\n      originalEdge,\n    };\n    const segmentMid = {\n      ...originalEdge,\n      id: 'A-cyclic-special-mid',\n      selfLoop: { id: 'A-A', order: 1 },\n      originalEdge,\n    };\n    const segment2 = {\n      ...originalEdge,\n      id: 'A-cyclic-special-2',\n      selfLoop: { id: 'A-A', order: 2 },\n      originalEdge,\n    };\n\n    graph.setEdge('A', 'A---A---1', segment1, 'A-cyclic-special-0');\n    graph.setEdge('A---A---1', 'A---A---2', segmentMid, 'A-cyclic-special-1');\n    graph.setEdge('A---A---2', 'A', segment2, 'A-cyclic-special-2');\n\n    const edgesToRender = getEdgesToRender(graph, 0, { mergeSelfLoops: false });\n\n    expect(edgesToRender).toEqual([\n      { edge: segment1, start: 'A', end: 'A---A---1' },\n      { edge: segmentMid, start: 'A---A---1', end: 'A---A---2' },\n      { edge: segment2, start: 'A---A---2', end: 'A' },\n    ]);\n  });\n\n  it('renders a flowchart self-loop as one SVG path', async () => {\n    const restoreDom = setupDom();\n\n    try {\n      const { svg } = await mermaidAPI.render(\n        'self-loop-test',\n        `flowchart TD\nA[Christmas] -->|Get money| B(Go shopping)\nC --> C`\n      );\n      const dom = new JSDOM(svg);\n      const edgePaths = dom.window.document.querySelectorAll('.edgePaths path.flowchart-link');\n      const selfLoopPath = [...edgePaths].find((path) =>\n        path.getAttribute('data-id')?.includes('C')\n      );\n\n      expect(edgePaths).toHaveLength(2);\n      expect(selfLoopPath).toBeTruthy();\n      expect(selfLoopPath?.getAttribute('d')).toBeTruthy();\n      expect(\n        dom.window.document.querySelectorAll('.edgePaths path[data-id*=\"cyclic-special\"]')\n      ).toHaveLength(0);\n    } finally {\n      restoreDom();\n    }\n  });\n\n  it('renders a stateDiagram-v2 self-loop as one SVG path', async () => {\n    const restoreDom = setupDom();\n\n    try {\n      const { svg } = await mermaidAPI.render(\n        'state-self-loop-test',\n        `stateDiagram-v2\n[*] --> Node\nNode --> Node: Self Edge`\n      );\n      const dom = new JSDOM(svg);\n      const edgePaths = dom.window.document.querySelectorAll('.edgePaths path');\n      const cyclicSpecialPaths = dom.window.document.querySelectorAll(\n        '.edgePaths path[data-id*=\"cyclic-special\"], .edgePaths path[id*=\"cyclic-special\"]'\n      );\n      const selfLoopPath = [...edgePaths].find(\n        (path) =>\n          path.getAttribute('data-id')?.includes('Node') ||\n          path.getAttribute('id')?.includes('Node')\n      );\n\n      expect(edgePaths).toHaveLength(2);\n      expect(selfLoopPath).toBeTruthy();\n      expect(selfLoopPath?.getAttribute('d')).toBeTruthy();\n      expect(cyclicSpecialPaths).toHaveLength(0);\n\n      const edgeLabels = dom.window.document.querySelectorAll('.edgeLabels .edgeLabel');\n      const hasSelfEdgeLabel = [...edgeLabels].some((el) =>\n        el.textContent?.includes('Self Edge')\n      );\n      expect(hasSelfEdgeLabel).toBe(true);\n    } finally {\n      restoreDom();\n    }\n  });\n});\n"
+          }
+        ],
+        "unified_test_patch": "--- a/src/rendering-util/layout-algorithms/dagre/index.spec.js\n+++ b/src/rendering-util/layout-algorithms/dagre/index.spec.js\n@@ -255,4 +255,34 @@\n     } finally {\n       restoreDom();\n     }\n   });\n+\n+  it('renders a stateDiagram-v2 self-loop as one SVG path', async () => {\n+    const restoreDom = setupDom();\n+\n+    try {\n+      const { svg } = await mermaidAPI.render(\n+        'state-self-loop-test',\n+        `stateDiagram-v2\n+[*] --> Node\n+Node --> Node: Self Edge`\n+      );\n+      const dom = new JSDOM(svg);\n+      const edgePaths = dom.window.document.querySelectorAll('.edgePaths path');\n+      const cyclicSpecialPaths = dom.window.document.querySelectorAll(\n+        '.edgePaths path[data-id*=\"cyclic-special\"], .edgePaths path[id*=\"cyclic-special\"]'\n+      );\n+      const selfLoopPath = [...edgePaths].find(\n+        (path) =>\n+          path.getAttribute('data-id')?.includes('Node') ||\n+          path.getAttribute('id')?.includes('Node')\n+      );\n+\n+      expect(edgePaths).toHaveLength(2);\n+      expect(selfLoopPath).toBeTruthy();\n+      expect(selfLoopPath?.getAttribute('d')).toBeTruthy();\n+      expect(cyclicSpecialPaths).toHaveLength(0);\n+\n+      const edgeLabels = dom.window.document.querySelectorAll('.edgeLabels .edgeLabel');\n+      const hasSelfEdgeLabel = [...edgeLabels].some((el) =>\n+        el.textContent?.includes('Self Edge')\n+      );\n+      expect(hasSelfEdgeLabel).toBe(true);\n+    } finally {\n+      restoreDom();\n+    }\n+  });\n });\n",
+        "result_parser": "vitest_json_or_standard_tap",
+        "environment_assumptions": [
+          "Node.js >= 18 with JSDOM support in packages/mermaid",
+          "Vitest test runner configured in repository packages/mermaid/package.json"
+        ],
+        "equivalence_self_check": "Alternative implementations that merge self-loop segments during dagre layout or inside state diagram rendering rather than via getEdgesToRender helper will still pass, because the test verifies public SVG DOM output from mermaidAPI.render.",
+        "vacuous_pass_checks": [
+          "Checks that edgePaths has exactly length 2, failing if no paths or extra segment paths are rendered.",
+          "Checks that selfLoopPath is defined and has non-empty attribute 'd'.",
+          "Checks that hasSelfEdgeLabel is true, ensuring labels are not dropped."
+        ],
+        "surface_signal_resistance": "A patch that merely hides the dummy paths without merging them or without supporting stateDiagram in diagram type checks will fail on path count and label presence."
+      }
+    ],
+    "oracle_quality_plan": {
+      "status": "proposed_not_executed",
+      "curator_only": true,
+      "negative_variants": [
+        {
+          "variant_id": "omit_state_diagram_from_merge",
+          "defect_preserved_or_introduced": "shouldMergeSelfLoopSegments only returns true for flowchart and flowchart-v2, leaving stateDiagram unmerged.",
+          "expected_failure_test_ids": [
+            "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender > renders a stateDiagram-v2 self-loop as one SVG path"
+          ]
+        },
+        {
+          "variant_id": "drop_edge_label_during_merge",
+          "defect_preserved_or_introduced": "Self-loop edge paths are merged to a single path but edge labels are dropped or empty.",
+          "expected_failure_test_ids": [
+            "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender > renders a stateDiagram-v2 self-loop as one SVG path"
+          ]
+        }
+      ],
+      "equivalent_positive_variant": {
+        "description": "An implementation that computes smooth cubic Bezier control points for self-loops rather than orthogonal points, and merges segments directly in recursiveRender.",
+        "expected_pass_test_ids": [
+          "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender > renders a stateDiagram-v2 self-loop as one SVG path",
+          "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender > renders a flowchart self-loop as one SVG path"
+        ]
+      }
+    },
+    "missing_context": [],
+    "summary": "Added an implementation-independent JSDOM rendering test to index.spec.js targeting stateDiagram-v2 self-loops. The test verifies that self-loops in state diagrams render as a single logical edge path without leaking internal layout segments and with the edge label intact.",
+    "human_review_required": false,
+    "human_review_reasons": []
+  },
+  "invocation": {
+    "backend": "gemini",
+    "model": "gemini-3.7-flash",
+    "requested_model": "gemini-3.7-flash",
+    "effort": "provider_auto",
+    "attempts": 1,
+    "usage": {
+      "completion_tokens": 5642,
+      "prompt_tokens": 33293,
+      "total_tokens": 43008,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "reasoning_tokens": 4073,
+      "traffic_type": "ON_DEMAND",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 33293
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 5642
+        }
+      ]
+    },
+    "raw_response": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+    "raw_response_sha256": "7f3da2ad67cf9d2f48b967d40a339defc1f696471a1c198cb9d2b22c0a2fd80c",
+    "provider_response": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+    "provider_response_sha256": "3c02ebf0c03d277c1959e625dd0ed0bb3e678f7c15293a789ba0891928df7ff4",
+    "request": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+    "request_sha256": "c18210b7e7a952e837e4be24a82bb101534ae82f3711cf5453864062fd586e52",
+    "semantic_validation_attempts": 1,
+    "prior_validation_failures": [],
+    "semantic_attempt_records": [
+      {
+        "semantic_attempt": 1,
+        "directory": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01",
+        "files": {
+          "09_model_raw.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+            "sha256": "7f3da2ad67cf9d2f48b967d40a339defc1f696471a1c198cb9d2b22c0a2fd80c"
+          },
+          "10_api_invocation.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+            "sha256": "66ae2cc079e4dcdd0e6bab6eec4c4453243d004b2f2a9d974bd5acb29523bc45"
+          },
+          "10_api_request.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+            "sha256": "c18210b7e7a952e837e4be24a82bb101534ae82f3711cf5453864062fd586e52"
+          },
+          "10_attempt_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+            "sha256": "69bcdfdf20e167085c6d6d1f6346eb28ca61f68758e51348a987b73a19a1f191"
+          },
+          "10_invocation_started.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+            "sha256": "5d0d08413c074f1e9f04f673f23bb7440c2978ec8bb513725eee5ce7bf99afd1"
+          },
+          "10_provider_response_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/mermaid-js__mermaid-7711/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+            "sha256": "3c02ebf0c03d277c1959e625dd0ed0bb3e678f7c15293a789ba0891928df7ff4"
+          }
+        }
+      }
+    ]
+  }
+}

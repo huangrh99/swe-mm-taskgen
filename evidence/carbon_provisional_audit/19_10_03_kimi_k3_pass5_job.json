@@ -1,0 +1,55 @@
+{
+  "job_name": "19_10_carbon_20978_kimi_k3_pass5_proposed_only",
+  "jobs_dir": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_11_carbon_kimi_k3_pass5",
+  "n_attempts": 5,
+  "n_concurrent_trials": 1,
+  "retry": {
+    "max_retries": 2,
+    "wait_multiplier": 1.0,
+    "min_wait_sec": 1.0,
+    "max_wait_sec": 60.0
+  },
+  "environment": {
+    "type": "docker",
+    "delete": true,
+    "extra_allowed_hosts": [
+      "raw.githubusercontent.com",
+      "github.com",
+      "nodejs.org",
+      "registry.npmjs.org"
+    ],
+    "kwargs": {
+      "keep_containers": false
+    }
+  },
+  "agents": [
+    {
+      "name": "kimi-code",
+      "model_name": "ep-20260817150115-9fx8h",
+      "n_concurrent": 1,
+      "override_setup_timeout_sec": 900,
+      "override_timeout_sec": 1800,
+      "extra_allowed_hosts": [
+        "ark-gateway.invalid"
+      ],
+      "kwargs": {
+        "version": "0.29.0"
+      },
+      "env": {
+        "KIMI_MODEL_API_KEY": "${ARK_API_KEY}",
+        "KIMI_MODEL_BASE_URL": "https://ark-gateway.invalid/api/v3",
+        "KIMI_MODEL_MAX_CONTEXT_SIZE": "1048576",
+        "KIMI_MODEL_MAX_COMPLETION_TOKENS": "8192",
+        "KIMI_MODEL_CAPABILITIES": "image_in,thinking",
+        "KIMI_MODEL_THINKING_EFFORT": "max",
+        "KIMI_LOOP_MAX_STEPS_PER_TURN": "20",
+        "KIMI_LOOP_MAX_RETRIES_PER_STEP": "1"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_00_provisional_candidates/carbon-design-system__carbon-20978"
+    }
+  ]
+}

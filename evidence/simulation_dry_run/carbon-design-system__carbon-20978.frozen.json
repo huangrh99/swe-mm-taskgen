@@ -1,0 +1,54 @@
+{
+  "schema_version": "frozen-harbor-task-v1",
+  "state": "frozen",
+  "mode": "simulation",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "task": {
+    "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_29_final_frozen_dry_run_tasks/carbon-design-system__carbon-20978",
+    "sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+    "files": {
+      "environment/Dockerfile": "576d5835b36af1949330907c75fc77c5308d17f699761e6174afbbb3d154ddf0",
+      "environment/assets/52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b.png": "52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b",
+      "environment/assets/8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a.png": "8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a",
+      "environment/assets/a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352.png": "a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352",
+      "environment/assets/dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb.png": "dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb",
+      "environment/base_image.json": "4c91c7248a849314128a973532cf812883e6a499a218fb81c4be7f803c5fb43e",
+      "environment/docker-compose.yaml": "c94524202b8cefd10c52b4c326e41214687eb40b1d79ea01812f9acb7d2b98a1",
+      "instruction.md": "1eb832b5947a306d1ba7749b3b44deac7c2837bdbf46c0d34d6ebb726b277b9e",
+      "solution/reference.patch": "f48cb6d3ecae68463f3eb944abd4ceaf36d16ee6ffbc9dd1e7324ec48c11150e",
+      "solution/solve.sh": "0de47f8626d52183089e246175e3b3ad1d33ac4db715019d8e2c3b419e58d032",
+      "task.toml": "425e6c3231cfce978a2548d2724422b038df671b4452b5771057701d50f39e01",
+      "tests/config.json": "8317771c01d06bbf8205a51c02e7b99b97719ca51d545509644b093253d0963b",
+      "tests/frozen_inventory.json": "e36eccd631a40262a5edd6dd7dad0d718c2555abdee4f32886a2bef63d60ad54",
+      "tests/functional_runner.py": "87a547498f07c0229d728082bd2639e31a7472daaf485b63a0c0170ac17705d6",
+      "tests/integrity.py": "62a23be3460fe08eab028f1c5dcd14065a0bed5540181ed22a188e0b37d8f208",
+      "tests/test.sh": "5fa5a74cdb3087ae258b60f43a42b40622adcd715a56e68bb815a9d3769914aa",
+      "tests/test_manifest.json": "de4f60a9722b7236d4d1beaf89222a7deb1c84de7333daecb43ff00a19a0d561",
+      "tests/verify.py": "17c2ba753aecb8a463c88167d13ba9b1cc3fe486566c5d859c1b5a0900aaf1d7"
+    }
+  },
+  "harbor_task_checksum": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "image": {
+    "reference": "simulation-only/carbon-20978",
+    "image_id": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "promotion_packet": {
+    "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_06_promotion_packet.json",
+    "sha256": "6fd8241cdbda3738a1624fb058b3dca636d18abae2f0972bc29579dd271cb072"
+  },
+  "promotion_ledger": {
+    "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_29_final_frozen_dry_run/promotion_ledger.json",
+    "sha256": "0ecd2c80f8f8561a723fd3b944e6eac433b1df699fdedb31ae719b16213517d6"
+  },
+  "pipeline_freeze": {
+    "path": "report/reproducibility/09_pipeline_freeze_manifest.json",
+    "sha256": "90b2935cb929ad3f2866fb855cd8d7f1839e74aa4becf364e84c6335c45d645a"
+  },
+  "pass5_config": {
+    "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_05_pass5_config.json",
+    "sha256": "61ba847721cb4aec25eb1114dfce16c218a3045dd2858d4bad91ebb967cd5c91",
+    "model_id": "mock-model-no-api",
+    "agent": "mock-harbor-agent",
+    "agent_version": "1.0"
+  }
+}

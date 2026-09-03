@@ -1,0 +1,30 @@
+{
+  "repo": "GoogleChrome/lighthouse",
+  "instance_id": "googlechrome__lighthouse-16403",
+  "base_commit": "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+  "reference_head": "cc05eab5272d191247834664bfc24a33c83e5bad",
+  "test_file": "treemap/test/treemap-design-test-pptr.js",
+  "FAIL_TO_PASS": [
+    "LHM-16403-TITLE-VISUAL",
+    "LHM-16403-CAPTION-CONTENT",
+    "LHM-16403-CAPTION-HIERARCHY",
+    "LHM-16403-DEPTH-COLOR",
+    "LHM-16403-HEADER-TOTAL"
+  ],
+  "PASS_TO_PASS": [
+    "LHM-16403-COLOR-FAMILIES",
+    "LHM-16403-SELECTION-DETAILS",
+    "LHM-16403-TABLE-P2P"
+  ],
+  "test_purposes": {
+    "LHM-16403-TITLE-VISUAL": "Verify the title and logo are visible, emphasized, non-overlapping, and within design-compatible size ranges without requiring exact Gold CSS constants.",
+    "LHM-16403-CAPTION-CONTENT": "Verify the redundant aggregate caption is absent while every bundle still exposes its name, size, and share.",
+    "LHM-16403-CAPTION-HIERARCHY": "Verify bundle names and metrics remain readable and receive distinct visual emphasis without requiring a particular element count or margin.",
+    "LHM-16403-COLOR-FAMILIES": "Verify every top-level bundle receives a distinct computed color and its text meets a deterministic contrast requirement.",
+    "LHM-16403-DEPTH-COLOR": "Verify descendants differ visibly from parents while remaining in the same color family.",
+    "LHM-16403-SELECTION-DETAILS": "Verify choosing a bundle continues to expose the selected bundle name, byte total, and percentage.",
+    "LHM-16403-HEADER-TOTAL": "Verify choosing a bundle does not replace the report-wide byte total in the header.",
+    "LHM-16403-TABLE-P2P": "Verify the existing resource table remains populated and semantically complete without requiring row order or exact DOM tags."
+  },
+  "log_parser": "lighthouse_16403.mocha_text_v1"
+}

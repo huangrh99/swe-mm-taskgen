@@ -1,0 +1,1206 @@
+{
+  "schema": "test-transition-audit-v1",
+  "case": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_cases_verified/2396",
+  "runs": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_test_batches/20260831T201042727053Z/2396",
+  "required_repeats_per_state": 3,
+  "status": "measured",
+  "errors": [],
+  "test_transitions": [
+    {
+      "test_id": "[[\"features/modeling - layout corner boundary events\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]",
+      "observed_type": "F2P",
+      "source": "vlm_generated_test",
+      "baseline": [
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout corner boundary events\"],\"should layout straight for vertically axis-aligned corner boundary event\"]",
+      "observed_type": "F2P",
+      "source": "vlm_generated_test",
+      "baseline": [
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached bottom left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached bottom right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached top left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached top right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached bottom center\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached center left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached center right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached top center\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached bottom center, orientation bottom\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached right center, orientation left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached right center, orientation right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top center, orientation top\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation bottom\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation top\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for axis-aligned corner boundary event\"]",
+      "observed_type": "F2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]",
+      "observed_type": "F2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"gateway layout\"],\"should layout h:v before Gateway\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"gateway layout\"],\"should layout v:h after Gateway\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should NOT relayout loop\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should layout loop\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (b:l)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (l:t)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (t:r)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after IntermediateEvent (right to left)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after IntermediateEvent\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after StartEvent\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after Task\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after reconnect end\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after source move\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after target move\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task above (subProcess -> task)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task above (task -> subProcess)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task next to it (subProcess -> task)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task next to it (task -> subProcess)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcesses (bottom -> top)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcesses (top -> bottom)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached bottom left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached bottom right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached top left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached top right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached bottom center\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached center left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached center right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached top center\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom center, orientation bottom\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom center, orientation top\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation bottom\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation top\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached left center, orientation left\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached right center, orientation right\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"gateway layout\"],\"should layout h:v after Gateway\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"gateway layout\"],\"should layout v:h before Gateway\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should NOT relayout loop\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should layout loop\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (l:b)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (r:t)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (t:l)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after IntermediateEvent (bottom to top)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after IntermediateEvent\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after StartEvent\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after Task\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after reconnect end\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after source move\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after target move\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task below (subProcess -> task)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task below (task -> subProcess)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task next to it (subProcess -> task)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task next to it (task -> subProcess)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcesses (left -> right)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcesses (right -> left)\"]",
+      "observed_type": "P2P",
+      "source": "author_or_existing_component_test",
+      "baseline": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "reference": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    }
+  ],
+  "counts": {
+    "F2P": 4,
+    "P2P": 72
+  },
+  "measurement_eligible": true,
+  "semantic_oracle_approval": "not_assessed",
+  "export_approved": false,
+  "number": 2396,
+  "case_manifest_sha256": "a7fd145e4857c1aa764d8961728dd3c9097c8d91a4402875e952ca70d5f21d5e",
+  "verified_environments": {
+    "baseline": {
+      "image_id": "sha256:80d6a16aaf45e19046a80bc856cb0b15955ae44ea550f63afb6492d4c54a96ef",
+      "runtime_image_id": "sha256:db634be1f18d3cf5bdfb6484a1ac04eec3a3062d7e7052d048dd466faab8c2e0",
+      "dependency_state": "baseline",
+      "case_manifest_sha256": "a7fd145e4857c1aa764d8961728dd3c9097c8d91a4402875e952ca70d5f21d5e"
+    },
+    "reference": {
+      "image_id": "sha256:80d6a16aaf45e19046a80bc856cb0b15955ae44ea550f63afb6492d4c54a96ef",
+      "runtime_image_id": "sha256:db634be1f18d3cf5bdfb6484a1ac04eec3a3062d7e7052d048dd466faab8c2e0",
+      "dependency_state": "baseline",
+      "case_manifest_sha256": "a7fd145e4857c1aa764d8961728dd3c9097c8d91a4402875e952ca70d5f21d5e"
+    }
+  },
+  "frozen_harness_hashes": {
+    "14_run_component_tests.cjs": "890c87448681c26d0cea303d5ae75daac26bc023a878bbbba26f8b647395e3e8",
+    "14_author_tests.patch": "27f00fa9ea38487b4430621a24d3b2d521ca1782d99941c93d46ced8788e3335",
+    "14_generated_test.js": "c243438c3adaf3b3a7988dfc4b0724191814b2ae5473ab537d486be6423d7362",
+    "14_case_manifest.json": "3ab275ca73f5bde25be849eff4d21008e2d40d6e7e5d50b7c0915c8abc84c769"
+  },
+  "run_evidence_hashes": {
+    "14_baseline_01": {
+      "14_run_result.json": "a54a526633a90506836a6216b599cd30674b859f4a79aca3af9909f0d2654696",
+      "14_framework_results.json": "367629e096fda6cecfae9406b76cb13d22214a912605186ac9e464ae71afa735"
+    },
+    "14_baseline_02": {
+      "14_run_result.json": "4943433315c2caf7479c13bb3c5b68f588503826a6cd9e5c102b27bd0258b242",
+      "14_framework_results.json": "8e67b1a9db8ed25209ff4ea4a3ff7ee9672e8fe206d85d25f34ba080bc262d7b"
+    },
+    "14_baseline_03": {
+      "14_run_result.json": "ea52e3680f6fbcc6799de7626e000d8c8b866b52cb300717beb38ae637ccf3b5",
+      "14_framework_results.json": "83a53d67d381be367c93eef3706ec793eb206699dd95483ecae19c562f4cc4c9"
+    },
+    "14_reference_01": {
+      "14_run_result.json": "8d3cc3d8eb339dfbfe91de5dc163ad3fdbac73589701f857360da5096241fec9",
+      "14_framework_results.json": "51b202be301d322dfbf6bb0f27ad960a85e5b2aec1f14fdecd059f5bafdf3f64"
+    },
+    "14_reference_02": {
+      "14_run_result.json": "316c1c8ade7104753b01e03665d9ad980a331264a1d415f0221a15839606845a",
+      "14_framework_results.json": "fce38b0e7819fb58c91f6df9bcb49c7969201afe4d612681d4ae9d05945ace0e"
+    },
+    "14_reference_03": {
+      "14_run_result.json": "3a0443fdd12d6da7ca6cd2432363c0f6271e2f45e9e633e7e2d60faf647f81f0",
+      "14_framework_results.json": "002cb782fe2badedd91f0b22792515fbff9da64b3277a6146fe69df34041be0e"
+    }
+  },
+  "author_audit_sha256": "204d041e91957b670a3a2a892f846758989e7720aef4b845903a3451a605a056"
+}

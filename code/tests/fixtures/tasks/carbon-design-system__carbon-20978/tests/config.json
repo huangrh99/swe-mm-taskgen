@@ -1,0 +1,18 @@
+{
+  "repo": "carbon-design-system/carbon",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "base_commit": "b2982e815c656aaa630c50231c70dc74945739e6",
+  "FAIL_TO_PASS": [
+    "f2p_ai_gradient_decorator",
+    "f2p_ai_right_divider",
+    "f2p_invalid_ai_left_divider",
+    "f2p_invalid_ai_closable_spacing"
+  ],
+  "PASS_TO_PASS": [
+    "p2p_disabled_selection_noninteractive",
+    "p2p_invalid_helper_error_color",
+    "p2p_disabled_item_semantics",
+    "p2p_selected_item_state"
+  ],
+  "log_parser": "report_functional_json_v1"
+}

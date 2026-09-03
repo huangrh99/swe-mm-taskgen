@@ -1,0 +1,13 @@
+diff --git a/packages/react/src/components/Search/Search.tsx b/packages/react/src/components/Search/Search.tsx
+index d65dc322f2d3..1085426bd72e 100644
+--- a/packages/react/src/components/Search/Search.tsx
++++ b/packages/react/src/components/Search/Search.tsx
+@@ -273,7 +273,7 @@ const Search = React.forwardRef<HTMLInputElement, SearchProps>(
+     const magnifierWithTooltip =
+       onExpand && !isExpanded ? (
+         <Tooltip
+-          className={`${prefix}--search-tooltip ${prefix}--search-magnifier-tooltip`}
++          className={`${prefix}--search-tooltip ${prefix}--search-magnifier-tooltip ${prefix}--icon-tooltip`}
+           align="top"
+           label="Search">
+           {magnifierButton}

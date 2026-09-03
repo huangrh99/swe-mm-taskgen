@@ -1,0 +1,670 @@
+{
+  "schema_version": "exam-submission-validation-v1",
+  "validation_scope": "static_layout_only",
+  "status": "incomplete",
+  "exam_readiness": "not_evaluated",
+  "exam_ready": false,
+  "runtime_acceptance_required": [
+    "empty_patch_reward_0",
+    "gold_patch_reward_1",
+    "negative_controls",
+    "visual_necessity_human_gate",
+    "f2p_p2p_human_gate",
+    "frozen_environment"
+  ],
+  "minimum_iid_tasks": 1,
+  "observed_iid_tasks": 7,
+  "tasks": [
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "asset_count": 0,
+      "status": "invalid",
+      "errors": [
+        {
+          "code": "missing_task_file",
+          "path": "environment/Dockerfile"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "environment/base_image.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "instruction.md"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/solve.sh"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/gold.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "task.toml"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/config.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/sweb_grade.py"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.sh"
+        },
+        {
+          "code": "missing_visual_asset"
+        }
+      ]
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "asset_count": 0,
+      "status": "invalid",
+      "errors": [
+        {
+          "code": "missing_task_file",
+          "path": "environment/Dockerfile"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "environment/base_image.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "instruction.md"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/solve.sh"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/gold.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "task.toml"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/config.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/sweb_grade.py"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.sh"
+        },
+        {
+          "code": "missing_visual_asset"
+        }
+      ]
+    },
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "asset_count": 4,
+      "status": "invalid",
+      "errors": [
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive"
+        },
+        {
+          "code": "missing_local_base_restore_binding",
+          "field": "offline_archive_sha256"
+        }
+      ]
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "asset_count": 0,
+      "status": "invalid",
+      "errors": [
+        {
+          "code": "missing_task_file",
+          "path": "environment/Dockerfile"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "environment/base_image.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "instruction.md"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/solve.sh"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/gold.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "task.toml"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/config.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/sweb_grade.py"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.sh"
+        },
+        {
+          "code": "missing_visual_asset"
+        }
+      ]
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "asset_count": 0,
+      "status": "invalid",
+      "errors": [
+        {
+          "code": "missing_task_file",
+          "path": "environment/Dockerfile"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "environment/base_image.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "instruction.md"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/solve.sh"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/gold.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "task.toml"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/config.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/sweb_grade.py"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.sh"
+        },
+        {
+          "code": "missing_visual_asset"
+        }
+      ]
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "asset_count": 0,
+      "status": "invalid",
+      "errors": [
+        {
+          "code": "missing_task_file",
+          "path": "environment/Dockerfile"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "environment/base_image.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "instruction.md"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/solve.sh"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/gold.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "task.toml"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/config.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/sweb_grade.py"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.sh"
+        },
+        {
+          "code": "missing_visual_asset"
+        }
+      ]
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "asset_count": 0,
+      "status": "invalid",
+      "errors": [
+        {
+          "code": "missing_task_file",
+          "path": "environment/Dockerfile"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "environment/base_image.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "instruction.md"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/solve.sh"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "solution/gold.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "task.toml"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/config.json"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/sweb_grade.py"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.patch"
+        },
+        {
+          "code": "missing_task_file",
+          "path": "tests/test.sh"
+        },
+        {
+          "code": "missing_visual_asset"
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "environment/Dockerfile"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "environment/base_image.json"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "instruction.md"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "solution/solve.sh"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "solution/gold.patch"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "task.toml"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "tests/config.json"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "tests/sweb_grade.py"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "tests/test.patch"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_task_file",
+      "path": "tests/test.sh"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "code": "missing_visual_asset"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "environment/Dockerfile"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "environment/base_image.json"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "instruction.md"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "solution/solve.sh"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "solution/gold.patch"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "task.toml"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "tests/config.json"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "tests/sweb_grade.py"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "tests/test.patch"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_task_file",
+      "path": "tests/test.sh"
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "code": "missing_visual_asset"
+    },
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive"
+    },
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "code": "missing_local_base_restore_binding",
+      "field": "offline_archive_sha256"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "environment/Dockerfile"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "environment/base_image.json"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "instruction.md"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "solution/solve.sh"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "solution/gold.patch"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "task.toml"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "tests/config.json"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "tests/sweb_grade.py"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "tests/test.patch"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_task_file",
+      "path": "tests/test.sh"
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "code": "missing_visual_asset"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "environment/Dockerfile"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "environment/base_image.json"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "instruction.md"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "solution/solve.sh"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "solution/gold.patch"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "task.toml"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "tests/config.json"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "tests/sweb_grade.py"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "tests/test.patch"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_task_file",
+      "path": "tests/test.sh"
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "code": "missing_visual_asset"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "environment/Dockerfile"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "environment/base_image.json"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "instruction.md"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "solution/solve.sh"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "solution/gold.patch"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "task.toml"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "tests/config.json"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "tests/sweb_grade.py"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "tests/test.patch"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_task_file",
+      "path": "tests/test.sh"
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "code": "missing_visual_asset"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "environment/Dockerfile"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "environment/base_image.json"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "instruction.md"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "solution/solve.sh"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "solution/gold.patch"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "task.toml"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "tests/config.json"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "tests/sweb_grade.py"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "tests/test.patch"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_task_file",
+      "path": "tests/test.sh"
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "code": "missing_visual_asset"
+    }
+  ]
+}

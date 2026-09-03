@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "frozen-pass5-summary-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "state", "mode", "instance_id", "frozen_manifest", "pipeline_freeze", "task_sha256", "harbor_task_checksum", "image_id", "model_id", "agent", "agent_version", "trial_concurrency", "run_authorization", "state_ledger", "valid_trial_count", "infrastructure_invalid_count", "answer_leakage_invalid_count", "success_count", "pass_at_5", "attempts", "unexecuted_real_work"],
+  "properties": {
+    "schema_version": {"const": "frozen-pass5-summary-v1"}, "state": {"const": "pass5_completed"},
+    "mode": {"enum": ["simulation", "real"]}, "instance_id": {"type": "string"},
+    "frozen_manifest": {"$ref": "#/$defs/binding"}, "pipeline_freeze": {"$ref": "#/$defs/binding"}, "state_ledger": {"$ref": "#/$defs/binding"},
+    "task_sha256": {"$ref": "#/$defs/sha256"}, "harbor_task_checksum": {"$ref": "#/$defs/sha256"}, "image_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "model_id": {"type": "string"}, "agent": {"type": "string"}, "agent_version": {"type": "string"},
+    "trial_concurrency": {"type": "integer", "minimum": 1, "maximum": 5},
+    "run_authorization": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["mode"], "properties": {"mode": {"const": "simulation_exempt"}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["path", "sha256", "run_id", "nonce", "output_path", "harbor_job_config_sha256", "maximum_harbor_attempts", "receipt", "registry_receipt"],
+         "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}, "run_id": {"type": "string"}, "nonce": {"type": "string"}, "output_path": {"type": "string"}, "harbor_job_config_sha256": {"$ref": "#/$defs/sha256"}, "maximum_harbor_attempts": {"type": "integer", "minimum": 5}, "receipt": {"$ref": "#/$defs/binding"}, "registry_receipt": {"$ref": "#/$defs/binding"}}}
+      ]
+    }, "valid_trial_count": {"const": 5},
+    "infrastructure_invalid_count": {"type": "integer", "minimum": 0},
+    "answer_leakage_invalid_count": {"type": "integer", "minimum": 0},
+    "success_count": {"type": "integer", "minimum": 0, "maximum": 5},
+    "pass_at_5": {"enum": [0, 1]},
+    "attempts": {"type": "array", "minItems": 5, "items": {"oneOf": [{"$ref": "#/$defs/validAttempt"}, {"$ref": "#/$defs/infrastructureInvalidAttempt"}, {"$ref": "#/$defs/leakageInvalidAttempt"}]}},
+    "unexecuted_real_work": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"pass_at_5": {"const": 0}}}, "then": {"properties": {"success_count": {"const": 0}}}},
+    {"if": {"properties": {"pass_at_5": {"const": 1}}}, "then": {"properties": {"success_count": {"minimum": 1}}}}
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+    "validAttempt": {
+      "type": "object", "required": ["classification", "reward", "attempt_ordinal", "valid_trial_index"],
+      "properties": {
+        "classification": {"const": "valid"}, "reward": {"enum": [0, 1]},
+        "attempt_ordinal": {"type": "integer", "minimum": 1},
+        "valid_trial_index": {"type": "integer", "minimum": 1, "maximum": 5},
+        "result": {"$ref": "#/$defs/binding"},
+        "verifier": {"$ref": "#/$defs/binding"},
+        "trajectory_index": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/binding"}},
+        "trajectory": {"$ref": "#/$defs/binding"}
+        ,"frozen_job_config": {"$ref": "#/$defs/binding"}
+        ,"resolved_job_config": {"$ref": "#/$defs/binding"}
+        ,"resolved_runtime_sha256": {"$ref": "#/$defs/sha256"}
+        ,"trial_id": {"type": "string", "minLength": 1},
+        "trial_name": {"type": "string", "minLength": 1},
+        "job_id": {"type": "string", "minLength": 1},
+        "started_at": {"type": "string", "format": "date-time"},
+        "finished_at": {"type": "string", "format": "date-time"},
+        "trajectory_digest": {"$ref": "#/$defs/sha256"}
+      },
+      "oneOf": [
+        {"required": ["result", "verifier", "trajectory_index", "trial_id", "trial_name", "job_id", "started_at", "finished_at", "trajectory_digest", "frozen_job_config", "resolved_job_config", "resolved_runtime_sha256"]},
+        {"required": ["trajectory"]}
+      ]
+    },
+    "infrastructureInvalidAttempt": {
+      "type": "object", "required": ["classification", "reason", "attempt_ordinal"],
+      "properties": {"classification": {"const": "infrastructure_invalid"}, "reason": {"type": "string", "minLength": 1}, "attempt_ordinal": {"type": "integer", "minimum": 1}}
+    },
+    "leakageInvalidAttempt": {
+      "type": "object",
+      "required": ["classification", "reason", "attempt_ordinal", "answer_leakage_hits"],
+      "properties": {
+        "classification": {"const": "invalid_answer_leakage"},
+        "reason": {"type": "string", "minLength": 1},
+        "attempt_ordinal": {"type": "integer", "minimum": 1},
+        "result": {"$ref": "#/$defs/binding"},
+        "verifier": {"$ref": "#/$defs/binding"},
+        "frozen_job_config": {"$ref": "#/$defs/binding"},
+        "resolved_job_config": {"$ref": "#/$defs/binding"},
+        "resolved_runtime_sha256": {"$ref": "#/$defs/sha256"},
+        "answer_leakage_hits": {"type": "array", "minItems": 1, "items": {"type": "object"}}
+      }
+    }
+  }
+}

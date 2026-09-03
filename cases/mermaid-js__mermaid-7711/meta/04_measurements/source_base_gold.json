@@ -1,0 +1,82 @@
+{
+  "baseline": {
+    "schema_version": "source-test-run-v1",
+    "commit": "8b52e5378903e01f6da8c760717b3c80f41f9ffd",
+    "test_manifest_sha256": "54ade3f9aaa6cc58491ec43cb997f86c447760a0590bcfdf34f938b582a7617c",
+    "results": [
+      {
+        "test_id": "f2p_single_logical_self_loop_render_edge",
+        "class": "FAIL_TO_PASS",
+        "status": "fail",
+        "missing_assertion_indexes": [
+          0,
+          1,
+          2
+        ],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_recursive_dagre_render_entrypoint_retained",
+        "class": "PASS_TO_PASS",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      }
+    ],
+    "summary": {
+      "pass": 1,
+      "fail": 1
+    },
+    "semantic_calibration": "pending_human_review",
+    "scope": "executable source semantics; not pixel-render equivalence"
+  },
+  "reference": {
+    "schema_version": "source-test-run-v1",
+    "commit": "f50fb4f0facfb432b27877921af2e30a01854265",
+    "test_manifest_sha256": "54ade3f9aaa6cc58491ec43cb997f86c447760a0590bcfdf34f938b582a7617c",
+    "results": [
+      {
+        "test_id": "f2p_single_logical_self_loop_render_edge",
+        "class": "FAIL_TO_PASS",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_recursive_dagre_render_entrypoint_retained",
+        "class": "PASS_TO_PASS",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      }
+    ],
+    "summary": {
+      "pass": 2,
+      "fail": 0
+    },
+    "semantic_calibration": "pending_human_review",
+    "scope": "executable source semantics; not pixel-render equivalence"
+  },
+  "measurement": {
+    "schema_version": "f2p-p2p-measurement-v1",
+    "transitions": [
+      {
+        "test_id": "f2p_single_logical_self_loop_render_edge",
+        "class": "FAIL_TO_PASS",
+        "expected": "fail->pass",
+        "actual": "fail->pass",
+        "matches": true
+      },
+      {
+        "test_id": "p2p_recursive_dagre_render_entrypoint_retained",
+        "class": "PASS_TO_PASS",
+        "expected": "pass->pass",
+        "actual": "pass->pass",
+        "matches": true
+      }
+    ],
+    "all_transitions_match": true,
+    "semantic_calibration": "pending_human_review",
+    "pixel_oracle_present": false
+  }
+}

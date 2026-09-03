@@ -1,0 +1,9 @@
+# Harbor 0.22 runtime egress probe
+
+This directory is a compact, submit-ready extraction of no-model capability probes. No real model was invoked and no credential was used. Paths and hashes are bound in `index.json`; `SHA256SUMS` independently checks the extracted bytes.
+
+- K3 job `0f89957b-44e8-41b5-83cf-1677e01330ee`, trial `20449dc1-2628-4e77-ad2b-c0c2e7086d1f`: setup denied GitHub, raw GitHub, npm, and Ark. During `agent.run()`, GitHub/raw/npm remained denied while the Ark endpoint completed an unauthenticated request and returned HTTP 401. The resolved result records `environment.extra_allowed_hosts=[]`, Ark as the sole agent host, no skills, no MCP servers, and verifier reward 1.
+- Codex job `a486ef57-2b38-4bda-aeb3-be4407930467`, trial `be47086f-c112-4cbf-abc6-c95eae505123`: setup denied GitHub, raw GitHub, npm, and OpenAI. During `agent.run()`, GitHub/raw/npm remained denied while the OpenAI endpoint completed an unauthenticated request and returned HTTP 404. The resolved result records `environment.extra_allowed_hosts=[]`, only the three required OpenAI/Auth hosts in the agent phase, no skills, no MCP servers, and verifier reward 1.
+- Kimi `FetchURL` job `bc55af7c-fc3d-4cb9-83d4-62ff0d219426`, trial `dd37441c-1399-4e6f-830e-8c6b44bff084`: a deterministic localhost mock instructed Kimi Code 0.29.0 to call `FetchURL` on GitHub. The CLI transcript records `Failed to fetch URL due to network error`; the request summary contains only two localhost `/v1/chat/completions` request sizes.
+
+The evidence does not dynamically prove that a real provider response made no hosted search/browser call, does not establish production-image equivalence, and is limited to the tested HTTPS/TCP paths. Formal trajectory auditing must therefore remain fail-closed for hosted search, browser, file-search, connector, and remote MCP events.

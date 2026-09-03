@@ -1,0 +1,176 @@
+{
+  "number": 2396,
+  "source_archive": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_source_archive/20260831T193722102401Z/11_record_0008.json",
+  "status": "materialized_not_executed",
+  "f2p": null,
+  "p2p": null,
+  "source_archive_sha256": "fb3fc0f023ac05d7960aa525cdb11b94c9aa6dd11bd2290041586c9b08acc519",
+  "pilot": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_pilot_manifest.json",
+    "sha256": "69e6debd7018964a574f68c1777965c5667cade4bc4b8be9f9ef9b6cca5bb027",
+    "snapshot_sha256": "57662b07f912a31902420eb564c6a7eb40f627864c1a5a579d6b7d37576aae14"
+  },
+  "anchors": {
+    "baseline_sha": "686561a9b9c733dc3a466a26e3803c5832b3c956",
+    "reference_sha": "547d90113010d40a91f9f816c837b459a0ff5f73",
+    "original_base_sha": "686561a9b9c733dc3a466a26e3803c5832b3c956",
+    "original_head_sha": "53125c0367a9a418467fc467f75d4beac071a8d0",
+    "baseline_first_parent_depth": 1,
+    "net_patch_id": "e3832ac56f55dc30f9cc3d40bac137f70903ef3c",
+    "proof": "Complete net patch IDs match; every touched old/new blob is byte-identical across original and merged histories",
+    "observed": {
+      "base_sha_observed": "686561a9b9c733dc3a466a26e3803c5832b3c956",
+      "head_sha_observed": "53125c0367a9a418467fc467f75d4beac071a8d0",
+      "merge_sha": "547d90113010d40a91f9f816c837b459a0ff5f73",
+      "merge_parents": [
+        "686561a9b9c733dc3a466a26e3803c5832b3c956"
+      ],
+      "merge_sha_sources": [
+        {
+          "sha": "547d90113010d40a91f9f816c837b459a0ff5f73",
+          "source": "pr_timeline.merged",
+          "url": "https://api.github.com/repos/bpmn-io/bpmn-js/issues/events/23324927079",
+          "created_at": "2026-03-06T08:06:18Z"
+        }
+      ],
+      "meaning": "Observed GitHub metadata; merge parents are not an automatically validated benchmark base"
+    }
+  },
+  "changed_files": [
+    {
+      "path": "CHANGELOG.md",
+      "role": "production",
+      "baseline": {
+        "sha256": "99b4c7569ab0c4ddb5917c0a31a04a053dfc65bba2b612d06fd2c5aac064f90f",
+        "bytes": 67304,
+        "blob": "14_blobs/99b4c7569ab0c4ddb5917c0a31a04a053dfc65bba2b612d06fd2c5aac064f90f",
+        "git_blob": "6ecba2841d60d05e70c95f1a90e3a16e7d7666e9"
+      },
+      "reference": {
+        "sha256": "285b3c012c7d1cef048d39d615a4763ab0395a93e299146c8e72e519c3d67496",
+        "bytes": 67466,
+        "blob": "14_blobs/285b3c012c7d1cef048d39d615a4763ab0395a93e299146c8e72e519c3d67496",
+        "git_blob": "1a73bdef1ba6dae3c4bbc38c146761df6daba776"
+      },
+      "source_commit_shas": [
+        "53125c0367a9a418467fc467f75d4beac071a8d0"
+      ]
+    },
+    {
+      "path": "lib/features/modeling/BpmnLayouter.js",
+      "role": "production",
+      "baseline": {
+        "sha256": "622081dda9fbb6ec981f548e85bb806406af62a12241af6112663ad54f893367",
+        "bytes": 13798,
+        "blob": "14_blobs/622081dda9fbb6ec981f548e85bb806406af62a12241af6112663ad54f893367",
+        "git_blob": "392778c0f867a812f014f9b343e4b1ae83def371"
+      },
+      "reference": {
+        "sha256": "c28d0823888b007a6004c3f141d4c4167f09423124754885725271262bdbcad8",
+        "bytes": 14472,
+        "blob": "14_blobs/c28d0823888b007a6004c3f141d4c4167f09423124754885725271262bdbcad8",
+        "git_blob": "c7998fcc19df373343c8506a89d82f8311cbddd3"
+      },
+      "source_commit_shas": [
+        "53125c0367a9a418467fc467f75d4beac071a8d0"
+      ]
+    },
+    {
+      "path": "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn",
+      "role": "test",
+      "baseline": {
+        "sha256": "f534d7271f988d7aa01886688abf8c50a449eb19318c5610d8a0a9f28ac2fe71",
+        "bytes": 3432,
+        "blob": "14_blobs/f534d7271f988d7aa01886688abf8c50a449eb19318c5610d8a0a9f28ac2fe71",
+        "git_blob": "324fba1799185345c0520b877c1e2193e67de828"
+      },
+      "reference": {
+        "sha256": "202dc5c91090b25d663e67b1e164bd9f5ab5edb83fe71811e305aec142c38a73",
+        "bytes": 4885,
+        "blob": "14_blobs/202dc5c91090b25d663e67b1e164bd9f5ab5edb83fe71811e305aec142c38a73",
+        "git_blob": "4fca7378d1bfc087a48d7a116994aae0e70fb564"
+      },
+      "source_commit_shas": [
+        "53125c0367a9a418467fc467f75d4beac071a8d0"
+      ]
+    },
+    {
+      "path": "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js",
+      "role": "test",
+      "baseline": {
+        "sha256": "19fdb08af9e94093028dfb9f1da1a487db9b873ee3e267558a4140b24b1690fb",
+        "bytes": 33334,
+        "blob": "14_blobs/19fdb08af9e94093028dfb9f1da1a487db9b873ee3e267558a4140b24b1690fb",
+        "git_blob": "5757c0ea1767facfea3f7522876b4f220ec71126"
+      },
+      "reference": {
+        "sha256": "63b8b6d70de87ee6bd32c42474e7d49ec22be0edb26ed5611275d0cf176fc70b",
+        "bytes": 35506,
+        "blob": "14_blobs/63b8b6d70de87ee6bd32c42474e7d49ec22be0edb26ed5611275d0cf176fc70b",
+        "git_blob": "20008344c427606ac7a10350fe3defb540296373"
+      },
+      "source_commit_shas": [
+        "53125c0367a9a418467fc467f75d4beac071a8d0"
+      ]
+    }
+  ],
+  "author_test_paths": [
+    "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn",
+    "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js"
+  ],
+  "production_paths": [
+    "CHANGELOG.md",
+    "lib/features/modeling/BpmnLayouter.js"
+  ],
+  "selected_suites": [
+    "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js",
+    "test/spec/14_generated_2396Spec.js"
+  ],
+  "suite_scope": "full selected component files, not entire repository",
+  "environment_inputs": {
+    "package.json": {
+      "before_sha256": "1ce9c0545c3c6ba6e0fc6c61429120ab6aea2193e34f68ec046ac10ff40e9849",
+      "after_sha256": "1ce9c0545c3c6ba6e0fc6c61429120ab6aea2193e34f68ec046ac10ff40e9849",
+      "changed": false
+    },
+    "package-lock.json": {
+      "before_sha256": "2ae3183c054765b470a72c87daca1c1d77e256c6a0ea1760edca0221ac9e37fa",
+      "after_sha256": "2ae3183c054765b470a72c87daca1c1d77e256c6a0ea1760edca0221ac9e37fa",
+      "changed": false
+    },
+    "test/config/karma.unit.js": {
+      "before_sha256": "cc99b5b3e2003042209c4b6ce82cfa8a716869749635a2213e1d1b798501f310",
+      "after_sha256": "cc99b5b3e2003042209c4b6ce82cfa8a716869749635a2213e1d1b798501f310",
+      "changed": false
+    }
+  },
+  "tree_proofs": {
+    "baseline": {
+      "verified_entries": 768,
+      "proof": "All Git blobs, file modes and archive paths match"
+    },
+    "reference": {
+      "verified_entries": 768,
+      "proof": "All Git blobs, file modes and archive paths match"
+    }
+  },
+  "pr_commit_sequence": [
+    {
+      "sha": "53125c0367a9a418467fc467f75d4beac071a8d0",
+      "message": "fix: correct sequence flow layout for corner boundary events\n\nWhen a sequence flow originates from a boundary event attached to an\nactivity corner and the target element is placed strictly on the same\nvertical or horizontal axis (i.e. getOrientation returns a pure cardinal\ndirection with no diagonal component), the layouter previously fell\nthrough to the isHorizontal counter-axis comparison, producing an\nincorrect target docking side and an invalid extra waypoint.\n\nFix this by adding two strict-axis early returns in\ngetBoundaryEventTargetLayout: if the target orientation has only a\nvertical component, return 'v'; if only horizontal, return 'h'. This\nensures a clean straight-line connection in axis-aligned cases.\n\nCloses #2270"
+    }
+  ],
+  "artifacts": {
+    "14_author_tests.patch": "27f00fa9ea38487b4430621a24d3b2d521ca1782d99941c93d46ced8788e3335",
+    "14_production.patch": "d1bcc9bc7fe45c7388b08cb1f6ce9107f7b000fcf11bd0a0fdd158cccebeb56a",
+    "14_reference_tree.tar": "855f25ef2a7ca282b4e78163f84b17b3f62e1d528f8acb355fda7df336a1ae7d",
+    "14_baseline_tree.tar": "83770d70b77ad5238dd8c85a741a0092f00de2702869e9db32a43466df7e2f75"
+  },
+  "generated_candidate": {
+    "path": "test/spec/14_generated_2396Spec.js",
+    "origin": "vlm_generated_test",
+    "code_sha256": "c243438c3adaf3b3a7988dfc4b0724191814b2ae5473ab537d486be6423d7362",
+    "annotation_sha256": "f5509632e6e50b52e6edc7d4fece34aa2061436e0c2875898ffbde85e21f8088",
+    "review_sha256": "2aaa583c61db15f449dcec8cebd7e223520d2ccf63e6a5ae9c8255c8a60325bf"
+  }
+}

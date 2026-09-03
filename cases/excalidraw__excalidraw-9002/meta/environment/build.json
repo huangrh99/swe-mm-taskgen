@@ -1,0 +1,19 @@
+{
+  "schema_version": "case-environment-build-v1",
+  "status": "complete",
+  "instance_id": "excalidraw__excalidraw-9002",
+  "repository": "excalidraw/excalidraw",
+  "source_baseline_sha": "c92f3bebf5fc4e9a1512be368f05d800ae1b92f7",
+  "image_id": "sha256:028af52db0d7fc592c95c5ea04d310e4b731ff62e22ca28967ec25c977499511",
+  "build_reference": "visual-harbor-base:028af52db0d7fc592c95c5ea04d310e4b731ff62e22ca28967ec25c977499511",
+  "architecture": "arm64",
+  "node_base": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "asset_inventory": [
+    {
+      "name": "asset_01.mov",
+      "sha256": "6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2"
+    }
+  ],
+  "built_at": "2026-09-02T16:33:17.325943+00:00",
+  "build_log": "meta/environment/build.log"
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "exam-oracle-summary-v2",
+  "status": "historical_task_checksum_rerun_required",
+  "current_task_directory_sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+  "current_task_validated": false,
+  "required_iid_task_count": 5,
+  "validated_iid_task_count": 0,
+  "tasks": [
+    {
+      "instance_id": "carbon-design-system__carbon-20978",
+      "task_directory": "historical:pre-provisional-move",
+      "task_directory_sha256": "2e4464f3d74f076f45c686133e3405b6d8674589d8407427b3b678cf52a1ad6b",
+      "task_image_id": "sha256:2d2bae49bcfaebaa7cf686750cc7e15e834d5a3dc47ceada8a13401b343addf7",
+      "base_image_id": "sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+      "architecture": "linux/arm64",
+      "runtime_user": "10001:10001",
+      "workdir": "/testbed",
+      "empty_patch": {
+        "reward": 0.0,
+        "f2p": {"pass": 0, "fail": 4},
+        "p2p": {"pass": 4, "fail": 0},
+        "harbor_job": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_41_exam_exact_nop/carbon-20978-exact-nop"
+      },
+      "gold_patch": {
+        "reward": 1.0,
+        "f2p": {"pass": 4, "fail": 0},
+        "p2p": {"pass": 4, "fail": 0},
+        "harbor_job": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_42_exam_exact_oracle/carbon-20978-exact-oracle"
+      },
+      "raw_audit": {
+        "path": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_42_exam_exact_oracle/18_42_controls_audit.json",
+        "sha256": "cc1f21b6f64534c7658dc6dddd50d233c895d437b6fc6c5fd2c8e95e3c79a3bc"
+      },
+      "f2p_count": 4,
+      "p2p_count": 4,
+      "visual_human_calibration": "pending",
+      "f2p_p2p_human_calibration": "pending"
+    }
+  ]
+}

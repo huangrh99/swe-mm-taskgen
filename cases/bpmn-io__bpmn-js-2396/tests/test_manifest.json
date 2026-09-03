@@ -1,0 +1,7 @@
+{
+  "schema_version": "bpmn-browser-suite-v1",
+  "candidate_id": "bpmn-io__bpmn-js-2396",
+  "selected_suites": [
+    "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js"
+  ]
+}

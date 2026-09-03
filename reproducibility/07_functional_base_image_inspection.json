@@ -1,0 +1,31 @@
+{
+  "schema_version": "functional-base-image-inspection-v2",
+  "observed_at": "2026-09-01T12:00:00Z",
+  "state": "realtime_verified",
+  "build_reference": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "image_id": "sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "repo_digest": "visual-harbor-base@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "platform": "linux/arm64",
+  "size_bytes": 3049054489,
+  "app_head": "05f979fd8b01fd9b7c336c0167fa6ef78858e063",
+  "app_tree": "2129bc7e29b4742ab75de5d29a8ad8bb7d915bf1",
+  "source_baseline_sha": "b2982e815c656aaa630c50231c70dc74945739e6",
+  "source_baseline_tree": "2129bc7e29b4742ab75de5d29a8ad8bb7d915bf1",
+  "source_tree_differences": [],
+  "git_status": "clean",
+  "git_remotes": [],
+  "runtime_versions": {
+    "chromium": "151.0.7922.173",
+    "node": "20.20.2",
+    "yarn": "4.10.3",
+    "sass": "1.93.2"
+  },
+  "offline_archive": {
+    "path": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_40_exact_baseline_base_archive/visual-harbor-base-aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9.tar",
+    "size_bytes": 3049079296,
+    "sha256": "287f6f570a6e27875ec49e11f14698a82fa50b02f05ceef1d074cd27bf8d27b3",
+    "verification_command": "python3 report/reproducibility/08_verify_base_image.py",
+    "restore_command": "python3 report/reproducibility/08_verify_base_image.py --restore"
+  },
+  "portability_boundary": "Archive hash and image ID are verified. A clean-host reload has not yet been independently exercised."
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "case-environment-build-batch-v1",
+  "results": {
+    "carbon-design-system__carbon-22019": {
+      "schema_version": "case-environment-build-v1",
+      "status": "complete",
+      "instance_id": "carbon-design-system__carbon-22019",
+      "repository": "carbon-design-system/carbon",
+      "source_baseline_sha": "05166d4aff1dfbcef426642af124b8af4393421c",
+      "image_id": "sha256:b5f88c50a793667139a1721b5545ee951d7f918992f515c90823c2c6b5befd98",
+      "build_reference": "visual-harbor-base:b5f88c50a793667139a1721b5545ee951d7f918992f515c90823c2c6b5befd98",
+      "architecture": "arm64",
+      "node_base": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+      "asset_inventory": [
+        {
+          "name": "asset_01.gif",
+          "sha256": "669dd94501e78b2f35dc2ebbf364545d9fe0524cb41a8170f29de883d1b005e4"
+        },
+        {
+          "name": "asset_02.png",
+          "sha256": "19d22e1ed28360a0b97bc9ddad74eb5f876648f8919c795343a3fd4ac10c9efd"
+        },
+        {
+          "name": "asset_03.png",
+          "sha256": "1ce711a076f599ff817c1dd6330c3165cf8e6107ddf2b28f863ca191b7f56ab6"
+        },
+        {
+          "name": "asset_04.png",
+          "sha256": "40c94839f37cdb3c2734b5f7c613c7ca1ce31678d5a931d77093ccfc43755cee"
+        }
+      ],
+      "built_at": "2026-09-02T16:26:30.075403+00:00",
+      "build_log": "meta/environment/build.log"
+    }
+  },
+  "failures": {}
+}

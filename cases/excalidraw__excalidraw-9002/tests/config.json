@@ -1,0 +1,15 @@
+{
+  "schema_version": "excalidraw-functional-tests-v1",
+  "repo": "excalidraw/excalidraw",
+  "instance_id": "excalidraw__excalidraw-9002",
+  "base_commit": "c92f3bebf5fc4e9a1512be368f05d800ae1b92f7",
+  "final_head_commit": "192692a0b72aefaac769db8cd0864e1d66fc5183",
+  "test_file": "packages/excalidraw/tests/elbowArrowFontSize.test.tsx",
+  "FAIL_TO_PASS": [
+    "[excalidraw__excalidraw-9002::constraint_001] reroutes an elbow arrow when bound text shrinks"
+  ],
+  "PASS_TO_PASS": [
+    "[excalidraw__excalidraw-9002::p2p_text_resize] resizes standalone text itself"
+  ],
+  "log_parser": "vitest_json_v1"
+}

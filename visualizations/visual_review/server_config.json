@@ -1,0 +1,5 @@
+{
+  "schema_version": "visual-review-live-config-v1",
+  "standalone_bundle": "visualizations/visual_review",
+  "test_evidence_root": "cases"
+}

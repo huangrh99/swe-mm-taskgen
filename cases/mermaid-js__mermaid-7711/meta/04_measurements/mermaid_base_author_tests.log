@@ -1,0 +1,165 @@
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid-example-diagram/src/exampleDiagramDb.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid-example-diagram/src/exampleDiagramRenderer.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid-example-diagram/src/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/clusters.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/createLabel.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/edges.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/index.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/intersect/index.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/intersect/intersect-circle.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/intersect/intersect-ellipse.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/intersect/intersect-line.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/intersect/intersect-node.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/intersect/intersect-polygon.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/intersect/intersect-rect.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/markers.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/mermaid-graphlib.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/nodes.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/shapes/note.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/dagre-wrapper/shapes/util.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/c4/c4Db.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/c4/c4Renderer.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/c4/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/c4/svgDraw.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/class/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/er/erMarkers.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/er/erRenderer.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/eventmodeling/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/gantt/ganttDb.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/gantt/ganttRenderer.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/gantt/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/git/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/requirement/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/sankey/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/sequence/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/sequence/svgDraw.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/state/shapes.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/state/stateRenderer.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/state/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/timeline/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/timeline/svgDraw.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/timeline/timelineDb.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/user-journey/journeyDb.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/user-journey/styles.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/diagrams/user-journey/svgDraw.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/insertElementsForSize.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/layout-algorithms/dagre/mermaid-graphlib.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/clusters.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/createLabel.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/edges.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/intersect/index.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/intersect/intersect-circle.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/intersect/intersect-ellipse.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/intersect/intersect-line.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/intersect/intersect-node.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/intersect/intersect-polygon.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/intersect/intersect-rect.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/rendering-util/rendering-elements/markers.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/setupGraphViewbox.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/index.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-base.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-dark.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-default.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-forest.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-helpers.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-neo-dark.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-neo.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-neutral.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-redux-color.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-redux-dark-color.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-redux-dark.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/packages/mermaid/src/themes/theme-redux.js' because it would overwrite input file.
+9:42:50 PM [vite] (client) warning: @rollup/plugin-typescript TS5055: Cannot write file '/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base/scripts/e2e-diagram-scope.mjs' because it would overwrite input file.
+
+ RUN  v3.2.4 /Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-merge-base
+
+ ❯ packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js (5 tests | 5 failed) 244ms
+   × getEdgesToRender > creates one compact render edge from self-loop layout segments 4ms
+     → (0 , getEdgesToRender) is not a function
+   × getEdgesToRender > places compact self-loops on the side chosen by the layout 0ms
+     → (0 , getEdgesToRender) is not a function
+   × getEdgesToRender > keeps regular edges unchanged 0ms
+     → (0 , getEdgesToRender) is not a function
+   × getEdgesToRender > keeps self-loop layout segments unchanged when merging is disabled 0ms
+     → (0 , getEdgesToRender) is not a function
+   × getEdgesToRender > renders a flowchart self-loop as one SVG path 236ms
+     → expected <path …(10)></path>
+…(3) to have a length of 2 but got 4
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js > getEdgesToRender > creates one compact render edge from self-loop layout segments
+TypeError: (0 , getEdgesToRender) is not a function
+ ❯ packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js:97:43
+     95|     graph.setEdge('A---A---2', 'A', segment2, 'A-cyclic-special-2');
+     96| 
+     97|     const edgesToRender = getEdgesToRender(graph);
+       |                                           ^
+     98| 
+     99|     expect(edgesToRender).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js > getEdgesToRender > places compact self-loops on the side chosen by the layout
+TypeError: (0 , getEdgesToRender) is not a function
+ ❯ packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js:155:43
+    153|     graph.setEdge('A---A---2', 'A', segment2, 'A-cyclic-special-2');
+    154| 
+    155|     const edgesToRender = getEdgesToRender(graph);
+       |                                           ^
+    156| 
+    157|     expect(edgesToRender[0].edge.points).toEqual([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js > getEdgesToRender > keeps regular edges unchanged
+TypeError: (0 , getEdgesToRender) is not a function
+ ❯ packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js:182:43
+    180|     graph.setEdge('A', 'B', edge, 'A-B');
+    181| 
+    182|     const edgesToRender = getEdgesToRender(graph);
+       |                                           ^
+    183| 
+    184|     expect(edgesToRender).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js > getEdgesToRender > keeps self-loop layout segments unchanged when merging is disabled
+TypeError: (0 , getEdgesToRender) is not a function
+ ❯ packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js:223:43
+    221|     graph.setEdge('A---A---2', 'A', segment2, 'A-cyclic-special-2');
+    222| 
+    223|     const edgesToRender = getEdgesToRender(graph, 0, { mergeSelfLoops:…
+       |                                           ^
+    224| 
+    225|     expect(edgesToRender).toEqual([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js > getEdgesToRender > renders a flowchart self-loop as one SVG path
+AssertionError: expected <path …(10)></path>
+…(3) to have a length of 2 but got 4
+
+- Expected
++ Received
+
+- 2
++ 4
+
+ ❯ packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js:248:25
+    246|       );
+    247| 
+    248|       expect(edgePaths).toHaveLength(2);
+       |                         ^
+    249|       expect(selfLoopPath).toBeTruthy();
+    250|       expect(selfLoopPath?.getAttribute('d')).toBeTruthy();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed (5)
+   Start at  21:42:43
+   Duration  2.25s (transform 756ms, setup 0ms, collect 1.24s, tests 244ms, environment 394ms, prepare 64ms)
+

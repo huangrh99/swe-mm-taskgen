@@ -1,0 +1,13 @@
+{
+  "schema_version": "harbor-base-image-binding-v1",
+  "status": "local_content_addressed_image",
+  "instance_id": "excalidraw__excalidraw-9002",
+  "repository": "excalidraw/excalidraw",
+  "source_baseline_sha": "c92f3bebf5fc4e9a1512be368f05d800ae1b92f7",
+  "source_final_head_sha": "192692a0b72aefaac769db8cd0864e1d66fc5183",
+  "build_reference": "visual-harbor-base:028af52db0d7fc592c95c5ea04d310e4b731ff62e22ca28967ec25c977499511",
+  "image_id": "sha256:028af52db0d7fc592c95c5ea04d310e4b731ff62e22ca28967ec25c977499511",
+  "architecture": "arm64",
+  "dependencies": "preinstalled",
+  "network_at_runtime": false
+}

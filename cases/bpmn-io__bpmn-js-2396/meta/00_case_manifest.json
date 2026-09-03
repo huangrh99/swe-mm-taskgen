@@ -1,0 +1,3712 @@
+{
+  "schema_version": "report-case-archive-v1",
+  "case_id": "bpmn-io__bpmn-js-2396",
+  "repository": "bpmn-io/bpmn-js",
+  "pr_number": 2396,
+  "state": "candidate",
+  "archived_at": "2026-09-02T13:40:07.426409+00:00",
+  "sections": {
+    "visual_review": [
+      {
+        "path": "01_visual_review/16_04_01_review_payload.json",
+        "sha256": "b5be857ec453909bcc943a9116948d46289a22bf40dd5dfbb605f0fcdb2a0ca5",
+        "size_bytes": 264021,
+        "storage": "copied"
+      },
+      {
+        "path": "01_visual_review/16_04_04_review_manifest.json",
+        "sha256": "3da81e86ff453edcca08ac0190da0ff50d4ff90757d50a90dc9386e6068a8ce9",
+        "size_bytes": 16621,
+        "storage": "copied"
+      },
+      {
+        "path": "01_visual_review/assets/asset_01_44ed2f05e1eb.png",
+        "sha256": "44ed2f05e1eb28bcd064466ed33a79622d48bb9d27bc40594765da709de17ec6",
+        "size_bytes": 6175,
+        "storage": "hardlinked"
+      },
+      {
+        "path": "01_visual_review/assets/asset_02_ba179e3c63f8.gif",
+        "sha256": "ba179e3c63f874186ed5f782019bd713e7d9f0f58ca98a25edaec6899ce4fe53",
+        "size_bytes": 270585,
+        "storage": "hardlinked"
+      },
+      {
+        "path": "01_visual_review/assets/asset_03_a6b818fa6019.png",
+        "sha256": "a6b818fa60194dee719593e8a5a8fa9e3a7fc69e56e980f89605b435890d8692",
+        "size_bytes": 9187,
+        "storage": "hardlinked"
+      },
+      {
+        "path": "01_visual_review/assets/asset_04_1a6bc712a5d1.png",
+        "sha256": "1a6bc712a5d102889e542ee3d8c9e00850e998100ac58231028901e3ff1e7b30",
+        "size_bytes": 8728,
+        "storage": "hardlinked"
+      }
+    ],
+    "source_archive": [
+      {
+        "path": "02_source_archive/11_record.json",
+        "sha256": "fb3fc0f023ac05d7960aa525cdb11b94c9aa6dd11bd2290041586c9b08acc519",
+        "size_bytes": 680685,
+        "storage": "copied"
+      }
+    ],
+    "test_construction": [
+      {
+        "path": "03_test_construction/14_author_tests.patch",
+        "sha256": "27f00fa9ea38487b4430621a24d3b2d521ca1782d99941c93d46ced8788e3335",
+        "size_bytes": 5038,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/14_case_manifest.json",
+        "sha256": "3ab275ca73f5bde25be849eff4d21008e2d40d6e7e5d50b7c0915c8abc84c769",
+        "size_bytes": 8264,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/14_production.patch",
+        "sha256": "d1bcc9bc7fe45c7388b08cb1f6ce9107f7b000fcf11bd0a0fdd158cccebeb56a",
+        "size_bytes": 2421,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+        "sha256": "c2bf95d2f5e4fbd0253e8894cd291efa3ff0f60722078fa75ce067854b3f1f32",
+        "size_bytes": 101317,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+        "sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+        "size_bytes": 9136,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+        "sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+        "size_bytes": 6387,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+        "sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+        "size_bytes": 26252,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+        "sha256": "5b4de791d5effe3380c3c12ee98a789a2ae7808aaa70ef497022cfb6124a3fe8",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+        "sha256": "1eb19f522710c1943f7dd8231de0073c25d06a9da01c699f9ba580797b67f15d",
+        "size_bytes": 114443,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+        "sha256": "575a77090d2402acb781463604bdee7a6b0d8a2e950cc76fb38ebde53facde9a",
+        "size_bytes": 156,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+        "sha256": "457311d47d06f0ee1e985977dec75c3de94b59a5715e888ff8a40e1c009f6433",
+        "size_bytes": 39,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+        "sha256": "230812b1f8e492ff2c7b9262d82c501cc71ea1ec16badf8ad28764b3ecc8f1fa",
+        "size_bytes": 26320,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+        "sha256": "76af4bc5f82f03cf3f22402cd3538a1a7967567b4b3713648990ecd2b4a1d4b8",
+        "size_bytes": 4508,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_invocation.json",
+        "sha256": "44d042b37adcbe876ebecee1131159933f471bc1d539693bcba2c33a8d93c84e",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+        "sha256": "04dea43e6b8336d726a40cd67fe4e6aed69258dbfa7ceae8498f6967edec661f",
+        "size_bytes": 114557,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_attempt_01.json",
+        "sha256": "6e97ad3b1b41134f1587879343ec934315bc73121e30be83df44861ff794209c",
+        "size_bytes": 157,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_invocation_started.json",
+        "sha256": "b5daaaa1db5c18f779f92143d9ef22d5282133ee5edcd11b54b1dc7baf16f45e",
+        "size_bytes": 38,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+        "sha256": "e1334e2825a2c8f769cfa7f9ff6a4f76cc25a115dfcc7b54da45d99013446385",
+        "size_bytes": 18819,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+        "sha256": "23242d92888d7535cdfb496b153aa45a1869681a826f397f2fd0199be45c9a0d",
+        "size_bytes": 10810,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+        "sha256": "3d749b01dbd1321a46e06021d99f8244c4cc2077ff93574e3a08f55c1d4fa3d0",
+        "size_bytes": 9932,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+        "sha256": "0eea4c9475f77bf390ed620c7a60b494af61bad31920a84b1720d99df7c044e8",
+        "size_bytes": 1264,
+        "storage": "generated"
+      }
+    ],
+    "measurements": [
+      {
+        "path": "04_measurements/14_baseline_01_framework_results.json",
+        "sha256": "367629e096fda6cecfae9406b76cb13d22214a912605186ac9e464ae71afa735",
+        "size_bytes": 35414,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_baseline_01_run_result.json",
+        "sha256": "a54a526633a90506836a6216b599cd30674b859f4a79aca3af9909f0d2654696",
+        "size_bytes": 1899,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_baseline_02_framework_results.json",
+        "sha256": "8e67b1a9db8ed25209ff4ea4a3ff7ee9672e8fe206d85d25f34ba080bc262d7b",
+        "size_bytes": 35414,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_baseline_02_run_result.json",
+        "sha256": "4943433315c2caf7479c13bb3c5b68f588503826a6cd9e5c102b27bd0258b242",
+        "size_bytes": 1898,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_baseline_03_framework_results.json",
+        "sha256": "83a53d67d381be367c93eef3706ec793eb206699dd95483ecae19c562f4cc4c9",
+        "size_bytes": 35413,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_baseline_03_run_result.json",
+        "sha256": "ea52e3680f6fbcc6799de7626e000d8c8b866b52cb300717beb38ae637ccf3b5",
+        "size_bytes": 1900,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_reference_01_framework_results.json",
+        "sha256": "51b202be301d322dfbf6bb0f27ad960a85e5b2aec1f14fdecd059f5bafdf3f64",
+        "size_bytes": 34615,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_reference_01_run_result.json",
+        "sha256": "8d3cc3d8eb339dfbfe91de5dc163ad3fdbac73589701f857360da5096241fec9",
+        "size_bytes": 1996,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_reference_02_framework_results.json",
+        "sha256": "fce38b0e7819fb58c91f6df9bcb49c7969201afe4d612681d4ae9d05945ace0e",
+        "size_bytes": 34616,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_reference_02_run_result.json",
+        "sha256": "316c1c8ade7104753b01e03665d9ad980a331264a1d415f0221a15839606845a",
+        "size_bytes": 1996,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_reference_03_framework_results.json",
+        "sha256": "002cb782fe2badedd91f0b22792515fbff9da64b3277a6146fe69df34041be0e",
+        "size_bytes": 34616,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_reference_03_run_result.json",
+        "sha256": "3a0443fdd12d6da7ca6cd2432363c0f6271e2f45e9e633e7e2d60faf647f81f0",
+        "size_bytes": 1996,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/14_transition_audit.json",
+        "sha256": "78886479c153b39dc8daf8a70a5e5a508b4728776bdc83692000aa99f506460a",
+        "size_bytes": 32657,
+        "storage": "copied"
+      }
+    ],
+    "harbor": [
+      {
+        "path": "@task/environment/Dockerfile",
+        "storage": "generated",
+        "size_bytes": 613,
+        "sha256": "2d3ae78885bd4c6fb8d70e329b72ec429f373429e5466e7b50ecceb744ec1ee5"
+      },
+      {
+        "path": "@task/environment/assets/asset_01_44ed2f05e1eb.png",
+        "storage": "generated",
+        "size_bytes": 6175,
+        "sha256": "44ed2f05e1eb28bcd064466ed33a79622d48bb9d27bc40594765da709de17ec6"
+      },
+      {
+        "path": "@task/environment/assets/asset_02_ba179e3c63f8.gif",
+        "storage": "generated",
+        "size_bytes": 270585,
+        "sha256": "ba179e3c63f874186ed5f782019bd713e7d9f0f58ca98a25edaec6899ce4fe53"
+      },
+      {
+        "path": "@task/environment/assets/asset_03_a6b818fa6019.png",
+        "storage": "generated",
+        "size_bytes": 9187,
+        "sha256": "a6b818fa60194dee719593e8a5a8fa9e3a7fc69e56e980f89605b435890d8692"
+      },
+      {
+        "path": "@task/environment/assets/asset_04_1a6bc712a5d1.png",
+        "storage": "generated",
+        "size_bytes": 8728,
+        "sha256": "1a6bc712a5d102889e542ee3d8c9e00850e998100ac58231028901e3ff1e7b30"
+      },
+      {
+        "path": "@task/environment/base_image.json",
+        "storage": "generated",
+        "size_bytes": 1155,
+        "sha256": "d282156d1985f56e7fdbbe6930111473619fa9b6e299bcbc6a8766d6277165ab"
+      },
+      {
+        "path": "@task/environment/docker-compose.yaml",
+        "storage": "generated",
+        "size_bytes": 142,
+        "sha256": "c346613322ba0f324f14425a6537833f10f764e8b4470a3996a12fb83b1afbe1"
+      },
+      {
+        "path": "@task/instruction.md",
+        "storage": "generated",
+        "size_bytes": 975,
+        "sha256": "0fde644b50f45424dfada7f8bd004f5e84bc3269a6637352c7d8d75e7d054243"
+      },
+      {
+        "path": "@task/solution/gold.patch",
+        "storage": "generated",
+        "size_bytes": 2421,
+        "sha256": "d1bcc9bc7fe45c7388b08cb1f6ce9107f7b000fcf11bd0a0fdd158cccebeb56a"
+      },
+      {
+        "path": "@task/solution/solve.sh",
+        "storage": "generated",
+        "size_bytes": 63,
+        "sha256": "5763d138ea351a4ec97524cfab638517bb23cc3493c700762646d696a9beaff3"
+      },
+      {
+        "path": "@task/task.toml",
+        "storage": "generated",
+        "size_bytes": 655,
+        "sha256": "f97ae0f264ec767d8c7108a1421dd793eb58d0e5c22b41b1951346d97ba8d2f1"
+      },
+      {
+        "path": "@task/tests/config.json",
+        "storage": "generated",
+        "size_bytes": 9701,
+        "sha256": "75e6ffd05a7b2d3d3f6b407ab1f72093620fe10a06798149bdb7a62eab63f16b"
+      },
+      {
+        "path": "@task/tests/payload/test/TestHelper.js",
+        "storage": "generated",
+        "size_bytes": 1422,
+        "sha256": "c2ea28ccbf923aaee004540723ca8d97436b00882592d231f6edb0c1f18afeee"
+      },
+      {
+        "path": "@task/tests/payload/test/config/karma.distro.js",
+        "storage": "generated",
+        "size_bytes": 1021,
+        "sha256": "5b49f8639523e0273b464a98f1a90011bee1e99833e1ea976ea316a270685fde"
+      },
+      {
+        "path": "@task/tests/payload/test/config/karma.unit.js",
+        "storage": "generated",
+        "size_bytes": 2992,
+        "sha256": "cc99b5b3e2003042209c4b6ce82cfa8a716869749635a2213e1d1b798501f310"
+      },
+      {
+        "path": "@task/tests/payload/test/config/translation-reporter.js",
+        "storage": "generated",
+        "size_bytes": 996,
+        "sha256": "7ee59edca35ac5a630d57e04473650906c740533546ab7d557e169c459665cbd"
+      },
+      {
+        "path": "@task/tests/payload/test/coverageBundle.js",
+        "storage": "generated",
+        "size_bytes": 213,
+        "sha256": "f705a6f3f5189fdbfad2cc05d977ef409f514203c4286d4c53c3f8997ee0a475"
+      },
+      {
+        "path": "@task/tests/payload/test/distro/bpmn-modeler.js",
+        "storage": "generated",
+        "size_bytes": 657,
+        "sha256": "b37eeb750978289945988b73890942e7fe0b720e818b0c58e15baf387ea3732e"
+      },
+      {
+        "path": "@task/tests/payload/test/distro/bpmn-navigated-viewer.js",
+        "storage": "generated",
+        "size_bytes": 511,
+        "sha256": "fe2b6fa3696c1b8e7219a8a4f9a5109d23cbf2cfb3a673a2ec2db03f6bbcbbe3"
+      },
+      {
+        "path": "@task/tests/payload/test/distro/bpmn-viewer.js",
+        "storage": "generated",
+        "size_bytes": 375,
+        "sha256": "1c8355cf690f82bd8c954f624c9a369f20ae55bfc2e1bb76a29301f2a5c1aeb7"
+      },
+      {
+        "path": "@task/tests/payload/test/distro/helper.js",
+        "storage": "generated",
+        "size_bytes": 646,
+        "sha256": "98f8905894a639c4f9a2d690f53cbd6d54559c4e790841f58d00728ae32ec726"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/align-elements.bpmn",
+        "storage": "generated",
+        "size_bytes": 7135,
+        "sha256": "53e2377ae2607d09181da1a6593c69ff1dfda5ea7ccdc5aadd77a922e338264b"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/basic.bpmn",
+        "storage": "generated",
+        "size_bytes": 968,
+        "sha256": "1747f13ce9e1efebe9298b6182a848d934ee1239e7ca842c52edf7e5bd85bae2"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/boundary-events.bpmn",
+        "storage": "generated",
+        "size_bytes": 4093,
+        "sha256": "e9a1365895d516656ba0c96d19635d8741dc3fab2648edd3acc268509491dfcc"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration/collaboration-data-store.bpmn",
+        "storage": "generated",
+        "size_bytes": 1552,
+        "sha256": "8608d8826bc15b1b7819f1149c51838fab83bf454b5e977a26e93ebbab006eb1"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration/collaboration-empty-participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 1118,
+        "sha256": "610941e0800d6832dc5868e90a671b461401615872c39d6c6f493fbc4c939130"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration/collaboration-message-flows.bpmn",
+        "storage": "generated",
+        "size_bytes": 5649,
+        "sha256": "825e4b653b6761a25778977e17ca8ed02a8ec4d4694d72a87a7f6663a0413bba"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration/collaboration-participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 3627,
+        "sha256": "f3bb39e61ba76404863a17cfae0aabd3c9d0f364ac08949bb78250c6c5851504"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration/process-empty.bpmn",
+        "storage": "generated",
+        "size_bytes": 632,
+        "sha256": "41a524959251830753db358277ed2fa88c2d3fcc2424f2649135b217ed253f58"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration/process.bpmn",
+        "storage": "generated",
+        "size_bytes": 3198,
+        "sha256": "33e49e7c7cc4755fc267c8faaff5c41421de2a7cfeb591fdb7e773f66b1786a1"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration-data-items.bpmn",
+        "storage": "generated",
+        "size_bytes": 4713,
+        "sha256": "0fba4152a0ed4d8bb485bb1b7d5721263e4593d0204c756a996e2d3ea3ee39ff"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration-message-flows.bpmn",
+        "storage": "generated",
+        "size_bytes": 5097,
+        "sha256": "aeaaaabac173064f40cc4683a3fb135157b98e2ee34058fd72dcdf9e03685068"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration-sequence-flows.bpmn",
+        "storage": "generated",
+        "size_bytes": 4836,
+        "sha256": "bbfe1e7ef8312f6aa0f622d7e816c3de167bc2d0b4553568a2b78671933b0feb"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration-vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 2813,
+        "sha256": "9c5b9f713d4052e129f4fb8d4b5de44f8c8a9cd2f04369a36578d3ff9053ab36"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 2884,
+        "sha256": "7a5baf22f5dfecf462560055b2379442d44e843a2a9222fc41bc7b788fb545b0"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collapsed-sub-process-legacy.bpmn",
+        "storage": "generated",
+        "size_bytes": 2895,
+        "sha256": "94779e38e5fa5c19a468c8cc49758028d454a96866676a9f05e81122ec0bc8c5"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/collapsed-sub-process.bpmn",
+        "storage": "generated",
+        "size_bytes": 28287,
+        "sha256": "3cc5817a2ebd7407e1f878d0d690afa2a753e66b1ea18d2d5eabdf2a86f477b4"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/complex.bpmn",
+        "storage": "generated",
+        "size_bytes": 169013,
+        "sha256": "c6e8bdcb49cf16324fb320b264ca5ccc51a54af4bd1c500c01a5634302b0bff6"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/conditions.bpmn",
+        "storage": "generated",
+        "size_bytes": 5002,
+        "sha256": "3c0f98a501aa44737d6f3bc2b462908c5970c85e704a8939d01d4e20d85ebdf3"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/containers.bpmn",
+        "storage": "generated",
+        "size_bytes": 7587,
+        "sha256": "27374d4625ea7b520a9ef25ee8c4608ea83293a654030b2724a453a1edfbbd1a"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/distribute-elements-filtering.bpmn",
+        "storage": "generated",
+        "size_bytes": 3458,
+        "sha256": "942ac0e5303a1397f97cedb718fd61351ff96f8ac1dd0299ba1a17dcf6843c36"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/distribute-elements-filtering.collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 2894,
+        "sha256": "051f94382d15bfeedb7a723c111d8eefaf2ec9e752d4d94d09026e516ab385f9"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/distribute-elements.bpmn",
+        "storage": "generated",
+        "size_bytes": 12733,
+        "sha256": "ac4eb0803cfa1ca89025f7cf6beb939f618ffeddfb96de77005528bfbc7afa24"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/activity-markers-combination.bpmn",
+        "storage": "generated",
+        "size_bytes": 13109,
+        "sha256": "fa97534a82722807da59e8c71f0e2e869c6aa536417e4d48daee1681f44cbe74"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/activity-markers-simple.bpmn",
+        "storage": "generated",
+        "size_bytes": 4711,
+        "sha256": "8afa856cbab627155f305fafaafe2ff6cd12ef187148a321e9356c2ace57ac7e"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/activity-markers.bpmn",
+        "storage": "generated",
+        "size_bytes": 19202,
+        "sha256": "c18a9fff2ded66523059d996b51d712dfb715fa990d79876fc5bfc891f8f40b7"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/associations.bpmn",
+        "storage": "generated",
+        "size_bytes": 3113,
+        "sha256": "8a761fe71b3d47ecb3ccb626925da41fbadd7b3c426e0bcf14dfe8ad34c9fe64"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/boundary-event-with-refnode.bpmn",
+        "storage": "generated",
+        "size_bytes": 5468,
+        "sha256": "cdf51b1aedc5440586cade32e057c1f46c8c136983f9153ee3af4b63abe43fd6"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/boundary-event-without-refnode.bpmn",
+        "storage": "generated",
+        "size_bytes": 5511,
+        "sha256": "39e2a7b300d6a9823bb9d5a3b1ec2e7019540f42a1e798c7fafd9469c0d30025"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/boundary-event-z-index.bpmn",
+        "storage": "generated",
+        "size_bytes": 3611,
+        "sha256": "1b99a9801f9514980d809ecc16d2fe4b6147d93e258ed48203f3d3c68eae68fc"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/call-activity.bpmn",
+        "storage": "generated",
+        "size_bytes": 793,
+        "sha256": "b7b13daec5523e120ab6dd0350d9077c50b9bf6091a540ce2494b430050e1298"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/conditional-flow-default.bpmn",
+        "storage": "generated",
+        "size_bytes": 8345,
+        "sha256": "f26a15f9b74cbd7ef671b922403f2e3002b0169613b9c0109bc439ccc5c86544"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/conditional-flow-gateways.bpmn",
+        "storage": "generated",
+        "size_bytes": 4642,
+        "sha256": "92ae8f29ebd9bd585b48b65819cd27d2a2f60cfc9fdb444f7dc0cc3f846cdcac"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/conditional-flow-typed-task.bpmn",
+        "storage": "generated",
+        "size_bytes": 2083,
+        "sha256": "eb716a81211c01cc347151e0b3340a2f049f7e02d0993c15a5cbcb418464ee85"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/conditional-flow.bpmn",
+        "storage": "generated",
+        "size_bytes": 20009,
+        "sha256": "14166e68a37543b3e0d8d047e61db57189d86b5fb3671aba77703fd068ba28da"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/data-objects.bpmn",
+        "storage": "generated",
+        "size_bytes": 16244,
+        "sha256": "6604b0e2eece413c291d80c02a300cf02b8b1eac0dba1b12e6aa54a7f0265884"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/event-subprocess-icons.bpmn",
+        "storage": "generated",
+        "size_bytes": 51230,
+        "sha256": "659029672e662d47856944e7c2f731de04b93a60f33ac1047b917b2d3efd9b75"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/event-subprocesses-collapsed.bpmn",
+        "storage": "generated",
+        "size_bytes": 14380,
+        "sha256": "fced9b6f64c22627dbae85182cef28c8f581bb954aa9a87fd7ad291eda984c6b"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/event-subprocesses-expanded.bpmn",
+        "storage": "generated",
+        "size_bytes": 21683,
+        "sha256": "b505fbc0547fa64ae7f54215a4d4d7a68d3218eb4a79bcf250ca6c9cfbbd274e"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/events-interrupting.bpmn",
+        "storage": "generated",
+        "size_bytes": 29228,
+        "sha256": "6e38bc02d7e4df776ade4424ad655f5068a5fa94d4f586d17d0491650737f9a9"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/events.bpmn",
+        "storage": "generated",
+        "size_bytes": 24143,
+        "sha256": "5408df9bbe7bbafdb5700f3ddb025116bf0951c72521f6eff1fd48f5f8b396f0"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/gateway-type-default.bpmn",
+        "storage": "generated",
+        "size_bytes": 2991,
+        "sha256": "8799dcb5b3e34d44bb93b768d284fb81c893c04c379cc6876b31742aaa8a3575"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/gateways.bpmn",
+        "storage": "generated",
+        "size_bytes": 3308,
+        "sha256": "ab0e86dca40bd7e214cd3a28e0184c02f62160f6e82a7ac3fe33989f9c2dccb1"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/group-name.bpmn",
+        "storage": "generated",
+        "size_bytes": 1569,
+        "sha256": "e2c8fcfc417b042c36ebff73c86722b22eda25f633d52c05ad8bf1caf37b0556"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/group.bpmn",
+        "storage": "generated",
+        "size_bytes": 2204,
+        "sha256": "60216d48132dc2ab1a706319d3c5d44d46c490b623320285ad9667e3d020706c"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/message-label.bpmn",
+        "storage": "generated",
+        "size_bytes": 1642,
+        "sha256": "f33656825e4b84cd224dfe64b039966737e59318b6d401a043c05b9de75b76b4"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/message-marker.bpmn",
+        "storage": "generated",
+        "size_bytes": 9192,
+        "sha256": "48214d0701b99eb76d39365d3b2727c78bfc04113bb101aabcac073e37b278f2"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/pools-with-collection-marker.bpmn",
+        "storage": "generated",
+        "size_bytes": 8008,
+        "sha256": "034bf51a510db0f399d9518208d137a85ad7e4f4e98a1a3cb32243694f4245cf"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/pools.bpmn",
+        "storage": "generated",
+        "size_bytes": 6078,
+        "sha256": "f61a5d988a16cac760b54761811d74be5a06a09dbfb4f13c27aec9e46b7b3721"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/task-types.bpmn",
+        "storage": "generated",
+        "size_bytes": 6516,
+        "sha256": "edccbfef3357fe19dc58ad7f95279ed3fe5e342c5df288fc0318c8fa078d2cfc"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/text-annotation.bpmn",
+        "storage": "generated",
+        "size_bytes": 5032,
+        "sha256": "942a7cb54c53abfc7a522970a355047e5ebc0a8f8569ba9074f3023ae0f97048"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/vertical-pools.bpmn",
+        "storage": "generated",
+        "size_bytes": 2956,
+        "sha256": "4d95bb96109729c4242adbddfe609c30998d276a6b1625114020a16536dba27f"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/draw/xor.bpmn",
+        "storage": "generated",
+        "size_bytes": 3186,
+        "sha256": "1a43abf7c4858ea73818ca41a3b0d457f7e32c5d3bee0455f1bc8a556cf1a129"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/empty-definitions.bpmn",
+        "storage": "generated",
+        "size_bytes": 496,
+        "sha256": "e0ea9548f01fafb66fc7c529fc4ba12360f398ef6fc87e5362d1bff3a1cba000"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/error/binary.png",
+        "storage": "generated",
+        "size_bytes": 272,
+        "sha256": "f215b2b1801c28e2acfdd690893174f1ce73592ccc44f737f9f94a061ac3f54a"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/error/categoryValue.bpmn",
+        "storage": "generated",
+        "size_bytes": 2259,
+        "sha256": "21415a6662eec7fd2da8201821f589e58e16e393014e264b9ee59cadacbdc52f"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/error/di-plane-no-bpmn-element.bpmn",
+        "storage": "generated",
+        "size_bytes": 763,
+        "sha256": "3a1ca9c3a66eb2d486474c2b49047708c7117688b97469cde205d0b778a5471e"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/error/duplicate-ids.bpmn",
+        "storage": "generated",
+        "size_bytes": 474,
+        "sha256": "9e76d5c55adb4ef11874f2e3c4241e576f2a0533e24d6d92278f1a7dcc01e2af"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/error/invalid-child.bpmn",
+        "storage": "generated",
+        "size_bytes": 429,
+        "sha256": "78e256eef497ad096b34c4ae9f4973057965b40f90d1ef73c282541573ed791e"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/error/missing-namespace.bpmn",
+        "storage": "generated",
+        "size_bytes": 871,
+        "sha256": "7c093294e7a998faa81aa360db4a7de09adfbb4ae11be7cfda52ca788fd0c510"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/error/no-process-collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 394,
+        "sha256": "d9b010dc90f51eacbe5b7dee40d15074c263149377cdc572f93bf591a955c7c1"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/error/no-xml.txt",
+        "storage": "generated",
+        "size_bytes": 14,
+        "sha256": "d6432f242b4dcbf252ecdad95c33d728334e8abcf8f783fab1b385b0d1da30be"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/event-sub-processes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2443,
+        "sha256": "82c7d1e04f083c7337dfebc7e16cd56114c475b26f36d051a9ba78c2c8d503a7"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/extension/camunda.bpmn",
+        "storage": "generated",
+        "size_bytes": 3180,
+        "sha256": "8e9f7975407692a738eb8d6d46631774de6df2ae6036f6956429f056afdad6d2"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/extension/custom-override.bpmn",
+        "storage": "generated",
+        "size_bytes": 3288,
+        "sha256": "bda89537af1238aa031ba6fb76a41433f0355f4b3e0041826015d039ef7d4c7b"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/extension/custom.bpmn",
+        "storage": "generated",
+        "size_bytes": 3280,
+        "sha256": "dd8dfe56172a6d52062ac4a0201f29c703b0baceaeecbd344138147ae8a529fe"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/drop/drop.bpmn",
+        "storage": "generated",
+        "size_bytes": 2341,
+        "sha256": "0fe5a182f8c3264bb2cc6c44756ff6c94e4525b2cd6a6f88b35a1af3cc9568a4"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/drop/recursive-task.bpmn",
+        "storage": "generated",
+        "size_bytes": 2171,
+        "sha256": "04cc4fe99ca56770fea505d5af3a0a720285ab3a270d7aa6e8077b1a89a35f67"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/replace/01_replace.bpmn",
+        "storage": "generated",
+        "size_bytes": 13221,
+        "sha256": "8ef144a17307b3e670e80d48ef44537520bb7eb4853c6016df41d168f892d3a3"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/replace/association-gateways.bpmn",
+        "storage": "generated",
+        "size_bytes": 9799,
+        "sha256": "fb6aedea0bcc4327a8bdbae18a7a7a5bff78d39bd90daf76ebfe35e29fb353ac"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/replace/cancel-events.bpmn",
+        "storage": "generated",
+        "size_bytes": 3464,
+        "sha256": "3f0d84f0d9c3c9455534a911834e095432a5a9fc4c1bd73dfe5a268b808e7d81"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/replace/connection.bpmn",
+        "storage": "generated",
+        "size_bytes": 2238,
+        "sha256": "9ac54fffd63aa80f51d1efed24a62a41adcf81e77855c2d7714e34b14a3e0f63"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/replace/copy-properties.bpmn",
+        "storage": "generated",
+        "size_bytes": 8255,
+        "sha256": "b70a8e56bde9a65aaba2dde05dbd8abf22ffa1357b3264dec624abc58b559bd9"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/replace/data-elements.bpmn",
+        "storage": "generated",
+        "size_bytes": 2038,
+        "sha256": "095c24dbc4432aaf37383aa54da197b4fc9a54c929c40f7670aadd59720c0b68"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/replace/data-stores-positioned-against-participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 1772,
+        "sha256": "05ef135daa07665127cb4d9c82be165ed8005a4c85be64fb5445b7a30bd7564f"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/replace/participants.bpmn",
+        "storage": "generated",
+        "size_bytes": 942,
+        "sha256": "837c45b80cdcaf2ed5f5f8d27360c14460edfb1c4ea18b1955fb2c39ee8bd6a2"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/rules/event-based-gateway-outgoing-edge.bpmn",
+        "storage": "generated",
+        "size_bytes": 3492,
+        "sha256": "00490b9f845052dd5d8587a9cc44187a4650b7d394790340d80e64a6f7818058"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/rules/link-event.bpmn",
+        "storage": "generated",
+        "size_bytes": 1856,
+        "sha256": "acda1feded0cbe3e322f630e10d6783e74a3b0e1d991c3946b646002d63cb8a5"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/features/rules/text-annotation-association.bpmn",
+        "storage": "generated",
+        "size_bytes": 1452,
+        "sha256": "5b1b84eb0f9fe10c8e6d8c43fa3fbaf4edd9ac35447d600f8c320d53dbcb78d5"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/flow-markers.bpmn",
+        "storage": "generated",
+        "size_bytes": 16266,
+        "sha256": "4e5561b794b70c0e8394be36cff6f71d7c2cd68c133463eadb07fdf1beb86f12"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/boundaryEvent.bpmn",
+        "storage": "generated",
+        "size_bytes": 2169,
+        "sha256": "18c6672eba06e24706812debfce382378613b838f38d87a244a87ab95b814839"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 2884,
+        "sha256": "7a5baf22f5dfecf462560055b2379442d44e843a2a9222fc41bc7b788fb545b0"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/collapsed/collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 4229,
+        "sha256": "67c62bc0a45f27e28fa4d7e5066230898027ebeab02ac76dee9af25d8ebc8d72"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/collapsed/process.bpmn",
+        "storage": "generated",
+        "size_bytes": 4622,
+        "sha256": "40ac0405b5eaa6ef22ab3eb40069356aad65b91b000b178457acbc6dcb493998"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/collapsed/processWithChildren.bpmn",
+        "storage": "generated",
+        "size_bytes": 14845,
+        "sha256": "e83a4824369a614bf8315f80eff09eac4fad28ee6cd7bd44e78876dd64f7e6d6"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/collapsed-subprocess.bpmn",
+        "storage": "generated",
+        "size_bytes": 1558,
+        "sha256": "6a98c2f31b8470a090c8d67ed69bc8861af01c87b6a1c8ec1b59f53cfce29fd2"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/data-store.inside-participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 1379,
+        "sha256": "68633fbf3b19419d8d14b86379bd992890678a938c4e509a4b55c2eb57ff50bb"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/data-store.outside-participant.dangling.bpmn",
+        "storage": "generated",
+        "size_bytes": 1356,
+        "sha256": "107dbf1750c33cd226d1ed506c0ec69097139be4d3150b48a2d2306f3636f772"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/data-store.outside-participant.participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 1377,
+        "sha256": "00e80efa7a73c7317dc37fc157511def8bfd449c9f4be09ebda06af641479e42"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/data-store.outside-participant.subprocess.bpmn",
+        "storage": "generated",
+        "size_bytes": 1624,
+        "sha256": "1f015fe65473eb9c343f883a56bd4e805a7590ba3522090e259bf98c54d026be"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/default-attrs.bpmn",
+        "storage": "generated",
+        "size_bytes": 1488,
+        "sha256": "ea833a75d70d14144e08b94468ab65c43b8cb5a91ee756562a376ffaeb15dd02"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/error/boundaryEvent-invalidAttachToRef.bpmn",
+        "storage": "generated",
+        "size_bytes": 1987,
+        "sha256": "88bd0fb1431e151b8934b1b4645da2bbd64bc24d355b63b473f216aa32733444"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/error/boundaryEvent-missingAttachToRef.bpmn",
+        "storage": "generated",
+        "size_bytes": 2146,
+        "sha256": "98cce45643119edc69d684d25cb9ac0b2208c889cc7b7597169acca29e85a361"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/error/dangling-process-message-flow.bpmn",
+        "storage": "generated",
+        "size_bytes": 6629,
+        "sha256": "c920a1817ecba8905ffc7bcb4dcd06c4242ee5ed8ab1619422e801e365c4897e"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/error/invalid-flow-element.bpmn",
+        "storage": "generated",
+        "size_bytes": 1984,
+        "sha256": "e024f7a632106576f274cc3ab21bc9461b74ac5fafb7059d6fc550b396d13754"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/error/multiple-dis.bpmn",
+        "storage": "generated",
+        "size_bytes": 1187,
+        "sha256": "8eedd0a8d40bd82a52f28764878efa6c1c17a208e488074988423917a689056b"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/groups.bpmn",
+        "storage": "generated",
+        "size_bytes": 1050,
+        "sha256": "15502b8b1b49355c295edc1a9bb6d4ec77021fd4fb804f0e24224e67d9d5c797"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/labels/collaboration-message-flows.bpmn",
+        "storage": "generated",
+        "size_bytes": 2872,
+        "sha256": "1bfaa3dee6d3434cf5401de9294aba098ae775e78ba6d77ae6b25c6e610294ab"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/labels/collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 4340,
+        "sha256": "e088cf7b135fa3ffe7f9a240474e5bb4c7b35c5f5fd36fdc0cdc3e12821a19f2"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/labels/embedded.bpmn",
+        "storage": "generated",
+        "size_bytes": 2450,
+        "sha256": "8cb5f05b8a72b051ce1a05939bd1dda8c046d46a353a5f0787318e15b6e445b0"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/labels/external-no-di.bpmn",
+        "storage": "generated",
+        "size_bytes": 3054,
+        "sha256": "13810492f16f2d336bf5b57a4a3227660d05007857850164bcfbf9596805955c"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/labels/external.bpmn",
+        "storage": "generated",
+        "size_bytes": 4248,
+        "sha256": "e741ec7c9eeca5c98c08fe3c31781649b3297e074701d7c29a8a41399c2c90cc"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/multiple-diagrams.bpmn",
+        "storage": "generated",
+        "size_bytes": 4116,
+        "sha256": "f1bc63cc31d0012e3e75f95854f125a9edb0b805ea226de078d0c181a1e3c96f"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/position/position-testcase.bpmn",
+        "storage": "generated",
+        "size_bytes": 3066,
+        "sha256": "8792f4a9bde39946085924436e157c71928add9a6bc67fb0ee669b7cd72f4137"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/process.bpmn",
+        "storage": "generated",
+        "size_bytes": 3849,
+        "sha256": "93218dca3f1a7c6e51cd7792df128219232c468d5de12423317d833fd23fccf2"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/import/text-annotation-message-flow.bpmn",
+        "storage": "generated",
+        "size_bytes": 3787,
+        "sha256": "487a3844804b4ada683b2c4331ff4dc5f49fa8b87c250a340ea14b3dc3810fbb"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/kitchen-sink.bpmn",
+        "storage": "generated",
+        "size_bytes": 38293,
+        "sha256": "63c8a9d73ec6d20762d910922fffb268157f75af7b196822aef1eb791801206c"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/multiple-diagrams-lanesets.bpmn",
+        "storage": "generated",
+        "size_bytes": 2428,
+        "sha256": "b80ebd653f69c0ae1a9ee0e5e0c2ed1f62da1ef9a3fc1771e45039dfc112c7ec"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/multiple-diagrams-overlapping-di.bpmn",
+        "storage": "generated",
+        "size_bytes": 2426,
+        "sha256": "5e2d94d00586d7f0bcfca6102208ba12d97826fbfddc67561000b75cbbf63703"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/multiple-diagrams.bpmn",
+        "storage": "generated",
+        "size_bytes": 1314,
+        "sha256": "46aff94d202085d9025784fab1866eab8399bbfd3d470c7bd1d0fe3cb335bd31"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/multiple-nested-processes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2636,
+        "sha256": "dccb028b591ab723bcffc0f3405d611ba3c1cb6637610ac258c643aaf8c381da"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/nested-subprocesses.bpmn",
+        "storage": "generated",
+        "size_bytes": 7077,
+        "sha256": "b9227f15acfd06876d9a61488cb2984ba50eb281922ac1ae6b90873fb63c271f"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/sequence-flows.bpmn",
+        "storage": "generated",
+        "size_bytes": 3657,
+        "sha256": "a7ae766a5a95816bed1691a35106f47a698b8eb2fe5698214a1e7c961d12d5c5"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/simple-resizable.bpmn",
+        "storage": "generated",
+        "size_bytes": 2818,
+        "sha256": "2e486fed87874088845949ca21948872f8ef2e178775f5cfe9a0a04d03d7e733"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/bpmn/simple.bpmn",
+        "storage": "generated",
+        "size_bytes": 4085,
+        "sha256": "48e0f2877bd5d1e947f424313cf6ad9822fcd852f6bb31ad6d7cda56f7c7546f"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/json/model/camunda.json",
+        "storage": "generated",
+        "size_bytes": 21533,
+        "sha256": "9f3a5b0ebedc9e18da2e49ecddf69fbd13e9664fe34a2a8a76dba72d15b59ba4"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/json/model/custom-override.json",
+        "storage": "generated",
+        "size_bytes": 758,
+        "sha256": "1b831b30aae9da13453d2b8f2223212ee3d81bf050010204143f03fecc2a4dc3"
+      },
+      {
+        "path": "@task/tests/payload/test/fixtures/json/model/custom.json",
+        "storage": "generated",
+        "size_bytes": 834,
+        "sha256": "24948a6d7efc52ba9308d11d22aba54717cc8d57ed79a208490627e311d3ff21"
+      },
+      {
+        "path": "@task/tests/payload/test/helper/TranslationCollector.js",
+        "storage": "generated",
+        "size_bytes": 334,
+        "sha256": "506702603f76b593074bf12073db999bb1ae42253dd17901344310816a9d73f9"
+      },
+      {
+        "path": "@task/tests/payload/test/helper/index.js",
+        "storage": "generated",
+        "size_bytes": 7681,
+        "sha256": "b68bc2cca0ac515ce55c5a6fe390888f08eaeedb3c7a42b40c976069b66a6c39"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/CustomElementsSpec.js",
+        "storage": "generated",
+        "size_bytes": 5619,
+        "sha256": "0d6a0bce44eee58f831d1a1750f45789f4206368560db0ad68d4fae10c00f345"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/ReimportSpec.js",
+        "storage": "generated",
+        "size_bytes": 1617,
+        "sha256": "410d76446054294d170ce7de81134f9afdf9c945e754c62d472de324f3c8d788"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/SimpleModelingSpec.js",
+        "storage": "generated",
+        "size_bytes": 439,
+        "sha256": "bae1d0980299351b0303c7889eae4eee3fd1d66fdd3925b2997af0269e203a91"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/custom-elements/CustomElementFactory.js",
+        "storage": "generated",
+        "size_bytes": 1685,
+        "sha256": "a09e29d132ae1e8e8621d2aba12c42f569f383493ad7796fbc1c37a8daddc1ca"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/custom-elements/CustomRenderer.js",
+        "storage": "generated",
+        "size_bytes": 3342,
+        "sha256": "98234cf1400c8b94e336e6103f6ce8e1b5088970ea3385bdf0cbc88d3672106a"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/custom-elements/CustomRules.js",
+        "storage": "generated",
+        "size_bytes": 2581,
+        "sha256": "861f1e65ed618d94cf051ab7c45785265cc9a404eb3de6e4d15d9d9f75e3ed69"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/custom-elements/CustomUpdater.js",
+        "storage": "generated",
+        "size_bytes": 2572,
+        "sha256": "35f91d17caa043ea3e1af95c0efd4025abece23e2393799cbad6cfae266e8bfd"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/custom-elements/index.js",
+        "storage": "generated",
+        "size_bytes": 474,
+        "sha256": "a07f72a1e7364ee79c37a860284190605e141140e3f57855bcdce3ce148de715"
+      },
+      {
+        "path": "@task/tests/payload/test/integration/model/BpmnModdleSpec.js",
+        "storage": "generated",
+        "size_bytes": 1456,
+        "sha256": "31429ac0c6a563b47b90d39c060ddfeb96c343c95edcd6445bf3294f35a269bf"
+      },
+      {
+        "path": "@task/tests/payload/test/matchers/BoundsMatchers.js",
+        "storage": "generated",
+        "size_bytes": 5768,
+        "sha256": "47efaff8ab2af8f0b42d8fcdd6db72e0e505b14ebf5dc07633248ad68d6cebeb"
+      },
+      {
+        "path": "@task/tests/payload/test/matchers/ConnectionMatchers.js",
+        "storage": "generated",
+        "size_bytes": 3950,
+        "sha256": "7ecd0b1ef88f8d396b80e76944915e4e4215cc4dbeb1e3b9af291953e35ed8d9"
+      },
+      {
+        "path": "@task/tests/payload/test/matchers/JSONMatcher.js",
+        "storage": "generated",
+        "size_bytes": 509,
+        "sha256": "9a0dea4fd63524be8c9b955e89e49a48c4b5ff22024e027ce916793a27bc0607"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/BaseModelerSpec.js",
+        "storage": "generated",
+        "size_bytes": 1475,
+        "sha256": "b59137738e855af913d07248baa6b9e506f7ddbb80c82ff37d5bb002166d0ed4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/BaseViewerSpec.js",
+        "storage": "generated",
+        "size_bytes": 1309,
+        "sha256": "925611adad4106147107756530862bb55b92c73710fc9b3e339b39612f68ac3d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/Modeler.copy-paste.a.bpmn",
+        "storage": "generated",
+        "size_bytes": 1035,
+        "sha256": "3c9f2d7e7684048a416ae67262ab6cc9b7003b60ce59ae0625576b0dc6a316ab"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/Modeler.copy-paste.b.bpmn",
+        "storage": "generated",
+        "size_bytes": 1035,
+        "sha256": "75c7ab222e00f89f23ec6872161f886ac76cac6b8b468dc972b225d5190b7a86"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/Modeler.copy-paste.complex.bpmn",
+        "storage": "generated",
+        "size_bytes": 15166,
+        "sha256": "6c76ae948dfd76aaa77deb16bd9a1f6cc9bf3ead33fad72d7caa768e8d104018"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/Modeler.copy-paste.empty.bpmn",
+        "storage": "generated",
+        "size_bytes": 637,
+        "sha256": "f18c8a446f31234ea7e94d40ff47c0e7f00b767e01b2da09f3d751a05175a6fe"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/ModelerSpec.js",
+        "storage": "generated",
+        "size_bytes": 24425,
+        "sha256": "1927daf0fa06df3f77fd74cc41877a891d6c774e04b58980ed5d748a20649ccc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/NavigatedViewerSpec.js",
+        "storage": "generated",
+        "size_bytes": 2686,
+        "sha256": "694bd1ef3abd7aabf66bbbb3738de0412e7fdcd3701fee2bc0037cd351aa1c65"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/ViewerSpec.js",
+        "storage": "generated",
+        "size_bytes": 42780,
+        "sha256": "6c52920ad2408baeb9633fa01f44567a5924c6696a1f8011a4213214353d92a9"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRenderUtilSpec.js",
+        "storage": "generated",
+        "size_bytes": 1507,
+        "sha256": "d26a7f4708c4c91df66ab3567a56183cf4e3062d5fab488355e4abe74e0dca39"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRenderer.colors.bpmn",
+        "storage": "generated",
+        "size_bytes": 9184,
+        "sha256": "7cb5dabbcb0389022bb28ccfabc83f358cfcacfa189e13cc2552dda9b11da256"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRenderer.connection-colors.bpmn",
+        "storage": "generated",
+        "size_bytes": 4636,
+        "sha256": "ec9fed37f385ffcaacc41562b8880b8cb6d741790f405c7900b7ba0975c8c9f8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRenderer.group-colors.bpmn",
+        "storage": "generated",
+        "size_bytes": 1197,
+        "sha256": "1187cda3390d59957ace4404ee0d0002aa2b5db125019a1c206f02d8821d56c8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRenderer.labels.bpmn",
+        "storage": "generated",
+        "size_bytes": 1608,
+        "sha256": "2bdb79fc865fac1bf19bd5099903cb0d14152d760cbaf55473f78a02cf021fcc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRenderer.no-event-icons.bpmn",
+        "storage": "generated",
+        "size_bytes": 3632,
+        "sha256": "6c515d55dcf60be6c9844fe896c6298e4e66e63d7bc9731cd98317dd607c3556"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRenderer.sequenceFlow-no-source.bpmn",
+        "storage": "generated",
+        "size_bytes": 498,
+        "sha256": "0a902b6ffafc906d40a10b63661d5c1d182b5aa063995faba06d5ceaebe000ff"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRenderer.simple-cropping.bpmn",
+        "storage": "generated",
+        "size_bytes": 4276,
+        "sha256": "479820ec2310447e1efa44b06008394c57872e819d74205298b68e403e5af7ef"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/BpmnRendererSpec.js",
+        "storage": "generated",
+        "size_bytes": 28944,
+        "sha256": "b21b61a0f66557e0425626647b99eba573a8f3d81d9c793d53b053feefa126ba"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/TextRenderer.bpmn",
+        "storage": "generated",
+        "size_bytes": 1179,
+        "sha256": "579063a57fd4f5acbe0f752eed9f00d6eb9e1e205ee53cc54d777cc86177c29c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/TextRendererSpec.js",
+        "storage": "generated",
+        "size_bytes": 2438,
+        "sha256": "a4916c4444e791d26845d5d83eb4de72ceaf161dbe81a3cce3d3c69f0f472409"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/custom-renderer/CustomRenderer.js",
+        "storage": "generated",
+        "size_bytes": 1044,
+        "sha256": "e35d983ba73081af305c92b1f8b23e1ad1fc38513d465886b50aed1dab36f1ae"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/draw/custom-renderer/index.js",
+        "storage": "generated",
+        "size_bytes": 146,
+        "sha256": "7c6a46f2296fcd5e79acb1fef2d64dcbcedd93dea2ba42eb28037ade8c19e83d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/environment/MockingSpec.js",
+        "storage": "generated",
+        "size_bytes": 932,
+        "sha256": "e6546745a5e30bd734923955d24adee3132947edcecb97651641cf9e460cf115"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/align-elements/AlignElementsContextPadProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 2424,
+        "sha256": "9d25682764dd1a7652a66e0cd85b9a8a7c5f80033a8a3d6f5fd9ef34e0d8108c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/align-elements/AlignElementsMenuProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 2743,
+        "sha256": "43b0c140a667faf67619a5a85b68ba1bff7e8ed4e548c9ae9d4e159e83872fd8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/align-elements/BpmnAlignElementsSpec.js",
+        "storage": "generated",
+        "size_bytes": 5470,
+        "sha256": "ef30ed6b35f2b596b209fdb648e96389e3987cda146f6cf5b0f1db9d57e7869d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/append-preview/AppendPreview.bpmn",
+        "storage": "generated",
+        "size_bytes": 933,
+        "sha256": "c6baa8a9999c14c1b1242a3d623730763f3bbcca6a40c4d2203d233808cfc8cd"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/append-preview/AppendPreviewSpec.js",
+        "storage": "generated",
+        "size_bytes": 1363,
+        "sha256": "14ea98f9b15259970b546135ae1879ac350fc4eb0e297c4786b6efc68dff8b83"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.boundary-events.bpmn",
+        "storage": "generated",
+        "size_bytes": 4027,
+        "sha256": "871d1ad295138d019cf9a65e7275b81d06cbf4fb36d1fcb58ba15d8807e2f1ce"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.bpmn",
+        "storage": "generated",
+        "size_bytes": 11593,
+        "sha256": "4db5dfdfaeb7d8915e91d6d50783f8d86ae50ae55320c1f6d042d3311d8f0cc0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.multi-connection.bpmn",
+        "storage": "generated",
+        "size_bytes": 4033,
+        "sha256": "508b501406edd31008a14822359695165ce6cb39c973937ea196f63e7b024d42"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.subprocess.bpmn",
+        "storage": "generated",
+        "size_bytes": 2590,
+        "sha256": "ad2dc430b3ae2173a4b1a7a4499976da05e1f71409716fc1e53780d91a8cd779"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.subprocess.horizontal.bpmn",
+        "storage": "generated",
+        "size_bytes": 3003,
+        "sha256": "b3ab19130af3484e813d88d85beeff9dcd48933c31bcd6b35a5735e644125faa"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.subprocess.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 2973,
+        "sha256": "141bb7c70e9d8e9cc9004a4c72d8eb466dbc82edb51c1699ec31939c8b14b6f2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.vertical.boundary-events.bpmn",
+        "storage": "generated",
+        "size_bytes": 4420,
+        "sha256": "ccf9cb5d6be034f961d1dbf5a23a72c4d4cdc0d95e24f8341f777dace45d45e1"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 9374,
+        "sha256": "e057188818843bf35c65f966f84f0a51e2ae72a7cd2ab07ddef374eeee044a2e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlace.vertical.multi-connection.bpmn",
+        "storage": "generated",
+        "size_bytes": 4190,
+        "sha256": "7542e768856abc1a6bdf2636f092a25cc2e340eff910dbb120b10a41ef343f5b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-place/BpmnAutoPlaceSpec.js",
+        "storage": "generated",
+        "size_bytes": 17177,
+        "sha256": "64794077b9582ed469dcd1b68859e887062b62b51da43669f3bb88517c6f2f26"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-resize/AutoResize.lanes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2700,
+        "sha256": "51d719572fbf42e03fdc2f0dbd374f27aca34376661ea9f83187efb3abe477c6"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-resize/AutoResize.multi-selection.bpmn",
+        "storage": "generated",
+        "size_bytes": 1181,
+        "sha256": "2bc26d0ad1ee24787e35ad99876c73be0afb61b0d466d86b457ecc3976ea42c8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-resize/AutoResize.nested-sub-processes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2483,
+        "sha256": "6f593cc243d6f42ad88dd0bded9d540fefa478b11ad7fcc077f9defed2bf03d7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-resize/AutoResize.participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 2007,
+        "sha256": "c2be9d68d4f5756841877df077621bfe3a215cacebfdba10c26c9f9dbab5f3c7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-resize/AutoResize.space-tool.bpmn",
+        "storage": "generated",
+        "size_bytes": 2082,
+        "sha256": "d6a67d3c77122dee866e27d14b7087015598045c1f857d48929e7dbf8785bb8d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-resize/AutoResize.sub-processes.bpmn",
+        "storage": "generated",
+        "size_bytes": 1958,
+        "sha256": "54fc41afd64969a8c318fea6a638a56e3d4651e6e6352d8d845b23972b9d4401"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/auto-resize/AutoResizeSpec.js",
+        "storage": "generated",
+        "size_bytes": 16999,
+        "sha256": "027b1a97236e9ed7e075741bfe1e52f2a9f18efa11bfb508e57fea2dec36ce27"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/context-pad/ContextPad.activation.bpmn",
+        "storage": "generated",
+        "size_bytes": 5209,
+        "sha256": "8b8bf2eef02c0d838bedf29d155b2af84c4087de7f956abd4437af9b0fa22650"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/context-pad/ContextPadProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 21806,
+        "sha256": "12b98320a3c1504dfd33ed665f42175c8aa20f77849d0e35d04ec1944e4c69db"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/BpmnCopyPasteSpec.js",
+        "storage": "generated",
+        "size_bytes": 29482,
+        "sha256": "1d834022d088c660e2e1c6f43b0d5caa63eabe5b6a98dbfde6d6b3d8c80a425f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/ModdleCopySpec.js",
+        "storage": "generated",
+        "size_bytes": 32118,
+        "sha256": "42d9a70861ec5f39068d3f0626320a3301aa95eb52a4d646f7543b072b459757"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/basic.bpmn",
+        "storage": "generated",
+        "size_bytes": 5860,
+        "sha256": "b8cce346923cbbc992ac7f3be243c59486de62a4d22e47cccc605e0430cf4419"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/collaboration-multiple.bpmn",
+        "storage": "generated",
+        "size_bytes": 5191,
+        "sha256": "f5b5a8fb5b08a3cd0eaa9403e7c168b1bfb9d8457a6433f2b6aa762eefbd69ee"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 3782,
+        "sha256": "65df2a0958399df94c2136d809d25d7407cc38cdf6c39fcf0765547a076b06d7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/collapsed-subprocess.bpmn",
+        "storage": "generated",
+        "size_bytes": 1973,
+        "sha256": "0e6faaf1c3d7add5a4239bdb95785654fd6ea71b7fe7ec77e077e9c01898cc4d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/complex.bpmn",
+        "storage": "generated",
+        "size_bytes": 158670,
+        "sha256": "69838519b12c931cf20e6e27c22b6f63a93943d8eb9539aa82e6366b81738e8b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/copy-properties.bpmn",
+        "storage": "generated",
+        "size_bytes": 7702,
+        "sha256": "01f4c3e9ebd06e85542791e84a62dd9fe6d1320eaf5ad3d45274cac0f7459664"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/data-associations.bpmn",
+        "storage": "generated",
+        "size_bytes": 3651,
+        "sha256": "219133201f8a1620c50680c2d85d9e0fb9c03618856a01d8530bf1ba49a90435"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/event-based-gateway.bpmn",
+        "storage": "generated",
+        "size_bytes": 1682,
+        "sha256": "e10f66e2346a06310408846bd16f30655c02147a26bd5ded075596ce66cd44f9"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/copy-paste/properties.bpmn",
+        "storage": "generated",
+        "size_bytes": 2821,
+        "sha256": "be620280af8c0525cd50e67d18a3a6db18ec5ccae1d0559eb65268e0505830b8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/distribute-elements/BpmnDistributeElementsSpec.js",
+        "storage": "generated",
+        "size_bytes": 4553,
+        "sha256": "9040c5f7cbcf4a62223359a31513f66cd7ce7335994589a55b6dcf0f2b1b4556"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/distribute-elements/DistributeElementsMenuProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 2287,
+        "sha256": "9606f75d3d8f2bc1916cc74c48bada45064ed1e521c4c54029e07b5ad6701efd"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/DrilldownIntegrationSpec.js",
+        "storage": "generated",
+        "size_bytes": 5191,
+        "sha256": "7138b9663e487de7599f4dea87b7f3f942c2bd4027ea3c641015193f14401abe"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/DrilldownOverlayBehaviorSpec.bpmn",
+        "storage": "generated",
+        "size_bytes": 2091,
+        "sha256": "ecb2ec857168e64778d19a3551d50db6a0e1aa55c465a2c5f1c0d8c5963c0185"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/DrilldownOverlaysBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 11153,
+        "sha256": "f8cb5a25b5fe163564a5039f1782b9f5d43934bbf7e0b0ab9497c6371566d5c6"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/DrilldownSpec.js",
+        "storage": "generated",
+        "size_bytes": 15746,
+        "sha256": "6beba597e1912d2761bf77b39dfb7a08ea63686c905a468757088d398b19cdcc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/collaboration-subprocesses.bpmn",
+        "storage": "generated",
+        "size_bytes": 28349,
+        "sha256": "1b3fcede2e3cacd54e7e373c2cf64eb09b7a67d340e75c9b9f4124feae9f0e98"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/diagram-missing-plane.bpmn",
+        "storage": "generated",
+        "size_bytes": 776,
+        "sha256": "95635bff083bfefca42294e426d545cb1c25eb0e23f6e1ae8415b2165edadf07"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/legacy-subprocesses.bpmn",
+        "storage": "generated",
+        "size_bytes": 4474,
+        "sha256": "c00811fec597d53fc0a4859ff89c7b4d266930c9d6f00b0aa9155ce47a967abe"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/nested-subprocesses.bpmn",
+        "storage": "generated",
+        "size_bytes": 28309,
+        "sha256": "a718681c27ff013ccc5cc35afda095516bc2f2d7fbd0c70ea9d2d119c38a41e7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/plane-missing-bpmnelement.bpmn",
+        "storage": "generated",
+        "size_bytes": 835,
+        "sha256": "c1ecd52cb3d4e0ff9394ec476921d6d4054b67d936074457e180418fdc0e1cdc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/process-missing-bpmndiagram.bpmn",
+        "storage": "generated",
+        "size_bytes": 1055,
+        "sha256": "d586163625d536b44a8ffa3b5793fd628f65dad5df7b35941508df64c4ea0ebb"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/subprocess-missing-bpmndiagram.bpmn",
+        "storage": "generated",
+        "size_bytes": 949,
+        "sha256": "c5d63bf0f92b4ad8f85fb6f866c38d9605cc7ca51a31405306a0acb64e3c0e1f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/drilldown/subprocess-missing-di.bpmn",
+        "storage": "generated",
+        "size_bytes": 945,
+        "sha256": "3d017adece09ad8dab09a4b703b1a6d18f33d0a1a65ffebfb2995757794fe37c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/editor-actions/BpmnEditorActionsSpec.js",
+        "storage": "generated",
+        "size_bytes": 6912,
+        "sha256": "f3f09a3bb77ba0aecc34738b9c2319f2c75ce6987a056ad0ddea3ea471ef87d7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/BpmnGridSnapping.bpmn",
+        "storage": "generated",
+        "size_bytes": 3597,
+        "sha256": "ec34378b04c40a773bfaad1b8437c85cb5d36f1271168ccb28e91de8d4bc4cf5"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/BpmnGridSnappingSpec.js",
+        "storage": "generated",
+        "size_bytes": 10505,
+        "sha256": "2a6b70fe855b838defcf03303ffce7b6703ed5985bfed15f720211ad61def386"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/basic.bpmn",
+        "storage": "generated",
+        "size_bytes": 968,
+        "sha256": "1747f13ce9e1efebe9298b6182a848d934ee1239e7ca842c52edf7e5bd85bae2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/behavior/AutoPlaceBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 965,
+        "sha256": "cd6006a0cd282dff152ca19d30dae1d8c2b7656a4392c1538e31e6422cc7ea5c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/behavior/AutoPlaceBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 4750,
+        "sha256": "31ab90afe1c7853be6c5c514cc7042f4dd0017b0b5a52c1862a635f024e71ad4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/behavior/AutoResizeBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 1004,
+        "sha256": "5ace43e241a1f1ff5f705390d314f72d4bf0cc3ecdd523231e3572f65d58ae1b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/behavior/AutoResizeBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 1268,
+        "sha256": "2350a57ef39072e5d02aa4c80ed2be6b90c69c9d68739022361469a6b8a8775a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/behavior/CreateParticipantBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 3024,
+        "sha256": "81a20991457ea975ebc6a40e322ff27684558e92c23c3dcb66d2b9e6c5ae0709"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/behavior/CreateParticipantBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 1355,
+        "sha256": "71642b1101e4768905ad3e3b03dc4c80289a68a5ba0500bbefe1756c8ca4a5fd"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/behavior/LayoutConnectionBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 2263,
+        "sha256": "e70e49510252674c55d6d2b08fc89d4eb49fbc534425bef574a4b9b9ba8e776e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/grid-snapping/behavior/LayoutConnectionBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 4813,
+        "sha256": "ae868da953225589efea27ae9be42ddc1ab85d7f59d2ac6d7e067cd856c63842"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/interaction-events/BpmnInteractionEventsSpec.js",
+        "storage": "generated",
+        "size_bytes": 7547,
+        "sha256": "759d9b37caf961b340b86bc94ba7e66300c39ab5c890f3592fb6be30425e95a9"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/keyboard/BpmnKeyboardBindingsSpec.js",
+        "storage": "generated",
+        "size_bytes": 5213,
+        "sha256": "b9459d5ddc52139a21645a9c1b766b8f2e76014acdc6f628b156e9f5dec9dcf2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/keyboard-move-selection/KeyboardMoveSelectionSpec.js",
+        "storage": "generated",
+        "size_bytes": 3174,
+        "sha256": "905a49ebbde6326c74f712e8b3a7b1e3a5b918d4e8985e16447cb8fe00f02da6"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/keyboard-move-selection/keyboard-move-selection.bpmn",
+        "storage": "generated",
+        "size_bytes": 1893,
+        "sha256": "54c0713006efd8ff330e894235733468498a0a3c486a0c40c13de71c7c1dbdda"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/label-editing/LabelEditing.bpmn",
+        "storage": "generated",
+        "size_bytes": 12839,
+        "sha256": "0787ffb97064b57ea55fabe7c1dbab41d26dbebe11778ceb126c211e5abf40c9"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/label-editing/LabelEditingPreviewSpec.js",
+        "storage": "generated",
+        "size_bytes": 3873,
+        "sha256": "f87347d1f29508f05a05e4bbf9bb05da198e0fd66eaeda7a7de34a6b4d6030a4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/label-editing/LabelEditingProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 28471,
+        "sha256": "a9ac838520fbe4b2570b115b2eac4baed2ecff85c5049aaa205289bdbd194579"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/label-link/LabelLink.bpmn",
+        "storage": "generated",
+        "size_bytes": 4285,
+        "sha256": "e1a747bcdb41e31dd8254b50a199c76d2a89e1b5a358e818204bf425fd34156e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/label-link/LabelLinkSpec.js",
+        "storage": "generated",
+        "size_bytes": 5511,
+        "sha256": "8284817e08836ff26fd99a27ccd88accfd0b4a56b65c2735518eae40c61cc3f8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/AppendShapeSpec.js",
+        "storage": "generated",
+        "size_bytes": 11631,
+        "sha256": "5ec233159423eb08c613bbc299de9e9a221cf48e574b7af466ed398836bc60e7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/BendpointsSpec.js",
+        "storage": "generated",
+        "size_bytes": 597,
+        "sha256": "1d3e7bdebdd97702904fca2c58195ea3a20d6812e81569aa72e4832c6de4bce3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/BpmnFactorySpec.js",
+        "storage": "generated",
+        "size_bytes": 4484,
+        "sha256": "5d9c5ec44964ea168214baa86154a9682d8e0be9b0bb5e5724f45ff9d6543d47"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/BpmnUpdater.bpmn",
+        "storage": "generated",
+        "size_bytes": 5943,
+        "sha256": "454887444d9e2a4d523276e2c3f7f5ca7eb21d5903e64fb7af9c8249ba70426f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/BpmnUpdater.incompleteDi.bpmn",
+        "storage": "generated",
+        "size_bytes": 1023,
+        "sha256": "5403505640c428646e5bf6cb899d9a364d9d614528abd0e094e5db29f230eb85"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/BpmnUpdaterSpec.js",
+        "storage": "generated",
+        "size_bytes": 7717,
+        "sha256": "650a88c14211084aa416189b33bfdf77b7aa865a87cb55bebd06e0245fbc3525"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/CreateConnectionSpec.js",
+        "storage": "generated",
+        "size_bytes": 4960,
+        "sha256": "7fc70584d6d0e7594dfbb2f34a00ffa5f73ba27d87cae9e7e3ea670a5e7de93a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/DeleteConnectionSpec.js",
+        "storage": "generated",
+        "size_bytes": 1767,
+        "sha256": "d261b0ffacb9c82b6f97cc2699f2162ed410d6734a485e735ff656ebc55be44c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/DeleteParticipantSpec.js",
+        "storage": "generated",
+        "size_bytes": 3117,
+        "sha256": "0cc3202a5d06200e5ca6dfd682e3115698eed39460049f1844512cc08da8d1ba"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/DeleteShape.cropping.bpmn",
+        "storage": "generated",
+        "size_bytes": 2125,
+        "sha256": "a040bb541b52c071f2470df3e9182737bc0b918496cb1f22c347115e9ff576c0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/DeleteShapeSpec.js",
+        "storage": "generated",
+        "size_bytes": 2475,
+        "sha256": "76287ef59782ec28512706235c31fa637029555944ef85dc8c16b119915b341c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/DropSpec.js",
+        "storage": "generated",
+        "size_bytes": 3619,
+        "sha256": "8fb4936c4233128639344a35fcd66405f1a74b97ca372bdcf26a8d390c548ea3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/ElementFactory.bpmn",
+        "storage": "generated",
+        "size_bytes": 547,
+        "sha256": "b56571ee4e05f6e40d5ba078d83438ad51823954561e4757e56268c033701790"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/ElementFactorySpec.js",
+        "storage": "generated",
+        "size_bytes": 8832,
+        "sha256": "55efd34a0bb28c69ca12746580a0f7d884c25288766c7a1d4d9e8eada5f8e327"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/IdClaim.bpmn",
+        "storage": "generated",
+        "size_bytes": 790,
+        "sha256": "8901bcd61fca23b4cdf6ed3d4fe6ef81d84c26b55480a54bcbfa8b2ed6ab291f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/IdClaimSpec.js",
+        "storage": "generated",
+        "size_bytes": 1180,
+        "sha256": "253e224605b6199b8ab503737864e559497a645230cc26589d9b4ec39e127d6c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/LabelBoundsSpec.js",
+        "storage": "generated",
+        "size_bytes": 8678,
+        "sha256": "1a46754784f145746181f9b50bcae19e00f088ca75f19976dd6e0db0e5c7dc7d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/LabelBoundsSpec.simple.bpmn",
+        "storage": "generated",
+        "size_bytes": 1532,
+        "sha256": "23dd2de7cf7bc0b3ec5c77a2afbd302383ea2f4b847b8cda292e839205c4759f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/LabelLayouting.initial.bpmn",
+        "storage": "generated",
+        "size_bytes": 2027,
+        "sha256": "fbff9ece2c1435359a8db1e7159c3f77214d53f542728f1cd54dce6a15cea78e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/LabelLayouting.integration.bpmn",
+        "storage": "generated",
+        "size_bytes": 1878,
+        "sha256": "4bdd44daf1767aa3a092df396d6af565ba4e3d02f582e19092abed44e0b244cd"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/LabelLayouting.move.bpmn",
+        "storage": "generated",
+        "size_bytes": 5134,
+        "sha256": "bf18f075d2a36e994f7297b7d7cb877642aa17cbd9146b25b0c3d4829f35fc2e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/LabelLayoutingSpec.js",
+        "storage": "generated",
+        "size_bytes": 15204,
+        "sha256": "b025a8b8f663c798f4fce79f5dd18996363e45d56e4336ef4198b41f08a85bee"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/LoggingCroppingConnectionDocking.js",
+        "storage": "generated",
+        "size_bytes": 1053,
+        "sha256": "19b7dfd9d387798da364a20f7b99f1113cfd0e1f3e2dcda59592eea51cc07a5c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveConnectionSpec.js",
+        "storage": "generated",
+        "size_bytes": 2525,
+        "sha256": "8adac6868ce857c646d0178d4c9eace3153f7684b880d3209531b137e82db503"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveElements.boundary-connection.bpmn",
+        "storage": "generated",
+        "size_bytes": 2545,
+        "sha256": "0f62ab009202e6bafe0165d70f51666fb9259748be83f39df818ee2dbd98a4f1"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveElements.centered-connection.bpmn",
+        "storage": "generated",
+        "size_bytes": 1389,
+        "sha256": "f3c67515409552eaec962e5e3f8a93933fbb779da95dd3e651d06e24cb74fb7c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveElements.collaboration-association.bpmn",
+        "storage": "generated",
+        "size_bytes": 3697,
+        "sha256": "2c0691d9d53367344fd044c7ca04f4d50f8dcee2cbf850175cc936b79fb5d91f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveElements.data-input-output.bpmn",
+        "storage": "generated",
+        "size_bytes": 5610,
+        "sha256": "6f4ecbc5a3a27bbd82459817b71a8a2074b99cc0d23aab755d653a8f17894666"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveElements.eventBasedTargets.bpmn",
+        "storage": "generated",
+        "size_bytes": 8801,
+        "sha256": "3286726919ca09e07c0ed49118ec495383474f8f070cab0e87f2eaad0079a2a3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveElements.flow-collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 2327,
+        "sha256": "6790be51e8803826c58b41b3f424b53898c696ef5ae8644edcb2111112470e7f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveElementsSpec.js",
+        "storage": "generated",
+        "size_bytes": 8136,
+        "sha256": "0c397cf7473db59851a905b72fd1b862bea4dc945920f482470b955e9fc6cec4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveRulesSpec.js",
+        "storage": "generated",
+        "size_bytes": 3370,
+        "sha256": "58bafa84afa945905330d5ea27f334b572eb53d3db5474b68d33b9d88a9e12e5"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveShapeSpec.js",
+        "storage": "generated",
+        "size_bytes": 9075,
+        "sha256": "7909dd660039773131306a1d0f52ac0b1de02fe8f48ebfcf69d4749058358479"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveStress.bpmn",
+        "storage": "generated",
+        "size_bytes": 14831,
+        "sha256": "2fe215dd06322c8ea751d1d7b392c3281bb6920b9fbacf3bdb1916a3475b874f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/MoveStressSpec.js",
+        "storage": "generated",
+        "size_bytes": 2380,
+        "sha256": "cc79f1b4efc9f43b2150a7c235d5ebf4d0f6856ac79938a0278e6e785d687f2a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/ResizeShapeSpec.js",
+        "storage": "generated",
+        "size_bytes": 4080,
+        "sha256": "4a3d8a079bf0d1ddcb5e1550df68cfd158edb32369e0488ec61e53e6c9594a5b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/SetColor.bpmn",
+        "storage": "generated",
+        "size_bytes": 4570,
+        "sha256": "f662775bdcb24dc56f417b68a89cc2c6bf105c61ce000f2e0228049136e10532"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/SetColorSpec.js",
+        "storage": "generated",
+        "size_bytes": 20704,
+        "sha256": "48bd5444051a66305ca950b387d2e579028ef7dd42aad79842532c3c97160010"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdateAttachmentSpec.js",
+        "storage": "generated",
+        "size_bytes": 2555,
+        "sha256": "5affc842d001e1e47eac0c929c17038d7e8943da89e9d0f1ac2d8cf3b0d3614e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdateLabel.bpmn",
+        "storage": "generated",
+        "size_bytes": 2751,
+        "sha256": "c3d086b77c835344aef1d5da0f519cbe5343dde04b052e7e8d72a73a56cc0b55"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdateLabelSpec.js",
+        "storage": "generated",
+        "size_bytes": 7023,
+        "sha256": "715a0151c1c8a133d2f04c5ce803a9bb9db79cad795d93bc78a256518ff38ab3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdateModdleProperties.dataObject.bpmn",
+        "storage": "generated",
+        "size_bytes": 1436,
+        "sha256": "33ef01db55368f83a23275765c390a643f5bde84df1f769337972513ada39cfb"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdateModdleProperties.error.bpmn",
+        "storage": "generated",
+        "size_bytes": 1035,
+        "sha256": "0ddf0a83064fa49e08be3f53b9a7ef5fd0212b2e3c1ae4437995a82358a84bdc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdateModdlePropertiesSpec.js",
+        "storage": "generated",
+        "size_bytes": 4401,
+        "sha256": "ddfe5fd526623f592e3fd7784ffe39879b28682f588a5f9891443e49aa110179"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdatePropertiesSpec.js",
+        "storage": "generated",
+        "size_bytes": 15571,
+        "sha256": "0fdf59a36e712b51f4b0e10002319e854706edd369be2f6e82a78362b5a23a18"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdateSemanticParent.bpmn",
+        "storage": "generated",
+        "size_bytes": 1549,
+        "sha256": "70c5d0fce1d00bed83c4295f7c5e0ef6f2893c9bdaacc01c27e935bfacc01553"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/UpdateSemanticParentSpec.js",
+        "storage": "generated",
+        "size_bytes": 2068,
+        "sha256": "9c74c62a2062208627a746a5f83963742fceb18ebfaa8fb5670c5c1d01d7ed15"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/append/TextAnnotationSpec.js",
+        "storage": "generated",
+        "size_bytes": 4240,
+        "sha256": "bbb3e930dc5083830e86dc4432ef90ecb9fe5c632beeb77fe13709e09a1be7ba"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/AdaptiveLabelPositioningBehavior.basics.bpmn",
+        "storage": "generated",
+        "size_bytes": 10637,
+        "sha256": "c89212d9e5e3ad9f302eff054d5918992a0f8933be59eed797629598e73417bb"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/AdaptiveLabelPositioningBehavior.boundary-events.bpmn",
+        "storage": "generated",
+        "size_bytes": 4941,
+        "sha256": "4e8982ba1c87a80392ffb4bacda6092716d2f615185d0a5dd7afd05be71f1116"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/AdaptiveLabelPositioningBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 11244,
+        "sha256": "472ca25d4f1a8f607e627ebc88a06d402d499188a2cd5765b32f5b8a1aa4da86"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/AssociationBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 1602,
+        "sha256": "f0af9109456c1ba8c01c536c84e36b62d198ad6cf37f95e98b46256b6f95474e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/AssociationBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 1247,
+        "sha256": "031e92d544144eb68d7c01e9e8337aebdfdfa553f14b64be0c52d69745caf331"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/AttachEventBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 3729,
+        "sha256": "17b62fc87920e620dc82f928d5153710ae6fc189a429234edd1ff128257ea640"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/AttachEventBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 8684,
+        "sha256": "dfd022719830111a9239036e2b33929d44d675035e4c08c34c407263ec842aee"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/BoundaryEvent.bpmn",
+        "storage": "generated",
+        "size_bytes": 3710,
+        "sha256": "858dceda45b8803afb39d7cce549046620ddfafbf2e4b35d476166f209333993"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/BoundaryEventBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 5875,
+        "sha256": "ce4c4e9b3d40251fabf098e52b876e97efdb446b742aaf6f3f48cab3e585cd90"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/CompensateBoundaryEventBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 10974,
+        "sha256": "b1eebd7459140037bdfc322be3b032d44a5a40cfff7062fee81b8b116c7cd537"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/CompensateBoundaryEventBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 12443,
+        "sha256": "9db569803165fd8fc329aa110f14466766474d50db473176aac63b7e8e7e4669"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/CompensationAssociationBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 1514,
+        "sha256": "d0fe442b62a01bd86ea2ac04a5e96bafef3cef5570554645cb77cd773130b06c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/CompensationAssociationBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 1503,
+        "sha256": "e19818611ef0219d8320648c24577a44260349864dfdb1930a0188b2c281c385"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/CreateBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 1393,
+        "sha256": "5d8394066cbfeae14f1072ec35a016a33d1934c68c50d536732b1c6520dfb370"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/CreateBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 964,
+        "sha256": "62875580d571918b16f65e3514c0f03b1f9caeac070af6d2942a5f356c7db2c0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/CreateParticipantBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 15300,
+        "sha256": "4008edc44f68a7decba0fd4672c8e790110a3b5652f306544a9da9b912fd3ee5"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataInputAssociationBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 1862,
+        "sha256": "b59200fe1caf8d51f88e8bffa83bd2c56d72b5b7a0415e4730ca980903771fe8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataInputAssociationBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 4050,
+        "sha256": "e62edeb5920a43d7f9af9dd0e6a798d3c2d2ccbfdde2852320f6804a8b1e0141"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataObjectBehavior.create-data-association.bpmn",
+        "storage": "generated",
+        "size_bytes": 1185,
+        "sha256": "dd9ffdbb248a403f03ca4afb2aedc60e705b0bd1a880751e7ac4151188635d19"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataObjectBehavior.data-object-reference.bpmn",
+        "storage": "generated",
+        "size_bytes": 801,
+        "sha256": "72fbe0f2f6523f82dbb326085bd0193c10a023d4f581276baf0553f883240af1"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataObjectBehavior.remove-data-association.bpmn",
+        "storage": "generated",
+        "size_bytes": 2245,
+        "sha256": "0e4e59575062bd863f73873b28bd980ceab74da8339ca09ee6e9719ce3b565e9"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataObjectBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 9788,
+        "sha256": "f5b4772ae795366f33fa3ed214b698cb1304237dd18ae898242c05228b2e5a08"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataStoreBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 2659,
+        "sha256": "71750acfe99ab1e6506b1c3e6611ead78b61b94c79e6496424403ac8f0da7ded"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataStoreBehavior.collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 1377,
+        "sha256": "00e80efa7a73c7317dc37fc157511def8bfd449c9f4be09ebda06af641479e42"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataStoreBehavior.connect.bpmn",
+        "storage": "generated",
+        "size_bytes": 3458,
+        "sha256": "22d44a98a7484e4904160c9590d82484b31b8a72b25c4ea15e73fa44d46badb5"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataStoreBehavior.empty-pool.bpmn",
+        "storage": "generated",
+        "size_bytes": 1227,
+        "sha256": "97be31cb5bf3777ebbfa621c2790e969a130b30a3876489dfb27d7ba51e92e8a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataStoreBehavior.process.bpmn",
+        "storage": "generated",
+        "size_bytes": 1156,
+        "sha256": "fadf5513640243578e2de4f55d61721667c318a281fa5a5e7c8a438e0960dc22"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataStoreBehavior.remove-participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 1895,
+        "sha256": "f976557b33b7425338fa0e2bd7368eb9c98c79bc4b395502e92cf5ff7754cfe5"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DataStoreBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 16526,
+        "sha256": "f66b9962dd83288794f99de28f490dd8c8c26cae732d13453e7e445a32402ad2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DetachEventBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 3428,
+        "sha256": "38ec310d94d1c1404ce9156b20afcaa5dc086a24eb4b598c21be76477b77a7cc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DetachEventBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 10167,
+        "sha256": "598459e4142fbb0352dece3a86f78e4115830a1a32e2d8ebd68334685b18be48"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DropOnFlowBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 6695,
+        "sha256": "81616750ad801f493969fb6fcd021ae1c41c5658360e37e83b660092b1d2c895"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/DropOnFlowBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 27946,
+        "sha256": "08199e2a9210a4570bc22ded3093338fd435ea9af6705112bf352acf47788b8d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/EventBasedGatewayBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 5184,
+        "sha256": "f43afc54c2da9b4c8700eb56f762c22884b21cb073afb39620de8a134e2818dc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/EventBasedGatewayBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 5483,
+        "sha256": "ef9aa3116380b33530d6b23d0e5b6e49b60b82fcf2e350baeac8a388447a4cba"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/FixHoverBehavior.annotation.bpmn",
+        "storage": "generated",
+        "size_bytes": 1023,
+        "sha256": "1073963d745db55752b2cee49f94672de5bf884bca55e3145ae45624d50f0408"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/FixHoverBehavior.group.bpmn",
+        "storage": "generated",
+        "size_bytes": 1115,
+        "sha256": "6831044d9ca82010fec183bd5e0af59b7a36682b6190ff685d8e213f541bb5ce"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/FixHoverBehavior.label.bpmn",
+        "storage": "generated",
+        "size_bytes": 1123,
+        "sha256": "7d885ff6325c3c5aadb30ff7b74a619ff22e1c05c8ffff0004b591ad5ba9ea52"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/FixHoverBehavior.lane-connect.bpmn",
+        "storage": "generated",
+        "size_bytes": 2534,
+        "sha256": "b270b2db7ac730e2de4e66a1cf4236b6e018113acf079b5710be9c3eb1192509"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/FixHoverBehavior.participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 1659,
+        "sha256": "0aa4ee1a6ce7cdfac7d9fd836b60d2e19cb13ab3bff0baa70bf1e4f7c7adf72a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/FixHoverBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 19995,
+        "sha256": "68dc8ee42de8d6b197737277b8ef5ace83860828bc68d8e4d0a23e07443176fe"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/GroupBehaviorSpec.bpmn",
+        "storage": "generated",
+        "size_bytes": 2526,
+        "sha256": "504d7ccdfa4ce64434f80600d068d1bee11bda1a1c94249dd4d13a08aa3946b3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/GroupBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 12116,
+        "sha256": "b1f12e568ded690dd7e8246fc7b355371392d45fdf7a043f3a9b1bf21259f829"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ImportDockingFix.bpmn",
+        "storage": "generated",
+        "size_bytes": 3221,
+        "sha256": "c271a5157deb21442ff3e76fdc01b1a2fbad76a335b7baf446b45481e7b41493"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ImportDockingFixSpec.js",
+        "storage": "generated",
+        "size_bytes": 967,
+        "sha256": "175c610092b7abf7e83bc5f1829dd404924b325cac5d6a4164e56498a3230360"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/IsHorizontalFix.bpmn",
+        "storage": "generated",
+        "size_bytes": 4369,
+        "sha256": "bdb2d87b7f15e57005158313cc2eac0ad056b77ed4b5355ceda8985266ce76b6"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/IsHorizontalFixSpec.js",
+        "storage": "generated",
+        "size_bytes": 7328,
+        "sha256": "21e807a5a4e5dd656818df9cf63d84b0c5f317895e93d2fe211742517a03a9be"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/LabelBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 5692,
+        "sha256": "0eb15ec6fad34029d173ee7d87f559d14192f260f14f9b908ad66b48a1ecae52"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/LabelBehavior.copyPaste.bpmn",
+        "storage": "generated",
+        "size_bytes": 1629,
+        "sha256": "dfcd3c86ffdbdf17b5de5a818ef5a322f88adf1650fae1f3a464917cfc3f9e12"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/LabelBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 22780,
+        "sha256": "a258317068a38d4d4ca6cf2467c7ba34790873dfa0d04e02664e36f5c8f8a288"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/LayoutConnectionBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 4618,
+        "sha256": "aa07d2480d49386fa9a02953a38d65ef824cd2ec371c876019054511924fdd48"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/LayoutConnectionBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 8926,
+        "sha256": "a674ed19d1080faa5bed7ff77b6d2848ec32d6c5f31e353ebe7a99c0f8123be2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/MessageFlowBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 4902,
+        "sha256": "e9e8fadc8f0bf942088c9dee6d07842f98b7bbe1c1683219a25089af3eae440f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/MessageFlowBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 3296,
+        "sha256": "ab10c6ea5c169f067807e45260ea3ccafb4afb681b8de741a62edd7dc8d31c2f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/NonInterruptingBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 2623,
+        "sha256": "87191bcc48c31084ab0e83f086f562e782217ebb1ee4d81f654b7d9a07cf54f0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/NonInterruptingBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 5631,
+        "sha256": "dd148b8a18294b353e6202ad5f1b3ff246f22dbe001357230cf8863d529de905"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ReconnectConnection.data-association.bpmn",
+        "storage": "generated",
+        "size_bytes": 2274,
+        "sha256": "38a7478f5adc34c40742c3fd626b593a752ce75210063cd5b79ff007583e2476"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ReconnectConnectionSpec.js",
+        "storage": "generated",
+        "size_bytes": 3638,
+        "sha256": "1ad1b26b1c2f4162b6a74ec57603f9626654977e327d033d743f9ba0c6291847"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RemoveElementBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 9014,
+        "sha256": "bce77c1bb0099e9081fa3179826118e338cfd8ed0c4e7bca20cbe4267f0f4580"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RemoveElementBehavior.diagonal.bpmn",
+        "storage": "generated",
+        "size_bytes": 2666,
+        "sha256": "48daeec0270ad0cad170d5b59fa6681a663c1a1af0e3305bd00a828d6082868c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RemoveElementBehavior.perpendicular.bpmn",
+        "storage": "generated",
+        "size_bytes": 8033,
+        "sha256": "367f428ece5b8546c50e10184c12a7640fb5906ded67e83b5ab355ba10e3efa4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RemoveElementBehavior.vertical.diagonal.bpmn",
+        "storage": "generated",
+        "size_bytes": 3081,
+        "sha256": "c39d0a4793e487c4335f2b899ca3ed1915110069e71e2e021f02f0526c756f4a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RemoveElementBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 9338,
+        "sha256": "0b00e50aae114fe5ccc1e5f460f1b92906558c517fab85cf6f3628e44c615384"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RemoveEmbeddedLabelBoundsBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 1150,
+        "sha256": "4971f6858955f6e56b0b5ca623c070807f790c65627cdb57bb6840f7fe0b9b3b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RemoveEmbeddedLabelBoundsBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 1294,
+        "sha256": "50ed574cd12f2d98b731b16e0058f8ff41798573d873bb7c5012f0b0fe39565c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RemoveParticipantBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 7224,
+        "sha256": "c807fd01808d21988eba23d17c0be29c97809462c7627ef27029275efe3f6349"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ReplaceConnectionBehavior.association.bpmn",
+        "storage": "generated",
+        "size_bytes": 2752,
+        "sha256": "659afbb27a4e7dc1bb72885065c9452974e2077a80fcedae06b279de37982ca8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ReplaceConnectionBehavior.boundary-events.bpmn",
+        "storage": "generated",
+        "size_bytes": 2142,
+        "sha256": "563ab9ef25610b76d37cd158ddceb9135bd75bd0a6451fa2881ebd796f63963e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ReplaceConnectionBehavior.message-sequence-flow.bpmn",
+        "storage": "generated",
+        "size_bytes": 8039,
+        "sha256": "2fb79e47adba59ae2a7258c9368ee04965bc6167e96ad7c173a5901c15f532f3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ReplaceConnectionBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 18509,
+        "sha256": "42a7e370887c9d3107cd369f09b17fb411e48770c03c81d86e7bb38d1dc87118"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ReplaceElementBehaviourSpec.js",
+        "storage": "generated",
+        "size_bytes": 19318,
+        "sha256": "789add939bb84c028690bebcabb3437d586fbb294c2d5e9a63aff663383bb603"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.lanes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2204,
+        "sha256": "a685395f8e623b01a2d79c2902d968f407def8a42ca17682ec92ed464dd47f44"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.lanes.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 2396,
+        "sha256": "2a53b4521d83401bb99ade376cd1c9aa594ee6470e0e330be3bf01b6ed25cd36"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 2738,
+        "sha256": "39e18bd9358a7d45aa482960702b8de31b6c2677767069514cbdc4fb4dde62ce"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.participant.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 2944,
+        "sha256": "c82d5137ed19506be9059731165bf5ba1cea9acb86de7d79830186aac226ed9e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.subProcess.bpmn",
+        "storage": "generated",
+        "size_bytes": 1137,
+        "sha256": "e3ac7f839668dfd0034894b8a106fcc9443a05148aef6683b405e64720c756c7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.textAnnotation.bpmn",
+        "storage": "generated",
+        "size_bytes": 1297,
+        "sha256": "1127246526d762da2f092f89c24d01297643c6cd3061773fc83aa237b4884a5c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.utility.lanes-flowNodes.bpmn",
+        "storage": "generated",
+        "size_bytes": 4958,
+        "sha256": "921092a145850c85fafe90592475c4dd7e714805ed6ca434d1b8fb5894898712"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.utility.lanes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2314,
+        "sha256": "6b8b14eabd4899a74e403333db384d7cfe6e6b90d9cc647a863a4846f88d234d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.utility.lanes.vertical-flowNodes.bpmn",
+        "storage": "generated",
+        "size_bytes": 4974,
+        "sha256": "25bbfddfa122e733921f055c104f79a987401ce03b0eb83d6ecd018e9d6f9c2f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehavior.utility.lanes.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 2455,
+        "sha256": "eaff8526dacb17fe1b3be93fa36774ce9139a1470545f952e95859c0ec13b781"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ResizeBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 30257,
+        "sha256": "9ef9ec82fccfa964ca39e290f60d4f6ccf98300c0a1a4a805b8a9450cf57f362"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RootElementReferenceBehavior.bpmn",
+        "storage": "generated",
+        "size_bytes": 3902,
+        "sha256": "c9763249fad32cd9b667842bdb473e28a99e35befb275b0c22ad0ad7f90416e9"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/RootElementReferenceBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 23108,
+        "sha256": "7f851153da642f67b9dd3855fd15e32eb875f4d534becfb87c60c481860cf9ec"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SetCompensationActivityAfterPasteBehaviorSpec.bpmn",
+        "storage": "generated",
+        "size_bytes": 2565,
+        "sha256": "d3af5fa87afe13f5dc7af6ae8061db9d98f9e4f2206b1255147bcbef2ab2b6bb"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SetCompensationActivityAfterPasteBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 2403,
+        "sha256": "c35381bffd14710381e4c67ff324339762a6f9ea9da8487afd20e5b57bb76442"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SpaceToolBehaviorSpec.group.bpmn",
+        "storage": "generated",
+        "size_bytes": 1213,
+        "sha256": "83160ebee3ae02923267583afcecefb6c1df368dcf5eaca12d24270a59640f03"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SpaceToolBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 7995,
+        "sha256": "a8251fc9ab2806d5b18829de42e6dbb934c28285bb1b48a37e4fdbba40208aba"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SpaceToolBehaviorSpec.participant.bpmn",
+        "storage": "generated",
+        "size_bytes": 3174,
+        "sha256": "43cbe27b5ed296abc1a23fb616076591c2ca720a7b0613da373511f1a4a0f728"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SpaceToolBehaviorSpec.participant.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 3411,
+        "sha256": "9038d0b247e3c3cb0a21733126c02d3942e6411c4b1b6476a20ca5c4d490f16f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SpaceToolBehaviorSpec.subprocess.bpmn",
+        "storage": "generated",
+        "size_bytes": 822,
+        "sha256": "934637ee92ca1286b4dc353e84825683e2eea60a8027921f1541d326ef13d94c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SubProcessBehavior.copy-paste.bpmn",
+        "storage": "generated",
+        "size_bytes": 11982,
+        "sha256": "b3c3daa5e183972a2010c3e08d5b4173303d6bbae481c45e1141df7c86a46526"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SubProcessBehavior.multiple-planes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2044,
+        "sha256": "c09f62e69b7f9c034865b572fe171f224733458f6c6f4527ed7c2c77f011180b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SubProcessBehavior.planes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2260,
+        "sha256": "552ac80b1f0ee2cf3992accb08f3f81f57d4a03e00b1fab49684c331560cfc09"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SubProcessBehavior.start-event.bpmn",
+        "storage": "generated",
+        "size_bytes": 1243,
+        "sha256": "13242a9c6cbbf5034e40505685fb7885b12d1c3b2fae1bf44711f4955b6faa55"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SubProcessPlaneBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 15192,
+        "sha256": "d64e2830867ce2620c1ea69ec7e730b27346bf24560f7f1cf0ba66f2235e562d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/SubProcessStartEventBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 4640,
+        "sha256": "344f2b7f0a77f64d2a49ce52a259800bdb9c0404ad15119d3e71c760b02ca7b2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/TextAnnotationBehaviorSpec.bpmn",
+        "storage": "generated",
+        "size_bytes": 1399,
+        "sha256": "12d97546f9f8994941fc1085750f75172ba25df56897e2fc37073e1d3220f9b3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/TextAnnotationBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 1610,
+        "sha256": "be1613cb9ceaa1aa528ad3135cb51ad7b10f4bd84aa34fe9cf3c11aa95e3a79e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ToggleCollapseConnectionBehaviourSpec.bpmn",
+        "storage": "generated",
+        "size_bytes": 5735,
+        "sha256": "8d4131500fbf0d4b2faf516a5a7ef2ce760e390fa0fc63d3339e2292bc57a689"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ToggleCollapseConnectionBehaviourSpec.js",
+        "storage": "generated",
+        "size_bytes": 3376,
+        "sha256": "4e8ddf63154466feabbfaef51484de05daf6fb035b083521544eb714ba7d2ed5"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ToggleElementCollapseBehaviour.bpmn",
+        "storage": "generated",
+        "size_bytes": 14687,
+        "sha256": "51083307eeb0ae65c3be30653f1c9a934ae598334a79423870c16645b7d0049c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/ToggleElementCollapseBehaviourSpec.js",
+        "storage": "generated",
+        "size_bytes": 16995,
+        "sha256": "1860764a4cef50cfa7d86fc5a4283ee484f555e77c9ed431b2f022f54bb5948d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/UnclaimIdBehaviorSpec.bpmn",
+        "storage": "generated",
+        "size_bytes": 1797,
+        "sha256": "b44961d1869b06a95dbdec40ba75f1fe1bd18b18f966ff468bf28ff12bc89f8d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/UnclaimIdBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 2542,
+        "sha256": "11011c687fb102760ac981d5d85c1ad5114120d84caafe4305d5aa75dc80e69b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/UnsetDefaultFlowBehaviorSpec.bpmn",
+        "storage": "generated",
+        "size_bytes": 2619,
+        "sha256": "4af4f071bf495f57f974621a52997d6a67381b0ce939c23161c877647a8c27be"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/UnsetDefaultFlowBehaviorSpec.js",
+        "storage": "generated",
+        "size_bytes": 2167,
+        "sha256": "773bcc4fd7878d72c526d8ec798c3e47ff53ddf88ec593961db625cd89274578"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/util/GeometricUtilSpec.js",
+        "storage": "generated",
+        "size_bytes": 496,
+        "sha256": "ad4df2542c9080c3491f9e9df1d51388d32db542f87e2fb346c9197c2c16c64e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/util/LabelLayoutUtilSpec.js",
+        "storage": "generated",
+        "size_bytes": 1342,
+        "sha256": "e0687f791b57ae92325787981c8d3932b7f6623de5a90e7bd0962754415b355f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/util/LineAttachmentUtilSpec.js",
+        "storage": "generated",
+        "size_bytes": 6148,
+        "sha256": "b8b018915ea8acd3f6d8ae222811db1343809e5f6774801c58b7aeff80f7d300"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/util/LineIntersectSpec.js",
+        "storage": "generated",
+        "size_bytes": 772,
+        "sha256": "9efa560bce2a562bd8d10258e206f3b6f741330ff175f76ff4dabee644a35942"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/behavior/util/ResizeUtilSpec.js",
+        "storage": "generated",
+        "size_bytes": 333,
+        "sha256": "1cfd7be7fff3e0373a7ca1ab038571d30d799b1d7ce3ef1593636893ccaf0037"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/input-output/DataInputOutput.bpmn",
+        "storage": "generated",
+        "size_bytes": 5709,
+        "sha256": "4369e032792a8a4fe4aa7678a9718bf1defd797929c613d6af5092ec5d9a5588"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/AddLaneSpec.js",
+        "storage": "generated",
+        "size_bytes": 33116,
+        "sha256": "a02e54f7569876615087472865a035245345e18fa8d2b3b3bd985d995f2ddf04"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/DeleteLaneSpec.js",
+        "storage": "generated",
+        "size_bytes": 6644,
+        "sha256": "05760ec30e5d310d7dcc67e88331c781d35df75716e8560a79d6dfba48cd2c31"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/ResizeLaneSpec.js",
+        "storage": "generated",
+        "size_bytes": 12585,
+        "sha256": "6a19d0d971fef737d9c8d83af5de0ed569988f64c47129b56bc9f48ec963dec3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/SplitLane.nested.bpmn",
+        "storage": "generated",
+        "size_bytes": 2334,
+        "sha256": "748ffb782e56ec1fa595674291e3e258e33503056554970d2b6d009dca71d81f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/SplitLane.nested.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 2454,
+        "sha256": "d0dc628d05b6afe53e857d34e4c2c706b9c81d583d09662640d0bcd3b72f1cac"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/SplitLaneSpec.js",
+        "storage": "generated",
+        "size_bytes": 15967,
+        "sha256": "94546825dd7640a0529a238467afc91c83660c41c1159b0aad674137dd7356ca"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/UpdateFlowNodeRefs.basic.bpmn",
+        "storage": "generated",
+        "size_bytes": 6768,
+        "sha256": "653203036352e7c1e0195f3b8ab506b60b29effcb2996c508840386bb5c9706d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/UpdateFlowNodeRefsSpec.js",
+        "storage": "generated",
+        "size_bytes": 9521,
+        "sha256": "3a49ca41ca1c01e36960b52e13c035eabb4985001ad7fa6cee5e018a2d334c5b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/lanes-flow-nodes-vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 6503,
+        "sha256": "51899ef74043b84a761b0af7e4ecb53b6bfabec1cbbbfa88a5092fc5e02eaeab"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/lanes-flow-nodes.bpmn",
+        "storage": "generated",
+        "size_bytes": 6407,
+        "sha256": "7246a7727a51f56dfcf35af7b95fb08e38cd5f6d7aedba4029a93aca6fd2585b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/lanes.bpmn",
+        "storage": "generated",
+        "size_bytes": 5089,
+        "sha256": "229b41d8308c06752679b8d5c5183762ac5e84df4c15215eee6d1256939d49ac"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/lanes.only.bpmn",
+        "storage": "generated",
+        "size_bytes": 1286,
+        "sha256": "5f9b74b2d7b0c0246ce3dd6ee269ae3091ecf69d1739a8d2c8a1529c519f7f7c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/lanes.only.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 1360,
+        "sha256": "0ce17482b27c5c0995ec5573a5cfd4112a05cb54d9507910caa5488af718d31c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/lanes.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 5208,
+        "sha256": "131c0e777a426c458b05c9e1766bdbdafa3c79f76c4d574e8bf80793e36d56ea"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/participant-lane-vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 1790,
+        "sha256": "04bcd0593e57587713c2e0fd40132ec999f7deb23c37a424a2218aefded4c4e4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/participant-lane.bpmn",
+        "storage": "generated",
+        "size_bytes": 1704,
+        "sha256": "914d569adedcfa3585df9da954f2b0c864b609aa472ada3eb07fa01250a726d3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/participant-no-lane-vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 1533,
+        "sha256": "9bc5038350a06d482f3f27fd4862d8f4f39d7c51670321e6d569915ec9feb6e4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/participant-no-lane.bpmn",
+        "storage": "generated",
+        "size_bytes": 1495,
+        "sha256": "ddb80e4093a98f86500bbd8ad0afd4c20cdbfa6786d5e5a1530cd77da12f2c0a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/lanes/participant-single-lane.bpmn",
+        "storage": "generated",
+        "size_bytes": 1323,
+        "sha256": "5477d8ce973471a5d4b4a0a141f184a5d7c0fac680c9433366c9809ddc66373d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/Helper.js",
+        "storage": "generated",
+        "size_bytes": 1591,
+        "sha256": "83d51744a07f3ce597ffc3062eb03cdb4da1d9b0d954a2b693f816267019e999"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutAssociationSpec.js",
+        "storage": "generated",
+        "size_bytes": 2652,
+        "sha256": "854b7b5bdcd9411ed8a1e49376f6e94fa97d177ee4f58df0fd0ad2e27779f60c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutConnectionSpec.js",
+        "storage": "generated",
+        "size_bytes": 14249,
+        "sha256": "f082831bd26d5f865580acbafc8a512b72d76476ce109d876318ecd9904b0bab"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutDataAssociationSpec.js",
+        "storage": "generated",
+        "size_bytes": 2493,
+        "sha256": "adf500aa414d4f519cd86d4f13c7429f18a900d3479b0984b7681118dc87a20d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutMessageFlowSpec.bpmn",
+        "storage": "generated",
+        "size_bytes": 6923,
+        "sha256": "bd592dcbabc92f6692b4122c5cb71216e3cfb07a2f6719acc7ab15f422d55fd3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutMessageFlowSpec.js",
+        "storage": "generated",
+        "size_bytes": 16844,
+        "sha256": "448205f2d5c5793ffebf3f7818654644af4b7fb12df8f6c2ac4f65db20158327"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutMessageFlowSpec.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 6923,
+        "sha256": "99140434bb9e6e7bce3f19b9219afb39e660498cae9f47743bd289a8bee54cdc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn",
+        "storage": "generated",
+        "size_bytes": 4885,
+        "sha256": "202dc5c91090b25d663e67b1e164bd9f5ab5edb83fe71811e305aec142c38a73"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEventsLoops.bpmn",
+        "storage": "generated",
+        "size_bytes": 3165,
+        "sha256": "b0e60b8eb0a7f6c4bccbc777f3e64910274f73c550a3517f3115587d4ba1ad5f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.flowElements.bpmn",
+        "storage": "generated",
+        "size_bytes": 5531,
+        "sha256": "86bfdcfca3efe36094fac6b7f4c728930e0e6ceacd21357d3b7bfd98d5d9bea2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js",
+        "storage": "generated",
+        "size_bytes": 35506,
+        "sha256": "63b8b6d70de87ee6bd32c42474e7d49ec22be0edb26ed5611275d0cf176fc70b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.subProcess.bpmn",
+        "storage": "generated",
+        "size_bytes": 1460,
+        "sha256": "c511739bac3ab4d9d1016ff168a572e78b905e1add1d789fb473be0a98ec4af5"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.vertical.boundaryEvents.bpmn",
+        "storage": "generated",
+        "size_bytes": 4019,
+        "sha256": "2a83372f987ccb2ffafd7a14a22da14281618b03849bbd30ed600389df002406"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.vertical.boundaryEventsLoops.bpmn",
+        "storage": "generated",
+        "size_bytes": 3672,
+        "sha256": "3d5feb4fae66844b6e313f3aa7a8abb4eac4825f3ad83b2dc0ba0551c5b0e8e8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.vertical.flowElements.bpmn",
+        "storage": "generated",
+        "size_bytes": 6003,
+        "sha256": "771a2ea866e56f3406ba6f6dca520d51a94bdce01849ec0eef881e56ff673865"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.vertical.subProcess.bpmn",
+        "storage": "generated",
+        "size_bytes": 2064,
+        "sha256": "79f08c9607cdcfd58c3f65bd579a10e5dac2430f524a8a50c3f82ace1e749ab7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling-feedback/ModelingFeedback.bpmn",
+        "storage": "generated",
+        "size_bytes": 926,
+        "sha256": "7a81677e24a2db8315c664b088a5d9aad989275887cee053b680b57b6ef165e7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/modeling-feedback/ModelingFeedbackSpec.js",
+        "storage": "generated",
+        "size_bytes": 2165,
+        "sha256": "0ca045bc98d61f63f92e1565be46973ced04590d450234006f4e583f30a919d5"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/BpmnDiOrderingSpec.js",
+        "storage": "generated",
+        "size_bytes": 6172,
+        "sha256": "7ba78e6e925e3021b4bc684dedbfa238960cc4c9f47705191b60ffd8286bd75b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/BpmnOrderingProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 10383,
+        "sha256": "88782fe982ed4522974a5661ecb7266df6161beb3c6d9ec9847c6d8ae715fbff"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/Helper.js",
+        "storage": "generated",
+        "size_bytes": 3935,
+        "sha256": "436b3fd2a3716e024171671f82a9663e884631b9de2ad0f9507b17f7dc738fd3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/collapsed-subprocess.bpmn",
+        "storage": "generated",
+        "size_bytes": 2584,
+        "sha256": "5ee09fd421b6824bbdeaf6731e8ed1ad5aef1d677b5e54ee7dd136ed052b8914"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/data-association.bpmn",
+        "storage": "generated",
+        "size_bytes": 3188,
+        "sha256": "1353bea12c43c05862d2740ec5e3e78db0d36c713f52907730337f2dc7e21726"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/groups.bpmn",
+        "storage": "generated",
+        "size_bytes": 2246,
+        "sha256": "fb725883be76bd09c327711ca28d6a25c2c7b9633636c507b3353c00d217be61"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/ordering-start-event.bpmn",
+        "storage": "generated",
+        "size_bytes": 962,
+        "sha256": "8a3137b0aa05c02fbbc3f8fb07c8ac1997dc7eb7cccb098ab58286cd4f5b3a3a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/ordering-subprocesses.bpmn",
+        "storage": "generated",
+        "size_bytes": 2189,
+        "sha256": "c4b0d9f34c70a31e16b66a86e2c6b3b300aad58220be138c11610a07228572b1"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/ordering.bpmn",
+        "storage": "generated",
+        "size_bytes": 6030,
+        "sha256": "45027f29bc40d9e704169a831263c8aaa7450c049d1382756e03a316e298ac2f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/ordering/wrong-di-order.bpmn",
+        "storage": "generated",
+        "size_bytes": 26893,
+        "sha256": "f66263dd9934d447b8e945d3a2a9ddbcbd1f6233f32bd4710e452202b5d2ce35"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/outline/OutlineProvider.bpmn",
+        "storage": "generated",
+        "size_bytes": 3174,
+        "sha256": "90175f5f5f737976f662cc955eeb14707ef2371b0a9e06a5d1a2dac610f852ea"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/outline/OutlineProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 5262,
+        "sha256": "89759baf21c0cb7184e1e2751ad4a55900fab434a493e2fc894fa0f1463ea1b2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/palette/PaletteProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 3351,
+        "sha256": "8070820b7737fa3083074f0c6dec707f0530eec566b942ece1fa476ee820abe8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.collapsedSubProcess.bpmn",
+        "storage": "generated",
+        "size_bytes": 4902,
+        "sha256": "6300fde2fdaf6b61658ff9a42d777f69ef34a3cebe97044ab2d56b82fb00d912"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.compensation-activity.bpmn",
+        "storage": "generated",
+        "size_bytes": 942,
+        "sha256": "eb3a52c687476edf8f9832dd952dc35782b99818fd313d97375b979e47552001"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.conditionalFlows.bpmn",
+        "storage": "generated",
+        "size_bytes": 3497,
+        "sha256": "4f35707c083a284154646a9a18030229e4f5c1e4afa236262fc271e22cdabe0d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.defaultFlows.bpmn",
+        "storage": "generated",
+        "size_bytes": 6569,
+        "sha256": "8a9ce395e37d9c753722798f50e799d1790eceafb06c1df115e4b095ea2837e0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.defaultFlowsFromComplexGateways.bpmn",
+        "storage": "generated",
+        "size_bytes": 2533,
+        "sha256": "4190d45b275d1cec0ca3e1d42f870b1928873548d050e6f8c4ebb9e39bee30de"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.defaultFlowsFromInclusiveGateways.bpmn",
+        "storage": "generated",
+        "size_bytes": 2547,
+        "sha256": "ec7380643d9c95061b22fb2d19b26fed9ceb07aa37c07757c0d67a195fe0807c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.events.bpmn",
+        "storage": "generated",
+        "size_bytes": 1694,
+        "sha256": "f751dce458930b8fc08772d13f8c4ef6ad093d1cbbe9d9b561c1cee5362b35e0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.pools.bpmn",
+        "storage": "generated",
+        "size_bytes": 2583,
+        "sha256": "b85596919d3bf1b56fef779e40d6144d266f86c7b54648f49339af90f7604d0e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProvider.subProcesses.bpmn",
+        "storage": "generated",
+        "size_bytes": 1523,
+        "sha256": "10db96e89e9c6d9e2c0a94df1d0532ea318197811f0e63026786208df01df067"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/popup-menu/ReplaceMenuProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 84945,
+        "sha256": "3fd4b4bbae74a54977176e3618f985b6347fedf0dfb00c66efd7059f3c83dabe"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplace.collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 3666,
+        "sha256": "19df8d50503edd8ba73df4344cb18ae831bc6318607ad22548374d3e53fe68c3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplace.collaboration.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 3746,
+        "sha256": "55268d6ebb84138cdfdfa60ee0b84a3ab0387d5f652ac75b395d8568f3d34f4f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplace.collapsedSubProcess.bpmn",
+        "storage": "generated",
+        "size_bytes": 25132,
+        "sha256": "3bb29f50eb617ee594f38165114987a7eafd6656f217faf86468232a919887e9"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplace.compensation.bpmn",
+        "storage": "generated",
+        "size_bytes": 942,
+        "sha256": "eb3a52c687476edf8f9832dd952dc35782b99818fd313d97375b979e47552001"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplace.dataObjects.bpmn",
+        "storage": "generated",
+        "size_bytes": 2661,
+        "sha256": "d89c430202120b63fdf3aaaab07c6e53f9d49f3ffff1fe6ab24730a985d17759"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplace.eventSubProcesses.bpmn",
+        "storage": "generated",
+        "size_bytes": 6828,
+        "sha256": "e9faea5fdb39f592a3360899da42f22b8483d62b39d41c625eca35c7afe52fe3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplace.poolMessageFlows.bpmn",
+        "storage": "generated",
+        "size_bytes": 2507,
+        "sha256": "efaa82a7129371868e9c82ea40bd5561862ef0ccdbeae61ffede9a6e657fa2b8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplace.poolMessageFlows.vertical.bpmn",
+        "storage": "generated",
+        "size_bytes": 2571,
+        "sha256": "7b07db24d6c9649e8589eb883f1d546861bdc34459c68fe4bcfee4a4dea8fd86"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/BpmnReplaceSpec.js",
+        "storage": "generated",
+        "size_bytes": 59110,
+        "sha256": "7fdc48feb29df34ca80350385db7f65da70766011f5c701963790ae81d6f731f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/ReplaceRulesSpec.js",
+        "storage": "generated",
+        "size_bytes": 2048,
+        "sha256": "a4837b168c93b8d88b64f5c12e61d02c883494e6146ef35b57be628e682111e0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace/SubProcess-collapsed.bpmn",
+        "storage": "generated",
+        "size_bytes": 2221,
+        "sha256": "83c562d41fdb38def6ba0143609f8df39284d503c8d31d7a4d5965c68484d4d3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace-preview/BpmnReplacePreview.bpmn",
+        "storage": "generated",
+        "size_bytes": 2443,
+        "sha256": "6c3999f37ff389131b8267ae1a90ad76cb3e76dd6f332a0a196d1552d18993e8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/replace-preview/BpmnReplacePreviewSpec.js",
+        "storage": "generated",
+        "size_bytes": 9606,
+        "sha256": "d203e9a3073785eca461dc1a38653a1c6832b9660fef4a0c2124ed1e743df657"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.attaching.bpmn",
+        "storage": "generated",
+        "size_bytes": 7653,
+        "sha256": "ea6afff3ce8355652bd0ca32b1915d3ea09100f532c885a30074b854f875d5d3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.boundaryEvent.bpmn",
+        "storage": "generated",
+        "size_bytes": 5249,
+        "sha256": "1da9892c580863faf07537d0c70832a21eda12f5a34b8ed99de1d8eb7a4f3c51"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.collaboration-dataAssociation.bpmn",
+        "storage": "generated",
+        "size_bytes": 2031,
+        "sha256": "29b6501436eb4f8c46bf4341d170e8a9dac6051420a41c6ba43c7fa578508ae1"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.collaboration-empty.bpmn",
+        "storage": "generated",
+        "size_bytes": 1026,
+        "sha256": "2d428d2bd8744be1af415366e1065431b093fed2ee8f262bb3752b489a0edb9b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.collaboration-lanes.bpmn",
+        "storage": "generated",
+        "size_bytes": 4807,
+        "sha256": "9bbc97a5f070217d7efb2a085b4dffb69e74723841e6009d95e25171540d662b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 9633,
+        "sha256": "4437f717acee8ec8533f1496bf1bd4453c082c47a647839c96a640211f172a6d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.collapsedPools.bpmn",
+        "storage": "generated",
+        "size_bytes": 1321,
+        "sha256": "e6ddd283a1c1622bf91f88849038b7be67b074d07064c4b4922a8fa9adfd0694"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.compensation-collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 2624,
+        "sha256": "b1933826166a16a797166615f315acf60b381ab75b25f2d2ad67ebea1dd26f09"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.compensation.bpmn",
+        "storage": "generated",
+        "size_bytes": 5174,
+        "sha256": "846460c725cc6d86fcd68697eee4ada0569947cc85ae9898dae5f20ee44f5bb2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.connectOnCreate.bpmn",
+        "storage": "generated",
+        "size_bytes": 833,
+        "sha256": "2c0ffaf5a46d4ecb4c78e62369c8091b9c516e3efe2e39119752f62d8909489c"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.dataAssociation.bpmn",
+        "storage": "generated",
+        "size_bytes": 1607,
+        "sha256": "c11754ad3a2e489ade12dfc53362c88a20daffdcdfee1939910d0eab13a480e8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.dataInputOutput.collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 5719,
+        "sha256": "b68097caeb5d390d4ad355fd31560e6ff9db1708a45405f138319c9cc172a534"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.dataInputOutput.process.bpmn",
+        "storage": "generated",
+        "size_bytes": 4700,
+        "sha256": "04fca24fd1310e4fe4c9f116ad61110d3067dfbf89f2c081d8316e3968a43f17"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.detaching.bpmn",
+        "storage": "generated",
+        "size_bytes": 7191,
+        "sha256": "ecd7add7117472af1b11692471d5eb3d47bf7f0947f893df9d275d5e06752c34"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.eventBasedGatewayBasic.bpmn",
+        "storage": "generated",
+        "size_bytes": 4756,
+        "sha256": "c1b36da7f480f97517257c41923e6c20ca70fdd0ccbc5c063754fb492e960b54"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.groups.bpmn",
+        "storage": "generated",
+        "size_bytes": 2087,
+        "sha256": "05e6a37e21ef916c398a5faa73ae46c833a1a835c56b1b3be9b773d07dbcabce"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.insert.bpmn",
+        "storage": "generated",
+        "size_bytes": 2585,
+        "sha256": "f8ae3fbe1e253cf16a91ecf22567e92dba04bfbc952f7049b51b997dd8efe669"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.messageFlow.bpmn",
+        "storage": "generated",
+        "size_bytes": 1622,
+        "sha256": "197a5a1d111fb66c2564bdcf75c4d40e69ad129f7081c1045bc938465fdc86ce"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.moveLane.bpmn",
+        "storage": "generated",
+        "size_bytes": 1356,
+        "sha256": "4afbc63e1bd6076527bb43073c5e33eaa98eb7b04f1f61ba28a90b9324e0bfaa"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.multiSelectionPools.bpmn",
+        "storage": "generated",
+        "size_bytes": 2095,
+        "sha256": "c343ca8a1cf8df06626e8436d74085b07d54670a9b186ef02e8b1f8400f82e51"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.process.bpmn",
+        "storage": "generated",
+        "size_bytes": 6243,
+        "sha256": "8157f34f246dbb6f645539237c9ef5b63299845b732e01fd89b86900c1090c02"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRules.subProcess-dataAssociation.bpmn",
+        "storage": "generated",
+        "size_bytes": 2459,
+        "sha256": "8283e2c79e1fac0f83fcb7b66d094cc5512e682441c8f3f4ff71737f05d2ae63"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/BpmnRulesSpec.js",
+        "storage": "generated",
+        "size_bytes": 57280,
+        "sha256": "9d390424ece3201d084bbe1a98a55161968c57f843dc64c2f7fda9efea8c98c4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/rules/Helper.js",
+        "storage": "generated",
+        "size_bytes": 3280,
+        "sha256": "c64f449d1bba8935bd02ee1222d01c498f99f406fa37e18045f68b6b260bfaed"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/search/BpmnSearchProviderSpec.js",
+        "storage": "generated",
+        "size_bytes": 5296,
+        "sha256": "4b19ee6e507c98f9a211cf8a257c218550516adf158a16e72ab666ea5539b5c1"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/search/bpmn-search-collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 5982,
+        "sha256": "3424c0b3b394cde9141effdfaaaf33a9f2696cea11b296931e6efec512eb854d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/search/bpmn-search-sorting.bpmn",
+        "storage": "generated",
+        "size_bytes": 3203,
+        "sha256": "fed5973f72ab170daaf775919a436713ea00ba3dee3d5141b9e6d3e25f48d7bb"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/search/bpmn-search.bpmn",
+        "storage": "generated",
+        "size_bytes": 5855,
+        "sha256": "e0c180b977d58d124a5be2691197789b1425fe81e0f61f90d66eb3d6cfba69ae"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnConnectSnapping.bpmn",
+        "storage": "generated",
+        "size_bytes": 5102,
+        "sha256": "e2abc5921895e27e2d32a0e2b4bf5404e83aa9cb2c19ee70955863f2c93b3cdf"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnConnectSnappingSpec.js",
+        "storage": "generated",
+        "size_bytes": 10725,
+        "sha256": "a98622ea9d0f7f651c01c95177cf404fa8af22d1a030803e3ed03b5aa9f3ecaa"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnCreateMoveSnapping.boundary-events.bpmn",
+        "storage": "generated",
+        "size_bytes": 1248,
+        "sha256": "b12bc52d85113cf2bc172cdd3cfe978db40db8b85c6993a36f03588044c1b58f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnCreateMoveSnapping.collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 1671,
+        "sha256": "e220d86ae18a8703aa6b79c5bce748c907e3b923c08a7f6306cb3e61bbcfe346"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnCreateMoveSnapping.docking-create-mode.bpmn",
+        "storage": "generated",
+        "size_bytes": 1330,
+        "sha256": "06fe37ff81e8733d0a010cea261a007e04d48786c898a7b6c35def58c060f4be"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnCreateMoveSnapping.docking-points.bpmn",
+        "storage": "generated",
+        "size_bytes": 2996,
+        "sha256": "c23570768407237186e7a727b03fa18680a8f3504799900a6333e82e21ce90aa"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnCreateMoveSnapping.process.bpmn",
+        "storage": "generated",
+        "size_bytes": 771,
+        "sha256": "36e543de945e4081c51d67f333f94a028dd730dbe6e81477e8144a6e2ecc2eb8"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnCreateMoveSnapping.sequence-flows.bpmn",
+        "storage": "generated",
+        "size_bytes": 1665,
+        "sha256": "2e44c7b414e466b20835636497d4091a0299b5131ebfa2a6cdbd29b9108550db"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnCreateMoveSnapping.trbl-snapping.bpmn",
+        "storage": "generated",
+        "size_bytes": 2420,
+        "sha256": "8c0a1e6192fc7846ea465475b13156d1619112183e65fa9c07661c1753a8f51b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/snapping/BpmnCreateMoveSnappingSpec.js",
+        "storage": "generated",
+        "size_bytes": 18395,
+        "sha256": "1365011d4471dbf9ea10a30a357a0328effe872b1537227adde2eab78b91e3c1"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/space-tool/BpmnSpaceTool.artifacts.bpmn",
+        "storage": "generated",
+        "size_bytes": 6170,
+        "sha256": "488c38901d62a69f13d969ee64b7bd1973226df6bdb760b4422c64371ebcdae3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/space-tool/BpmnSpaceTool.basics.bpmn",
+        "storage": "generated",
+        "size_bytes": 4678,
+        "sha256": "19398c5820f403b56d221158b7bed6bb57756598e9978bfef7980d11faed4f40"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/space-tool/BpmnSpaceTool.boundary-events.bpmn",
+        "storage": "generated",
+        "size_bytes": 1958,
+        "sha256": "e3a08f5a6602ed9c11649234e942795ffef95267b1bbcf7c7936dd3a02e23586"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/space-tool/BpmnSpaceTool.participants.bpmn",
+        "storage": "generated",
+        "size_bytes": 1296,
+        "sha256": "62ee6bd66a44ae6c51cea9d5119548dc105395e52a7247457be1456970071657"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/space-tool/BpmnSpaceTool.text-annotations.bpmn",
+        "storage": "generated",
+        "size_bytes": 1427,
+        "sha256": "e4994f3bb88d83c13d2ee28136ca6a791824313990d08988d5bd44eaf423be7f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/features/space-tool/BpmnSpaceToolSpec.js",
+        "storage": "generated",
+        "size_bytes": 21822,
+        "sha256": "0be76c0128d21fe5dbb876a8d83871936f4a72eaeab01ffcedb26c165c8efe84"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/helper/InjectSpec.js",
+        "storage": "generated",
+        "size_bytes": 1171,
+        "sha256": "4d44de7636ee6c76e9e056861913aee7ba972af397f72d9b14a5de10d167bef6"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/i18n/custom-translate/custom-translate.js",
+        "storage": "generated",
+        "size_bytes": 328,
+        "sha256": "5aac41e5749ff7ad944d14721700d95114b08693cfcc64d93e87e8b160329391"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/i18n/custom-translate/index.js",
+        "storage": "generated",
+        "size_bytes": 112,
+        "sha256": "6074fe9eca06c09342bb33a6ad53529b76694d9f1f20dffbc2e3192eca2a827d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/i18n/translateSpec.js",
+        "storage": "generated",
+        "size_bytes": 1286,
+        "sha256": "3eb0426091b2da48a6d07f21d08f033fa5b021ea5818e52f5398a60220dd9a8a"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/BpmnTreeWalkerSpec.js",
+        "storage": "generated",
+        "size_bytes": 4864,
+        "sha256": "72c9eb7e519be8257fd418b5466a239cfe4d28093283d125a2edde7480e8ce84"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/ImporterSpec.js",
+        "storage": "generated",
+        "size_bytes": 30227,
+        "sha256": "ab4da0ba3f299ce2cb7a7e15a72404377fd6b27015933e9ea5730b8c4432127b"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/ModelWiringSpec.js",
+        "storage": "generated",
+        "size_bytes": 5853,
+        "sha256": "568c5d7c72b4f8b498accbbf16f92c6db7fe64ab8c8c3cef273426f833637a62"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/data-association.bpmn",
+        "storage": "generated",
+        "size_bytes": 2437,
+        "sha256": "9452718e23f51d8f175d871af89a425324ea20a2db1f436d3637bcfd82e68926"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/AssociationSpec.collaboration.bpmn",
+        "storage": "generated",
+        "size_bytes": 3206,
+        "sha256": "66985990b3606988b5187f17349f8a5784c11c92858d9e104fe2b54c3b759449"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/AssociationSpec.compensation.bpmn",
+        "storage": "generated",
+        "size_bytes": 2034,
+        "sha256": "2ca3f7738f9f5abe47efef8636d06cf453051485422bf5934d50c85c43548da7"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/AssociationSpec.data-association.bpmn",
+        "storage": "generated",
+        "size_bytes": 3612,
+        "sha256": "d897483d7b3e8179dd8bbbcf9771fdb49295b9a2dda71f476b429510aed1fd58"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/AssociationSpec.data-input-output.bpmn",
+        "storage": "generated",
+        "size_bytes": 2576,
+        "sha256": "8894c3a30cbf310e5d024ea2ab542177d938b22069c68dff5e923f680a5de1d4"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/AssociationSpec.events.bpmn",
+        "storage": "generated",
+        "size_bytes": 2770,
+        "sha256": "aaf328177d6eab22c4de071b1d4b68b5dd552f67ed35deb3f20a5c3f694fc1bc"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/AssociationSpec.js",
+        "storage": "generated",
+        "size_bytes": 3617,
+        "sha256": "9b0490630ab57909585fb2dfffdd800c42064d548d52deae67fb4209b39b1a49"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/AssociationSpec.text-annotation.bpmn",
+        "storage": "generated",
+        "size_bytes": 2683,
+        "sha256": "61b6f86e5e8bd647936e95a3d39722b3b33567764736e5137095658bedacfc2d"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/CollapsedSpec.js",
+        "storage": "generated",
+        "size_bytes": 5383,
+        "sha256": "9bdb77b8499f451308b59bb44848836accdd1da3ba762df5454596a112051323"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/DataInputOutput.bpmn",
+        "storage": "generated",
+        "size_bytes": 4700,
+        "sha256": "04fca24fd1310e4fe4c9f116ad61110d3067dfbf89f2c081d8316e3968a43f17"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/DataInputOutputSpec.js",
+        "storage": "generated",
+        "size_bytes": 1408,
+        "sha256": "afff86351bebb0a5685277c1ffe576eb5611dcd9edfa5f2932d778b43c566787"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/Groups.bpmn",
+        "storage": "generated",
+        "size_bytes": 1588,
+        "sha256": "3d6e863fa8104b24c6e125b8af4fd60cec090ba6f2c1def01aa9c9dc26f5ced0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/GroupsSpec.js",
+        "storage": "generated",
+        "size_bytes": 670,
+        "sha256": "5e521073da1bce107c35268aeaf3299b3f66dac8317ae2fa4c0b6ba9f99ba7e0"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/elements/LabelSpec.js",
+        "storage": "generated",
+        "size_bytes": 2518,
+        "sha256": "37d9f634700989bb83d94ca6025f12a05863bc6d79cab339e59f3e5f0c3d66b3"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/lane-flowNodes.bpmn",
+        "storage": "generated",
+        "size_bytes": 2615,
+        "sha256": "6881e10cde0d64e77ffe06956cec2550b532aaf393fef641d89875c99f561b5f"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/lane-missing-flowNodeRef.bpmn",
+        "storage": "generated",
+        "size_bytes": 1652,
+        "sha256": "c83e4cb88b43711cdd35f5c93e523843b368c4e391ba94e31b95e8fa12539be2"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/missing-di-plane-root-element.bpmn",
+        "storage": "generated",
+        "size_bytes": 942,
+        "sha256": "b3727bc05e2a98e20a51e161cae5acbbe5479b08931e095192180dcb2e9fab8e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/missing-di-plane.bpmn",
+        "storage": "generated",
+        "size_bytes": 1117,
+        "sha256": "6f6bbf163092935f05ecaae7f3cc7b82e36b17603f1c6dac31729887c6c4b548"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/sequenceFlow-missingWaypoints.bpmn",
+        "storage": "generated",
+        "size_bytes": 1328,
+        "sha256": "93d07bbed7acc5fab8f5543c3b75805b03b97ece092434bd640e8a97d797e04e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/import/sequenceFlow-ordering.bpmn",
+        "storage": "generated",
+        "size_bytes": 5779,
+        "sha256": "28571c941dc473d26c8d7fdcacaf8d5347502763f17261555c37193053b380cf"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/util/ModelUtilSpec.js",
+        "storage": "generated",
+        "size_bytes": 3083,
+        "sha256": "b5cee0ee47ae14f41a9508887c122fa8ec761641ff74752884f5bbce5f42232e"
+      },
+      {
+        "path": "@task/tests/payload/test/spec/util/svgHelpersSpec.js",
+        "storage": "generated",
+        "size_bytes": 1641,
+        "sha256": "e841561bb64ee420cd8b37cf4ab56fb752a567b1a1a18a9c4ba8d7ca0321a848"
+      },
+      {
+        "path": "@task/tests/payload/test/testBundle.js",
+        "storage": "generated",
+        "size_bytes": 111,
+        "sha256": "4cb41ef8289f651759dc924474eeced2a4f89710a68acfa871f36d6ede75387e"
+      },
+      {
+        "path": "@task/tests/payload/test/util/KeyEvents.js",
+        "storage": "generated",
+        "size_bytes": 575,
+        "sha256": "ba502bb84e7eb766e610be97d356958c7e8777a53028be0364c35ad51f31a2e1"
+      },
+      {
+        "path": "@task/tests/payload/test/util/MockEvents.js",
+        "storage": "generated",
+        "size_bytes": 1298,
+        "sha256": "e9e3d6468d5f4e476c5b5143d47575614a46e80688e0ac7691e78d24faa9c685"
+      },
+      {
+        "path": "@task/tests/payload/test/util/custom-rules/CustomRules.js",
+        "storage": "generated",
+        "size_bytes": 342,
+        "sha256": "52bfe0bbbd06749008d7c811357a6181ebf1f34b7ee679476815e0879695ac32"
+      },
+      {
+        "path": "@task/tests/payload/test/util/custom-rules/index.js",
+        "storage": "generated",
+        "size_bytes": 132,
+        "sha256": "a1af453a30191f5d432294d1dc14f5f77198b1aee500535f67012885e9a4200e"
+      },
+      {
+        "path": "@task/tests/payload/test/util/svgHelpers.js",
+        "storage": "generated",
+        "size_bytes": 1385,
+        "sha256": "a0afeab7265795ef120dc32af92235065c4d79de9bb3b2b3c5ddc0db922f22e2"
+      },
+      {
+        "path": "@task/tests/sweb_grade.py",
+        "storage": "generated",
+        "size_bytes": 5943,
+        "sha256": "6821186f86d18413499aa563d24118d113130b7df8b6ff342c17a967743e524b"
+      },
+      {
+        "path": "@task/tests/sweb_runner.cjs",
+        "storage": "generated",
+        "size_bytes": 3158,
+        "sha256": "6add9f1f02ceab684705798d1e4ed2baf8fe11fd3b8c20a3680cc3241c7ee615"
+      },
+      {
+        "path": "@task/tests/test.sh",
+        "storage": "generated",
+        "size_bytes": 492,
+        "sha256": "b7554ed88c76dbb1437c6ea8a9948c0c614b2794e6ca1b7d10ddf27f69ed9b6a"
+      }
+    ]
+  },
+  "external_bindings": [
+    {
+      "path": "crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_cases_verified/2396/14_baseline_tree.tar",
+      "sha256": "83770d70b77ad5238dd8c85a741a0092f00de2702869e9db32a43466df7e2f75",
+      "size_bytes": 5877760,
+      "storage": "external_bound",
+      "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_cases_verified/2396/14_baseline_tree.tar"
+    },
+    {
+      "path": "crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_cases_verified/2396/14_reference_tree.tar",
+      "sha256": "855f25ef2a7ca282b4e78163f84b17b3f62e1d528f8acb355fda7df336a1ae7d",
+      "size_bytes": 5888000,
+      "storage": "external_bound",
+      "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_cases_verified/2396/14_reference_tree.tar"
+    },
+    {
+      "path": "crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_environment_archive/14_images.tar",
+      "sha256": "4ff8a7b063395d7bc981484089c0dd9b23f06c08061c11c7db566e0e5ff4b1b4",
+      "size_bytes": 1108039680,
+      "storage": "external_bound",
+      "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/14_pr_test_pilot/20260901_bpmn_10/14_environment_archive/14_images.tar"
+    }
+  ],
+  "pipeline_status": {
+    "source_archived": "complete",
+    "test_construction": "complete",
+    "base_gold_measurement": "complete",
+    "harbor_empty": "not_started",
+    "harbor_oracle": "not_started"
+  },
+  "pipeline_details": {
+    "test_construction": "author tests plus two generated geometry behavior tests",
+    "base_gold_measurement": "retained author/repository-only subset: 2 F2P and 72 P2P, 3 repeats per side; prior verifier-generated 2 F2P excluded",
+    "harbor_empty": {
+      "result": "passed",
+      "evidence": "05_harbor/jobs/05_empty_control_03/task__GJb3C6L/verifier/15_test_results.json",
+      "expected_reward": 0
+    },
+    "harbor_oracle": {
+      "result": "passed",
+      "evidence": "05_harbor/jobs/05_oracle_control_03/task__2LPYke2/verifier/15_test_results.json",
+      "expected_reward": 1
+    },
+    "test_extension_verifier": {
+      "status": "complete",
+      "runner_version": "test-extension-verifier-run-v2",
+      "backend": "gemini",
+      "model": "gemini-3.7-flash",
+      "verdict": "no_additional_tests_needed",
+      "generated_bundle_count": 0,
+      "behavior_contract_required": true,
+      "oracle_quality_plan_required": true,
+      "prior_verifier_generated_tests_excluded": true,
+      "requested_batch_concurrency": 10,
+      "boundary": "Generated tests are proposals until the identical patch is measured on Base and Gold."
+    }
+  },
+  "blockers": [
+    {
+      "stage": "formal_promotion",
+      "code": "human_gates_not_bound",
+      "detail": "Archived as a user-selected candidate; not formally visual/test approved or frozen."
+    },
+    {
+      "stage": "harbor",
+      "code": "harbor_controls_invalidated_by_test_replacement",
+      "detail": "Prior generated test was removed; retained author/repository tests remain measured, but Harbor controls must be rebuilt."
+    }
+  ],
+  "notes": [
+    "The first Harbor control pair is retained as infrastructure failure: untagged image ID was parsed as a registry reference.",
+    "The second pair reached the verifier but exposed a missing generated-suite entry; reward 0 is retained as a real verifier failure.",
+    "The third pair includes both the author suite and generated suite and uses a local tag bound to restored image ID sha256:80d6a16aaf45e19046a80bc856cb0b15955ae44ea550f63afb6492d4c54a96ef.",
+    "Passing selected tests does not prove visual necessity or whole-repository correctness."
+  ],
+  "layout": {
+    "submission_root": ".",
+    "metadata_root": "meta",
+    "metadata_deletion_safe": true
+  }
+}

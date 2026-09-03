@@ -1,0 +1,81 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave17_selected_maplibre_02/16_06_01_text_sufficiency/20260902T144545728567Z",
+  "source_manifest_sha256": "5c7230a2b549f6d46fb7e578f1a86e4dc88539212cef07f54307ed4f0128304d",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "1631b6fde1b9dca45e2e8fb320bef156c6e734f26001b77b2a50f58834676658",
+  "run_id": "v3-wave17-maplibre02-20260902-01",
+  "nonce": "wave17-maplibre02-20260902-nonce01",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave17_maplibre02_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "maplibre__maplibre-gl-js-6470",
+      "source_result_sha256": "560076fd360e40f201b5bd8872965b99ffea147ff83af4997b91e5345dbdfbc4",
+      "source_packet_sha256": "f9fea2eee6cac8853a67c7603df1b208a3ce53919eb47afa9c7757540ff1a596",
+      "source_archive_sha256": "bf4d3f7d58e3dc5c7f2e19672e07240a5dd2787b536f771f4a17be8e2ede1521",
+      "problem_statement_sha256": "e9e2fea396f75dea5c33282ac5166b01dcc3829d3356864163ae2c2cb7d7520d",
+      "available_asset_ids": [
+        "65c39ced1fb6627cb9a4b86bec9bd75240e7527028b15542964a5b3bbd7a7a87",
+        "0fad061b55a79be48deb5835af6b69d227d85dad2e5e32b4caa459c749e47d57"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "1efe5e5048f28e46d7394d526dd48dd3382fec0e5c490b1ed9602e4bd4d34099"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-7705",
+      "source_result_sha256": "19d8faa96f998fc46ee4d2ed617b1fafabcccb364ea589597a70dd07e4cf04be",
+      "source_packet_sha256": "3ef4a098346d41c2075bac57093f046b2e3b5f0eed03af1e9011a5d4e03c3bb0",
+      "source_archive_sha256": "de613dc654ef7541b3bac37ed7d52959468834227120f2b393206fe37d7e82c3",
+      "problem_statement_sha256": "4d6b4afcaf6843a50c054d6cd76d8e8b1d2de9138c43ddea98d7e41a5600cb01",
+      "available_asset_ids": [
+        "3167b15b00f314be41250e74761a247a8b34aac3739fdbeecc53a1af607d371d",
+        "03b22674bb6ef2fe9d523dabb83402ada63c1f3bdcc2cd8d5e310a477161eea4",
+        "ac065d6e638f8b9687c30944e522f2606112b086ce2bcbcd9fa4cb6305d37775",
+        "9b9de6597cba43e93d631f28a95c80d2e32f3d9d5bc0b638d4c6f72a0705e277",
+        "19d0ea2b9fe26a04996f2edad2ff466414939a41848762f20f65dc17dd4c8d6a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "8f133a603420fe25afa11bacc68465bf291f59d1d6619aa714086847ce1c78b3"
+    }
+  ],
+  "expected_case_calls": 2,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 12,
+  "authorized": true
+}

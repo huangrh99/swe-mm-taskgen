@@ -1,0 +1,30 @@
+{
+  "schema_version": "source-test-manifest-v1",
+  "tests": [
+    {
+      "test_id": "f2p_single_logical_self_loop_render_edge",
+      "class": "FAIL_TO_PASS",
+      "path": "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.js",
+      "contains_all": [
+        "export const getEdgesToRender",
+        "const selfLoopEdgeGroups = new Map();",
+        "edgesToRender.push({ edge: mergedEdge, start: mergedEdge.start, end: mergedEdge.end });"
+      ],
+      "contains_none": [],
+      "expected_transition": "fail->pass"
+    },
+    {
+      "test_id": "p2p_recursive_dagre_render_entrypoint_retained",
+      "class": "PASS_TO_PASS",
+      "path": "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.js",
+      "contains_all": [
+        "const recursiveRender = async",
+        "export const render = async",
+        "await recursiveRender"
+      ],
+      "contains_none": [],
+      "expected_transition": "pass->pass"
+    }
+  ],
+  "scope": "Executable source-level smoke assertions only; author Vitest and Cypress tests are inventoried separately and remain the preferred functional oracle."
+}

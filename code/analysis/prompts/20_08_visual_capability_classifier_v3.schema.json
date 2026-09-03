@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-capability-classifier-v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "strict_multimodal_admission",
+    "admission_reason",
+    "assets",
+    "atomic_visual_constraints",
+    "primary_visual_category",
+    "category_purity",
+    "contributing_visual_categories",
+    "evidence_mode",
+    "classification_reason",
+    "human_review_required",
+    "human_review_reasons"
+  ],
+  "properties": {
+    "schema_version": {"const": "visual-capability-classifier-v3"},
+    "task_id": {"type": "string", "minLength": 1},
+    "strict_multimodal_admission": {
+      "enum": [
+        "非文字视觉信息候选不可替代",
+        "只有OCR或文字转写需求",
+        "图片有帮助但文字已足够",
+        "当前输入不足，无法判断"
+      ]
+    },
+    "admission_reason": {"type": "string", "minLength": 1},
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["asset_id", "observed", "solver_visible_role", "task_relevance", "ocr_transcription_sufficient", "observation"],
+        "properties": {
+          "asset_id": {"type": "string", "minLength": 1},
+          "observed": {"type": "boolean"},
+          "solver_visible_role": {
+            "enum": ["实际状态", "期望目标", "多状态过程", "可能泄漏的修复后结果", "当前输入不足，无法判断"]
+          },
+          "task_relevance": {"enum": ["相关", "无关", "当前输入不足，无法判断"]},
+          "ocr_transcription_sufficient": {"enum": ["是", "否", "当前输入不足，无法判断"]},
+          "observation": {"type": "string"}
+        }
+      }
+    },
+    "atomic_visual_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["constraint_id", "description", "visual_category", "evidence_asset_ids", "direct_visual_evidence", "prose_already_complete", "decision_critical", "counterfactual_ambiguity"],
+        "properties": {
+          "constraint_id": {"type": "string", "pattern": "^constraint_[0-9]{3}$"},
+          "description": {"type": "string", "minLength": 1},
+          "visual_category": {"$ref": "#/$defs/visual_category"},
+          "evidence_asset_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "direct_visual_evidence": {"type": "string", "minLength": 1},
+          "prose_already_complete": {"enum": ["是", "否", "当前输入不足，无法判断"]},
+          "decision_critical": {"enum": ["是", "否", "当前输入不足，无法判断"]},
+          "counterfactual_ambiguity": {"type": "string"}
+        }
+      }
+    },
+    "primary_visual_category": {
+      "oneOf": [
+        {"$ref": "#/$defs/visual_category"},
+        {"const": "混合视觉能力"},
+        {"type": "null"}
+      ]
+    },
+    "category_purity": {"enum": ["单一能力题", "主导能力题", "混合能力题", null]},
+    "contributing_visual_categories": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/visual_category"}},
+    "evidence_mode": {
+      "enum": ["单张实际状态图", "单张期望目标图", "实际图与期望图对照", "多张静态状态对照", "GIF、视频或交互时序", "混合视觉证据", "当前输入不足，无法判断"]
+    },
+    "classification_reason": {"type": "string", "minLength": 1},
+    "human_review_required": {"type": "boolean"},
+    "human_review_reasons": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "visual_category": {
+      "enum": ["外观与渲染属性理解", "空间布局与几何理解", "元素结构与视觉状态理解", "动态交互与时序理解", "图形符号与领域语义理解"]
+    }
+  }
+}
+

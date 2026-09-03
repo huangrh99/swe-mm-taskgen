@@ -1,0 +1,265 @@
+{
+  "schema_version": "capability-candidate-pool-config-v1",
+  "records": [
+    {
+      "case_id": "automattic__wp-calypso-111378",
+      "category": "外观与渲染属性理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_100_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/111378",
+      "rationale": "V3 严格视觉必要性通过；徽标变体的配色映射依赖视觉对照。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100957",
+      "category": "外观与渲染属性理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/100957",
+      "rationale": "V3 严格视觉必要性通过；前景与背景对比度是核心约束。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101438",
+      "category": "外观与渲染属性理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/101438",
+      "rationale": "V3 严格视觉必要性通过；SVG 图标颜色差异是核心约束。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102315",
+      "category": "外观与渲染属性理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/102315",
+      "rationale": "V3 严格视觉必要性通过；菜单文字与高亮配色需视觉对照。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99049",
+      "category": "外观与渲染属性理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_11_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/99049",
+      "rationale": "V3 严格视觉必要性通过；控件渲染样式不一致由图片定位。"
+    },
+
+    {
+      "case_id": "bpmn-io__bpmn-js-2396",
+      "category": "空间布局与几何理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_100_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/bpmn-io/bpmn-js/pull/2396",
+      "rationale": "V3 严格视觉必要性通过；连线路径与锚点几何是核心约束。"
+    },
+    {
+      "case_id": "grommet__grommet-7712",
+      "category": "空间布局与几何理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_visual_capability_gemini_41_retry_media_v2/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/grommet/grommet/pull/7712",
+      "rationale": "V3 严格视觉必要性通过；图表扇区间距和切割几何需视觉判断。"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6021",
+      "category": "空间布局与几何理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave17_selected05_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/maplibre/maplibre-gl-js/pull/6021",
+      "rationale": "V3 严格视觉必要性通过；地图中文字朝向和空间变换是核心约束。"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9002",
+      "category": "空间布局与几何理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave13_video_contact_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/excalidraw/excalidraw/pull/9002",
+      "rationale": "V3 严格视觉必要性通过；字体变化后的折线箭头几何更新依赖视觉证据。"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6683",
+      "category": "空间布局与几何理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave15_targeted_03_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/mermaid-js/mermaid/pull/6683",
+      "rationale": "V3 严格视觉必要性通过；图中节点和连线几何关系构成修复约束。"
+    },
+
+    {
+      "case_id": "automattic__wp-calypso-101093",
+      "category": "元素结构与视觉状态理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/101093",
+      "rationale": "V3 严格视觉必要性通过；组件类型与内部结构由图片确定。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99109",
+      "category": "元素结构与视觉状态理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/99109",
+      "rationale": "V3 严格视觉必要性通过；警告提示采用何种控件结构需视觉判断。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101492",
+      "category": "元素结构与视觉状态理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_11_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/101492",
+      "rationale": "V3 严格视觉必要性通过；表单控件的启用与禁用状态是核心约束。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101890",
+      "category": "元素结构与视觉状态理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/Automattic/wp-calypso/pull/101890",
+      "rationale": "V3 严格视觉必要性通过；多个页面中的选项卡结构需视觉归一。"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-11441",
+      "category": "元素结构与视觉状态理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave10_run_01/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/excalidraw/excalidraw/pull/11441",
+      "rationale": "V3 严格视觉必要性通过；导出后元素可见状态是核心约束。"
+    },
+
+    {
+      "case_id": "excalidraw__excalidraw-9010",
+      "category": "动态交互与时序理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_issue_first_reduction_03_run/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/excalidraw/excalidraw/pull/9010",
+      "rationale": "V3 严格视觉必要性通过；端点拖拽时错误重绑依赖交互时序。"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9367",
+      "category": "动态交互与时序理解",
+      "evidence_type": "image_role_candidate",
+      "evidence_file": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_dynamic_current_archives_25/08_04_03_results.json",
+      "asset_ids": ["3cc241ca0cbfc02403d0c62edae084abf61c5c4240e7f2e9c14862cfc620e8c5"],
+      "allowed_roles": ["temporal_sequence"],
+      "pr_url": "https://github.com/excalidraw/excalidraw/pull/9367",
+      "rationale": "高置信 Issue before 视频；展示解绑一端后拖动另一端导致意外重绑。"
+    },
+    {
+      "case_id": "tldraw__tldraw-8498",
+      "category": "动态交互与时序理解",
+      "evidence_type": "image_role_candidate",
+      "evidence_file": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_dynamic_current_archives_25/08_04_03_results.json",
+      "asset_ids": ["d6fd94c16ec3fa8b8e5de3fd8548ec96d68fcdfd4e12edf870321373c7bdb19d", "27ae0e6aeb56d0c33b0ca1d5a408f675214b10cc2045985409c0942aabf49d52"],
+      "allowed_roles": ["temporal_sequence"],
+      "pr_url": "https://github.com/tldraw/tldraw/pull/8498",
+      "rationale": "高置信 Issue before 视频；连续右键时菜单闪现并消失。"
+    },
+    {
+      "case_id": "tldraw__tldraw-8957",
+      "category": "动态交互与时序理解",
+      "evidence_type": "image_role_candidate",
+      "evidence_file": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_dynamic_current_archives_25/08_04_03_results.json",
+      "asset_ids": ["75e9f6af6eef5ec2c16f84176e69033dbc3da37c7ffef6be9a6f482f0f5fa026"],
+      "allowed_roles": ["temporal_sequence"],
+      "pr_url": "https://github.com/tldraw/tldraw/pull/8957",
+      "rationale": "高置信 Issue before 视频；缩放触及下限时视口发生跳动位移。"
+    },
+    {
+      "case_id": "apache__superset-37891",
+      "category": "动态交互与时序理解",
+      "evidence_type": "image_role_candidate",
+      "evidence_file": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_dynamic_video_9275_37891_24/08_04_03_results.json",
+      "asset_ids": ["2ceaa9bc030c444fa4b45723f3b589e3aea91ffe6264c18224b8c246fc9d42b2"],
+      "allowed_roles": ["temporal_sequence"],
+      "pr_url": "https://github.com/apache/superset/pull/37891",
+      "rationale": "高置信 PR before 视频；只保留修复前拖拽预览错位时序，after 已隔离。"
+    },
+
+    {
+      "case_id": "mermaid-js__mermaid-7147",
+      "category": "图形符号与领域语义理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_expected_design_recall_04_run/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/mermaid-js/mermaid/pull/7147",
+      "rationale": "V3 严格视觉必要性通过；Wardley Map 图形约定承载领域语义。"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6789",
+      "category": "图形符号与领域语义理解",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_expected_design_recall_06_run/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/mermaid-js/mermaid/pull/6789",
+      "rationale": "V3 严格视觉必要性通过；half-arrow、stick 与连接圆等符号含义需看图。"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7791",
+      "category": "图形符号与领域语义理解",
+      "evidence_type": "image_role_candidate",
+      "evidence_file": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave20_targeted_mermaid_7791_02/08_04_03_results.json",
+      "asset_ids": ["549d7bf8fb369362d0f48dc6aa8c2140cbc14ba0ea93728ecdf1f7372e737917", "b7938668170c10afc2b7796963d9bd21c257c13401afdaa201db16ad78b1f20c"],
+      "allowed_roles": ["expected_design"],
+      "pr_url": "https://github.com/mermaid-js/mermaid/pull/7791",
+      "rationale": "高置信 Issue 期望设计；泳道图的分区符号与流程语义需人工最终确认。"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-8048",
+      "category": "图形符号与领域语义理解",
+      "evidence_type": "image_role_candidate",
+      "evidence_file": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260902_wave15_targeted_shard_08/08_04_03_results.json",
+      "asset_ids": ["2cece86ec6715c4b0556a3aeb70c353d28c7040e782ce8475a94244e9be6a8f8", "9d59b12f7453175fe10065cdad54751cbcf1beae8b2ccd9745cda417e7e724c0", "141b880af07549d3e7e19f8a49f2413663e5ccd8803eda1b9aa2cf85dd107220"],
+      "allowed_roles": ["expected_design"],
+      "pr_url": "https://github.com/mermaid-js/mermaid/pull/8048",
+      "rationale": "高置信 Issue 期望设计；UML 用例图的参与者、用例与关系符号承载领域语义。"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7251",
+      "category": "图形符号与领域语义理解",
+      "evidence_type": "image_role_candidate",
+      "evidence_file": "crawler-output/multimodal-2025/08_04_pr_image_roles/20260903_domain_symbols_targeted_26/08_04_03_results.json",
+      "asset_ids": ["bd73a441e1417d9df7e739a3893b2862bc94cedff8b91d74daaf1d92044cd63e", "f8a4972d3739b9f8a6974af5c782540aa37436168160b1f748e2a6875c4d77aa"],
+      "allowed_roles": ["expected_design"],
+      "pr_url": "https://github.com/mermaid-js/mermaid/pull/7251",
+      "rationale": "高置信 Issue 期望设计；railroad/syntax diagram 的路径符号表达语法领域语义。"
+    },
+
+    {
+      "case_id": "googlechrome__lighthouse-16403",
+      "category": "混合视觉能力",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_visual_capability_gemini_41_retry_media_v2/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/GoogleChrome/lighthouse/pull/16403",
+      "rationale": "V3 严格混合类；组件结构、空间布局和外观配色同时是关键约束。"
+    },
+    {
+      "case_id": "markedjs__marked-3814",
+      "category": "混合视觉能力",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_visual_capability_gemini_41_retry_media_v2/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/markedjs/marked/pull/3814",
+      "rationale": "一个 V3 批次判为严格混合类；目标界面同时约束结构、布局与呈现。",
+      "warnings": ["另一个 V3 批次认为信息不足；保留为候选，但必须人工复核该模型分歧。"]
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6440",
+      "category": "混合视觉能力",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_expected_design_recall_06_run/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/mermaid-js/mermaid/pull/6440",
+      "rationale": "V3 严格混合类；Event Modeling 的领域符号与空间结构共同决定实现。"
+    },
+    {
+      "case_id": "pixijs__pixijs-11230",
+      "category": "混合视觉能力",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_mixed_targeted_07_run/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/pixijs/pixijs/pull/11230",
+      "rationale": "V3 严格混合类；渲染属性与几何呈现同时构成约束。"
+    },
+    {
+      "case_id": "apache__superset-36323",
+      "category": "混合视觉能力",
+      "evidence_type": "strict_v3",
+      "evidence_file": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_mixed_targeted_07_run/16_03_08_pre_review_classifications.json",
+      "pr_url": "https://github.com/apache/superset/pull/36323",
+      "rationale": "V3 严格混合类；地图图形语义、悬浮状态和文本呈现共同决定修复。"
+    }
+  ]
+}

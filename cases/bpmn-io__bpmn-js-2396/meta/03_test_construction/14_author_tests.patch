@@ -1,0 +1,102 @@
+diff --git a/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn b/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn
+index 324fba17..4fca7378 100644
+--- a/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn
++++ b/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn
+@@ -13,6 +13,12 @@
+     <bpmn:boundaryEvent id="BoundaryEvent_RightCenter" attachedToRef="SubProcess" />
+     <bpmn:task id="Task_Bottom" />
+     <bpmn:task id="Task_Top" />
++    <bpmn:task id="Task_CornerBoundary" />
++    <bpmn:boundaryEvent id="BoundaryEvent_BottomRightCorner" attachedToRef="Task_CornerBoundary" />
++    <bpmn:task id="Task_CornerTarget" />
++    <bpmn:task id="Task_CornerBoundaryH" />
++    <bpmn:boundaryEvent id="BoundaryEvent_TopRightCorner" attachedToRef="Task_CornerBoundaryH" />
++    <bpmn:task id="Task_CornerTargetH" />
+   </bpmn:process>
+   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+@@ -52,6 +58,24 @@
+       <bpmndi:BPMNShape id="Task_1bc634w_di" bpmnElement="Task_Top">
+         <dc:Bounds x="400" y="0" width="100" height="80" />
+       </bpmndi:BPMNShape>
++      <bpmndi:BPMNShape id="Task_CornerBoundary_di" bpmnElement="Task_CornerBoundary">
++        <dc:Bounds x="800" y="300" width="100" height="80" />
++      </bpmndi:BPMNShape>
++      <bpmndi:BPMNShape id="BoundaryEvent_BottomRightCorner_di" bpmnElement="BoundaryEvent_BottomRightCorner">
++        <dc:Bounds x="891" y="371" width="36" height="36" />
++      </bpmndi:BPMNShape>
++      <bpmndi:BPMNShape id="Task_CornerTarget_di" bpmnElement="Task_CornerTarget">
++        <dc:Bounds x="859" y="480" width="100" height="80" />
++      </bpmndi:BPMNShape>
++      <bpmndi:BPMNShape id="Task_CornerBoundaryH_di" bpmnElement="Task_CornerBoundaryH">
++        <dc:Bounds x="800" y="100" width="100" height="80" />
++      </bpmndi:BPMNShape>
++      <bpmndi:BPMNShape id="BoundaryEvent_TopRightCorner_di" bpmnElement="BoundaryEvent_TopRightCorner">
++        <dc:Bounds x="891" y="91" width="36" height="36" />
++      </bpmndi:BPMNShape>
++      <bpmndi:BPMNShape id="Task_CornerTargetH_di" bpmnElement="Task_CornerTargetH">
++        <dc:Bounds x="1000" y="69" width="100" height="80" />
++      </bpmndi:BPMNShape>
+     </bpmndi:BPMNPlane>
+   </bpmndi:BPMNDiagram>
+ </bpmn:definitions>
+diff --git a/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js b/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js
+index 5757c0ea..20008344 100644
+--- a/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js
++++ b/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js
+@@ -281,6 +281,55 @@ describe('features/modeling - layout', function() {
+         ]);
+       });
+ 
++
++      it('should layout straight for axis-aligned corner boundary event', inject(
++        function(elementRegistry, modeling) {
++
++          // given
++          // BoundaryEvent_BottomRightCorner is on the bottom-right corner of
++          // Task_CornerBoundary (mid x=909, y=389 — outside the contracted task
++          // bounds right=890, bottom=370 — giving 'bottom-right' orientation).
++          // Task_CornerTarget center x=909 matches exactly, so getOrientation
++          // returns strict 'bottom' with no horizontal component, triggering the
++          // early return in getBoundaryEventTargetLayout → layout 'b:v'.
++          var boundaryEvent = elementRegistry.get('BoundaryEvent_BottomRightCorner'),
++              targetTask = elementRegistry.get('Task_CornerTarget');
++
++          // when
++          var connection = modeling.connect(boundaryEvent, targetTask);
++
++          // then - straight vertical line, no extra waypoints
++          expect(connection).to.have.waypoints([
++            { x: 909, y: 407 },
++            { x: 909, y: 480 }
++          ]);
++        }
++      ));
++
++
++      it('should layout straight for horizontally axis-aligned corner boundary event', inject(
++        function(elementRegistry, modeling) {
++
++          // given
++          // BoundaryEvent_TopRightCorner is on the top-right corner of
++          // Task_CornerBoundaryH (mid x=909, y=109 — outside the contracted task
++          // bounds right=890, top=110 — giving 'top-right' orientation).
++          // Task_CornerTargetH center y=109 matches exactly, so getOrientation
++          // returns strict 'right' with no vertical component, triggering the
++          // early return in getBoundaryEventTargetLayout → layout 'r:h'.
++          var boundaryEvent = elementRegistry.get('BoundaryEvent_TopRightCorner'),
++              targetTask = elementRegistry.get('Task_CornerTargetH');
++
++          // when
++          var connection = modeling.connect(boundaryEvent, targetTask);
++
++          // then - straight horizontal line, no extra waypoints
++          expect(connection).to.have.waypoints([
++            { x: 927, y: 109 },
++            { x: 1000, y: 109 }
++          ]);
++        }
++      ));
+     });
+ 
+   });

@@ -1,0 +1,2 @@
+-r 09_requirements_verifier.txt
+openai==2.15.0

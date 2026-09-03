@@ -1,0 +1,57 @@
+{
+  "schema_version": "carbon-human-gate-input-checklist-v1",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "candidate_status": "provisional",
+  "visual_gate": {
+    "status": "pending",
+    "review_inputs": [
+      "Complete verbatim Issue #20120 and #20849 text",
+      "Four SHA-bound Issue #20120 before/expected images",
+      "Text-only verifier result and visual verifier result",
+      "Explicit exclusion of PR prose, PR images, comments, patch and solution",
+      "One question: does the image contribute necessary non-text information beyond the text for locating/specifying the repair?"
+    ],
+    "required_decision_fields": [
+      "decision=approved|rejected",
+      "reviewer",
+      "reviewed_at",
+      "evidence_asset_ids",
+      "reason",
+      "ocr_or_text_substitute_sufficient"
+    ]
+  },
+  "tests_gate": {
+    "status": "pending",
+    "review_inputs": [
+      "Frozen test manifest and runner source",
+      "Baseline and reference observations for every test ID",
+      "Issue-image-to-assertion mapping",
+      "Alternative-correct-patch acceptance analysis",
+      "Weak/wrong patch rejection evidence",
+      "Repository regression command and outcome",
+      "Known limitations of synthetic fixture versus real component"
+    ],
+    "required_decision_fields": [
+      "decision=approved|rejected",
+      "reviewer",
+      "reviewed_at",
+      "approved_f2p_ids",
+      "approved_p2p_ids",
+      "rejected_test_ids_with_reason",
+      "required_revisions",
+      "reason"
+    ]
+  },
+  "controls_and_freeze_inputs_after_both_gates": [
+    "candidate task material checksum",
+    "exact base image ID and immutable local binding",
+    "empty control reward 0 with no exception",
+    "oracle control reward 1 with no exception",
+    "expected test inventory equals observed test inventory",
+    "wrong/partial patch negative controls",
+    "git history scrub evidence",
+    "credential/socket/leak isolation probe",
+    "formal image ID and frozen manifest",
+    "fresh exact-checksum external-run authorization"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_02_issue_proposals_wave08/20260902T085421477840Z",
+  "source_manifest_sha256": "1b7f6e9b586fcd4ab1454ec5c6992190f81ff38191dcaf62462712ec86ab4b0b",
+  "prompt_sha256": "d1f5db123c64e9c9447ae5adb4724e365b816d77474f18462b54f50beb8f0cb6",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "3cbb12c5b2b939cbb4c9e6c5c87dd7ea9565c385a0b1516d41fcf99a65203afa",
+  "run_id": "v3_wave08_issue_20260902_01",
+  "nonce": "v3_wave08_issue_20260902_nonce01",
+  "expires_at": "2026-09-04T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave08_issue_proposals",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 2,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "mermaid-js__mermaid-7744",
+      "source_result_sha256": "77686494614e1cbda4dd78e7e2d445ecd5dfde5b9b943d6e783094154175b832",
+      "source_packet_sha256": "a9c7c2fbce2525e93a6420bf9df2265e4385a9ce4ea7e575132a069b70952b86",
+      "source_archive_sha256": "96afc20a358a7d48e62d524838169cdfeeac2332d5ab5426fdfe0dc3cc2ad6c5",
+      "problem_statement_sha256": "726f4d5131ae85c40643aa1bb7dc5d37c297781d97b14c4cd5f4da2d7450001e",
+      "available_asset_ids": [
+        "65d9ef9aff82a8d4b8b4b80500e1fb7a0796082d5ee21c9df750baa6d212e031"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "ff77762cbb3882abe0dbbbc2f0213e87876c72fd216aead0617f02847fdea07b"
+    },
+    {
+      "case_id": "apache__superset-36306",
+      "source_result_sha256": "b9b35bfeb36f40d025f0fa653311936c832e487620a4b9724d3205674e49ca3d",
+      "source_packet_sha256": "29436a19d63c2ac70a14f69465ff91d525af74a06740e174721f5ac57d6149af",
+      "source_archive_sha256": "6478a1e09d2fab446d41c2f8c85dde807a0eb58d6201c09f477afaa53ba4b914",
+      "problem_statement_sha256": "e43140207ec69cb2129163efe714977131624ad0cfb1003e38525f56af09fb7a",
+      "available_asset_ids": [
+        "45f64e79a6ff0fb6722835ffbf3f8d306ea8312660c194e47d55bbffd2cb7c90",
+        "11be4dd4e030961dcbe0e164455f85114350bcc679d4727fcbba43bc6195370a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "4482dcb467d5b1036a23828b621c6001141259ea282b940b2f0560d9ec666b86"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-11637",
+      "source_result_sha256": "74b1fbaf77b19ece9278d7d730cf65364a50b34fbd696db641c8ec91b46df148",
+      "source_packet_sha256": "8142b6fddf78b5f2316197b27c17c934b5878df38104cd9063ddf3b9f7f9fa29",
+      "source_archive_sha256": "07616bd68ae7ac807fb823af00e9398e37b46c6bda7e4b401faa5775186f72a5",
+      "problem_statement_sha256": "e30d653add98812bd95478394536a58df875fd223b4a125f26765015ae90905f",
+      "available_asset_ids": [
+        "aa31275d0b48a27835f1bec6d7b3924ed12b6ae599b21a1913045f4d0d24a172",
+        "2f5da070f6d88a5326e3a174a69a80b28b59f281ca66a7098e766a1201e7f999",
+        "95a259a7f2e969873a7c03a6111c3583f85d9988f02e0a6c95fc16f68805270e"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "437f7da5c44ac78d9b0c93d1d335107beedd66756e4b3b965959d4153960d9d3"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7754",
+      "source_result_sha256": "d078bc5b4e12683c8a9af65e17b9652023726af2b963c319db518c8f93cc82ac",
+      "source_packet_sha256": "6c64811251b2f430b00a90a22c94c12be06a77294148e2681284a71b7bba7c74",
+      "source_archive_sha256": "8b524538fe18d8bb454cb9c82a7b510bf431dd13414985770d8f17d2cb11dc59",
+      "problem_statement_sha256": "4d526a24a2d886cb905c38743cb100ad6c3d2e7ee51972d9fb686f7aa799e162",
+      "available_asset_ids": [
+        "b60a4d91bdf98e6b9835268e9a23a6045d9e24a06ed35458a60dcaf31f663850",
+        "5a04e7523678fbd898acc3c637491c6c7c5c3a1bcc857377427f6d4d3bba59e4"
+      ],
+      "source_media_binding_status": "invalid",
+      "source_media_binding_error": "_SourceMediaRecordError: media asset is missing or duplicated in source archive: asset_id=b60a4d91bdf98e6b9835268e9a23a6045d9e24a06ed35458a60dcaf31f663850 matches=2",
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "4c9143449985749238f54ff08dc157e58f3c5c3b77f8f678e2ae4e26bd0393b0"
+    }
+  ],
+  "expected_case_calls": 3,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 2,
+  "maximum_api_requests": 12,
+  "authorized": true
+}

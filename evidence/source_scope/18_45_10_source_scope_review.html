@@ -1,0 +1,24 @@
+<!doctype html><html lang='zh-CN'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>carbon-design-system__carbon-20978 · Parent Issue 范围判定</title>
+<style>
+:root{--bg:#f5f6f8;--panel:#fff;--ink:#17191c;--muted:#626971;--line:#d8dce1;--accent:#14634f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.45 system-ui,sans-serif}
+main{max-width:1280px;margin:auto;padding:16px}header,section{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:12px}
+h1{font-size:20px;margin:0 0 8px}h2{font-size:16px;margin:0 0 6px}a{color:var(--accent)}.meta{display:flex;gap:8px;flex-wrap:wrap}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 7px}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;padding:8px;border-top:1px solid var(--line)}th:nth-child(1){width:42%}th:nth-child(2){width:25%}blockquote{margin:6px 0 0;padding-left:8px;border-left:3px solid var(--line);color:var(--muted)}code{overflow-wrap:anywhere}.note{color:var(--muted)}
+</style></head><body><main><header><h1>carbon-design-system__carbon-20978 · Parent Issue 范围判定</h1>
+<div class='meta'><span class='pill'>整体：curator_only</span><span class='pill'>置信度：high</span><span class='pill'>人工复核：不需要</span><span class='pill'>模型：gemini-3.7-flash</span></div>
+<p class='note'>只沿明确引用向上读取一跳祖先；未抓取 parent 的 descendants、sub-issues 或 siblings。模型判断不是人工确认。</p></header>
+<section><h2><a href='https://github.com/carbon-design-system/carbon/issues/17992'>Issue #17992</a> · React|WC Parity: Sync existing components</h2><p><b>父级结论：</b>curator_only　<b>子项展开：</b>禁止　<b>理由：</b>Issue #17992 is a broad umbrella initiative for syncing all Carbon Web Components with React. Its contents provide high-level project context and review criteria rather than specific actionable requirements for the combo-box component fix.</p><table><thead><tr><th>原子要求与原文</th><th>判断信号</th><th>结论与原因</th></tr></thead><tbody><tr><td><b>General parity mandate to update web components to match React component implementations and visual styles.</b><blockquote>Update existing web components to match React. Experimental components/features can be excluded until they reach stable status in React.</blockquote></td><td><code>new=no · patch=unclear · executable=no · tested=unknown</code></td><td><span class='pill'>curator_only</span><br>Provides general initiative context; concrete component-level styling requirements are already captured in direct issues #20120 and #20849.</td></tr><tr><td><b>Standard acceptance criteria across parity issues covering API updates, visual/style alignments, and Storybook documentation matching.</b><blockquote>- update API for new/deprecated functionality
+  - in cases where this can cause breaking changes (like changing a property name), the old property name should be @deprecated in addition to adding a new one
+- update component visuals/styles
+- Storybook stories and documentation</blockquote></td><td><code>new=no · patch=unclear · executable=no · tested=unknown</code></td><td><span class='pill'>curator_only</span><br>Generic project-wide acceptance criteria checklist for parity issues, not specific to combo-box.</td></tr><tr><td><b>Procedural guidelines for PR reviews including theme checks, browser checks, and UX/design team review requirements.</b><blockquote>Check against the four themes
+- Check against the different browsers
+- Storybooks need to match
+  - Controls - i.e. RTL - visually make they present. Also make sure they work!
+  - Ensure the prop tables have parity.</blockquote></td><td><code>new=no · patch=no · executable=no · tested=unknown</code></td><td><span class='pill'>exclude</span><br>Procedural review workflow guidance for human reviewers.</td></tr><tr><td><b>Umbrella list of web components to track parity across the entire library.</b><blockquote>### existing web components
+- [ ] Ai-label
+- [ ] Aspect-ratio
+- [ ] Code-snippet</blockquote></td><td><code>new=no · patch=no · executable=no · tested=unknown</code></td><td><span class='pill'>exclude</span><br>Epic tracking checklist of unrelated sibling components.</td></tr></tbody></table></section>
+<section><b>冻结证据：</b> <a href='file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_07_verifier_result.json'>结构化结果</a> · <a href='file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_09_audit.json'>审计记录</a> · <a href='file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_01_source_scope_packet.json'>输入包</a></section>
+</main></body></html>

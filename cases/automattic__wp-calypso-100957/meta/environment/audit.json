@@ -1,0 +1,15 @@
+{
+  "instance_id": "automattic__wp-calypso-100957",
+  "status": "complete",
+  "errors": [],
+  "image_id": "sha256:c5a1ad4c85bccd9b7ac8d94a94c628aeac53b75f61e09d8b05f99857b6018cd9",
+  "base_commit": "19ed337b2b8b48d9d768b35add8a65221e512c9c",
+  "asset_count": 1,
+  "task_image": "case-environment-audit:automattic-wp-calypso-100957",
+  "probe": [
+    "19ed337b2b8b48d9d768b35add8a65221e512c9c",
+    "REMOTE=empty",
+    "v22.23.2",
+    "CHROMIUM=/usr/bin/chromium"
+  ]
+}

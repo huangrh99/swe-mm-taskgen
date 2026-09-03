@@ -1,0 +1,239 @@
+{
+  "schema_version": "report-case-archive-v1",
+  "case_id": "excalidraw__excalidraw-9002",
+  "repository": "excalidraw/excalidraw",
+  "pr_number": 9002,
+  "state": "candidate",
+  "archived_at": "2026-09-02T13:44:01.958486+00:00",
+  "sections": {
+    "visual_review": [
+      {
+        "path": "01_visual_review/solver_input_selection.json",
+        "sha256": "29c68d82ee0e85501d11138094e99b9fdf27daa14faf7b96ca269dadc4614502",
+        "size_bytes": 782,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/08_05_solver_input_selection/20260902_wave13_video_contact_06/08_05_01_issue_derived_selected.jsonl"
+      },
+      {
+        "path": "01_visual_review/text_sufficiency_verifier.json",
+        "sha256": "6491bc1ca6cc1239abd48693534cd7eeb2b51eaa7adedb02b2e0b10cc4f83252",
+        "size_bytes": 6119,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_consolidated/20260902T120216225403Z/16_03_result_0001.json"
+      },
+      {
+        "path": "01_visual_review/classification_record.json",
+        "sha256": "dcbfea6946d79b2ee63fa858bdcb6ef894b1804ab5d401674082636e105ad26b",
+        "size_bytes": 3123,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_combined_210_audit_01/16_03_09_02_category_distribution.json"
+      },
+      {
+        "path": "01_visual_review/assets/6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2.mov",
+        "sha256": "6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2",
+        "size_bytes": 3268232,
+        "storage": "hardlinked",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_13_visual_expansion_wave02_deficits/20260902T114613730990Z/11_http_archive/assets/6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2"
+      }
+    ],
+    "source_archive": [
+      {
+        "path": "02_source_archive/source_archive.json",
+        "sha256": "b9ddd8abe3d2e4f2007af4c3aec1f42cdabb316aa59304c1b27058873f98133f",
+        "size_bytes": 275876,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_13_visual_expansion_wave02_deficits/20260902T114613730990Z/11_record_0001.json"
+      }
+    ],
+    "test_construction": [
+      {
+        "path": "03_test_construction/source_test_manifest.json",
+        "sha256": "a19f90f7590fc71c2feed548470fab7e456e5afc9da4d5de0d97b7bd570071e5",
+        "size_bytes": 1053,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/test_inventory.json",
+        "sha256": "4056a159c17d3182fdb36fdf855dbced7ca1542f160e5516ba93ea673843eb21",
+        "size_bytes": 464,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/reference.patch",
+        "sha256": "7fffde52ffaaa9ea728bc8525f456dd270f02c7e13415ce66fa8ffee05b82d94",
+        "size_bytes": 2875,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/author_tests.patch",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+        "sha256": "f97a73c19af0e2f0f6abea01693e9ed39ed7518a8c643089c117958bfaea075e",
+        "size_bytes": 188872,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+        "sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+        "size_bytes": 9136,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+        "sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+        "size_bytes": 6387,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+        "sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+        "size_bytes": 26252,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+        "sha256": "af64a9af54155eef5a327ae9d2fdfae86de1f52ce3b8132052516f5633575945",
+        "size_bytes": 23326,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+        "sha256": "962834a94d9f41cd074617ccaeff5a464663d061ef2b55775ace88b500762f4d",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+        "sha256": "7914addef73a62dac897ac31cdb4af19867fe1c983ef8c2b32e1227ee8b305a3",
+        "size_bytes": 214283,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+        "sha256": "7058ae38493f6b7515ff69bd5b5487b771eabfdaed61502eddeefd9a179b3387",
+        "size_bytes": 156,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+        "sha256": "8be3e1976ceb03a7a048ed28bbb7fdcfd00ed85b3c4e45334a8c6d571fea9bc1",
+        "size_bytes": 40,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+        "sha256": "d14e730a78cf663d46f9ad35dcfc45fe5484f17124962a6f528fa59b63f29696",
+        "size_bytes": 94154,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+        "sha256": "d9e81072ec6cb0341b059c684a9801e8d4d4f14894af2dcbcaabb272a4ea638c",
+        "size_bytes": 27749,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.tsx",
+        "sha256": "e4477aac239f49d42ac904a4e5cbc1c7bda3e8aaaa06eebe50b32ed8d33cc908",
+        "size_bytes": 14327,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+        "sha256": "c0f72abb96d90f779d4b451aa1a0540773c0796580308deb19f57b5eded0caf6",
+        "size_bytes": 31827,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+        "sha256": "59b8c02e634fa982ec3e037aa7b15de653b9a227fcc971ff5f229ec84d40c465",
+        "size_bytes": 1282,
+        "storage": "generated"
+      }
+    ],
+    "measurements": [
+      {
+        "path": "04_measurements/source_base_gold.json",
+        "sha256": "d4b57d965a73e30a5b6e62dffe75e4d691a76d8d9ffd8fbbcdbeee40fd658948",
+        "size_bytes": 2384,
+        "storage": "copied"
+      }
+    ],
+    "harbor": [
+      {
+        "path": "@task/environment/Dockerfile",
+        "storage": "generated",
+        "size_bytes": 613,
+        "sha256": "ac8a8a193cf78656d3f81764de4b8d48204048aae74a62430806564bdb0e53aa"
+      },
+      {
+        "path": "@task/environment/assets/asset_01.mov",
+        "storage": "generated",
+        "size_bytes": 3268232,
+        "sha256": "6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2"
+      },
+      {
+        "path": "@task/environment/base_image.json",
+        "storage": "generated",
+        "size_bytes": 737,
+        "sha256": "ae2270dc1983f0fc9b48b7dce0304415ed57373f82bb0e9122565fd25f024f72"
+      },
+      {
+        "path": "@task/environment/docker-compose.yaml",
+        "storage": "generated",
+        "size_bytes": 142,
+        "sha256": "c346613322ba0f324f14425a6537833f10f764e8b4470a3996a12fb83b1afbe1"
+      }
+    ]
+  },
+  "pipeline_status": {
+    "source_archived": "complete",
+    "test_construction": "functional_test_measured",
+    "base_gold_measurement": "stable_three_runs",
+    "harbor_empty": "passed_reward_zero",
+    "harbor_oracle": "passed_reward_one"
+  },
+  "blockers": [
+    {
+      "stage": "visual_gate",
+      "code": "human_review_deferred",
+      "detail": "Technical execution does not replace final human visual-necessity and leakage review."
+    },
+    {
+      "stage": "test_semantics_gate",
+      "code": "human_review_deferred",
+      "detail": "The generated functional F2P/P2P contract has stable runtime evidence but still requires the independent human semantic gate for formal admission."
+    }
+  ],
+  "notes": [
+    "User selected this case for candidate archival on 2026-09-02.",
+    "This path is report/cases rather than the formal report/<instance_id> promotion target.",
+    "The PR contains no author test; the retired source-token assertions are not part of the Harbor task.",
+    "A curator-generated functional geometry test and a separate text-resize P2P test were each measured three times on the exact PR base and final head.",
+    "Harbor Gold/oracle, empty patch, nop, and empty/no-reply controls passed on one immutable task checksum; formal admission remains false while both human gates are deferred."
+  ],
+  "layout": {
+    "submission_root": ".",
+    "metadata_root": "meta",
+    "metadata_deletion_safe": true
+  },
+  "pipeline_details": {
+    "test_extension_verifier": {
+      "status": "complete",
+      "runner_version": "test-extension-verifier-run-v2",
+      "backend": "gemini",
+      "model": "gemini-3.7-flash",
+      "verdict": "additional_tests_proposed",
+      "generated_bundle_count": 1,
+      "behavior_contract_required": true,
+      "oracle_quality_plan_required": true,
+      "prior_verifier_generated_tests_excluded": true,
+      "requested_batch_concurrency": 10,
+      "boundary": "Generated tests are proposals until the identical patch is measured on Base and Gold."
+    }
+  }
+}

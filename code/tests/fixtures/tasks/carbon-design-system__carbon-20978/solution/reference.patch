@@ -1,0 +1,453 @@
+diff --git a/packages/web-components/src/components/combo-box/combo-box.scss b/packages/web-components/src/components/combo-box/combo-box.scss
+index e54bade..4f692bc 100644
+--- a/packages/web-components/src/components/combo-box/combo-box.scss
++++ b/packages/web-components/src/components/combo-box/combo-box.scss
+@@ -1,5 +1,5 @@
+ //
+-// Copyright IBM Corp. 2019, 2024
++// Copyright IBM Corp. 2019, 2025
+ //
+ // This source code is licensed under the Apache-2.0 license found in the
+ // LICENSE file in the root directory of this source tree.
+@@ -41,14 +41,6 @@ $css--plex: true !default;
+   }
+ }
+ 
+-:host(#{$prefix}-combo-box[isClosable]) {
+-  .#{$prefix}--list-box__invalid-icon {
+-    /* stylelint-disable declaration-no-important */
+-    inset-inline-end: to-rem(66px) !important;
+-    /* stylelint-enable declaration-no-important */
+-  }
+-}
+-
+ :host(#{$prefix}-combo-box[disabled]),
+ :host(#{$prefix}-combo-box[read-only]) {
+   .#{$prefix}--list-box__selection {
+@@ -126,15 +118,36 @@ $css--plex: true !default;
+ :host(#{$prefix}-combo-box[ai-label]) {
+   @extend .#{$prefix}--list-box__wrapper--slug;
+ 
++  .#{$prefix}--list-box__wrapper--decorator {
++    @include ai-gradient;
++  }
++
+   .#{$prefix}--list-box__field {
+     padding: 0;
+   }
+ 
++  .#{$prefix}--list-box__invalid-icon {
++    /* stylelint-disable-next-line declaration-no-important */
++    inset-inline-end: to-rem(83px) !important;
++  }
++
++  ::slotted(#{$prefix}-ai-label)::after,
++  ::slotted(#{$prefix}-slug)::after {
++    position: absolute;
++    display: block;
++    background-color: $border-subtle-01;
++    block-size: $spacing-05;
++    content: '';
++    inline-size: to-rem(1px);
++    inset-block-start: 0;
++    inset-inline-end: to-rem(-9px);
++  }
++
+   ::slotted(#{$prefix}-ai-label),
+   ::slotted(#{$prefix}-slug) {
+     position: absolute;
+     inset-block-start: 50%;
+-    inset-inline-end: $spacing-08;
++    inset-inline-end: calc($spacing-08 + 9px);
+   }
+ 
+   ::slotted(#{$prefix}-ai-label:not([revert-active])),
+@@ -143,10 +156,14 @@ $css--plex: true !default;
+   }
+ }
+ 
+-:host(#{$prefix}-combo-box[ai-label][isclosable]) {
++:host(#{$prefix}-combo-box[ai-label][isClosable]) {
+   ::slotted(#{$prefix}-ai-label),
+   ::slotted(#{$prefix}-slug) {
+-    inset-inline-end: $spacing-10;
++    inset-inline-end: calc($spacing-10 + 18px);
++  }
++
++  .#{$prefix}--list-box__field .#{$prefix}--text-input {
++    padding-inline-end: to-rem(105px);
+   }
+ }
+ 
+@@ -154,14 +171,61 @@ $css--plex: true !default;
+ :host(#{$prefix}-combo-box[invalid]) {
+   ::slotted(#{$prefix}-ai-label),
+   ::slotted(#{$prefix}-slug) {
+-    inset-inline-end: $spacing-10;
++    inset-inline-end: calc($spacing-08 + 9px);
++  }
++
++  ::slotted(#{$prefix}-ai-label)::before,
++  ::slotted(#{$prefix}-slug)::before {
++    position: absolute;
++    display: block;
++    background-color: $border-subtle-01;
++    block-size: $spacing-05;
++    content: '';
++    inline-size: to-rem(1px);
++    inset-block-start: 0;
++    inset-inline-start: to-rem(-9px);
+   }
+ }
+ 
+-:host(#{$prefix}-combo-box[warn][isclosable]),
+-:host(#{$prefix}-combo-box[invalid][isclosable]) {
+-  ::slotted(#{$prefix}-ai-label),
+-  ::slotted(#{$prefix}-slug) {
+-    inset-inline-end: to-rem(88px);
++:host(#{$prefix}-combo-box[warn][isClosable]:not([ai-label])),
++:host(#{$prefix}-combo-box[invalid][isClosable]:not([ai-label])) {
++  .#{$prefix}--list-box__field:has(.#{$prefix}--list-box__menu-icon)
++    .#{$prefix}--list-box__selection::before {
++    position: absolute;
++    background-color: $border-subtle-01;
++    block-size: to-rem(16px);
++    content: '';
++    inline-size: to-rem(1px);
++    margin-inline-end: to-rem(33px);
++  }
++}
++
++:host(#{$prefix}-combo-box[isClosable]) {
++  .#{$prefix}--list-box__invalid-icon {
++    /* stylelint-disable-next-line declaration-no-important */
++    inset-inline-end: calc($spacing-10 + 18px) !important;
++  }
++
++  .#{$prefix}--list-box__field .#{$prefix}--text-input {
++    padding-inline-end: to-rem(80px);
++  }
++}
++
++:host(#{$prefix}-combo-box[warn][isClosable]),
++:host(#{$prefix}-combo-box[invalid][isClosable]) {
++  .#{$prefix}--list-box__field .#{$prefix}--text-input {
++    padding-inline-end: to-rem(105px);
++  }
++}
++
++:host(#{$prefix}-combo-box[warn][ai-label][isClosable]),
++:host(#{$prefix}-combo-box[invalid][ai-label][isClosable]) {
++  .#{$prefix}--list-box__field .#{$prefix}--text-input {
++    padding-inline-end: to-rem(141px);
++  }
++
++  .#{$prefix}--list-box__invalid-icon {
++    /* stylelint-disable-next-line declaration-no-important */
++    inset-inline-end: to-rem(116px) !important;
+   }
+ }
+diff --git a/packages/web-components/src/components/combo-box/combo-box.stories.ts b/packages/web-components/src/components/combo-box/combo-box.stories.ts
+index 372aa6a..f14778f 100644
+--- a/packages/web-components/src/components/combo-box/combo-box.stories.ts
++++ b/packages/web-components/src/components/combo-box/combo-box.stories.ts
+@@ -60,8 +60,8 @@ const defaultArgs = {
+   hideLabel: false,
+   helperText: 'This is some helper text',
+   invalid: false,
+-  invalidText: 'invalid selection',
+-  label: 'This is an example label',
++  invalidText: '',
++  label: '',
+   readOnly: false,
+   size: null,
+   titleText: 'This is an example title',
+@@ -128,19 +128,55 @@ const controls = {
+ };
+ 
+ export const Default = {
+-  render: () => html`
+-    <cds-combo-box
+-      helper-text="Combobox helper text"
+-      title-text="ComboBox title">
+-      ${items.map(
+-        (elem) => html`
+-          <cds-combo-box-item ?disabled=${elem.disabled} value="${elem.value}"
+-            >${elem.text}</cds-combo-box-item
+-          >
+-        `
+-      )}
+-    </cds-combo-box>
+-  `,
++  argTypes: controls,
++  args: {
++    ...defaultArgs,
++    helperText: 'Combobox helper text',
++    titleText: 'ComboBox title',
++  },
++  render: (args) => {
++    const {
++      disabled,
++      helperText,
++      invalid,
++      titleText,
++      hideLabel,
++      direction,
++      readOnly,
++      warn,
++      warnText,
++      size,
++      label,
++      type,
++      invalidText,
++      value,
++    } = args ?? {};
++    return html`
++      <cds-combo-box
++        ?disabled=${disabled}
++        ?hide-label=${hideLabel}
++        helper-text=${ifDefined(helperText)}
++        ?invalid=${invalid}
++        invalid-text=${ifDefined(invalidText)}
++        direction=${ifDefined(direction)}
++        ?read-only=${readOnly}
++        title-text=${ifDefined(titleText)}
++        size=${ifDefined(size)}
++        type=${ifDefined(type)}
++        value=${ifDefined(value)}
++        label=${ifDefined(label)}
++        ?warn=${warn}
++        warn-text=${ifDefined(warnText)}>
++        ${items.map(
++          (elem) => html`
++            <cds-combo-box-item ?disabled=${elem.disabled} value="${elem.value}"
++              >${elem.text}</cds-combo-box-item
++            >
++          `
++        )}
++      </cds-combo-box>
++    `;
++  },
+ };
+ 
+ const content = html`
+@@ -174,60 +210,170 @@ const actions = html`
+   <cds-ai-label-action-button>View details</cds-ai-label-action-button>
+ `;
+ 
+-export const WithAILabel = {
+-  render: () => html`
+-    <cds-combo-box
+-      helper-text="Combobox helper text"
+-      title-text="ComboBox title">
+-      <cds-ai-label alignment="bottom-left"> ${content}${actions}</cds-ai-label>
+-
+-      ${items.map(
+-        (elem) => html`
+-          <cds-combo-box-item ?disabled=${elem.disabled} value="${elem.value}"
+-            >${elem.text}</cds-combo-box-item
+-          >
+-        `
+-      )}
+-    </cds-combo-box>
+-  `,
++export const AllowCustomValue = {
++  argTypes: controls,
++  args: {
++    ...defaultArgs,
++    helperText: 'Combobox helper text',
++    titleText: 'ComboBox title',
++  },
++  render: (args) => {
++    const {
++      disabled,
++      helperText,
++      invalid,
++      titleText,
++      hideLabel,
++      direction,
++      readOnly,
++      warn,
++      warnText,
++      size,
++      label,
++      type,
++      invalidText,
++      value,
++    } = args ?? {};
++    return html`
++      <cds-combo-box
++        direction=${ifDefined(direction)}
++        ?disabled=${disabled}
++        helper-text=${ifDefined(helperText)}
++        ?hide-label=${hideLabel}
++        ?invalid=${invalid}
++        invalid-text=${ifDefined(invalidText)}
++        ?read-only=${readOnly}
++        title-text=${ifDefined(titleText)}
++        size=${ifDefined(size)}
++        type=${ifDefined(type)}
++        value=${ifDefined(value)}
++        label=${ifDefined(label)}
++        ?warn=${warn}
++        warn-text=${ifDefined(warnText)}
++        should-filter-item>
++        <cds-combo-box-item value="apple">Apple</cds-combo-box-item>
++        <cds-combo-box-item value="orange">Orange</cds-combo-box-item>
++        <cds-combo-box-item value="banana">Banana</cds-combo-box-item>
++        <cds-combo-box-item value="pineapple">Pineapple</cds-combo-box-item>
++        <cds-combo-box-item value="raspberry">Raspberry</cds-combo-box-item>
++        <cds-combo-box-item value="lime">Lime</cds-combo-box-item>
++      </cds-combo-box>
++    `;
++  },
+ };
+ 
+-export const DynamicFiltering = {
+-  render: () => html`
+-    <cds-combo-box
+-      title-text="Custom Filter"
+-      helper-text="Type to test shouldFilterItem (only matches items starting with input)"
+-      should-filter-item>
+-      <cds-combo-box-item value="apple">Apple</cds-combo-box-item>
+-      <cds-combo-box-item value="orange">Orange</cds-combo-box-item>
+-      <cds-combo-box-item value="banana">Banana</cds-combo-box-item>
+-      <cds-combo-box-item value="raspberry">Raspberry</cds-combo-box-item>
+-      <cds-combo-box-item value="grape">Grape</cds-combo-box-item>
+-    </cds-combo-box>
+-  `,
++export const WithAILabel = {
++  argTypes: controls,
++  args: {
++    ...defaultArgs,
++    helperText: 'Combobox helper text',
++    titleText: 'ComboBox title',
++  },
++  render: (args) => {
++    const {
++      disabled,
++      helperText,
++      invalid,
++      titleText,
++      hideLabel,
++      direction,
++      readOnly,
++      warn,
++      warnText,
++      size,
++      label,
++      type,
++      invalidText,
++      value,
++    } = args ?? {};
++    return html`
++      <cds-combo-box
++        ?disabled=${disabled}
++        ?hide-label=${hideLabel}
++        helper-text=${ifDefined(helperText)}
++        ?invalid=${invalid}
++        invalid-text=${ifDefined(invalidText)}
++        direction=${ifDefined(direction)}
++        ?read-only=${readOnly}
++        title-text=${ifDefined(titleText)}
++        size=${ifDefined(size)}
++        type=${ifDefined(type)}
++        value=${ifDefined(value)}
++        label=${ifDefined(label)}
++        ?warn=${warn}
++        warn-text=${ifDefined(warnText)}>
++        <cds-ai-label alignment="bottom-left">
++          ${content}${actions}</cds-ai-label
++        >
++
++        ${items.map(
++          (elem) => html`
++            <cds-combo-box-item ?disabled=${elem.disabled} value="${elem.value}"
++              >${elem.text}</cds-combo-box-item
++            >
++          `
++        )}
++      </cds-combo-box>
++    `;
++  },
+ };
+ 
+ export const WithLayer = {
+-  render: () => html`
+-    <sb-template-layers>
+-      <div style="width:300px">
+-        <cds-combo-box
+-          title-text="ComboBox label"
+-          helper-text="Combobox helper text"
+-          label="Dropdown menu options">
+-          ${items.map(
+-            (elem) => html`
+-              <cds-combo-box-item
+-                ?disabled=${elem.disabled}
+-                value="${elem.value}"
+-                >${elem.text}</cds-combo-box-item
+-              >
+-            `
+-          )}
+-        </cds-combo-box>
+-      </div>
+-    </sb-template-layers>
+-  `,
++  argTypes: controls,
++  args: {
++    ...defaultArgs,
++    helperText: 'Combobox helper text',
++    titleText: 'ComboBox title',
++  },
++  render: (args) => {
++    const {
++      disabled,
++      helperText,
++      invalid,
++      titleText,
++      hideLabel,
++      direction,
++      readOnly,
++      warn,
++      warnText,
++      size,
++      label,
++      type,
++      invalidText,
++      value,
++    } = args ?? {};
++    return html`
++      <sb-template-layers>
++        <div style="width:300px">
++          <cds-combo-box
++            direction=${ifDefined(direction)}
++            ?disabled=${disabled}
++            helper-text=${ifDefined(helperText)}
++            ?hide-label=${hideLabel}
++            ?invalid=${invalid}
++            invalid-text=${ifDefined(invalidText)}
++            ?read-only=${readOnly}
++            title-text=${ifDefined(titleText)}
++            size=${ifDefined(size)}
++            type=${ifDefined(type)}
++            value=${ifDefined(value)}
++            label=${ifDefined(label)}
++            ?warn=${warn}
++            warn-text=${ifDefined(warnText)}>
++            ${items.map(
++              (elem) => html`
++                <cds-combo-box-item
++                  ?disabled=${elem.disabled}
++                  value="${elem.value}"
++                  >${elem.text}</cds-combo-box-item
++                >
++              `
++            )}
++          </cds-combo-box>
++        </div>
++      </sb-template-layers>
++    `;
++  },
+ };
+ 
+ export const Playground = {

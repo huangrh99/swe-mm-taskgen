@@ -1,0 +1,1016 @@
+{
+  "schema": "karma-observation-v1",
+  "suites": [
+    "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js",
+    "test/spec/14_generated_2396Spec.js"
+  ],
+  "tests": [
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached top right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "loops",
+        "in the corner"
+      ],
+      "title": "attached top right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 8,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached bottom right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "loops",
+        "in the corner"
+      ],
+      "title": "attached bottom right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached bottom left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "loops",
+        "in the corner"
+      ],
+      "title": "attached bottom left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached top left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "loops",
+        "in the corner"
+      ],
+      "title": "attached top left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached top center\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "loops",
+        "on the side center"
+      ],
+      "title": "attached top center",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached center right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "loops",
+        "on the side center"
+      ],
+      "title": "attached center right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached bottom center\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "loops",
+        "on the side center"
+      ],
+      "title": "attached bottom center",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached center left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "loops",
+        "on the side center"
+      ],
+      "title": "attached center left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 35,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation top\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "attached top right, orientation top",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "attached top right, orientation right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation bottom\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "attached top right, orientation bottom",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "attached top right, orientation left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached bottom center, orientation bottom\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "attached bottom center, orientation bottom",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top center, orientation top\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "attached top center, orientation top",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached right center, orientation right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "attached right center, orientation right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached right center, orientation left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "attached right center, orientation left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for axis-aligned corner boundary event\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "should layout straight for axis-aligned corner boundary event",
+      "status": "fail",
+      "logs": [
+        "AssertionError: expected <Flow_1l2rleh#waypoints> to equal \n  [ { x: 909, y: 407 }, { x: 909, y: 480 } ]\nbut got\n  [ { x: 909, y: 407 }, { x: 909, y: 520 }, { x: 909, y: 480 } ]"
+      ],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]",
+      "suite": [
+        "features/modeling - layout",
+        "boundary events",
+        "non-loops"
+      ],
+      "title": "should layout straight for horizontally axis-aligned corner boundary event",
+      "status": "fail",
+      "logs": [
+        "AssertionError: expected <Flow_0sp0bjm#waypoints> to equal \n  [ { x: 927, y: 109 }, { x: 1000, y: 109 } ]\nbut got\n  [ { x: 927, y: 109 }, { x: 1050, y: 109 }, { x: 1000, y: 109 } ]"
+      ],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached top right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "loops",
+        "in the corner"
+      ],
+      "title": "attached top right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached bottom right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "loops",
+        "in the corner"
+      ],
+      "title": "attached bottom right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached bottom left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "loops",
+        "in the corner"
+      ],
+      "title": "attached bottom left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached top left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "loops",
+        "in the corner"
+      ],
+      "title": "attached top left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 0,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached top center\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "loops",
+        "on the side center"
+      ],
+      "title": "attached top center",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached center right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "loops",
+        "on the side center"
+      ],
+      "title": "attached center right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached bottom center\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "loops",
+        "on the side center"
+      ],
+      "title": "attached bottom center",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached center left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "loops",
+        "on the side center"
+      ],
+      "title": "attached center left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "non-loops"
+      ],
+      "title": "attached bottom left, orientation left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation bottom\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "non-loops"
+      ],
+      "title": "attached bottom left, orientation bottom",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 0,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "non-loops"
+      ],
+      "title": "attached bottom left, orientation right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation top\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "non-loops"
+      ],
+      "title": "attached bottom left, orientation top",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 0,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached right center, orientation right\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "non-loops"
+      ],
+      "title": "attached right center, orientation right",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached left center, orientation left\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "non-loops"
+      ],
+      "title": "attached left center, orientation left",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom center, orientation bottom\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "non-loops"
+      ],
+      "title": "attached bottom center, orientation bottom",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom center, orientation top\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical boundary events",
+        "non-loops"
+      ],
+      "title": "attached bottom center, orientation top",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should layout loop\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "loops"
+      ],
+      "title": "should layout loop",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should NOT relayout loop\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "loops"
+      ],
+      "title": "should NOT relayout loop",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (b:l)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "loops"
+      ],
+      "title": "should relayout loop (b:l)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (l:t)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "loops"
+      ],
+      "title": "should relayout loop (l:t)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (t:r)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "loops"
+      ],
+      "title": "should relayout loop (t:r)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"gateway layout\"],\"should layout v:h after Gateway\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "gateway layout"
+      ],
+      "title": "should layout v:h after Gateway",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"gateway layout\"],\"should layout h:v before Gateway\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "gateway layout"
+      ],
+      "title": "should layout h:v before Gateway",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after StartEvent\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "other elements layout"
+      ],
+      "title": "should layout h:h after StartEvent",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after Task\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "other elements layout"
+      ],
+      "title": "should layout h:h after Task",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after IntermediateEvent\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "other elements layout"
+      ],
+      "title": "should layout h:h after IntermediateEvent",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after IntermediateEvent (right to left)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "other elements layout"
+      ],
+      "title": "should layout h:h after IntermediateEvent (right to left)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after reconnect end\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "relayout"
+      ],
+      "title": "should repair after reconnect end",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after target move\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "relayout"
+      ],
+      "title": "should repair after target move",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 4,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after source move\"]",
+      "suite": [
+        "features/modeling - layout",
+        "flow elements",
+        "relayout"
+      ],
+      "title": "should repair after source move",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should layout loop\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "loops"
+      ],
+      "title": "should layout loop",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should NOT relayout loop\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "loops"
+      ],
+      "title": "should NOT relayout loop",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (r:t)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "loops"
+      ],
+      "title": "should relayout loop (r:t)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (t:l)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "loops"
+      ],
+      "title": "should relayout loop (t:l)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (l:b)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "loops"
+      ],
+      "title": "should relayout loop (l:b)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"gateway layout\"],\"should layout h:v after Gateway\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "gateway layout"
+      ],
+      "title": "should layout h:v after Gateway",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"gateway layout\"],\"should layout v:h before Gateway\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "gateway layout"
+      ],
+      "title": "should layout v:h before Gateway",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after StartEvent\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "other elements layout"
+      ],
+      "title": "should layout v:v after StartEvent",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after Task\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "other elements layout"
+      ],
+      "title": "should layout v:v after Task",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after IntermediateEvent\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "other elements layout"
+      ],
+      "title": "should layout v:v after IntermediateEvent",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after IntermediateEvent (bottom to top)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "other elements layout"
+      ],
+      "title": "should layout v:v after IntermediateEvent (bottom to top)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after reconnect end\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "relayout"
+      ],
+      "title": "should repair after reconnect end",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after target move\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "relayout"
+      ],
+      "title": "should repair after target move",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after source move\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical flow elements",
+        "relayout"
+      ],
+      "title": "should repair after source move",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 2,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcesses (top -> bottom)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "subProcess"
+      ],
+      "title": "should layout straight between subProcesses (top -> bottom)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcesses (bottom -> top)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "subProcess"
+      ],
+      "title": "should layout straight between subProcesses (bottom -> top)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task next to it (subProcess -> task)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "subProcess"
+      ],
+      "title": "should layout straight between subProcess and task next to it (subProcess -> task)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task next to it (task -> subProcess)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "subProcess"
+      ],
+      "title": "should layout straight between subProcess and task next to it (task -> subProcess)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task above (subProcess -> task)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "subProcess"
+      ],
+      "title": "should layout straight between subProcess and task above (subProcess -> task)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task above (task -> subProcess)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "subProcess"
+      ],
+      "title": "should layout straight between subProcess and task above (task -> subProcess)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcesses (left -> right)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical subProcess"
+      ],
+      "title": "should layout straight between subProcesses (left -> right)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcesses (right -> left)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical subProcess"
+      ],
+      "title": "should layout straight between subProcesses (right -> left)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task below (subProcess -> task)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical subProcess"
+      ],
+      "title": "should layout straight between subProcess and task below (subProcess -> task)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task below (task -> subProcess)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical subProcess"
+      ],
+      "title": "should layout straight between subProcess and task below (task -> subProcess)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task next to it (subProcess -> task)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical subProcess"
+      ],
+      "title": "should layout straight between subProcess and task next to it (subProcess -> task)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task next to it (task -> subProcess)\"]",
+      "suite": [
+        "features/modeling - layout",
+        "vertical subProcess"
+      ],
+      "title": "should layout straight between subProcess and task next to it (task -> subProcess)",
+      "status": "pass",
+      "logs": [],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout corner boundary events\"],\"should layout straight for vertically axis-aligned corner boundary event\"]",
+      "suite": [
+        "features/modeling - layout corner boundary events"
+      ],
+      "title": "should layout straight for vertically axis-aligned corner boundary event",
+      "status": "fail",
+      "logs": [
+        "AssertionError: expected <Flow_1jbhysz#waypoints> to equal \n  [ { x: 909, y: 407 }, { x: 909, y: 480 } ]\nbut got\n  [ { x: 909, y: 407 }, { x: 909, y: 520 }, { x: 909, y: 480 } ]"
+      ],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    },
+    {
+      "test_id": "[[\"features/modeling - layout corner boundary events\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]",
+      "suite": [
+        "features/modeling - layout corner boundary events"
+      ],
+      "title": "should layout straight for horizontally axis-aligned corner boundary event",
+      "status": "fail",
+      "logs": [
+        "AssertionError: expected <Flow_1sylxdl#waypoints> to equal \n  [ { x: 927, y: 109 }, { x: 1000, y: 109 } ]\nbut got\n  [ { x: 927, y: 109 }, { x: 1050, y: 109 }, { x: 1000, y: 109 } ]"
+      ],
+      "duration_ms": 1,
+      "browser": "Chrome Headless 151.0.0.0 (Linux x86_64)"
+    }
+  ],
+  "browser_errors": [],
+  "complete": true,
+  "runner_exit_code": 1,
+  "framework_summary": {
+    "success": 72,
+    "failed": 4,
+    "skipped": 0,
+    "error": false,
+    "disconnected": false,
+    "exitCode": 1
+  }
+}

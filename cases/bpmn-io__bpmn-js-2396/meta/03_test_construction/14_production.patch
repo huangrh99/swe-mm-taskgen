@@ -1,0 +1,56 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 6ecba284..1a73bdef 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -6,6 +6,8 @@ All notable changes to [bpmn-js](https://github.com/bpmn-io/bpmn-js) are documen
+ 
+ ___Note:__ Yet to be released changes appear here._
+ 
++* `FIX`: correct sequence flow layout for corner boundary events whose target is strictly axis-aligned ([#2270](https://github.com/bpmn-io/bpmn-js/issues/2270))
++
+ ## 18.13.0
+ 
+ * `FEAT`: allow to create child elements from the context pad ([#2391](https://github.com/bpmn-io/bpmn-js/issues/2391))
+diff --git a/lib/features/modeling/BpmnLayouter.js b/lib/features/modeling/BpmnLayouter.js
+index 392778c0..c7998fcc 100644
+--- a/lib/features/modeling/BpmnLayouter.js
++++ b/lib/features/modeling/BpmnLayouter.js
+@@ -467,17 +467,34 @@ function getBoundaryEventTargetLayout(attachOrientation, targetOrientation, atta
+     }
+   }
+ 
+-  // attached to either top-right, top-left, bottom-right or bottom-left corner
+-  // and orientation is same on the counter-axis
++  // attached to either top-right, top-left, bottom-right or bottom-left corner,
++  // or strictly above/below or left/right of the target. In the corner case,
++  // the orientation is compared on the counter-axis to decide the layout.
++
++  var verticalAttachOrientation = getVerticalOrientation(attachOrientation),
++      horizontalAttachOrientation = getHorizontalOrientation(attachOrientation),
++      verticalTargetOrientation = getVerticalOrientation(targetOrientation),
++      horizontalTargetOrientation = getHorizontalOrientation(targetOrientation);
++
++  // If the target is strictly above/below (no horizontal orientation)
++  if (verticalTargetOrientation && !horizontalTargetOrientation) {
++    return 'v';
++  }
++
++  // If the target is strictly left/right (no vertical orientation)
++  if (horizontalTargetOrientation && !verticalTargetOrientation) {
++    return 'h';
++  }
++
+ 
+   if (isHorizontal) {
+-    if (isSame(getVerticalOrientation(attachOrientation), getVerticalOrientation(targetOrientation))) {
++    if (isSame(verticalAttachOrientation, verticalTargetOrientation)) {
+       return 'h';
+     } else {
+       return 'v';
+     }
+   } else {
+-    if (isSame(getHorizontalOrientation(attachOrientation), getHorizontalOrientation(targetOrientation))) {
++    if (isSame(horizontalAttachOrientation, horizontalTargetOrientation)) {
+       return 'v';
+     } else {
+       return 'h';

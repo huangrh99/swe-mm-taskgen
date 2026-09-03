@@ -1,0 +1,13 @@
+{
+  "schema_version": "case-measurement-status-v1",
+  "case_id": "automattic__wp-calypso-100957",
+  "base_gold_measurement": "local_v3_stable_base0_gold1_formal_controls_required",
+  "reason": "The final-output contract was frozen from original PR screenshot measurements before any agent replay. Three local repeats each produced Base=0 and Gold=1. The saved Codex patch then reproducibly failed because it rendered only one swatch.",
+  "FAIL_TO_PASS": 2,
+  "PASS_TO_PASS": 2,
+  "evidence": "../../outputs/12_contrast_verifier_v3/12_04_validation_summary.json",
+  "human_review": "human_review_deferred",
+  "formal_admission": false,
+  "infra_failure": false,
+  "model_failure": "retrospective_replay_only_not_formal_pass1"
+}

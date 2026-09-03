@@ -1,0 +1,546 @@
+{
+  "schema_version": "visual-gate-ui-v1",
+  "created_at": "2026-09-02T18:31:10.200753+00:00",
+  "status": "ready_for_visual_human_review",
+  "source_manifest_sha256": "0c4ece0feea7db6cbb8e2f74da7139e86cd8227ae712a61e677cd53806022843",
+  "distribution": {
+    "path": "crawler-output/multimodal-2025/16_14_unified_visual_review/20260903_v4_unified_07/16_14_01_unified_index.json",
+    "sha256": "7326bae2e75c98220dd9ac0d24eb992f6d7acd2e70d8e0f6e6c07529ffb58059"
+  },
+  "translations": [],
+  "runner_sha256": "06a85509ef3281db8a30a1d32eaa7978985cfec895963601c3b3e09ee8aeba2a",
+  "schema_sha256": "ae9fee72e862b4cd2090464c8a4125e0b6978971200c4193ec51d083bd214bc1",
+  "payload_sha256": "713c9ba157d51cf6be8d501628a0b82d943c8b55f4f3acffec3aad25b11be31b",
+  "html_sha256": "b9be53fa904d5f357cd9a15d47585783327096ed19331700914b260764bb43e5",
+  "candidate_count": 39,
+  "case_ids": [
+    "automattic__wp-calypso-111378",
+    "carbon-design-system__carbon-20978",
+    "carbon-design-system__carbon-22019",
+    "bpmn-io__bpmn-js-2396",
+    "grommet__grommet-7712",
+    "googlechrome__lighthouse-16403",
+    "automattic__wp-calypso-100957",
+    "automattic__wp-calypso-101438",
+    "automattic__wp-calypso-101890",
+    "automattic__wp-calypso-99980",
+    "automattic__wp-calypso-98505",
+    "automattic__wp-calypso-102315",
+    "automattic__wp-calypso-101093",
+    "automattic__wp-calypso-99109",
+    "automattic__wp-calypso-99049",
+    "automattic__wp-calypso-113834",
+    "automattic__wp-calypso-101095",
+    "automattic__wp-calypso-101492",
+    "carbon-design-system__carbon-20142",
+    "mermaid-js__mermaid-7744",
+    "pixijs__pixijs-11549",
+    "mermaid-js__mermaid-6944",
+    "excalidraw__excalidraw-11441",
+    "excalidraw__excalidraw-11458",
+    "mermaid-js__mermaid-7711",
+    "pixijs__pixijs-11460",
+    "apache__echarts-21258",
+    "tldraw__tldraw-8931",
+    "excalidraw__excalidraw-9002",
+    "apache__superset-36323",
+    "excalidraw__excalidraw-9010",
+    "fabricjs__fabric.js-10441",
+    "maplibre__maplibre-gl-js-6021",
+    "maplibre__maplibre-gl-js-6679",
+    "mermaid-js__mermaid-6440",
+    "mermaid-js__mermaid-6683",
+    "pixijs__pixijs-11230",
+    "tldraw__tldraw-5888",
+    "xyflow__xyflow-4991"
+  ],
+  "category_counts": {
+    "渲染外观理解": 16,
+    "空间布局理解": 20,
+    "元素与状态理解": 8,
+    "交互与时序理解": 5
+  },
+  "multi_label_count": 8,
+  "assets": [
+    {
+      "case_id": "automattic__wp-calypso-111378",
+      "asset_id": "bd76528e72cf701295b60ce488b08eb4ff01a40faad09ff1ce65512ddfa268aa",
+      "path": "16_04_02_assets/case_0001/asset_01_bd76528e72cf.png",
+      "sha256": "bd76528e72cf701295b60ce488b08eb4ff01a40faad09ff1ce65512ddfa268aa"
+    },
+    {
+      "case_id": "automattic__wp-calypso-111378",
+      "asset_id": "f856de24e96655a062c6a4ccdf47b8b96217ac8d1518627915ca5993fc03ecf5",
+      "path": "16_04_02_assets/case_0001/asset_02_f856de24e966.png",
+      "sha256": "f856de24e96655a062c6a4ccdf47b8b96217ac8d1518627915ca5993fc03ecf5"
+    },
+    {
+      "case_id": "automattic__wp-calypso-111378",
+      "asset_id": "8c1c2a0d0eb512f86f0fa5889973a0b5735e15836960f27a802ab0f2cd461a19",
+      "path": "16_04_02_assets/case_0001/asset_03_8c1c2a0d0eb5.png",
+      "sha256": "8c1c2a0d0eb512f86f0fa5889973a0b5735e15836960f27a802ab0f2cd461a19"
+    },
+    {
+      "case_id": "automattic__wp-calypso-111378",
+      "asset_id": "844d08a1a5f6b114547058adefe0811e1e569c75bb4b786766edd26894802747",
+      "path": "16_04_02_assets/case_0001/asset_04_844d08a1a5f6.png",
+      "sha256": "844d08a1a5f6b114547058adefe0811e1e569c75bb4b786766edd26894802747"
+    },
+    {
+      "case_id": "automattic__wp-calypso-111378",
+      "asset_id": "58dd65b04b03816f4c98ee8daf2670b26423427bcc59768eb6b2b9caad900608",
+      "path": "16_04_02_assets/case_0001/asset_05_58dd65b04b03.png",
+      "sha256": "58dd65b04b03816f4c98ee8daf2670b26423427bcc59768eb6b2b9caad900608"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-20978",
+      "asset_id": "52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b",
+      "path": "16_04_02_assets/case_0002/asset_01_52c704ecf729.png",
+      "sha256": "52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-20978",
+      "asset_id": "8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a",
+      "path": "16_04_02_assets/case_0002/asset_02_8127091bb3ef.png",
+      "sha256": "8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-20978",
+      "asset_id": "dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb",
+      "path": "16_04_02_assets/case_0002/asset_03_dd773233556f.png",
+      "sha256": "dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-20978",
+      "asset_id": "a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352",
+      "path": "16_04_02_assets/case_0002/asset_04_a529c86b1e18.png",
+      "sha256": "a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22019",
+      "asset_id": "669dd94501e78b2f35dc2ebbf364545d9fe0524cb41a8170f29de883d1b005e4",
+      "path": "16_04_02_assets/case_0003/asset_01_669dd94501e7.gif",
+      "sha256": "669dd94501e78b2f35dc2ebbf364545d9fe0524cb41a8170f29de883d1b005e4"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22019",
+      "asset_id": "19d22e1ed28360a0b97bc9ddad74eb5f876648f8919c795343a3fd4ac10c9efd",
+      "path": "16_04_02_assets/case_0003/asset_02_19d22e1ed283.png",
+      "sha256": "19d22e1ed28360a0b97bc9ddad74eb5f876648f8919c795343a3fd4ac10c9efd"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22019",
+      "asset_id": "1ce711a076f599ff817c1dd6330c3165cf8e6107ddf2b28f863ca191b7f56ab6",
+      "path": "16_04_02_assets/case_0003/asset_03_1ce711a076f5.png",
+      "sha256": "1ce711a076f599ff817c1dd6330c3165cf8e6107ddf2b28f863ca191b7f56ab6"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22019",
+      "asset_id": "40c94839f37cdb3c2734b5f7c613c7ca1ce31678d5a931d77093ccfc43755cee",
+      "path": "16_04_02_assets/case_0003/asset_04_40c94839f37c.png",
+      "sha256": "40c94839f37cdb3c2734b5f7c613c7ca1ce31678d5a931d77093ccfc43755cee"
+    },
+    {
+      "case_id": "bpmn-io__bpmn-js-2396",
+      "asset_id": "44ed2f05e1eb28bcd064466ed33a79622d48bb9d27bc40594765da709de17ec6",
+      "path": "16_04_02_assets/case_0004/asset_01_44ed2f05e1eb.png",
+      "sha256": "44ed2f05e1eb28bcd064466ed33a79622d48bb9d27bc40594765da709de17ec6"
+    },
+    {
+      "case_id": "bpmn-io__bpmn-js-2396",
+      "asset_id": "ba179e3c63f874186ed5f782019bd713e7d9f0f58ca98a25edaec6899ce4fe53",
+      "path": "16_04_02_assets/case_0004/asset_02_ba179e3c63f8.gif",
+      "sha256": "ba179e3c63f874186ed5f782019bd713e7d9f0f58ca98a25edaec6899ce4fe53"
+    },
+    {
+      "case_id": "bpmn-io__bpmn-js-2396",
+      "asset_id": "a6b818fa60194dee719593e8a5a8fa9e3a7fc69e56e980f89605b435890d8692",
+      "path": "16_04_02_assets/case_0004/asset_03_a6b818fa6019.png",
+      "sha256": "a6b818fa60194dee719593e8a5a8fa9e3a7fc69e56e980f89605b435890d8692"
+    },
+    {
+      "case_id": "bpmn-io__bpmn-js-2396",
+      "asset_id": "1a6bc712a5d102889e542ee3d8c9e00850e998100ac58231028901e3ff1e7b30",
+      "path": "16_04_02_assets/case_0004/asset_04_1a6bc712a5d1.png",
+      "sha256": "1a6bc712a5d102889e542ee3d8c9e00850e998100ac58231028901e3ff1e7b30"
+    },
+    {
+      "case_id": "grommet__grommet-7712",
+      "asset_id": "90d3bbc0587cdb0e1efe9c15657b915801aa38f848e4f5ba2691a47b450f8bf0",
+      "path": "16_04_02_assets/case_0005/asset_01_90d3bbc0587c.png",
+      "sha256": "90d3bbc0587cdb0e1efe9c15657b915801aa38f848e4f5ba2691a47b450f8bf0"
+    },
+    {
+      "case_id": "grommet__grommet-7712",
+      "asset_id": "ce204df596bab7f354d1455a3c3b607c1f5a3f172be5c1c9eb6585f89bc9fce8",
+      "path": "16_04_02_assets/case_0005/asset_02_ce204df596ba.png",
+      "sha256": "ce204df596bab7f354d1455a3c3b607c1f5a3f172be5c1c9eb6585f89bc9fce8"
+    },
+    {
+      "case_id": "googlechrome__lighthouse-16403",
+      "asset_id": "b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e",
+      "path": "16_04_02_assets/case_0006/asset_01_b8fed5a73f32.png",
+      "sha256": "b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100957",
+      "asset_id": "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552",
+      "path": "16_04_02_assets/case_0007/asset_01_4b36ae858e6c.png",
+      "sha256": "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101438",
+      "asset_id": "17d56703e4879c53853bf2fafc68900a85b1bae440d64468765e83b9655cdbeb",
+      "path": "16_04_02_assets/case_0008/asset_01_17d56703e487.png",
+      "sha256": "17d56703e4879c53853bf2fafc68900a85b1bae440d64468765e83b9655cdbeb"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101438",
+      "asset_id": "a60d258fe7cc3ae882a617bd725597f28a253728a377e169182ce06228c45daa",
+      "path": "16_04_02_assets/case_0008/asset_02_a60d258fe7cc.png",
+      "sha256": "a60d258fe7cc3ae882a617bd725597f28a253728a377e169182ce06228c45daa"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101890",
+      "asset_id": "8833332f18ac9e278baab744036e732975d7c5d84c6a3217d02c67eff8d3e45d",
+      "path": "16_04_02_assets/case_0009/asset_01_8833332f18ac.png",
+      "sha256": "8833332f18ac9e278baab744036e732975d7c5d84c6a3217d02c67eff8d3e45d"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101890",
+      "asset_id": "c9fc2f8dc099489993caefe973b6170ecba5e1500e749b211e895a50d9245125",
+      "path": "16_04_02_assets/case_0009/asset_02_c9fc2f8dc099.png",
+      "sha256": "c9fc2f8dc099489993caefe973b6170ecba5e1500e749b211e895a50d9245125"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101890",
+      "asset_id": "38f304a4189b35ccefafa4ee544e9ac4c01631f55196c444fb75b7d771087d8b",
+      "path": "16_04_02_assets/case_0009/asset_03_38f304a4189b.png",
+      "sha256": "38f304a4189b35ccefafa4ee544e9ac4c01631f55196c444fb75b7d771087d8b"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101890",
+      "asset_id": "4ce68c7a2ca1226715cca9393326c15a765f661a70eb8a4a376c711b1c159495",
+      "path": "16_04_02_assets/case_0009/asset_04_4ce68c7a2ca1.png",
+      "sha256": "4ce68c7a2ca1226715cca9393326c15a765f661a70eb8a4a376c711b1c159495"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99980",
+      "asset_id": "2e7f6b1671d2007468b0bfa1f6bd9d3f261682de07b64b640881970b771f2cd5",
+      "path": "16_04_02_assets/case_0010/asset_01_2e7f6b1671d2.png",
+      "sha256": "2e7f6b1671d2007468b0bfa1f6bd9d3f261682de07b64b640881970b771f2cd5"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99980",
+      "asset_id": "edeb5df261e459f00260a27e80f983d8d78daa1055196ce782a3f57a71c9c593",
+      "path": "16_04_02_assets/case_0010/asset_02_edeb5df261e4.png",
+      "sha256": "edeb5df261e459f00260a27e80f983d8d78daa1055196ce782a3f57a71c9c593"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99980",
+      "asset_id": "aae4f5574163fa9ddf470aa6b30ef64d2574ab815c3325b2f6bfa8fe942ce54e",
+      "path": "16_04_02_assets/case_0010/asset_03_aae4f5574163.png",
+      "sha256": "aae4f5574163fa9ddf470aa6b30ef64d2574ab815c3325b2f6bfa8fe942ce54e"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98505",
+      "asset_id": "6da05d0c5fe08f762fcbd6d0b23a89a6933a8b9e212ecd5cb7f5e2db47561a77",
+      "path": "16_04_02_assets/case_0011/asset_01_6da05d0c5fe0.png",
+      "sha256": "6da05d0c5fe08f762fcbd6d0b23a89a6933a8b9e212ecd5cb7f5e2db47561a77"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98505",
+      "asset_id": "3d84984049b763da818706725f68a4774540fefd4088a35c187076981e1724e3",
+      "path": "16_04_02_assets/case_0011/asset_02_3d84984049b7.png",
+      "sha256": "3d84984049b763da818706725f68a4774540fefd4088a35c187076981e1724e3"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102315",
+      "asset_id": "dba95fbf632107589bec5d1d8f8be39cc1ecbae3d4da2966d7a8a522406e776c",
+      "path": "16_04_02_assets/case_0012/asset_01_dba95fbf6321.png",
+      "sha256": "dba95fbf632107589bec5d1d8f8be39cc1ecbae3d4da2966d7a8a522406e776c"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102315",
+      "asset_id": "8435507699b94365ed232e3f3db009276d2dc69631f5ae6366e4cac4aba7e8d5",
+      "path": "16_04_02_assets/case_0012/asset_02_8435507699b9.png",
+      "sha256": "8435507699b94365ed232e3f3db009276d2dc69631f5ae6366e4cac4aba7e8d5"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101093",
+      "asset_id": "b3f573e541528a317a7a975bd0b21500e288a926331f89dfc8f094c1c3483bcc",
+      "path": "16_04_02_assets/case_0013/asset_01_b3f573e54152.png",
+      "sha256": "b3f573e541528a317a7a975bd0b21500e288a926331f89dfc8f094c1c3483bcc"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99109",
+      "asset_id": "c78922c2a38c7ca96db7f22582f1069cc94bba984fe097f0ad93ccf179206ca6",
+      "path": "16_04_02_assets/case_0014/asset_01_c78922c2a38c.png",
+      "sha256": "c78922c2a38c7ca96db7f22582f1069cc94bba984fe097f0ad93ccf179206ca6"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99049",
+      "asset_id": "48ab4686a0e9662cb1a56582f7ebae57962b55667765409f8b38cdbff2bd4b7f",
+      "path": "16_04_02_assets/case_0015/asset_01_48ab4686a0e9.png",
+      "sha256": "48ab4686a0e9662cb1a56582f7ebae57962b55667765409f8b38cdbff2bd4b7f"
+    },
+    {
+      "case_id": "automattic__wp-calypso-113834",
+      "asset_id": "bd76528e72cf701295b60ce488b08eb4ff01a40faad09ff1ce65512ddfa268aa",
+      "path": "16_04_02_assets/case_0016/asset_01_bd76528e72cf.png",
+      "sha256": "bd76528e72cf701295b60ce488b08eb4ff01a40faad09ff1ce65512ddfa268aa"
+    },
+    {
+      "case_id": "automattic__wp-calypso-113834",
+      "asset_id": "f856de24e96655a062c6a4ccdf47b8b96217ac8d1518627915ca5993fc03ecf5",
+      "path": "16_04_02_assets/case_0016/asset_02_f856de24e966.png",
+      "sha256": "f856de24e96655a062c6a4ccdf47b8b96217ac8d1518627915ca5993fc03ecf5"
+    },
+    {
+      "case_id": "automattic__wp-calypso-113834",
+      "asset_id": "8c1c2a0d0eb512f86f0fa5889973a0b5735e15836960f27a802ab0f2cd461a19",
+      "path": "16_04_02_assets/case_0016/asset_03_8c1c2a0d0eb5.png",
+      "sha256": "8c1c2a0d0eb512f86f0fa5889973a0b5735e15836960f27a802ab0f2cd461a19"
+    },
+    {
+      "case_id": "automattic__wp-calypso-113834",
+      "asset_id": "844d08a1a5f6b114547058adefe0811e1e569c75bb4b786766edd26894802747",
+      "path": "16_04_02_assets/case_0016/asset_04_844d08a1a5f6.png",
+      "sha256": "844d08a1a5f6b114547058adefe0811e1e569c75bb4b786766edd26894802747"
+    },
+    {
+      "case_id": "automattic__wp-calypso-113834",
+      "asset_id": "58dd65b04b03816f4c98ee8daf2670b26423427bcc59768eb6b2b9caad900608",
+      "path": "16_04_02_assets/case_0016/asset_05_58dd65b04b03.png",
+      "sha256": "58dd65b04b03816f4c98ee8daf2670b26423427bcc59768eb6b2b9caad900608"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101095",
+      "asset_id": "a85ddc130cba1108ea585ac05cbe23cdd4d067a1a6ae43e556e170ac5e9fe6dd",
+      "path": "16_04_02_assets/case_0017/asset_01_a85ddc130cba.png",
+      "sha256": "a85ddc130cba1108ea585ac05cbe23cdd4d067a1a6ae43e556e170ac5e9fe6dd"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101492",
+      "asset_id": "c30faeece2ed3bdd963997c056e72e6a63f5caeba0875cec13f5b8f19ed96ba4",
+      "path": "16_04_02_assets/case_0018/asset_01_c30faeece2ed.png",
+      "sha256": "c30faeece2ed3bdd963997c056e72e6a63f5caeba0875cec13f5b8f19ed96ba4"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-20142",
+      "asset_id": "c62ea957175fc68b6068562f23b170092e951e7ae09b15c9e33335b2eb9c3e5c",
+      "path": "16_04_02_assets/case_0019/asset_01_c62ea957175f.png",
+      "sha256": "c62ea957175fc68b6068562f23b170092e951e7ae09b15c9e33335b2eb9c3e5c"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-20142",
+      "asset_id": "5ecb45866376dec102fa67fcd0a6404754209568b9815e5e1f071c79b4e99cd5",
+      "path": "16_04_02_assets/case_0019/asset_02_5ecb45866376.png",
+      "sha256": "5ecb45866376dec102fa67fcd0a6404754209568b9815e5e1f071c79b4e99cd5"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7744",
+      "asset_id": "65d9ef9aff82a8d4b8b4b80500e1fb7a0796082d5ee21c9df750baa6d212e031",
+      "path": "16_04_02_assets/case_0020/asset_01_65d9ef9aff82.png",
+      "sha256": "65d9ef9aff82a8d4b8b4b80500e1fb7a0796082d5ee21c9df750baa6d212e031"
+    },
+    {
+      "case_id": "pixijs__pixijs-11549",
+      "asset_id": "408747a494f271a282a52b42154fee31f2a39181a3877cda8814f5e5f7133b25",
+      "path": "16_04_02_assets/case_0021/asset_01_408747a494f2.png",
+      "sha256": "408747a494f271a282a52b42154fee31f2a39181a3877cda8814f5e5f7133b25"
+    },
+    {
+      "case_id": "pixijs__pixijs-11549",
+      "asset_id": "5638a4db47f90d9e12e74be1af69a3425fc1948170309cb6f5293a9fae0e71f8",
+      "path": "16_04_02_assets/case_0021/asset_02_5638a4db47f9.png",
+      "sha256": "5638a4db47f90d9e12e74be1af69a3425fc1948170309cb6f5293a9fae0e71f8"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6944",
+      "asset_id": "4486ebf35bc780dcb230437b37c1f221e9196b11fc691aeeeb70c80128032ca6",
+      "path": "16_04_02_assets/case_0022/asset_01_4486ebf35bc7.png",
+      "sha256": "4486ebf35bc780dcb230437b37c1f221e9196b11fc691aeeeb70c80128032ca6"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-11441",
+      "asset_id": "24d9ab1625162a07b1567570d61ed4bac0bcb62e574c2808d37a0d541c7da81f",
+      "path": "16_04_02_assets/case_0023/asset_01_24d9ab162516.png",
+      "sha256": "24d9ab1625162a07b1567570d61ed4bac0bcb62e574c2808d37a0d541c7da81f"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-11458",
+      "asset_id": "3f557877ff8887815de14552ec78768f20b406bf67e60775d6c3259d46e0b0c0",
+      "path": "16_04_02_assets/case_0024/asset_01_3f557877ff88.png",
+      "sha256": "3f557877ff8887815de14552ec78768f20b406bf67e60775d6c3259d46e0b0c0"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7711",
+      "asset_id": "1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9",
+      "path": "16_04_02_assets/case_0025/asset_01_1c6629e3a3e7.png",
+      "sha256": "1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7711",
+      "asset_id": "fbe47b3b0b26c79c0cbb918bda48112c506ee475c4a8968292984048e8bb9306",
+      "path": "16_04_02_assets/case_0025/asset_02_fbe47b3b0b26.png",
+      "sha256": "fbe47b3b0b26c79c0cbb918bda48112c506ee475c4a8968292984048e8bb9306"
+    },
+    {
+      "case_id": "pixijs__pixijs-11460",
+      "asset_id": "dff3aa6f2d3e9a74c1f3dc4c6c4764a1cc67516d5c26e9901fbc98515415a88b",
+      "path": "16_04_02_assets/case_0026/asset_01_dff3aa6f2d3e.png",
+      "sha256": "dff3aa6f2d3e9a74c1f3dc4c6c4764a1cc67516d5c26e9901fbc98515415a88b"
+    },
+    {
+      "case_id": "apache__echarts-21258",
+      "asset_id": "f7dc8b1574d5da148583f2ccdce3f4525fcb17a1cd1b26d70111e1867c900e98",
+      "path": "16_04_02_assets/case_0027/asset_01_f7dc8b1574d5.png",
+      "sha256": "f7dc8b1574d5da148583f2ccdce3f4525fcb17a1cd1b26d70111e1867c900e98"
+    },
+    {
+      "case_id": "apache__echarts-21258",
+      "asset_id": "1cb9ffcc03cf1604fa5f827161ff84dbd9ad992646af4e48e878cc468865cdc6",
+      "path": "16_04_02_assets/case_0027/asset_02_1cb9ffcc03cf.png",
+      "sha256": "1cb9ffcc03cf1604fa5f827161ff84dbd9ad992646af4e48e878cc468865cdc6"
+    },
+    {
+      "case_id": "apache__echarts-21258",
+      "asset_id": "aa4600f781345bcd7b9dbef0ff165e89b23a86420140e0801fceeeaf5c4f54fc",
+      "path": "16_04_02_assets/case_0027/asset_03_aa4600f78134.png",
+      "sha256": "aa4600f781345bcd7b9dbef0ff165e89b23a86420140e0801fceeeaf5c4f54fc"
+    },
+    {
+      "case_id": "tldraw__tldraw-8931",
+      "asset_id": "dd0d9a595f3739f6287508c897bc1869da2b39c402f326d1f20664bfece77e48",
+      "path": "16_04_02_assets/case_0028/asset_01_dd0d9a595f37.png",
+      "sha256": "dd0d9a595f3739f6287508c897bc1869da2b39c402f326d1f20664bfece77e48"
+    },
+    {
+      "case_id": "tldraw__tldraw-8931",
+      "asset_id": "49fb151132350f4a628a87b450fb22cc4fee288aef64782e7c6bdd3083f29e8e",
+      "path": "16_04_02_assets/case_0028/asset_02_49fb15113235.png",
+      "sha256": "49fb151132350f4a628a87b450fb22cc4fee288aef64782e7c6bdd3083f29e8e"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9002",
+      "asset_id": "6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2",
+      "path": "16_04_02_assets/case_0029/asset_01_6b1f1c23d455.bin",
+      "sha256": "6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2"
+    },
+    {
+      "case_id": "apache__superset-36323",
+      "asset_id": "63bfdd32a0cdf21ebc2b9d605bd3c8492f2a0f666c6963f3402cd208d977f4ba",
+      "path": "16_04_02_assets/case_0030/asset_01_63bfdd32a0cd.png",
+      "sha256": "63bfdd32a0cdf21ebc2b9d605bd3c8492f2a0f666c6963f3402cd208d977f4ba"
+    },
+    {
+      "case_id": "apache__superset-36323",
+      "asset_id": "e093409edef37c6d076b71226d43ed9f790495e25be8b4f197a60cf12316193c",
+      "path": "16_04_02_assets/case_0030/asset_02_e093409edef3.png",
+      "sha256": "e093409edef37c6d076b71226d43ed9f790495e25be8b4f197a60cf12316193c"
+    },
+    {
+      "case_id": "apache__superset-36323",
+      "asset_id": "e9217b61e0323da148068ee8af042237e1bf99777ae824195378fb7c30aa9a28",
+      "path": "16_04_02_assets/case_0030/asset_03_e9217b61e032.png",
+      "sha256": "e9217b61e0323da148068ee8af042237e1bf99777ae824195378fb7c30aa9a28"
+    },
+    {
+      "case_id": "apache__superset-36323",
+      "asset_id": "9df4c102d14ae3790295d4358f234fb13b358b01c5d0a5b3dcf35891b47e8f36",
+      "path": "16_04_02_assets/case_0030/asset_04_9df4c102d14a.png",
+      "sha256": "9df4c102d14ae3790295d4358f234fb13b358b01c5d0a5b3dcf35891b47e8f36"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9010",
+      "asset_id": "bc29c01eea432fec2e51fd94afc6d7db4a4e552c6140fc617cbe42d0943af3af",
+      "path": "16_04_02_assets/case_0031/asset_01_bc29c01eea43.mov",
+      "sha256": "bc29c01eea432fec2e51fd94afc6d7db4a4e552c6140fc617cbe42d0943af3af"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9010",
+      "asset_id": "df53381a9399abd6d26bc2980ae5a1d4c85cf9159f2e87eb75201e7217f137c7",
+      "path": "16_04_02_assets/case_0031/asset_02_df53381a9399.mov",
+      "sha256": "df53381a9399abd6d26bc2980ae5a1d4c85cf9159f2e87eb75201e7217f137c7"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9010",
+      "asset_id": "ce6ee3b7900aa4c9004775f354a03df2d6fb26b9c1d1f05cbe6672f2e89239c5",
+      "path": "16_04_02_assets/case_0031/asset_03_ce6ee3b7900a.gif",
+      "sha256": "ce6ee3b7900aa4c9004775f354a03df2d6fb26b9c1d1f05cbe6672f2e89239c5"
+    },
+    {
+      "case_id": "fabricjs__fabric.js-10441",
+      "asset_id": "3920f3905a0aba88947c748277ae7f7ef75a38183070900dbbd24f63ee8a3467",
+      "path": "16_04_02_assets/case_0032/asset_01_3920f3905a0a.mp4",
+      "sha256": "3920f3905a0aba88947c748277ae7f7ef75a38183070900dbbd24f63ee8a3467"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6021",
+      "asset_id": "ea0d17e991eb880f0bc4f2a25998a82d4139ab408a9f60df4225ff9e4e56eb51",
+      "path": "16_04_02_assets/case_0033/asset_01_ea0d17e991eb.png",
+      "sha256": "ea0d17e991eb880f0bc4f2a25998a82d4139ab408a9f60df4225ff9e4e56eb51"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6021",
+      "asset_id": "034d037398269f8ebda0e27cf821abe21ad4a41b9bf8a82c676e13672d980c32",
+      "path": "16_04_02_assets/case_0033/asset_02_034d03739826.png",
+      "sha256": "034d037398269f8ebda0e27cf821abe21ad4a41b9bf8a82c676e13672d980c32"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6679",
+      "asset_id": "c0e89df6638f613a70a6cc87d819714399f042df180733b32cc3ea0cb14a0f73",
+      "path": "16_04_02_assets/case_0034/asset_01_c0e89df6638f.mp4",
+      "sha256": "c0e89df6638f613a70a6cc87d819714399f042df180733b32cc3ea0cb14a0f73"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6440",
+      "asset_id": "44f6845080a49cc8e4228cb58ca655b08dbd71eaee0b805caeb9d71459976abe",
+      "path": "16_04_02_assets/case_0035/asset_01_44f6845080a4.jpg",
+      "sha256": "44f6845080a49cc8e4228cb58ca655b08dbd71eaee0b805caeb9d71459976abe"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6683",
+      "asset_id": "03761a28c47f25e910b3ae6d63941cf7f0f059eb2ffef75b3eeaaa2ea629002d",
+      "path": "16_04_02_assets/case_0036/asset_01_03761a28c47f.png",
+      "sha256": "03761a28c47f25e910b3ae6d63941cf7f0f059eb2ffef75b3eeaaa2ea629002d"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6683",
+      "asset_id": "93a4f1956ba7133497deee28fb3f1900d4ec4d40e3ff1f473be34f4250a28909",
+      "path": "16_04_02_assets/case_0036/asset_02_93a4f1956ba7.png",
+      "sha256": "93a4f1956ba7133497deee28fb3f1900d4ec4d40e3ff1f473be34f4250a28909"
+    },
+    {
+      "case_id": "pixijs__pixijs-11230",
+      "asset_id": "99fa281c89f5dafa8b91cfc587eab8c56891a39e879d76b7b97042c1b1262076",
+      "path": "16_04_02_assets/case_0037/asset_01_99fa281c89f5.png",
+      "sha256": "99fa281c89f5dafa8b91cfc587eab8c56891a39e879d76b7b97042c1b1262076"
+    },
+    {
+      "case_id": "pixijs__pixijs-11230",
+      "asset_id": "c2c043f4ac381130daecc688af0335c3ad9910c9edde847bcf03f99525f2853b",
+      "path": "16_04_02_assets/case_0037/asset_02_c2c043f4ac38.png",
+      "sha256": "c2c043f4ac381130daecc688af0335c3ad9910c9edde847bcf03f99525f2853b"
+    },
+    {
+      "case_id": "tldraw__tldraw-5888",
+      "asset_id": "6cbe42344e86cf3ef4a1e002632e4b76387c8dfe7a9494f900b2d976c47119e6",
+      "path": "16_04_02_assets/case_0038/asset_01_6cbe42344e86.mp4",
+      "sha256": "6cbe42344e86cf3ef4a1e002632e4b76387c8dfe7a9494f900b2d976c47119e6"
+    },
+    {
+      "case_id": "xyflow__xyflow-4991",
+      "asset_id": "08da91d3271cae240fa585582d40af5b1cd61f953ef752f6baacb43715c8316f",
+      "path": "16_04_02_assets/case_0039/asset_01_08da91d3271c.mp4",
+      "sha256": "08da91d3271cae240fa585582d40af5b1cd61f953ef752f6baacb43715c8316f"
+    }
+  ],
+  "boundary": {
+    "machine_candidates_are_not_human_approved": true,
+    "review_scope": "visual_necessity_and_leakage_only",
+    "f2p_p2p_gate_excluded": true,
+    "browser_export_cannot_promote_task": true
+  }
+}

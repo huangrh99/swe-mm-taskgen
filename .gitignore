@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+evidence/.*.promotion.lock
+.runtime/
+
+# 容器镜像本体不随提交：Dockerfile 与 reproducibility/ 下的 SHA-256 引用足以重建，
+# 而 docker save 出来的归档动辄上 G。基座镜像的离线归档留在仓库外的 crawler-output/。
+*.tar
+*.tar.gz
+*.tar.zst
+*.tgz
+*.img
+*.sif
+
+# trial 产物与运行日志不随提交：体量大、且 Pass@5 仍在写入
+cases/*/outputs/

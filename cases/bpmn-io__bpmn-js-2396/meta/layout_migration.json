@@ -1,0 +1,16 @@
+{
+  "schema_version": "case-layout-migration-v1",
+  "generated_at": "2026-09-02T17:06:09.745302+00:00",
+  "case_root": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396",
+  "promoted_runtime_entries": [],
+  "moved_to_meta": [],
+  "rewritten_metadata_files": [],
+  "rebound_manifest_artifacts": [],
+  "instance_id": "bpmn-io__bpmn-js-2396",
+  "submit_ready_layout": false,
+  "missing_required_files": [
+    "tests/test.patch"
+  ],
+  "unexpected_root_entries": [],
+  "deletion_contract": "Deleting meta/ leaves only the Harbor task runtime files."
+}

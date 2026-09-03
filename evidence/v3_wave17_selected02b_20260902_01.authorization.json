@@ -1,0 +1,76 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave17_selected02/16_06_01_text_sufficiency/20260902T145550355946Z",
+  "source_manifest_sha256": "fbe8d52a16517673d35fcb47b15118214ef69a3978e94e20de6da6ecb30cefd9",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "c2a003a53ce0ae30279373c5482d748f9bf969bd90308cbf4838fd1fd6d5f565",
+  "run_id": "v3-wave17-selected02b-20260902-01",
+  "nonce": "wave17-selected02b-20260902-nonce01",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave17_selected02b_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "apache__echarts-21107",
+      "source_result_sha256": "8523c47e7f7a621138915fe58fd801740283de4e5821a772374e1d73e7cde25c",
+      "source_packet_sha256": "173ab181fe3befe0d7c168bf0598a2d1cc2184aa144b6c98a84003f72253680b",
+      "source_archive_sha256": "61f1bbc2b99e33a2b0f0473919b9c471f6eb75f2f02136c3f2943d0bad389081",
+      "problem_statement_sha256": "1bd5b28d965294a4e592d94e06ce70c0b0bd9abf6794109a6d69fa39344241f1",
+      "available_asset_ids": [
+        "f1419d59f68eaef8bd1b27e272e394ffeb77409b26e5e390df0ba61c826a9249"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "5481f46727f8bf9716f955c987a775a7a3c915b9905d5e7daeddfa8bfc7f43b3"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-7549",
+      "source_result_sha256": "442648aac8d4f8596511a537d14eb2a74a600e4bc196aa958afbb06cd7b00dc1",
+      "source_packet_sha256": "5b61c503440c5cb7476b324766eaeb61c06459dfe617a8456ae74baf5c426ae5",
+      "source_archive_sha256": "f143dd7d3486559e103bdd0edea17a959993e744ebeaf3cf674bae208b7d280c",
+      "problem_statement_sha256": "77f40f99e013d0ea32739569782bc3fbc8960b319c6a3b66dc2469020625a286",
+      "available_asset_ids": [
+        "ae126b685c109c44002ce7a444e29eeffe49f679dbeb35931e5a564a702ce69d"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "cda321046778adf54d211fce248bea6c74485a1be845af5b89e4d5aa7e7542e4"
+    }
+  ],
+  "expected_case_calls": 2,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 12,
+  "authorized": true
+}

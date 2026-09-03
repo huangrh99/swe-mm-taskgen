@@ -1,0 +1,101 @@
+{
+  "schema_version": "swebench-mm-functional-tests-v1",
+  "repo": "carbon-design-system/carbon",
+  "instance_id": "carbon-design-system__carbon-22019",
+  "base_commit": "05166d4aff1dfbcef426642af124b8af4393421c",
+  "reference_commit": "3a3a51221b1952497d37797d35032c5be28d141f",
+  "comparison_policy": "base_commit_to_final_pr_head",
+  "test_command": "yarn test packages/react/src/components/ExpandableSearch/ExpandableSearch-test.js --runInBand --watch=false --reporters=default --json --outputFile=/results/carbon-22019-jest.json",
+  "FAIL_TO_PASS": [
+    "CARBON-22019-F2P-COLLAPSED-SEARCH-ICON-TOOLTIP"
+  ],
+  "PASS_TO_PASS": [
+    "CARBON-22019-P2P-COLLAPSED-DEFAULT",
+    "CARBON-22019-P2P-CONTROLLED-EXPANDED",
+    "CARBON-22019-P2P-DEFAULT-VALUE",
+    "CARBON-22019-P2P-EXPAND-CLICK",
+    "CARBON-22019-P2P-EXPAND-ENTER",
+    "CARBON-22019-P2P-EXPAND-SPACE",
+    "CARBON-22019-P2P-FOCUS-AFTER-EXPAND",
+    "CARBON-22019-P2P-FORWARDED-REF",
+    "CARBON-22019-P2P-BLUR-EMPTY",
+    "CARBON-22019-P2P-BLUR-WITH-VALUE",
+    "CARBON-22019-P2P-BLUR-DEFAULT-EMPTY",
+    "CARBON-22019-P2P-BLUR-DEFAULT-ZERO",
+    "CARBON-22019-P2P-BLUR-DEFAULT-TEXT",
+    "CARBON-22019-P2P-BLUR-DEFAULT-UNDEFINED",
+    "CARBON-22019-P2P-ESCAPE-CLEAR-CLOSE"
+  ],
+  "test_purposes": {
+    "CARBON-22019-F2P-COLLAPSED-SEARCH-ICON-TOOLTIP": {
+      "source": "luna_verifier_generated",
+      "purpose": "Render a real collapsed ExpandableSearch and verify its Search trigger uses the standard icon-tooltip visual contract, retains the Search tooltip label, starts hidden, and opens on hover."
+    },
+    "CARBON-22019-P2P-COLLAPSED-DEFAULT": {
+      "source": "repository_existing",
+      "purpose": "Preserve the default collapsed state."
+    },
+    "CARBON-22019-P2P-CONTROLLED-EXPANDED": {
+      "source": "repository_existing",
+      "purpose": "Preserve the controlled initially-expanded state."
+    },
+    "CARBON-22019-P2P-DEFAULT-VALUE": {
+      "source": "repository_existing",
+      "purpose": "Preserve rendering of a supplied default search value."
+    },
+    "CARBON-22019-P2P-EXPAND-CLICK": {
+      "source": "repository_existing",
+      "purpose": "Preserve mouse activation of the collapsed Search control."
+    },
+    "CARBON-22019-P2P-EXPAND-ENTER": {
+      "source": "repository_existing",
+      "purpose": "Preserve keyboard expansion with Enter."
+    },
+    "CARBON-22019-P2P-EXPAND-SPACE": {
+      "source": "repository_existing",
+      "purpose": "Preserve keyboard expansion with Space."
+    },
+    "CARBON-22019-P2P-FOCUS-AFTER-EXPAND": {
+      "source": "repository_existing",
+      "purpose": "Preserve input focus after expansion."
+    },
+    "CARBON-22019-P2P-FORWARDED-REF": {
+      "source": "repository_existing",
+      "purpose": "Preserve forwarding of the underlying input reference."
+    },
+    "CARBON-22019-P2P-BLUR-EMPTY": {
+      "source": "repository_existing",
+      "purpose": "Preserve automatic collapse when an empty search loses focus."
+    },
+    "CARBON-22019-P2P-BLUR-WITH-VALUE": {
+      "source": "repository_existing",
+      "purpose": "Preserve the expanded state when a non-empty search loses focus."
+    },
+    "CARBON-22019-P2P-BLUR-DEFAULT-EMPTY": {
+      "source": "repository_existing",
+      "purpose": "Preserve blur handling for an empty-string default value."
+    },
+    "CARBON-22019-P2P-BLUR-DEFAULT-ZERO": {
+      "source": "repository_existing",
+      "purpose": "Preserve blur handling for numeric zero as meaningful content."
+    },
+    "CARBON-22019-P2P-BLUR-DEFAULT-TEXT": {
+      "source": "repository_existing",
+      "purpose": "Preserve blur handling for a non-empty default value."
+    },
+    "CARBON-22019-P2P-BLUR-DEFAULT-UNDEFINED": {
+      "source": "repository_existing",
+      "purpose": "Preserve blur handling when no default value is supplied."
+    },
+    "CARBON-22019-P2P-ESCAPE-CLEAR-CLOSE": {
+      "source": "repository_existing",
+      "purpose": "Preserve the two-step Escape behavior that clears content and then closes the search."
+    }
+  },
+  "human_review": {
+    "visual_gate": "deferred",
+    "test_semantic_gate": "deferred",
+    "formal_admission": false
+  },
+  "log_parser": "carbon_22019.jest_json_v1"
+}

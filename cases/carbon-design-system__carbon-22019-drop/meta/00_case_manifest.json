@@ -1,0 +1,284 @@
+{
+  "schema_version": "report-case-archive-v1",
+  "case_id": "carbon-design-system__carbon-22019",
+  "repository": "carbon-design-system/carbon",
+  "pr_number": 22019,
+  "state": "candidate",
+  "archived_at": "2026-09-02T13:40:05.146234+00:00",
+  "sections": {
+    "visual_review": [
+      {
+        "path": "01_visual_review/16_04_01_review_payload.json",
+        "sha256": "b5be857ec453909bcc943a9116948d46289a22bf40dd5dfbb605f0fcdb2a0ca5",
+        "size_bytes": 264021,
+        "storage": "copied"
+      },
+      {
+        "path": "01_visual_review/16_04_04_review_manifest.json",
+        "sha256": "3da81e86ff453edcca08ac0190da0ff50d4ff90757d50a90dc9386e6068a8ce9",
+        "size_bytes": 16621,
+        "storage": "copied"
+      },
+      {
+        "path": "01_visual_review/assets/asset_01_669dd94501e7.gif",
+        "sha256": "669dd94501e78b2f35dc2ebbf364545d9fe0524cb41a8170f29de883d1b005e4",
+        "size_bytes": 112078,
+        "storage": "hardlinked"
+      },
+      {
+        "path": "01_visual_review/assets/asset_02_19d22e1ed283.png",
+        "sha256": "19d22e1ed28360a0b97bc9ddad74eb5f876648f8919c795343a3fd4ac10c9efd",
+        "size_bytes": 26063,
+        "storage": "hardlinked"
+      },
+      {
+        "path": "01_visual_review/assets/asset_03_1ce711a076f5.png",
+        "sha256": "1ce711a076f599ff817c1dd6330c3165cf8e6107ddf2b28f863ca191b7f56ab6",
+        "size_bytes": 52069,
+        "storage": "hardlinked"
+      },
+      {
+        "path": "01_visual_review/assets/asset_04_40c94839f37c.png",
+        "sha256": "40c94839f37cdb3c2734b5f7c613c7ca1ce31678d5a931d77093ccfc43755cee",
+        "size_bytes": 22393,
+        "storage": "hardlinked"
+      }
+    ],
+    "source_archive": [
+      {
+        "path": "02_source_archive/11_record.json",
+        "sha256": "b5a7e9b0a9ba6ec1fb8115018f004b64e71b652291b75387c98094228c74c5b7",
+        "size_bytes": 379320,
+        "storage": "copied"
+      }
+    ],
+    "test_construction": [
+      {
+        "path": "03_test_construction/03_production.patch",
+        "sha256": "4a631d6e6594a915fb58a3c7f1f609f86f53be003c7f27ce4b9d8ad23738c428",
+        "size_bytes": 707,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+        "sha256": "5df9d5c0b41121bd2665a978f7a9c1faf4fd2140fa7efb96b2d9d86039b3c0be",
+        "size_bytes": 42847,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+        "sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+        "size_bytes": 9136,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+        "sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+        "size_bytes": 6387,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+        "sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+        "size_bytes": 26252,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+        "sha256": "2301c4fdf6bff0226b43186bbd25ce04b1861dc12e9dd1ed20171314d755cd12",
+        "size_bytes": 17155,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+        "sha256": "6aade9e476071e213338f3973c25ce68a9a22dc2abe36f80ebdae5cb7bbb5beb",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+        "sha256": "1a2761838510b35d396a6489fe434155fc5fa837429bf5d11e44051f015d016c",
+        "size_bytes": 60357,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+        "sha256": "820e168b5437d4df05e8cd5960be6e490aed4e03b8a49573d41ecc9ffe8b6efb",
+        "size_bytes": 156,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+        "sha256": "0a1c45facfef80235cd8c31d74baa2663230c377a46eae00440c2e3277a9023b",
+        "size_bytes": 40,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+        "sha256": "8e86b4e2c184dc51623e1058dd2d0e6aed0ba5ace125c7c6b478b2614c576e25",
+        "size_bytes": 49538,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+        "sha256": "f9354e8783b37c315e37e69af03bf9d8f2eaa0dacfc0120babfdea5163e9fdb9",
+        "size_bytes": 16673,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_invocation.json",
+        "sha256": "972685f762c7986f74b602762d610efaf54020a6d219fd98db553ab06f84c230",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+        "sha256": "d188c4a79473ad22f4b1be84cbe0ce714a02aa71a72eaa4551009732c9ef5862",
+        "size_bytes": 60492,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_attempt_01.json",
+        "sha256": "293873811ced04f6e731358248a79fcdd4ab78936e832c18a2688b9ab922f510",
+        "size_bytes": 156,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_invocation_started.json",
+        "sha256": "aeb4d3355903e1d023b50091d8e690954ac0ba8c1d5d12fc646d29a248957556",
+        "size_bytes": 39,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+        "sha256": "1fe4a6578cb908d6a3ca2d8dd41a48c5140ac95fdea67808ae8212a229986579",
+        "size_bytes": 59284,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+        "sha256": "008d43ca5b015537eb0213f6cca65fd2b0f8514e09785c06ff2be847de72add3",
+        "size_bytes": 23657,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.js",
+        "sha256": "964a347fdac99bb1f7ff73b7a637737eaf018680fa3b44276dffd252a4272125",
+        "size_bytes": 8641,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+        "sha256": "be8940a5adca252815dd327244dccd72c25e0b47f18fdb2430892d649e2e8076",
+        "size_bytes": 24830,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+        "sha256": "d9c0542c57a38b910dce0d6451058aaef6c3dd8facc0f6503f920b85a1078a28",
+        "size_bytes": 1303,
+        "storage": "generated"
+      }
+    ],
+    "measurements": [],
+    "harbor": [
+      {
+        "path": "@task/environment/Dockerfile",
+        "storage": "generated",
+        "size_bytes": 613,
+        "sha256": "cff2e95e1a8d3ded394e452cdf7410a230702cc9ddf2fbd5a91cda38bd2675ce"
+      },
+      {
+        "path": "@task/environment/assets/asset_01.gif",
+        "storage": "generated",
+        "size_bytes": 112078,
+        "sha256": "669dd94501e78b2f35dc2ebbf364545d9fe0524cb41a8170f29de883d1b005e4"
+      },
+      {
+        "path": "@task/environment/assets/asset_02.png",
+        "storage": "generated",
+        "size_bytes": 26063,
+        "sha256": "19d22e1ed28360a0b97bc9ddad74eb5f876648f8919c795343a3fd4ac10c9efd"
+      },
+      {
+        "path": "@task/environment/assets/asset_03.png",
+        "storage": "generated",
+        "size_bytes": 52069,
+        "sha256": "1ce711a076f599ff817c1dd6330c3165cf8e6107ddf2b28f863ca191b7f56ab6"
+      },
+      {
+        "path": "@task/environment/assets/asset_04.png",
+        "storage": "generated",
+        "size_bytes": 22393,
+        "sha256": "40c94839f37cdb3c2734b5f7c613c7ca1ce31678d5a931d77093ccfc43755cee"
+      },
+      {
+        "path": "@task/environment/base_image.json",
+        "storage": "generated",
+        "size_bytes": 1128,
+        "sha256": "eebd252fabfd6a2f9f9e1ce88d9017cf2202466c49e6967f4bac116b57f4946f"
+      },
+      {
+        "path": "@task/environment/docker-compose.yaml",
+        "storage": "generated",
+        "size_bytes": 142,
+        "sha256": "c346613322ba0f324f14425a6537833f10f764e8b4470a3996a12fb83b1afbe1"
+      }
+    ]
+  },
+  "external_bindings": [
+    {
+      "path": "crawler-output/multimodal-2025/11_source_archive/20260901T175755425068Z/11_http_archive",
+      "storage": "external_bound",
+      "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_source_archive/20260901T175755425068Z/11_http_archive",
+      "kind": "content_addressed_http_archive_directory"
+    }
+  ],
+  "pipeline_status": {
+    "source_archived": "complete",
+    "test_construction": "prepared",
+    "base_gold_measurement": "not_started",
+    "harbor_empty": "not_started",
+    "harbor_oracle": "not_started"
+  },
+  "pipeline_details": {
+    "test_construction": "draft_unmeasured",
+    "base_gold_measurement": "No identical base/reference execution exists.",
+    "harbor_empty": "Waiting for measured F2P/P2P contract.",
+    "harbor_oracle": "Waiting for measured F2P/P2P contract.",
+    "test_extension_verifier": {
+      "status": "complete",
+      "runner_version": "test-extension-verifier-run-v2",
+      "backend": "gemini",
+      "model": "gemini-3.7-flash",
+      "verdict": "additional_tests_proposed",
+      "generated_bundle_count": 1,
+      "behavior_contract_required": true,
+      "oracle_quality_plan_required": true,
+      "prior_verifier_generated_tests_excluded": true,
+      "requested_batch_concurrency": 10,
+      "boundary": "Generated tests are proposals until the identical patch is measured on Base and Gold."
+    }
+  },
+  "blockers": [
+    {
+      "stage": "base_gold_measurement",
+      "code": "carbon_commit_environment_not_constructed",
+      "detail": "Existing test is a draft only; no identical base/reference execution exists."
+    },
+    {
+      "stage": "test_construction",
+      "code": "verifier_v2_tests_pending_measurement",
+      "detail": "New v2 generated tests require Base/Gold execution and oracle-quality validation."
+    }
+  ],
+  "notes": [
+    "User named this PR for archival; this records candidate selection, not formal frozen-task approval.",
+    "Predicted F2P/P2P labels in Search.visual-test.js are not measured classifications."
+  ],
+  "layout": {
+    "submission_root": ".",
+    "metadata_root": "meta",
+    "metadata_deletion_safe": true
+  }
+}

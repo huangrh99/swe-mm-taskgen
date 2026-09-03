@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
+  <title id="title">Frozen Harbor task state machine</title>
+  <desc id="desc">Seven states from provisional candidate through two human gates, measured tests, Harbor controls, freeze, and five valid trials.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #161616; }
+    .state { fill: #f4f4f4; stroke: #525252; stroke-width: 1.5; rx: 10; }
+    .human { fill: #fff1f1; stroke: #da1e28; stroke-width: 2; rx: 10; }
+    .control { fill: #defbe6; stroke: #198038; stroke-width: 2; rx: 10; }
+    .final { fill: #e8f5ff; stroke: #0f62fe; stroke-width: 2; rx: 10; }
+    .head { font-size: 15px; font-weight: 700; }
+    .sub { font-size: 12px; fill: #525252; }
+    .arrow { stroke: #525252; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .reject { font-size: 11px; fill: #a2191f; }
+  </style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#525252"/></marker></defs>
+  <text x="38" y="38" font-size="24" font-weight="750">Formal admission and Pass@5 state machine</text>
+  <text class="sub" x="38" y="62">Every arrow binds hashed input/output evidence; a rejected arrow never advances state.</text>
+
+  <rect class="state" x="25" y="105" width="150" height="86"/><text class="head" x="40" y="133">candidate</text><text class="sub" x="40" y="156">provisional task in tmp</text><text class="sub" x="40" y="175">safe tree + checksum</text>
+  <path class="arrow" d="M175 148 H198"/>
+  <rect class="human" x="200" y="105" width="150" height="86"/><text class="head" x="215" y="133">visual_approved</text><text class="sub" x="215" y="156">human gate A</text><text class="sub" x="215" y="175">pixels are necessary</text>
+  <path class="arrow" d="M350 148 H373"/>
+  <rect class="state" x="375" y="105" width="150" height="86"/><text class="head" x="390" y="133">tests_measured</text><text class="sub" x="390" y="156">same F2P/P2P</text><text class="sub" x="390" y="175">before and after</text>
+  <path class="arrow" d="M525 148 H548"/>
+  <rect class="human" x="550" y="105" width="150" height="86"/><text class="head" x="565" y="133">tests_approved</text><text class="sub" x="565" y="156">human gate B</text><text class="sub" x="565" y="175">judge is semantic</text>
+  <path class="arrow" d="M700 148 H723"/>
+  <rect class="control" x="725" y="105" width="170" height="86"/><text class="head" x="740" y="133">controls_passed</text><text class="sub" x="740" y="156">empty=0 · gold=1</text><text class="sub" x="740" y="175">same task checksum</text>
+  <path class="arrow" d="M895 148 H918"/>
+  <rect class="final" x="920" y="105" width="150" height="86"/><text class="head" x="935" y="133">frozen</text><text class="sub" x="935" y="156">report task + image ID</text><text class="sub" x="935" y="175">model/agent config</text>
+  <path class="arrow" d="M1070 148 H1093"/>
+  <rect class="final" x="1095" y="105" width="160" height="86"/><text class="head" x="1110" y="133">pass5_completed</text><text class="sub" x="1110" y="156">five valid trials</text><text class="sub" x="1110" y="175">summary + trajectories</text>
+
+  <rect class="state" x="170" y="260" width="420" height="112"/><text class="head" x="190" y="290">promote-harbor-task</text><text class="sub" x="190" y="314">Owns candidate → frozen. Real mode requires both human records, measured task test IDs,</text><text class="sub" x="190" y="334">content-bound controls, exact pipeline freeze, and atomic publication to report/&lt;instance_id&gt;/.</text><text class="reject" x="190" y="356">Reject: mock/temporary evidence, drift, unsafe tree, bad controls, build/identity failure.</text>
+  <rect class="state" x="650" y="260" width="460" height="112"/><text class="head" x="670" y="290">run-frozen-pass5</text><text class="sub" x="670" y="314">Owns frozen → pass5_completed. Revalidates task, image, pipeline, model, agent/version,</text><text class="sub" x="670" y="334">exact authorization and each Harbor job/trial identity; infrastructure-invalid trials are replaced.</text><text class="reject" x="670" y="356">Reject: freeze/authorization drift, wrong trial identity, invalid verifier, missing/unsafe trajectory.</text>
+  <path class="arrow" d="M380 260 V215 H625 V192"/><path class="arrow" d="M880 260 V215 H995 V192"/>
+  <text class="sub" x="38" y="414">Simulation may traverse the same states only under tmp/crawler-output and is always labelled SIMULATION ONLY; it cannot admit a formal task.</text>
+</svg>

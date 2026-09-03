@@ -1,0 +1,1301 @@
+{
+  "schema_version": "test-extension-verifier-packet-v1",
+  "task_id": "bpmn-io__bpmn-js-2396",
+  "admission_state": "human_visual_keep_tests_measured",
+  "solver_visible_problem_statement": "## 关联问题 1\n\nWeird layout of sequence flows starting from boundary events on activity corners due to additional invalid waypoint\n\n### Describe the Bug\n\nWhen adding a sequence flow starting from a boundary event on an activity corner to an element below, the sequence flow gets aligned weirdly because an additional waypoint is added inside of the element:\n\n\n\n> **视觉材料 1**：见下方对应图片。\n\n\n\n### Steps to Reproduce\n\n1. Add a boundary event to the corner of an activity\n2. Add an element below the activity\n3. Add a straight sequence flow from the boundary event to the element below\n\n\n\n> **视觉材料 2**：见下方对应图片。\n\n\n\n### Expected Behavior\n\nThe sequence flow should connect in a straight line between the boundary event and the element below without the additional waypoint.\n\n### Environment\n\n - https://demo.bpmn.io/\n - Browser: Chrome 131\n - OS: Windows 11\n\n---\n\n## 关联问题 2\n\nIncorrect direction of the arrow from the boundary event to the subsequent element.\n\n### Describe the Bug\n\n<!-- A clear and concise description of what the bug is. -->\nIncorrect direction of the arrow from the boundary event to the subsequent element.\n\n### Steps to Reproduce\n1. Open any business process (BP).  \n2. Place a task element on the diagram and add a boundary event to the task.  \n3. Add another task element at the same level as the boundary event.  \n4. Click on the boundary event, then in the pop-up menu, select the arrow tool and drag it to the task element.\n\n\n> **视觉材料 3**：见下方对应图片。\n\n\n\nYou can check it here: https://demo.bpmn.io/s/start\n\n<!--\nIf you report a modeling related issue, ensure you can reproduce it on [demo.bpmn.io](https://demo.bpmn.io/new)\n\nWhen reporting a library error, try to build an example that reproduces your problem. You can use our playgrounds for [viewer](https://jsfiddle.net/07envcu1/) or [modeler](https://jsfiddle.net/bg97r61t/) as a starting point or put a demo up on [GitHub](https://github.com/) for inspection.\n-->\n\n### Expected Behavior\n\n<!-- A clear and concise description of what you expected to happen. -->\n\n\n\n> **视觉材料 4**：见下方对应图片。\n\n\n\n\n### Environment\n\n - Browser: [ Chrome 134.0.6998.166]\n - OS: [MacOS Sequoia 15.3.2]\n - Library version: [18.4.0]",
+  "human_visual_input_check": {
+    "decision": "needs_review",
+    "problem_statement_leak_free": true,
+    "solver_visible_asset_ids": [
+      "44ed2f05e1eb28bcd064466ed33a79622d48bb9d27bc40594765da709de17ec6",
+      "ba179e3c63f874186ed5f782019bd713e7d9f0f58ca98a25edaec6899ce4fe53",
+      "a6b818fa60194dee719593e8a5a8fa9e3a7fc69e56e980f89605b435890d8692",
+      "1a6bc712a5d102889e542ee3d8c9e00850e998100ac58231028901e3ff1e7b30"
+    ],
+    "reviewed_at": "2026-09-02T10:31:10.621Z",
+    "boundary": "User selected this task in the audit page; verifier output remains a proposal requiring human test review."
+  },
+  "frozen_visual_classification": {
+    "schema_version": "visual-capability-classifier-v3",
+    "task_id": "bpmn-io__bpmn-js-2396",
+    "strict_multimodal_admission": "非文字视觉信息候选不可替代",
+    "admission_reason": "关联问题2中‘Expected Behavior’文字内容为空，完全依赖视觉材料4给出预期的正确连线布局与箭头对接位置；同时视觉材料1至3直观展示了连线路径计算错误、生成多余拐点及穿透目标元素内部的几何异常，OCR转写无法替代这些具体的连线路径与几何锚点信息。",
+    "assets": [
+      {
+        "asset_id": "44ed2f05e1eb28bcd064466ed33a79622d48bb9d27bc40594765da709de17ec6",
+        "observed": true,
+        "solver_visible_role": "实际状态",
+        "task_relevance": "相关",
+        "ocr_transcription_sufficient": "否",
+        "observation": "展示了从任务角点边界事件引出至下方元素的序列流实际连线，右侧连线穿透进入了目标任务框内部，并在框内生成了多余的拐点/锚点。"
+      },
+      {
+        "asset_id": "ba179e3c63f874186ed5f782019bd713e7d9f0f58ca98a25edaec6899ce4fe53",
+        "observed": true,
+        "solver_visible_role": "多状态过程",
+        "task_relevance": "相关",
+        "ocr_transcription_sufficient": "否",
+        "observation": "包含3帧关键帧的连线交互过程，展示了从角点边界事件点击并拖拽箭头工具到下方任务时生成异常内部拐点的交互复现过程。"
+      },
+      {
+        "asset_id": "a6b818fa60194dee719593e8a5a8fa9e3a7fc69e56e980f89605b435890d8692",
+        "observed": true,
+        "solver_visible_role": "实际状态",
+        "task_relevance": "相关",
+        "ocr_transcription_sufficient": "否",
+        "observation": "展示水平方向连接时，连线穿入右侧目标任务内部，箭头方向指向左侧的异常状态。"
+      },
+      {
+        "asset_id": "1a6bc712a5d102889e542ee3d8c9e00850e998100ac58231028901e3ff1e7b30",
+        "observed": true,
+        "solver_visible_role": "期望目标",
+        "task_relevance": "相关",
+        "ocr_transcription_sufficient": "否",
+        "observation": "展示正确的期望布局：从边界事件右侧边缘引出的水平直线直接连接到右侧目标任务的左边缘，且箭头端点停留在边框外部并朝向右侧。"
+      }
+    ],
+    "atomic_visual_constraints": [
+      {
+        "constraint_id": "constraint_001",
+        "description": "从边界事件连接至后续元素的序列流连线应为连接两元素边缘的直线路径，不得在目标元素内部生成额外的拐点或穿透元素内部",
+        "visual_category": "空间布局与几何理解",
+        "evidence_asset_ids": [
+          "44ed2f05e1eb28bcd064466ed33a79622d48bb9d27bc40594765da709de17ec6",
+          "ba179e3c63f874186ed5f782019bd713e7d9f0f58ca98a25edaec6899ce4fe53",
+          "a6b818fa60194dee719593e8a5a8fa9e3a7fc69e56e980f89605b435890d8692",
+          "1a6bc712a5d102889e542ee3d8c9e00850e998100ac58231028901e3ff1e7b30"
+        ],
+        "direct_visual_evidence": "视觉材料1和3中连线末端均延伸进矩形框内部，视觉材料4展示预期连线停留在矩形左侧边框外边缘并形成向右的箭头端点。",
+        "prose_already_complete": "否",
+        "decision_critical": "是",
+        "counterfactual_ambiguity": "若缺乏图像，无法确定连线错误是端点停靠（docking）位置偏移、折线路由算法分支错误还是朝向向量计算错误，可能导致连线端点虽未生成多余拐点但停靠在错误的几何边框位置。"
+      }
+    ],
+    "primary_visual_category": "空间布局与几何理解",
+    "category_purity": "单一能力题",
+    "contributing_visual_categories": [
+      "空间布局与几何理解"
+    ],
+    "evidence_mode": "实际图与期望图对照",
+    "classification_reason": "任务的核心瓶颈在于 BPMN 流程图编辑器中序列流（sequence flow）连线路径规划与几何锚点（docking/waypoints）计算异常。通过对比实际错误连线几何路径与期望直连路径，可确定修复约束属于空间布局与几何理解，且无其他类别视觉约束，判定为单一能力题。",
+    "human_review_required": false,
+    "human_review_reasons": []
+  },
+  "production_change_summary": {
+    "paths": [
+      "CHANGELOG.md",
+      "lib/features/modeling/BpmnLayouter.js"
+    ],
+    "patch": "diff --git a/CHANGELOG.md b/CHANGELOG.md\nindex 6ecba284..1a73bdef 100644\n--- a/CHANGELOG.md\n+++ b/CHANGELOG.md\n@@ -6,6 +6,8 @@ All notable changes to [bpmn-js](https://github.com/bpmn-io/bpmn-js) are documen\n \n ___Note:__ Yet to be released changes appear here._\n \n+* `FIX`: correct sequence flow layout for corner boundary events whose target is strictly axis-aligned ([#2270](https://github.com/bpmn-io/bpmn-js/issues/2270))\n+\n ## 18.13.0\n \n * `FEAT`: allow to create child elements from the context pad ([#2391](https://github.com/bpmn-io/bpmn-js/issues/2391))\ndiff --git a/lib/features/modeling/BpmnLayouter.js b/lib/features/modeling/BpmnLayouter.js\nindex 392778c0..c7998fcc 100644\n--- a/lib/features/modeling/BpmnLayouter.js\n+++ b/lib/features/modeling/BpmnLayouter.js\n@@ -467,17 +467,34 @@ function getBoundaryEventTargetLayout(attachOrientation, targetOrientation, atta\n     }\n   }\n \n-  // attached to either top-right, top-left, bottom-right or bottom-left corner\n-  // and orientation is same on the counter-axis\n+  // attached to either top-right, top-left, bottom-right or bottom-left corner,\n+  // or strictly above/below or left/right of the target. In the corner case,\n+  // the orientation is compared on the counter-axis to decide the layout.\n+\n+  var verticalAttachOrientation = getVerticalOrientation(attachOrientation),\n+      horizontalAttachOrientation = getHorizontalOrientation(attachOrientation),\n+      verticalTargetOrientation = getVerticalOrientation(targetOrientation),\n+      horizontalTargetOrientation = getHorizontalOrientation(targetOrientation);\n+\n+  // If the target is strictly above/below (no horizontal orientation)\n+  if (verticalTargetOrientation && !horizontalTargetOrientation) {\n+    return 'v';\n+  }\n+\n+  // If the target is strictly left/right (no vertical orientation)\n+  if (horizontalTargetOrientation && !verticalTargetOrientation) {\n+    return 'h';\n+  }\n+\n \n   if (isHorizontal) {\n-    if (isSame(getVerticalOrientation(attachOrientation), getVerticalOrientation(targetOrientation))) {\n+    if (isSame(verticalAttachOrientation, verticalTargetOrientation)) {\n       return 'h';\n     } else {\n       return 'v';\n     }\n   } else {\n-    if (isSame(getHorizontalOrientation(attachOrientation), getHorizontalOrientation(targetOrientation))) {\n+    if (isSame(horizontalAttachOrientation, horizontalTargetOrientation)) {\n       return 'v';\n     } else {\n       return 'h';\n",
+    "instruction": "Use only to infer behavioral impact; never require gold code equality."
+  },
+  "repository_test_context": {
+    "framework": "Karma + Mocha + Chai in Chromium",
+    "working_directory": ".",
+    "target_command": "npm run test:unit -- --grep 'features/modeling - layout'",
+    "selected_suites": [
+      "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js"
+    ],
+    "environment_inputs": {
+      "package.json": {
+        "before_sha256": "1ce9c0545c3c6ba6e0fc6c61429120ab6aea2193e34f68ec046ac10ff40e9849",
+        "after_sha256": "1ce9c0545c3c6ba6e0fc6c61429120ab6aea2193e34f68ec046ac10ff40e9849",
+        "changed": false
+      },
+      "package-lock.json": {
+        "before_sha256": "2ae3183c054765b470a72c87daca1c1d77e256c6a0ea1760edca0221ac9e37fa",
+        "after_sha256": "2ae3183c054765b470a72c87daca1c1d77e256c6a0ea1760edca0221ac9e37fa",
+        "changed": false
+      },
+      "test/config/karma.unit.js": {
+        "before_sha256": "cc99b5b3e2003042209c4b6ce82cfa8a716869749635a2213e1d1b798501f310",
+        "after_sha256": "cc99b5b3e2003042209c4b6ce82cfa8a716869749635a2213e1d1b798501f310",
+        "changed": false
+      }
+    },
+    "writable_test_roots": [
+      "test/"
+    ]
+  },
+  "existing_tests": {
+    "files": [
+      {
+        "path": "package.json",
+        "sha256": "1ce9c0545c3c6ba6e0fc6c61429120ab6aea2193e34f68ec046ac10ff40e9849",
+        "content": "{\n  \"name\": \"bpmn-js\",\n  \"version\": \"18.13.0\",\n  \"description\": \"A bpmn 2.0 toolkit and web modeler\",\n  \"main\": \"lib/index.js\",\n  \"files\": [\n    \"dist\",\n    \"lib\",\n    \"test/util\",\n    \"test/helper\",\n    \"test/matchers\",\n    \"!.eslintrc\",\n    \"!lib/**/*.spec.ts\"\n  ],\n  \"scripts\": {\n    \"all\": \"run-s lint test generate-types distro test:distro\",\n    \"lint\": \"eslint .\",\n    \"format\": \"run-s format:markdown 'lint -- --fix'\",\n    \"format:markdown\": \"remark . -qo\",\n    \"start\": \"cross-env SINGLE_START=modeler npm run dev\",\n    \"start:viewer\": \"cross-env SINGLE_START=viewer npm run dev\",\n    \"start:navigated-viewer\": \"cross-env SINGLE_START=navigated-viewer npm run dev\",\n    \"dev\": \"npm test -- --auto-watch --no-single-run\",\n    \"test\": \"karma start test/config/karma.unit.js\",\n    \"distro\": \"node tasks/build-distro.mjs\",\n    \"collect-translations\": \"cross-env COLLECT_TRANSLATIONS=1 npm test\",\n    \"generate-types\": \"run-s generate-types:*\",\n    \"generate-types:generate\": \"del-cli \\\"lib/**/*.d.ts\\\" && npx bio-dts -r lib\",\n    \"generate-types:test\": \"tsc --noEmit --noImplicitAny\",\n    \"test:distro\": \"node tasks/test-distro.mjs\",\n    \"postversion\": \"run-s distro test:distro\",\n    \"prepare\": \"run-s distro\",\n    \"prepublishOnly\": \"run-s generate-types\"\n  },\n  \"engines\": {\n    \"node\": \"*\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/bpmn-io/bpmn-js\"\n  },\n  \"keywords\": [\n    \"bpmn\",\n    \"bpmn-js\",\n    \"toolkit\",\n    \"web modeler\",\n    \"modeler\",\n    \"modeling\",\n    \"process modeling\"\n  ],\n  \"author\": {\n    \"name\": \"Nico Rehwaldt\",\n    \"url\": \"https://github.com/nikku\"\n  },\n  \"contributors\": [\n    {\n      \"name\": \"bpmn.io contributors\",\n      \"url\": \"https://github.com/bpmn-io\"\n    }\n  ],\n  \"license\": \"SEE LICENSE IN LICENSE\",\n  \"sideEffects\": [\n    \"*.css\"\n  ],\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.28.5\",\n    \"@bpmn-io/a11y\": \"^0.1.0\",\n    \"@rollup/plugin-commonjs\": \"^29.0.0\",\n    \"@rollup/plugin-json\": \"^6.1.0\",\n    \"@rollup/plugin-node-resolve\": \"^16.0.3\",\n    \"@rollup/plugin-replace\": \"^6.0.3\",\n    \"@rollup/plugin-terser\": \"^1.0.0\",\n    \"babel-loader\": \"^10.0.0\",\n    \"babel-plugin-istanbul\": \"^7.0.1\",\n    \"bio-dts\": \"^0.11.0\",\n    \"bpmn-font\": \"^0.12.1\",\n    \"camunda-bpmn-moddle\": \"^4.0.1\",\n    \"chai\": \"4.1.2\",\n    \"chai-match\": \"^1.1.1\",\n    \"cpy\": \"^13.0.0\",\n    \"cross-env\": \"^10.0.0\",\n    \"del\": \"^8.0.0\",\n    \"del-cli\": \"^7.0.0\",\n    \"eslint\": \"^9.39.2\",\n    \"eslint-plugin-bpmn-io\": \"^2.2.0\",\n    \"execa\": \"^9.0.0\",\n    \"file-drops\": \"^0.7.0\",\n    \"karma\": \"^6.4.4\",\n    \"karma-chrome-launcher-2\": \"^3.3.0\",\n    \"karma-coverage\": \"^2.2.0\",\n    \"karma-debug-launcher\": \"^0.0.5\",\n    \"karma-env-preprocessor\": \"^0.1.1\",\n    \"karma-firefox-launcher\": \"^2.1.3\",\n    \"karma-mocha\": \"^2.0.1\",\n    \"karma-safari-launcher\": \"^1.0.0\",\n    \"karma-sinon-chai\": \"^2.0.2\",\n    \"karma-webpack\": \"^5.0.1\",\n    \"mocha\": \"^10.8.2\",\n    \"mocha-test-container-support\": \"0.2.0\",\n    \"npm-run-all2\": \"^8.0.4\",\n    \"puppeteer\": \"~24.36.0\",\n    \"remark-cli\": \"^12.0.1\",\n    \"remark-preset-bpmn-io\": \"^0.4.0\",\n    \"rollup\": \"^4.55.1\",\n    \"rollup-plugin-license\": \"^3.6.0\",\n    \"sinon\": \"^17.0.1\",\n    \"sinon-chai\": \"^3.7.0\",\n    \"ts-expect\": \"^1.3.0\",\n    \"typescript\": \"^5.9.3\",\n    \"webpack\": \"^5.104.1\"\n  },\n  \"dependencies\": {\n    \"bpmn-moddle\": \"^10.0.0\",\n    \"diagram-js\": \"^15.9.0\",\n    \"diagram-js-direct-editing\": \"^3.3.0\",\n    \"ids\": \"^3.0.0\",\n    \"inherits-browser\": \"^0.1.0\",\n    \"min-dash\": \"^5.0.0\",\n    \"min-dom\": \"^5.2.0\",\n    \"tiny-svg\": \"^4.1.4\"\n  },\n  \"remarkConfig\": {\n    \"plugins\": [\n      \"preset-bpmn-io\",\n      [\n        \"lint-no-html\",\n        false\n      ]\n    ]\n  }\n}\n"
+      },
+      {
+        "path": "test/TestHelper.js",
+        "sha256": "c2ea28ccbf923aaee004540723ca8d97436b00882592d231f6edb0c1f18afeee",
+        "content": "export * from './helper';\n\nimport fileDrop from 'file-drops';\n\nimport {\n  insertCSS,\n  getBpmnJS\n} from './helper';\n\ninsertCSS('diagram-js.css', require('diagram-js/assets/diagram-js.css'));\n\ninsertCSS('bpmn-js.css', require('../assets/bpmn-js.css'));\n\ninsertCSS('bpmn-embedded.css', require('bpmn-font/dist/css/bpmn-embedded.css'));\n\ninsertCSS('diagram-js-testing.css',\n  'body .test-container { height: auto }' +\n  'body .test-content-container { height: 90vh; }'\n);\n\n\nimport ChaiMatch from 'chai-match';\nimport BoundsMatchers from './matchers/BoundsMatchers';\nimport ConnectionMatchers from './matchers/ConnectionMatchers';\nimport JSONMatcher from './matchers/JSONMatcher';\n\n/* global chai */\n\n// add suite specific matchers\nchai.use(ChaiMatch);\nchai.use(BoundsMatchers);\nchai.use(ConnectionMatchers);\nchai.use(JSONMatcher);\n\n// be able to load files into running bpmn-js test cases\ndocument.documentElement.addEventListener('dragover', fileDrop('Drop a BPMN diagram to open it in the currently active test.', function(files) {\n  const bpmnJS = getBpmnJS();\n\n  if (bpmnJS && files.length === 1) {\n    bpmnJS.importXML(files[0].contents);\n  }\n}));\n\ninsertCSS('file-drops.css', `\n  .drop-overlay .box {\n    background: orange;\n    border-radius: 3px;\n    display: inline-block;\n    font-family: sans-serif;\n    padding: 4px 10px;\n    position: fixed;\n    top: 30px;\n    left: 50%;\n    transform: translateX(-50%);\n  }\n`);"
+      },
+      {
+        "path": "test/config/karma.unit.js",
+        "sha256": "cc99b5b3e2003042209c4b6ce82cfa8a716869749635a2213e1d1b798501f310",
+        "content": "var path = require('path');\nvar fs = require('fs');\n\nvar collectTranslations = process.env.COLLECT_TRANSLATIONS;\n\nvar singleStart = process.env.SINGLE_START;\n\nvar coverage = process.env.COVERAGE;\n\n// configures browsers to run test against\n// any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'Safari' ]\nvar browsers = (process.env.TEST_BROWSERS || 'ChromeHeadless').split(',');\n\n// use puppeteer provided Chrome for testing\nprocess.env.CHROME_BIN = require('puppeteer').executablePath();\n\nvar tmpDir = path.join(__dirname, 'tmp');\n\nfs.mkdirSync(tmpDir, { recursive: true });\n\nvar firefoxProfile = fs.mkdtempSync(path.join(tmpDir, 'firefox-profile'));\n\nvar basePath = '../..';\n\nvar absoluteBasePath = path.resolve(path.join(__dirname, basePath));\n\nvar suite = coverage ? 'test/coverageBundle.js' : 'test/testBundle.js';\n\n\nmodule.exports = function(karma) {\n\n  var config = {\n\n    basePath,\n\n    frameworks: [\n      'mocha',\n      'sinon-chai',\n      'webpack'\n    ],\n\n    files: [\n      suite\n    ],\n\n    preprocessors: {\n      [ suite ]: [ 'webpack', 'env' ]\n    },\n\n    reporters: [ 'progress' ].concat(coverage ? 'coverage' : []),\n\n    customLaunchers: {\n      'FirefoxHeadless': {\n        base: 'Firefox',\n        flags: [ '-headless' ],\n        profile: firefoxProfile\n      }\n    },\n\n    coverageReporter: {\n      reporters: [\n        { type: 'lcov', subdir: '.' }\n      ]\n    },\n\n    envPreProcessor: [\n      'CI'\n    ],\n\n    browsers,\n\n    browserNoActivityTimeout: 30000,\n\n    singleRun: true,\n    autoWatch: false,\n\n    webpack: {\n      mode: 'development',\n      module: {\n        rules: [\n          {\n            test: require.resolve('../TestHelper.js'),\n            sideEffects: true\n          },\n          {\n            test: /\\.css|\\.bpmn$/,\n            type: 'asset/source'\n          }\n        ].concat(\n          coverage ? {\n            test: /\\.js$/,\n            exclude: /node_modules/,\n            use: {\n              loader: 'babel-loader',\n              options: {\n                plugins: [\n                  [ 'istanbul', {\n                    include: [\n                      'lib/**'\n                    ]\n                  } ]\n                ],\n              }\n            }\n          } : []\n        )\n      },\n      resolve: {\n        mainFields: [\n          'dev:module',\n          'module',\n          'main'\n        ],\n        modules: [\n          'node_modules',\n          absoluteBasePath\n        ]\n      },\n      devtool: 'eval-source-map'\n    }\n  };\n\n  if (collectTranslations) {\n    config.plugins = [].concat(config.plugins || [ 'karma-*' ], require('./translation-reporter'));\n    config.reporters = [].concat(config.reporters || [], 'translation-reporter');\n    config.envPreprocessor = [].concat(config.envPreprocessor || [], 'COLLECT_TRANSLATIONS');\n  }\n\n  if (singleStart) {\n    config.browsers = [].concat(config.browsers, 'Debug');\n    config.envPreprocessor = [].concat(config.envPreprocessor || [], 'SINGLE_START');\n  }\n\n  karma.set(config);\n};\n"
+      },
+      {
+        "path": "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn",
+        "sha256": "202dc5c91090b25d663e67b1e164bd9f5ab5edb83fe71811e305aec142c38a73",
+        "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bpmn:definitions xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" id=\"Definitions_1\" targetNamespace=\"http://bpmn.io/schema/bpmn\" exporter=\"Camunda Modeler\" exporterVersion=\"1.16.0\">\n  <bpmn:process id=\"Process_1\" isExecutable=\"false\">\n    <bpmn:task id=\"Task_Left\" />\n    <bpmn:subProcess id=\"SubProcess\" />\n    <bpmn:task id=\"Task_Right\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_TopLeft\" attachedToRef=\"SubProcess\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_TopCenter\" attachedToRef=\"SubProcess\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_BottomRight\" attachedToRef=\"SubProcess\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_BottomCenter\" attachedToRef=\"SubProcess\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_BottomLeft\" attachedToRef=\"SubProcess\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_TopRight\" attachedToRef=\"SubProcess\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_RightCenter\" attachedToRef=\"SubProcess\" />\n    <bpmn:task id=\"Task_Bottom\" />\n    <bpmn:task id=\"Task_Top\" />\n    <bpmn:task id=\"Task_CornerBoundary\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_BottomRightCorner\" attachedToRef=\"Task_CornerBoundary\" />\n    <bpmn:task id=\"Task_CornerTarget\" />\n    <bpmn:task id=\"Task_CornerBoundaryH\" />\n    <bpmn:boundaryEvent id=\"BoundaryEvent_TopRightCorner\" attachedToRef=\"Task_CornerBoundaryH\" />\n    <bpmn:task id=\"Task_CornerTargetH\" />\n  </bpmn:process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_1\">\n      <bpmndi:BPMNShape id=\"Task_0b6k3xo_di\" bpmnElement=\"Task_Left\">\n        <dc:Bounds x=\"0\" y=\"350\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"SubProcess_12qmapm_di\" bpmnElement=\"SubProcess\" isExpanded=\"true\">\n        <dc:Bounds x=\"300\" y=\"300\" width=\"350\" height=\"200\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_174r9fd_di\" bpmnElement=\"Task_Right\">\n        <dc:Bounds x=\"850\" y=\"350\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_0s0nl1k_di\" bpmnElement=\"BoundaryEvent_TopLeft\">\n        <dc:Bounds x=\"282\" y=\"320\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_TopCenter_di\" bpmnElement=\"BoundaryEvent_TopCenter\">\n        <dc:Bounds x=\"432\" y=\"282\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_0nomac7_di\" bpmnElement=\"BoundaryEvent_BottomRight\">\n        <dc:Bounds x=\"632\" y=\"450\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_BottomCenter_di\" bpmnElement=\"BoundaryEvent_BottomCenter\">\n        <dc:Bounds x=\"432\" y=\"482\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_1spolhy_di\" bpmnElement=\"BoundaryEvent_BottomLeft\">\n        <dc:Bounds x=\"282\" y=\"482\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_13iwzlu_di\" bpmnElement=\"BoundaryEvent_TopRight\">\n        <dc:Bounds x=\"632\" y=\"282\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_RightCenter_di\" bpmnElement=\"BoundaryEvent_RightCenter\">\n        <dc:Bounds x=\"632\" y=\"372\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_0ygk7bh_di\" bpmnElement=\"Task_Bottom\">\n        <dc:Bounds x=\"400\" y=\"650\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_1bc634w_di\" bpmnElement=\"Task_Top\">\n        <dc:Bounds x=\"400\" y=\"0\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_CornerBoundary_di\" bpmnElement=\"Task_CornerBoundary\">\n        <dc:Bounds x=\"800\" y=\"300\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_BottomRightCorner_di\" bpmnElement=\"BoundaryEvent_BottomRightCorner\">\n        <dc:Bounds x=\"891\" y=\"371\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_CornerTarget_di\" bpmnElement=\"Task_CornerTarget\">\n        <dc:Bounds x=\"859\" y=\"480\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_CornerBoundaryH_di\" bpmnElement=\"Task_CornerBoundaryH\">\n        <dc:Bounds x=\"800\" y=\"100\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"BoundaryEvent_TopRightCorner_di\" bpmnElement=\"BoundaryEvent_TopRightCorner\">\n        <dc:Bounds x=\"891\" y=\"91\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_CornerTargetH_di\" bpmnElement=\"Task_CornerTargetH\">\n        <dc:Bounds x=\"1000\" y=\"69\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</bpmn:definitions>\n"
+      },
+      {
+        "path": "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js",
+        "sha256": "63b8b6d70de87ee6bd32c42474e7d49ec22be0edb26ed5611275d0cf176fc70b",
+        "content": "import {\n  bootstrapModeler,\n  inject\n} from 'test/TestHelper';\n\nimport {\n  connect,\n  element,\n  move,\n  reconnectEnd\n} from './Helper';\n\nimport { getMid } from 'diagram-js/lib/layout/LayoutUtil';\n\nimport modelingModule from 'lib/features/modeling';\nimport coreModule from 'lib/core';\n\n\ndescribe('features/modeling - layout', function() {\n\n  describe('boundary events', function() {\n\n    describe('loops', function() {\n\n      var diagramXML = require('./LayoutSequenceFlowSpec.boundaryEventsLoops.bpmn');\n\n      var testModules = [ coreModule, modelingModule ];\n\n      beforeEach(bootstrapModeler(diagramXML, { modules: testModules }));\n\n\n      describe('in the corner', function() {\n\n        it('attached top right', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_TopRight', 'SubProcess');\n\n          // then\n          expect(connection).to.have.waypoints([\n            { original: { x: 550, y: 200 }, x: 550, y: 182 },\n            { x: 550, y: 162 },\n            { x: 375, y: 162 },\n            { original: { x: 375, y: 300 }, x: 375, y: 200 }\n          ]);\n        });\n\n\n        it('attached bottom right', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_BottomRight', 'SubProcess');\n\n          // then\n          expect(connection).to.have.waypoints([\n            { original: { x: 550, y: 368 } , x: 568, y: 368 },\n            { x: 588, y: 368 },\n            { x: 588, y: 300 },\n            { original: { x: 375, y: 300 } , x: 550, y: 300 }\n          ]);\n        });\n\n\n        it('attached bottom left', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_BottomLeft', 'SubProcess');\n\n          // then\n          expect(connection).to.have.waypoints([\n            { original: { x: 200, y: 500 }, x: 200, y: 418 },\n            { x: 200, y: 438 },\n            { x: 375, y: 438 },\n            { original: { x: 375, y: 300 }, x: 375, y: 400 }\n          ]);\n        });\n\n\n        it('attached top left', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_TopLeft', 'SubProcess');\n\n          // then\n          expect(connection).to.have.waypoints([\n            { original: { x: 200, y: 238 }, x: 182, y: 238 },\n            { x: 162, y: 238 },\n            { x: 162, y: 300 },\n            { original: { x: 375, y: 300 }, x: 200, y: 300 }\n          ]);\n        });\n      });\n\n\n      describe('on the side center', function() {\n\n        var host = 'SubProcess_2';\n\n\n        it('attached top center', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_TopCenter', host);\n\n          // then\n          expect(connection).to.have.waypoints([\n            { original: { x: 375, y: 460 }, x: 375, y: 442 },\n            { x:375, y: 422 },\n            { x:180, y: 422 },\n            { x:180, y: 560 },\n            { original:{ x: 375, y: 560 }, x: 200, y: 560 }\n          ]);\n        });\n\n\n        it('attached center right', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_CenterRight', host);\n\n          // then\n          expect(connection).to.have.waypoints([\n            { original: { x: 550, y: 560 }, x: 568, y: 560 },\n            { x: 588, y: 560 },\n            { x: 588, y: 680 },\n            { x: 375, y: 680 },\n            { original: { x: 375, y: 560 }, x: 375, y: 660 }\n          ]);\n        });\n\n\n        it('attached bottom center', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_BottomCenter', host);\n\n          // then\n          expect(connection).to.have.waypoints([\n            { original: { x: 375, y: 660 }, x: 375, y: 678 },\n            { x: 375, y: 698 },\n            { x: 180, y: 698 },\n            { x: 180, y: 560 },\n            { original: { x: 375, y: 560 }, x: 200, y: 560 }\n          ]);\n        });\n\n\n        it('attached center left', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_CenterLeft', host);\n\n          // then\n          expect(connection).to.have.waypoints([\n            { original: { x: 200, y: 560 }, x: 182, y: 560 },\n            { x: 162, y: 560 },\n            { x: 162, y: 680 },\n            { x: 375, y: 680 },\n            { original: { x: 375, y: 560 }, x: 375, y: 660 }\n          ]);\n        });\n      });\n    });\n\n\n    describe('non-loops', function() {\n\n      var diagramXML = require('./LayoutSequenceFlowSpec.boundaryEvents.bpmn');\n\n      var testModules = [ coreModule, modelingModule ];\n\n      beforeEach(bootstrapModeler(diagramXML, { modules: testModules }));\n\n\n      it('attached top right, orientation top', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_TopRight', 'Task_Top');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 650, y: 300 }, x: 650, y: 282 },\n          { x: 650, y: 40 },\n          { original: { x: 450, y: 40 }, x: 500, y: 40 }\n        ]);\n      });\n\n\n      it('attached top right, orientation right', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_TopRight', 'Task_Right');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 650, y: 300 }, x: 668, y: 300 },\n          { x: 900, y: 300 },\n          { original: { x: 900, y: 390 }, x: 900, y: 350 }\n        ]);\n      });\n\n\n      it('attached top right, orientation bottom', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_TopRight', 'Task_Bottom');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 650, y: 300 }, x: 650, y: 282 },\n          { x: 650, y: 262 },\n          { x: 450, y: 262 },\n          { original: { x: 450, y: 690 }, x: 450, y: 650 }\n        ]);\n      });\n\n\n      it('attached top right, orientation left', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_TopRight', 'Task_Left');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 650, y: 300 }, x: 650, y: 282 },\n          { x: 650, y: 262 },\n          { x: 50, y: 262 },\n          { original: { x: 50, y: 390 }, x: 50, y: 350 }\n        ]);\n      });\n\n\n      it('attached bottom center, orientation bottom', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_BottomCenter', 'Task_Bottom');\n\n        expect(connection).to.have.waypoints([\n          { x: 450, y: 518 },\n          { x: 450, y: 650 }\n        ]);\n      });\n\n\n      it('attached top center, orientation top', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_TopCenter', 'Task_Top');\n\n        expect(connection).to.have.waypoints([\n          { x: 450, y: 282 },\n          { x: 450, y: 80 }\n        ]);\n      });\n\n\n      it('attached right center, orientation right', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_RightCenter', 'Task_Right');\n\n        expect(connection).to.have.waypoints([\n          { x: 668, y: 390 },\n          { x: 850, y: 390 }\n        ]);\n      });\n\n\n      it('attached right center, orientation left', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_RightCenter', 'Task_Left');\n\n        expect(connection).to.have.waypoints([\n          { x: 668, y: 390 },\n          { x: 688, y: 390 },\n          { x: 688, y: 410 },\n          { x: 536, y: 410 },\n          { x: 536, y: 390 },\n          { x: 100, y: 390 }\n        ]);\n      });\n\n\n      it('should layout straight for axis-aligned corner boundary event', inject(\n        function(elementRegistry, modeling) {\n\n          // given\n          // BoundaryEvent_BottomRightCorner is on the bottom-right corner of\n          // Task_CornerBoundary (mid x=909, y=389 — outside the contracted task\n          // bounds right=890, bottom=370 — giving 'bottom-right' orientation).\n          // Task_CornerTarget center x=909 matches exactly, so getOrientation\n          // returns strict 'bottom' with no horizontal component, triggering the\n          // early return in getBoundaryEventTargetLayout → layout 'b:v'.\n          var boundaryEvent = elementRegistry.get('BoundaryEvent_BottomRightCorner'),\n              targetTask = elementRegistry.get('Task_CornerTarget');\n\n          // when\n          var connection = modeling.connect(boundaryEvent, targetTask);\n\n          // then - straight vertical line, no extra waypoints\n          expect(connection).to.have.waypoints([\n            { x: 909, y: 407 },\n            { x: 909, y: 480 }\n          ]);\n        }\n      ));\n\n\n      it('should layout straight for horizontally axis-aligned corner boundary event', inject(\n        function(elementRegistry, modeling) {\n\n          // given\n          // BoundaryEvent_TopRightCorner is on the top-right corner of\n          // Task_CornerBoundaryH (mid x=909, y=109 — outside the contracted task\n          // bounds right=890, top=110 — giving 'top-right' orientation).\n          // Task_CornerTargetH center y=109 matches exactly, so getOrientation\n          // returns strict 'right' with no vertical component, triggering the\n          // early return in getBoundaryEventTargetLayout → layout 'r:h'.\n          var boundaryEvent = elementRegistry.get('BoundaryEvent_TopRightCorner'),\n              targetTask = elementRegistry.get('Task_CornerTargetH');\n\n          // when\n          var connection = modeling.connect(boundaryEvent, targetTask);\n\n          // then - straight horizontal line, no extra waypoints\n          expect(connection).to.have.waypoints([\n            { x: 927, y: 109 },\n            { x: 1000, y: 109 }\n          ]);\n        }\n      ));\n    });\n\n  });\n\n\n  describe('vertical boundary events', function() {\n\n    describe('loops', function() {\n\n      var diagramXML = require('./LayoutSequenceFlowSpec.vertical.boundaryEventsLoops.bpmn');\n\n      var testModules = [ coreModule, modelingModule ];\n\n      beforeEach(bootstrapModeler(diagramXML, { modules: testModules }));\n\n\n      describe('in the corner', function() {\n\n        it('attached top right', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_TopRight', 'SubProcess');\n\n          // then\n          expect(connection).to.have.waypoints([\n            { x: 628, y: 170 },\n            { x: 648, y: 170 },\n            { x: 648, y: 270 },\n            { x: 610, y: 270 }\n          ]);\n        });\n\n\n        it('attached bottom right', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_BottomRight', 'SubProcess');\n\n          // then\n          expect(connection).to.have.waypoints([\n            { x: 628, y: 338 },\n            { x: 648, y: 338 },\n            { x: 648, y: 270 },\n            { x: 610, y: 270 }\n          ]);\n        });\n\n\n        it('attached bottom left', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_BottomLeft', 'SubProcess');\n\n          // then\n          expect(connection).to.have.waypoints([\n            { x: 242, y: 370 },\n            { x: 222, y: 370 },\n            { x: 222, y: 270 },\n            { x: 260, y: 270 }\n          ]);\n        });\n\n\n        it('attached top left', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_TopLeft', 'SubProcess');\n\n          // then\n          expect(connection).to.have.waypoints([\n            { x: 242, y: 208 },\n            { x: 222, y: 208 },\n            { x: 222, y: 270 },\n            { x: 260, y: 270 }\n          ]);\n        });\n      });\n\n\n      describe('on the side center', function() {\n\n        var host = 'SubProcess_2';\n\n\n        it('attached top center', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_TopCenter', host);\n\n          // then\n          expect(connection).to.have.waypoints([\n            { x: 435, y: 412 },\n            { x: 435, y: 392 },\n            { x: 630, y: 392 },\n            { x: 630, y: 530 },\n            { x: 610, y: 530 }\n          ]);\n        });\n\n\n        it('attached center right', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_CenterRight', host);\n\n          // then\n          expect(connection).to.have.waypoints([\n            { x: 628, y: 530 },\n            { x: 648, y: 530 },\n            { x: 648, y: 410 },\n            { x: 435, y: 410 },\n            { x: 435, y: 430 }\n          ]);\n        });\n\n\n        it('attached bottom center', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_BottomCenter', host);\n\n          // then\n          expect(connection).to.have.waypoints([\n            { x: 435, y: 648 },\n            { x: 435, y: 668 },\n            { x: 630, y: 668 },\n            { x: 630, y: 530 },\n            { x: 610, y: 530 }\n          ]);\n        });\n\n\n        it('attached center left', function() {\n\n          // when\n          var connection = connect('BoundaryEvent_CenterLeft', host);\n\n          // then\n          expect(connection).to.have.waypoints([\n            { x: 242, y: 530 },\n            { x: 222, y: 530 },\n            { x: 222, y: 410 },\n            { x: 435, y: 410 },\n            { x: 435, y: 430 }\n          ]);\n        });\n      });\n    });\n\n\n    describe('non-loops', function() {\n\n      var diagramXML = require('./LayoutSequenceFlowSpec.vertical.boundaryEvents.bpmn');\n\n      var testModules = [ coreModule, modelingModule ];\n\n      beforeEach(bootstrapModeler(diagramXML, { modules: testModules }));\n\n\n      it('attached bottom left, orientation left', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_BottomLeft', 'Task_Left');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 502, y: 740 },\n          { x: 260, y: 740 },\n          { x: 260, y: 580 }\n        ]);\n      });\n\n\n      it('attached bottom left, orientation bottom', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_BottomLeft', 'Task_Bottom');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 520, y: 758 },\n          { x: 520, y: 990 },\n          { x: 560, y: 990 }\n        ]);\n      });\n\n\n      it('attached bottom left, orientation right', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_BottomLeft', 'Task_Right');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 502, y: 740 },\n          { x: 482, y: 740 },\n          { x: 482, y: 540 },\n          { x: 860, y: 540 }\n        ]);\n      });\n\n\n      it('attached bottom left, orientation top', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_BottomLeft', 'Task_Top');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 502, y: 740 },\n          { x: 482, y: 740 },\n          { x: 482, y: 140 },\n          { x: 560, y: 140 }\n        ]);\n      });\n\n\n      it('attached right center, orientation right', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_RightCenter', 'Task_Right');\n\n        expect(connection).to.have.waypoints([\n          { x: 738, y: 540 },\n          { x: 860, y: 540 }\n        ]);\n      });\n\n\n      it('attached left center, orientation left', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_LeftCenter', 'Task_Left');\n\n        expect(connection).to.have.waypoints([\n          { x: 502, y: 540 },\n          { x: 310, y: 540 }\n        ]);\n      });\n\n\n      it('attached bottom center, orientation bottom', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_BottomCenter', 'Task_Bottom');\n\n        expect(connection).to.have.waypoints([\n          { x: 610, y: 758 },\n          { x: 610, y: 950 }\n        ]);\n      });\n\n\n      it('attached bottom center, orientation top', function() {\n\n        // when\n        var connection = connect('BoundaryEvent_BottomCenter', 'Task_Top');\n\n        expect(connection).to.have.waypoints([\n          { x: 610, y: 758 },\n          { x: 610, y: 778 },\n          { x: 630, y: 778 },\n          { x: 630, y: 624 },\n          { x: 610, y: 624 },\n          { x: 610, y: 180 }\n        ]);\n      });\n\n    });\n\n  });\n\n\n  describe('flow elements', function() {\n\n    var diagramXML = require('./LayoutSequenceFlowSpec.flowElements.bpmn');\n\n    var testModules = [ coreModule, modelingModule ];\n\n    beforeEach(bootstrapModeler(diagramXML, { modules: testModules }));\n\n\n    describe('loops', function() {\n\n      it('should layout loop', function() {\n\n        // when\n        var connection = connect('Task_1', 'Task_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 332, y: 260 },\n          { x: 332, y: 280 },\n          { x: 262, y: 280 },\n          { x: 262, y: 220 },\n          { x: 282, y: 220 }\n        ]);\n      });\n\n\n      it('should NOT relayout loop', inject(function(elementRegistry) {\n\n        // given\n        var sequenceFlow = elementRegistry.get('SequenceFlow_1'),\n            task = elementRegistry.get('Task_1');\n\n        // when\n        reconnectEnd(sequenceFlow, task, getMid(task));\n\n        // then\n        expect(sequenceFlow).to.have.waypoints([\n          { x: 382, y: 241 },\n          { x: 559, y: 241 },\n          { x: 559, y: 220 },\n          { x: 382, y: 220 }\n        ]);\n      }));\n\n\n      it('should relayout loop (b:l)', inject(function(elementRegistry) {\n\n        // given\n        var sequenceFlow = elementRegistry.get('SequenceFlow_2'),\n            task = elementRegistry.get('Task_1');\n\n        // when\n        reconnectEnd(sequenceFlow, task, getMid(task));\n\n        // then\n        expect(sequenceFlow).to.have.waypoints([\n          { x: 332, y: 260 },\n          { x: 332, y: 280 },\n          { x: 262, y: 280 },\n          { x: 262, y: 220 },\n          { x: 282, y: 220 }\n        ]);\n      }));\n\n\n      it('should relayout loop (l:t)', inject(function(elementRegistry) {\n\n        // given\n        var sequenceFlow = elementRegistry.get('SequenceFlow_3'),\n            task = elementRegistry.get('Task_1');\n\n        // when\n        reconnectEnd(sequenceFlow, task, getMid(task));\n\n        // then\n        expect(sequenceFlow).to.have.waypoints([\n          { x: 282, y: 220 },\n          { x: 262, y: 220 },\n          { x: 262, y: 160 },\n          { x: 332, y: 160 },\n          { x: 332, y: 180 }\n        ]);\n      }));\n\n\n      it('should relayout loop (t:r)', inject(function(elementRegistry) {\n\n        // given\n        var sequenceFlow = elementRegistry.get('SequenceFlow_4'),\n            task = elementRegistry.get('Task_1');\n\n        // when\n        reconnectEnd(sequenceFlow, task, getMid(task));\n\n        // then\n        expect(sequenceFlow).to.have.waypoints([\n          { x: 332, y: 180 },\n          { x: 332, y: 160 },\n          { x: 402, y: 160 },\n          { x: 402, y: 220 },\n          { x: 382, y: 220 }\n        ]);\n      }));\n\n    });\n\n\n    describe('gateway layout', function() {\n\n      it('should layout v:h after Gateway', inject(function() {\n\n        // when\n        var connection = connect('ExclusiveGateway_1', 'BusinessRuleTask_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 678, y: 302 }, x: 678, y: 277 },\n          { x: 678, y: 220 },\n          { original: { x: 840, y: 220 }, x: 790, y: 220 }\n        ]);\n      }));\n\n\n      it('should layout h:v before Gateway', inject(function() {\n\n        // when\n        var connection = connect('BusinessRuleTask_1', 'ParallelGateway_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 840, y: 220 }, x: 890, y: 220 },\n          { x: 1005, y: 220 },\n          { original: { x: 1005, y: 302 }, x: 1005, y: 277 }\n        ]);\n      }));\n\n    });\n\n\n    describe('other elements layout', function() {\n\n      it('should layout h:h after StartEvent', inject(function() {\n\n        // when\n        var connection = connect('StartEvent_1', 'Task_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 170, y: 302 }, x: 188, y: 302 },\n          { x: 235, y: 302 },\n          { x: 235, y: 220 },\n          { original: { x: 332, y: 220 }, x: 282, y: 220 }\n        ]);\n      }));\n\n\n      it('should layout h:h after Task', inject(function() {\n\n        // when\n        var connection = connect('ServiceTask_1', 'BusinessRuleTask_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 678, y: 117 }, x: 728, y: 117 },\n          { x: 759, y: 117 },\n          { x: 759, y: 220 },\n          { original: { x: 840, y: 220 }, x: 790, y: 220 }\n        ]);\n      }));\n\n\n      it('should layout h:h after IntermediateEvent', inject(function() {\n\n        // when\n        var connection = connect('IntermediateThrowEvent_1', 'ServiceTask_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 496, y: 302 }, x: 514, y: 302 },\n          { x: 571, y: 302 },\n          { x: 571, y: 117 },\n          { original: { x: 678, y: 117 }, x: 628, y: 117 }\n        ]);\n      }));\n\n\n      it('should layout h:h after IntermediateEvent (right to left)', inject(function() {\n\n        // when\n        var connection = connect('IntermediateThrowEvent_1', 'Task_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { original: { x: 496, y: 302 }, x: 478, y: 302 },\n          { x: 430, y: 302 },\n          { x: 430, y: 220 },\n          { original: { x: 332, y: 220 }, x: 382, y: 220 }\n        ]);\n      }));\n\n    });\n\n\n    describe('relayout', function() {\n\n      it('should repair after reconnect end', inject(function() {\n\n        // given\n        var newDocking = { x: 660, y: 300 };\n        var connection = element('SequenceFlow_1');\n\n        // when\n        reconnectEnd(connection, 'ExclusiveGateway_1', newDocking);\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 382, y: 241 },\n          { x: 559, y: 241 },\n          { x: 559, y: 300 },\n          { x: 655, y: 300 }\n        ]);\n      }));\n\n\n      it('should repair after target move', inject(function() {\n\n        // given\n        var delta = { x: -30, y: 20 };\n        var connection = element('SequenceFlow_1');\n\n        // when\n        move('ServiceTask_1', delta);\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 382, y: 241 },\n          { x: 559, y: 241 },\n          { x: 559, y: 158 },\n          { x: 598, y: 158 }\n        ]);\n      }));\n\n\n      it('should repair after source move', inject(function() {\n\n        // given\n        var delta = { x: -30, y: 20 };\n        var connection = element('SequenceFlow_1');\n\n        // when\n        move('Task_1', delta);\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 352, y: 261 },\n          { x: 559, y: 261 },\n          { x: 559, y: 138 },\n          { x: 628, y: 138 }\n        ]);\n      }));\n\n    });\n\n  });\n\n\n  describe('vertical flow elements', function() {\n\n    var diagramXML = require('./LayoutSequenceFlowSpec.vertical.flowElements.bpmn');\n\n    var testModules = [ coreModule, modelingModule ];\n\n    beforeEach(bootstrapModeler(diagramXML, { modules: testModules }));\n\n\n    describe('loops', function() {\n\n      it('should layout loop', function() {\n\n        // when\n        var connection = connect('Task_1', 'Task_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 510, y: 382 },\n          { x: 510, y: 402 },\n          { x: 580, y: 402 },\n          { x: 580, y: 342 },\n          { x: 560, y: 342 }\n        ]);\n      });\n\n\n      it('should NOT relayout loop', inject(function(elementRegistry) {\n\n        // given\n        var sequenceFlow = elementRegistry.get('SequenceFlow_1'),\n            task = elementRegistry.get('Task_1');\n\n        // when\n        reconnectEnd(sequenceFlow, task, getMid(task));\n\n        // then\n        expect(sequenceFlow).to.have.waypoints([\n          { x: 531, y: 382 },\n          { x: 531, y: 569 },\n          { x: 510, y: 569 },\n          { x: 510, y: 382 }\n        ]);\n      }));\n\n\n      it('should relayout loop (r:t)', inject(function(elementRegistry) {\n\n        // given\n        var sequenceFlow = elementRegistry.get('SequenceFlow_2'),\n            task = elementRegistry.get('Task_1');\n\n        // when\n        reconnectEnd(sequenceFlow, task, getMid(task));\n\n        // then\n        expect(sequenceFlow).to.have.waypoints([\n          { x: 560, y: 342 },\n          { x: 580, y: 342 },\n          { x: 580, y: 282 },\n          { x: 510, y: 282 },\n          { x: 510, y: 302 }\n        ]);\n      }));\n\n\n      it('should relayout loop (t:l)', inject(function(elementRegistry) {\n\n        // given\n        var sequenceFlow = elementRegistry.get('SequenceFlow_3'),\n            task = elementRegistry.get('Task_1');\n\n        // when\n        reconnectEnd(sequenceFlow, task, getMid(task));\n\n        // then\n        expect(sequenceFlow).to.have.waypoints([\n          { x: 510, y: 302 },\n          { x: 510, y: 282 },\n          { x: 440, y: 282 },\n          { x: 440, y: 342 },\n          { x: 460, y: 342 }\n        ]);\n      }));\n\n\n      it('should relayout loop (l:b)', inject(function(elementRegistry) {\n\n        // given\n        var sequenceFlow = elementRegistry.get('SequenceFlow_4'),\n            task = elementRegistry.get('Task_1');\n\n        // when\n        reconnectEnd(sequenceFlow, task, getMid(task));\n\n        // then\n        expect(sequenceFlow).to.have.waypoints([\n          { x: 460, y: 342 },\n          { x: 440, y: 342 },\n          { x: 440, y: 402 },\n          { x: 510, y: 402 },\n          { x: 510, y: 382 }\n        ]);\n      }));\n\n    });\n\n\n    describe('gateway layout', function() {\n\n      it('should layout h:v after Gateway', inject(function() {\n\n        // when\n        var connection = connect('ExclusiveGateway_1', 'BusinessRuleTask_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 577, y: 688 },\n          { x: 530, y: 688 },\n          { x: 530, y: 810 }\n        ]);\n      }));\n\n\n      it('should layout v:h before Gateway', inject(function() {\n\n        // when\n        var connection = connect('BusinessRuleTask_1', 'ParallelGateway_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 530, y: 890 },\n          { x: 530, y: 1015 },\n          { x: 577, y: 1015 }\n        ]);\n      }));\n\n    });\n\n\n    describe('other elements layout', function() {\n\n      it('should layout v:v after StartEvent', inject(function() {\n\n        // when\n        var connection = connect('StartEvent_1', 'Task_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 602, y: 198 },\n          { x: 602, y: 250 },\n          { x: 510, y: 250 },\n          { x: 510, y: 302 }\n        ]);\n      }));\n\n\n      it('should layout v:v after Task', inject(function() {\n\n        // when\n        var connection = connect('ServiceTask_1', 'BusinessRuleTask_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 407, y: 728 },\n          { x: 407, y: 769 },\n          { x: 530, y: 769 },\n          { x: 530, y: 810 }\n        ]);\n      }));\n\n\n      it('should layout v:v after IntermediateEvent', inject(function() {\n\n        // when\n        var connection = connect('IntermediateThrowEvent_1', 'ServiceTask_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 602, y: 524 },\n          { x: 602, y: 586 },\n          { x: 407, y: 586 },\n          { x: 407, y: 648 }\n        ]);\n      }));\n\n\n      it('should layout v:v after IntermediateEvent (bottom to top)', inject(function() {\n\n        // when\n        var connection = connect('IntermediateThrowEvent_1', 'Task_1');\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 602, y: 488 },\n          { x: 602, y: 435 },\n          { x: 510, y: 435 },\n          { x: 510, y: 382 }\n        ]);\n      }));\n\n    });\n\n\n    describe('relayout', function() {\n\n      it('should repair after reconnect end', inject(function() {\n\n        // given\n        var newDocking = { x: 660, y: 300 };\n        var connection = element('SequenceFlow_1');\n\n        // when\n        reconnectEnd(connection, 'ExclusiveGateway_1', newDocking);\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 531, y: 382 },\n          { x: 531, y: 569 },\n          { x: 660, y: 569 },\n          { x: 660, y: 300 }\n        ]);\n      }));\n\n\n      it('should repair after target move', inject(function() {\n\n        // given\n        var delta = { x: 20, y: -30 };\n        var connection = element('SequenceFlow_1');\n\n        // when\n        move('ServiceTask_1', delta);\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 531, y: 382 },\n          { x: 531, y: 569 },\n          { x: 448, y: 569 },\n          { x: 448, y: 618 }\n        ]);\n      }));\n\n\n      it('should repair after source move', inject(function() {\n\n        // given\n        var delta = { x: 20, y: -30 };\n        var connection = element('SequenceFlow_1');\n\n        // when\n        move('Task_1', delta);\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: 551, y: 352 },\n          { x: 551, y: 569 },\n          { x: 428, y: 569 },\n          { x: 428, y: 648 }\n        ]);\n      }));\n\n    });\n\n  });\n\n\n  describe('subProcess', function() {\n\n    var diagramXML = require('./LayoutSequenceFlowSpec.subProcess.bpmn');\n\n    var testModules = [ coreModule, modelingModule ];\n\n    beforeEach(bootstrapModeler(diagramXML, { modules: testModules }));\n\n\n    it('should layout straight between subProcesses (top -> bottom)', function() {\n\n      // when\n      var connection = connect('SubProcess_Center', 'SubProcess_Bottom'),\n          source = connection.source,\n          target = connection.target;\n\n      var expectedX = getMid(target).x;\n\n      // then\n      expect(connection).to.have.waypoints([\n        { x: expectedX, y: source.y + source.height },\n        { x: expectedX, y: target.y }\n      ]);\n    });\n\n\n    it('should layout straight between subProcesses (bottom -> top)', function() {\n\n      // when\n      var connection = connect('SubProcess_Bottom', 'SubProcess_Center'),\n          source = connection.source,\n          target = connection.target;\n\n      var expectedX = getMid(target).x;\n\n      // then\n      expect(connection).to.have.waypoints([\n        { x: expectedX, y: source.y },\n        { x: expectedX, y: target.y + target.height }\n      ]);\n    });\n\n\n    it('should layout straight between subProcess and task next to it (subProcess -> task)',\n      function() {\n\n        // when\n        var connection = connect('SubProcess_Center', 'Task_Right'),\n            source = connection.source,\n            target = connection.target;\n\n        var expectedY = getMid(target).y;\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: source.x + source.width, y: expectedY },\n          { x: target.x, y: expectedY }\n        ]);\n      }\n    );\n\n\n    it('should layout straight between subProcess and task next to it (task -> subProcess)',\n      function() {\n\n        // when\n        var connection = connect('Task_Right', 'SubProcess_Center'),\n            source = connection.source,\n            target = connection.target;\n\n        var expectedY = getMid(source).y;\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: source.x, y: expectedY },\n          { x: target.x + target.width, y: expectedY }\n        ]);\n      }\n    );\n\n\n    it('should layout straight between subProcess and task above (subProcess -> task)', function() {\n\n      // when\n      var connection = connect('SubProcess_Center', 'Task_Top'),\n          source = connection.source,\n          target = connection.target;\n\n      var expectedX = getMid(target).x;\n\n      // then\n      expect(connection).to.have.waypoints([\n        { x: expectedX, y: source.y },\n        { x: expectedX, y: target.y + target.height }\n      ]);\n    });\n\n\n    it('should layout straight between subProcess and task above (task -> subProcess)', function() {\n\n      // when\n      var connection = connect('Task_Top', 'SubProcess_Center'),\n          source = connection.source,\n          target = connection.target;\n\n      var expectedX = getMid(source).x;\n\n      // then\n      expect(connection).to.have.waypoints([\n        { x: expectedX, y: source.y + source.height },\n        { x: expectedX, y: target.y }\n      ]);\n    });\n  });\n\n\n  describe('vertical subProcess', function() {\n\n    var diagramXML = require('./LayoutSequenceFlowSpec.vertical.subProcess.bpmn');\n\n    var testModules = [ coreModule, modelingModule ];\n\n    beforeEach(bootstrapModeler(diagramXML, { modules: testModules }));\n\n\n    it('should layout straight between subProcesses (left -> right)', function() {\n\n      // when\n      var connection = connect('SubProcess_Center', 'SubProcess_Right'),\n          source = connection.source,\n          target = connection.target;\n\n      var expectedY = getMid(target).y;\n\n      // then\n      expect(connection).to.have.waypoints([\n        { x: source.x + source.width, y: expectedY },\n        { x: target.x, y: expectedY }\n      ]);\n    });\n\n\n    it('should layout straight between subProcesses (right -> left)', function() {\n\n      // when\n      var connection = connect('SubProcess_Right', 'SubProcess_Center'),\n          source = connection.source,\n          target = connection.target;\n\n      var expectedY = getMid(target).y;\n\n      // then\n      expect(connection).to.have.waypoints([\n        { x: source.x, y: expectedY },\n        { x: target.x + target.width, y: expectedY }\n      ]);\n    });\n\n\n    it('should layout straight between subProcess and task below (subProcess -> task)',\n      function() {\n\n        // when\n        var connection = connect('SubProcess_Center', 'Task_Bottom'),\n            source = connection.source,\n            target = connection.target;\n\n        var expectedX = getMid(target).x;\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: expectedX, y: source.y + source.height },\n          { x: expectedX, y: target.y }\n        ]);\n      }\n    );\n\n\n    it('should layout straight between subProcess and task below (task -> subProcess)',\n      function() {\n\n        // when\n        var connection = connect('Task_Bottom', 'SubProcess_Center'),\n            source = connection.source,\n            target = connection.target;\n\n        var expectedX = getMid(source).x;\n\n        // then\n        expect(connection).to.have.waypoints([\n          { x: expectedX, y: source.y },\n          { x: expectedX, y: target.y + target.height }\n        ]);\n      }\n    );\n\n\n    it('should layout straight between subProcess and task next to it (subProcess -> task)', function() {\n\n      // when\n      var connection = connect('SubProcess_Center', 'Task_Left'),\n          source = connection.source,\n          target = connection.target;\n\n      var expectedY = getMid(target).y;\n\n      // then\n      expect(connection).to.have.waypoints([\n        { x: source.x, y: expectedY },\n        { x: target.x + target.width, y: expectedY }\n      ]);\n    });\n\n\n    it('should layout straight between subProcess and task next to it (task -> subProcess)', function() {\n\n      // when\n      var connection = connect('Task_Left', 'SubProcess_Center'),\n          source = connection.source,\n          target = connection.target;\n\n      var expectedY = getMid(source).y;\n\n      // then\n      expect(connection).to.have.waypoints([\n        { x: source.x + source.width, y: expectedY },\n        { x: target.x, y: expectedY }\n      ]);\n    });\n  });\n});\n"
+      }
+    ],
+    "file_hashes": {
+      "package.json": "1ce9c0545c3c6ba6e0fc6c61429120ab6aea2193e34f68ec046ac10ff40e9849",
+      "test/TestHelper.js": "c2ea28ccbf923aaee004540723ca8d97436b00882592d231f6edb0c1f18afeee",
+      "test/config/karma.unit.js": "cc99b5b3e2003042209c4b6ce82cfa8a716869749635a2213e1d1b798501f310",
+      "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn": "202dc5c91090b25d663e67b1e164bd9f5ab5edb83fe71811e305aec142c38a73",
+      "test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js": "63b8b6d70de87ee6bd32c42474e7d49ec22be0edb26ed5611275d0cf176fc70b"
+    },
+    "author_test_patch": "diff --git a/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn b/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn\nindex 324fba17..4fca7378 100644\n--- a/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn\n+++ b/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.boundaryEvents.bpmn\n@@ -13,6 +13,12 @@\n     <bpmn:boundaryEvent id=\"BoundaryEvent_RightCenter\" attachedToRef=\"SubProcess\" />\n     <bpmn:task id=\"Task_Bottom\" />\n     <bpmn:task id=\"Task_Top\" />\n+    <bpmn:task id=\"Task_CornerBoundary\" />\n+    <bpmn:boundaryEvent id=\"BoundaryEvent_BottomRightCorner\" attachedToRef=\"Task_CornerBoundary\" />\n+    <bpmn:task id=\"Task_CornerTarget\" />\n+    <bpmn:task id=\"Task_CornerBoundaryH\" />\n+    <bpmn:boundaryEvent id=\"BoundaryEvent_TopRightCorner\" attachedToRef=\"Task_CornerBoundaryH\" />\n+    <bpmn:task id=\"Task_CornerTargetH\" />\n   </bpmn:process>\n   <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n     <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_1\">\n@@ -52,6 +58,24 @@\n       <bpmndi:BPMNShape id=\"Task_1bc634w_di\" bpmnElement=\"Task_Top\">\n         <dc:Bounds x=\"400\" y=\"0\" width=\"100\" height=\"80\" />\n       </bpmndi:BPMNShape>\n+      <bpmndi:BPMNShape id=\"Task_CornerBoundary_di\" bpmnElement=\"Task_CornerBoundary\">\n+        <dc:Bounds x=\"800\" y=\"300\" width=\"100\" height=\"80\" />\n+      </bpmndi:BPMNShape>\n+      <bpmndi:BPMNShape id=\"BoundaryEvent_BottomRightCorner_di\" bpmnElement=\"BoundaryEvent_BottomRightCorner\">\n+        <dc:Bounds x=\"891\" y=\"371\" width=\"36\" height=\"36\" />\n+      </bpmndi:BPMNShape>\n+      <bpmndi:BPMNShape id=\"Task_CornerTarget_di\" bpmnElement=\"Task_CornerTarget\">\n+        <dc:Bounds x=\"859\" y=\"480\" width=\"100\" height=\"80\" />\n+      </bpmndi:BPMNShape>\n+      <bpmndi:BPMNShape id=\"Task_CornerBoundaryH_di\" bpmnElement=\"Task_CornerBoundaryH\">\n+        <dc:Bounds x=\"800\" y=\"100\" width=\"100\" height=\"80\" />\n+      </bpmndi:BPMNShape>\n+      <bpmndi:BPMNShape id=\"BoundaryEvent_TopRightCorner_di\" bpmnElement=\"BoundaryEvent_TopRightCorner\">\n+        <dc:Bounds x=\"891\" y=\"91\" width=\"36\" height=\"36\" />\n+      </bpmndi:BPMNShape>\n+      <bpmndi:BPMNShape id=\"Task_CornerTargetH_di\" bpmnElement=\"Task_CornerTargetH\">\n+        <dc:Bounds x=\"1000\" y=\"69\" width=\"100\" height=\"80\" />\n+      </bpmndi:BPMNShape>\n     </bpmndi:BPMNPlane>\n   </bpmndi:BPMNDiagram>\n </bpmn:definitions>\ndiff --git a/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js b/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js\nindex 5757c0ea..20008344 100644\n--- a/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js\n+++ b/test/spec/features/modeling/layout/LayoutSequenceFlowSpec.js\n@@ -281,6 +281,55 @@ describe('features/modeling - layout', function() {\n         ]);\n       });\n \n+\n+      it('should layout straight for axis-aligned corner boundary event', inject(\n+        function(elementRegistry, modeling) {\n+\n+          // given\n+          // BoundaryEvent_BottomRightCorner is on the bottom-right corner of\n+          // Task_CornerBoundary (mid x=909, y=389 — outside the contracted task\n+          // bounds right=890, bottom=370 — giving 'bottom-right' orientation).\n+          // Task_CornerTarget center x=909 matches exactly, so getOrientation\n+          // returns strict 'bottom' with no horizontal component, triggering the\n+          // early return in getBoundaryEventTargetLayout → layout 'b:v'.\n+          var boundaryEvent = elementRegistry.get('BoundaryEvent_BottomRightCorner'),\n+              targetTask = elementRegistry.get('Task_CornerTarget');\n+\n+          // when\n+          var connection = modeling.connect(boundaryEvent, targetTask);\n+\n+          // then - straight vertical line, no extra waypoints\n+          expect(connection).to.have.waypoints([\n+            { x: 909, y: 407 },\n+            { x: 909, y: 480 }\n+          ]);\n+        }\n+      ));\n+\n+\n+      it('should layout straight for horizontally axis-aligned corner boundary event', inject(\n+        function(elementRegistry, modeling) {\n+\n+          // given\n+          // BoundaryEvent_TopRightCorner is on the top-right corner of\n+          // Task_CornerBoundaryH (mid x=909, y=109 — outside the contracted task\n+          // bounds right=890, top=110 — giving 'top-right' orientation).\n+          // Task_CornerTargetH center y=109 matches exactly, so getOrientation\n+          // returns strict 'right' with no vertical component, triggering the\n+          // early return in getBoundaryEventTargetLayout → layout 'r:h'.\n+          var boundaryEvent = elementRegistry.get('BoundaryEvent_TopRightCorner'),\n+              targetTask = elementRegistry.get('Task_CornerTargetH');\n+\n+          // when\n+          var connection = modeling.connect(boundaryEvent, targetTask);\n+\n+          // then - straight horizontal line, no extra waypoints\n+          expect(connection).to.have.waypoints([\n+            { x: 927, y: 109 },\n+            { x: 1000, y: 109 }\n+          ]);\n+        }\n+      ));\n     });\n \n   });\n",
+    "measured_transitions": [
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached bottom left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached bottom right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached top left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"in the corner\"],\"attached top right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached bottom center\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached center left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached center right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"loops\",\"on the side center\"],\"attached top center\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached bottom center, orientation bottom\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached right center, orientation left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached right center, orientation right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top center, orientation top\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation bottom\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"attached top right, orientation top\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for axis-aligned corner boundary event\"]",
+        "observed_type": "F2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "fail",
+          "fail",
+          "fail"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]",
+        "observed_type": "F2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "fail",
+          "fail",
+          "fail"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"gateway layout\"],\"should layout h:v before Gateway\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"gateway layout\"],\"should layout v:h after Gateway\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should NOT relayout loop\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should layout loop\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (b:l)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (l:t)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"loops\"],\"should relayout loop (t:r)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after IntermediateEvent (right to left)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after IntermediateEvent\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after StartEvent\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"other elements layout\"],\"should layout h:h after Task\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after reconnect end\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after source move\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"flow elements\",\"relayout\"],\"should repair after target move\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task above (subProcess -> task)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task above (task -> subProcess)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task next to it (subProcess -> task)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcess and task next to it (task -> subProcess)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcesses (bottom -> top)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"subProcess\"],\"should layout straight between subProcesses (top -> bottom)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached bottom left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached bottom right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached top left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"in the corner\"],\"attached top right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached bottom center\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached center left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached center right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"loops\",\"on the side center\"],\"attached top center\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom center, orientation bottom\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom center, orientation top\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation bottom\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached bottom left, orientation top\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached left center, orientation left\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical boundary events\",\"non-loops\"],\"attached right center, orientation right\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"gateway layout\"],\"should layout h:v after Gateway\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"gateway layout\"],\"should layout v:h before Gateway\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should NOT relayout loop\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should layout loop\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (l:b)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (r:t)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"loops\"],\"should relayout loop (t:l)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after IntermediateEvent (bottom to top)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after IntermediateEvent\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after StartEvent\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"other elements layout\"],\"should layout v:v after Task\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after reconnect end\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after source move\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical flow elements\",\"relayout\"],\"should repair after target move\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task below (subProcess -> task)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task below (task -> subProcess)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task next to it (subProcess -> task)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcess and task next to it (task -> subProcess)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcesses (left -> right)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      {
+        "test_id": "[[\"features/modeling - layout\",\"vertical subProcess\"],\"should layout straight between subProcesses (right -> left)\"]",
+        "observed_type": "P2P",
+        "source": "author_or_existing_component_test",
+        "baseline": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "reference": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      }
+    ],
+    "measured_counts": {
+      "F2P": 2,
+      "P2P": 72
+    },
+    "repeats_per_state": 3
+  },
+  "measurement_boundary": {
+    "existing_labels_are_observed": true,
+    "new_bundle_labels_are_predictions_only": true,
+    "final_rule": {
+      "stable_fail_to_pass": "F2P",
+      "stable_pass_to_pass": "P2P",
+      "all_other_or_unstable_outcomes": "unclassified_or_blocked"
+    },
+    "correctness_target": "observable functional equivalence, not source-code equality"
+  },
+  "provenance": {
+    "review_payload": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/01_visual_review/16_04_01_review_payload.json",
+    "source_archive": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/02_source_archive/11_record.json",
+    "case_manifest": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/03_test_construction/14_case_manifest.json",
+    "transition_audit": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/04_measurements/14_transition_audit.json"
+  },
+  "verifier_rerun": {
+    "policy": "exclude_all_prior_verifier_generated_tests",
+    "removed_generated_inputs": [
+      {
+        "path": "test/spec/14_generated_2396Spec.js",
+        "sha256": "c243438c3adaf3b3a7988dfc4b0724191814b2ae5473ab537d486be6423d7362"
+      }
+    ],
+    "requested_concurrency": 10,
+    "generated_at": "2026-09-02T16:49:38.124798+00:00"
+  }
+}

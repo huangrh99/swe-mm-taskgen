@@ -1,0 +1,217 @@
+{
+  "baseline": {
+    "schema_version": "source-test-run-v1",
+    "commit": "b2982e815c656aaa630c50231c70dc74945739e6",
+    "test_manifest_sha256": "d05def1c268b67b90c2d89468f6dbd46ecc45dc38a4ce20bb46901239f4a7856",
+    "results": [
+      {
+        "test_id": "f2p_ai_gradient_decorator",
+        "class": "F2P",
+        "status": "fail",
+        "missing_assertion_indexes": [
+          0
+        ],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "f2p_ai_right_divider",
+        "class": "F2P",
+        "status": "fail",
+        "missing_assertion_indexes": [
+          0,
+          1,
+          2
+        ],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "f2p_invalid_ai_left_divider",
+        "class": "F2P",
+        "status": "fail",
+        "missing_assertion_indexes": [
+          0,
+          1
+        ],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "f2p_invalid_ai_closable_spacing",
+        "class": "F2P",
+        "status": "fail",
+        "missing_assertion_indexes": [
+          0,
+          1,
+          2
+        ],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_disabled_selection_noninteractive",
+        "class": "P2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_invalid_helper_error_color",
+        "class": "P2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_disabled_item_semantics",
+        "class": "P2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_selected_item_state",
+        "class": "P2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      }
+    ],
+    "summary": {
+      "pass": 4,
+      "fail": 4
+    },
+    "semantic_calibration": "pending_human_review",
+    "scope": "executable source semantics; not pixel-render equivalence"
+  },
+  "reference": {
+    "schema_version": "source-test-run-v1",
+    "commit": "9a1475a6271f474762267134bc921c5a8aa8ca97",
+    "test_manifest_sha256": "d05def1c268b67b90c2d89468f6dbd46ecc45dc38a4ce20bb46901239f4a7856",
+    "results": [
+      {
+        "test_id": "f2p_ai_gradient_decorator",
+        "class": "F2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "f2p_ai_right_divider",
+        "class": "F2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "f2p_invalid_ai_left_divider",
+        "class": "F2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "f2p_invalid_ai_closable_spacing",
+        "class": "F2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_disabled_selection_noninteractive",
+        "class": "P2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_invalid_helper_error_color",
+        "class": "P2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_disabled_item_semantics",
+        "class": "P2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      },
+      {
+        "test_id": "p2p_selected_item_state",
+        "class": "P2P",
+        "status": "pass",
+        "missing_assertion_indexes": [],
+        "forbidden_assertion_indexes": []
+      }
+    ],
+    "summary": {
+      "pass": 8,
+      "fail": 0
+    },
+    "semantic_calibration": "pending_human_review",
+    "scope": "executable source semantics; not pixel-render equivalence"
+  },
+  "measurement": {
+    "schema_version": "f2p-p2p-measurement-v1",
+    "transitions": [
+      {
+        "test_id": "f2p_ai_gradient_decorator",
+        "class": "F2P",
+        "expected": "fail->pass",
+        "actual": "fail->pass",
+        "matches": true
+      },
+      {
+        "test_id": "f2p_ai_right_divider",
+        "class": "F2P",
+        "expected": "fail->pass",
+        "actual": "fail->pass",
+        "matches": true
+      },
+      {
+        "test_id": "f2p_invalid_ai_left_divider",
+        "class": "F2P",
+        "expected": "fail->pass",
+        "actual": "fail->pass",
+        "matches": true
+      },
+      {
+        "test_id": "f2p_invalid_ai_closable_spacing",
+        "class": "F2P",
+        "expected": "fail->pass",
+        "actual": "fail->pass",
+        "matches": true
+      },
+      {
+        "test_id": "p2p_disabled_selection_noninteractive",
+        "class": "P2P",
+        "expected": "pass->pass",
+        "actual": "pass->pass",
+        "matches": true
+      },
+      {
+        "test_id": "p2p_invalid_helper_error_color",
+        "class": "P2P",
+        "expected": "pass->pass",
+        "actual": "pass->pass",
+        "matches": true
+      },
+      {
+        "test_id": "p2p_disabled_item_semantics",
+        "class": "P2P",
+        "expected": "pass->pass",
+        "actual": "pass->pass",
+        "matches": true
+      },
+      {
+        "test_id": "p2p_selected_item_state",
+        "class": "P2P",
+        "expected": "pass->pass",
+        "actual": "pass->pass",
+        "matches": true
+      }
+    ],
+    "all_transitions_match": true,
+    "semantic_calibration": "pending_human_review",
+    "pixel_oracle_present": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["pr_number", "images", "visual_necessity", "visual_reason", "author_coverage", "coverage_gaps", "decision", "test_file", "tests", "uncertainties"],
+  "properties": {
+    "pr_number": {"type": "integer"},
+    "images": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["image_id", "category", "ocr_sufficient", "reason"],
+      "properties": {
+        "image_id": {"type": "string"},
+        "category": {"enum": ["code_snippet", "web_interface", "map_geospatial", "diagram", "data_plot", "artwork_photography", "error_message", "other"]},
+        "ocr_sufficient": {"type": ["boolean", "null"]},
+        "reason": {"type": "string"}
+      }
+    }},
+    "visual_necessity": {"enum": ["necessary", "helpful", "text_sufficient", "irrelevant", "unknown"]},
+    "visual_reason": {"type": "string"},
+    "author_coverage": {"type": "string"},
+    "coverage_gaps": {"type": "array", "items": {"type": "string"}},
+    "decision": {"enum": ["generated", "no_additional_test_needed", "needs_input"]},
+    "test_file": {"type": ["object", "null"], "additionalProperties": false,
+      "required": ["path", "content"], "properties": {"path": {"type": "string"}, "content": {"type": "string"}}},
+    "tests": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "behavior", "evidence", "proposed_type", "expected_before", "expected_after", "rationale"],
+      "properties": {
+        "title": {"type": "string"}, "behavior": {"type": "string"},
+        "evidence": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "proposed_type": {"enum": ["F2P", "P2P", "unknown"]},
+        "expected_before": {"enum": ["pass", "fail", "unknown"]},
+        "expected_after": {"enum": ["pass", "unknown"]},
+        "rationale": {"type": "string"}
+      }
+    }},
+    "uncertainties": {"type": "array", "items": {"type": "string"}}
+  }
+}

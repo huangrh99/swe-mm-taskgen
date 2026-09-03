@@ -1,0 +1,10 @@
+{
+  "schema_version": "reference-apply-check-v1",
+  "case_id": "automattic__wp-calypso-99049",
+  "base_commit": "047aeef4a31c9e93ccb975adc77fb2107067fd6e",
+  "reference_diff": "../02_source_archive/02_03_reference.diff",
+  "command": "git apply --check",
+  "exit_code": 0,
+  "result": "pass",
+  "scope": "three PR-modified files reconstructed from immutable base commit; applicability does not resolve the multi-issue gold-scope blocker"
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "harbor-runtime-egress-resolved-result-v1",
+  "harbor_version": "0.22.0",
+  "job_id": "bc55af7c-fc3d-4cb9-83d4-62ff0d219426",
+  "id": "dd37441c-1399-4e6f-830e-8c6b44bff084",
+  "task_name": "local/runtime-egress-probe",
+  "trial_name": "task__q9eT62F",
+  "task_checksum": "f0ec35d74391794c288afc6ddab82d25eb0ab66b44ef8f4571856f8ed9651b49",
+  "agent_info": {
+    "name": "kimi-fetch-egress-probe",
+    "version": "1.0.0",
+    "model_info": null
+  },
+  "resolved_config": {
+    "agent": {
+      "name": null,
+      "import_path": "probe_agent:KimiFetchProbeAgent",
+      "model_name": null,
+      "skills": [],
+      "extra_allowed_hosts": [
+        "ark-gateway.invalid"
+      ],
+      "mcp_servers": []
+    },
+    "environment": {
+      "type": "docker",
+      "extra_allowed_hosts": [],
+      "extra_docker_compose": []
+    },
+    "verifier": {
+      "override_timeout_sec": null,
+      "max_timeout_sec": null,
+      "disable": true
+    }
+  },
+  "verifier_result": null,
+  "exception_info": null,
+  "started_at": "2026-09-03T00:38:02.655169Z",
+  "finished_at": "2026-09-03T00:38:27.882885Z"
+}

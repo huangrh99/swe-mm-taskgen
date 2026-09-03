@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "pipeline-human-gate-v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "mode", "instance_id", "task_sha256", "gate", "decision", "source", "reviewer", "rationale"],
+  "properties": {
+    "schema_version": {"const": "pipeline-human-gate-v1"}, "mode": {"enum": ["simulation", "real"]},
+    "instance_id": {"type": "string"}, "task_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "gate": {"enum": ["multimodal_necessity", "f2p_p2p_semantic_validity"]},
+    "decision": {"enum": ["approved", "rejected"]}, "source": {"enum": ["human", "mock"]},
+    "reviewer": {"type": "string", "minLength": 1}, "rationale": {"type": "string", "minLength": 1}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "harbor-base-image-binding-v1",
+  "image_id": "sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "build_reference": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "repo_digest": "visual-harbor-carbon-20978-functional-exact@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "app_head": "05f979fd8b01fd9b7c336c0167fa6ef78858e063",
+  "app_tree": "2129bc7e29b4742ab75de5d29a8ad8bb7d915bf1",
+  "source_baseline_sha": "b2982e815c656aaa630c50231c70dc74945739e6",
+  "source_baseline_tree": "2129bc7e29b4742ab75de5d29a8ad8bb7d915bf1",
+  "source_tree_differences": [],
+  "offline_archive": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_40_exact_baseline_base_archive/visual-harbor-base-aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9.tar",
+  "offline_archive_size_bytes": 3049079296,
+  "offline_archive_sha256": "287f6f570a6e27875ec49e11f14698a82fa50b02f05ceef1d074cd27bf8d27b3",
+  "portability_state": "offline_archive_sha256_bound_and_same_daemon_image_verified"
+}

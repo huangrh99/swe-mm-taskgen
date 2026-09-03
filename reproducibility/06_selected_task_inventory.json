@@ -1,0 +1,26 @@
+{
+  "schema_version": "historical-provisional-task-inventory-v1",
+  "status": "historical_snapshot_not_formally_admitted",
+  "task_root": "tmp/multimodal-2025/19_pipeline_state_machine/19_00_provisional_candidates/carbon-design-system__carbon-20978",
+  "task_directory_checksum": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+  "files": [
+    {"path": "environment/Dockerfile", "sha256": "576d5835b36af1949330907c75fc77c5308d17f699761e6174afbbb3d154ddf0"},
+    {"path": "environment/assets/52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b.png", "sha256": "52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b"},
+    {"path": "environment/assets/8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a.png", "sha256": "8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a"},
+    {"path": "environment/assets/a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352.png", "sha256": "a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352"},
+    {"path": "environment/assets/dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb.png", "sha256": "dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb"},
+    {"path": "environment/base_image.json", "sha256": "4c91c7248a849314128a973532cf812883e6a499a218fb81c4be7f803c5fb43e"},
+    {"path": "environment/docker-compose.yaml", "sha256": "c94524202b8cefd10c52b4c326e41214687eb40b1d79ea01812f9acb7d2b98a1"},
+    {"path": "instruction.md", "sha256": "1eb832b5947a306d1ba7749b3b44deac7c2837bdbf46c0d34d6ebb726b277b9e"},
+    {"path": "solution/reference.patch", "sha256": "f48cb6d3ecae68463f3eb944abd4ceaf36d16ee6ffbc9dd1e7324ec48c11150e"},
+    {"path": "solution/solve.sh", "sha256": "0de47f8626d52183089e246175e3b3ad1d33ac4db715019d8e2c3b419e58d032"},
+    {"path": "task.toml", "sha256": "425e6c3231cfce978a2548d2724422b038df671b4452b5771057701d50f39e01"},
+    {"path": "tests/config.json", "sha256": "8317771c01d06bbf8205a51c02e7b99b97719ca51d545509644b093253d0963b"},
+    {"path": "tests/frozen_inventory.json", "sha256": "e36eccd631a40262a5edd6dd7dad0d718c2555abdee4f32886a2bef63d60ad54"},
+    {"path": "tests/functional_runner.py", "sha256": "87a547498f07c0229d728082bd2639e31a7472daaf485b63a0c0170ac17705d6"},
+    {"path": "tests/integrity.py", "sha256": "62a23be3460fe08eab028f1c5dcd14065a0bed5540181ed22a188e0b37d8f208"},
+    {"path": "tests/test.sh", "sha256": "5fa5a74cdb3087ae258b60f43a42b40622adcd715a56e68bb815a9d3769914aa"},
+    {"path": "tests/test_manifest.json", "sha256": "de4f60a9722b7236d4d1beaf89222a7deb1c84de7333daecb43ff00a19a0d561"},
+    {"path": "tests/verify.py", "sha256": "17c2ba753aecb8a463c88167d13ba9b1cc3fe486566c5d859c1b5a0900aaf1d7"}
+  ]
+}

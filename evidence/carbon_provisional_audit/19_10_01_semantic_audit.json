@@ -1,0 +1,149 @@
+{
+  "schema_version": "carbon-provisional-semantic-audit-v1",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "status": "provisional_blocked_on_two_human_gates",
+  "candidate_task": {
+    "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_00_provisional_candidates/carbon-design-system__carbon-20978",
+    "task_material_sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+    "material_modified_by_this_audit": false
+  },
+  "source_bindings": {
+    "source_archive": {
+      "path": "crawler-output/multimodal-2025/11_source_archive/20260901T074547064254Z/11_record_0003.json",
+      "sha256": "f1e610d7fb0d0479274a4817e89ebbe5ec40dce298036675dea1350afb3c31d0"
+    },
+    "candidate_dossier": {
+      "path": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_01_candidate_dossier_v2.json",
+      "sha256": "b83aeb1d9dfac789635e80ef0c2c18c7c5c9fd0dfbaa403f0bfce0bfd6d6489a"
+    },
+    "instruction_sha256": "1eb832b5947a306d1ba7749b3b44deac7c2837bdbf46c0d34d6ebb726b277b9e",
+    "reference_patch_sha256": "f48cb6d3ecae68463f3eb944abd4ceaf36d16ee6ffbc9dd1e7324ec48c11150e",
+    "test_manifest_sha256": "de4f60a9722b7236d4d1beaf89222a7deb1c84de7333daecb43ff00a19a0d561",
+    "functional_runner_sha256": "87a547498f07c0229d728082bd2639e31a7472daaf485b63a0c0170ac17705d6"
+  },
+  "source_findings": {
+    "merged_to_default_branch": true,
+    "merge_timestamp": "2025-11-11T21:30:13Z",
+    "baseline_sha": "b2982e815c656aaa630c50231c70dc74945739e6",
+    "reference_sha": "9a1475a6271f474762267134bc921c5a8aa8ca97",
+    "changed_files": [
+      "packages/web-components/src/components/combo-box/combo-box.scss",
+      "packages/web-components/src/components/combo-box/combo-box.stories.ts"
+    ],
+    "author_test_change_detected": false,
+    "author_test_evidence": "The PR checklist explicitly strikes out 'Wrote passing tests that cover this change', and the archived changed-file list contains only SCSS and Storybook source files."
+  },
+  "problem_contract": {
+    "direct_issues": [20120, 20849],
+    "parent_issue_17992": "curator_only",
+    "agent_safe_assets": [
+      {
+        "sha256": "52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b",
+        "source": "issue_20120_expected_no_input",
+        "role": "expected"
+      },
+      {
+        "sha256": "8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a",
+        "source": "issue_20120_actual_no_input",
+        "role": "before"
+      },
+      {
+        "sha256": "dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb",
+        "source": "issue_20120_expected_with_input",
+        "role": "expected"
+      },
+      {
+        "sha256": "a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352",
+        "source": "issue_20120_actual_with_input",
+        "role": "before"
+      }
+    ],
+    "visual_necessity_assessment": {
+      "model_screen": "high_priority_human",
+      "human_gate": "pending",
+      "supported_claim": "The four Issue screenshots add non-text layout evidence for invalid icon, AI-label, divider, close icon and chevron ordering/spacing.",
+      "unsupported_claim": "The screenshots do not uniquely specify the reference implementation or exact CSS constants 141px and 116px."
+    }
+  },
+  "reference_patch_assessment": {
+    "files": 2,
+    "contains_author_tests": false,
+    "implementation_scope": "SCSS behavior plus Storybook controls/examples",
+    "answer_leakage_to_agent": false,
+    "oracle_only": true
+  },
+  "test_patch_assessment": {
+    "author_test_patch_exists": false,
+    "curator_test_patch_exists": false,
+    "harbor_hidden_tests_exist": true,
+    "decision": "generated_hidden_verifier_is_required_but_not_yet_semantically_approved",
+    "reason": "The PR supplied no tests. Harbor does not require a literal test.patch file, but benchmark provenance must label the current runner and manifest as curator-generated rather than author-derived. A later SWE-bench-style export may materialize an equivalent test.patch only after the test gate is approved; creating a cosmetic patch now would add no evidence."
+  },
+  "test_assessment": {
+    "kind": "real_chromium_computed_style_on_minimal_shadow_dom_fixture",
+    "f2p": [
+      {
+        "test_id": "f2p_ai_gradient_decorator",
+        "contract_strength": "reasonable_behavioral_proxy",
+        "reason": "Checks that the AI decorator receives a non-none gradient; Issue 20849 explicitly requests AI gradient styling."
+      },
+      {
+        "test_id": "f2p_ai_right_divider",
+        "contract_strength": "partially_implementation_coupled",
+        "reason": "Divider existence is required, but ::after and exact -9px placement are one implementation rather than the only acceptable visual result."
+      },
+      {
+        "test_id": "f2p_invalid_ai_left_divider",
+        "contract_strength": "partially_implementation_coupled",
+        "reason": "The divider/ordering is visually relevant, but ::before and exact -9px are reference-patch choices."
+      },
+      {
+        "test_id": "f2p_invalid_ai_closable_spacing",
+        "contract_strength": "reference_patch_overfit",
+        "reason": "Exact 141px input padding and 116px invalid-icon offset are not stated by the Issue text or uniquely derivable from the screenshots; an alternative visually correct repair can fail."
+      }
+    ],
+    "p2p": [
+      {
+        "test_id": "p2p_disabled_selection_noninteractive",
+        "contract_strength": "narrow_regression_proxy",
+        "reason": "Protects an existing disabled-state computed style, but not the full repository regression suite."
+      },
+      {
+        "test_id": "p2p_invalid_helper_error_color",
+        "contract_strength": "narrow_regression_proxy",
+        "reason": "Protects an existing invalid helper style, but is not directly adjacent to every changed selector."
+      },
+      {
+        "test_id": "p2p_disabled_item_semantics",
+        "contract_strength": "weakly_related_regression_proxy",
+        "reason": "Checks combo-box-item disabled styling that the reference patch does not touch."
+      },
+      {
+        "test_id": "p2p_selected_item_state",
+        "contract_strength": "weakly_related_regression_proxy",
+        "reason": "Checks selected item styling that the reference patch does not touch."
+      }
+    ],
+    "overall_decision": "do_not_approve_tests_yet",
+    "required_revision_before_human_test_gate": [
+      "Replace exact reference CSS-value assertions with geometry or screenshot assertions derived from the expected Issue images, including explicit tolerances.",
+      "Exercise the actual combo-box component or a faithful Storybook fixture rather than only a minimal synthetic shadow-DOM fixture.",
+      "Add P2P coverage for changed selector combinations: ordinary closable, warn+closable, invalid+closable, AI-label+closable, and unaffected non-AI states.",
+      "Run a broader existing Carbon web-components regression command and record exact executed test IDs or command outcome.",
+      "Obtain independent human approval for every retained F2P/P2P meaning."
+    ]
+  },
+  "admission": {
+    "may_be_used_as_smoke_fixture": true,
+    "may_run_nop_oracle_controls": true,
+    "may_run_external_pass5": false,
+    "may_promote_to_report": false,
+    "blocking_reasons": [
+      "multimodal_necessity_human_gate_pending",
+      "f2p_p2p_human_gate_pending",
+      "f2p_oracle_contains_reference_patch_overfit",
+      "p2p_coverage_is_too_narrow_for_formal_admission"
+    ]
+  }
+}

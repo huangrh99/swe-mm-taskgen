@@ -1,0 +1,149 @@
+#0 building with "colima" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 425B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9
+#4 resolve docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 29.46MB 5.0s
+#5 transferring context: 46.10MB 10.2s
+#5 transferring context: 57.13MB 15.3s
+#5 transferring context: 63.10MB 17.7s done
+#5 DONE 17.7s
+
+#6 [2/7] RUN rm -rf /app
+#6 CACHED
+
+#7 [3/7] RUN corepack enable
+#7 CACHED
+
+#8 [4/7] COPY app /app
+#8 DONE 0.7s
+
+#9 [5/7] WORKDIR /app
+#9 DONE 0.1s
+
+#10 [6/7] RUN yarn install --immutable --mode=skip-build
+#10 0.758 ➤ YN0000: · Yarn 4.10.3
+#10 0.764 ➤ YN0000: ┌ Resolution step
+#10 1.097 ➤ YN0000: └ Completed in 0s 332ms
+#10 1.099 ➤ YN0000: ┌ Post-resolution validation
+#10 1.099 ➤ YN0060: │ @octokit/core is listed by your project with version 7.0.3 (p470e91), which doesn't satisfy what @octokit/plugin-throttling requests (^4.0.0).
+#10 1.099 ➤ YN0060: │ @typescript-eslint/eslint-plugin is listed by your project with version 5.59.6 (p4eb64f), which doesn't satisfy what eslint-plugin-jest requests (^6.0.0 || ^7.0.0 || ^8.0.0).
+#10 1.099 ➤ YN0060: │ eslint-plugin-react-hooks is listed by your project with version 5.2.0 (p7cafc2), which doesn't satisfy what eslint-config-airbnb requests (^4.3.0).
+#10 1.099 ➤ YN0060: │ react is listed by your project with version 19.2.3 (p61d251), which doesn't satisfy what @testing-library/react and other dependencies request (but they have non-overlapping ranges!).
+#10 1.099 ➤ YN0060: │ react-dom is listed by your project with version 19.2.3 (p7439c4), which doesn't satisfy what @testing-library/react requests (^18.0.0).
+#10 1.099 ➤ YN0060: │ storybook is listed by your project with version 9.1.17 (p5a6581), which doesn't satisfy what storybook-addon-accessibility-checker and other dependencies request (but they have non-overlapping ranges!).
+#10 1.099 ➤ YN0060: │ storybook is listed by your project with version 9.1.17 (p603b34), which doesn't satisfy what storybook-addon-accessibility-checker and other dependencies request (but they have non-overlapping ranges!).
+#10 1.099 ➤ YN0060: │ storybook is listed by your project with version 9.1.17 (p63f2c6), which doesn't satisfy what storybook-addon-accessibility-checker and other dependencies request (but they have non-overlapping ranges!).
+#10 1.099 ➤ YN0060: │ stylelint is listed by your project with version 16.10.0 (p2b300a), which doesn't satisfy what stylelint-use-logical and other dependencies request (but they have non-overlapping ranges!).
+#10 1.099 ➤ YN0002: │ @carbon/cli@workspace:packages/cli doesn't provide @octokit/core (pbbd302), requested by @octokit/plugin-throttling.
+#10 1.099 ➤ YN0002: │ @carbon/themes@workspace:packages/themes doesn't provide @babel/core (p3d6906), requested by @babel/node and other dependencies.
+#10 1.099 ➤ YN0002: │ @carbon/web-components@workspace:packages/web-components doesn't provide postcss (pb16284), requested by autoprefixer and other dependencies.
+#10 1.099 ➤ YN0002: │ carbon@workspace:. doesn't provide typescript (p7a13fe), requested by typescript-eslint.
+#10 1.099 ➤ YN0002: │ eslint-config-carbon@workspace:config/eslint-config-carbon doesn't provide @babel/core (pa4ae74), requested by @babel/eslint-parser.
+#10 1.099 ➤ YN0002: │ eslint-config-carbon@workspace:config/eslint-config-carbon doesn't provide @testing-library/dom (p1086fd), requested by eslint-plugin-jest-dom.
+#10 1.100 ➤ YN0002: │ eslint-config-carbon@workspace:config/eslint-config-carbon doesn't provide eslint (p99b2aa), requested by @babel/eslint-parser and other dependencies.
+#10 1.100 ➤ YN0002: │ eslint-config-carbon@workspace:config/eslint-config-carbon doesn't provide typescript (p83666a), requested by @typescript-eslint/eslint-plugin and other dependencies.
+#10 1.100 ➤ YN0002: │ jest-config-carbon@workspace:config/jest-config-carbon doesn't provide jest (p591673), requested by jest-watch-typeahead.
+#10 1.100 ➤ YN0002: │ stylelint-config-carbon@workspace:config/stylelint-config-carbon doesn't provide postcss (p58abbc), requested by stylelint-config-standard-scss.
+#10 1.100 ➤ YN0086: │ Some peer dependencies are incorrectly met by your project; run yarn explain peer-requirements <hash> for details, where <hash> is the six-letter p-prefixed code.
+#10 1.100 ➤ YN0086: │ Some peer dependencies are incorrectly met by dependencies; run yarn explain peer-requirements for details.
+#10 1.198 ➤ YN0000: └ Completed
+#10 1.198 ➤ YN0000: ┌ Fetch step
+#10 75.35 ➤ YN0013: │ 2268 packages were added to the project (+ 810.12 MiB).
+#10 75.35 ➤ YN0000: └ Completed in 1m 15s
+#10 75.47 ➤ YN0000: ┌ Link step
+#10 120.8 ➤ YN0000: └ Completed in 45s 320ms
+#10 121.1 ➤ YN0000: · Done with warnings in 2m 1s
+#10 DONE 122.3s
+
+#11 [7/7] RUN git reset --hard HEAD && test -z "$(git status --porcelain --untracked-files=all)" && test -z "$(git remote)"
+#11 2.330 Updating files:  42% (3814/9053)
+Updating files:  43% (3893/9053)
+Updating files:  44% (3984/9053)
+Updating files:  45% (4074/9053)
+Updating files:  46% (4165/9053)
+Updating files:  47% (4255/9053)
+Updating files:  48% (4346/9053)
+Updating files:  49% (4436/9053)
+Updating files:  50% (4527/9053)
+Updating files:  51% (4618/9053)
+Updating files:  52% (4708/9053)
+Updating files:  53% (4799/9053)
+Updating files:  54% (4889/9053)
+Updating files:  55% (4980/9053)
+Updating files:  56% (5070/9053)
+Updating files:  57% (5161/9053)
+Updating files:  58% (5251/9053)
+Updating files:  59% (5342/9053)
+Updating files:  60% (5432/9053)
+Updating files:  61% (5523/9053)
+Updating files:  62% (5613/9053)
+Updating files:  63% (5704/9053)
+Updating files:  64% (5794/9053)
+Updating files:  65% (5885/9053)
+Updating files:  66% (5975/9053)
+Updating files:  67% (6066/9053)
+Updating files:  68% (6157/9053)
+Updating files:  69% (6247/9053)
+Updating files:  70% (6338/9053)
+Updating files:  71% (6428/9053)
+Updating files:  72% (6519/9053)
+Updating files:  72% (6605/9053)
+Updating files:  73% (6609/9053)
+Updating files:  74% (6700/9053)
+Updating files:  75% (6790/9053)
+Updating files:  76% (6881/9053)
+Updating files:  77% (6971/9053)
+Updating files:  78% (7062/9053)
+Updating files:  79% (7152/9053)
+Updating files:  80% (7243/9053)
+Updating files:  81% (7333/9053)
+Updating files:  82% (7424/9053)
+Updating files:  83% (7514/9053)
+Updating files:  84% (7605/9053)
+Updating files:  85% (7696/9053)
+Updating files:  86% (7786/9053)
+Updating files:  87% (7877/9053)
+Updating files:  88% (7967/9053)
+Updating files:  89% (8058/9053)
+Updating files:  90% (8148/9053)
+Updating files:  91% (8239/9053)
+Updating files:  92% (8329/9053)
+Updating files:  93% (8420/9053)
+Updating files:  94% (8510/9053)
+Updating files:  95% (8601/9053)
+Updating files:  96% (8691/9053)
+Updating files:  97% (8782/9053)
+Updating files:  98% (8872/9053)
+Updating files:  99% (8963/9053)
+Updating files:  99% (9034/9053)
+Updating files: 100% (9053/9053)
+Updating files: 100% (9053/9053), done.
+#11 4.370 HEAD is now at 05166d4 chore(deps): bump basic-ftp from 5.0.5 to 5.2.2 (#21994)
+#11 DONE 4.7s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 115.8s done
+#12 exporting manifest sha256:b7a8029fc2dcfcbcef714a047519643ecce064e5d020496a52a3b112de104d0a 0.0s done
+#12 exporting config sha256:addc578e330408b362906ff7d6154c09b57b1bf0c6181679869fd069e37c8019 0.0s done
+#12 exporting attestation manifest sha256:b123b99e1c1328d7ef6e7882c1904c0c69a378bbb7a88119d8e3ce0ff07bec63 0.0s done
+#12 exporting manifest list sha256:b5f88c50a793667139a1721b5545ee951d7f918992f515c90823c2c6b5befd98
+#12 exporting manifest list sha256:b5f88c50a793667139a1721b5545ee951d7f918992f515c90823c2c6b5befd98 0.0s done
+#12 naming to docker.io/library/visual-env-build:carbon-design-system-carbon-22019 done
+#12 unpacking to docker.io/library/visual-env-build:carbon-design-system-carbon-22019
+#12 unpacking to docker.io/library/visual-env-build:carbon-design-system-carbon-22019 39.4s done
+#12 DONE 155.4s

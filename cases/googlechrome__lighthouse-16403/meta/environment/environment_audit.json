@@ -1,0 +1,20 @@
+{
+  "schema_version": "case-environment-audit-v1",
+  "status": "complete",
+  "records": [
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:98cd04789d0f15a4c2710569645330438e8199edc59d2a5e3d402bcceb0e457d",
+      "base_commit": "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+      "asset_count": 1,
+      "task_image": "case-environment-audit:googlechrome-lighthouse-16403",
+      "probe": [
+        "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+        "REMOTE=v20.20.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    }
+  ]
+}

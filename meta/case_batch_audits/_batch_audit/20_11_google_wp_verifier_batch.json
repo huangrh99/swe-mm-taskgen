@@ -1,0 +1,78 @@
+{
+  "schema_version": "google-wp-test-verifier-batch-v1",
+  "created_at": "2026-09-02T14:00:18.271003+00:00",
+  "backend": "gemini",
+  "requested_model": "gemini-3.7-flash",
+  "api_attempts": 3,
+  "max_tokens": 32768,
+  "prompt": "report/code/analysis/prompts/20_09_existing_tests_extension.system.md",
+  "schema": "report/code/analysis/prompts/20_10_existing_tests_extension.schema.json",
+  "cases": [
+    {
+      "case_id": "googlechrome__lighthouse-16403",
+      "selected_run": "20_11_verifier_run_02",
+      "status": "additional_tests_proposed",
+      "bundle_count": 1,
+      "stable_test_ids": [
+        "Lighthouse Treemap Visual Contract visual styling and structure root node does not have caption and child nodes have styled caption spans",
+        "Lighthouse Treemap Visual Contract visual styling and structure nested nodes of the same bundle have depth-differentiated background colors",
+        "Lighthouse Treemap Visual Contract visual styling and structure treemap and table coexist in desktop layout"
+      ],
+      "model": "gemini-3.7-flash",
+      "semantic_attempts": 2,
+      "prior_validation_failures": [
+        "ValueError: generated bundle writes outside the frozen test root"
+      ],
+      "quality_review": "revision_required",
+      "quality_findings": [
+        "The geometry assertion tableLeft >= treemapLeft does not prove right-side placement or non-overlap.",
+        "The color assertion only counts distinct colors globally; it does not bind nodes to one bundle and distinct depths.",
+        "Human test revision is required before Base/Gold measurement."
+      ],
+      "audit": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/googlechrome__lighthouse-16403/03_test_construction/20_11_verifier_run_02/20_11_08_audit.html",
+      "manifest_sha256_after_update": "80e5472b863f26f78fc96f0e2444c03b18bde473f9fa8bf12958951a257745f0"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100957",
+      "selected_run": "20_11_verifier_run_02",
+      "status": "additional_tests_proposed",
+      "bundle_count": 1,
+      "stable_test_ids": [
+        "GlobalStylesVariationPreview prefers text color and button background color in highlighted color swatches",
+        "GlobalStylesVariationPreview falls back to link color when button background color is missing and renders swatches stably"
+      ],
+      "model": "gemini-3.7-flash",
+      "semantic_attempts": 1,
+      "prior_validation_failures": [],
+      "quality_review": "revision_required",
+      "quality_findings": [
+        "Generated test queries .global-styles-variation-preview__palette-item, but the supplied component does not emit that class.",
+        "Generated test mocks framer-motion although the component imports __unstableMotion from @wordpress/components.",
+        "The candidate bundle is expected to fail on both arms until revised; it is not yet an F2P test."
+      ],
+      "audit": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-100957/03_test_construction/20_11_verifier_run_02/20_11_08_audit.html",
+      "manifest_sha256_after_update": "7f26b2a793bdf049bca36376fd0c6ca7c30a960632e232b4e98efc21fe04b505"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99049",
+      "selected_run": "20_11_verifier_run_02",
+      "status": "additional_tests_proposed",
+      "bundle_count": 1,
+      "stable_test_ids": [
+        "test/client/domain-forwarding-link-color.test.mjs::domain forwarding link button color is var(--color-link)"
+      ],
+      "model": "gemini-3.7-flash",
+      "semantic_attempts": 1,
+      "prior_validation_failures": [],
+      "quality_review": "revision_required",
+      "quality_findings": [
+        "Generated test regex-matches compiled CSS and does not observe browser computed color; it is a source/structure proxy.",
+        "A browser fixture should assert getComputedStyle(link).color against the resolved --color-link value.",
+        "gold_scope_unresolved remains: a6c0e50... is only the intended color-fix candidate endpoint, while archived PR head includes unrelated #99055/#99059 changes."
+      ],
+      "audit": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-99049/03_test_construction/20_11_verifier_run_02/20_11_08_audit.html",
+      "manifest_sha256_after_update": "c609c5290e227d60e7036aef82e1e1df9acd352e7c3d92fd5f92b2ebe1062573"
+    }
+  ],
+  "boundary": "All generated bundles require human test review and actual repeated Base/Gold execution; this batch contains no measured F2P/P2P or Harbor result."
+}

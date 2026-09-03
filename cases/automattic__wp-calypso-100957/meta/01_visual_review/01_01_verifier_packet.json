@@ -1,0 +1,17 @@
+{
+  "task_id": "automattic__wp-calypso-100957",
+  "problem_statement": "Theme Previewer: Better contrast on the style variations\n\n## Where\nIn many different onboarding, where we show the theme picker + theme previewer. Example: https://wordpress.com/setup/onboarding, after selecting goals and moving to design selection.\n\n## Problem\nSome of these color palettes have pretty bad contrast.\n\n\n> **视觉材料 1**：见下方对应图片。\n\n\n\n## Solution\nDesigners should revise the suggested style variations and fix those who do not pass a bare minimum of contrast.",
+  "assets": [
+    {
+      "asset_id": "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552",
+      "attachment_index": 1,
+      "source_ids": [
+        "automattic/wp-calypso#100573:body"
+      ],
+      "model_input_representation": {
+        "kind": "original_static_image",
+        "source_sha256": "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552"
+      }
+    }
+  ]
+}

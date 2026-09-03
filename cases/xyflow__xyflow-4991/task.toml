@@ -1,0 +1,28 @@
+schema_version = "1.2"
+
+[task]
+name = "swe-bench-multimodal/xyflow__xyflow-4991"
+description = "Keep the React Flow viewport stable when keyboard focus moves to an off-screen node."
+authors = [{ name = "benchmark-construction" }]
+keywords = ["swe-bench", "swe-bench-multimodal", "typescript", "react", "browser", "visual-interaction"]
+
+[metadata]
+repository = "xyflow/xyflow"
+repo = "xyflow/xyflow"
+instance_id = "xyflow__xyflow-4991"
+pr_number = 4991
+status = "provisional_smoke"
+
+[agent]
+timeout_sec = 7200.0
+override_setup_timeout_sec = 1800.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 3600.0
+cpus = 6
+memory_mb = 12288
+storage_mb = 20480
+allow_internet = false

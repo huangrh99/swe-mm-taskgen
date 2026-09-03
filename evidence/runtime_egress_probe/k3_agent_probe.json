@@ -1,0 +1,35 @@
+{
+  "model_request_executed": false,
+  "observations": {
+    "allowed_model_api": {
+      "curl_exit_code": 0,
+      "http_status": "401",
+      "stderr": "",
+      "transport_connected": true,
+      "url": "https://ark-gateway.invalid/api/v3/"
+    },
+    "github": {
+      "curl_exit_code": 35,
+      "http_status": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 \n000",
+      "stderr": "",
+      "transport_connected": false,
+      "url": "https://github.com/"
+    },
+    "npm_registry": {
+      "curl_exit_code": 35,
+      "http_status": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to registry.npmjs.org:443 \n000",
+      "stderr": "",
+      "transport_connected": false,
+      "url": "https://registry.npmjs.org/"
+    },
+    "raw_githubusercontent": {
+      "curl_exit_code": 35,
+      "http_status": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443 \n000",
+      "stderr": "",
+      "transport_connected": false,
+      "url": "https://raw.githubusercontent.com/"
+    }
+  },
+  "phase": "agent",
+  "schema_version": "harbor-runtime-egress-probe-v1"
+}

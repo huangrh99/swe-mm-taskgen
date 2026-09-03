@@ -1,0 +1,35 @@
+{
+  "schema_version": "swebench-mm-functional-tests-v1",
+  "repo": "Automattic/wp-calypso",
+  "instance_id": "automattic__wp-calypso-99049",
+  "base_commit": "047aeef4a31c9e93ccb975adc77fb2107067fd6e",
+  "reference_commit": "c865012ecea983f5924e599fa5e472b52531a001",
+  "comparison_policy": "base_commit_to_final_pr_head",
+  "FAIL_TO_PASS": [
+    "WPC-99049-LINK-COLOR"
+  ],
+  "PASS_TO_PASS": [
+    "WPC-99049-P2P-COLOR-SCOPE",
+    "WPC-99049-P2P-DOMAIN-OVERVIEW"
+  ],
+  "test_purposes": {
+    "WPC-99049-LINK-COLOR": {
+      "source": "verifier_generated",
+      "purpose": "Compile every production SCSS source that affects the Domain Forwarding control and use Chromium getComputedStyle to verify that + Add forward resolves to --color-link, independent of which stylesheet contains the repair."
+    },
+    "WPC-99049-P2P-COLOR-SCOPE": {
+      "source": "verifier_generated",
+      "purpose": "Reject an over-broad implementation by checking that a link-button outside the Domain Forwarding accordion keeps its original computed color."
+    },
+    "WPC-99049-P2P-DOMAIN-OVERVIEW": {
+      "source": "repository_existing",
+      "purpose": "Run the existing DomainOverviewPane test suite to preserve previously supported rendering and behavior."
+    }
+  },
+  "human_review": {
+    "visual_gate": "deferred",
+    "test_semantic_gate": "deferred",
+    "formal_admission": false
+  },
+  "log_parser": "wp-calypso-99049-functional-results-v2"
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": "capability-candidate-pool-config-v2",
+  "records": [
+    {
+      "case_id": "automattic__wp-calypso-111378",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_100_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；徽标变体的配色映射依赖视觉对照。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100957",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；前景与背景对比度是核心约束。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101438",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；SVG 图标颜色差异是核心约束。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102315",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；菜单文字与高亮配色需视觉对照。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99049",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_11_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；控件渲染样式不一致由图片定位。"
+    },
+    {
+      "case_id": "bpmn-io__bpmn-js-2396",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_100_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；连线路径与锚点几何是核心约束。"
+    },
+    {
+      "case_id": "grommet__grommet-7712",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_100_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；图表扇区间距和切割几何需视觉判断。"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6021",
+      "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave17_selected05_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；地图中文字朝向和空间变换是核心约束。"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6683",
+      "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave15_targeted_03_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；图中节点和连线几何关系构成修复约束。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101093",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；组件类型与内部结构由图片确定。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99109",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；警告提示采用何种控件结构需视觉判断。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101492",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_11_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；表单控件的启用与禁用状态是核心约束。"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101890",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；多个页面中的选项卡结构需视觉归一。"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-11441",
+      "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave10_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；导出后元素可见状态是核心约束。"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9010",
+      "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_issue_first_reduction_03_run/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格视觉必要性通过；端点拖拽时错误重绑依赖交互时序。"
+    },
+    {
+      "case_id": "googlechrome__lighthouse-16403",
+      "classification": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_100_run_01/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格混合类；组件结构、空间布局和外观配色同时是关键约束。"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6440",
+      "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_expected_design_recall_06_run/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格混合类；Event Modeling 的领域符号与空间结构共同决定实现。"
+    },
+    {
+      "case_id": "pixijs__pixijs-11230",
+      "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_mixed_targeted_07_run/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格混合类；渲染属性与几何呈现同时构成约束。"
+    },
+    {
+      "case_id": "apache__superset-36323",
+      "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_mixed_targeted_07_run/16_03_08_pre_review_classifications.json",
+      "rationale": "V3 严格混合类；地图图形语义、悬浮状态和文本呈现共同决定修复。"
+    },
+    {
+      "case_id": "fabricjs__fabric.js-10441",
+      "capability_run": "crawler-output/multimodal-2025/16_11_capability_verifier/20260903_temporal_targeted_v4_gemini_run_01",
+      "rationale": "V4 定向补样；动态绘制过程中线条外观随交互发生错误变化，时序理解为核心。"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6679",
+      "capability_run": "crawler-output/multimodal-2025/16_11_capability_verifier/20260903_temporal_targeted_v4_gemini_run_01",
+      "rationale": "V4 定向补样；地图交互的连续状态变化展示核心时序错误，并含空间关系约束。"
+    },
+    {
+      "case_id": "xyflow__xyflow-4991",
+      "capability_run": "crawler-output/multimodal-2025/16_11_capability_verifier/20260903_temporal_targeted_v4_gemini_run_01",
+      "rationale": "V4 定向补样；节点交互过程同时要求理解时序和空间布局，两者均为核心能力。"
+    },
+    {
+      "case_id": "tldraw__tldraw-5888",
+      "capability_run": "crawler-output/multimodal-2025/16_11_capability_verifier/20260903_temporal_targeted_v4_gemini_run_01",
+      "rationale": "V4 定向补样；编辑交互中渲染外观随状态变化，时序与外观理解均为核心。"
+    }
+  ]
+}

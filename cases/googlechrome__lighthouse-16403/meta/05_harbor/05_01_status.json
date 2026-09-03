@@ -1,0 +1,13 @@
+{
+  "schema_version": "case-harbor-status-v1",
+  "case_id": "googlechrome__lighthouse-16403",
+  "task_export": "constructed_under_task_subdirectory",
+  "empty_control": "reward_0",
+  "nop_control": "reward_0",
+  "empty_no_reply_control": "reward_0",
+  "oracle_control": "reward_1",
+  "status": "controls_passed_human_review_deferred",
+  "reason": "All four real Harbor controls matched their expected rewards on the same native task digest. Formal benchmark admission remains blocked only by the two deferred human gates.",
+  "evidence": "outputs/02_harbor_controls/05_control_summary.json",
+  "local_probe": {"docker_daemon":"available","docker_server_version":"29.5.2","harbor_cli":"available","harbor_version":"0.22.0","controls_started":true,"controls_completed":true}
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "classification-authorization-receipt-v1",
+  "status": "consumed",
+  "run_id": "v3_domain_mixed_targeted_07_20260902_01",
+  "nonce": "domain-mixed-targeted-07-20260902-01",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_domain_mixed_targeted_07_run",
+  "authorization": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/evidence/v3_domain_mixed_targeted_07_20260902_01.authorization.json",
+    "sha256": "05d2b4e49249065418f0779d39f13e904c59d68a86a0ac7c27161d30704e6b77"
+  },
+  "consumed_at": "2026-09-02T15:34:57.758316+00:00"
+}

@@ -1,0 +1,67 @@
+#0 building with "colima" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 407B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9
+#5 resolve docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9 0.0s done
+#5 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 224.87MB 4.5s done
+#4 DONE 4.5s
+
+#6 [2/7] RUN rm -rf /app
+#6 CACHED
+
+#7 [3/7] RUN corepack enable
+#7 CACHED
+
+#8 [4/7] COPY app /app
+#8 DONE 0.9s
+
+#9 [5/7] WORKDIR /app
+#9 DONE 0.1s
+
+#10 [6/7] RUN yarn install --immutable
+#10 2.532 yarn install v1.22.22
+#10 2.616 [1/5] Validating package.json...
+#10 2.620 [2/5] Resolving packages...
+#10 2.633 warning Resolution field "devtools-protocol@0.0.1423531" is incompatible with requested version "devtools-protocol@0.0.1402036"
+#10 2.739 warning Resolution field "devtools-protocol@0.0.1423531" is incompatible with requested version "devtools-protocol@0.0.1402036"
+#10 2.756 [3/5] Fetching packages...
+#10 47.08 warning bare-fs@4.0.1: The engine "bare" appears to be invalid.
+#10 47.08 warning bare-os@3.4.0: The engine "bare" appears to be invalid.
+#10 47.09 [4/5] Linking dependencies...
+#10 47.09 warning " > @testing-library/preact-hooks@1.1.0" has incorrect peer dependency "@testing-library/preact@^2.0.0".
+#10 47.09 warning " > lighthouse-plugin-soft-navigation@1.0.1" has unmet peer dependency "lighthouse@>=10.0.0".
+#10 53.14 [5/5] Building fresh packages...
+#10 70.28 Done in 67.75s.
+#10 DONE 70.7s
+
+#11 [7/7] RUN git reset --hard HEAD && test -z "$(git status --porcelain --untracked-files=all)" && test -z "$(git remote)"
+#11 1.579 HEAD is now at 9ab6a2f97 misc(treemap): restructure header to match new design (#16402)
+#11 DONE 2.2s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 75.4s done
+#12 exporting manifest sha256:71c06e5889aa3c9ced5f9da4e4182f1ac97f55bf3a0ab1d8fca29976cc2120e0 done
+#12 exporting config sha256:2673049ebb48366a076848357bd2adcd6d24b06c671fb9bb4aad427bf5c7155f 0.0s done
+#12 exporting attestation manifest sha256:46b3a530e771a63e6729dfad8f6bc27238ff235a40c67d55b40ad5b1e8540138 0.0s done
+#12 exporting manifest list sha256:98cd04789d0f15a4c2710569645330438e8199edc59d2a5e3d402bcceb0e457d done
+#12 naming to docker.io/library/visual-env-build:googlechrome-lighthouse-16403 done
+#12 unpacking to docker.io/library/visual-env-build:googlechrome-lighthouse-16403
+#12 unpacking to docker.io/library/visual-env-build:googlechrome-lighthouse-16403 20.9s done
+#12 DONE 96.4s

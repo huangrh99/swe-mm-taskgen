@@ -1,0 +1,138 @@
+{
+  "schema_version": "test-extension-verifier-packet-v1",
+  "task_id": "automattic__wp-calypso-100957",
+  "admission_state": "visual_approved_for_test_construction_by_explicit_user_selection",
+  "solver_visible_problem_statement": "Theme Previewer: Better contrast on the style variations\n\n## Where\nIn many different onboarding, where we show the theme picker + theme previewer. Example: https://wordpress.com/setup/onboarding, after selecting goals and moving to design selection.\n\n## Problem\nSome of these color palettes have pretty bad contrast.\n\n\n> **视觉材料 1**：见下方对应图片。\n\n\n\n## Solution\nDesigners should revise the suggested style variations and fix those who do not pass a bare minimum of contrast.",
+  "human_visual_input_check": {
+    "decision": "keep_for_test_construction",
+    "formal_visual_gate": "user_explicit_selection_recorded_in_request",
+    "solver_visible_asset_ids": [
+      "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552"
+    ],
+    "boundary": "Human selection authorizes test construction only; it does not imply tests_approved, frozen, measured, or Harbor admission."
+  },
+  "frozen_visual_classification": {
+    "strict_multimodal_admission": "非文字视觉信息候选不可替代",
+    "primary_category": "外观与渲染属性理解",
+    "atomic_visual_constraints": [
+      {
+        "constraint_id": "constraint_001",
+        "visual_category": "外观与渲染属性理解",
+        "requirement": "样式变体预览中的两个高亮色圆点必须优先呈现正文文字色与按钮背景色（按钮色缺失时回退到链接色），并排除已经作为卡片底色显示的背景色。",
+        "decision_critical": "是"
+      },
+      {
+        "constraint_id": "constraint_002",
+        "visual_category": "元素结构与视觉状态理解",
+        "requirement": "即使候选 palette 中出现重复 slug，两个高亮圆点仍必须稳定渲染且不产生重复 React key 警告。",
+        "decision_critical": "是"
+      }
+    ],
+    "source_review_summary": {
+      "schema_version": "case-visual-review-summary-v1",
+      "case_id": "automattic__wp-calypso-100957",
+      "source_route": "issue_derived",
+      "category": "外观与渲染属性理解",
+      "visual_evidence": "单张实际状态图",
+      "solver_visible_asset": "01_02_solver_visible.png",
+      "visual_constraints": [
+        "样式变体卡片中的前景圆点与背景必须具有最低可辨识对比度"
+      ],
+      "admission": "user_selected_candidate",
+      "formal_visual_gate": "not_recorded",
+      "note": "用户在 2026-09-02 明确要求归档并继续测试；这不是 frozen 状态或正式人工门记录。"
+    }
+  },
+  "production_change_summary": {
+    "base_commit": "19ed337b2b8b48d9d768b35add8a65221e512c9c",
+    "candidate_reference_commit": "5137030cabd46f7b6efe629fc52b78913be10916",
+    "archived_pr_head": "5137030cabd46f7b6efe629fc52b78913be10916",
+    "paths": [
+      "packages/global-styles/src/components/global-styles-variations/preview.tsx"
+    ],
+    "patch": "diff --git a/packages/global-styles/src/components/global-styles-variations/preview.tsx b/packages/global-styles/src/components/global-styles-variations/preview.tsx\nindex ac69e74d52..9a2196fc70 100644\n--- a/packages/global-styles/src/components/global-styles-variations/preview.tsx\n+++ b/packages/global-styles/src/components/global-styles-variations/preview.tsx\n@@ -68,8 +68,12 @@ const GlobalStylesVariationPreview = ( { title, inlineCss, isFocused, onFocusOut\n \t\t'elements.h1.typography.fontWeight'\n \t);\n \tconst [ textColor = 'black' ] = useGlobalStyle( 'color.text' );\n-\tconst [ headingColor = textColor ] = useGlobalStyle( 'elements.h1.color.text' );\n \tconst [ backgroundColor = 'white' ] = useGlobalStyle( 'color.background' );\n+\tconst [ headingColor = textColor ] = useGlobalStyle( 'elements.h1.color.text' );\n+\tconst [ linkColor = headingColor ] = useGlobalStyle( 'elements.link.color.text' );\n+\tconst [ buttonBackgroundColor = linkColor ] = useGlobalStyle(\n+\t\t'elements.button.color.background'\n+\t);\n \tconst [ gradientValue ] = useGlobalStyle( 'color.gradient' );\n \tconst disableMotion = useReducedMotion();\n \tconst [ coreColors ] = useGlobalSetting( 'color.palette.core' );\n@@ -81,12 +85,23 @@ const GlobalStylesVariationPreview = ( { title, inlineCss, isFocused, onFocusOut\n \tconst paletteColors = ( themeColors ?? [] )\n \t\t.concat( customColors ?? [] )\n \t\t.concat( coreColors ?? [] );\n-\tconst highlightedColors = paletteColors\n+\tconst textColorObject = paletteColors.filter(\n+\t\t( { color }: { color: Color } ) => color === textColor\n+\t);\n+\tconst buttonBackgroundColorObject = paletteColors.filter(\n+\t\t( { color }: { color: Color } ) => color === buttonBackgroundColor\n+\t);\n+\n+\t// Prefer the text & button background (or link) color, then look through the full palette.\n+\tconst highlightedColors = textColorObject\n+\t\t.concat( buttonBackgroundColorObject )\n+\t\t.concat( paletteColors )\n \t\t.filter(\n-\t\t\t// we exclude these two colors because they are already visible in the preview.\n-\t\t\t( { color }: { color: Color } ) => color !== backgroundColor && color !== headingColor\n+\t\t\t// we exclude this background color because it is already visible in the preview.\n+\t\t\t( { color }: { color: Color } ) => color !== backgroundColor\n \t\t)\n \t\t.slice( 0, 2 );\n+\n \treturn (\n \t\t<GlobalStylesVariationContainer\n \t\t\twidth={ width }\n@@ -139,7 +154,7 @@ const GlobalStylesVariationPreview = ( { title, inlineCss, isFocused, onFocusOut\n \t\t\t\t\t\t\t{ highlightedColors.map(\n \t\t\t\t\t\t\t\t( { slug, color }: { slug: string; color: string }, index: number ) => (\n \t\t\t\t\t\t\t\t\t<motion.div\n-\t\t\t\t\t\t\t\t\t\tkey={ slug }\n+\t\t\t\t\t\t\t\t\t\tkey={ `${ slug }-${ index }` }\n \t\t\t\t\t\t\t\t\t\tstyle={ {\n \t\t\t\t\t\t\t\t\t\t\theight: normalizedColorSwatchSize * ratio,\n \t\t\t\t\t\t\t\t\t\t\twidth: normalizedColorSwatchSize * ratio,\n",
+    "scope_boundary": "Base and candidate reference commits are archival hypotheses pending executable measurement and human F2P/P2P approval.",
+    "instruction": "Use the patch only to infer behavioral impact; test observable behavior and never require source equality."
+  },
+  "repository_test_context": {
+    "framework": "Jest 29 + React Testing Library + jsdom in the Calypso monorepo",
+    "working_directory": ".",
+    "target_command": "yarn jest --config test/client/jest.config.js --runTestsByPath test/client/global-styles-variation-preview.test.tsx",
+    "selected_suites": [
+      "packages/global-styles/src/components/global-styles-variations/index.tsx",
+      "packages/global-styles/src/components/global-styles-variation-container/index.tsx",
+      "test/client/jest.config.js",
+      "test/client/setup-test-framework.js"
+    ],
+    "environment_inputs": {
+      "base_commit": "19ed337b2b8b48d9d768b35add8a65221e512c9c",
+      "candidate_reference_commit": "5137030cabd46f7b6efe629fc52b78913be10916"
+    },
+    "writable_test_roots": [
+      "test/",
+      "tests/",
+      "spec/",
+      "src/"
+    ]
+  },
+  "existing_tests": {
+    "files": [
+      {
+        "path": "packages/global-styles/src/components/global-styles-variations/index.tsx",
+        "sha256": "2e72ca894246d7d22162630c6d12a23e0a5f12f72c01ed4599b10b916cafa5a8",
+        "content": "import { PLAN_PREMIUM, getPlan, PLAN_PERSONAL } from '@automattic/calypso-products';\nimport { PremiumBadge } from '@automattic/components';\nimport { useHasEnTranslation } from '@automattic/i18n-utils';\nimport { useState } from '@wordpress/element';\nimport { ENTER } from '@wordpress/keycodes';\nimport clsx from 'clsx';\nimport { translate, TranslateResult } from 'i18n-calypso';\nimport { useMemo, useContext } from 'react';\nimport {\n\tGlobalStylesContext,\n\tmergeBaseAndUserConfigs,\n\twithExperimentalBlockEditorProvider,\n\tisDefaultVariation,\n} from '../../gutenberg-bridge';\nimport { useRegisterCoreBlocks } from '../../hooks';\nimport { getGroupedVariations } from '../../utils';\nimport GlobalStylesVariationPreview from './preview';\nimport type { GlobalStylesObject } from '../../types';\nimport './style.scss';\n\ndeclare global {\n\tinterface Window {\n\t\tisGlobalStylesOnPersonal?: boolean;\n\t}\n}\n\ninterface GlobalStylesVariationProps {\n\tglobalStylesVariation: GlobalStylesObject;\n\tisActive: boolean;\n\tshowOnlyHoverView?: boolean;\n\tonSelect: () => void;\n}\n\ninterface GlobalStylesVariationsProps {\n\tglobalStylesVariations: GlobalStylesObject[];\n\tselectedGlobalStylesVariation: GlobalStylesObject | null;\n\tdescription?: TranslateResult;\n\tshowOnlyHoverViewDefaultVariation?: boolean;\n\tsplitDefaultVariation?: boolean;\n\tneedsUpgrade?: boolean;\n\tisGlobalStylesOnPersonal?: boolean;\n\tonSelect: ( globalStylesVariation: GlobalStylesObject ) => void;\n}\n\nconst GlobalStylesVariation = ( {\n\tglobalStylesVariation,\n\tisActive,\n\tshowOnlyHoverView,\n\tonSelect,\n}: GlobalStylesVariationProps ) => {\n\tconst [ isFocused, setIsFocused ] = useState( false );\n\tconst { base } = useContext( GlobalStylesContext );\n\tconst context = useMemo( () => {\n\t\tconst { inline_css: globalStylesVariationInlineCss = '' } = globalStylesVariation;\n\t\tconst baseInlineCss = base.inline_css || '';\n\t\treturn {\n\t\t\tuser: globalStylesVariation,\n\t\t\tbase,\n\t\t\tmerged: mergeBaseAndUserConfigs( base, globalStylesVariation ),\n\t\t\tinline_css: baseInlineCss + globalStylesVariationInlineCss,\n\t\t};\n\t}, [ globalStylesVariation.slug, base ] );\n\tconst selectOnEnter = ( event: React.KeyboardEvent ) => {\n\t\tif ( event.keyCode === ENTER ) {\n\t\t\tevent.preventDefault();\n\t\t\tonSelect();\n\t\t}\n\t};\n\treturn (\n\t\t<div\n\t\t\tclassName={ clsx( 'global-styles-variations__item', {\n\t\t\t\t'is-active': isActive,\n\t\t\t} ) }\n\t\t\trole=\"button\"\n\t\t\tonBlur={ () => setIsFocused( false ) }\n\t\t\tonFocus={ () => setIsFocused( true ) }\n\t\t\tonClick={ onSelect }\n\t\t\tonKeyDown={ selectOnEnter }\n\t\t\ttabIndex={ 0 }\n\t\t\taria-current={ isActive }\n\t\t\taria-label={\n\t\t\t\ttranslate( 'Style: %s', {\n\t\t\t\t\tcomment: 'Aria label for style preview buttons',\n\t\t\t\t\targs: globalStylesVariation.title,\n\t\t\t\t} ) as string\n\t\t\t}\n\t\t>\n\t\t\t<div className=\"global-styles-variation__item-preview\">\n\t\t\t\t<GlobalStylesContext.Provider value={ context }>\n\t\t\t\t\t<GlobalStylesVariationPreview\n\t\t\t\t\t\ttitle={ globalStylesVariation.title }\n\t\t\t\t\t\tinlineCss={ context.inline_css }\n\t\t\t\t\t\tisFocused={ isFocused || showOnlyHoverView }\n\t\t\t\t\t\tonFocusOut={ () => setIsFocused( false ) }\n\t\t\t\t\t/>\n\t\t\t\t</GlobalStylesContext.Provider>\n\t\t\t</div>\n\t\t</div>\n\t);\n};\n\nconst GlobalStylesVariations = ( {\n\tglobalStylesVariations,\n\tselectedGlobalStylesVariation,\n\tdescription,\n\tshowOnlyHoverViewDefaultVariation,\n\tsplitDefaultVariation = true,\n\tneedsUpgrade = true,\n\tisGlobalStylesOnPersonal = window.isGlobalStylesOnPersonal ?? false,\n\tonSelect,\n}: GlobalStylesVariationsProps ) => {\n\tconst hasEnTranslation = useHasEnTranslation();\n\tconst isRegisteredCoreBlocks = useRegisterCoreBlocks();\n\tconst upgradeToPlan = isGlobalStylesOnPersonal ? PLAN_PERSONAL : PLAN_PREMIUM;\n\n\tconst variationDescription = needsUpgrade\n\t\t? translate(\n\t\t\t\t'Unlock style variations and tons of other features with the %(planName)s plan, or try them out now for free.',\n\t\t\t\t{ args: { planName: getPlan( upgradeToPlan )?.getTitle() ?? '' } }\n\t\t  )\n\t\t: translate( 'You can change your style at any time.' );\n\n\tconst baseGlobalStyles = useMemo(\n\t\t() =>\n\t\t\tglobalStylesVariations.find( ( globalStylesVariation ) =>\n\t\t\t\tisDefaultVariation( globalStylesVariation )\n\t\t\t) ?? ( {} as GlobalStylesObject ),\n\t\t[ globalStylesVariations ]\n\t);\n\n\tconst { styleVariations, colorVariations } = useMemo(\n\t\t() => getGroupedVariations( globalStylesVariations ),\n\t\t[ globalStylesVariations ]\n\t);\n\n\t// Use the color variations if the style variations are empty because we don't display color variations as palette section.\n\tconst globalStylesVariationsWithoutDefault =\n\t\tstyleVariations.length > 0 ? styleVariations : colorVariations;\n\n\tconst nonDefaultStylesDescription = description ?? variationDescription;\n\tconst nonDefaultStyles = globalStylesVariationsWithoutDefault.map(\n\t\t( globalStylesVariation, index ) => (\n\t\t\t<GlobalStylesVariation\n\t\t\t\tkey={ index }\n\t\t\t\tglobalStylesVariation={ globalStylesVariation }\n\t\t\t\tisActive={ globalStylesVariation.slug === selectedGlobalStylesVariation?.slug }\n\t\t\t\tonSelect={ () => onSelect( globalStylesVariation ) }\n\t\t\t/>\n\t\t)\n\t);\n\n\tconst headerText = splitDefaultVariation ? translate( 'Default Style' ) : translate( 'Styles' );\n\n\tif ( ! isRegisteredCoreBlocks ) {\n\t\treturn null;\n\t}\n\n\tif ( globalStylesVariationsWithoutDefault.length === 0 ) {\n\t\treturn null;\n\t}\n\n\treturn (\n\t\t<GlobalStylesContext.Provider value={ { base: baseGlobalStyles } }>\n\t\t\t<div className=\"global-styles-variations__container\">\n\t\t\t\t<div\n\t\t\t\t\tclassName={ clsx( 'global-styles-variations__type', {\n\t\t\t\t\t\t'combined-variations': ! splitDefaultVariation,\n\t\t\t\t\t} ) }\n\t\t\t\t>\n\t\t\t\t\t<div className=\"global-styles-variations__header\">\n\t\t\t\t\t\t<h2>\n\t\t\t\t\t\t\t<span>{ headerText }</span>\n\t\t\t\t\t\t\t{ ! splitDefaultVariation && ! needsUpgrade && (\n\t\t\t\t\t\t\t\t<PremiumBadge\n\t\t\t\t\t\t\t\t\tshouldHideTooltip\n\t\t\t\t\t\t\t\t\tshouldCompactWithAnimation\n\t\t\t\t\t\t\t\t\tlabelText={ translate( 'Included in your plan' ) }\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t) }\n\t\t\t\t\t\t</h2>\n\t\t\t\t\t\t{ ! splitDefaultVariation && (\n\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t<p>{ translate( 'You can change your style at any time.' ) }</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t) }\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className=\"global-styles-variations\">\n\t\t\t\t\t\t<GlobalStylesVariation\n\t\t\t\t\t\t\tkey=\"base\"\n\t\t\t\t\t\t\tglobalStylesVariation={ baseGlobalStyles }\n\t\t\t\t\t\t\tisActive={\n\t\t\t\t\t\t\t\t! selectedGlobalStylesVariation ||\n\t\t\t\t\t\t\t\tisDefaultVariation( selectedGlobalStylesVariation )\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tshowOnlyHoverView={ showOnlyHoverViewDefaultVariation }\n\t\t\t\t\t\t\tonSelect={ () => onSelect( baseGlobalStyles ) }\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t{ ! splitDefaultVariation && nonDefaultStyles }\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t{ splitDefaultVariation && (\n\t\t\t\t\t<div className=\"global-styles-variations__type\">\n\t\t\t\t\t\t<div className=\"global-styles-variations__header\">\n\t\t\t\t\t\t\t<h2>\n\t\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\t{ hasEnTranslation( 'Style Variations' )\n\t\t\t\t\t\t\t\t\t\t? translate( 'Style Variation', 'Style Variations', {\n\t\t\t\t\t\t\t\t\t\t\t\tcount: nonDefaultStyles.length,\n\t\t\t\t\t\t\t\t\t\t  } )\n\t\t\t\t\t\t\t\t\t\t: translate( 'Premium Style', 'Premium Styles', {\n\t\t\t\t\t\t\t\t\t\t\t\tcount: nonDefaultStyles.length,\n\t\t\t\t\t\t\t\t\t\t  } ) }\n\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t{ needsUpgrade && (\n\t\t\t\t\t\t\t\t\t<PremiumBadge\n\t\t\t\t\t\t\t\t\t\tshouldHideTooltip\n\t\t\t\t\t\t\t\t\t\tshouldCompactWithAnimation\n\t\t\t\t\t\t\t\t\t\tlabelText={ translate( 'Upgrade' ) }\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t) }\n\t\t\t\t\t\t\t</h2>\n\t\t\t\t\t\t\t<p>{ nonDefaultStylesDescription }</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div className=\"global-styles-variations\">{ nonDefaultStyles }</div>\n\t\t\t\t\t</div>\n\t\t\t\t) }\n\t\t\t</div>\n\t\t</GlobalStylesContext.Provider>\n\t);\n};\n\nexport default withExperimentalBlockEditorProvider( GlobalStylesVariations );\n"
+      },
+      {
+        "path": "packages/global-styles/src/components/global-styles-variation-container/index.tsx",
+        "sha256": "04a6d25e805668109f3944c5f8192d35d1facdbf02c6b2db83a7a7f4a5606de9",
+        "content": "import {\n\t__unstableIframe as Iframe,\n\t__unstableEditorStyles as EditorStyles,\n} from '@wordpress/block-editor';\nimport { useRefEffect } from '@wordpress/compose';\nimport { useMemo } from 'react';\nimport { useSafeGlobalStylesOutput } from '../../gutenberg-bridge';\nimport './style.scss';\n\ninterface Props {\n\twidth: number | null;\n\theight: number;\n\tinlineCss?: string;\n\tcontainerResizeListener: JSX.Element;\n\tchildren: JSX.Element;\n\tonFocusOut?: () => void;\n}\n\nconst GlobalStylesVariationContainer = ( {\n\twidth,\n\theight,\n\tinlineCss,\n\tcontainerResizeListener,\n\tchildren,\n\tonFocusOut,\n\t...props\n}: Props ) => {\n\tconst [ styles ] = useSafeGlobalStylesOutput();\n\t// Reset leaked styles from WP common.css and remove main content layout padding and border.\n\tconst editorStyles = useMemo( () => {\n\t\tif ( styles ) {\n\t\t\treturn [\n\t\t\t\t...styles,\n\t\t\t\t...( inlineCss\n\t\t\t\t\t? [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tcss: inlineCss,\n\t\t\t\t\t\t\t\tisGlobalStyles: true,\n\t\t\t\t\t\t\t},\n\t\t\t\t\t  ]\n\t\t\t\t\t: [] ),\n\t\t\t\t{\n\t\t\t\t\tcss: 'html{overflow:hidden}body{min-width: 0;padding: 0;border: none;transform:scale(1);}',\n\t\t\t\t\tisGlobalStyles: true,\n\t\t\t\t},\n\t\t\t];\n\t\t}\n\t\treturn styles;\n\t}, [ styles ] );\n\treturn (\n\t\t<Iframe\n\t\t\tclassName=\"global-styles-variation-container__iframe\"\n\t\t\tstyle={ {\n\t\t\t\theight,\n\t\t\t\tvisibility: width ? 'visible' : 'hidden',\n\t\t\t} }\n\t\t\ttabIndex={ -1 }\n\t\t\tcontentRef={ useRefEffect( ( bodyElement ) => {\n\t\t\t\t// Disable moving focus to the writing flow wrapper if the focus disappears\n\t\t\t\t// See https://github.com/WordPress/gutenberg/blob/aa8e1c52c7cb497e224a479673e584baaca97113/packages/block-editor/src/components/writing-flow/use-tab-nav.js#L136\n\t\t\t\tconst handleFocusOut = ( event: Event ) => {\n\t\t\t\t\tevent.stopImmediatePropagation();\n\t\t\t\t\t// Explicitly call the focusOut handler, if available.\n\t\t\t\t\tonFocusOut?.();\n\t\t\t\t};\n\t\t\t\tbodyElement.addEventListener( 'focusout', handleFocusOut );\n\t\t\t\treturn () => {\n\t\t\t\t\tbodyElement.removeEventListener( 'focusout', handleFocusOut );\n\t\t\t\t};\n\t\t\t}, [] ) }\n\t\t\tscrolling=\"no\"\n\t\t\t{ ...props }\n\t\t>\n\t\t\t<EditorStyles styles={ editorStyles ?? [] } />\n\t\t\t{ containerResizeListener }\n\t\t\t{ children }\n\t\t</Iframe>\n\t);\n};\n\nexport default GlobalStylesVariationContainer;\n"
+      },
+      {
+        "path": "test/client/jest.config.js",
+        "sha256": "2cd6dffba34cc4743c15857497f0f4c5b2207ba478dcb4ffcc4819d4ebb1aab6",
+        "content": "const path = require( 'path' );\nconst base = require( '@automattic/calypso-jest' );\n\nmodule.exports = {\n\t...base,\n\trootDir: '../../client',\n\tcacheDirectory: path.join( __dirname, '../../.cache/jest' ),\n\ttestPathIgnorePatterns: [ '<rootDir>/server/' ],\n\n\tmoduleNameMapper: {\n\t\t'^@automattic/calypso-config$': '<rootDir>/server/config/index.js',\n\t\t'react-markdown': '<rootDir>/node_modules/react-markdown/react-markdown.min.js',\n\t},\n\ttransformIgnorePatterns: [\n\t\t'node_modules[\\\\/\\\\\\\\](?!.*\\\\.(?:gif|jpg|jpeg|png|svg|scss|sass|css)$)',\n\t],\n\ttestEnvironmentOptions: {\n\t\turl: 'https://example.com',\n\t},\n\tsetupFiles: [ 'jest-canvas-mock' ],\n\tsetupFilesAfterEnv: [ '<rootDir>/../test/client/setup-test-framework.js' ],\n\tglobals: {\n\t\tgoogle: {},\n\t\t__i18n_text_domain__: 'default',\n\t},\n};\n"
+      },
+      {
+        "path": "test/client/setup-test-framework.js",
+        "sha256": "5e9b22b4f3c9ec1cad93356bd8cb9b7fb3a157380a3c00c22058dcdd37c87527",
+        "content": "import '@testing-library/jest-dom';\nconst { TextEncoder, TextDecoder } = require( 'util' );\nconst nock = require( 'nock' );\n\n// Disables all network requests for all tests.\nnock.disableNetConnect();\n\nbeforeAll( () => {\n\t// reactivate nock on test start\n\tif ( ! nock.isActive() ) {\n\t\tnock.activate();\n\t}\n} );\n\nafterAll( () => {\n\t// helps clean up nock after each test run and avoid memory leaks\n\tnock.restore();\n\tnock.cleanAll();\n} );\n\n// Define TextEncoder for ReactDOMServer\nglobal.TextEncoder = TextEncoder;\nglobal.TextDecoder = TextDecoder;\n\n// This is used by @wordpress/components in https://github.com/WordPress/gutenberg/blob/trunk/packages/components/src/ui/utils/space.ts#L33\n// JSDOM or CSSDOM don't provide an implementation for it, so for now we have to mock it.\nglobal.CSS = {\n\tsupports: jest.fn(),\n};\n\nglobal.fetch = jest.fn( () =>\n\tPromise.resolve( {\n\t\tjson: () => Promise.resolve(),\n\t} )\n);\n\n// Don't need to mock specific functions for any tests, but mocking\n// module because it accesses the `document` global.\njest.mock( 'wpcom-proxy-request', () => ( {\n\t__esModule: true,\n\tcanAccessWpcomApis: jest.fn(),\n} ) );\n\nglobal.matchMedia = jest.fn( ( query ) => ( {\n\tmatches: false,\n\tmedia: query,\n\tonchange: null,\n\taddListener: jest.fn(), // deprecated\n\tremoveListener: jest.fn(), // deprecated\n\taddEventListener: jest.fn(),\n\tremoveEventListener: jest.fn(),\n\tdispatchEvent: jest.fn(),\n} ) );\n"
+      }
+    ],
+    "file_hashes": {
+      "packages/global-styles/src/components/global-styles-variations/index.tsx": "2e72ca894246d7d22162630c6d12a23e0a5f12f72c01ed4599b10b916cafa5a8",
+      "packages/global-styles/src/components/global-styles-variation-container/index.tsx": "04a6d25e805668109f3944c5f8192d35d1facdbf02c6b2db83a7a7f4a5606de9",
+      "test/client/jest.config.js": "2cd6dffba34cc4743c15857497f0f4c5b2207ba478dcb4ffcc4819d4ebb1aab6",
+      "test/client/setup-test-framework.js": "5e9b22b4f3c9ec1cad93356bd8cb9b7fb3a157380a3c00c22058dcdd37c87527"
+    },
+    "author_test_patch": "",
+    "measured_transitions": [],
+    "measured_counts": {
+      "F2P": 0,
+      "P2P": 0
+    },
+    "repeats_per_state": 0
+  },
+  "measurement_boundary": {
+    "existing_labels_are_observed": false,
+    "new_bundle_labels_are_predictions_only": true,
+    "gold_scope_resolved": true,
+    "final_rule": {
+      "stable_fail_to_pass": "F2P",
+      "stable_pass_to_pass": "P2P",
+      "all_other_or_unstable_outcomes": "unclassified_or_blocked"
+    },
+    "correctness_target": "observable functional equivalence, not source-code equality",
+    "scope_boundary": "Base and candidate reference commits are archival hypotheses pending executable measurement and human F2P/P2P approval."
+  },
+  "provenance": {
+    "visual_packet": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-100957/01_visual_review/01_01_verifier_packet.json",
+    "visual_review_summary": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-100957/01_visual_review/01_03_review_summary.json",
+    "source_archive": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/automattic__wp-calypso-100957/02_source_archive/02_01_pr_archive.json"
+  },
+  "verifier_rerun": {
+    "policy": "exclude_all_prior_verifier_generated_tests",
+    "removed_generated_inputs": [],
+    "requested_concurrency": 10,
+    "generated_at": "2026-09-02T16:49:38.134241+00:00"
+  }
+}

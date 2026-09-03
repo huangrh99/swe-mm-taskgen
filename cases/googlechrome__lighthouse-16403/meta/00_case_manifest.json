@@ -1,0 +1,282 @@
+{
+  "schema_version": "report-case-archive-v1",
+  "case_id": "googlechrome__lighthouse-16403",
+  "repository": "googlechrome/lighthouse",
+  "pr_number": 16403,
+  "state": "controls_passed_human_review_deferred",
+  "archived_at": "2026-09-02T21:00:00+08:00",
+  "sections": {
+    "visual_review": [
+      {
+        "path": "01_visual_review/01_01_verifier_packet.json",
+        "sha256": "f8e5961e7894dc1df839011fdf269479f8be7b0d4090cf9064b136bd495190cb",
+        "size_bytes": 667,
+        "storage": "hardlinked",
+        "source_path": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_100_run_01/16_03_07_packet_0052.json"
+      },
+      {
+        "path": "01_visual_review/01_02_solver_visible.png",
+        "sha256": "b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e",
+        "size_bytes": 182244,
+        "storage": "hardlinked",
+        "source_path": "crawler-output/multimodal-2025/11_source_archive/20260901T182808673916Z/11_http_archive/assets/b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e"
+      },
+      {
+        "path": "01_visual_review/01_03_review_summary.json",
+        "sha256": "ea2ae633bd2a57bb839283da7c1e1caae7f3fcd91ed13b3440860bd5ab6ea700",
+        "size_bytes": 670,
+        "storage": "copied"
+      }
+    ],
+    "source_archive": [
+      {
+        "path": "02_source_archive/02_01_pr_archive.json",
+        "sha256": "e43c6b4c5284f13ca1085a24c7387cbf08a6951fc9f248e1763b1a2154d0ba40",
+        "size_bytes": 206128,
+        "storage": "hardlinked",
+        "source_path": "crawler-output/multimodal-2025/11_source_archive/20260901T182808673916Z/11_record_0018.json"
+      },
+      {
+        "path": "02_source_archive/02_02_reference.patch",
+        "sha256": "9c094c82d52846ec0123a8550ceb642f6736948407ee0076b8ad1509931bc8f0",
+        "size_bytes": 5914,
+        "storage": "copied"
+      },
+      {
+        "path": "02_source_archive/02_03_reference.diff",
+        "sha256": "2217c30f1358597d1704234e8f53f4bf16d82c64776f88b36c20c35cc7510530",
+        "size_bytes": 5471,
+        "storage": "copied"
+      }
+    ],
+    "test_construction": [
+      {
+        "path": "03_test_construction/03_01_test_plan.json",
+        "sha256": "48015e8e592fb251ded064617f2fdc7fbb94255870d09a48e680f0e2c2c6563f",
+        "size_bytes": 1097,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/03_02_reference_apply_check.json",
+        "sha256": "1585ef8ec6cd484b0d5f0477231e489c04874471600fb5c94c65f64736084fc3",
+        "size_bytes": 436,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+        "sha256": "6510e9b848cd0bc637b27d9afd06976eabf9d679b698751892e922a8e11e39b3",
+        "size_bytes": 22953,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+        "sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+        "size_bytes": 9136,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+        "sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+        "size_bytes": 6387,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+        "sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+        "size_bytes": 26252,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+        "sha256": "f61af969c799bab7408d275266f828a6d5eb46cf600215b73fb787ae33e157c2",
+        "size_bytes": 21215,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+        "sha256": "7296c1ea79ccca6700bc4f2ff263a957e844c2b33988efa65aea4b9bf55df285",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+        "sha256": "9fc87206ebe4a72ff23e8a3d0652ffe97a81a804919a86a9bfe2859e10f04cba",
+        "size_bytes": 39915,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+        "sha256": "0b3010786b1ccd6098b53ca6ff20e76b7ad7915cb57e9cccb1ddf5228669ecb0",
+        "size_bytes": 156,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+        "sha256": "a9fb5a31c1b575491de5accdae0b5b398eb212475e23db66a6664f93296cb111",
+        "size_bytes": 39,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+        "sha256": "3b9ec292d5a54799f9fe49c1912d960b39497eb39a99d9fd2f48f1a4de705ae2",
+        "size_bytes": 70680,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+        "sha256": "0f817056756f033d50b8f8d04d1aa1ce85f682178e1fa933dcf08930a57e914a",
+        "size_bytes": 15193,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_invocation.json",
+        "sha256": "f93852bbb1bfaa512c67e9caa38ed41ab653d507c56e78380639c71c9b86b0b9",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+        "sha256": "d0fbd47d7892bd3cff27e6c757db2389e085f8f1ad405583f42aeb664e8ae4e2",
+        "size_bytes": 40023,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_attempt_01.json",
+        "sha256": "732613ac86239694b1f64ff9d0599ff7ff284b2f974bfeb80337c98f90e484a9",
+        "size_bytes": 156,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_invocation_started.json",
+        "sha256": "8e53fea15b9046857249bf325a9ad12a943fda555dc7fa6dcb5501601a710cea",
+        "size_bytes": 39,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+        "sha256": "3456f947465987d0a62bf04d7f247c48cf0c5e8f788f6314ee34c20b5634f417",
+        "size_bytes": 48288,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+        "sha256": "bc3d906bdc5c89356964967aedbba05b375cac34b5c38d4ffb7133c9fea6526c",
+        "size_bytes": 22116,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.js",
+        "sha256": "33db433bfce7f10d8183d1626b4ed696d1ebe0cb418e56c71fc2a03d74bd6c14",
+        "size_bytes": 3520,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+        "sha256": "637352d7f5ce5aef1c284b8994485bd6f9bfe6e2f068a6458911960fdc6f9676",
+        "size_bytes": 26134,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+        "sha256": "2bd6d0a788482c3b3b4c17ca11a32e18197a22a2061df6d75939dce49e41dc19",
+        "size_bytes": 1291,
+        "storage": "generated"
+      }
+    ],
+    "measurements": [
+      {
+        "path": "04_measurements/04_01_status.json",
+        "sha256": "fb4a14212d7dbb675336f662028f7ef84a765264972c43ffa8a5a6bf55e9f792",
+        "size_bytes": 393,
+        "storage": "copied"
+      }
+    ],
+    "harbor": [
+      {
+        "path": "05_harbor/05_01_status.json",
+        "sha256": "00a17dd21333213b752b40fc3e8a7ca62c45b99d608b54b4a56556c37076c22f",
+        "size_bytes": 424,
+        "storage": "copied"
+      },
+      {
+        "path": "@task/environment/Dockerfile",
+        "storage": "generated",
+        "size_bytes": 613,
+        "sha256": "0c5be550fe8108704e4be82cef013cdc919d93e365a23d43eff01580a89bf04e"
+      },
+      {
+        "path": "@task/environment/assets/asset_01.png",
+        "storage": "generated",
+        "size_bytes": 182244,
+        "sha256": "b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e"
+      },
+      {
+        "path": "@task/environment/base_image.json",
+        "storage": "generated",
+        "size_bytes": 742,
+        "sha256": "51cc9041482797330a5399df10f7d7a2c4ec2ba97a8520d61bda5700fb44e6aa"
+      },
+      {
+        "path": "@task/environment/docker-compose.yaml",
+        "storage": "generated",
+        "size_bytes": 142,
+        "sha256": "c346613322ba0f324f14425a6537833f10f764e8b4470a3996a12fb83b1afbe1"
+      }
+    ],
+    "audit": []
+  },
+  "pipeline_status": {
+    "source_archived": "complete",
+    "test_construction": "curator_rewrite_complete",
+    "base_gold_measurement": "stable_three_repeats",
+    "harbor_empty": "reward_0",
+    "harbor_nop": "reward_0",
+    "harbor_empty_no_reply": "reward_0",
+    "harbor_oracle": "reward_1"
+  },
+  "blockers": [
+    {
+      "stage": "human_review",
+      "code": "human_gates_deferred",
+      "detail": "Executable controls passed, but visual necessity and F2P/P2P semantic human gates remain deferred; this is not a formally admitted benchmark instance."
+    },
+    {
+      "stage": "pass5",
+      "code": "pass5_not_started",
+      "detail": "The task snapshot is eligible for an explicitly provisional Pass@5 experiment."
+    }
+  ],
+  "notes": "Candidate archive only; not a frozen Harbor task.",
+  "test_verifier": {
+    "model": "curator_rewrite_after_gemini_diagnosis",
+    "selected_run": "outputs/01_base_gold/04_stability_summary.json",
+    "status": "measured_stable_human_review_deferred",
+    "quality_review": "executable_controls_passed",
+    "quality_findings": [
+      "The original Gemini bundle was superseded because it had a vacuous root-caption assertion, private-class coupling, unsupported geometry, and insufficient color-depth binding; it was not used for final execution.",
+      "The curator rewrite asserts rendered DOM, computed style, interaction state and retained table behavior.",
+      "The exact rewrite was measured three times and bound to real Harbor controls."
+    ],
+    "boundary": "F2P/P2P transitions are execution-derived, but semantic human review is deferred and formal benchmark admission remains false."
+  },
+  "layout": {
+    "submission_root": "task",
+    "metadata_root": "meta",
+    "metadata_deletion_safe": true
+  },
+  "pipeline_details": {
+    "test_extension_verifier": {
+      "status": "complete",
+      "runner_version": "test-extension-verifier-run-v2",
+      "backend": "gemini",
+      "model": "gemini-3.7-flash",
+      "verdict": "additional_tests_proposed",
+      "generated_bundle_count": 1,
+      "behavior_contract_required": true,
+      "oracle_quality_plan_required": true,
+      "prior_verifier_generated_tests_excluded": true,
+      "requested_batch_concurrency": 10,
+      "boundary": "Generated tests are proposals until the identical patch is measured on Base and Gold."
+    }
+  }
+}

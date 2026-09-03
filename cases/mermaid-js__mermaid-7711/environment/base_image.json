@@ -1,0 +1,14 @@
+{
+  "schema_version": "harbor-base-image-binding-v1",
+  "status": "local_content_addressed_image",
+  "instance_id": "mermaid-js__mermaid-7711",
+  "repository": "mermaid-js/mermaid",
+  "source_baseline_sha": "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e",
+  "reference_head_sha": "9d83f061aad4afc126b434f0decd9013060ad62b",
+  "image_id": "sha256:93acf0c18d0caddbf9446f7d55423c903311d60c3eb54d3ec4c4fdbeaefc82bc",
+  "build_reference": "visual-harbor-base:93acf0c18d0caddbf9446f7d55423c903311d60c3eb54d3ec4c4fdbeaefc82bc",
+  "architecture": "arm64",
+  "node_version": "v20.20.2",
+  "pnpm_version": "10.30.3",
+  "dependencies_installed": true
+}

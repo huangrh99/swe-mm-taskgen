@@ -1,0 +1,18 @@
+{
+  "case_id": "excalidraw__excalidraw-9002",
+  "source_archive": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_13_visual_expansion_wave02_deficits/20260902T114613730990Z/11_record_0001.json",
+  "source_archive_sha256": "b9ddd8abe3d2e4f2007af4c3aec1f42cdabb316aa59304c1b27058873f98133f",
+  "repo": "excalidraw/excalidraw",
+  "number": 9002,
+  "pr_id": "excalidraw/excalidraw#9002",
+  "source_route": "issue_derived",
+  "before_candidate_asset_ids": [
+    "6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2"
+  ],
+  "crop_review_asset_ids": [],
+  "video_review_asset_ids": [],
+  "retry_asset_ids": [],
+  "problem_statement_action": "use_issue_text",
+  "human_visual_gate": "pending",
+  "formal_admission": false
+}

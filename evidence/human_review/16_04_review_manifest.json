@@ -1,0 +1,295 @@
+{
+  "status": "ready_for_human_review",
+  "run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075905892457Z",
+  "run_manifest_sha256": "a3bdbc22033e0800193aae25e8e4d038775b75648e09c37870e2742496424b4b",
+  "cases": 28,
+  "html": "16_04_human_review.html",
+  "html_sha256": "76a2734cf6340b569eaa2fdeeb3d8b657723cad860edc1f1f61e4a62f939e3c4",
+  "seed": "16_04_human_review_seed.json",
+  "seed_sha256": "397f1b56ec9897b92067df893d4ab2fa887272d57388479e421d51c57276da6a",
+  "builder": "16_04_review_builder.py",
+  "builder_sha256": "cf1c0eca1deed50f4386f7995d6caebb228c71ca763802f8a2bcf05b85dcf6ac",
+  "review_assets": "16_04_review_assets",
+  "task_review_asset_count": 22,
+  "pr_curator_asset_count": 104,
+  "review_asset_count": 126,
+  "asset_recoveries": [
+    [
+      "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_source_archive/20260901T072859548489Z/11_01_asset_recovery_manifest.json",
+      "b377eadb369b4fc8c3ac5106263fe1cce83cdfee0e58bb789c5dd2e37ef1ed1c"
+    ]
+  ],
+  "model_calls_added": 0,
+  "agent_ablation": "not_run",
+  "counts": {
+    "result_status": {
+      "complete": 14,
+      "failed": 4,
+      "ineligible": 10
+    },
+    "queue": {
+      "high_priority_human": 1,
+      "human_problem_statement_required": 10,
+      "human_review": 13,
+      "text_verifier_pending": 4
+    },
+    "problem_statement_status": {
+      "generated_from_linked_issue": 18,
+      "needs_human_problem_statement": 10
+    }
+  },
+  "case_index": [
+    {
+      "case_id": "automattic__wp-calypso-113806",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "1d7c16ea4f20bebc5a9630b30b401c369adadc21b206fb98d1cdf883aff8cde5"
+    },
+    {
+      "case_id": "bpmn-io__bpmn-js-2487",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 1,
+      "pr_curator_asset_count": 1,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "4f7a11ebf31e179f412b19fdf724795665089d5b69310a75020e76276c34ac83"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-19071",
+      "result_status": "failed",
+      "queue": "text_verifier_pending",
+      "task_asset_count": 1,
+      "pr_curator_asset_count": 3,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "910a07d71e5e8a40079aa38578e8a47c2fdc7fdff3b66ab672e602e139be4d5c"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-19245",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 4,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "c73d37a626e897e525974e4ed192a1f10c31aa2eab39ae17e306d7a470186de2"
+    },
+    {
+      "case_id": "chartjs__chart.js-12057",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 5,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "bbb1c1f5576213af1cf08a6ceb577554e343bc6112ee4a2a2c36bfba4954ea9d"
+    },
+    {
+      "case_id": "chartjs__chart.js-12070",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 4,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "98734af33ce9a68906508d4d3487516e921fb9bc8dae66e0487f268f02d848f8"
+    },
+    {
+      "case_id": "diegomura__react-pdf-3281",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 1,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "f1c2c9edb9e32400d0284280ac1205f1e8325c15cfec1c93ff5e7f6671ea13ed"
+    },
+    {
+      "case_id": "diegomura__react-pdf-3286",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 1,
+      "pr_curator_asset_count": 4,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "43908345f80c53e36caa8361d0a006f888d3c5a8c1a9fdb32ceb89856149593e"
+    },
+    {
+      "case_id": "eslint__eslint-19328",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "5c19add1567b3c4f145e524ae1fcecbb585a244d70f85187e4332d95d669db4c"
+    },
+    {
+      "case_id": "googlechrome__lighthouse-16428",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 3,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "e3e72a2625c22e4cb5f31b36db808d8aa697a4e9403e6fa855a3ce08cd17c223"
+    },
+    {
+      "case_id": "googlechrome__lighthouse-16463",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "fb8a7432cf3b68a505d148ce631ae0da424e86560fc173e85c0f4f8dfe57f969"
+    },
+    {
+      "case_id": "grommet__grommet-7655",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 6,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "46bfca374c83b26615cd572e097e0d6328b834774012e5d0cf4fa4228b7ba45d"
+    },
+    {
+      "case_id": "grommet__grommet-7712",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 2,
+      "pr_curator_asset_count": 18,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "8f27fdbd3e7ac3b8ca6a31b051971c5826f3ccfb087eab6b5d5e5da44862b4dc"
+    },
+    {
+      "case_id": "highlightjs__highlight.js-4286",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 1,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "f9820f52f5581a8aa9206267df2189668b47f42563452ba4ae8987adb91b5d37"
+    },
+    {
+      "case_id": "openlayers__openlayers-16693",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 3,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "0a160af43be91c59a15c8317450decf4451dbf596f3f9e4050d26658b01abd93"
+    },
+    {
+      "case_id": "openlayers__openlayers-16976",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 3,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "1f465ebda423200c4e8f0e876f16f5c719c9a42c147e67bbf5b8f4e04f0cc578"
+    },
+    {
+      "case_id": "prettier__prettier-17063",
+      "result_status": "ineligible",
+      "queue": "human_problem_statement_required",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 5,
+      "problem_statement_status": "needs_human_problem_statement",
+      "result_sha256": "bca744c5d74b84535c68a0e7b0f07be2e48d2e47241c1554420b9e9946f9a694"
+    },
+    {
+      "case_id": "processing__p5.js-8934",
+      "result_status": "failed",
+      "queue": "text_verifier_pending",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "ce7b0b86593407d93c88fa9311bfe04938934bba632c0306d811ccdd141d5764"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100684",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 1,
+      "pr_curator_asset_count": 15,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "724ca95b2d632d01a67a78be1f6202cf27d1bc437bf2262d6d631416bd7d26a1"
+    },
+    {
+      "case_id": "bpmn-io__bpmn-js-2396",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 4,
+      "pr_curator_asset_count": 6,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "57ae54ab22845df47cd5a1e32771aaf52c61b6298ef99b179efb48d5f2c58c36"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-20978",
+      "result_status": "complete",
+      "queue": "high_priority_human",
+      "task_asset_count": 4,
+      "pr_curator_asset_count": 5,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "0ce67d2ee9e350a6e4ce3571b9bcc76f4ce00c3a68f611ebf3b33d2a042c3709"
+    },
+    {
+      "case_id": "chartjs__chart.js-12054",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 1,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "bf87bd22ec1a699f67f8bfa80bd7867f7d362627b90cd5398173e1408da79c49"
+    },
+    {
+      "case_id": "diegomura__react-pdf-3423",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "8c5ac51de9837b8f9c772b915133b3a9f46b4d3b19d987e948d93d9c29519b24"
+    },
+    {
+      "case_id": "eslint__eslint-20476",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 5,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "64e1672d1101643b68b0e3b71acdfbec446e5a8b6d037055e483f41d87de4459"
+    },
+    {
+      "case_id": "grommet__grommet-7583",
+      "result_status": "failed",
+      "queue": "text_verifier_pending",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 3,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "b3c4a0fe89a8cd156d60d3868764bd76b17af469e2ac35aef404a99ddece48cd"
+    },
+    {
+      "case_id": "highlightjs__highlight.js-4391",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 0,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "9490989b85e3a706539d8b219c9b5c141259eb969f040695da4ddeaf54248d0e"
+    },
+    {
+      "case_id": "openlayers__openlayers-16836",
+      "result_status": "complete",
+      "queue": "human_review",
+      "task_asset_count": 3,
+      "pr_curator_asset_count": 2,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "9ba5c1760e1c6e3bf03185ccc1365d1a8314f547ab14846287c570a888e97beb"
+    },
+    {
+      "case_id": "processing__p5.js-8380",
+      "result_status": "failed",
+      "queue": "text_verifier_pending",
+      "task_asset_count": 3,
+      "pr_curator_asset_count": 1,
+      "problem_statement_status": "generated_from_linked_issue",
+      "result_sha256": "64e44dc7e56ad5c8d4c586142c51b8b505f106e50888409101e3157ecb9f7f51"
+    }
+  ]
+}

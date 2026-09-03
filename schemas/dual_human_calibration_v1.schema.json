@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dual_human_calibration_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "candidate_id", "dossier_sha256", "measurement_sha256", "multimodal_necessity", "f2p_p2p_semantic_validity"],
+  "properties": {
+    "schema_version": {"const": "dual-human-calibration-v1"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "dossier_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "measurement_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "multimodal_necessity": {"$ref": "#/$defs/gate"},
+    "f2p_p2p_semantic_validity": {"$ref": "#/$defs/gate"}
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reviewer", "reason", "reviewed_at"],
+      "properties": {
+        "state": {"enum": ["pending", "approved", "rejected"]},
+        "reviewer": {"type": ["string", "null"]},
+        "reason": {"type": ["string", "null"]},
+        "reviewed_at": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

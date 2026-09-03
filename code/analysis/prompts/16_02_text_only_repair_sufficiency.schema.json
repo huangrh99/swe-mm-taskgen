@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "case_id", "evidence", "localization", "repair_contract", "test_contract", "counterfactual", "confidence"],
+  "properties": {
+    "schema_version": {"const": "text-only-repair-sufficiency-v1"},
+    "case_id": {"type": "string", "minLength": 1},
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["problem_sources_usable", "evidence_quotes", "limitations"],
+      "properties": {
+        "problem_sources_usable": {"enum": ["yes", "no", "unknown"]},
+        "evidence_quotes": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["source_id", "quote"], "properties": {"source_id": {"type": "string"}, "quote": {"type": "string", "minLength": 1}}}},
+        "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "localization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_localizable", "component", "candidate_paths", "reason"],
+      "properties": {
+        "target_localizable": {"enum": ["yes", "no", "unknown"]},
+        "component": {"type": "string"},
+        "candidate_paths": {"type": "array", "maxItems": 12, "items": {"type": "string"}},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "repair_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["completeness", "current_behavior", "expected_behavior", "explicit_constraints", "unresolved_variables", "reason"],
+      "properties": {
+        "completeness": {"enum": ["complete", "partial", "insufficient", "unknown"]},
+        "current_behavior": {"type": "string"},
+        "expected_behavior": {"type": "string"},
+        "explicit_constraints": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "unresolved_variables": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "test_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["constructible", "assertions", "missing_oracles", "reason"],
+      "properties": {
+        "constructible": {"enum": ["yes", "no", "unknown"]},
+        "assertions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "missing_oracles": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "counterfactual": {
+      "type": "object", "additionalProperties": false,
+      "required": ["multiple_repairs_fit_text", "examples", "reason"],
+      "properties": {
+        "multiple_repairs_fit_text": {"enum": ["yes", "no", "unknown"]},
+        "examples": {"type": "array", "maxItems": 2, "items": {"type": "string", "minLength": 1}},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "confidence": {"enum": ["high", "medium", "low"]}
+  }
+}

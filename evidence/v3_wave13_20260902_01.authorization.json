@@ -1,0 +1,104 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_consolidated/20260902T120216225403Z",
+  "source_manifest_sha256": "110b15d083060e2db61174932344ec801eb3afe9b2d261dada40bfeb6bcc3671",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "6ae1cc4fddaedde316a0b109a3940bd9df9b24f6868aa2854d609b6969b02814",
+  "run_id": "v3-wave13-video-20260902-01",
+  "nonce": "c4856fdd649f4d58bf110aa8f0dcc991",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave13_video_contact_run_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "excalidraw__excalidraw-9002",
+      "source_result_sha256": "6491bc1ca6cc1239abd48693534cd7eeb2b51eaa7adedb02b2e0b10cc4f83252",
+      "source_packet_sha256": "aae4e00b4215650b128454fcd7603931e42dc51f4d1624e1df093185a9690d5f",
+      "source_archive_sha256": "b9ddd8abe3d2e4f2007af4c3aec1f42cdabb316aa59304c1b27058873f98133f",
+      "problem_statement_sha256": "6087fcf3892fa93b6574e63fc8f7813c4d06b5d90fe68a4e936c0d42eedc7525",
+      "available_asset_ids": [
+        "6b1f1c23d4552867a212301e53d0d10f8a59cca37f47647a81ee4aadb2089ad2"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "f447f96dedb77033c8be0c7b233c633e6aad0d0f8bf149c31e9304108af5a263"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9605",
+      "source_result_sha256": "0c974b703dcc16514a27e7b426c21f667979e859f08d6b31f04a1edfb40571a0",
+      "source_packet_sha256": "bea5c0f131b166bda39d90d97e38a1482a325f3ad54529e433a027c9d8f66011",
+      "source_archive_sha256": "9c3a0e916dad6764ab12c5f5021c4e12bfae6ca2cc1f4647af20c72efb4ebff8",
+      "problem_statement_sha256": "e2711092bde8bc0e01b026421cb02f536963f8fc4c20b31736fcb662f2e6d03d",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "e751b51a2e205ec9c3bf8989752ad0bc9971fe344b39a1a77e66213338d95472"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9642",
+      "source_result_sha256": "dc1f1169ae78bef98818ddf3430d8b67e57f06a6f080e6e92888f0a3ee5d08cc",
+      "source_packet_sha256": "32c5057665311b30569d0cebaf5572c0a70d1fca6c7a4453475e038bf1c4be71",
+      "source_archive_sha256": "4c8b56e642c24f68dd1c56bcc77853ceb8eeb5f62472a8140bcf36a4f8ce7842",
+      "problem_statement_sha256": "9dde0408e23c575c136d1335ef07b31007697971e7a75eaff6306a3601e71fa5",
+      "available_asset_ids": [
+        "d7ba1581b43e14ff8a55151df4a21ddfcaeaed94c321b4bd0fca8db735384715"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "d35d655dce2cd2cab8ade583f6a85251188a837420a7e40cc0b2c62ef425d532"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-10702",
+      "source_result_sha256": "c9c790016c75ad54c3e9a36c5a87df776e8374fda26c71aada1e1fcac47ceef4",
+      "source_packet_sha256": "99910419c8fc9625364b5647e6fb25e56f9498d7ec93e033ac81bd690c340d7c",
+      "source_archive_sha256": "770597c5b53340db6736a1ecc2fc646a8fdd7e582a990fcc0c7908117150ae84",
+      "problem_statement_sha256": "36669be2198567922b2451325fc0d4913e1c46ef353f74147c6a6b486dcb8ca0",
+      "available_asset_ids": [
+        "39f5edc242e906d9c2473a051b35fcf56f49de2101ae260dcb700810c0387158",
+        "ee7999c5c9bb681ce60a77ee1e721bf51650b3950d3d7eee2d8c8cd54fe65f0b"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "0f46948b20cd19b2815b6544f0fe7e076ffa53c88f225d0f31580513aca0961b"
+    }
+  ],
+  "expected_case_calls": 3,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 18,
+  "authorized": true
+}
+

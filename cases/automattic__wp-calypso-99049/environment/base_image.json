@@ -1,0 +1,19 @@
+{
+  "schema_version": "harbor-base-image-binding-v1",
+  "status": "local_content_addressed_image",
+  "instance_id": "automattic__wp-calypso-99049",
+  "repository": "automattic/wp-calypso",
+  "source_baseline_sha": "047aeef4a31c9e93ccb975adc77fb2107067fd6e",
+  "image_id": "sha256:237b924780c64a21c5121602c00a44d1ea6ed921b77108839197fb291ef89a6a",
+  "build_reference": "visual-harbor-base:237b924780c64a21c5121602c00a44d1ea6ed921b77108839197fb291ef89a6a",
+  "architecture": "arm64",
+  "node_base": "node@sha256:8a34c4ab3ea2c5cd194f07e317b2a8f09461d3c8b05c4e34c8ccd56d56024c4d",
+  "browser_base": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+  "node_overlay": "node@sha256:8a34c4ab3ea2c5cd194f07e317b2a8f09461d3c8b05c4e34c8ccd56d56024c4d",
+  "asset_inventory": [
+    {
+      "name": "asset_01.png",
+      "sha256": "48ab4686a0e9662cb1a56582f7ebae57962b55667765409f8b38cdbff2bd4b7f"
+    }
+  ]
+}

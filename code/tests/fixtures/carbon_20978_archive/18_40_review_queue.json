@@ -1,0 +1,12 @@
+{
+  "schema_version": "dual-human-calibration-queue-v1",
+  "candidate_pool_count": 28,
+  "candidate_pool_html": null,
+  "eligibility_rule": "A case enters this queue only after its dossier, frozen F2P/P2P inventory, test review context, and baseline/reference measurement are complete.",
+  "cases": [
+    {
+      "candidate_id": "carbon-design-system__carbon-20978",
+      "review_html": "18_40_review.html"
+    }
+  ]
+}

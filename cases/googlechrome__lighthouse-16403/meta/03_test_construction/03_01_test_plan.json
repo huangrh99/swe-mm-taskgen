@@ -1,0 +1,15 @@
+{
+  "schema_version": "case-test-plan-v1",
+  "case_id": "googlechrome__lighthouse-16403",
+  "base_commit": "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+  "gold_commit": "cc05eab5272d191247834664bfc24a33c83e5bad",
+  "author_test_changes_in_pr": [],
+  "candidate_f2p": [
+    {"test_id": "f2p_bundle_color_varies_by_depth", "oracle": "Rendered nodes in one bundle use a common hue and distinguishable depth-dependent saturation/lightness.", "status": "needs_executable_browser_test"},
+    {"test_id": "f2p_caption_name_and_size_structure", "oracle": "A non-root leaf exposes separately styled name and size captions while the root All caption is absent.", "status": "needs_executable_browser_test"}
+  ],
+  "candidate_p2p": [
+    {"test_id": "p2p_treemap_navigation", "oracle": "Existing treemap navigation and selection remain functional.", "source_hint": "treemap/test/treemap-test-pptr.js", "status": "author_test_not_run"}
+  ],
+  "classification_rule": "F2P/P2P labels are assigned only after the identical executable tests run on base and gold; source tokens alone are not a functional oracle."
+}

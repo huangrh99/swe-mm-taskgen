@@ -1,0 +1,71 @@
+{
+  "schema_version": "v4-test-constructor-v1",
+  "task_id": "excalidraw__excalidraw-9010",
+  "status": "test_bundle_proposed",
+  "repository_observations": {
+    "framework": "Vitest 2.0.5 with jsdom, React Testing Library, and vitest-canvas-mock",
+    "package_manager": "Yarn 1.22.22 (declared in package.json)",
+    "working_directory": ".",
+    "manifest_paths": [
+      "package.json",
+      "packages/excalidraw/package.json",
+      "yarn.lock"
+    ],
+    "test_config_paths": [
+      "vitest.config.mts",
+      "setupTests.ts",
+      "tsconfig.json",
+      "packages/excalidraw/tsconfig.json"
+    ],
+    "nearby_test_paths": [
+      "packages/excalidraw/tests/binding.test.tsx",
+      "packages/excalidraw/element/routing.test.tsx",
+      "packages/excalidraw/tests/move.test.tsx",
+      "packages/excalidraw/data/transform.test.ts",
+      "packages/excalidraw/tests/history.test.tsx",
+      "packages/excalidraw/tests/linearElementEditor.test.tsx",
+      "packages/excalidraw/tests/helpers/api.ts",
+      "packages/excalidraw/tests/helpers/ui.ts",
+      "packages/excalidraw/tests/test-utils.ts"
+    ],
+    "author_test_paths": []
+  },
+  "behavioral_contract": [
+    {
+      "requirement_id": "interaction_temporal_understanding",
+      "observable_behavior": "During a pointer drag of one endpoint of an arrow, the global coordinates of the other endpoint, which was already bound to a source element, remain unchanged at every sampled move and at pointer-up.",
+      "preserved_behavior": "The dragged endpoint can bind to the destination element, and both elements retain the expected reciprocal arrow binding references.",
+      "oracle": "Numeric global endpoint geometry sampled before pointer-down, after pointer-down, during multiple pointer moves, and after pointer-up; final binding element IDs and reciprocal bound-element records."
+    },
+    {
+      "requirement_id": "normal_arrow_binding_side_effects",
+      "observable_behavior": "Binding an endpoint through the rendered editor interaction does not cause an unrelated already-bound endpoint to be recomputed.",
+      "preserved_behavior": "Existing arrow binding semantics remain intact after the interaction.",
+      "oracle": "The untouched endpoint stability assertion is the regression oracle; binding metadata assertions guard the preserved domain behavior."
+    }
+  ],
+  "test_bundle": {
+    "working_directory": ".",
+    "test_command": "yarn test:app --run packages/excalidraw/tests/arrowBinding9010.test.tsx",
+    "stable_test_ids": [
+      "excalidraw-9010-endpoint-stability"
+    ],
+    "predicted_transition": "candidate_f2p",
+    "files": [
+      {
+        "path": "packages/excalidraw/tests/arrowBinding9010.test.tsx",
+        "operation": "add",
+        "content": "import React from \"react\";\nimport { Excalidraw } from \"../index\";\nimport { LinearElementEditor } from \"../element/linearElementEditor\";\nimport { pointFrom } from \"../../math\";\nimport { API } from \"./helpers/api\";\nimport { Pointer } from \"./helpers/ui\";\nimport { render } from \"./test-utils\";\n\nconst { h } = window;\n\ndescribe(\"arrow endpoint binding regression\", () => {\n  beforeEach(async () => {\n    localStorage.clear();\n    await render(<Excalidraw handleKeyboardGlobally={true} />);\n  });\n\n  it(\n    \"[excalidraw-9010-endpoint-stability] keeps the untouched binding point stationary while dragging the other endpoint\",\n    () => {\n      const source = API.createElement({\n        type: \"rectangle\",\n        id: \"source-9010\",\n        x: 0,\n        y: 0,\n        width: 100,\n        height: 100,\n        boundElements: [{ id: \"arrow-9010\", type: \"arrow\" }],\n      });\n      const destination = API.createElement({\n        type: \"rectangle\",\n        id: \"destination-9010\",\n        x: 300,\n        y: -200,\n        width: 100,\n        height: 100,\n      });\n      const arrow = API.createElement({\n        type: \"arrow\",\n        id: \"arrow-9010\",\n        x: 110,\n        y: 50,\n        width: 500,\n        height: 0,\n        points: [pointFrom(0, 0), pointFrom(500, 0)],\n        startBinding: {\n          elementId: source.id,\n          fixedPoint: null,\n          focus: 0,\n          gap: 10,\n        },\n        endBinding: null,\n      });\n\n      API.setElements([source, destination, arrow]);\n      API.setAppState({\n        selectedElementIds: { [arrow.id]: true },\n        selectedLinearElement: new LinearElementEditor(arrow),\n      });\n\n      const readPoint = (index: number) =>\n        LinearElementEditor.getPointAtIndexGlobalCoordinates(\n          arrow,\n          index,\n          h.app.scene.getNonDeletedElementsMap(),\n        );\n\n      const startBefore = readPoint(0);\n      const endBefore = readPoint(-1);\n      const observedStartPoints = [startBefore];\n      const mouse = new Pointer(\"mouse\");\n\n      mouse.downAt(endBefore[0], endBefore[1]);\n      observedStartPoints.push(readPoint(0));\n      mouse.moveTo(500, 200);\n      observedStartPoints.push(readPoint(0));\n      mouse.moveTo(\n        destination.x,\n        destination.y + destination.height / 2,\n      );\n      observedStartPoints.push(readPoint(0));\n      mouse.upAt(destination.x, destination.y + destination.height / 2);\n      observedStartPoints.push(readPoint(0));\n\n      observedStartPoints.forEach((point) => {\n        expect(point[0]).toBeCloseTo(startBefore[0], 5);\n        expect(point[1]).toBeCloseTo(startBefore[1], 5);\n      });\n\n      expect(arrow.startBinding?.elementId).toBe(source.id);\n      expect(arrow.endBinding?.elementId).toBe(destination.id);\n      expect(source.boundElements).toEqual(\n        expect.arrayContaining([{ id: arrow.id, type: \"arrow\" }]),\n      );\n      expect(destination.boundElements).toEqual(\n        expect.arrayContaining([{ id: arrow.id, type: \"arrow\" }]),\n      );\n    },\n  );\n});\n"
+      }
+    ],
+    "collection_evidence": "The root package script test:app is exactly vitest, and the root test script only forwards to test:app. vitest.config.mts uses the default test discovery and has no wrapper that replaces positional arguments. The proposed command names the generated test file explicitly, so Vitest collects that file directly. No build step is required for this TypeScript test under Vitest.",
+    "functional_oracle_evidence": "The test uses the existing rendered Excalidraw harness and Pointer helper, samples public domain geometry through global endpoint coordinates, and checks binding IDs plus reciprocal bound-element records. It does not use snapshots, source tokens, private patch text, arbitrary coordinate deltas, network calls, fixed ports, or new dependencies.",
+    "equivalent_implementation_check": "An independently implemented fix that prevents rebinding or geometry updates from moving the untouched bound endpoint during the drag will keep every sampled start point within the numeric tolerance and will preserve the final bindings, so it passes.",
+    "incomplete_implementation_check": "A solution that only changes final binding IDs, only fixes the final pointer-up state, or still recomputes the already-bound endpoint during any pointer move will fail one of the intermediate or final numeric stability assertions. A solution that drops reciprocal binding bookkeeping will fail the domain-semantic assertions."
+  },
+  "missing_context": [
+    "The frozen environment has no yarn executable and no installed node_modules, so the exact command could not be executed here. Base/Gold identical execution, stable reruns, and any F2P/P2P label remain unmeasured.",
+    "The proposed transition is only a static hypothesis based on the affected binding behavior; it is not a final F2P or P2P claim."
+  ],
+  "summary": "Proposed one deterministic interaction test covering the sole V4 capability and the affected normal-arrow binding behavior. The fixture starts with one endpoint bound to a lower source rectangle and drags the other endpoint toward a higher destination rectangle, asserting that the untouched endpoint never jumps while final bindings remain correct."
+}

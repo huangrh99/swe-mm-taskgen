@@ -1,0 +1,77 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave16_partial_ready_text_02/20260902T135011720140Z",
+  "source_manifest_sha256": "d3f11881f65e8a40b4819ffa3823b17243a1b3d91587230ad51d9d81a1641c2f",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "6ae4480437a8863bbcdd456c208bd3185302fa97e777f586ec10b6953bc155b9",
+  "run_id": "20260902-wave16-partial-ready-02-01",
+  "nonce": "fdb1530f-e6ed-4902-b690-686d83cf9327",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave16_partial_ready_02_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "leaflet__leaflet-9849",
+      "source_result_sha256": "1e318078262286533fa9b1bfb7e209d75e084e1007ef06c99e6e9bfe6b34019c",
+      "source_packet_sha256": "975911d3754a5b8d60d547b9d2c9c58b9bcfe1386cfb0eed99026f40f5695d05",
+      "source_archive_sha256": "a12a1c8b9f5fd15eca7c75fc11afb0795bdf2133e52c0820bc277095bfc73d87",
+      "problem_statement_sha256": "d7da1dbc91e7154da3f75d99f2342cabd573370ebe315003e108fb5acbe989fa",
+      "available_asset_ids": [
+        "a843aa00f9af98032b115e48a6714fb15eadbca12a98ffc86a6fe5bda4e2f627",
+        "10ac24e3be689a3cc19c81b9ea1438dd4bcd10e7c94bf1f664bedf0c59ea4568",
+        "f1b3ddd536424614f7d6a4cadf90108a6c88fb7a22aea1abe5ba40f9f391877b",
+        "6d5be2e0c6e8a637f859afaf7c789d407af29c7f4ad29cdafdef755b4aa89460"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "828e71de396853d69e095c5c78a1f965619a2746f7b69c6d0b3902f7c243e21e"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-9067",
+      "source_result_sha256": "92d93d329fe941f4fec3b6a608390709b50af622277c93c3abf1a7e17109b5cb",
+      "source_packet_sha256": "530e7da5ae5fea08125a8994035eea285c9b115c7362a496f7786b013d813a49",
+      "source_archive_sha256": "3d88e3e32eb8afcc0c3b425ee8fbc9e646b4beb0fa56a5b930d4c6745888baee",
+      "problem_statement_sha256": "afb5fb537198e44e79e26daf22b126de127dfdd04ce146a9165551912c1bfa17",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "c730686a6daaa91302e4fa2fc650eabfbbed889593025fcb332e461239731afe"
+    }
+  ],
+  "expected_case_calls": 1,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 6,
+  "authorized": true
+}

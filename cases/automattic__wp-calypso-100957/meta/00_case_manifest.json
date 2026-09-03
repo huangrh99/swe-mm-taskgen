@@ -1,0 +1,316 @@
+{
+  "schema_version": "report-case-archive-v1",
+  "case_id": "automattic__wp-calypso-100957",
+  "repository": "automattic/wp-calypso",
+  "pr_number": 100957,
+  "state": "candidate",
+  "archived_at": "2026-09-02T21:00:00+08:00",
+  "sections": {
+    "visual_review": [
+      {
+        "path": "01_visual_review/01_01_verifier_packet.json",
+        "sha256": "2a2097e99a172b105df8895a02debe5ca74ef78e37bc382b28fc036aa0dd5be5",
+        "size_bytes": 984,
+        "storage": "hardlinked",
+        "source_path": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01/16_03_07_packet_0004.json"
+      },
+      {
+        "path": "01_visual_review/01_02_solver_visible.png",
+        "sha256": "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552",
+        "size_bytes": 299447,
+        "storage": "hardlinked",
+        "source_path": "crawler-output/multimodal-2025/11_source_archive/20260902T030659546783Z/11_http_archive/assets/4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552"
+      },
+      {
+        "path": "01_visual_review/01_03_review_summary.json",
+        "sha256": "ed954049dedc20c0075b0b1e7bfecd6f27000c4166bcdef7cb01a2d9ee56bc1b",
+        "size_bytes": 596,
+        "storage": "copied"
+      }
+    ],
+    "source_archive": [
+      {
+        "path": "02_source_archive/02_01_pr_archive.json",
+        "sha256": "edab66839fa3433aa33854b24d3d13886a2c56e7ae042fc7c40b7b1b4a755ce8",
+        "size_bytes": 315900,
+        "storage": "hardlinked",
+        "source_path": "crawler-output/multimodal-2025/11_source_archive/20260902T030659546783Z/11_record_0004.json"
+      },
+      {
+        "path": "02_source_archive/02_02_reference.patch",
+        "sha256": "14bff65466b6194cb4f4e3444abdfea1bbdf98801d6ee2ebe2cddaf59e75bc15",
+        "size_bytes": 4271,
+        "storage": "copied"
+      },
+      {
+        "path": "02_source_archive/02_03_reference.diff",
+        "sha256": "12270c810c09167a758a29c790d771b18e445e1c972183bc63678d8e89cecf68",
+        "size_bytes": 2762,
+        "storage": "copied"
+      }
+    ],
+    "test_construction": [
+      {
+        "path": "03_test_construction/03_01_test_plan.json",
+        "sha256": "495f53aa4ad5d7f244b12d85d3310595314949fefb6720b4b47e217de266a7e6",
+        "size_bytes": 1048,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/03_02_reference_apply_check.json",
+        "sha256": "6ff7c9661c186f057e711d8114ba810316b3a77cebb10daa143b83b10a23e79f",
+        "size_bytes": 435,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+        "sha256": "b293973da32903d209bd3268902b48f50fc4c9f0a04bc6ab42c008fc49e0aa5d",
+        "size_bytes": 23115,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+        "sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+        "size_bytes": 9136,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+        "sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+        "size_bytes": 6387,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+        "sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+        "size_bytes": 26252,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+        "sha256": "77250bd64563f1ccd83a67fe1effd64469140ddf6e9142c5e54758e055cc828b",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+        "sha256": "e61f049a29bd88736677ed139daa2a3fb404c119649c2cae978b596c90491dbd",
+        "size_bytes": 41170,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+        "sha256": "375cd9de0ba4d25628d035b14c9a201eaedac52490226ae57d6e6bf27a174105",
+        "size_bytes": 156,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+        "sha256": "592fe6a5c9330a5df0475214b068132505cb201bb36337e5e4a459f3435c323c",
+        "size_bytes": 39,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+        "sha256": "462b826956f7e5aeab7a2486f7ac867bf2db68804304819b7f36ab1705a4db14",
+        "size_bytes": 49020,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_invocation.json",
+        "sha256": "53485076a651cb39779f47bb6dea125e44c7a42774b2d43b6986394a3145dc3a",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+        "sha256": "7d0a055af19874d9f3f5b1774cc51ca48a9a2e3fadeae4e8823c37b5640e6e6a",
+        "size_bytes": 41285,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_attempt_01.json",
+        "sha256": "4b50192179f9ba699b9fe5e0ca477a41d03e7580ffd04a49a5f903281bc6e51b",
+        "size_bytes": 157,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_invocation_started.json",
+        "sha256": "5e186069d0c27d44b4bd2a0da902acb3d9c4eb55035e6b021319926fdb83c476",
+        "size_bytes": 40,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+        "sha256": "1f024b59006d759fdbb8713b75806167e1ad49e14a6c1c17dc61358a9849dde4",
+        "size_bytes": 53229,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_03/09_model_raw.json",
+        "sha256": "6bce4d30e28b2dfb2856032a84ab1c95b9ada7cd1ddfb4a3c73b3bc371f43c97",
+        "size_bytes": 15806,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_03/10_api_invocation.json",
+        "sha256": "54c9da11f125348a1668c5535b95e78416c56d1aad44ff7c3b571756423c91a9",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_03/10_api_request.json",
+        "sha256": "5341de3d6e624487fcaf27fefad1d44896d589d9ea556513b6dd450a3fe327ac",
+        "size_bytes": 41286,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_03/10_attempt_01.json",
+        "sha256": "c91b8525c09038beeb76163cbca6475c4d88238ce7f663d8ed170fb14f3453ef",
+        "size_bytes": 155,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_03/10_invocation_started.json",
+        "sha256": "fc545df8187adb9bbea10424e6b18b024ec5402817bf0ab9e7bc8d500a86ef64",
+        "size_bytes": 39,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_03/10_provider_response_01.json",
+        "sha256": "9c2997da2700fc58f340fda8d82d4b22880ce719f4cee037a936fae0c57c9b51",
+        "size_bytes": 53308,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+        "sha256": "1947fe7cad94423a71ced2b79705efe2ee86281825dbaae123ce7e16a78685dd",
+        "size_bytes": 24422,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.tsx",
+        "sha256": "c3f4d49c502ed0b7bc0147f4b6f61e4af39c8fbcca77aadf31105851d71330a1",
+        "size_bytes": 3867,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+        "sha256": "a3f0cb22a7ab1ad4a62421ad8148a1e37d68a1c302c0a3b487b5f750d276a58f",
+        "size_bytes": 28284,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+        "sha256": "ae0233d4d798f42dc3b9decab97b3aa8c8eb999ba16699ea2c15a65ee9c91e8e",
+        "size_bytes": 1288,
+        "storage": "generated"
+      }
+    ],
+    "measurements": [
+      {
+        "path": "04_measurements/04_01_status.json",
+        "sha256": "8bf3093ad53b265678b1d0efbfe22697a006371b934d58dbbcc9f9e496116623",
+        "size_bytes": 530,
+        "storage": "copied"
+      }
+    ],
+    "harbor": [
+      {
+        "path": "05_harbor/05_01_status.json",
+        "sha256": "29176fa5cd5b355dac76c80822c78a4d3d39c33f5fd9bee0d13b15215902d87e",
+        "size_bytes": 784,
+        "storage": "copied"
+      },
+      {
+        "path": "@task/environment/Dockerfile",
+        "storage": "generated",
+        "size_bytes": 613,
+        "sha256": "895db64a756cbac3bffe620fc81583f7eb109872faebdf436413d10e4b6830a0"
+      },
+      {
+        "path": "@task/environment/assets/asset_01.png",
+        "storage": "generated",
+        "size_bytes": 299447,
+        "sha256": "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552"
+      },
+      {
+        "path": "@task/environment/base_image.json",
+        "storage": "generated",
+        "size_bytes": 935,
+        "sha256": "090e198922a2dc46301f1fa1096782a0c226736b098966c59d49093cb42fa4f5"
+      },
+      {
+        "path": "@task/environment/docker-compose.yaml",
+        "storage": "generated",
+        "size_bytes": 142,
+        "sha256": "c346613322ba0f324f14425a6537833f10f764e8b4470a3996a12fb83b1afbe1"
+      }
+    ]
+  },
+  "pipeline_status": {
+    "source_archived": "complete",
+    "test_construction": "complete",
+    "base_gold_measurement": "stable",
+    "harbor_empty": "reward_0",
+    "harbor_nop": "reward_0",
+    "harbor_empty_no_reply": "reward_0",
+    "harbor_oracle": "reward_1",
+    "human_review": "human_review_deferred",
+    "formal_admission": false
+  },
+  "warnings": [
+    {
+      "stage": "source_archive",
+      "code": "optional_media_download_failed",
+      "detail": "Three generated calypso.live QR-code URLs were unavailable and ignored; required Issue/PR visual evidence is archived."
+    }
+  ],
+  "blockers": [
+    {
+      "stage": "harbor",
+      "code": "formal_gates_pending",
+      "detail": "Technical task construction, Base/Gold measurement, and four Harbor controls passed. Formal visual and F2P/P2P human decisions remain deferred."
+    }
+  ],
+  "notes": "Executable provisional Harbor task; not formally admitted or frozen because both human gates are deferred.",
+  "test_verifier": {
+    "model": "gemini-3.7-flash",
+    "selected_run": "03_test_construction/20_11_verifier_run_01",
+    "status": "original_proposal_rejected_curator_revision_measured",
+    "quality_review": "revision_complete_and_executed",
+    "quality_findings": [
+      "Generated test queries .global-styles-variation-preview__palette-item, but the supplied component does not emit that class.",
+      "Generated test mocks framer-motion although the component imports __unstableMotion from @wordpress/components.",
+      "The original bundle was not admitted. Its behavioral intent was reimplemented in task/tests/acceptance.test.tsx and classified only after exact Base/Gold execution."
+    ],
+    "boundary": "The original Verifier output remains a rejected proposal. Only the revised bundle's repeated execution supports the 3 F2P and 2 P2P labels."
+  },
+  "formal_task": {
+    "path": "../task",
+    "harbor_native_task_checksum": "0d9a7288f65c4cef83a895ae9fd34deca4893c7da92f891b213178543923379f",
+    "case_image_id": "sha256:b9415f1d3f2c2833b4b7635f2780501ed9b53d669ddac0f1760c83bf99a2384e",
+    "controls": "../outputs/05_controls/05_09_controls_summary.json",
+    "formal_admission": false
+  },
+  "layout": {
+    "submission_root": "../task",
+    "metadata_root": "meta",
+    "metadata_deletion_safe": true
+  },
+  "pipeline_details": {
+    "test_extension_verifier": {
+      "status": "complete",
+      "runner_version": "test-extension-verifier-run-v2",
+      "backend": "gemini",
+      "model": "gemini-3.7-flash",
+      "verdict": "additional_tests_proposed",
+      "generated_bundle_count": 1,
+      "behavior_contract_required": true,
+      "oracle_quality_plan_required": true,
+      "prior_verifier_generated_tests_excluded": true,
+      "requested_batch_concurrency": 10,
+      "boundary": "Generated tests are proposals until the identical patch is measured on Base and Gold."
+    }
+  }
+}

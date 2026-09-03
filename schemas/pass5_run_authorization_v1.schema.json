@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pass5-run-authorization-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "authorized", "run_id", "output_path", "nonce", "pipeline_freeze_sha256", "frozen_manifest_sha256", "task_sha256", "harbor_task_checksum", "image_id", "model_id", "agent", "agent_version", "harbor_job_config_sha256", "valid_trials", "maximum_harbor_attempts"],
+  "properties": {
+    "schema_version": {"const": "pass5-run-authorization-v1"},
+    "authorized": {"const": true},
+    "run_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{2,127}$"},
+    "output_path": {"type": "string", "minLength": 1},
+    "nonce": {"type": "string", "pattern": "^[A-Za-z0-9_-]{16,128}$"},
+    "pipeline_freeze_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "frozen_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "task_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "harbor_task_checksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "image_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "model_id": {"type": "string", "minLength": 1},
+    "agent": {"type": "string", "minLength": 1},
+    "agent_version": {"type": "string", "minLength": 1},
+    "harbor_job_config_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "valid_trials": {"const": 5},
+    "maximum_harbor_attempts": {"type": "integer", "minimum": 5}
+  }
+}

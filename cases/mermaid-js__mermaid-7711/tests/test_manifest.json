@@ -1,0 +1,13 @@
+{
+  "schema_version": "mermaid-self-loop-suite-v3",
+  "candidate_id": "mermaid-js__mermaid-7711",
+  "selected_suites": [
+    "packages/mermaid/src/rendering-util/layout-algorithms/dagre/benchmark-self-loop.spec.js",
+    "packages/mermaid/src/rendering-util/layout-algorithms/dagre/mermaid-graphlib.spec.js"
+  ],
+  "test_origins": ["repository_existing", "verifier_generated"],
+  "pr_author_tests_selected": false,
+  "pr_author_exclusion_reason": "The new author unit file imports an implementation export absent at Base, so Base cannot collect stable per-test IDs. Its public SVG behavior is covered independently by the verifier-generated black-box suite.",
+  "behavioral_oracle": "The Issue reproducer renders a labeled state self-loop whose sampled SVG curve lies on the left or right of the node, does not enter the node interior, and has no local turn above 45 degrees at approximately one-pixel arc-length sampling. Flowchart cases are regression-only. No size, source-token, exact coordinate, or exact gold-path assertions.",
+  "negative_control": "The Base has three public self-loop segments and a 96 degree join; independent pointed-V and double-back fixtures exceed 86 degrees."
+}

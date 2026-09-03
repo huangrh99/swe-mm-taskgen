@@ -1,0 +1,250 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_consolidated/20260902T103425452961Z",
+  "source_manifest_sha256": "83aa48f85cf12dbae0df061d1bb0e05665129fbf9b1a26415e9b03af41a9a5e6",
+  "prompt_sha256": "d1f5db123c64e9c9447ae5adb4724e365b816d77474f18462b54f50beb8f0cb6",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "3cbb12c5b2b939cbb4c9e6c5c87dd7ea9565c385a0b1516d41fcf99a65203afa",
+  "run_id": "v3-wave10-20260902-01",
+  "nonce": "v3wave10_20260902_7f8c2d4a9b6e",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave10_run_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 2,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "antvis__g6-7507",
+      "source_result_sha256": "1ffc6ab1a48d8c57faf4a16a5439e9fc31025b02582e616339b1a91bf2d51761",
+      "source_packet_sha256": "4b03b63d45afde0ccc4dd6952bca5e1d7b704497da931b83454aa1b6cf90f7f9",
+      "source_archive_sha256": "9daf37d199665259bc348b526380a304d38e23f631d502c08cdee0bd0e2fdd60",
+      "problem_statement_sha256": "37034e79aaba752a744db917edceb9e9df4e70ce79291223f3227b1ea6120a49",
+      "available_asset_ids": [
+        "ef9b33a83e7f0210d2240caa0b30fe362f6c5add943f6ceba624d325999f4d0a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "66a278480ad20a936943ef0d044b80feff6479dd6b608399a2f0222fbfab98b6"
+    },
+    {
+      "case_id": "apache__superset-37403",
+      "source_result_sha256": "db8160991a425f77013e9cefccc33e9a58275f1d413a06a98a3229ea6a5df9a3",
+      "source_packet_sha256": "20df736771b6e9f6f405b33ee07859f231e455b724ce90260fe22fb7495928fc",
+      "source_archive_sha256": "c310a36b7d37dae2d447a22e6b3b9a7ca1b0803ee0b43c7f4886dd33b99b759b",
+      "problem_statement_sha256": "f3a41855db24a24362267a3f7bd313b757ee22592172a5c88e40e85ce00a164f",
+      "available_asset_ids": [
+        "37ecae08115d21e96ce87d89cab8067fed15ab8fbf902c1b16b27274ea5b6f94"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "9b761dd48f51e078beb430a64ea7c56c4eea4eb42be512e64eb0a05795e7c6bd"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-11441",
+      "source_result_sha256": "784f49480eb9ac6f9833b4e47b5536091cba4f3106df92a1ec3c26ed43b3844e",
+      "source_packet_sha256": "fef1f44333d614ce4b5669e8d0b9f118b191e9a1156cf825de7b4291cce67eb2",
+      "source_archive_sha256": "dc7304203ac3966e94d5a90ea195ca51082d14bbb2572bc6ae3ad3b3447c9260",
+      "problem_statement_sha256": "95875be6fa34c0f8185d8b739bf6113acd1aef57abf4e033b93332fb7c309c13",
+      "available_asset_ids": [
+        "24d9ab1625162a07b1567570d61ed4bac0bcb62e574c2808d37a0d541c7da81f"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "7ff31b2fc7680d3a7facb1c15adb9fa944368cc75fa1cf99ad09819bc60cda8a"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-11458",
+      "source_result_sha256": "8127ce0a7efbea5c58d68746d59861f970ff1c25c50acb5c6837600c87f92b58",
+      "source_packet_sha256": "90f3ba57cee9af5d2a6487ef2fc44b204d47e9282cd4828ef5a20dfc702efaca",
+      "source_archive_sha256": "6e5c869b41da018f7233a81e28604fc81aaf032c938dc3a3cb9b27bc4faeaf87",
+      "problem_statement_sha256": "db6ecad599c029199a7fc5b6f41d4a70ce992e361628972f9b707ca491abc10c",
+      "available_asset_ids": [
+        "3f557877ff8887815de14552ec78768f20b406bf67e60775d6c3259d46e0b0c0"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "e6f9e1c00f43aec73435f2cf37e6cb64def0b914a85994b4e8b355786d516330"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6651",
+      "source_result_sha256": "6943655ffc3709ad02c7b32ae3e8ff6143f9c78611442a14ce2a0f8f67484a4a",
+      "source_packet_sha256": "b5e914e58c66af62dd3a823cf1441b42059cf457edcfffc0e479bb8c3667b09c",
+      "source_archive_sha256": "30b2ece0635616b2a6d29f7d0fd7bc15b42586d0961d742776a351c81c97f6e6",
+      "problem_statement_sha256": "30608485f3319e48ab2d1bc2fc919981559afdfdbbf081d9a05a34d74de34c35",
+      "available_asset_ids": [
+        "adfd650eeab7aa248f0d3bef382ba855f4e53bcab858d942b0ff51d6ad6243b1",
+        "1d940b6aca31e02af5c91b96f52c6bc3f26219cfbe09639143771a9224922647"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "01a4737a97b114155a830ffce4f3d06a235ff25423cda52e2452d32bd2cd2f8b"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6693",
+      "source_result_sha256": "60ccb52a62c0a181614f88c43a1b3bbae8e4a75b6e8502da2f3facc099657c6d",
+      "source_packet_sha256": "416eee9c65da50bad3fa9218509ef360f6618694ede12844c34231d795185aab",
+      "source_archive_sha256": "3379793d73cddb5daa5e21dd71399e25b211d2e9311884dfc92570fcfe90beae",
+      "problem_statement_sha256": "6e9b5514f9aa65ddbe39b9166645817fd054f5b90ec59d161f150f8dfa899d5b",
+      "available_asset_ids": [
+        "bff0257cc604a6269da10a3b690f8b1f02ebe90a00fd4eb66feaa244b350e770"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "c7110825b737fb552846fafef400d25d71703dab1f0602397ffff36d0f72e00b"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6734",
+      "source_result_sha256": "0ff4f9d373ef9db1a6da40af68b5e1e7cb5da94dbab5546c77d5ec3113b4c8fb",
+      "source_packet_sha256": "f40ca6bd41e21f89ac10478454bdd0cb4afde0991ec971e6f4d75f3300539d26",
+      "source_archive_sha256": "072fcb557d77398c646afce9979d733541d373fe0145bba9f01ff9254a681d1c",
+      "problem_statement_sha256": "281b3164d0eddbc820159842c015176b19334cdae97fdbc2b4c251c7137e4175",
+      "available_asset_ids": [
+        "2c6c364e54844b7b7ac136dcfcb208f5df81e7ef96d27b68ce9d5a78cc05810a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "e67fe96c99d5a2dcb44eff02478e1c14c5e92af7c2126218aeeab8b0e7d19cb2"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7265",
+      "source_result_sha256": "315193a37c286ec0fcf121130d8e35437fe3ce3c861cc578a44a594aa2a53638",
+      "source_packet_sha256": "36c604cfb1d57e1113ac3cc66e4e3dcd3f74e41731a99a81a19fd4dda3bb1577",
+      "source_archive_sha256": "4c67c9c8da59d870ee0e1d93da5aa826bef8422620a3abfda107d20ce0bdf090",
+      "problem_statement_sha256": "abfe98bc5a13c727285e17ee92bb2a3509ed50180690343449ecbbb6088a86e4",
+      "available_asset_ids": [
+        "63fd878b93a0427ece128d89bbad99ca34da10ffac376a1f25a85726e437b572",
+        "0b9f719e34f4cca22d32078bc8d2b282b8343a5d25ef0da093a1e49f8185339a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "9e6fd741f77d1d4b7f739d086fb7d58d408a953b8d5829268e20d32f70e56009"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7394",
+      "source_result_sha256": "2e04d65548bafab9178f3e9401d637061ae03f0d4344eeba6856941535046708",
+      "source_packet_sha256": "da6a323a94f33bacc1fce15dc9edc3d29a8e7eeafd54bd6305f63aedf05e96e6",
+      "source_archive_sha256": "82cb1372b0389665ecee59f92778875985669a30b247e85bcb86fa2ddb629fa8",
+      "problem_statement_sha256": "93a3d1f8b54680735814b724abd8857522d264f9bb02a261a2c118c33d41c69e",
+      "available_asset_ids": [
+        "618673f337761bdc8661165b2fa8faf2d32db479c96dfd6e8ab466eb0109e292"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "a0a60da34ded713676e2d4e2454c85f07172052b6b669bc66e804e751237a1f7"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7432",
+      "source_result_sha256": "c83fdeedfa4576e625f64daff0bdc92c63a136b13bd74948777ccd6573225316",
+      "source_packet_sha256": "7896aacfcd1705a6290665bf4d532c7f575856c698b9e3dfb9341c3c0b576e78",
+      "source_archive_sha256": "b717598013e35272e767102eda4a312d381d2f1d393aeaf146954e2e403bd8fe",
+      "problem_statement_sha256": "9bd799150fca360156c91b98bf9418c8a351aff768c55714fb9773162f7da1d9",
+      "available_asset_ids": [
+        "6dd1b7feebedf65fb51b32be9f7fe31f531d9704930061b5ee6c1e3bab6a424c"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "bb2a5fc13885b47a93510688c64e4f970a91e7bdc922cf73ff6bf06a5faab894"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7711",
+      "source_result_sha256": "b363f97ff8e0d7b751457b2045dcf8838d4cbccf33e6d8549949216cdab4e619",
+      "source_packet_sha256": "80452a2033c1ba9ce065417800e16833eece761219f3929b30f11341c1d0e41a",
+      "source_archive_sha256": "785d9a0fcc119723d3c1f789bc7436647afbcfa82ae8327d9ef2a45a8406a13d",
+      "problem_statement_sha256": "3eb83334dd80b5d6f6e0d14d359c5265130c45731c437e47496255dccc501d21",
+      "available_asset_ids": [
+        "1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9",
+        "fbe47b3b0b26c79c0cbb918bda48112c506ee475c4a8968292984048e8bb9306"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "27854d6a0d393ec4d7cf17ecd2af4e8d8e97eb8b3ccd2d2b8ca0ae7f1f28c79e"
+    },
+    {
+      "case_id": "pixijs__pixijs-11460",
+      "source_result_sha256": "b84e5d3df832489fafa3128c11ba17ef7e402f3b3a4fcf9eec2bf6b377c8fe4d",
+      "source_packet_sha256": "7f8b1f499976f8068c24fb6e2b90509ce7a0abb781f9fcf22523c2820074eefb",
+      "source_archive_sha256": "d6b265dab860d16a2484c57b74447aa46772860af47d941e834fa1aa82d51969",
+      "problem_statement_sha256": "8911ce7514de35ca8f6e6170612d052205a0cabaec008399557d0e392d7c4c64",
+      "available_asset_ids": [
+        "dff3aa6f2d3e9a74c1f3dc4c6c4764a1cc67516d5c26e9901fbc98515415a88b"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "5a78f3fe5e5bc73a6b0c24a70083d2bdbbe3417f09ad19c2e72577b8017164da"
+    },
+    {
+      "case_id": "pixijs__pixijs-11632",
+      "source_result_sha256": "4a9c09f026729c2f77a53d20d4a59ca5684a20096973d8c7a90cb72e65e3ba5f",
+      "source_packet_sha256": "04b95e102c147af884cd0f8eda2ee925afd79e6e2143245cce9464592ad874da",
+      "source_archive_sha256": "549125eef45b18cb90cde3c82cee03af7c1d1dec2ef0c15bf205f58af4539c69",
+      "problem_statement_sha256": "d8be0dc69e807e3e7f4851febb17507ca2a526119ebadad9ce606e4c4b8736ba",
+      "available_asset_ids": [
+        "70b92761fc8b01476d39f5eabd444b00d16f94b5051bfed6bbfea2d59fd16724",
+        "71708fd849bb1d33fc4d918e019fbb4da965ca75a450981d0af1ab9aeee64237",
+        "db1bd90205cdc7f21a51d376d3b70ff4a63147ad378b0f7db8503635d535e82d"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "791adff11a275a21eea4f076cd28deddc090c70f6405ff4bb45cd20d09708481"
+    },
+    {
+      "case_id": "pixijs__pixijs-11979",
+      "source_result_sha256": "900b43c09c4dfb85bdd3b12296a8756c9f8fbc39d8f43b8733334fa8c198b62a",
+      "source_packet_sha256": "b0fdc9c6fbff0fa6cac94d3842775328cf399e5ca3be0d19977c7efc33217164",
+      "source_archive_sha256": "da673294c64c04d8c0aa83b10da31c044d812877c2dec36c23a03502c3d5ef85",
+      "problem_statement_sha256": "ba027609fbf9d4070c4ada03e24f3d4badd746b4e1a47dde230507e11a2ffac5",
+      "available_asset_ids": [
+        "069203c962b590721320ce49a9d30e4464e1f225be9fd23793f7dc723c12b522",
+        "3512e8aeaf73653843831e54ef8fa652b7fb9d9443412fe0c87bf3dd0d8b4ce5"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "7f51c3d18681da3b7b8bf52e13f1f6559a2bb22fae21849d10fbf3a7e981a832"
+    }
+  ],
+  "expected_case_calls": 14,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 2,
+  "maximum_api_requests": 56,
+  "authorized": true
+}

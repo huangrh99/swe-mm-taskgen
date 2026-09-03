@@ -1,0 +1,37 @@
+{
+  "schema_version": "exam-negative-controls-summary-v1",
+  "status": "historical_task_checksum_rerun_required",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "current_task_directory_sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+  "current_task_validated": false,
+  "task_directory_sha256": "2e4464f3d74f076f45c686133e3405b6d8674589d8407427b3b678cf52a1ad6b",
+  "runtime": {
+    "harbor_version": "0.22.0",
+    "docker_server_version": "29.5.2",
+    "architecture": "aarch64"
+  },
+  "invalid_attempt": {
+    "path": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_38_exam_format_negative_controls/negative_controls.json",
+    "sha256": "df0daa8eac95de0484cbc9a3ce9a51f46c379c3b968fda1ad99984b35ea83041",
+    "classification": "infrastructure_invalid",
+    "reason": "Colima/Docker daemon was not running; no verifier evidence from this batch is counted"
+  },
+  "valid_run": {
+    "path": "crawler-output/multimodal-2025/18_visual_harbor_pass5/18_43_exam_exact_negative_controls/negative_controls.json",
+    "sha256": "e57bea90f3d3294ddf2d89be92d2ff701ae7a511a2c7287336e69a73ae2c61d9",
+    "control_count": 10,
+    "passed_count": 10
+  },
+  "controls": [
+    {"name": "baseline", "expected_class": "behavioral_failure", "reward": 0, "summary": {"expected": 8, "pass": 4, "fail": 4, "skip": 0, "missing": 0, "error": 0}},
+    {"name": "oracle", "expected_class": "behavioral_pass", "reward": 1, "summary": {"expected": 8, "pass": 8, "fail": 0, "skip": 0, "missing": 0, "error": 0}},
+    {"name": "missing_source", "expected_class": "test_execution_invalid", "reward": 0, "summary": {"expected": 8, "pass": 0, "fail": 0, "skip": 0, "missing": 0, "error": 8}},
+    {"name": "skip", "expected_class": "test_contract_invalid", "reward": 0, "summary": {"expected": 8, "pass": 7, "fail": 0, "skip": 1, "missing": 0, "error": 0}},
+    {"name": "missing_id", "expected_class": "test_contract_invalid", "reward": 0, "summary": {"expected": 8, "pass": 7, "fail": 0, "skip": 0, "missing": 1, "error": 0}},
+    {"name": "tamper", "expected_class": "test_contract_invalid", "reward": 0, "summary": {"expected": 0, "pass": 0, "fail": 0, "skip": 0, "missing": 0, "error": 1}},
+    {"name": "resource", "expected_class": "infrastructure_invalid", "reward": null, "exception_type": "VerifierTimeoutError"},
+    {"name": "preservation", "expected_class": "behavioral_pass", "reward": 1, "summary": {"expected": 9, "pass": 9, "fail": 0, "skip": 0, "missing": 0, "error": 0}},
+    {"name": "isolation", "expected_class": "behavioral_pass", "reward": 1, "summary": {"expected": 9, "pass": 9, "fail": 0, "skip": 0, "missing": 0, "error": 0}},
+    {"name": "runtime_integrity", "expected_class": "behavioral_pass", "reward": 1, "summary": {"expected": 9, "pass": 9, "fail": 0, "skip": 0, "missing": 0, "error": 0}}
+  ]
+}

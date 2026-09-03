@@ -1,0 +1,12 @@
+{
+  "schema_version": "case-visual-review-summary-v1",
+  "case_id": "automattic__wp-calypso-99049",
+  "source_route": "issue_derived",
+  "category": "外观与渲染属性理解",
+  "visual_evidence": "单张实际状态图",
+  "solver_visible_asset": "01_02_solver_visible.png",
+  "visual_constraints": ["Add forward 的渲染色应与页面标准链接色一致"],
+  "admission": "user_selected_candidate",
+  "formal_visual_gate": "not_recorded",
+  "note": "用户在 2026-09-02 明确要求归档并继续测试；这不是 frozen 状态或正式人工门记录。"
+}

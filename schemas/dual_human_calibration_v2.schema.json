@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dual_human_calibration_v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "dossier_sha256",
+    "test_manifest_sha256",
+    "test_review_context_sha256",
+    "measurement_sha256",
+    "task_directory_checksum",
+    "multimodal_necessity",
+    "f2p_p2p_semantic_validity"
+  ],
+  "properties": {
+    "schema_version": {"const": "dual-human-calibration-v2"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "dossier_sha256": {"$ref": "#/$defs/sha256"},
+    "test_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "test_review_context_sha256": {"$ref": "#/$defs/sha256"},
+    "measurement_sha256": {"$ref": "#/$defs/sha256"},
+    "task_directory_checksum": {"$ref": "#/$defs/sha256"},
+    "multimodal_necessity": {"$ref": "#/$defs/visualGate"},
+    "f2p_p2p_semantic_validity": {"$ref": "#/$defs/testGate"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "state": {"enum": ["pending", "approved", "rejected"]},
+    "visualGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reviewer", "reason", "reviewed_at", "text_only_sufficiency", "ocr_replaceable", "non_text_visual_fact", "evidence_asset_ids", "text_only_notes", "text_first_recorded_at", "images_revealed_at"],
+      "properties": {
+        "state": {"$ref": "#/$defs/state"},
+        "reviewer": {"type": ["string", "null"]},
+        "reason": {"type": ["string", "null"]},
+        "reviewed_at": {"type": ["string", "null"]},
+        "text_only_sufficiency": {"enum": ["insufficient", "sufficient", "unclear", null]},
+        "ocr_replaceable": {"enum": ["no", "yes", "unclear", null]},
+        "non_text_visual_fact": {"type": ["string", "null"]},
+        "evidence_asset_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/sha256"}},
+        "text_only_notes": {"type": ["string", "null"]},
+        "text_first_recorded_at": {"type": ["string", "null"], "format": "date-time"},
+        "images_revealed_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "testGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reviewer", "reason", "reviewed_at", "coverage", "missing_behaviors", "test_reviews"],
+      "properties": {
+        "state": {"$ref": "#/$defs/state"},
+        "reviewer": {"type": ["string", "null"]},
+        "reason": {"type": ["string", "null"]},
+        "reviewed_at": {"type": ["string", "null"]},
+        "coverage": {"enum": ["complete", "incomplete", "unclear", null]},
+        "missing_behaviors": {"type": ["string", "null"]},
+        "test_reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["test_id", "class", "decision", "reason"],
+            "properties": {
+              "test_id": {"type": "string", "minLength": 1},
+              "class": {"enum": ["F2P", "P2P"]},
+              "decision": {"enum": ["valid", "invalid", "unclear"]},
+              "reason": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

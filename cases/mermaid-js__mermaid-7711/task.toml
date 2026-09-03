@@ -1,0 +1,33 @@
+schema_version = "1.2"
+
+[task]
+name = "swe-bench-multimodal/mermaid-js__mermaid-7711"
+description = "Render state-diagram and flowchart self-loops as compact logical edges."
+authors = [{ name = "benchmark-construction" }]
+keywords = ["swe-bench", "swe-bench-multimodal", "javascript", "svg", "visual-layout"]
+
+[metadata]
+repository = "mermaid-js/mermaid"
+repo = "mermaid-js/mermaid"
+instance_id = "mermaid-js__mermaid-7711"
+pr_number = 7711
+base_commit = "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e"
+reference_head = "9d83f061aad4afc126b434f0decd9013060ad62b"
+status = "provisional_smoke"
+human_visual_gate = "human_review_deferred"
+human_test_gate = "human_review_deferred"
+formal_admission = false
+
+[agent]
+timeout_sec = 7200.0
+override_setup_timeout_sec = 1800.0
+
+[verifier]
+timeout_sec = 3600.0
+
+[environment]
+build_timeout_sec = 1800.0
+cpus = 6
+memory_mb = 12288
+storage_mb = 20480
+allow_internet = false

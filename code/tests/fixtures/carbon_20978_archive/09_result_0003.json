@@ -1,0 +1,119 @@
+{
+  "pr_id": "carbon-design-system/carbon#20978",
+  "status": "complete",
+  "input_packet": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/09_input_packet.json",
+  "source_line_sha256": "76b12be4ce90ba916d871735349f6edc68e3597320100a8957b4ff609cf13551",
+  "packet_sha256": "5f833d44064eb192f0cf07b817e6b66cf5738e9ae91f91e982a9551bcbea1e3b",
+  "image_count": 2,
+  "bound_schema": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/09_bound_output_schema.json",
+  "bound_schema_sha256": "c8d8b7bb06e8b6fbfd49fadc627e82f0f1b05334632e2118e8774fde56a65efb",
+  "invocation": {
+    "backend": "gemini",
+    "model": "gemini-3.7-flash",
+    "requested_model": "gemini-3.7-flash",
+    "effort": "provider_auto",
+    "attempts": 1,
+    "usage": {
+      "completion_tokens": 1292,
+      "prompt_tokens": 8916,
+      "total_tokens": 10859,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "reasoning_tokens": 651,
+      "traffic_type": "ON_DEMAND",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 6726
+        },
+        {
+          "modality": "IMAGE",
+          "tokenCount": 2190
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1292
+        }
+      ]
+    },
+    "raw_response": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/09_model_raw.json",
+    "raw_response_sha256": "1998722f16b6543f97b789718f5f3cd7534eb85fbf6e09cff7ca2d2b7e2bb32d",
+    "provider_response": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/10_provider_response_01.json",
+    "provider_response_sha256": "671cdb61ee565e487ca50c817bc9c6330ee8989641f5defc5bbea58b64448f65",
+    "request": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/10_api_request.json",
+    "request_sha256": "faff395849853658a428028a42e4a057e3fb7d3e5da5f21f642b299957a48cdb"
+  },
+  "annotation": {
+    "schema_version": "visual-verifier-v1",
+    "pr_id": "carbon-design-system/carbon#20978",
+    "images": [
+      {
+        "asset_id": "744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743",
+        "observed": true,
+        "content_kind": "diagram",
+        "content_reason": "包含组件设计规范标注图，标有尺寸间距（16px/1rem、8/.5 等）、图标排列顺序（invalid/warn 图标、AI 标签、下拉箭头）以及分割线与底纹渐变位置。",
+        "observation": "展示了 Multiselect/Combobox 在 :invalid 和 :warning 状态下的设计规范，标注了各个图标（错误/警告图标、AI 标签、下拉箭头）之间的具体间距、内外边距及分割线结构。",
+        "relevance": "relevant",
+        "temporal_role": "expected",
+        "source_quote": "- Verify if `Combobox` looks similar to the expected image (this is from MultiSelect, designs needs confirm if is ok):",
+        "faithful_text_representation": "no",
+        "ocr_task_sufficient": "no",
+        "text_reason": "图片不仅包含文字，关键信息在于标注的几何间距尺寸、图标对齐顺序、视觉分割线以及渐变高亮样式，单纯文字转录会丢失这些核心设计规范细节。"
+      },
+      {
+        "asset_id": "deca4e29038b19661875419ab194c6c78e0c666ee7dcbadeaf421449737b82c4",
+        "observed": true,
+        "content_kind": "web_interface",
+        "content_reason": "展示了 ComboBox 输入框在带有 AI 标签时的实际渲染效果截图。",
+        "observation": "ComboBox 输入框右侧显示 AI 标签、竖线分割线及下拉箭头，输入框底部带有蓝色渐变视觉效果。",
+        "relevance": "relevant",
+        "temporal_role": "after",
+        "source_quote": "e.g:",
+        "faithful_text_representation": "no",
+        "ocr_task_sufficient": "no",
+        "text_reason": "包含 AI 标签的边框、分割线及输入框的蓝色渐变视觉效果，单纯提取文本无法表达这些视觉渲染特征。"
+      }
+    ],
+    "task": {
+      "necessity": "necessary",
+      "image_transcription_sufficient": "no",
+      "missing_visual_information": "设计规范图中定义的错误/警告状态下图标排列顺序（invalid/warning 图标 -> AI 标签 -> 下拉箭头）、具体像素间距规范（8px/16px）以及分割线与渐变样式的视觉定位。",
+      "evidence_asset_ids": [
+        "744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743"
+      ],
+      "problem_evidence_quotes": [
+        "Fixes issues with `Combobox` `invalid and warn` icon positioning and `AI label` missing gradient and spacing.",
+        "- Verify if `Combobox` looks similar to the expected image (this is from MultiSelect, designs needs confirm if is ok):",
+        "- `Invalid/warn` states in `Default` and `With Ai Label` stories should fit the design spec."
+      ],
+      "reason": "PR 文本中仅提到了修复 Combobox 的 invalid/warn 图标位置及 AI label 间距问题，但各个图标的具体排列顺序、像素级间距（如 8px、16px）、分割线位置和渐变视觉规范仅在设计规范图片（744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743）中完整呈现，单纯通过文本转录无法还原该视觉布局要求。"
+    },
+    "quality": {
+      "problem_clarity": "clear",
+      "evidence_sufficiency": "sufficient",
+      "problem_evidence_separable": "yes",
+      "leakage_risk": "present",
+      "missing_sources": [
+        "issue",
+        "comments",
+        "patch",
+        "tests",
+        "history"
+      ],
+      "reason": "PR 正文中包含修复后的 Changelog 及渲染后截图（deca4e29038b19661875419ab194c6c78e0c666ee7dcbadeaf421449737b82c4），存在方案泄漏风险；但预期的设计规范图（744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743）清晰独立，提供了任务所需的视觉规范。"
+    }
+  },
+  "decision": {
+    "bucket": "visual_necessary",
+    "reason_code": "necessary_nontext_visual_evidence",
+    "policy_version": "strict-nontext-visual-v1",
+    "training_ready": false,
+    "readiness_reason": "PR-only; issue/patch/history and execution not verified"
+  },
+  "elapsed_seconds": 26.262
+}

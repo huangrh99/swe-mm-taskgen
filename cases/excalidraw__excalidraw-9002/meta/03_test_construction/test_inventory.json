@@ -1,0 +1,13 @@
+{
+  "schema_version": "candidate-test-inventory-v1",
+  "baseline_commit": "49f1276ef238b51f80254408972f5046feb6b784",
+  "reference_commit": "b8da5065fdc77a34d25ea149169f7bb90e46a892",
+  "author_test_paths": [],
+  "author_test_change_detected": false,
+  "preliminary_source_tests": [
+    "f2p_font_resize_updates_bound_arrow",
+    "p2p_font_family_action_retained"
+  ],
+  "functional_rendered_oracle_status": "pending",
+  "human_f2p_p2p_review_status": "pending"
+}

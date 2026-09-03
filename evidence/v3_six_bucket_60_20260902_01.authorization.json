@@ -1,0 +1,856 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902T042510756042Z",
+  "source_manifest_sha256": "5989e95af2ef91033ce1d7779d03d01677a2ef8bb16b4675dce80309f9a82a4a",
+  "prompt_sha256": "d1f5db123c64e9c9447ae5adb4724e365b816d77474f18462b54f50beb8f0cb6",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "3cbb12c5b2b939cbb4c9e6c5c87dd7ea9565c385a0b1516d41fcf99a65203afa",
+  "run_id": "v3_six_bucket_60_20260902_01",
+  "nonce": "v3_six_bucket_60_20260902_01_nonce",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_six_bucket_60_run_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 2,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "automattic__wp-calypso-99139",
+      "source_result_sha256": "d7ebd40e083edf61856ac5b9bf1edafd7e49f8c9a0b7169f806d8f44c7aa735a",
+      "source_packet_sha256": "5977c473ebbb265fa6267dd13ba06cba27f88091b72aababb0e4281509f09b58",
+      "source_archive_sha256": "4d60f4f8335fcc9212746add32c78d5ad08c8185e811f269af412e75a2385b5c",
+      "problem_statement_sha256": "541ef44694299659723997d810e36572f85b9e9198238059e41f7df4639b7f7b",
+      "available_asset_ids": [
+        "9024e7b4fcb239b886cd386b38aca439426c589384c49d2a13afdccce7f69f35",
+        "6ef17aa8aa6c087f0f7a57268a314d26d3c5ba8fd76211987a0a0c00da36abe1",
+        "ac7425cf1690bbc0ee82d6df778f764d695beaf4bdaf695890737783aa79a26b",
+        "c461a34a28036faf6def52a031060748bf7db11880c79ae9b0a6fbcf95b60264",
+        "0722f995b31bd53a59725a420f8d9b35248898fe6fecbbbb07a426b03893e3a9"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "075c7fb2f5cad5f3b3113f6952cb0b75667d8054b30e70e20328c1d90ed2354c"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98940",
+      "source_result_sha256": "394cb28db114d2dc8b6ab9d0017fdec6b50b3cc93097101594866da920d6c383",
+      "source_packet_sha256": "de16fd656c51e890fbb31e8144bf3536f368802e7ea8646a0f41b64e9c479feb",
+      "source_archive_sha256": "eeecda5317840ebeb5e7b99618c28756db7cc024303a9d72be6f6f95bee4ec9f",
+      "problem_statement_sha256": "1a35de5629eb2967d2d67fa33a57592628447bec9a71b6348d114d635479e75e",
+      "available_asset_ids": [
+        "2daafa0ac47088f4a6940e76c670d6a25fcc58a48ec4fba5cad2dec955e5bfd4"
+      ],
+      "source_media_binding_status": "invalid",
+      "source_media_binding_error": "_SourceMediaRecordError: media asset is missing or duplicated in source archive: asset_id=2daafa0ac47088f4a6940e76c670d6a25fcc58a48ec4fba5cad2dec955e5bfd4 matches=2",
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "47cb02ab19a586a2a31cc7f8133ddd395b4a0ba1ab0c24161382fe2785858d41"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101782",
+      "source_result_sha256": "630423d428cd58abdbfebe6c7506ea7df5520760b17362f86e06bcf9ae7bd985",
+      "source_packet_sha256": "9ed7c01dc8baad387d661a0a2a499edd910db9682c87eb520ff76a5a1d57f0a2",
+      "source_archive_sha256": "6001b7812154c2611c39cda335410612b8a425381f2372f2bd16b4dd7d30287f",
+      "problem_statement_sha256": "9c1f6f38d8dd296e29f9e20db451f2e0824f180dc83b1870161dabb086f37ce7",
+      "available_asset_ids": [
+        "991a51224782d042e73dd39aa59b925d74ffd0644456a264354f0a589ad3ea16"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "f9f47d2971c0ba3c292bc0d51110bbbb406887e6b6dc7b817000352d394885d4"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100957",
+      "source_result_sha256": "05bdfc55df8b5b2f87767c5ffdef9dc37ca9e187d122bbe8435d4a88d1a24931",
+      "source_packet_sha256": "f44c3196a58b561f642e354bf59b6575a47fece486b5582d283b6e209767bc02",
+      "source_archive_sha256": "edab66839fa3433aa33854b24d3d13886a2c56e7ae042fc7c40b7b1b4a755ce8",
+      "problem_statement_sha256": "50fc19a48fee17ee1622d4b8b3becb6fbd087819a67a8f3b17b3844cad4f8764",
+      "available_asset_ids": [
+        "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "30f041fbd5f61e2bfae4cd095497574822a02f4bc25c002980189f140bd20420"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102880",
+      "source_result_sha256": "2fb7247157d0ef4e298204b5e5f6988c4d259e7aaff10a6117cd4cf6ab44d7b9",
+      "source_packet_sha256": "4b5c3a27ee57d9d0cd0afe8cbbd813c335455aaa8ae08f7fa32d0effe8a8d135",
+      "source_archive_sha256": "832979ce80ed70b289b74a7d20a6f4a1adf87c6abe3935e3b0cf7dfb528fe787",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "c1fde6608b41bb8e492c2c00fafede8447b25d1bd31873f7cac0aed7c6b6eb5a"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22694",
+      "source_result_sha256": "7133f64a2c5cbb54f266c3daa34ddaf25332a039ec176be6f14b4fbc9575a27f",
+      "source_packet_sha256": "90223eabf53f9fd82ba137821067e3b46d18097f09565f18f75153969ed9cc11",
+      "source_archive_sha256": "25b74be55e3d0e531f3acb8b4068642a9f90cb463ca62d2cd869a27cfcec5fb1",
+      "problem_statement_sha256": "39f0344ec6332603b583557b2da9ce389c0ccade709589b220a42e58df04eef9",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "b58ef4256bd50272748826fd58a351116210906217a7c21f422acf80d3a771fe"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98628",
+      "source_result_sha256": "45072fc9990193504fc1e77b11eb90ceac79e96845f971c4834629728b8b468e",
+      "source_packet_sha256": "bf78d592c9fd9083321ee4b81ba9d4dd45afc36308b331ab8a0fa9235bf64b47",
+      "source_archive_sha256": "5e74ff380364f6b139b70acdf7072eab7ecb6305617e24d22f76dfe62c086346",
+      "problem_statement_sha256": "21067200504550966bf79de02e507811508cc79fbffa59c783cf60363db5e86b",
+      "available_asset_ids": [
+        "586e552a41626957827843fdae7bd0435964327cd7d0ed309999737b7b43cffc"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "0f84a7c1b76ca61b4b60f17a429c9d21c71d40d55ef3e608de3eac7d3e6a3db8"
+    },
+    {
+      "case_id": "automattic__wp-calypso-97980",
+      "source_result_sha256": "ac0ea771fc51751ca6aeefb58d3198739a3907e94300d1d8e4f90db1855bfa78",
+      "source_packet_sha256": "417b66dce120eb6f1220711b0cf1d12677aa882b3b49b87f12c8e5ce9b7c0873",
+      "source_archive_sha256": "59d5627ca3f7b9c3385c90c08462b443053d32d307fa98828e5f411aec6935c1",
+      "problem_statement_sha256": "7e0ac1b0d19f55c734f546332df40bd838be887a9513af67b2f14d5a51e8ce72",
+      "available_asset_ids": [
+        "882cc54cc5c719962f4fc75cbb3572dbcb3e0d36d3f3b9380b0f6e6382d1a969"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "9dbdd6503b262c845e73108b18ba623c423315e42026d56f36812bb81c093966"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100944",
+      "source_result_sha256": "b794ecd3b8f5ef1e687aa331fbb7210c28d448883b8c4f65cbe460d3ce47e632",
+      "source_packet_sha256": "71bbb886bcae531fdf2a3d43483c302ad849bea6f66e8a9b8225c3b256721bec",
+      "source_archive_sha256": "cd24dd5c37388f7408ba7a90d35d75aa2e594111b819c4480f8607adf332b084",
+      "problem_statement_sha256": "d5426894ce8580e609883cf8e334dbe8b52199065faae42c8a3affd8a6013d5c",
+      "available_asset_ids": [
+        "0dca4b0d6bb502961950599867ecd6acf7208d1e83d1eacc1c9ce576ef8ad527"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "a3278f85ad5706797cfe9bd778964a3eb2c929be90891796528049fe5235d11e"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100818",
+      "source_result_sha256": "2c3fe29c6ab63b8977586d004deef89357cc51bb5d5463c8bfc25dd5a0eb84df",
+      "source_packet_sha256": "f434ed4d95579cfdd954f3dc9854460551a1f836dabf17a5f9a6984bbc2a8ce0",
+      "source_archive_sha256": "314a686a46580e86753b648ce0ba3f1c3bbb6e966039a17e5bcbb0e89cf00ecb",
+      "problem_statement_sha256": "98c94a33a4f47f9066a7019edba6f31f30c03c9829f7cd220cf8ab907186909f",
+      "available_asset_ids": [
+        "6f6e8eb2ecc4a70265088d359746c2a685f7202e57addcebaef7554b4e4da8c7"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "79efd712b0ea059d30c5317a8fc2d7917289bd4a4f8f976d2cebd2d8fde0c5cb"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99386",
+      "source_result_sha256": "661979384226c3460b148b1256257fedf0693c5d5167425cfcd396a3e6f5f03b",
+      "source_packet_sha256": "130880b5eee1e51547fe2521281d16d47c979068469f27694fe87fafebf6cdde",
+      "source_archive_sha256": "a780e3890292241f158467a536a09a7357629a6412855aa737529798a90f39c8",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "09b0f38e8c49b3a0c4b3bd50325fa9ffb74c2b74789f7baaf9bf094f7e918772"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101438",
+      "source_result_sha256": "3dd645ad9a4252a706703f9497c621b8565568910c4c51260d2721d1e6acee3b",
+      "source_packet_sha256": "6e46e804044cbd168ecd68a74a62f3dd5143cb8004053e0427a6aea7bea3ce8c",
+      "source_archive_sha256": "efc242fff667aead8f78bf4ee235cedc70b8ead618dbd69c9e7be7a89ff58796",
+      "problem_statement_sha256": "bc5b4ae1f172fb079343d6ac7e7157fcbe0664d74783410e75b718b715cc9a56",
+      "available_asset_ids": [
+        "17d56703e4879c53853bf2fafc68900a85b1bae440d64468765e83b9655cdbeb",
+        "a60d258fe7cc3ae882a617bd725597f28a253728a377e169182ce06228c45daa"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "d99dff797bc088aa4cb363f21c6bc17cd1c4811020220efa42a8ff7f6d79d1c2"
+    },
+    {
+      "case_id": "automattic__wp-calypso-97987",
+      "source_result_sha256": "fec39fc4f95181aa56daf0cd904ea71d42706a0f78e94d138232de989e917d19",
+      "source_packet_sha256": "498c29bd892dfa9f89ba16a575d1093f2e7e77c540624c6f51fa8979548831e2",
+      "source_archive_sha256": "d4642aa9def7ae6d2e20d7da5e21cff30ae5b6f0fabcdda04b2e107704b12e18",
+      "problem_statement_sha256": "83c1831e77f702e6f4ad684f14bd0dcb6f4e43deb4b30c5e77b3b243d021cdbd",
+      "available_asset_ids": [
+        "3b8f8cf97fb11d0ece241bcd539400c38930a25f08ce70d2b2e57467495667cc"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "54fb2deaea1d1393a24e2167f90a99729408d86065ddd274112ee84f59fc2d7b"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101890",
+      "source_result_sha256": "03057dde3c427a355ce905ed77ce00cd099f015962ed9245b8bb602520a0542f",
+      "source_packet_sha256": "c7629a3737e7256966a33a31c4a44e14686184a44a992276b257103cb9336e9b",
+      "source_archive_sha256": "2f4d07a5ccfa3e9ca744a20750fe2a48469bc4fcc2f4ec8f9783ecceff9aede6",
+      "problem_statement_sha256": "b881f64a44409ad56475bec8ab54dd9c51d194fc0bab6760c73e527c07540f09",
+      "available_asset_ids": [
+        "8833332f18ac9e278baab744036e732975d7c5d84c6a3217d02c67eff8d3e45d",
+        "c9fc2f8dc099489993caefe973b6170ecba5e1500e749b211e895a50d9245125",
+        "38f304a4189b35ccefafa4ee544e9ac4c01631f55196c444fb75b7d771087d8b",
+        "4ce68c7a2ca1226715cca9393326c15a765f661a70eb8a4a376c711b1c159495"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "1b1878775ce9bab308881182ea00caf5d33b8e3d1e6c5e5b61e67e1cea6bcc7c"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99926",
+      "source_result_sha256": "a1e64880207ef9537f80286ee3938ffa83fe6b1072ceaecce80b6176c489aef6",
+      "source_packet_sha256": "b2bbb5f147c69697258e1f0860ceaa9a7f3e8fe4553bd4e4dd17b3591d05906a",
+      "source_archive_sha256": "eb20da975f0f90f85428a63c10f3427afbcfc08f8863f6fef8f8994ba90c52a6",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "3e250a43353e4ef1a67c9b8d1b1a8580a50dd37571ecc37753b3baf989909447"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98070",
+      "source_result_sha256": "11bc55b4eb801f320a47f7bde122df4b16f6023ab7f5007e85167fb676deae6a",
+      "source_packet_sha256": "e50ca77a33eed27977c97f20cfc2c61e14b0d76aaa0d2b47ffb208ed8a6a9ea1",
+      "source_archive_sha256": "02151e2afb492c5f1d93dfb80cda35975e851253c7a3712f257beb457ae2aefe",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "210ad512e908f0bf7e6d1da4b26c31c8cdb7c1f6f8c51ddcd94bcae526260404"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99980",
+      "source_result_sha256": "ae674ffde146b351fbd54074554b5822e813bc6d3bbf98437d25c00238968990",
+      "source_packet_sha256": "7b6ce30fa148c32db1f8b63472c09a5b47a67f8ccde86ad2933e6650131dde54",
+      "source_archive_sha256": "f8def2b738ed0e697fc737c62f9d6b7895f166c9981e1ec41b776ebdef25da3f",
+      "problem_statement_sha256": "5a6cf62da981b4da178bdfd787600afd6e91a1966edf9193f4bb0240bffa38cf",
+      "available_asset_ids": [
+        "2e7f6b1671d2007468b0bfa1f6bd9d3f261682de07b64b640881970b771f2cd5",
+        "edeb5df261e459f00260a27e80f983d8d78daa1055196ce782a3f57a71c9c593",
+        "aae4f5574163fa9ddf470aa6b30ef64d2574ab815c3325b2f6bfa8fe942ce54e"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "9d6f2540e1f9ffa074778db21ac7743e9c4c698caf9a2bcccf7840311ccdf62d"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99871",
+      "source_result_sha256": "f1b64cb3679a4668a40696e998ab3461115495d5db5f340b126843a0dc8e2057",
+      "source_packet_sha256": "40b85484c85d32aac043298dfacdc7f7b78c2b9ab7635decb50f63b6544d1a6d",
+      "source_archive_sha256": "537f1c71a9282642032ffe82dc6c7d660d1f676cd82d2ff15edbbedfb847269e",
+      "problem_statement_sha256": "29268f2595d738d5402f70e2ad0966d1e5fa1b7cc0741aa958d6f996069ec7e8",
+      "available_asset_ids": [
+        "82965a6beb73dc2aeccbc0bf019e37c88601bcfd2d15abf6c6a2bc644da6613f"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "4c5875bb42e06b9f8c830505f572d5607581fd9074d8e5f7684cf0194050e6f6"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99433",
+      "source_result_sha256": "3a1ff486227bd4e9de115fb29490c8a36b8fe1072412455601afaf4de28adcd7",
+      "source_packet_sha256": "116cdb84eb41d125fd2e77429153578fb4c4e862eec927dbaedaf186ced4806d",
+      "source_archive_sha256": "94b47e6c885f41a083cff54e5406ffdc49dc8a7255f441e3b3acea1124da2d0c",
+      "problem_statement_sha256": "914ee2b2d9fa3d26bc8ab6e39cbcb7afb89e63836c7bce70c3afe33b2c2cfc72",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "2d0f1783ef3864f02d0bf48fbe1a53832b6b13ed8de89dc5c561a64bd7e5d3b5"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99709",
+      "source_result_sha256": "397594009a944b6007a1ee8b6017ee4eb4b571a5c08456dce796f9a63e9edaba",
+      "source_packet_sha256": "7a9c06f0452e14e911ab4c5a634e560b6d06503c978e2175895879a26849dae9",
+      "source_archive_sha256": "e815e965052af2e4cfd0bcdf90bec8616917ba3b93f2b2da0c4205374e1948bc",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "db4e5149fecd452d84e89526c3057ccf0bf7db9eefacb55a5e769e812465969b"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99970",
+      "source_result_sha256": "a754c215d8ea0e138d93235ab66a75304dd6de14096915808b6934acb7bf55cf",
+      "source_packet_sha256": "bf825aa52523ce1cc0a749453e6edc7679713eb459b450d0a1ffa28fe3a9dfa8",
+      "source_archive_sha256": "e236a27518f3e56d0a2451d89a08ec4516cb43bd2936c5c501d69f67ffe40156",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "729841fe3a706bcc17b7989db68b6a4d0117ce7c0835e13a952c5e3369616961"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102184",
+      "source_result_sha256": "da5096df24c2b9b1cf258d78be5c1cee73ad2ca5307582445c014171aed8147f",
+      "source_packet_sha256": "5487fc86146e44404a54890477d8dea131d6a73896c0324172e39d6e937327bb",
+      "source_archive_sha256": "836d37a4d7ccaa22a34de4925c7e6da82e8abcaae6b57720437adcb5aeaea5e5",
+      "problem_statement_sha256": "c44c9d36949476c94eb08820997437de167b13010f16a72e78d31d4bd65852ba",
+      "available_asset_ids": [
+        "b064689e5b39eb5ef1a00b90d509caec366578506a2c585d7e2daff54d9b9858",
+        "0887d9a949afe2d274b5d129d4d7ad67fb88559f70b8746a6a54f8cc80d27f81"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "c9ad56c14779bd3dcf44dcd7807ccf4b1a61f4ab944aa5b188831fb7ea426c05"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101278",
+      "source_result_sha256": "7d4ce20242fdf6e2db5ce6dd77bc6ef02ebcf7568e0c3f29383c8c743c9c91bd",
+      "source_packet_sha256": "eec607d8e99dbb05f1b351d141e39fda409d1e4ccc2f19a523dd7ce568396515",
+      "source_archive_sha256": "91a2d9d3198becb99ab30b168e5ab90adca2d36c2150ea925a9c2ce46364e9b8",
+      "problem_statement_sha256": "02130f182b57cbee32e8f2595897d2f63523f4ba49e1b46c8741e085d3555b25",
+      "available_asset_ids": [
+        "a146d60c56226b510a3d61c07433d6c2e4dee1f5a2eec2b0268594c02043ba4a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "579211e80c8db4a5170a6a57be6def5d709314ebe811a378dc9b0de167c2a563"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102025",
+      "source_result_sha256": "5276bb931f2397f158e984f3cf86ac99de49e2ddb3f6569373d20a5ea18c2ec0",
+      "source_packet_sha256": "eaf3b0f52fadea2f99e8f17e51bf90c7538abfe4852f95f209ad730c610b415d",
+      "source_archive_sha256": "9a2de43033e3fbe6821500921654c89a9d8f024c6a73742bd0dd26e5a618f513",
+      "problem_statement_sha256": "72864a1892ee513795917353a5d7d729dc3e663293812ab3619c2688e8363fe1",
+      "available_asset_ids": [
+        "35cd5e4ca116ba06f64913a465d9b407c470f11426d90024ba7e0c81a2a8ed7a",
+        "a3e9599e27c002e1ed85ea63e8f787d7e0a8f667c1a3c768a56bc859834f09fe"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "cec7ea544ac1e445d0bfd1e6593234a9b265f6541e64f31a00144160946314bd"
+    },
+    {
+      "case_id": "automattic__wp-calypso-104013",
+      "source_result_sha256": "af29174f9982c8086681423004e344899cf2573459ae53f16b90e142687278b5",
+      "source_packet_sha256": "9117298cf7a51b1a3a5c6ea8a88b22762cc83920faf5218d5ba4003bb39a5a6b",
+      "source_archive_sha256": "b3e495217dbffa4ecb6653e3f20a9fd7473dde0750cb6f499ce081bf21c620f5",
+      "problem_statement_sha256": "6cd21ff567cbbe71bcd64fad1df2d47c7aabb74563c530d1d639719a8b9ca8f4",
+      "available_asset_ids": [
+        "21a1b1f4f84535a157c835cd00ba5f5a8015b07e1b7aaa2c130fdb380746a755"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "e55f70d0c6a7aff6b5a9654efc16036656d11c1818994382356c840d95279bdc"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101923",
+      "source_result_sha256": "6a3f8d0bc30d29678b96352fc94bc832aabb39b644ca63026afc3250039518b8",
+      "source_packet_sha256": "f28de5c4bba32144f85facd38c478d9982bb345c27eeda8f50f7911cb712e321",
+      "source_archive_sha256": "462d54125099b0973ed357511ff7a87424931894408d6a1eef2195e39f738a5d",
+      "problem_statement_sha256": "a0963ac4042b72f300d5cbef9ca3f992381bc56d082fd6fa5bc543eb9a690b58",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "6fdeae259eea7f3b21e693e3471f88de95d89949c20aa56ac111991fe7176871"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99859",
+      "source_result_sha256": "c4c50b9ac9b93fb4658611b5c652f8a00991cfb598f65e904b1614589482007d",
+      "source_packet_sha256": "3cb68757b36ac03e44c67835f4eb871285848d553db9fc5b22d5fba241d8004b",
+      "source_archive_sha256": "de26bfba011c1ea7234fcd7062c29b7bc1fde51938e8f92cb4d7523ca28bdf15",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "e33fce7d1617df4f16ed8fcc900b3cce2e48feb75e01c3a233d4341441c9043c"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102278",
+      "source_result_sha256": "63f1027db23660fb3c9ccf262decf7f151eb3d4608ce38310faa0e78bbbe833e",
+      "source_packet_sha256": "717aff2d54f8aeebc34628b1890ee2337a3622f24e280d4c105ed2693477a990",
+      "source_archive_sha256": "cc3514a2183f5a6fdd3d6ff115ef2e815743b78430eda09c9d986bb1cdaa012a",
+      "problem_statement_sha256": "45d33e6fdaf0c93eaead2479f484a0d8ac02a4f8d745b5d5aca7650646ffbcd9",
+      "available_asset_ids": [
+        "89c227266cc86b8f359e7818633d2f8c26242d361baaf936098a34d49ac6d34a"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "a9fe0d007285d06c8bfca0bc05f53f9fd388e7a5805c6c9fb8d9650f9f02badf"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98913",
+      "source_result_sha256": "f62b890c0e390cac659653d476475a6537527ffc974f07e228b21a43503dc30a",
+      "source_packet_sha256": "7c6615555f9aa0d8f36156295a2d699700c09b3f336ef89e33ebdd3fd307667a",
+      "source_archive_sha256": "adbe5f33433096e35e8f6af5f57e094113a45905daefbe118a7e4c85e506fc2e",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "5ad2cb94a30c7ac3479414a6c1bbe9482f66d8c20ce8fea2b12d72680256bb26"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22693",
+      "source_result_sha256": "fb5ae1f93f809d32bbe0bed54cf3116d5b8e6e044670e7dc5d23ab357b0dfccb",
+      "source_packet_sha256": "ea215f1607b1b64c3aea1a47a817631c562209397b6b60c2761e21ccd8a11522",
+      "source_archive_sha256": "a5726d237f12f697f41399a3795dcfa07c1fba07a3508a719183f54e18031a3c",
+      "problem_statement_sha256": "7d0b58aa20c4dbfbc8aa13a68d4ca046e790441ce01f66ec7f83179a786ef840",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "150447eaaeb1262be4f2b1a11fc5b62dc08d439b66fd3b1679c65753be85a9a4"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98505",
+      "source_result_sha256": "c210f3d8d473f2d0cc2845e69dcab37c248c9e897bc6e55675d26b7cc37d7642",
+      "source_packet_sha256": "2113fbc3e07ea0c0f408382459a22c164b83578657b3d8feb99d163e925de8ee",
+      "source_archive_sha256": "5a26251a932974cc514d090f2261abee2ecba84136d1d948d1ad4ffe65e69b95",
+      "problem_statement_sha256": "a9a8d50af6cb19dc086ad7960267787363c5d8d9480029b60445b74f61d93e07",
+      "available_asset_ids": [
+        "6da05d0c5fe08f762fcbd6d0b23a89a6933a8b9e212ecd5cb7f5e2db47561a77",
+        "3d84984049b763da818706725f68a4774540fefd4088a35c187076981e1724e3"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "1994b5d1828c723e6147665bce9f4259e6180405378a935a7945e545d40cb7c9"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100404",
+      "source_result_sha256": "fac15602187001171e8e12fac56fbc07a5823e0caef5766c7e9c26651d26dc09",
+      "source_packet_sha256": "6dd59f7194499886c7027e2b7bf98d7d340767da5a008213c9284b17164c0782",
+      "source_archive_sha256": "fc24ceb9ad335b91d15df6112f613880cf891e336db3280437a731027a609175",
+      "problem_statement_sha256": "52ad9d64045ae00f2ef208fd1aba3ac89a162f46aa8ab2da1ea36769bee3c18f",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "fcb4b1ecfc4270712649189d5cb40e44545f479123e73e38895e0c3fe61f3bdc"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100331",
+      "source_result_sha256": "4ca61ea1fcd759a2e71486626919ca905c0e152891a3f2f0a05ef0f818ac933f",
+      "source_packet_sha256": "9f19303f3df1e6d3c4a6431c135aedf295123943934538123c38e33e1b926b42",
+      "source_archive_sha256": "4a8b309f32d2674410bdfc1d22f453b3091d34640ab689d4a630d7d849e4e5dd",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "0cc07d85974c336e4195d1b92e33d0cce155834ebf1768ae85d1f20fd0f758ad"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102315",
+      "source_result_sha256": "7a299c01fe5f9f2e43f684ba74ac1fb965be8e37ebd58e8cb8e9a1c5d6cace21",
+      "source_packet_sha256": "069fa995838695540aad83507e9f8b3760c66db0ca7ac75f181c036afd56fcd8",
+      "source_archive_sha256": "147450001bb4811f11488daea85238ae43baa853261f6d315ef3a000fc277f5b",
+      "problem_statement_sha256": "9bb44a056ba096def01a256771775b37bcc6a0c81f2f87a742efff25b48b901a",
+      "available_asset_ids": [
+        "dba95fbf632107589bec5d1d8f8be39cc1ecbae3d4da2966d7a8a522406e776c",
+        "8435507699b94365ed232e3f3db009276d2dc69631f5ae6366e4cac4aba7e8d5"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "4c7c2f190e6a25d57e31eea0f742b2a822d786da283f746a3967f3df1e514982"
+    },
+    {
+      "case_id": "automattic__wp-calypso-103154",
+      "source_result_sha256": "c12cb368a63cd0b8b1b5ed5e4101d0253f7b4951fd0c56f4ae0b9d82ed6c6565",
+      "source_packet_sha256": "c67727627ca32e83cafa2767f4770c2bf6414c081fc2263e87f46d3db24ba4c4",
+      "source_archive_sha256": "a7829c8401714d0f8fc92aead1648d1cec56cd9f4a9f50230557c2a1112b60a4",
+      "problem_statement_sha256": "f54bbf1186383260da2dddce1c63103741d34d5cd0844419131bbda9b5a932d6",
+      "available_asset_ids": [
+        "a95c06d8df9b07a56bb96387e86528ff00f134dfb677c5406063b4088afd34c6"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "51937dd472dada26c7ef992e99b9a0aee81aae5483c26140aa84b97472dd933e"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22103",
+      "source_result_sha256": "a5f8b755f23f9efe2e29634275b43abc70072a2ba98436bd7c8a1055fe1f0cd2",
+      "source_packet_sha256": "fccc5068a45eae8e1a04a948e2397adbe8b7f4375402b5b74f310cffed3bcdb5",
+      "source_archive_sha256": "8fd4db355cdcb6db61ab8ec1392dd4a9d0cc180c27fe0fad8327fe88b2583bf9",
+      "problem_statement_sha256": "732afbb79113bd23d1e0d5caa6542c98964dc54d4205296752680c6275664b46",
+      "available_asset_ids": [
+        "298fc087c84d9506c6a24e1fdef364d25f81b5da422466182acf81206486a3c6",
+        "1cd85d44e7d63ab493fca01d784316191dab6f90359138914682f1a74bd7451d",
+        "a531bf63fca7e7ac7dfda40f71f4479a3a2c4763156aea9f24dd27419370707a"
+      ],
+      "source_media_binding_status": "invalid",
+      "source_media_binding_error": "_SourceMediaRecordError: media asset is missing or duplicated in source archive: asset_id=1cd85d44e7d63ab493fca01d784316191dab6f90359138914682f1a74bd7451d matches=2",
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "6e7601a8b912f909d7302041a33764659c23f2a22d23481f269b71af6d44daae"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98529",
+      "source_result_sha256": "2f53f5b815ddeceea089dfb363778edc06147b3dead7cd688ba2fcae101c5e52",
+      "source_packet_sha256": "d6e923616e9ffc32d395023538ee9f544629188f65d0a40554340f79e64879ee",
+      "source_archive_sha256": "b76f462ef1d3693af1857383f92a7692e82e7995386265d19a5145d3ecd2bd78",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "fc48768dd30d8fcf8ed5cdee3c6f5c2c370db61959e2f92684a95dbfa0173b22"
+    },
+    {
+      "case_id": "automattic__wp-calypso-100812",
+      "source_result_sha256": "cad25f75b5a4f2fc88a303c9f65ed3d393e96fd444a8bbe76ecb6693611097e6",
+      "source_packet_sha256": "45d66a72eda9dc0638a5955eb9a796e44ddada963ee71e28657707ccf632d622",
+      "source_archive_sha256": "368da27aab4c38168a3ec314b404d43237af554b7bb97bf3a40b7d145ba397f5",
+      "problem_statement_sha256": "c50793b3141369a3e66f754325f3540f02c6a1ab847fe6da5de3a70143ab269d",
+      "available_asset_ids": [
+        "def5c37618d230ea12b1f1f776c1688bfb4f7e930d93ed4d65d076d04f7d141f"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "ffeb472a8989441eb44d199eecd56b72b45e6df13c08ca19840b9f7910e0af3d"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98254",
+      "source_result_sha256": "ee97a71ca418bbef5734733a5761da9645a2c27f1269e9d1e383ee5650d5a6f6",
+      "source_packet_sha256": "0c8ddf0df1eae2f122b2e461bd434e5864ea28df7c030f54aaa994909b01aeb4",
+      "source_archive_sha256": "953881cf6b7eba08743b03c64fe884642cb3a621478d59302a786d044a4b829a",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "36e7aaa91c742f3b6d5ec6e4fe8bb1bc1e1107344691c4ad24a9c1f41ba53b0f"
+    },
+    {
+      "case_id": "automattic__wp-calypso-103221",
+      "source_result_sha256": "43eb11881165280ab6a0cb30936cee8cfbb2c6ee67be1a7891d26de53537218d",
+      "source_packet_sha256": "a7557ccc7824164017395bcf6d93a54c0d3074b735a5da5e968e195aa6ee3d3e",
+      "source_archive_sha256": "9cda465b97126aa2bbf095a69fc631c0fb53b90d48a372062f5fd746a4cf89dc",
+      "problem_statement_sha256": "c79aaa24f629a15bbaa54b19641fd02fd83329ba6b9c542bb1ad5d103c7ecfbd",
+      "available_asset_ids": [
+        "d6154e7f604d3bc033455f329a837320007fc3d9b625408dee75ed970986da57",
+        "6b581ed87b9ccd41043f2cdd8435bdc496a844a810879be94f5bd60e836a61b4"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "b0b9dda7d64c2a12a759e7c052ba06aadb97a1db0f41240ce1070305138d4436"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98285",
+      "source_result_sha256": "f071accdfc511385abd14bcf596df856cf392bceaf3d623554f6e985caf434bc",
+      "source_packet_sha256": "f60534ade7ddfce5b10f875994e3105861b4c3e38b6812e6e0e37c9171d277b5",
+      "source_archive_sha256": "851334cc1e5b9cba38f416ec1687ed19de97d2d85090190eed99bdd3fa887f92",
+      "problem_statement_sha256": "a0ad2cb3f7499c5f2fb35bae72970a75e4255033c135c7a13976ceeb706a0c2e",
+      "available_asset_ids": [
+        "6ab77dc486967b771c8837dab22e4eb0a5cd52d6765d06c5191b6f265ac8a1a8"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "291f1db284018037b0aa74b722203c87171418f0ce9151a46c3d149bc956f90b"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-23009",
+      "source_result_sha256": "011e41494b8f1f7271c2f1943ba0c1a2e3b69439cc3760c4f1b3ae3694797169",
+      "source_packet_sha256": "7210aa0659d7b532e17681d68ad4f0a5e416357e848a0bd4e6d0240dbd33c40a",
+      "source_archive_sha256": "aa1ad8ab0f22b84406430a787880c5ff01c6b2ed7a2c6a7ae0e6e6a707de8034",
+      "problem_statement_sha256": "bffe39a5e12a972ff84dc643066d82c34f6e09f0f8806be0d33c7b51c9ae3ded",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "8a88e2dfd38f12e818d85689318e47b33f03db04113a7951d19d0f222801deb4"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101470",
+      "source_result_sha256": "6903ab026ef3aea242d8e61080faacea2f2359f3b1d8a1de0b66aff04c61ff22",
+      "source_packet_sha256": "bf5558b2e75ce05c726e7ba2fdc0b456efe5b317c77eab3274db3fbbf0d3cc4f",
+      "source_archive_sha256": "11cd88095d4534a1d55370e42c854bbef987399aa02fb93de3ab5e2f8572faaa",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "134f775b47aa7064750df339068aec57f3dfc0d66a905ceecd77fe45eb1efcc4"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101093",
+      "source_result_sha256": "daf333c888a72c78b6342efe2702699e14ea9414e1454402114e839be0abbc8d",
+      "source_packet_sha256": "141e2e8632362ffb86c2ca9bfdc258eae40be6ededed69c466ee30ff91365189",
+      "source_archive_sha256": "8265bf23a84cd1325e14f063788a9f6dfebe789a5c1f57aba5a0f65f297d1bca",
+      "problem_statement_sha256": "4c6df14f7ad5bf11fed2efddc822c259f3368c2d3cf18cc6d167635d0159bcce",
+      "available_asset_ids": [
+        "b3f573e541528a317a7a975bd0b21500e288a926331f89dfc8f094c1c3483bcc"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "b98e27c9d74055f49d16fcc21be9113edccf541cf78574cf164589c2e0998bea"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99419",
+      "source_result_sha256": "d979f8f9aeeb758e7c814fbd994b394fe216434a465206f041a2a079b958805c",
+      "source_packet_sha256": "3649e5ab792d49815c15e161e23b1327076ab86bce1ef8e7a6584bca83bc1bdc",
+      "source_archive_sha256": "ed5f7e67aab280fbc316f509fcffec4a93e763f1c3d1020b5069e4c846ca9757",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "f9e143ebdf9ce024106778b1b1698fc5b72e1e5d2759f95ad3a91d0455fb810c"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99889",
+      "source_result_sha256": "dc61d2605275c2c6dc71b28a43937b95abe1f2eca5c5f0208ae67e01139561df",
+      "source_packet_sha256": "8210f1592fee59052b30b5b5177e66776db3beabb6a188db2a54ef5b9e05e85f",
+      "source_archive_sha256": "cfef0d9e5e1244cf237cdc6aff88b878de444e40f8512d11673ac9c20923209e",
+      "problem_statement_sha256": "20635a76096af4dfa51a3b28ce843fc1a5e2a29aa9aa232a5d90319ff840eac5",
+      "available_asset_ids": [
+        "3c362c6f9c483bdf1ab62f0531cccccdb9700dfc6af293d37f67778d98c8e413"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "a5df48c25746ffcbd89673662a50d8698eeaa500b79f9ac4c4f194951b750bae"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98184",
+      "source_result_sha256": "808c97df6eb5773086087d941cf321b0fbc04655d3026241c0ee16adbde6ada1",
+      "source_packet_sha256": "4f066e2df6c861d3c4a902f9bc60e6bcc86e59e87db0713005eef1595bd55ba9",
+      "source_archive_sha256": "29a4af62be14dde3900b09a07cab1107924925aab1d2d9ff24272eaf27a5ae2c",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "a0cdc9b1ddcc8541d61c2d8b2fcc71054706a0ab8e4f65bd2369d6a84ad85810"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22670",
+      "source_result_sha256": "db6d951a6d0f1e7e02db0fe9d53c7bb1c28691936c31fbaae193f77bbfaaba08",
+      "source_packet_sha256": "45382ec80ced8f544bd27d9ee779df84ffd99d74c295afa1b66a5f741743033f",
+      "source_archive_sha256": "78e9363bb058bde2a350d1055405571438db402267202daaaa62501ce1f0d485",
+      "problem_statement_sha256": "34bb900ed8ab63cd43d134eb0dcb71be0de530f2039942b6f4a708cb6ef56a47",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "ff337d3e3defcc875ae0874117cdb5614e61261554d8e0c4f690e078afc406e2"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98087",
+      "source_result_sha256": "55ca17a602652a6e13bac82e2997ceb9811cbb9079d2806759a572e292098f4d",
+      "source_packet_sha256": "ced2d0da473154d613ed1307609cef6f0a80378c0ff6cdb0ac5a0aaa08b0666a",
+      "source_archive_sha256": "dbc13950680aab455202c2a9e6c1c54d5087f502165f658735c0906d8623a3b3",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "6280924b06c96593ec2047b27979f0a82f6d6614102e752c37e25352419acce2"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-20129",
+      "source_result_sha256": "cec594b0ce6b48e5df93f6a3fea68b4620976a90e70a01e60a3b8bddd3c7d21b",
+      "source_packet_sha256": "fd68d50ba013dab3c33db4a0736d86e4954d9e6a1245e2f54bac100f54b9d045",
+      "source_archive_sha256": "20ba393b2189be8ad902c8501cecbfafffcfb42c2402f64386a4da39413f4450",
+      "problem_statement_sha256": "27b2c2d241197dfc35f1240fca32e4abb56a32e30dba4aaa43168733e3c7da28",
+      "available_asset_ids": [
+        "5f3601ef42cff3bfdec96664a3297d8b0c629bf90d403c10bb321b3ee92fe5f2"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "4a2cfd689c764d0a8d5b5b56ead8b01b39036997e54627a69513b8801d1dfcf8"
+    },
+    {
+      "case_id": "bpmn-io__bpmn-js-2421",
+      "source_result_sha256": "f246681d2c8bbce8b15bb91f988e04943a308cfc6846318575c3dc72ed1db9c3",
+      "source_packet_sha256": "d51afd870f9887a211b00f7bbc0bf67d82890ea3bca4a05f729227c589417b28",
+      "source_archive_sha256": "eee780a85df1af69e0c8e29c1eebcf5cd5918447098168193604e87ac2d2fd41",
+      "problem_statement_sha256": "c0dd66dc16068cd8306a478d67201578b45c7e62e86ef1f97ecdb5e28d4b3d07",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "2e32639ed04c47f197393b0d02fefeea4b15f6d023e221073540262363cd9411"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101248",
+      "source_result_sha256": "779fd09265ba4c28bf73d5c3015e1c090ab58f272bedb28b4bd284326172a8c8",
+      "source_packet_sha256": "acf93871bd2c879244ced87ae7ed5462670ec028af2bf2e79ff27a86c5939fec",
+      "source_archive_sha256": "f91158c53e8c84e92a13627fa66975e36f67fa0cad6efa0a38717726acfd9edf",
+      "problem_statement_sha256": "c7408c709240da62ac18d471bf20dad2858679f9fa1ff0bb3f0c4bf42544ce91",
+      "available_asset_ids": [
+        "faee8b85d5bcbed3582db4eb10819b2901cadaf6e4b0d44ecc28147595ba22bb"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "31a97bfea56dbfdf64ea603f22043e7b9576681a24563e763f347a35e87043fb"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102605",
+      "source_result_sha256": "8a19ae20ae63b5d177273b632474b88aa5306630d8072afca3c644ee341b0eec",
+      "source_packet_sha256": "3676775a0bdd784814ff213f16fafad4ea10745c3224b052d39ac053e2092bc5",
+      "source_archive_sha256": "e737b798f12a5f8612ec7a613edab10f1d65f073df479f0e0a966414775d606a",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "395d568309a028485d262127d001972d5c89a1b865f9cfea2c263294f062113c"
+    },
+    {
+      "case_id": "carbon-design-system__carbon-22672",
+      "source_result_sha256": "02b31a16ae184fccd6b2fe90af5a5da7b54dfb988d553d61424ce6977a29132f",
+      "source_packet_sha256": "650f925e010ef48f7f9161189f290c59ab3f16b51e28adf8e85f17624c6420cb",
+      "source_archive_sha256": "38d513bb79daf65cce11a156b9085377e3be5e66f727416cae069622320fa332",
+      "problem_statement_sha256": "2a3c35048101690c5e26d4f260b46dcd5ed51974ce02a9ab5d67d8b1a9c07969",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "a1e5f7b36240f237fe458bfefca93064a4895c3050103a8230607ba6cc448842"
+    },
+    {
+      "case_id": "automattic__wp-calypso-98159",
+      "source_result_sha256": "368c881bc6e07747b2968dc3fcb978f724f2075dc64ca5ba64d3843fcc761da3",
+      "source_packet_sha256": "59d5b0ce8a38c5cbb272aba8bcb157d821173ff9ba8d9961afbfa66be935e188",
+      "source_archive_sha256": "bba240436b18cd8ff7bfd0a76b40ccb594f0e7ca61b5f518bc31446825aa6b6d",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "343fbf3c07b135c082517085f26914be0e3d724137b717fe7d2711f1b8d9aaa5"
+    },
+    {
+      "case_id": "grommet__grommet-7690",
+      "source_result_sha256": "11b30643142543beebfc306899d10f04f2b7c8dd00d53e8a76851e3e88b8d885",
+      "source_packet_sha256": "24712a55b0fb0ce97a83803bdc579f11696f6f55ea31d8e9d4b90d2a6e54da2e",
+      "source_archive_sha256": "b16f96c2cc78be25ff611ed8ae8fc6d3db7feedc787048810a4e82dc9501bf14",
+      "problem_statement_sha256": "b662aca83a698a0bd8f02ceee5a2cb96fd09e5a6545f02de69511bfdb4c05a0e",
+      "available_asset_ids": [
+        "c8c8004cfabf17d0fc4c5b735e302274f0339d17f1209827ee5ac867a881616f"
+      ],
+      "source_media_binding_status": "invalid",
+      "source_media_binding_error": "_SourceMediaRecordError: media asset is missing or duplicated in source archive: asset_id=c8c8004cfabf17d0fc4c5b735e302274f0339d17f1209827ee5ac867a881616f matches=2",
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "09316618416dfffe1a4d8605fdd679b42390e04ebdc1f24deccf7aa625355a27"
+    },
+    {
+      "case_id": "automattic__wp-calypso-113819",
+      "source_result_sha256": "c838301a72d52f46f4d5246c0abc893169e9d41fa9d2901cbd567b05710444d4",
+      "source_packet_sha256": "04059c6440244233bcef54bd329a4cc9470991ea868fcbccc3392dcda2e0cfa9",
+      "source_archive_sha256": "776700e8194e53f0e43282a0dff13500d2cd5046c02bc881313623491efd2353",
+      "problem_statement_sha256": "8abea92201419f79ee9437aa9d80e404652a18a39210ccfed41bb4510195481a",
+      "available_asset_ids": [
+        "bd76528e72cf701295b60ce488b08eb4ff01a40faad09ff1ce65512ddfa268aa",
+        "f856de24e96655a062c6a4ccdf47b8b96217ac8d1518627915ca5993fc03ecf5",
+        "8c1c2a0d0eb512f86f0fa5889973a0b5735e15836960f27a802ab0f2cd461a19",
+        "844d08a1a5f6b114547058adefe0811e1e569c75bb4b786766edd26894802747",
+        "58dd65b04b03816f4c98ee8daf2670b26423427bcc59768eb6b2b9caad900608"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "46144ea4f07d4f4c922353e429550e9cc6b4f6ca71186143f2ab8b83d6cef324"
+    },
+    {
+      "case_id": "automattic__wp-calypso-99109",
+      "source_result_sha256": "08c8435a4201328b2f5229f740dd61c5b6872148ac4c1bdbe958c39edd813e17",
+      "source_packet_sha256": "6918c4466185ef51127e7f8a37d025d0c2828c16cfdde68e038ebe92f7b1ccb5",
+      "source_archive_sha256": "53f8956d32073d6f6a869060fa18533d53d053362ce7bb7f67a6131e8479a6fe",
+      "problem_statement_sha256": "b07db7ccabc95cb2e7a701fcd4ea5bb57a25ecbce0dfe147c2cd3cbaeac61700",
+      "available_asset_ids": [
+        "c78922c2a38c7ca96db7f22582f1069cc94bba984fe097f0ad93ccf179206ca6"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "b97fecef104597ed56f01e081fe304c1039083b04fc8460b085d4e75b52111ac"
+    },
+    {
+      "case_id": "automattic__wp-calypso-102392",
+      "source_result_sha256": "3b89a24471ef4d9e823bb1219e7d5be9b476fedd0f2cc0898634b5ec521c811d",
+      "source_packet_sha256": "238267aa0f555a9750a3c7c49bd539808cf93c89f25472e22590b57af40e04d9",
+      "source_archive_sha256": "86765b100584cd68502f5aceafd1a29f671973d4d79baff1e42d6495ec7118c3",
+      "problem_statement_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "93864d020322146d73e3cf97fbd2af9b3229f68c6a4e455353da15fb59483498"
+    },
+    {
+      "case_id": "automattic__wp-calypso-101088",
+      "source_result_sha256": "06320fb1bf05ae84fb571daf65647203842083e92235f9afeaf5079924de4255",
+      "source_packet_sha256": "60b48f74a9231f495af368fd74fabbe11dc66a1d6148cb328312435d4b5f09f6",
+      "source_archive_sha256": "f832519909c1719ba4ebb0819938e627756100f53977822988ab4a8b1a9b6166",
+      "problem_statement_sha256": "0a57225500723149f437de98085afb8b90cc7210cbc6aa4a734162248c88ac60",
+      "available_asset_ids": [
+        "0b5f8beb9d5a5cc0e57fd223d0a3d9059b10e387a1f7b4eca947ccfbae2f72c3",
+        "300e17c756284cba3ab858fb54a79d7fc8df94ac1db70c020ccf69ccb1a60477"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "fe5dafa19e1951b55d94b31554dccdb57e0e28f83203e791c823b4f3227557c5"
+    }
+  ],
+  "expected_case_calls": 30,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 2,
+  "maximum_api_requests": 120,
+  "authorized": true
+}

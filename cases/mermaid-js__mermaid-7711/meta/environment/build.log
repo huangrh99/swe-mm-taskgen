@@ -1,0 +1,168 @@
+#0 building with "colima" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 474B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9
+#4 resolve docker.io/library/visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9@sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 36.51MB 2.8s done
+#5 DONE 2.8s
+
+#6 [2/7] RUN rm -rf /app
+#6 CACHED
+
+#7 [3/7] RUN corepack enable
+#7 CACHED
+
+#8 [4/7] COPY app /app
+#8 DONE 0.3s
+
+#9 [5/7] WORKDIR /app
+#9 DONE 0.0s
+
+#10 [6/7] RUN corepack prepare pnpm@10.30.3 --activate && pnpm install --frozen-lockfile --ignore-scripts
+#10 0.298 Preparing pnpm@10.30.3 for immediate activation...
+#10 3.683 Scope: all 12 workspace projects
+#10 3.776 Lockfile is up to date, resolution step is skipped
+#10 3.870 Progress: resolved 1, reused 0, downloaded 0, added 0
+#10 3.989 Packages: +2238
+#10 3.989 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#10 4.872 Progress: resolved 2238, reused 0, downloaded 0, added 0
+#10 5.873 Progress: resolved 2238, reused 0, downloaded 82, added 82
+#10 6.876 Progress: resolved 2238, reused 0, downloaded 131, added 130
+#10 7.876 Progress: resolved 2238, reused 0, downloaded 229, added 228
+#10 8.878 Progress: resolved 2238, reused 0, downloaded 324, added 324
+#10 9.880 Progress: resolved 2238, reused 0, downloaded 380, added 379
+#10 10.88 Progress: resolved 2238, reused 0, downloaded 461, added 460
+#10 11.88 Progress: resolved 2238, reused 0, downloaded 515, added 515
+#10 12.94 Progress: resolved 2238, reused 0, downloaded 580, added 583
+#10 13.91 Progress: resolved 2238, reused 0, downloaded 623, added 629
+#10 14.90 Progress: resolved 2238, reused 0, downloaded 710, added 716
+#10 15.90 Progress: resolved 2238, reused 0, downloaded 778, added 785
+#10 16.90 Progress: resolved 2238, reused 0, downloaded 846, added 851
+#10 17.91 Progress: resolved 2238, reused 0, downloaded 939, added 947
+#10 18.91 Progress: resolved 2238, reused 0, downloaded 1016, added 1024
+#10 19.91 Progress: resolved 2238, reused 0, downloaded 1080, added 1088
+#10 20.91 Progress: resolved 2238, reused 0, downloaded 1155, added 1165
+#10 21.91 Progress: resolved 2238, reused 0, downloaded 1226, added 1236
+#10 22.91 Progress: resolved 2238, reused 0, downloaded 1282, added 1292
+#10 23.91 Progress: resolved 2238, reused 0, downloaded 1337, added 1346
+#10 24.92 Progress: resolved 2238, reused 0, downloaded 1387, added 1397
+#10 25.92 Progress: resolved 2238, reused 0, downloaded 1443, added 1453
+#10 25.95  WARN  Tarball download average speed 35 KiB/s (size 115 KiB) is below 50 KiB/s: https://registry.npmjs.org/@applitools/eyes-cypress/-/eyes-cypress-3.56.5.tgz (GET)
+#10 26.92 Progress: resolved 2238, reused 0, downloaded 1509, added 1519
+#10 27.92 Progress: resolved 2238, reused 0, downloaded 1553, added 1563
+#10 28.92 Progress: resolved 2238, reused 0, downloaded 1632, added 1642
+#10 29.92 Progress: resolved 2238, reused 0, downloaded 1712, added 1722
+#10 30.92 Progress: resolved 2238, reused 0, downloaded 1776, added 1785
+#10 31.92 Progress: resolved 2238, reused 0, downloaded 1849, added 1860
+#10 32.93 Progress: resolved 2238, reused 0, downloaded 1916, added 1925
+#10 33.93 Progress: resolved 2238, reused 0, downloaded 2004, added 2015
+#10 34.93 Progress: resolved 2238, reused 0, downloaded 2071, added 2082
+#10 35.93 Progress: resolved 2238, reused 0, downloaded 2160, added 2170
+#10 37.04 Progress: resolved 2238, reused 0, downloaded 2225, added 2237
+#10 40.71 Progress: resolved 2238, reused 0, downloaded 2226, added 2237
+#10 40.73 Progress: resolved 2238, reused 0, downloaded 2226, added 2238, done
+#10 41.62 
+#10 41.62 devDependencies:
+#10 41.62 + @applitools/eyes-cypress 3.56.5
+#10 41.62 + @argos-ci/cypress 6.2.12
+#10 41.62 + @changesets/changelog-github 0.5.2
+#10 41.62 + @changesets/cli 2.29.8
+#10 41.62 + @cspell/eslint-plugin 9.3.2
+#10 41.62 + @cypress/code-coverage 3.14.7
+#10 41.62 + @eslint/js 9.35.0
+#10 41.62 + @rollup/plugin-typescript 12.1.4
+#10 41.62 + @types/cors 2.8.19
+#10 41.62 + @types/express 5.0.6
+#10 41.62 + @types/js-yaml 4.0.9
+#10 41.62 + @types/jsdom 21.1.7
+#10 41.62 + @types/lodash 4.17.21
+#10 41.62 + @types/mdast 4.0.4
+#10 41.62 + @types/node 22.19.1
+#10 41.62 + @types/rollup-plugin-visualizer 5.0.3
+#10 41.62 + @vitest/coverage-v8 3.2.4
+#10 41.62 + @vitest/spy 3.2.4
+#10 41.62 + @vitest/ui 3.2.4
+#10 41.62 + ajv 8.18.0
+#10 41.62 + chokidar 3.6.0
+#10 41.62 + concurrently 9.2.1
+#10 41.62 + cors 2.8.5
+#10 41.62 + cpy-cli 5.0.0
+#10 41.62 + cross-env 7.0.3
+#10 41.62 + cspell 9.3.2
+#10 41.62 + cypress 14.5.4
+#10 41.62 + cypress-image-snapshot 4.0.1
+#10 41.62 + cypress-split 1.24.25
+#10 41.62 + dotenv 17.2.3
+#10 41.62 + dotenv-cli 11.0.0
+#10 41.62 + esbuild 0.25.12
+#10 41.62 + eslint 9.35.0
+#10 41.62 + eslint-config-prettier 10.1.8
+#10 41.62 + eslint-plugin-cypress 5.4.0
+#10 41.62 + eslint-plugin-html 8.1.4
+#10 41.62 + eslint-plugin-jest 29.0.1
+#10 41.62 + eslint-plugin-jsdoc 61.1.12
+#10 41.62 + eslint-plugin-json 4.0.1
+#10 41.62 + eslint-plugin-lodash 8.0.0
+#10 41.62 + eslint-plugin-markdown 5.1.0
+#10 41.62 + eslint-plugin-no-only-tests 3.3.0
+#10 41.62 + eslint-plugin-tsdoc 0.4.0
+#10 41.62 + eslint-plugin-unicorn 62.0.0
+#10 41.62 + express 5.2.1
+#10 41.62 + globals 16.4.0
+#10 41.62 + globby 14.1.0
+#10 41.62 + husky 9.1.7
+#10 41.62 + jest 30.1.3
+#10 41.62 + jison 0.4.18
+#10 41.62 + js-yaml 4.1.1
+#10 41.62 + jsdom 26.1.0
+#10 41.62 + langium-cli 4.2.0
+#10 41.62 + lint-staged 16.1.6
+#10 41.62 + markdown-table 3.0.4
+#10 41.62 + nyc 17.1.0
+#10 41.62 + path-browserify 1.0.1
+#10 41.62 + playwright 1.58.2
+#10 41.62 + prettier 3.6.2
+#10 41.62 + prettier-plugin-jsdoc 1.3.3
+#10 41.62 + rimraf 6.0.1
+#10 41.62 + rollup-plugin-visualizer 6.0.5
+#10 41.62 + sirv-cli 3.0.1
+#10 41.62 + start-server-and-test 2.1.3
+#10 41.62 + tslib 2.8.1
+#10 41.62 + tsx 4.20.6
+#10 41.62 + typescript 5.8.3
+#10 41.62 + typescript-eslint 8.43.0
+#10 41.62 + vite 7.3.2
+#10 41.62 + vite-plugin-istanbul 7.1.0
+#10 41.62 + vitest 3.2.4
+#10 41.62 
+#10 41.64 Done in 38.3s using pnpm v10.30.3
+#10 DONE 42.3s
+
+#11 [7/7] RUN git reset --hard HEAD && test -z "$(git status --porcelain --untracked-files=all)" && test -z "$(git remote)"
+#11 0.972 HEAD is now at 98b3155bd Merge pull request #7707 from txmxthy/feature/6024_architecture-fcose-config
+#11 DONE 1.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 57.2s done
+#12 exporting manifest sha256:feba64f767c84431596ae601c3064f868f9057de82c55f9a2eae655ad9336c33 done
+#12 exporting config sha256:8ecbd1d40bea08b98fd91d0a5254d1b558d94cca28d56adf6b57bf4ea3c28deb done
+#12 exporting attestation manifest sha256:9f5fc9b5cf4a9f97fb09bab54d7262015d4e595c6b3a5f008c1dfc70a4c71f33 0.0s done
+#12 exporting manifest list sha256:93acf0c18d0caddbf9446f7d55423c903311d60c3eb54d3ec4c4fdbeaefc82bc done
+#12 naming to docker.io/library/visual-env-build:mermaid-js-mermaid-7711 done
+#12 unpacking to docker.io/library/visual-env-build:mermaid-js-mermaid-7711
+#12 unpacking to docker.io/library/visual-env-build:mermaid-js-mermaid-7711 16.6s done
+#12 DONE 73.9s

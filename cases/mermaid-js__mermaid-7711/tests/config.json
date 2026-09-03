@@ -1,0 +1,30 @@
+{
+  "schema_version": "swe-bench-mm-test-config-v1",
+  "repo": "mermaid-js/mermaid",
+  "instance_id": "mermaid-js__mermaid-7711",
+  "base_commit": "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e",
+  "reference_head": "9d83f061aad4afc126b434f0decd9013060ad62b",
+  "FAIL_TO_PASS": [
+    "state self-loop visual geometry contract renders the Issue reproducer as a smooth left-or-right state self-loop"
+  ],
+  "PASS_TO_PASS": [
+    "state self-loop visual geometry contract preserves labeled flowchart self-loop rendering",
+    "state self-loop visual geometry contract preserves a labeled non-cyclic flowchart edge",
+    "Graphlib decorations validate Validate should detect edges between clusters",
+    "Graphlib decorations validate Validate should not detect edges between clusters after adjustment",
+    "Graphlib decorations validate Validate should detect edges between clusters and transform clusters GLB4",
+    "Graphlib decorations validate Validate should detect edges between clusters and transform clusters GLB5",
+    "Graphlib decorations validate adjustClustersAndEdges GLB6",
+    "Graphlib decorations validate adjustClustersAndEdges GLB7",
+    "Graphlib decorations validate adjustClustersAndEdges GLB8",
+    "Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct data GLB10",
+    "Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct data GLB11",
+    "Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct links  GLB20",
+    "Graphlib decorations validate adjustClustersAndEdges the extracted graphs shall contain the correct links  GLB21",
+    "Graphlib decorations adjustClustersAndEdges should handle nesting GLB77",
+    "extractDescendants Simple case of one level descendants GLB9",
+    "sortNodesByHierarchy should sort proper en nodes are in reverse order",
+    "sortNodesByHierarchy should sort proper en nodes are in correct order"
+  ],
+  "log_parser": "vitest-json-functional-v1"
+}

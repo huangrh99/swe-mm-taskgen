@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pipeline-state-ledger-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "mode", "instance_id", "status", "current_state", "pipeline_freeze", "candidate_task", "events"],
+  "properties": {
+    "schema_version": {"const": "pipeline-state-ledger-v1"},
+    "mode": {"enum": ["simulation", "real"]},
+    "status": {"enum": ["running", "rejected", "completed"]},
+    "current_state": {"enum": ["candidate", "visual_approved", "tests_measured", "tests_approved", "harbor_controls_passed", "frozen", "pass5_completed"]},
+    "instance_id": {"type": "string"},
+    "packet": {"type": "object"}, "pipeline_freeze": {"type": "object"}, "candidate_task": {"type": "object"},
+    "frozen_manifest": {"type": "string"}, "rejection": {"type": "object"},
+    "events": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["from", "to", "status", "code", "evidence"], "properties": {"from": {"enum": ["candidate", "visual_approved", "tests_measured", "tests_approved", "harbor_controls_passed", "frozen"]}, "to": {"enum": ["visual_approved", "tests_measured", "tests_approved", "harbor_controls_passed", "frozen", "pass5_completed"]}, "status": {"enum": ["accepted", "rejected"]}, "code": {"type": "string"}, "evidence": {"type": "object"}}}}
+  }
+}

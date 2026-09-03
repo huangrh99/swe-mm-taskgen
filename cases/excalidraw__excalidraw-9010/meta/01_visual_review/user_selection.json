@@ -1,0 +1,14 @@
+{
+  "schema_version": "visual-candidate-user-selection-v1",
+  "case_id": "excalidraw__excalidraw-9010",
+  "repository": "excalidraw/excalidraw",
+  "pr_number": 9010,
+  "decision": "keep_for_test_construction",
+  "selected_at": "2026-09-03T04:34:28+08:00",
+  "source": "explicit_user_request_in_current_thread",
+  "v4_visual_capabilities": [
+    "interaction_temporal_understanding"
+  ],
+  "change_scale": "小规模修改",
+  "boundary": "This records candidate inclusion and authorizes provisional Base/Gold measurement. It does not approve the test semantics, Harbor controls, frozen task, or Pass@5 admission."
+}

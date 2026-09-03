@@ -1,0 +1,38 @@
+{
+  "schema_version": "case-test-plan-v3",
+  "case_id": "automattic__wp-calypso-100957",
+  "base_commit": "e45ab9e16f64884309026fe8ab469d86adbe3671",
+  "gold_commit": "5137030cabd46f7b6efe629fc52b78913be10916",
+  "author_test_changes_in_pr": [],
+  "active_test_origin": "curator_revised_from_screenshot_evidence",
+  "candidate_f2p": [
+    {
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract separates both swatches from the light card background shown in the PR",
+      "oracle": "Exactly two circles remain and each is visually separated from the screenshot-derived light card background.",
+      "status": "measured_f2p_stable_three_runs"
+    },
+    {
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract separates both swatches from the lilac card background shown in the PR",
+      "oracle": "Exactly two circles remain and each is visually separated from the screenshot-derived lilac card background.",
+      "status": "measured_f2p_stable_three_runs"
+    }
+  ],
+  "candidate_p2p": [
+    {
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract preserves the configured preview background color",
+      "oracle": "The configured card background remains unchanged.",
+      "status": "measured_p2p_stable_three_runs"
+    },
+    {
+      "test_id": "GlobalStylesVariationPreview visual acceptance contract preserves the configured heading color used by the title frame",
+      "oracle": "The configured heading color remains unchanged.",
+      "status": "measured_p2p_stable_three_runs"
+    }
+  ],
+  "threshold": {
+    "minimum_contrast_ratio": 2.19,
+    "derivation": "Screenshot-derived and frozen before agent replay",
+    "evidence": "../../outputs/12_contrast_verifier_v3/12_03_frozen_contract.json"
+  },
+  "classification_rule": "F2P/P2P labels come only from identical executable tests on exact Base and Gold; v3 has three stable repeats of each state."
+}

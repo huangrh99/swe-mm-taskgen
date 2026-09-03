@@ -1,0 +1,78 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave16_run4_targeted_text_02/20260902T135120645182Z",
+  "source_manifest_sha256": "d6636028fa5a9ab57aef8d3014a9bb6ee46ea2400cad5c2ca013c9b0aece7ba0",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "6ae4480437a8863bbcdd456c208bd3185302fa97e777f586ec10b6953bc155b9",
+  "run_id": "20260902-wave16-run4-targeted-02-01",
+  "nonce": "92e92a1c-1af1-426b-ab6c-74dab6c850ab",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave16_run4_targeted_02_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "excalidraw__excalidraw-9734",
+      "source_result_sha256": "fb17cb859079b5de0653182a4bc96387166a7fb61cecf7e751f6fd76d8ebc9a9",
+      "source_packet_sha256": "4a70ba2da654056565a7413698723ca66bf62d7ee9ab46fe5ad5dde2942a7a82",
+      "source_archive_sha256": "b06156916ca1e1b75ca3c10fd35f0440c0762bfb17dacb08e5350468d2a80cc5",
+      "problem_statement_sha256": "9534bee19318af60dae7f756bd5a4a63ee7bd3d559e9bc1640cea9c500a2e357",
+      "available_asset_ids": [
+        "bb078beb7e1608f09d5fb9119403563fab11502082ab7d951275eb579e53726f",
+        "45ccbfae1c9f72cba92a56fd8a45a4ae2b3c501c8d405f798cc3a2ef9849a532",
+        "eeed470080ee096cb74b0f127d67249f287b471280aef0eb3b00193211a1db60"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "46542ee89a7a233c608a77e30fc454b1d38218aa0dc0fca527e59bfbba8e8cce"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-7672",
+      "source_result_sha256": "a415dde22b4251c93e3c371eaf8efda387d570d4c05c661b6331808ab96ebe84",
+      "source_packet_sha256": "e99f6d8a437b532052a6d0324438717a79a9b4db161859a16a2d5fe1f74100de",
+      "source_archive_sha256": "9898e1928812e903e1a34879fdc73b82caa7a6c7b8e1e970e3aab01a3037f4c4",
+      "problem_statement_sha256": "33b6104421ef004241e06d890517200f959bf1fa010871fbabba77af5760656a",
+      "available_asset_ids": [
+        "9bce52b54089e2d3871c9e76595b2743f1784d833b77788ba719be6c85a65340"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "801509e2a85d188615bb44373f9ec3a411237efd17fbe6437bb10ae5dfd09de9"
+    }
+  ],
+  "expected_case_calls": 2,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 12,
+  "authorized": true
+}

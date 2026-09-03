@@ -1,0 +1,529 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>carbon-design-system/carbon · PR #20978 · 人工核验</title>
+<style>
+:root{--bg:#f5f6f8;--panel:#fff;--ink:#17191c;--muted:#626971;--line:#d8dce1;--accent:#14634f;--warn:#9a6700;--bad:#b42318}
+*{box-sizing:border-box}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font:13px/1.45 system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#f5f6f8f2;border-bottom:1px solid var(--line);padding:10px 18px}h1{font-size:19px;margin:0 0 6px}
+.toolbar,.status,.links,.queue-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.status{margin-left:auto}.layout{max-width:1420px;margin:auto;padding:14px 18px}.gate{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-bottom:12px;padding:14px}.queue-nav{margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}.queue-nav span{color:var(--muted)}
+.gate-head{display:flex;gap:10px;align-items:start;justify-content:space-between}.gate h2{font-size:16px;margin:0 0 4px}.muted{color:var(--muted)}.warn{color:var(--warn)}.bad{color:var(--bad)}.ok{color:var(--accent)}
+.cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:14px}.review{border-left:1px solid var(--line);padding-left:14px}
+label{display:block;font-weight:600;margin:8px 0 3px}textarea,input,select{width:100%;font:inherit;padding:7px;border:1px solid var(--line);border-radius:5px;background:var(--panel);color:var(--ink)}
+textarea{resize:vertical}button,.button{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:5px;background:var(--panel);color:var(--ink);cursor:pointer}button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}button:disabled{opacity:.55;cursor:not-allowed}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--bg);padding:9px;border-radius:5px;margin:5px 0}.source h3{font-size:13px;margin:8px 0 2px}.hidden{display:none}
+.assets{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-top:8px}figure{margin:0;border:1px solid var(--line);padding:7px;border-radius:5px}img{width:100%;height:210px;object-fit:contain;background:#fff}figcaption{overflow-wrap:anywhere}.assets input{width:auto}
+.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:1080px}th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid var(--line)}th{position:sticky;top:0;background:var(--panel)}td:nth-child(1){width:330px}td:nth-child(2){width:260px}td:nth-child(3){width:280px}td:nth-child(4){width:250px}.test-summary b{display:inline-block;margin-bottom:3px}.test-summary code{display:inline-block;margin-top:5px}.assertions{margin-top:5px;overflow-wrap:anywhere}td textarea,td select{margin-bottom:4px}small{color:var(--muted)}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 7px}.error{margin-top:8px;color:var(--bad);white-space:pre-wrap}.links a{margin-right:8px}.complete{color:var(--accent)}details{margin-top:8px}.final{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.relationship{margin:10px 0 12px;padding:9px 11px;border-left:4px solid var(--accent);background:#eef7f4;border-radius:4px}.relationship a,.source a{color:var(--accent)}
+.verifier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;margin:10px 0}.verifier-grid article{display:flex;flex-direction:column;gap:3px;border:1px solid var(--line);border-radius:6px;padding:9px}.verifier-grid strong{color:var(--accent)}.verifier-grid span,.evidence-link{color:var(--muted);overflow-wrap:anywhere}.verifier-output{border-top:1px solid var(--line);padding-top:8px}.verifier-output summary{font-weight:700;cursor:pointer}.verifier-output pre{border:1px solid var(--line)}
+@media(max-width:850px){.cols{grid-template-columns:1fr}.review{border-left:0;border-top:1px solid var(--line);padding:10px 0 0}.layout{padding:10px}.gate-head{display:block}}
+</style></head><body>
+<template id="calibration-payload">eyJzZWVkIjp7InNjaGVtYV92ZXJzaW9uIjoiZHVhbC1odW1hbi1jYWxpYnJhdGlvbi12MiIsImNhbmRpZGF0ZV9pZCI6ImNhcmJvbi1kZXNpZ24tc3lzdGVtX19jYXJib24tMjA5NzgiLCJkb3NzaWVyX3NoYTI1NiI6IjRiMDViZjM4MzcwMzFiMTgwNzYxNzZiMWQyYjQxNTMxNjU0NGIxNDdjYmFiNWI3OGIzMWQ5MmRkOGJlNjFjY2MiLCJ0ZXN0X21hbmlmZXN0X3NoYTI1NiI6ImUyM2FkNTA1MjYwYjU1NTFlNDQ4MTQzMDhjMThmNWU0ZjVjNzNmZjA0ZTQ5ZDQ2ZmMyNTgyOTgyNTg4OWRjY2UiLCJ0ZXN0X3Jldmlld19jb250ZXh0X3NoYTI1NiI6ImJjNjY2N2U2YzM3MmU3ZTYxOTdmNDA0NGRlYzBiOThlNDgwZWUwMGU2OTA4ODI5YzgxMzQ5MmViZWI3ZTRkNTQiLCJtZWFzdXJlbWVudF9zaGEyNTYiOiJiOGEyN2QyYjNmN2IyNDM5ODU4Y2M4YmU0NmZiYjM0NTA1YmNkNzdmODMzYzE5Zjk2M2Q2NDAzYTExZTFhOWE4IiwidGFza19kaXJlY3RvcnlfY2hlY2tzdW0iOiI3YTA5ZmM0MDY2Yzg2ZjhiNmRmOTZkMWI2OTJjYmQ5YTRkYWVkMzIxOWQ1NDg4OWIyOTc4MTU0ZjFiMDk0OTllIiwibXVsdGltb2RhbF9uZWNlc3NpdHkiOnsic3RhdGUiOiJwZW5kaW5nIiwicmV2aWV3ZXIiOm51bGwsInJlYXNvbiI6bnVsbCwicmV2aWV3ZWRfYXQiOm51bGwsInRleHRfb25seV9zdWZmaWNpZW5jeSI6bnVsbCwib2NyX3JlcGxhY2VhYmxlIjpudWxsLCJub25fdGV4dF92aXN1YWxfZmFjdCI6bnVsbCwiZXZpZGVuY2VfYXNzZXRfaWRzIjpbXSwidGV4dF9vbmx5X25vdGVzIjpudWxsfSwiZjJwX3AycF9zZW1hbnRpY192YWxpZGl0eSI6eyJzdGF0ZSI6InBlbmRpbmciLCJyZXZpZXdlciI6bnVsbCwicmVhc29uIjpudWxsLCJyZXZpZXdlZF9hdCI6bnVsbCwiY292ZXJhZ2UiOm51bGwsIm1pc3NpbmdfYmVoYXZpb3JzIjpudWxsLCJ0ZXN0X3Jldmlld3MiOltdfX0sInRlc3RfaW52ZW50b3J5IjpbeyJ0ZXN0X2lkIjoiZjJwX2FpX2dyYWRpZW50X2RlY29yYXRvciIsImNsYXNzIjoiRjJQIn0seyJ0ZXN0X2lkIjoiZjJwX2FpX3JpZ2h0X2RpdmlkZXIiLCJjbGFzcyI6IkYyUCJ9LHsidGVzdF9pZCI6ImYycF9pbnZhbGlkX2FpX2xlZnRfZGl2aWRlciIsImNsYXNzIjoiRjJQIn0seyJ0ZXN0X2lkIjoiZjJwX2ludmFsaWRfYWlfY2xvc2FibGVfc3BhY2luZyIsImNsYXNzIjoiRjJQIn0seyJ0ZXN0X2lkIjoicDJwX2Rpc2FibGVkX3NlbGVjdGlvbl9ub25pbnRlcmFjdGl2ZSIsImNsYXNzIjoiUDJQIn0seyJ0ZXN0X2lkIjoicDJwX2ludmFsaWRfaGVscGVyX2Vycm9yX2NvbG9yIiwiY2xhc3MiOiJQMlAifSx7InRlc3RfaWQiOiJwMnBfZGlzYWJsZWRfaXRlbV9zZW1hbnRpY3MiLCJjbGFzcyI6IlAyUCJ9LHsidGVzdF9pZCI6InAycF9zZWxlY3RlZF9pdGVtX3N0YXRlIiwiY2xhc3MiOiJQMlAifV0sImFzc2V0X2lkcyI6WyI1MmM3MDRlY2Y3MjliM2Y3Y2JiMWNmNTc3Mzk1Mzc1MGE0NTM1YjkyOGYzZmZmY2IyM2IwZGVhNGUxMWVlNjhiIiwiODEyNzA5MWJiM2VmM2Y1ZjlhYTc1YzhmNzI5OTRlMjM1ZGUwOGEyN2QyNGIzZmNlMWFkNzU0OTU2ZTYzMDM0YSIsImRkNzczMjMzNTU2ZmY2Y2UxMWQ3ZGFjNGYxYTFkYzVjN2U0MDA3ZDZkYjQ0OTZkYmQ2OTYwYzgxZjM4ZTg3YmIiLCJhNTI5Yzg2YjFlMTg2YTVhOGQ5NDY1OTUwMjBkOWY1ZjU5ZmIzNDMxNTQxNWFlYWYzNWM5NmNlZWI4MzE2MzUyIl19</template>
+<header><h1>carbon-design-system/carbon · PR #20978 · 人工核验</h1><div class="toolbar"><label class="button">载入已有标注<input id="import-file" class="hidden" type="file" accept="application/json"></label><button id="export" class="primary">导出人工核验 JSON</button><span class="status"><span id="gate1-status" class="pill">视觉核验：待核验</span><span id="gate2-status" class="pill">测试核验：待核验</span><b id="eligibility">尚不可进入最终题集</b></span></div><nav class="queue-nav" aria-label="题目切换"><button disabled title="当前已经是第一题">← 上一题</button> <b>双重核验队列：第 1/1 题</b> <button disabled title="目前没有下一题完成 dossier、F2P/P2P 和前后测量">下一题 →</button> <span><a href="../../17_cross_repo_visual_funnel/20260901_wave_01_02/17_02_cross_repo_funnel.html">查看全部 28 个初筛候选</a>；目前只有 1 题材料完整，可进入双重人工核验。</span></nav><div id="errors" class="error" role="alert"></div></header>
+<main class="layout">
+<section class="gate" id="gate1"><div class="gate-head"><div><h2>第一项人工核验：视觉输入是否必要</h2><div class="muted">文字与图片默认同时展示，请直接判断修复是否必须依赖图片。若图片信息可以完整转写为文字，则不应认定为必须使用视觉输入。</div></div><div class="muted">模型初筛：auto_admit_high_confidence_verifier · independent_routes_agree_on_missing_visual_contract</div></div>
+<section class="relationship"><b>编号关系：</b><a href="https://github.com/carbon-design-system/carbon/pull/20978">PR #20978</a> 是本题采用的已合并修复 PR；它在正文中明确写了 Closes <a href="https://github.com/carbon-design-system/carbon/issues/20120">Issue #20120</a>、<a href="https://github.com/carbon-design-system/carbon/issues/20849">Issue #20849</a>。下面两项是该 PR 要解决的 Issue（需求与图片来源），不是另外两个 PR。<br><small>Benchmark 使用 PR 合入前的代码作为待修复基线，并把关联 Issue 的文字和安全图片整理为 Agent 题面。</small></section><div class="cols"><div><h3>问题文字材料（关联 Issue）</h3><section class="source"><h3><a href="https://github.com/carbon-design-system/carbon/issues/20120">Issue #20120</a> · 标题 <small>（由 PR #20978 明确关闭）</small></h3><pre>[Bug]: Combobox styling issues with `invalid` icon and `ai-label`</pre></section><section class="source"><h3><a href="https://github.com/carbon-design-system/carbon/issues/20120">Issue #20120</a> · 正文 <small>（由 PR #20978 明确关闭）</small></h3><pre>### Package
+
+@carbon/web-components
+
+
+### Package version
+
+latest
+
+
+
+### Description
+
+The invalid icon has buggy positioning when paired with an ai-label
+
+#### No Input
+
+**Expected (react):**
+
+
+**Actual:**
+
+
+#### With Input
+
+**Expected (react):**
+
+
+**Actual:**
+
+
+
+### Suggested Severity
+
+Severity 3 = User can complete task, and/or has a workaround within the user experience of a given component.
+</pre></section><section class="source"><h3><a href="https://github.com/carbon-design-system/carbon/issues/20849">Issue #20849</a> · 标题 <small>（由 PR #20978 明确关闭）</small></h3><pre>React|WC Parity: Combobox AI Label is missing gradient style</pre></section><section class="source"><h3><a href="https://github.com/carbon-design-system/carbon/issues/20849">Issue #20849</a> · 正文 <small>（由 PR #20978 明确关闭）</small></h3><pre>AI label story:
+
+- It does not have the blue AI styling/colors appearing on the input.
+- There needs to be a divider between the AI decorator and the chevron in the input.
+- When the close icon appears in the input, the spacing is off and there should be a divider between the AI decorator and the close icon in the input.
+
+See parent issue https://github.com/carbon-design-system/carbon/issues/17992 for acceptance criteria.
+
+&gt; [!IMPORTANT]  
+&gt; Every PR needs a ux and visual review from the design team to ensure consistency. Please be sure PRs have https://github.com/carbon-design-system/carbon/labels/status%3A%20visual%20review%20%F0%9F%94%8D applied and request a review from @carbon-design-system/design
+
+</pre></section><label for="text-only-notes">只看文字时，能否唯一确定需要修改的视觉行为？</label><textarea id="text-only-notes" rows="4"></textarea><div id="image-panel"><h3>Agent-safe Issue 原图</h3><div class="assets"><figure><img loading="lazy" src="../../11_source_archive/20260901T074547064254Z/11_http_archive/assets/52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b" alt="Issue evidence 52c704ecf729"><figcaption><label><input type="checkbox" data-asset-id="52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b"> 引用此图作为必要性证据</label><code>52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b</code><br>carbon-design-system/carbon#20120:body</figcaption></figure><figure><img loading="lazy" src="../../11_source_archive/20260901T074547064254Z/11_http_archive/assets/8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a" alt="Issue evidence 8127091bb3ef"><figcaption><label><input type="checkbox" data-asset-id="8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a"> 引用此图作为必要性证据</label><code>8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a</code><br>carbon-design-system/carbon#20120:body</figcaption></figure><figure><img loading="lazy" src="../../11_source_archive/20260901T074547064254Z/11_http_archive/assets/dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb" alt="Issue evidence dd773233556f"><figcaption><label><input type="checkbox" data-asset-id="dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb"> 引用此图作为必要性证据</label><code>dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb</code><br>carbon-design-system/carbon#20120:body</figcaption></figure><figure><img loading="lazy" src="../../11_source_archive/20260901T074547064254Z/11_http_archive/assets/a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352" alt="Issue evidence a529c86b1e18"><figcaption><label><input type="checkbox" data-asset-id="a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352"> 引用此图作为必要性证据</label><code>a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352</code><br>carbon-design-system/carbon#20120:body</figcaption></figure></div></div></div>
+<div class="review"><label for="text-sufficiency">仅凭文字是否足够</label><select id="text-sufficiency"><option value="">待判断</option><option value="insufficient">不足</option><option value="sufficient">足够</option><option value="unclear">不确定</option></select><label for="ocr-replaceable">图片信息能否被 OCR/文字完整替代</label><select id="ocr-replaceable"><option value="">待判断</option><option value="no">不能</option><option value="yes">可以</option><option value="unclear">不确定</option></select><label for="visual-fact">图片独有、不可由文字恢复的事实</label><textarea id="visual-fact" rows="4"></textarea><label for="visual-reason">核验理由</label><textarea id="visual-reason" rows="4"></textarea><label for="visual-state">核验结论</label><select id="visual-state"><option value="pending">待核验</option><option value="approved">通过</option><option value="rejected">不通过</option></select></div></div></section>
+<section class="gate" id="verifier-evidence"><div class="gate-head"><div><h2>完整 Verifier 输出（未截断）</h2><div class="muted">这些是模型初筛的完整结构化结果，只作为人工判断的证据，不替代两项人工核验。</div></div></div><div class="verifier-grid"><article><b>图片语义 Verifier</b><strong>visual_necessary</strong><span>necessary_nontext_visual_evidence</span></article><article><b>无图可修复性 Verifier</b><strong>visual_candidate</strong><span>text_leaves_testable_contract_ambiguous</span></article><article><b>Parent Issue 范围 Verifier</b><strong>curator_only</strong><span>confidence=high</span></article></div><details class="verifier-output"><summary>图片语义 Verifier · 完整结构化输出</summary><div class="evidence-link"><a href="file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/image-screening/09_single_call_verifier/20260901T073959507339Z/09_result_0003.json">打开原始 JSON</a> · <code>sha256:50a3e2c90bc62ccd9449889f1580b0f4c88fc6d15b3f15fb232e6011e6e30b65</code></div><pre>{
+  &quot;pr_id&quot;: &quot;carbon-design-system/carbon#20978&quot;,
+  &quot;status&quot;: &quot;complete&quot;,
+  &quot;input_packet&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/09_input_packet.json&quot;,
+  &quot;source_line_sha256&quot;: &quot;76b12be4ce90ba916d871735349f6edc68e3597320100a8957b4ff609cf13551&quot;,
+  &quot;packet_sha256&quot;: &quot;5f833d44064eb192f0cf07b817e6b66cf5738e9ae91f91e982a9551bcbea1e3b&quot;,
+  &quot;image_count&quot;: 2,
+  &quot;bound_schema&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/09_bound_output_schema.json&quot;,
+  &quot;bound_schema_sha256&quot;: &quot;c8d8b7bb06e8b6fbfd49fadc627e82f0f1b05334632e2118e8774fde56a65efb&quot;,
+  &quot;invocation&quot;: {
+    &quot;backend&quot;: &quot;gemini&quot;,
+    &quot;model&quot;: &quot;gemini-3.7-flash&quot;,
+    &quot;requested_model&quot;: &quot;gemini-3.7-flash&quot;,
+    &quot;effort&quot;: &quot;provider_auto&quot;,
+    &quot;attempts&quot;: 1,
+    &quot;usage&quot;: {
+      &quot;completion_tokens&quot;: 1292,
+      &quot;prompt_tokens&quot;: 8916,
+      &quot;total_tokens&quot;: 10859,
+      &quot;completion_tokens_details&quot;: null,
+      &quot;prompt_tokens_details&quot;: {
+        &quot;audio_tokens&quot;: null,
+        &quot;cached_tokens&quot;: 0
+      },
+      &quot;reasoning_tokens&quot;: 651,
+      &quot;traffic_type&quot;: &quot;ON_DEMAND&quot;,
+      &quot;promptTokensDetails&quot;: [
+        {
+          &quot;modality&quot;: &quot;TEXT&quot;,
+          &quot;tokenCount&quot;: 6726
+        },
+        {
+          &quot;modality&quot;: &quot;IMAGE&quot;,
+          &quot;tokenCount&quot;: 2190
+        }
+      ],
+      &quot;candidatesTokensDetails&quot;: [
+        {
+          &quot;modality&quot;: &quot;TEXT&quot;,
+          &quot;tokenCount&quot;: 1292
+        }
+      ]
+    },
+    &quot;raw_response&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/09_model_raw.json&quot;,
+    &quot;raw_response_sha256&quot;: &quot;1998722f16b6543f97b789718f5f3cd7534eb85fbf6e09cff7ca2d2b7e2bb32d&quot;,
+    &quot;provider_response&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/10_provider_response_01.json&quot;,
+    &quot;provider_response_sha256&quot;: &quot;671cdb61ee565e487ca50c817bc9c6330ee8989641f5defc5bbea58b64448f65&quot;,
+    &quot;request&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/09_verifier/20260901T073959507339Z/09_pr_0003/10_api_request.json&quot;,
+    &quot;request_sha256&quot;: &quot;faff395849853658a428028a42e4a057e3fb7d3e5da5f21f642b299957a48cdb&quot;
+  },
+  &quot;annotation&quot;: {
+    &quot;schema_version&quot;: &quot;visual-verifier-v1&quot;,
+    &quot;pr_id&quot;: &quot;carbon-design-system/carbon#20978&quot;,
+    &quot;images&quot;: [
+      {
+        &quot;asset_id&quot;: &quot;744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743&quot;,
+        &quot;observed&quot;: true,
+        &quot;content_kind&quot;: &quot;diagram&quot;,
+        &quot;content_reason&quot;: &quot;包含组件设计规范标注图，标有尺寸间距（16px/1rem、8/.5 等）、图标排列顺序（invalid/warn 图标、AI 标签、下拉箭头）以及分割线与底纹渐变位置。&quot;,
+        &quot;observation&quot;: &quot;展示了 Multiselect/Combobox 在 :invalid 和 :warning 状态下的设计规范，标注了各个图标（错误/警告图标、AI 标签、下拉箭头）之间的具体间距、内外边距及分割线结构。&quot;,
+        &quot;relevance&quot;: &quot;relevant&quot;,
+        &quot;temporal_role&quot;: &quot;expected&quot;,
+        &quot;source_quote&quot;: &quot;- Verify if `Combobox` looks similar to the expected image (this is from MultiSelect, designs needs confirm if is ok):&quot;,
+        &quot;faithful_text_representation&quot;: &quot;no&quot;,
+        &quot;ocr_task_sufficient&quot;: &quot;no&quot;,
+        &quot;text_reason&quot;: &quot;图片不仅包含文字，关键信息在于标注的几何间距尺寸、图标对齐顺序、视觉分割线以及渐变高亮样式，单纯文字转录会丢失这些核心设计规范细节。&quot;
+      },
+      {
+        &quot;asset_id&quot;: &quot;deca4e29038b19661875419ab194c6c78e0c666ee7dcbadeaf421449737b82c4&quot;,
+        &quot;observed&quot;: true,
+        &quot;content_kind&quot;: &quot;web_interface&quot;,
+        &quot;content_reason&quot;: &quot;展示了 ComboBox 输入框在带有 AI 标签时的实际渲染效果截图。&quot;,
+        &quot;observation&quot;: &quot;ComboBox 输入框右侧显示 AI 标签、竖线分割线及下拉箭头，输入框底部带有蓝色渐变视觉效果。&quot;,
+        &quot;relevance&quot;: &quot;relevant&quot;,
+        &quot;temporal_role&quot;: &quot;after&quot;,
+        &quot;source_quote&quot;: &quot;e.g:&quot;,
+        &quot;faithful_text_representation&quot;: &quot;no&quot;,
+        &quot;ocr_task_sufficient&quot;: &quot;no&quot;,
+        &quot;text_reason&quot;: &quot;包含 AI 标签的边框、分割线及输入框的蓝色渐变视觉效果，单纯提取文本无法表达这些视觉渲染特征。&quot;
+      }
+    ],
+    &quot;task&quot;: {
+      &quot;necessity&quot;: &quot;necessary&quot;,
+      &quot;image_transcription_sufficient&quot;: &quot;no&quot;,
+      &quot;missing_visual_information&quot;: &quot;设计规范图中定义的错误/警告状态下图标排列顺序（invalid/warning 图标 -&gt; AI 标签 -&gt; 下拉箭头）、具体像素间距规范（8px/16px）以及分割线与渐变样式的视觉定位。&quot;,
+      &quot;evidence_asset_ids&quot;: [
+        &quot;744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743&quot;
+      ],
+      &quot;problem_evidence_quotes&quot;: [
+        &quot;Fixes issues with `Combobox` `invalid and warn` icon positioning and `AI label` missing gradient and spacing.&quot;,
+        &quot;- Verify if `Combobox` looks similar to the expected image (this is from MultiSelect, designs needs confirm if is ok):&quot;,
+        &quot;- `Invalid/warn` states in `Default` and `With Ai Label` stories should fit the design spec.&quot;
+      ],
+      &quot;reason&quot;: &quot;PR 文本中仅提到了修复 Combobox 的 invalid/warn 图标位置及 AI label 间距问题，但各个图标的具体排列顺序、像素级间距（如 8px、16px）、分割线位置和渐变视觉规范仅在设计规范图片（744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743）中完整呈现，单纯通过文本转录无法还原该视觉布局要求。&quot;
+    },
+    &quot;quality&quot;: {
+      &quot;problem_clarity&quot;: &quot;clear&quot;,
+      &quot;evidence_sufficiency&quot;: &quot;sufficient&quot;,
+      &quot;problem_evidence_separable&quot;: &quot;yes&quot;,
+      &quot;leakage_risk&quot;: &quot;present&quot;,
+      &quot;missing_sources&quot;: [
+        &quot;issue&quot;,
+        &quot;comments&quot;,
+        &quot;patch&quot;,
+        &quot;tests&quot;,
+        &quot;history&quot;
+      ],
+      &quot;reason&quot;: &quot;PR 正文中包含修复后的 Changelog 及渲染后截图（deca4e29038b19661875419ab194c6c78e0c666ee7dcbadeaf421449737b82c4），存在方案泄漏风险；但预期的设计规范图（744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743）清晰独立，提供了任务所需的视觉规范。&quot;
+    }
+  },
+  &quot;decision&quot;: {
+    &quot;bucket&quot;: &quot;visual_necessary&quot;,
+    &quot;reason_code&quot;: &quot;necessary_nontext_visual_evidence&quot;,
+    &quot;policy_version&quot;: &quot;strict-nontext-visual-v1&quot;,
+    &quot;training_ready&quot;: false,
+    &quot;readiness_reason&quot;: &quot;PR-only; issue/patch/history and execution not verified&quot;
+  },
+  &quot;elapsed_seconds&quot;: 26.262
+}</pre></details><details class="verifier-output"><summary>无图可修复性 Verifier · 完整结构化输出</summary><div class="evidence-link"><a href="file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075905892457Z/16_03_result_0021.json">打开原始 JSON</a> · <code>sha256:0ce67d2ee9e350a6e4ce3571b9bcc76f4ce00c3a68f611ebf3b33d2a042c3709</code></div><pre>{
+  &quot;case_id&quot;: &quot;carbon-design-system__carbon-20978&quot;,
+  &quot;repository&quot;: &quot;carbon-design-system/carbon&quot;,
+  &quot;pr_number&quot;: 20978,
+  &quot;pr_id&quot;: &quot;carbon-design-system/carbon#20978&quot;,
+  &quot;status&quot;: &quot;complete&quot;,
+  &quot;ineligible_reason&quot;: null,
+  &quot;packet&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_06_packet_0021.json&quot;,
+  &quot;packet_sha256&quot;: &quot;58bf6e14db1703a4140fab356bfc2776cf74f954073435d2ef070f9c63cdd809&quot;,
+  &quot;curator_assets&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_06_curator_assets_0021.json&quot;,
+  &quot;curator_assets_sha256&quot;: &quot;dd43fab155a137bc85daeae9b0ad19f12ef6415cffa824515b2db6be3527bed0&quot;,
+  &quot;bound_schema&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_06_bound_schema_0021.json&quot;,
+  &quot;bound_schema_sha256&quot;: &quot;bd7f63c6dde7487067d9ff1bb90048bde2603dcbc98498101cd1abe9ecd945f8&quot;,
+  &quot;visual_verifier&quot;: {
+    &quot;pr_id&quot;: &quot;carbon-design-system/carbon#20978&quot;,
+    &quot;decision&quot;: {
+      &quot;bucket&quot;: &quot;visual_necessary&quot;,
+      &quot;reason_code&quot;: &quot;necessary_nontext_visual_evidence&quot;,
+      &quot;policy_version&quot;: &quot;strict-nontext-visual-v1&quot;,
+      &quot;training_ready&quot;: false,
+      &quot;readiness_reason&quot;: &quot;PR-only; issue/patch/history and execution not verified&quot;
+    },
+    &quot;annotation&quot;: {
+      &quot;schema_version&quot;: &quot;visual-verifier-v1&quot;,
+      &quot;pr_id&quot;: &quot;carbon-design-system/carbon#20978&quot;,
+      &quot;images&quot;: [
+        {
+          &quot;asset_id&quot;: &quot;744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743&quot;,
+          &quot;observed&quot;: true,
+          &quot;content_kind&quot;: &quot;diagram&quot;,
+          &quot;content_reason&quot;: &quot;包含组件设计规范标注图，标有尺寸间距（16px/1rem、8/.5 等）、图标排列顺序（invalid/warn 图标、AI 标签、下拉箭头）以及分割线与底纹渐变位置。&quot;,
+          &quot;observation&quot;: &quot;展示了 Multiselect/Combobox 在 :invalid 和 :warning 状态下的设计规范，标注了各个图标（错误/警告图标、AI 标签、下拉箭头）之间的具体间距、内外边距及分割线结构。&quot;,
+          &quot;relevance&quot;: &quot;relevant&quot;,
+          &quot;temporal_role&quot;: &quot;expected&quot;,
+          &quot;source_quote&quot;: &quot;- Verify if `Combobox` looks similar to the expected image (this is from MultiSelect, designs needs confirm if is ok):&quot;,
+          &quot;faithful_text_representation&quot;: &quot;no&quot;,
+          &quot;ocr_task_sufficient&quot;: &quot;no&quot;,
+          &quot;text_reason&quot;: &quot;图片不仅包含文字，关键信息在于标注的几何间距尺寸、图标对齐顺序、视觉分割线以及渐变高亮样式，单纯文字转录会丢失这些核心设计规范细节。&quot;
+        },
+        {
+          &quot;asset_id&quot;: &quot;deca4e29038b19661875419ab194c6c78e0c666ee7dcbadeaf421449737b82c4&quot;,
+          &quot;observed&quot;: true,
+          &quot;content_kind&quot;: &quot;web_interface&quot;,
+          &quot;content_reason&quot;: &quot;展示了 ComboBox 输入框在带有 AI 标签时的实际渲染效果截图。&quot;,
+          &quot;observation&quot;: &quot;ComboBox 输入框右侧显示 AI 标签、竖线分割线及下拉箭头，输入框底部带有蓝色渐变视觉效果。&quot;,
+          &quot;relevance&quot;: &quot;relevant&quot;,
+          &quot;temporal_role&quot;: &quot;after&quot;,
+          &quot;source_quote&quot;: &quot;e.g:&quot;,
+          &quot;faithful_text_representation&quot;: &quot;no&quot;,
+          &quot;ocr_task_sufficient&quot;: &quot;no&quot;,
+          &quot;text_reason&quot;: &quot;包含 AI 标签的边框、分割线及输入框的蓝色渐变视觉效果，单纯提取文本无法表达这些视觉渲染特征。&quot;
+        }
+      ],
+      &quot;task&quot;: {
+        &quot;necessity&quot;: &quot;necessary&quot;,
+        &quot;image_transcription_sufficient&quot;: &quot;no&quot;,
+        &quot;missing_visual_information&quot;: &quot;设计规范图中定义的错误/警告状态下图标排列顺序（invalid/warning 图标 -&gt; AI 标签 -&gt; 下拉箭头）、具体像素间距规范（8px/16px）以及分割线与渐变样式的视觉定位。&quot;,
+        &quot;evidence_asset_ids&quot;: [
+          &quot;744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743&quot;
+        ],
+        &quot;problem_evidence_quotes&quot;: [
+          &quot;Fixes issues with `Combobox` `invalid and warn` icon positioning and `AI label` missing gradient and spacing.&quot;,
+          &quot;- Verify if `Combobox` looks similar to the expected image (this is from MultiSelect, designs needs confirm if is ok):&quot;,
+          &quot;- `Invalid/warn` states in `Default` and `With Ai Label` stories should fit the design spec.&quot;
+        ],
+        &quot;reason&quot;: &quot;PR 文本中仅提到了修复 Combobox 的 invalid/warn 图标位置及 AI label 间距问题，但各个图标的具体排列顺序、像素级间距（如 8px、16px）、分割线位置和渐变视觉规范仅在设计规范图片（744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743）中完整呈现，单纯通过文本转录无法还原该视觉布局要求。&quot;
+      },
+      &quot;quality&quot;: {
+        &quot;problem_clarity&quot;: &quot;clear&quot;,
+        &quot;evidence_sufficiency&quot;: &quot;sufficient&quot;,
+        &quot;problem_evidence_separable&quot;: &quot;yes&quot;,
+        &quot;leakage_risk&quot;: &quot;present&quot;,
+        &quot;missing_sources&quot;: [
+          &quot;issue&quot;,
+          &quot;comments&quot;,
+          &quot;patch&quot;,
+          &quot;tests&quot;,
+          &quot;history&quot;
+        ],
+        &quot;reason&quot;: &quot;PR 正文中包含修复后的 Changelog 及渲染后截图（deca4e29038b19661875419ab194c6c78e0c666ee7dcbadeaf421449737b82c4），存在方案泄漏风险；但预期的设计规范图（744d99064a19f198f41e266f614cbe94d5f419cf0609f19110cc99a1035c6743）清晰独立，提供了任务所需的视觉规范。&quot;
+      }
+    },
+    &quot;result_path&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/image-screening/09_single_call_verifier/20260901T073959507339Z/09_result_0003.json&quot;,
+    &quot;result_sha256&quot;: &quot;50a3e2c90bc62ccd9449889f1580b0f4c88fc6d15b3f15fb232e6011e6e30b65&quot;,
+    &quot;run_manifest_path&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/image-screening/09_single_call_verifier/20260901T073959507339Z/09_run_manifest.json&quot;,
+    &quot;run_manifest_sha256&quot;: &quot;cf9c3f619c57aacf97a5319fe84668952cadafbbf5b2b00bf63c2924b133f4e9&quot;
+  },
+  &quot;error&quot;: null,
+  &quot;elapsed_seconds&quot;: 12.654,
+  &quot;source_result&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_03_result_0021.json&quot;,
+  &quot;source_result_sha256&quot;: &quot;4a7e6413593eb81f55271a456d8da37f1a593de18727e7d441fa8e6cbadd8008&quot;,
+  &quot;annotation&quot;: {
+    &quot;schema_version&quot;: &quot;text-only-repair-sufficiency-v1&quot;,
+    &quot;case_id&quot;: &quot;carbon-design-system__carbon-20978&quot;,
+    &quot;evidence&quot;: {
+      &quot;problem_sources_usable&quot;: &quot;yes&quot;,
+      &quot;evidence_quotes&quot;: [
+        {
+          &quot;source_id&quot;: &quot;carbon-design-system/carbon#20120:body&quot;,
+          &quot;quote&quot;: &quot;The invalid icon has buggy positioning when paired with an ai-label&quot;
+        },
+        {
+          &quot;source_id&quot;: &quot;carbon-design-system/carbon#20849:body&quot;,
+          &quot;quote&quot;: &quot;It does not have the blue AI styling/colors appearing on the input.\n- There needs to be a divider between the AI decorator and the chevron in the input.\n- When the close icon appears in the input, the spacing is off and there should be a divider between the AI decorator and the close icon in the input.&quot;
+        }
+      ],
+      &quot;limitations&quot;: [
+        &quot;Issue 20120 中的预期和实际对比图片均被遮蔽且未包含文字描述&quot;,
+        &quot;Issue 20849 提及的渐变色样式、具体间距数值和分割线样式均未给出具体 CSS 规范或设计 token&quot;,
+        &quot;未提供文件索引列表，无法定位具体源代码文件&quot;
+      ]
+    },
+    &quot;localization&quot;: {
+      &quot;target_localizable&quot;: &quot;no&quot;,
+      &quot;component&quot;: &quot;Combobox (@carbon/web-components)&quot;,
+      &quot;candidate_paths&quot;: [],
+      &quot;reason&quot;: &quot;提供的 baseline_file_index 为空，无法定位具体文件路径。&quot;
+    },
+    &quot;repair_contract&quot;: {
+      &quot;completeness&quot;: &quot;partial&quot;,
+      &quot;current_behavior&quot;: &quot;Combobox 与 AI Label 组合使用时缺少蓝色渐变/AI 样式，invalid 图标定位异常，AI 装饰器与 chevron/close 图标之间缺少分割线且间距异常。&quot;,
+      &quot;expected_behavior&quot;: &quot;Combobox 具有正确的 AI 蓝色渐变样式，AI 装饰器与 chevron 及 close 图标之间有分割线，图标间距与 invalid 图标位置正确。&quot;,
+      &quot;explicit_constraints&quot;: [
+        &quot;AI 装饰器与 chevron 之间需要有分割线&quot;,
+        &quot;AI 装饰器与 close 图标之间需要有分割线&quot;
+      ],
+      &quot;unresolved_variables&quot;: [
+        &quot;蓝色 AI 渐变具体的 CSS 属性/颜色/Token&quot;,
+        &quot;分割线的宽度、颜色、高度及间距数值&quot;,
+        &quot;invalid 图标的具体定位方式与偏移量&quot;
+      ],
+      &quot;reason&quot;: &quot;文本仅给出了高层级的视觉需求描述（如缺少分割线、缺少蓝色渐变），缺少具体的 CSS 变量、数值和几何参数。&quot;
+    },
+    &quot;test_contract&quot;: {
+      &quot;constructible&quot;: &quot;no&quot;,
+      &quot;assertions&quot;: [],
+      &quot;missing_oracles&quot;: [
+        &quot;AI 渐变样式对应的类名或 CSS 样式计算值&quot;,
+        &quot;分割线元素的 DOM 结构及样式断言&quot;,
+        &quot;invalid 状态下图标的具体位置坐标/间距预期值&quot;
+      ],
+      &quot;reason&quot;: &quot;缺乏具体样式值与 DOM 结构契约，无法编写确定性的客观断言测试。&quot;
+    },
+    &quot;counterfactual&quot;: {
+      &quot;multiple_repairs_fit_text&quot;: &quot;yes&quot;,
+      &quot;examples&quot;: [
+        &quot;通过 CSS border-left 模拟 divider 分割线&quot;,
+        &quot;通过独立的 DOM 分隔线元素及相应 class 渲染 divider&quot;
+      ],
+      &quot;reason&quot;: &quot;文本未规定分割线的具体 DOM 实现方式（伪元素、独立元素或边框）以及确切的样式 token。&quot;
+    },
+    &quot;confidence&quot;: &quot;high&quot;
+  },
+  &quot;text_decision&quot;: {
+    &quot;policy_version&quot;: &quot;visual-necessity-human-funnel-v1&quot;,
+    &quot;empirical_visual_dependence&quot;: &quot;not_tested&quot;,
+    &quot;bucket&quot;: &quot;visual_candidate&quot;,
+    &quot;reason_code&quot;: &quot;text_leaves_testable_contract_ambiguous&quot;
+  },
+  &quot;reconciliation&quot;: {
+    &quot;policy_version&quot;: &quot;visual-necessity-human-funnel-v1&quot;,
+    &quot;visual_bucket&quot;: &quot;visual_necessary&quot;,
+    &quot;text_bucket&quot;: &quot;visual_candidate&quot;,
+    &quot;human_required_for_acceptance&quot;: true,
+    &quot;agent_ablation_required_now&quot;: false,
+    &quot;queue&quot;: &quot;high_priority_human&quot;,
+    &quot;reason_code&quot;: &quot;independent_routes_agree_on_missing_visual_contract&quot;
+  },
+  &quot;protocol_recovery&quot;: {
+    &quot;transform&quot;: &quot;remove_exact_top_level_$schema_key_v1&quot;,
+    &quot;removed_value&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
+    &quot;semantic_fields_changed&quot;: false,
+    &quot;raw_response&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_case_0021/16_06_model_raw.json&quot;,
+    &quot;raw_response_sha256&quot;: &quot;1ee74a9187839a5136b8ac20f0e0a26fd648a42cab1533311ccaec91ba61b1fc&quot;,
+    &quot;source_failure_preserved&quot;: &quot;/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075342347903Z/16_03_result_0021.json&quot;
+  }
+}</pre></details><details class="verifier-output"><summary>Parent Issue 范围 Verifier · 完整结构化输出</summary><div class="evidence-link"><a href="file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_07_verifier_result.json">打开原始 JSON</a> · <code>sha256:22f5954a5442ba89ff5e2194cc7d95837706b36b12f884abbf987627e360ce6a</code></div><pre>{
+  &quot;schema_version&quot;: &quot;source-scope-verifier-v1&quot;,
+  &quot;candidate_id&quot;: &quot;carbon-design-system__carbon-20978&quot;,
+  &quot;overall_decision&quot;: &quot;curator_only&quot;,
+  &quot;confidence&quot;: &quot;high&quot;,
+  &quot;expand_descendants&quot;: false,
+  &quot;human_review_required&quot;: false,
+  &quot;scope_blockers&quot;: [],
+  &quot;ancestor_issues&quot;: [
+    {
+      &quot;repository&quot;: &quot;carbon-design-system/carbon&quot;,
+      &quot;issue_number&quot;: 17992,
+      &quot;relation&quot;: &quot;acceptance_parent_reference&quot;,
+      &quot;overall_decision&quot;: &quot;curator_only&quot;,
+      &quot;summary&quot;: &quot;Umbrella tracking epic establishing general React to Web Components parity guidelines, acceptance criteria, and component review checklists.&quot;,
+      &quot;descendants_excluded&quot;: true,
+      &quot;reason&quot;: &quot;Issue #17992 is a broad umbrella initiative for syncing all Carbon Web Components with React. Its contents provide high-level project context and review criteria rather than specific actionable requirements for the combo-box component fix.&quot;,
+      &quot;requirements&quot;: [
+        {
+          &quot;requirement&quot;: &quot;General parity mandate to update web components to match React component implementations and visual styles.&quot;,
+          &quot;source_quote&quot;: &quot;Update existing web components to match React. Experimental components/features can be excluded until they reach stable status in React.&quot;,
+          &quot;new_information&quot;: &quot;no&quot;,
+          &quot;patch_relevant&quot;: &quot;unclear&quot;,
+          &quot;executable&quot;: &quot;no&quot;,
+          &quot;currently_tested&quot;: &quot;unknown&quot;,
+          &quot;decision&quot;: &quot;curator_only&quot;,
+          &quot;requires_test_update&quot;: false,
+          &quot;reason&quot;: &quot;Provides general initiative context; concrete component-level styling requirements are already captured in direct issues #20120 and #20849.&quot;
+        },
+        {
+          &quot;requirement&quot;: &quot;Standard acceptance criteria across parity issues covering API updates, visual/style alignments, and Storybook documentation matching.&quot;,
+          &quot;source_quote&quot;: &quot;- update API for new/deprecated functionality\n  - in cases where this can cause breaking changes (like changing a property name), the old property name should be @deprecated in addition to adding a new one\n- update component visuals/styles\n- Storybook stories and documentation&quot;,
+          &quot;new_information&quot;: &quot;no&quot;,
+          &quot;patch_relevant&quot;: &quot;unclear&quot;,
+          &quot;executable&quot;: &quot;no&quot;,
+          &quot;currently_tested&quot;: &quot;unknown&quot;,
+          &quot;decision&quot;: &quot;curator_only&quot;,
+          &quot;requires_test_update&quot;: false,
+          &quot;reason&quot;: &quot;Generic project-wide acceptance criteria checklist for parity issues, not specific to combo-box.&quot;
+        },
+        {
+          &quot;requirement&quot;: &quot;Procedural guidelines for PR reviews including theme checks, browser checks, and UX/design team review requirements.&quot;,
+          &quot;source_quote&quot;: &quot;Check against the four themes\n- Check against the different browsers\n- Storybooks need to match\n  - Controls - i.e. RTL - visually make they present. Also make sure they work!\n  - Ensure the prop tables have parity.&quot;,
+          &quot;new_information&quot;: &quot;no&quot;,
+          &quot;patch_relevant&quot;: &quot;no&quot;,
+          &quot;executable&quot;: &quot;no&quot;,
+          &quot;currently_tested&quot;: &quot;unknown&quot;,
+          &quot;decision&quot;: &quot;exclude&quot;,
+          &quot;requires_test_update&quot;: false,
+          &quot;reason&quot;: &quot;Procedural review workflow guidance for human reviewers.&quot;
+        },
+        {
+          &quot;requirement&quot;: &quot;Umbrella list of web components to track parity across the entire library.&quot;,
+          &quot;source_quote&quot;: &quot;### existing web components\n- [ ] Ai-label\n- [ ] Aspect-ratio\n- [ ] Code-snippet&quot;,
+          &quot;new_information&quot;: &quot;no&quot;,
+          &quot;patch_relevant&quot;: &quot;no&quot;,
+          &quot;executable&quot;: &quot;no&quot;,
+          &quot;currently_tested&quot;: &quot;unknown&quot;,
+          &quot;decision&quot;: &quot;exclude&quot;,
+          &quot;requires_test_update&quot;: false,
+          &quot;reason&quot;: &quot;Epic tracking checklist of unrelated sibling components.&quot;
+        }
+      ]
+    }
+  ]
+}</pre></details></section>
+<section class="gate" id="gate2"><div class="gate-head"><div><h2>第二项人工核验：F2P/P2P 测试是否有效</h2><div class="muted">执行结果符合预期，只能证明测试可以运行；这里还要逐项确认测试是否真正覆盖需求和相关回归。</div></div><div class="muted">执行判定：chromium_computed_style · pixel oracle=false</div></div>
+<div class="table-wrap"><table><thead><tr><th>这项测试在验证什么</th><th>为何属于 F2P/P2P</th><th>实际如何检测</th><th>你的判断</th></tr></thead><tbody><tr data-test-id="f2p_ai_gradient_decorator" data-test-class="F2P"><td class="test-summary"><b>AI 标签输入框应显示蓝色渐变装饰</b><br>确认带有 AI 标签的组合框重新获得用于标识 AI 状态的渐变背景。<br><small>Issue #20849：Web Components 版本缺少 React 版本已有的蓝色 AI styling/colors。</small><br><code>f2p_ai_gradient_decorator</code></td><td><b>F2P</b> · fail-&gt;pass · ✓<br><small>修复前没有渐变，修复后出现渐变，因此应为 fail→pass。</small></td><td>在真实 Chromium 中读取 AI 装饰层的 computed background-image，结果不能为 none。<details><summary>查看技术断言</summary><div class="assertions">.#{$prefix}--list-box__wrapper--decorator {
+    @include ai-gradient;</div></details></td><td><select class="test-decision"><option value="unclear">待判断</option><option value="valid">有效</option><option value="invalid">无效</option></select><textarea class="test-reason" rows="2" placeholder="说明它验证的需求或回归"></textarea></td></tr><tr data-test-id="f2p_ai_right_divider" data-test-class="F2P"><td class="test-summary"><b>AI 装饰器与下拉箭头之间应有分隔线</b><br>确认 AI 标签右侧出现 1px 分隔线，并位于设计要求的位置。<br><small>Issue #20849：AI decorator 与输入框中的 chevron 之间需要 divider。</small><br><code>f2p_ai_right_divider</code></td><td><b>F2P</b> · fail-&gt;pass · ✓<br><small>修复前缺少或位置错误，修复后宽度为 1px、右偏移为 -9px，因此应为 fail→pass。</small></td><td>读取 AI label 的 ::after 伪元素，检查 width=1px 且 right=-9px。<details><summary>查看技术断言</summary><div class="assertions">::slotted(#{$prefix}-ai-label)::after<br>inline-size: to-rem(1px);<br>inset-inline-end: to-rem(-9px);</div></details></td><td><select class="test-decision"><option value="unclear">待判断</option><option value="valid">有效</option><option value="invalid">无效</option></select><textarea class="test-reason" rows="2" placeholder="说明它验证的需求或回归"></textarea></td></tr><tr data-test-id="f2p_invalid_ai_left_divider" data-test-class="F2P"><td class="test-summary"><b>无输入且 invalid 时，AI 标签左侧分隔线位置应正确</b><br>确认 invalid 图标与 AI 标签组合时，左侧分隔线不会贴错位置。<br><small>Issue #20120：invalid icon 与 ai-label 同时出现时定位异常；附图给出 expected/actual。</small><br><code>f2p_invalid_ai_left_divider</code></td><td><b>F2P</b> · fail-&gt;pass · ✓<br><small>修复前左侧分隔线位置不符合预期，修复后偏移为 -9px，因此应为 fail→pass。</small></td><td>读取 AI label 的 ::before 伪元素，检查 left=-9px。<details><summary>查看技术断言</summary><div class="assertions">::slotted(#{$prefix}-ai-label)::before<br>inset-inline-start: to-rem(-9px);</div></details></td><td><select class="test-decision"><option value="unclear">待判断</option><option value="valid">有效</option><option value="invalid">无效</option></select><textarea class="test-reason" rows="2" placeholder="说明它验证的需求或回归"></textarea></td></tr><tr data-test-id="f2p_invalid_ai_closable_spacing" data-test-class="F2P"><td class="test-summary"><b>invalid、AI 标签和关闭按钮同时出现时，输入区间距应正确</b><br>确认关闭按钮出现后，输入内容和 invalid 图标为 AI 装饰器留出正确空间。<br><small>Issue #20849：close icon 出现时 spacing 不正确；Issue #20120 展示 invalid icon 定位异常。</small><br><code>f2p_invalid_ai_closable_spacing</code></td><td><b>F2P</b> · fail-&gt;pass · ✓<br><small>修复前 padding/图标位置错误，修复后达到指定间距，因此应为 fail→pass。</small></td><td>读取输入框 padding-right=141px，并检查 invalid icon 的 right=116px。<details><summary>查看技术断言</summary><div class="assertions">:host(#{$prefix}-combo-box[invalid][ai-label][isClosable])<br>padding-inline-end: to-rem(141px);<br>inset-inline-end: to-rem(116px) !important;</div></details></td><td><select class="test-decision"><option value="unclear">待判断</option><option value="valid">有效</option><option value="invalid">无效</option></select><textarea class="test-reason" rows="2" placeholder="说明它验证的需求或回归"></textarea></td></tr><tr data-test-id="p2p_disabled_selection_noninteractive" data-test-class="P2P"><td class="test-summary"><b>禁用组合框的清除/选择按钮仍不可交互</b><br>防止本次 AI 标签样式修改意外恢复禁用控件的鼠标交互。<br><small>相邻回归保护：disabled 组合框必须保持不可操作。</small><br><code>p2p_disabled_selection_noninteractive</code></td><td><b>P2P</b> · pass-&gt;pass · ✓<br><small>该行为在修复前已经正确，修复后也必须继续正确，因此应为 pass→pass。</small></td><td>读取 disabled 组合框选择按钮的 pointer-events，必须为 none。<details><summary>查看技术断言</summary><div class="assertions">:host(#{$prefix}-combo-box[disabled])<br>.#{$prefix}--list-box__selection {
+    pointer-events: none;</div></details></td><td><select class="test-decision"><option value="unclear">待判断</option><option value="valid">有效</option><option value="invalid">无效</option></select><textarea class="test-reason" rows="2" placeholder="说明它验证的需求或回归"></textarea></td></tr><tr data-test-id="p2p_invalid_helper_error_color" data-test-class="P2P"><td class="test-summary"><b>invalid 状态的帮助文字仍使用错误色</b><br>防止调整 invalid/AI 标签布局时破坏原有错误提示颜色。<br><small>相邻回归保护：invalid 状态必须继续保持错误视觉语义。</small><br><code>p2p_invalid_helper_error_color</code></td><td><b>P2P</b> · pass-&gt;pass · ✓<br><small>错误色在修复前已正确，修复后仍应保持，因此应为 pass→pass。</small></td><td>读取 invalid helper text 的 computed color，必须为 rgb(218, 30, 40)。<details><summary>查看技术断言</summary><div class="assertions">:host(#{$prefix}-combo-box[invalid])<br>.#{$prefix}--form__helper-text {
+    color: $text-error;</div></details></td><td><select class="test-decision"><option value="unclear">待判断</option><option value="valid">有效</option><option value="invalid">无效</option></select><textarea class="test-reason" rows="2" placeholder="说明它验证的需求或回归"></textarea></td></tr><tr data-test-id="p2p_disabled_item_semantics" data-test-class="P2P"><td class="test-summary"><b>禁用选项仍显示不可操作光标</b><br>防止组合框样式变更影响 disabled item 的交互语义。<br><small>相邻回归保护：disabled item 必须继续明确表示不可操作。</small><br><code>p2p_disabled_item_semantics</code></td><td><b>P2P</b> · pass-&gt;pass · ✓<br><small>该行为在修复前已经正确，修复后也必须继续正确，因此应为 pass→pass。</small></td><td>读取 disabled item 的 computed cursor，必须为 not-allowed。<details><summary>查看技术断言</summary><div class="assertions">:host(#{$prefix}-combo-box-item[disabled])<br>color: $text-disabled;<br>cursor: not-allowed;<br>text-decoration: none;</div></details></td><td><select class="test-decision"><option value="unclear">待判断</option><option value="valid">有效</option><option value="invalid">无效</option></select><textarea class="test-reason" rows="2" placeholder="说明它验证的需求或回归"></textarea></td></tr><tr data-test-id="p2p_selected_item_state" data-test-class="P2P"><td class="test-summary"><b>已选中的选项仍显示选中图标</b><br>防止 AI 标签相关样式改动隐藏原有 selected 状态反馈。<br><small>相邻回归保护：selected item 必须继续显示选中状态。</small><br><code>p2p_selected_item_state</code></td><td><b>P2P</b> · pass-&gt;pass · ✓<br><small>选中图标在修复前可见，修复后也必须可见，因此应为 pass→pass。</small></td><td>读取 selected item 图标的 computed display，必须为 block。<details><summary>查看技术断言</summary><div class="assertions">:host(#{$prefix}-combo-box-item[selected])<br>@extend .#{$prefix}--list-box__menu-item--active;<br>.#{$prefix}--list-box__menu-item__selected-icon {
+    display: block;</div></details></td><td><select class="test-decision"><option value="unclear">待判断</option><option value="valid">有效</option><option value="invalid">无效</option></select><textarea class="test-reason" rows="2" placeholder="说明它验证的需求或回归"></textarea></td></tr></tbody></table></div>
+<div class="cols"><div><details open><summary>Agent 收到的完整题面（未截断）</summary><pre># Combo box AI-label visual parity
+
+Repository: `carbon-design-system/carbon`
+
+Resolve the two linked GitHub Issues reproduced verbatim below. Work only in the
+checked-out repository under `/testbed`. Preserve existing behavior outside this
+bug, and do not remove or weaken existing tests. The remote image URLs in the
+original text have been replaced by their immutable local paths because the task
+runs without internet access.
+
+## Issue #20120
+
+Title: [Bug]: Combobox styling issues with `invalid` icon and `ai-label`
+
+### Package
+
+@carbon/web-components
+
+
+### Package version
+
+latest
+
+
+
+### Description
+
+The invalid icon has buggy positioning when paired with an ai-label
+
+#### No Input
+
+**Expected (react):**
+
+![Image](/testbed/assets/52c704ecf729b3f7cbb1cf5773953750a4535b928f3fffcb23b0dea4e11ee68b.png)
+
+**Actual:**
+
+![Image](/testbed/assets/8127091bb3ef3f5f9aa75c8f72994e235de08a27d24b3fce1ad754956e63034a.png)
+
+#### With Input
+
+**Expected (react):**
+
+![Image](/testbed/assets/dd773233556ff6ce11d7dac4f1a1dc5c7e4007d6db4496dbd6960c81f38e87bb.png)
+
+**Actual:**
+
+![Image](/testbed/assets/a529c86b1e186a5a8d946595020d9f5f59fb34315415aeaf35c96ceeb8316352.png)
+
+
+### Suggested Severity
+
+Severity 3 = User can complete task, and/or has a workaround within the user experience of a given component.
+
+## Issue #20849
+
+Title: `React|WC Parity: Combobox AI Label is missing gradient style`
+
+AI label story:
+
+- It does not have the blue AI styling/colors appearing on the input.
+- There needs to be a divider between the AI decorator and the chevron in the input.
+- When the close icon appears in the input, the spacing is off and there should be a divider between the AI decorator and the close icon in the input.
+
+See parent issue https://github.com/carbon-design-system/carbon/issues/17992 for acceptance criteria.
+
+&gt; [!IMPORTANT]
+&gt; Every PR needs a ux and visual review from the design team to ensure consistency. Please be sure PRs have https://github.com/carbon-design-system/carbon/labels/status%3A%20visual%20review%20%F0%9F%94%8D applied and request a review from @carbon-design-system/design
+
+The parent link and review-process note above are retained as part of the
+original Issue text. This offline coding task is scoped to the concrete behavior
+described in Issues #20120 and #20849 and the four local visual references.
+</pre></details><div class="links"><a href="https://github.com/carbon-design-system/carbon/pull/20978">GitHub PR</a><a href="file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_source_archive/20260901T074547064254Z/11_record_0003.json">完整来源档案</a><a href="file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/image-screening/09_single_call_verifier/20260901T073959507339Z/09_result_0003.json">图片语义 Verifier JSON</a><a href="file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260901T075905892457Z/16_03_result_0021.json">无图可修复性 Verifier JSON</a><a href="file:///Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_07_verifier_result.json">Parent Issue 范围 Verifier JSON</a></div></div><div class="review"><label for="coverage">整体需求与回归覆盖</label><select id="coverage"><option value="">待判断</option><option value="complete">完整</option><option value="incomplete">不完整</option><option value="unclear">不确定</option></select><label for="missing-behaviors">仍未覆盖的行为（完整时留空）</label><textarea id="missing-behaviors" rows="3"></textarea><label for="test-reason">整体核验理由</label><textarea id="test-reason" rows="4"></textarea><label for="test-state">核验结论</label><select id="test-state"><option value="pending">待核验</option><option value="approved">通过</option><option value="rejected">不通过</option></select></div></div></section>
+<section class="gate final"><b>准入规则：</b><span>只有两项人工核验都通过，任务才可进入最终题集。</span><span id="final-state" class="pill">暂不准入</span></section>
+<details id="export-preview" class="gate hidden"><summary>导出 JSON 预览</summary><pre id="json-preview"></pre></details></main>
+<script>
+const payloadNode=document.getElementById('calibration-payload');
+const payload=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(payloadNode.content.textContent.trim()),c=>c.charCodeAt(0))));
+const storageKey='dual-human-calibration:'+location.pathname+':'+payload.seed.dossier_sha256+':'+payload.seed.task_directory_checksum;
+const ids=['text-only-notes','text-sufficiency','ocr-replaceable','visual-fact','visual-reason','visual-state','coverage','missing-behaviors','test-reason','test-state'];
+function saved(){try{return JSON.parse(localStorage.getItem(storageKey)||'{}')}catch{return {}}}
+function persist(){const value={};ids.forEach(id=>value[id]=document.getElementById(id).value);value.assets=[...document.querySelectorAll('[data-asset-id]:checked')].map(x=>x.dataset.assetId);value.tests=[...document.querySelectorAll('tr[data-test-id]')].map(row=>({test_id:row.dataset.testId,class:row.dataset.testClass,decision:row.querySelector('.test-decision').value,reason:row.querySelector('.test-reason').value}));localStorage.setItem(storageKey,JSON.stringify(value));updateStatus()}
+function restore(value){ids.forEach(id=>{if(value[id]!==undefined)document.getElementById(id).value=value[id]});const assets=new Set(value.assets||[]);document.querySelectorAll('[data-asset-id]').forEach(x=>x.checked=assets.has(x.dataset.assetId));const tests=new Map((value.tests||[]).map(x=>[x.test_id,x]));document.querySelectorAll('tr[data-test-id]').forEach(row=>{const item=tests.get(row.dataset.testId);if(item){row.querySelector('.test-decision').value=item.decision;row.querySelector('.test-reason').value=item.reason}});updateStatus()}
+function build(){const now=new Date().toISOString(),visualState=document.getElementById('visual-state').value,testState=document.getElementById('test-state').value;return {...payload.seed,multimodal_necessity:{state:visualState,reviewer:null,reason:document.getElementById('visual-reason').value.trim()||null,reviewed_at:visualState==='pending'?null:now,text_only_sufficiency:document.getElementById('text-sufficiency').value||null,ocr_replaceable:document.getElementById('ocr-replaceable').value||null,non_text_visual_fact:document.getElementById('visual-fact').value.trim()||null,evidence_asset_ids:[...document.querySelectorAll('[data-asset-id]:checked')].map(x=>x.dataset.assetId),text_only_notes:document.getElementById('text-only-notes').value.trim()||null},f2p_p2p_semantic_validity:{state:testState,reviewer:null,reason:document.getElementById('test-reason').value.trim()||null,reviewed_at:testState==='pending'?null:now,coverage:document.getElementById('coverage').value||null,missing_behaviors:document.getElementById('missing-behaviors').value.trim()||null,test_reviews:[...document.querySelectorAll('tr[data-test-id]')].map(row=>({test_id:row.dataset.testId,class:row.dataset.testClass,decision:row.querySelector('.test-decision').value,reason:row.querySelector('.test-reason').value.trim()}))}}}
+function validate(value){const errors=[];for(const [name,gate] of [['视觉必要性核验',value.multimodal_necessity],['测试有效性核验',value.f2p_p2p_semantic_validity]])if(gate.state!=='pending'&&!gate.reason)errors.push(name+'完成时必须填写整体理由');const v=value.multimodal_necessity;if(v.state==='approved'){if(v.text_only_sufficiency!=='insufficient')errors.push('视觉必要性核验通过时，必须确认仅凭文字不足');if(v.ocr_replaceable!=='no')errors.push('视觉必要性核验通过时，必须确认图片不能被 OCR/文字完整替代');if(!v.non_text_visual_fact||!v.evidence_asset_ids.length)errors.push('视觉必要性核验通过时，必须填写图片独有事实并引用至少一张图')}const t=value.f2p_p2p_semantic_validity;if(t.state==='approved'){if(t.coverage!=='complete'||t.missing_behaviors)errors.push('测试有效性核验通过时，必须确认覆盖完整且没有未覆盖行为');if(t.test_reviews.length!==payload.test_inventory.length||t.test_reviews.some(x=>x.decision!=='valid'||!x.reason))errors.push('测试有效性核验通过时，必须逐项确认全部冻结测试并填写理由')}return errors}
+function stateText(value){return value==='approved'?'通过':value==='rejected'?'不通过':'待核验'}
+function updateStatus(){const a=document.getElementById('visual-state').value,b=document.getElementById('test-state').value;document.getElementById('gate1-status').textContent='视觉核验：'+stateText(a);document.getElementById('gate2-status').textContent='测试核验：'+stateText(b);const ok=a==='approved'&&b==='approved';document.getElementById('eligibility').textContent=ok?'可进入最终题集':'尚不可进入最终题集';document.getElementById('eligibility').className=ok?'complete':'';document.getElementById('final-state').textContent=ok?'允许准入':'暂不准入'}
+document.querySelectorAll('input,select,textarea').forEach(x=>x.addEventListener('input',persist));
+document.getElementById('export').addEventListener('click',()=>{persist();const value=build(),errors=validate(value),rendered=JSON.stringify(value,null,2)+'\n';document.getElementById('errors').textContent=errors.join('\n');if(errors.length)return;document.getElementById('json-preview').textContent=rendered;document.getElementById('export-preview').classList.remove('hidden');const blob=new Blob([rendered],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='dual_human_calibration_'+payload.seed.candidate_id+'.json';a.click();URL.revokeObjectURL(a.href)});
+document.getElementById('import-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{const value=JSON.parse(await file.text());for(const key of ['schema_version','candidate_id','dossier_sha256','test_manifest_sha256','test_review_context_sha256','measurement_sha256','task_directory_checksum'])if(value[key]!==payload.seed[key])throw new Error('绑定字段不匹配: '+key);restore({'text-only-notes':value.multimodal_necessity.text_only_notes||'','text-sufficiency':value.multimodal_necessity.text_only_sufficiency||'','ocr-replaceable':value.multimodal_necessity.ocr_replaceable||'','visual-fact':value.multimodal_necessity.non_text_visual_fact||'','visual-reason':value.multimodal_necessity.reason||'','visual-state':value.multimodal_necessity.state,'coverage':value.f2p_p2p_semantic_validity.coverage||'','missing-behaviors':value.f2p_p2p_semantic_validity.missing_behaviors||'','test-reason':value.f2p_p2p_semantic_validity.reason||'','test-state':value.f2p_p2p_semantic_validity.state,assets:value.multimodal_necessity.evidence_asset_ids||[],tests:value.f2p_p2p_semantic_validity.test_reviews||[]});document.getElementById('errors').textContent=''}catch(error){document.getElementById('errors').textContent='载入失败：'+error.message}});
+restore(saved());
+</script></body></html>

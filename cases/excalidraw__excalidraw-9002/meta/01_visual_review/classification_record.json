@@ -1,0 +1,39 @@
+{
+  "case_id": "excalidraw__excalidraw-9002",
+  "classification_status": "complete",
+  "strict_multimodal_admission": "非文字视觉信息候选不可替代",
+  "primary_visual_category": "空间布局与几何理解",
+  "category_purity": "单一能力题",
+  "human_review_required": false,
+  "admission_reason": "问题描述仅有一句简短标题“Elbow arrow not updated on font size”，存在多种合理解读（如折线箭头自带文本字号未更新、箭头跟随字号缩放等）。视频接触网格图明确展示了具体场景：画布上的折线箭头连接了独立文本元素，当批量缩小文本字号后，折线箭头的拐角与端点几何路径仍停留在原文本包围盒位置，未随文本尺寸缩小而自动重新计算几何路径，直到手动拖拽才更新。该非文字视觉证据是唯一定位缺陷表现的依据。",
+  "classification_reason": "核心缺陷在于文本元素几何尺寸变化时未触发关联折线箭头的几何路径重新计算，视觉证据明确呈现了箭头折线与文本边界之间的空间几何脱节状态。任务仅包含这一个关键的几何理解约束，因此评定为空间布局与几何理解的单一能力题。",
+  "evidence_mode": "GIF、视频或交互时序",
+  "contributing_visual_categories": [
+    "空间布局与几何理解"
+  ],
+  "classified_asset_count": 1,
+  "source_qualification": {
+    "qualified": true,
+    "reasons": [],
+    "upstream_verifier_status": "complete",
+    "upstream_verifier_error": null,
+    "source_archive_status": "complete",
+    "consistency_status": "complete",
+    "solver_visible_asset_count": 1,
+    "solver_visible_problem_source_count": 2,
+    "unbound_source_failure_count": 0,
+    "unbound_asset_failure_count": 0,
+    "source_result": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_consolidated/20260902T120216225403Z/16_03_result_0001.json",
+    "source_result_sha256": "6491bc1ca6cc1239abd48693534cd7eeb2b51eaa7adedb02b2e0b10cc4f83252",
+    "source_packet": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_parallel_04/excalidraw__excalidraw-9002/20260902T120129709964Z/16_06_packet_0001.json",
+    "source_packet_sha256": "aae4e00b4215650b128454fcd7603931e42dc51f4d1624e1df093185a9690d5f",
+    "classification_packet": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave13_video_contact_run_01/16_03_07_packet_0001.json",
+    "classification_packet_sha256": "23613279d84f2e45832c6701270b45940bc9ea7b06bab0353a57554e1c320f3e",
+    "source_archive": "crawler-output/multimodal-2025/11_pr_archives/20260902_wave_13_visual_expansion_wave02_deficits/20260902T114613730990Z/11_record_0001.json",
+    "source_archive_sha256": "b9ddd8abe3d2e4f2007af4c3aec1f42cdabb316aa59304c1b27058873f98133f",
+    "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave13_video_contact_run_01/16_03_08_pre_review_classifications.json",
+    "classification_sha256": "187ae4a19da1cad512310a3b6885e9505382088ab26793447a7d28f3272f2e52"
+  },
+  "counted": true,
+  "exclusion_reasons": []
+}

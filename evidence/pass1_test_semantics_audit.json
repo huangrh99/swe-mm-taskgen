@@ -1,0 +1,66 @@
+{
+  "schema_version": "iid-pass1-test-semantics-audit-v1",
+  "scope": "six IID cases listed in README section 2.1",
+  "review_rule": "Review the observable behavior encoded by the current verifier independently from the historical model reward. Infrastructure failures, runtime-network violations, and obsolete-verifier results are not model failures.",
+  "cases": [
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "current_verifier_semantics": "no_known_issue",
+      "reason": "The two author F2P tests exercise vertical and horizontal axis-aligned boundary-event routing, while 72 repository tests protect the surrounding layout behavior. The passing Codex patch changes the general orientation decision rather than matching the Gold source or test identifiers.",
+      "pass1_observation": "Codex raw reward 1 is consistent with the intended behavior. Trials that attempted runtime network access are retained only as raw patch evidence and are not counted as formal Pass@1 evidence."
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "current_verifier_semantics": "no_known_issue",
+      "reason": "The browser verifier observes visible title emphasis, caption facts and visual hierarchy, deterministic computed-color relationships, selection behavior, and resource-table preservation without fixing Gold CSS constants, child-element counts, or margins.",
+      "pass1_observation": "The revised verifier accepts the Codex patch's CSS-hidden root caption and depth-aware colors. Reward remains 0 because title weight stayed 400, caption name and metrics lacked distinct emphasis, bundle selection replaced the report total, and the resource table had zero rows."
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "current_verifier_semantics": "no_known_issue",
+      "reason": "Verifier v4 requires both indicated swatches to remain present and each swatch's actual fill color to reach the human-calibrated 2:1 contrast against the card background; it does not prescribe source tokens or a specific implementation.",
+      "pass1_observation": "The saved Codex and Kimi patches remain functional failures because they hide or remove low-contrast choices rather than correcting both swatch colors."
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "current_verifier_semantics": "no_known_issue",
+      "reason": "Verifier v2 compiles both relevant production SCSS modules with the repository prelude and evaluates the final Chromium computed style plus unrelated-scope controls.",
+      "pass1_observation": "Historical Codex and Kimi reward 0 results are invalidated as verifier-v1 coverage errors. Replaying both saved patches with verifier v2 yields reward 1."
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "current_verifier_semantics": "no_known_issue",
+      "reason": "Verifier v3 samples the final SVG path and checks a single labeled self-loop, left-or-right placement, no node-interior crossing, and a maximum local turn of 45 degrees. It does not constrain exact path data, coordinates, dimensions, implementation, or loop side.",
+      "pass1_observation": "Base and the archived v2 Gold fail; the corrected Gold and the structurally different Codex patch pass. The Kimi run ended with an API 429 and is not an effective trial even though the verifier later observed reward 1."
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "current_verifier_semantics": "no_known_issue",
+      "reason": "The functional test executes the real font-size action and observes that the bound elbow arrow remains bound, moves to the resized text boundary, and keeps an orthogonal route; the P2P test protects standalone text resizing.",
+      "pass1_observation": "Codex reward 1 is consistent with a general bound-element refresh and does not rely on test identifiers or Gold-source equality."
+    }
+  ],
+  "reward_zero_discussion": [
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "classification": "model_functional_failure",
+      "details": "The patch rendered 15px instead of 16px title text, left a forbidden root caption, produced an over-saturated color family, changed the total header when selecting a bundle, and emptied the resource rows."
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "classification": "model_functional_failure",
+      "details": "Both saved patches avoid the low-contrast state by filtering choices; neither preserves both indicated swatches while increasing their fill-color contrast."
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "classification": "obsolete_verifier_failure",
+      "details": "Verifier v1 compiled only one of the two production SCSS modules. Verifier v2 observes the final browser cascade and passes both saved functionally equivalent patches, so the old reward 0 values do not count as model failures."
+    }
+  ],
+  "excluded": [
+    {
+      "instance_id": "carbon-design-system__carbon-22019-drop",
+      "reason": "Retained as an excluded candidate fixture and not part of the six-case IID test-semantics conclusion."
+    }
+  ]
+}

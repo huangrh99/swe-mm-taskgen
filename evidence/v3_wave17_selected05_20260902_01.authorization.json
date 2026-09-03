@@ -1,0 +1,117 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave17_selected_05/16_06_01_text_sufficiency/20260902T143928525938Z",
+  "source_manifest_sha256": "2e829e8ef36580051da5dbcf6011bc68b6fed6cc9983109a6a1f54527207421f",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "1631b6fde1b9dca45e2e8fb320bef156c6e734f26001b77b2a50f58834676658",
+  "run_id": "v3-wave17-selected05-20260902-01",
+  "nonce": "wave17-selected05-20260902-nonce01",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave17_selected05_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "tldraw__tldraw-9283",
+      "source_result_sha256": "4662162880a67388274ad5e24f38729ca1df2e4985ff71ca60bb36949f1f7723",
+      "source_packet_sha256": "8f62af686a6003d1b7ee64792f242266da05d6cfe03a52cd9f9715227bc4eec2",
+      "source_archive_sha256": "0f9645d84c7ceecca958d1156957e4773d6384c6bf14f6bfe04e20535f77abf3",
+      "problem_statement_sha256": "677f24db05f4ea3bb8dfe3a7395b6a55462da92d6f8a5c1c9d6b6d2ae4d8b54d",
+      "available_asset_ids": [
+        "01e64ecfc03ebd1f8061e4ad7e5b82b591d431e2514fbbe82bb680bc4c3a5b9b"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "5c01fdac60d2313fe6125f67718ed9489ba0cf390e543004a5379651fc0910ea"
+    },
+    {
+      "case_id": "xyflow__xyflow-5489",
+      "source_result_sha256": "0be970b490c9522884b35e8cd8e4b63d4a504e3fda4834d6d78ab6c61a6b3b70",
+      "source_packet_sha256": "774ce5f6f4eaa946f03070d1e39e2d0eb393579d4c2fa9c46ce7a14d1258186f",
+      "source_archive_sha256": "3c61815f0563619747f600e326a7ca2a9ee4c8a4346bc021ee64d8dc1cd9668e",
+      "problem_statement_sha256": "6874eb1fbb6877f7e2a37bb495cd2bace7368a40ac6a9b052c546bf707da5efc",
+      "available_asset_ids": [
+        "868a2c50b543721b95e9a1b2010982c7268351d34e130fbda326501724ec6b72"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "b22490fa2b2cc0c08811c7aeb9460e5056fefc23e3bd7c072a002cfbdb004e23"
+    },
+    {
+      "case_id": "maplibre__maplibre-gl-js-6021",
+      "source_result_sha256": "7b7f044bd05c584ecb1693608f8fa37bdc6517a90597abb2ef9fe9e7eb4da2ca",
+      "source_packet_sha256": "8cde12bf37fe1d4526aff4c1c07f9732e68ce6ee67d9137c70d20ad643dd3a34",
+      "source_archive_sha256": "bcadb48705ab1edba1a58ff7e75422a094873c9b8ae1647218c8a03f5081dbbc",
+      "problem_statement_sha256": "a8fa4ad238016ba95c37fadfbdf98272808b53868c4daa6c8d0354893ff6d0be",
+      "available_asset_ids": [
+        "ea0d17e991eb880f0bc4f2a25998a82d4139ab408a9f60df4225ff9e4e56eb51",
+        "034d037398269f8ebda0e27cf821abe21ad4a41b9bf8a82c676e13672d980c32"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "b3c1462b098f55b55af329c1f9e9f8121f9e1d0031fed507e18d868a5c61a248"
+    },
+    {
+      "case_id": "xyflow__xyflow-5684",
+      "source_result_sha256": "97e66ef582f3acd182fc49349519c5633312a377bd21985a114408076cfba7f9",
+      "source_packet_sha256": "ddb398acef848aff67ac823ba1d16d4aae182a8d0751bb32b42fb0d092145438",
+      "source_archive_sha256": "26e5bdc1e7d2f8bf60c37655e4f114fe0615ed2c2ecdf8148f6d77019c27ab99",
+      "problem_statement_sha256": "d35c63276cf1bf0bc54535b3270aa2dc1ad38e7cd151dd082b7472fb900d1d79",
+      "available_asset_ids": [
+        "8317262d773380bbc919116f62ec5cc0f67c13099c84f58bb6c02317899faac5"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "7eb6027f9fd7fded7605b68229888a9d6490908e58a72ba7674e95db1fa870d8"
+    },
+    {
+      "case_id": "tldraw__tldraw-9288",
+      "source_result_sha256": "221d4ccb975dc43541965d15c5159daeab288656228b2d1aa6d67c00523bac5e",
+      "source_packet_sha256": "f01b027d6a80764dd528b5ff832a4b96591cc97d8dea411da97ebc8bb747e7c0",
+      "source_archive_sha256": "3ce2fc724afcaf4d24bdec72071605215e400dca8af480ce128ae4b5c8cc1564",
+      "problem_statement_sha256": "8630f787d0bebfd450e6d0df6b787ba7da2d12675687bd2b49eddcf679896d10",
+      "available_asset_ids": [],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": false,
+      "case_binding_sha256": "1bed7d2dc3fd84ed6f4afc517ba6385f958d1709cdf012c780f2f0382e120c22"
+    }
+  ],
+  "expected_case_calls": 4,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 24,
+  "authorized": true
+}

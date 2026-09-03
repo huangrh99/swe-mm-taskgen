@@ -1,0 +1,168 @@
+<!doctype html><meta charset=utf-8><title>20_11 test coverage verifier</title>
+<style>body{font:13px/1.45 system-ui;margin:18px;color:#202124;background:#f6f7f8}main{max-width:1280px;margin:auto}section,.card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;padding:6px;text-align:left;vertical-align:top}pre{white-space:pre-wrap;max-height:420px;overflow:auto}.warn{color:#9a6700}</style>
+<main><h1>mermaid-js__mermaid-7711 · F2P/P2P 覆盖补全 Verifier</h1>
+<div class=card><b>结论：</b>additional_tests_proposed<br>
+<b>已有实测：</b>5 F2P · 0 P2P，前后各 1 次<br>
+<span class=warn>模型只提出覆盖与测试补全建议；新增测试的 F2P/P2P 必须重新实测。正确性按功能行为，不按 gold 代码文本。</span></div>
+<section><h2>实现无关的行为契约</h2><table><tr><th>约束</th><th>可观察契约</th></tr><tr><td>constraint_001</td><td>When rendering a state diagram (e.g., stateDiagram-v2) containing a self-referential edge (Node --&gt; Node), the rendered SVG output must produce exactly one logical SVG edge path representing the self-loop without leaking internal layout helper segments (such as cyclic-special dummy paths), and the associated edge label must remain visible and correctly placed.</td></tr></table>
+<p><b>必须保持：</b>Standard non-cyclic edges between distinct states and clusters must remain unaffected.；Self-loops in flowcharts and state diagrams must retain their correct label text and orientation.；Disabling self-loop segment merging where required (such as legacy or disabled modes) must preserve segment-level layout outputs.</p>
+<p><b>允许的实现差异：</b>Valid implementations may merge segments at the graphlib level, inside getEdgesToRender, or directly during recursiveRender/insertEdge, and may compute loop waypoints using geometric arcs or orthogonal offsets, as long as a single rendered path is emitted in the SVG and internal dummy edges are not exposed.</p></section>
+<section><h2>逐约束覆盖</h2><table><tr><th>约束</th><th>覆盖</th><th>当前断言</th><th>理由</th></tr><tr><td>constraint_001</td><td>间接覆盖</td><td>Existing unit tests check the dagre helper getEdgesToRender with a synthetic mock graph and verify that flowchart diagrams merge self-loops, but do not directly test stateDiagram-v2 rendering via mermaidAPI.render.</td><td>The issue specifically addresses self-loops in state diagrams (stateDiagram-v2). If an implementation only enables self-loop merging for flowcharts and neglects state diagrams in shouldMergeSelfLoopSegments, the existing unit tests would pass while stateDiagram-v2 remains broken.</td></tr></table></section>
+<section><h3>bundle_dagre_self_loop_state_diagram</h3><p><b>预测：</b>candidate_f2p · <b>oracle：</b>rendered_structure_state_assertion</p><p>Rendering stateDiagram-v2 with an initial transition and a self-loop asserts that exactly two edge paths exist in total (one initial, one self-loop), no cyclic-special dummy segment paths leak into the SVG DOM, the self-loop path has a non-empty path &#x27;d&#x27; attribute, and the edge label &#x27;Self Edge&#x27; is rendered.</p><details><summary>完整测试补丁</summary><pre>--- a/src/rendering-util/layout-algorithms/dagre/index.spec.js
++++ b/src/rendering-util/layout-algorithms/dagre/index.spec.js
+@@ -255,4 +255,34 @@
+     } finally {
+       restoreDom();
+     }
+   });
++
++  it(&#x27;renders a stateDiagram-v2 self-loop as one SVG path&#x27;, async () =&gt; {
++    const restoreDom = setupDom();
++
++    try {
++      const { svg } = await mermaidAPI.render(
++        &#x27;state-self-loop-test&#x27;,
++        `stateDiagram-v2
++[*] --&gt; Node
++Node --&gt; Node: Self Edge`
++      );
++      const dom = new JSDOM(svg);
++      const edgePaths = dom.window.document.querySelectorAll(&#x27;.edgePaths path&#x27;);
++      const cyclicSpecialPaths = dom.window.document.querySelectorAll(
++        &#x27;.edgePaths path[data-id*=&quot;cyclic-special&quot;], .edgePaths path[id*=&quot;cyclic-special&quot;]&#x27;
++      );
++      const selfLoopPath = [...edgePaths].find(
++        (path) =&gt;
++          path.getAttribute(&#x27;data-id&#x27;)?.includes(&#x27;Node&#x27;) ||
++          path.getAttribute(&#x27;id&#x27;)?.includes(&#x27;Node&#x27;)
++      );
++
++      expect(edgePaths).toHaveLength(2);
++      expect(selfLoopPath).toBeTruthy();
++      expect(selfLoopPath?.getAttribute(&#x27;d&#x27;)).toBeTruthy();
++      expect(cyclicSpecialPaths).toHaveLength(0);
++
++      const edgeLabels = dom.window.document.querySelectorAll(&#x27;.edgeLabels .edgeLabel&#x27;);
++      const hasSelfEdgeLabel = [...edgeLabels].some((el) =&gt;
++        el.textContent?.includes(&#x27;Self Edge&#x27;)
++      );
++      expect(hasSelfEdgeLabel).toBe(true);
++    } finally {
++      restoreDom();
++    }
++  });
+ });
+</pre></details></section><section><h2>Oracle-quality validation 计划</h2>
+<p class=warn>proposed_not_executed；仅供构造与审计，不暴露给 solver，未执行不得视为通过。</p>
+<table><tr><th>错误/不完整变体</th><th>应暴露的问题</th><th>应失败 test ID</th></tr><tr><td>omit_state_diagram_from_merge</td><td>shouldMergeSelfLoopSegments only returns true for flowchart and flowchart-v2, leaving stateDiagram unmerged.</td><td>packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a stateDiagram-v2 self-loop as one SVG path</td></tr><tr><td>drop_edge_label_during_merge</td><td>Self-loop edge paths are merged to a single path but edge labels are dropped or empty.</td><td>packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a stateDiagram-v2 self-loop as one SVG path</td></tr></table>
+<p><b>等价正确实现：</b>An implementation that computes smooth cubic Bezier control points for self-loops rather than orthogonal points, and merges segments directly in recursiveRender.<br>
+<b>应通过：</b>packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a stateDiagram-v2 self-loop as one SVG path, packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a flowchart self-loop as one SVG path</p></section>
+<details><summary>完整 Verifier JSON</summary><pre>{
+  &quot;schema_version&quot;: &quot;existing-tests-extension-v2&quot;,
+  &quot;task_id&quot;: &quot;mermaid-js__mermaid-7711&quot;,
+  &quot;status&quot;: &quot;additional_tests_proposed&quot;,
+  &quot;behavioral_contract&quot;: {
+    &quot;observable_requirements&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+        &quot;contract&quot;: &quot;When rendering a state diagram (e.g., stateDiagram-v2) containing a self-referential edge (Node --&gt; Node), the rendered SVG output must produce exactly one logical SVG edge path representing the self-loop without leaking internal layout helper segments (such as cyclic-special dummy paths), and the associated edge label must remain visible and correctly placed.&quot;
+      }
+    ],
+    &quot;preserved_behaviors&quot;: [
+      &quot;Standard non-cyclic edges between distinct states and clusters must remain unaffected.&quot;,
+      &quot;Self-loops in flowcharts and state diagrams must retain their correct label text and orientation.&quot;,
+      &quot;Disabling self-loop segment merging where required (such as legacy or disabled modes) must preserve segment-level layout outputs.&quot;
+    ],
+    &quot;implementation_variation&quot;: &quot;Valid implementations may merge segments at the graphlib level, inside getEdgesToRender, or directly during recursiveRender/insertEdge, and may compute loop waypoints using geometric arcs or orthogonal offsets, as long as a single rendered path is emitted in the SVG and internal dummy edges are not exposed.&quot;
+  },
+  &quot;coverage&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+      &quot;visual_category&quot;: &quot;空间布局与几何理解&quot;,
+      &quot;coverage&quot;: &quot;间接覆盖&quot;,
+      &quot;existing_test_ids&quot;: [
+        &quot;packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a flowchart self-loop as one SVG path&quot;,
+        &quot;packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; creates one compact render edge from self-loop layout segments&quot;
+      ],
+      &quot;assertion_summary&quot;: &quot;Existing unit tests check the dagre helper getEdgesToRender with a synthetic mock graph and verify that flowchart diagrams merge self-loops, but do not directly test stateDiagram-v2 rendering via mermaidAPI.render.&quot;,
+      &quot;reason&quot;: &quot;The issue specifically addresses self-loops in state diagrams (stateDiagram-v2). If an implementation only enables self-loop merging for flowcharts and neglects state diagrams in shouldMergeSelfLoopSegments, the existing unit tests would pass while stateDiagram-v2 remains broken.&quot;
+    }
+  ],
+  &quot;test_bundles&quot;: [
+    {
+      &quot;bundle_id&quot;: &quot;bundle_dagre_self_loop_state_diagram&quot;,
+      &quot;template_test_ids&quot;: [
+        &quot;packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a flowchart self-loop as one SVG path&quot;
+      ],
+      &quot;target_requirement_ids&quot;: [
+        &quot;constraint_001&quot;
+      ],
+      &quot;target_visual_capabilities&quot;: [
+        &quot;空间布局与几何理解&quot;
+      ],
+      &quot;coverage_gap_reason&quot;: &quot;Existing tests only execute mermaidAPI.render on flowchart TD definitions and mock Graph instances. The reported problem is on stateDiagram-v2 self-loops.&quot;,
+      &quot;why_assertions_measure_requirements&quot;: &quot;Rendering stateDiagram-v2 with an initial transition and a self-loop asserts that exactly two edge paths exist in total (one initial, one self-loop), no cyclic-special dummy segment paths leak into the SVG DOM, the self-loop path has a non-empty path &#x27;d&#x27; attribute, and the edge label &#x27;Self Edge&#x27; is rendered.&quot;,
+      &quot;oracle_type&quot;: &quot;rendered_structure_state_assertion&quot;,
+      &quot;predicted_transition&quot;: &quot;candidate_f2p&quot;,
+      &quot;predicted_base_behavior&quot;: &quot;Base implementation emits 4 edge paths (1 initial + 3 cyclic-special dummy segments) with leaked cyclic-special path IDs.&quot;,
+      &quot;predicted_reference_behavior&quot;: &quot;Merged self-loop rendering emits exactly 2 edge paths, 0 cyclic-special paths, and renders the self-loop edge label.&quot;,
+      &quot;working_directory&quot;: &quot;packages/mermaid&quot;,
+      &quot;test_command&quot;: &quot;pnpm exec vitest run src/rendering-util/layout-algorithms/dagre/index.spec.js&quot;,
+      &quot;stable_test_ids&quot;: [
+        &quot;packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a stateDiagram-v2 self-loop as one SVG path&quot;
+      ],
+      &quot;files&quot;: [
+        {
+          &quot;path&quot;: &quot;src/rendering-util/layout-algorithms/dagre/index.spec.js&quot;,
+          &quot;operation&quot;: &quot;modify&quot;,
+          &quot;sha256_before&quot;: &quot;52bbac1e01e7d9818a36eb1654721a8e3bdaad5e6299a1a347caa559538d8f3c&quot;,
+          &quot;content&quot;: &quot;import { JSDOM } from &#x27;jsdom&#x27;;\nimport { describe, it, expect, beforeAll } from &#x27;vitest&#x27;;\nimport { Graph } from &#x27;dagre-d3-es/src/graphlib/index.js&#x27;;\nimport { getEdgesToRender } from &#x27;./index.js&#x27;;\nimport mermaid from &#x27;../../../mermaid.js&#x27;;\nimport { mermaidAPI } from &#x27;../../../mermaidAPI.js&#x27;;\n\nconst setupDom = () =&gt; {\n  const oldWindow = globalThis.window;\n  const oldDocument = globalThis.document;\n  const oldMutationObserver = globalThis.MutationObserver;\n  const dom = new JSDOM(&#x27;&lt;html lang=\&quot;en\&quot;&gt;&lt;body&gt;&lt;div id=\&quot;container\&quot;&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&#x27;, {\n    resources: &#x27;usable&#x27;,\n    beforeParse(window) {\n      window.Element.prototype.getBBox = () =&gt; ({\n        x: 0,\n        y: 0,\n        width: 100,\n        height: 50,\n      });\n      window.Element.prototype.getComputedTextLength = () =&gt; 50;\n    },\n  });\n\n  globalThis.window = dom.window;\n  globalThis.document = dom.window.document;\n  globalThis.MutationObserver = undefined;\n\n  return () =&gt; {\n    globalThis.window = oldWindow;\n    globalThis.document = oldDocument;\n    globalThis.MutationObserver = oldMutationObserver;\n  };\n};\n\ndescribe(&#x27;getEdgesToRender&#x27;, () =&gt; {\n  beforeAll(async () =&gt; {\n    await mermaid.registerExternalDiagrams([]);\n    mermaid.initialize({\n      deterministicIds: true,\n      deterministicIDSeed: &#x27;&#x27;,\n      flowchart: { htmlLabels: false },\n      logLevel: 5,\n    });\n  });\n\n  it(&#x27;creates one compact render edge from self-loop layout segments&#x27;, () =&gt; {\n    const graph = new Graph({ multigraph: true, compound: true });\n    graph.setNode(&#x27;A&#x27;, { id: &#x27;A&#x27;, x: 10, y: 10, width: 20, height: 20 });\n\n    const originalEdge = {\n      id: &#x27;A-A&#x27;,\n      start: &#x27;A&#x27;,\n      end: &#x27;A&#x27;,\n      label: &#x27;loop&#x27;,\n      arrowTypeStart: &#x27;normal&#x27;,\n      arrowTypeEnd: &#x27;normal&#x27;,\n    };\n\n    const segment1 = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-1&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 0 },\n      originalEdge,\n      points: [\n        { x: 0, y: 0 },\n        { x: 10, y: 0 },\n      ],\n    };\n    const segmentMid = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-mid&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 1 },\n      originalEdge,\n      points: [\n        { x: 10, y: 0 },\n        { x: 20, y: 10 },\n      ],\n    };\n    const segment2 = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-2&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 2 },\n      originalEdge,\n      points: [\n        { x: 20, y: 10 },\n        { x: 30, y: 10 },\n      ],\n    };\n\n    graph.setNode(&#x27;A---A---1&#x27;, { id: &#x27;A---A---1&#x27; });\n    graph.setNode(&#x27;A---A---2&#x27;, { id: &#x27;A---A---2&#x27; });\n    graph.setEdge(&#x27;A&#x27;, &#x27;A---A---1&#x27;, segment1, &#x27;A-cyclic-special-0&#x27;);\n    graph.setEdge(&#x27;A---A---1&#x27;, &#x27;A---A---2&#x27;, segmentMid, &#x27;A-cyclic-special-1&#x27;);\n    graph.setEdge(&#x27;A---A---2&#x27;, &#x27;A&#x27;, segment2, &#x27;A-cyclic-special-2&#x27;);\n\n    const edgesToRender = getEdgesToRender(graph);\n\n    expect(edgesToRender).toHaveLength(1);\n    expect(edgesToRender[0].edge.id).toBe(&#x27;A-A&#x27;);\n    expect(edgesToRender[0].edge.selfLoop).toBeUndefined();\n    expect(edgesToRender[0].edge.points).toEqual([\n      { x: -8, y: 0 },\n      { x: -8, y: -24 },\n      { x: 28, y: -24 },\n      { x: 28, y: 0 },\n    ]);\n    expect(edgesToRender[0].edge.x).toBe(10);\n    expect(edgesToRender[0].edge.y).toBe(-28);\n    expect(edgesToRender[0].edge.label).toBe(&#x27;loop&#x27;);\n  });\n\n  it(&#x27;places compact self-loops on the side chosen by the layout&#x27;, () =&gt; {\n    const graph = new Graph({ multigraph: true, compound: true });\n    graph.setNode(&#x27;A&#x27;, { id: &#x27;A&#x27;, x: 10, y: 10, width: 20, height: 20 });\n    graph.setNode(&#x27;A---A---1&#x27;, { id: &#x27;A---A---1&#x27;, x: 80, y: 5 });\n    graph.setNode(&#x27;A---A---2&#x27;, { id: &#x27;A---A---2&#x27;, x: 80, y: 15 });\n\n    const originalEdge = {\n      id: &#x27;A-A&#x27;,\n      start: &#x27;A&#x27;,\n      end: &#x27;A&#x27;,\n      label: &#x27;loop&#x27;,\n      arrowTypeStart: &#x27;normal&#x27;,\n      arrowTypeEnd: &#x27;normal&#x27;,\n    };\n    const segment1 = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-1&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 0 },\n      originalEdge,\n      points: [],\n    };\n    const segmentMid = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-mid&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 1 },\n      originalEdge,\n      points: [],\n      width: 20,\n      height: 10,\n    };\n    const segment2 = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-2&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 2 },\n      originalEdge,\n      points: [],\n    };\n\n    graph.setEdge(&#x27;A&#x27;, &#x27;A---A---1&#x27;, segment1, &#x27;A-cyclic-special-0&#x27;);\n    graph.setEdge(&#x27;A---A---1&#x27;, &#x27;A---A---2&#x27;, segmentMid, &#x27;A-cyclic-special-1&#x27;);\n    graph.setEdge(&#x27;A---A---2&#x27;, &#x27;A&#x27;, segment2, &#x27;A-cyclic-special-2&#x27;);\n\n    const edgesToRender = getEdgesToRender(graph);\n\n    expect(edgesToRender[0].edge.points).toEqual([\n      { x: 20, y: -8 },\n      { x: 44, y: -8 },\n      { x: 44, y: 28 },\n      { x: 20, y: 28 },\n    ]);\n    expect(edgesToRender[0].edge.x).toBe(58);\n    expect(edgesToRender[0].edge.y).toBe(10);\n  });\n\n  it(&#x27;keeps regular edges unchanged&#x27;, () =&gt; {\n    const graph = new Graph({ multigraph: true, compound: true });\n    graph.setNode(&#x27;A&#x27;, { id: &#x27;A&#x27; });\n    graph.setNode(&#x27;B&#x27;, { id: &#x27;B&#x27; });\n    const edge = {\n      id: &#x27;A-B&#x27;,\n      start: &#x27;A&#x27;,\n      end: &#x27;B&#x27;,\n      points: [\n        { x: 0, y: 0 },\n        { x: 10, y: 10 },\n      ],\n    };\n    graph.setEdge(&#x27;A&#x27;, &#x27;B&#x27;, edge, &#x27;A-B&#x27;);\n\n    const edgesToRender = getEdgesToRender(graph);\n\n    expect(edgesToRender).toHaveLength(1);\n    expect(edgesToRender[0]).toEqual({ edge, start: &#x27;A&#x27;, end: &#x27;B&#x27; });\n  });\n\n  it(&#x27;keeps self-loop layout segments unchanged when merging is disabled&#x27;, () =&gt; {\n    const graph = new Graph({ multigraph: true, compound: true });\n    graph.setNode(&#x27;A&#x27;, { id: &#x27;A&#x27;, x: 10, y: 10, width: 20, height: 20 });\n    graph.setNode(&#x27;A---A---1&#x27;, { id: &#x27;A---A---1&#x27; });\n    graph.setNode(&#x27;A---A---2&#x27;, { id: &#x27;A---A---2&#x27; });\n\n    const originalEdge = {\n      id: &#x27;A-A&#x27;,\n      start: &#x27;A&#x27;,\n      end: &#x27;A&#x27;,\n      label: &#x27;loop&#x27;,\n    };\n    const segment1 = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-1&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 0 },\n      originalEdge,\n    };\n    const segmentMid = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-mid&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 1 },\n      originalEdge,\n    };\n    const segment2 = {\n      ...originalEdge,\n      id: &#x27;A-cyclic-special-2&#x27;,\n      selfLoop: { id: &#x27;A-A&#x27;, order: 2 },\n      originalEdge,\n    };\n\n    graph.setEdge(&#x27;A&#x27;, &#x27;A---A---1&#x27;, segment1, &#x27;A-cyclic-special-0&#x27;);\n    graph.setEdge(&#x27;A---A---1&#x27;, &#x27;A---A---2&#x27;, segmentMid, &#x27;A-cyclic-special-1&#x27;);\n    graph.setEdge(&#x27;A---A---2&#x27;, &#x27;A&#x27;, segment2, &#x27;A-cyclic-special-2&#x27;);\n\n    const edgesToRender = getEdgesToRender(graph, 0, { mergeSelfLoops: false });\n\n    expect(edgesToRender).toEqual([\n      { edge: segment1, start: &#x27;A&#x27;, end: &#x27;A---A---1&#x27; },\n      { edge: segmentMid, start: &#x27;A---A---1&#x27;, end: &#x27;A---A---2&#x27; },\n      { edge: segment2, start: &#x27;A---A---2&#x27;, end: &#x27;A&#x27; },\n    ]);\n  });\n\n  it(&#x27;renders a flowchart self-loop as one SVG path&#x27;, async () =&gt; {\n    const restoreDom = setupDom();\n\n    try {\n      const { svg } = await mermaidAPI.render(\n        &#x27;self-loop-test&#x27;,\n        `flowchart TD\nA[Christmas] --&gt;|Get money| B(Go shopping)\nC --&gt; C`\n      );\n      const dom = new JSDOM(svg);\n      const edgePaths = dom.window.document.querySelectorAll(&#x27;.edgePaths path.flowchart-link&#x27;);\n      const selfLoopPath = [...edgePaths].find((path) =&gt;\n        path.getAttribute(&#x27;data-id&#x27;)?.includes(&#x27;C&#x27;)\n      );\n\n      expect(edgePaths).toHaveLength(2);\n      expect(selfLoopPath).toBeTruthy();\n      expect(selfLoopPath?.getAttribute(&#x27;d&#x27;)).toBeTruthy();\n      expect(\n        dom.window.document.querySelectorAll(&#x27;.edgePaths path[data-id*=\&quot;cyclic-special\&quot;]&#x27;)\n      ).toHaveLength(0);\n    } finally {\n      restoreDom();\n    }\n  });\n\n  it(&#x27;renders a stateDiagram-v2 self-loop as one SVG path&#x27;, async () =&gt; {\n    const restoreDom = setupDom();\n\n    try {\n      const { svg } = await mermaidAPI.render(\n        &#x27;state-self-loop-test&#x27;,\n        `stateDiagram-v2\n[*] --&gt; Node\nNode --&gt; Node: Self Edge`\n      );\n      const dom = new JSDOM(svg);\n      const edgePaths = dom.window.document.querySelectorAll(&#x27;.edgePaths path&#x27;);\n      const cyclicSpecialPaths = dom.window.document.querySelectorAll(\n        &#x27;.edgePaths path[data-id*=\&quot;cyclic-special\&quot;], .edgePaths path[id*=\&quot;cyclic-special\&quot;]&#x27;\n      );\n      const selfLoopPath = [...edgePaths].find(\n        (path) =&gt;\n          path.getAttribute(&#x27;data-id&#x27;)?.includes(&#x27;Node&#x27;) ||\n          path.getAttribute(&#x27;id&#x27;)?.includes(&#x27;Node&#x27;)\n      );\n\n      expect(edgePaths).toHaveLength(2);\n      expect(selfLoopPath).toBeTruthy();\n      expect(selfLoopPath?.getAttribute(&#x27;d&#x27;)).toBeTruthy();\n      expect(cyclicSpecialPaths).toHaveLength(0);\n\n      const edgeLabels = dom.window.document.querySelectorAll(&#x27;.edgeLabels .edgeLabel&#x27;);\n      const hasSelfEdgeLabel = [...edgeLabels].some((el) =&gt;\n        el.textContent?.includes(&#x27;Self Edge&#x27;)\n      );\n      expect(hasSelfEdgeLabel).toBe(true);\n    } finally {\n      restoreDom();\n    }\n  });\n});\n&quot;
+        }
+      ],
+      &quot;unified_test_patch&quot;: &quot;--- a/src/rendering-util/layout-algorithms/dagre/index.spec.js\n+++ b/src/rendering-util/layout-algorithms/dagre/index.spec.js\n@@ -255,4 +255,34 @@\n     } finally {\n       restoreDom();\n     }\n   });\n+\n+  it(&#x27;renders a stateDiagram-v2 self-loop as one SVG path&#x27;, async () =&gt; {\n+    const restoreDom = setupDom();\n+\n+    try {\n+      const { svg } = await mermaidAPI.render(\n+        &#x27;state-self-loop-test&#x27;,\n+        `stateDiagram-v2\n+[*] --&gt; Node\n+Node --&gt; Node: Self Edge`\n+      );\n+      const dom = new JSDOM(svg);\n+      const edgePaths = dom.window.document.querySelectorAll(&#x27;.edgePaths path&#x27;);\n+      const cyclicSpecialPaths = dom.window.document.querySelectorAll(\n+        &#x27;.edgePaths path[data-id*=\&quot;cyclic-special\&quot;], .edgePaths path[id*=\&quot;cyclic-special\&quot;]&#x27;\n+      );\n+      const selfLoopPath = [...edgePaths].find(\n+        (path) =&gt;\n+          path.getAttribute(&#x27;data-id&#x27;)?.includes(&#x27;Node&#x27;) ||\n+          path.getAttribute(&#x27;id&#x27;)?.includes(&#x27;Node&#x27;)\n+      );\n+\n+      expect(edgePaths).toHaveLength(2);\n+      expect(selfLoopPath).toBeTruthy();\n+      expect(selfLoopPath?.getAttribute(&#x27;d&#x27;)).toBeTruthy();\n+      expect(cyclicSpecialPaths).toHaveLength(0);\n+\n+      const edgeLabels = dom.window.document.querySelectorAll(&#x27;.edgeLabels .edgeLabel&#x27;);\n+      const hasSelfEdgeLabel = [...edgeLabels].some((el) =&gt;\n+        el.textContent?.includes(&#x27;Self Edge&#x27;)\n+      );\n+      expect(hasSelfEdgeLabel).toBe(true);\n+    } finally {\n+      restoreDom();\n+    }\n+  });\n });\n&quot;,
+      &quot;result_parser&quot;: &quot;vitest_json_or_standard_tap&quot;,
+      &quot;environment_assumptions&quot;: [
+        &quot;Node.js &gt;= 18 with JSDOM support in packages/mermaid&quot;,
+        &quot;Vitest test runner configured in repository packages/mermaid/package.json&quot;
+      ],
+      &quot;equivalence_self_check&quot;: &quot;Alternative implementations that merge self-loop segments during dagre layout or inside state diagram rendering rather than via getEdgesToRender helper will still pass, because the test verifies public SVG DOM output from mermaidAPI.render.&quot;,
+      &quot;vacuous_pass_checks&quot;: [
+        &quot;Checks that edgePaths has exactly length 2, failing if no paths or extra segment paths are rendered.&quot;,
+        &quot;Checks that selfLoopPath is defined and has non-empty attribute &#x27;d&#x27;.&quot;,
+        &quot;Checks that hasSelfEdgeLabel is true, ensuring labels are not dropped.&quot;
+      ],
+      &quot;surface_signal_resistance&quot;: &quot;A patch that merely hides the dummy paths without merging them or without supporting stateDiagram in diagram type checks will fail on path count and label presence.&quot;
+    }
+  ],
+  &quot;oracle_quality_plan&quot;: {
+    &quot;status&quot;: &quot;proposed_not_executed&quot;,
+    &quot;curator_only&quot;: true,
+    &quot;negative_variants&quot;: [
+      {
+        &quot;variant_id&quot;: &quot;omit_state_diagram_from_merge&quot;,
+        &quot;defect_preserved_or_introduced&quot;: &quot;shouldMergeSelfLoopSegments only returns true for flowchart and flowchart-v2, leaving stateDiagram unmerged.&quot;,
+        &quot;expected_failure_test_ids&quot;: [
+          &quot;packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a stateDiagram-v2 self-loop as one SVG path&quot;
+        ]
+      },
+      {
+        &quot;variant_id&quot;: &quot;drop_edge_label_during_merge&quot;,
+        &quot;defect_preserved_or_introduced&quot;: &quot;Self-loop edge paths are merged to a single path but edge labels are dropped or empty.&quot;,
+        &quot;expected_failure_test_ids&quot;: [
+          &quot;packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a stateDiagram-v2 self-loop as one SVG path&quot;
+        ]
+      }
+    ],
+    &quot;equivalent_positive_variant&quot;: {
+      &quot;description&quot;: &quot;An implementation that computes smooth cubic Bezier control points for self-loops rather than orthogonal points, and merges segments directly in recursiveRender.&quot;,
+      &quot;expected_pass_test_ids&quot;: [
+        &quot;packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a stateDiagram-v2 self-loop as one SVG path&quot;,
+        &quot;packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js::getEdgesToRender &gt; renders a flowchart self-loop as one SVG path&quot;
+      ]
+    }
+  },
+  &quot;missing_context&quot;: [],
+  &quot;summary&quot;: &quot;Added an implementation-independent JSDOM rendering test to index.spec.js targeting stateDiagram-v2 self-loops. The test verifies that self-loops in state diagrams render as a single logical edge path without leaking internal layout segments and with the edge label intact.&quot;,
+  &quot;human_review_required&quot;: false,
+  &quot;human_review_reasons&quot;: []
+}</pre></details></main>

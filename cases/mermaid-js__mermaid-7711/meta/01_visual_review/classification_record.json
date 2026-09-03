@@ -1,0 +1,39 @@
+{
+  "case_id": "mermaid-js__mermaid-7711",
+  "classification_status": "complete",
+  "strict_multimodal_admission": "非文字视觉信息候选不可替代",
+  "primary_visual_category": "空间布局与几何理解",
+  "category_purity": "单一能力题",
+  "human_review_required": false,
+  "admission_reason": "问题描述指出状态图自环渲染异常，文字仅模糊描述为不自然、有转折，但自环边具体的几何折线路径缺陷（底部拉长且带有尖锐折角）以及 Graphviz 参考图所示的目标紧凑侧边环形曲率路径必须依赖图像才能明确。",
+  "classification_reason": "任务的核心修复约束在于状态图自环边（self-edge）的几何路由路径与节点相对位置（侧边平滑弧线 vs 下方带尖角的长环），属于纯粹的空间布局与几何路径理解，因此判定为空间布局与几何理解的单一能力题。",
+  "evidence_mode": "实际图与期望图对照",
+  "contributing_visual_categories": [
+    "空间布局与几何理解"
+  ],
+  "classified_asset_count": 2,
+  "source_qualification": {
+    "qualified": true,
+    "reasons": [],
+    "upstream_verifier_status": "complete",
+    "upstream_verifier_error": null,
+    "source_archive_status": "complete",
+    "consistency_status": "complete",
+    "solver_visible_asset_count": 2,
+    "solver_visible_problem_source_count": 2,
+    "unbound_source_failure_count": 0,
+    "unbound_asset_failure_count": 0,
+    "source_result": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_consolidated/20260902T103425452961Z/16_03_result_0011.json",
+    "source_result_sha256": "b363f97ff8e0d7b751457b2045dcf8838d4cbccf33e6d8549949216cdab4e619",
+    "source_packet": "crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_only_retry_01/20260902T102747885930Z/16_06_packet_0001.json",
+    "source_packet_sha256": "80452a2033c1ba9ce065417800e16833eece761219f3929b30f11341c1d0e41a",
+    "classification_packet": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave10_run_01/16_03_07_packet_0011.json",
+    "classification_packet_sha256": "e476afb7f22551326377333da6fc67d36de3a7acb648a7334a136eadaab9adac",
+    "source_archive": "crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_record_0002.json",
+    "source_archive_sha256": "785d9a0fcc119723d3c1f789bc7436647afbcfa82ae8327d9ef2a45a8406a13d",
+    "classification": "crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave10_run_01/16_03_08_pre_review_classifications.json",
+    "classification_sha256": "acdb92628f8cdcdc7f466e8caf9af308057bc98a5cabe2d11e006499b7706116"
+  },
+  "counted": true,
+  "exclusion_reasons": []
+}

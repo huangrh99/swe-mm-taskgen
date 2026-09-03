@@ -1,0 +1,111 @@
+{
+  "schema_version": "case-environment-audit-v1",
+  "status": "complete",
+  "records": [
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:c5a1ad4c85bccd9b7ac8d94a94c628aeac53b75f61e09d8b05f99857b6018cd9",
+      "base_commit": "19ed337b2b8b48d9d768b35add8a65221e512c9c",
+      "asset_count": 1,
+      "task_image": "case-environment-audit:automattic-wp-calypso-100957",
+      "probe": [
+        "19ed337b2b8b48d9d768b35add8a65221e512c9c",
+        "REMOTE=empty",
+        "v22.23.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:237b924780c64a21c5121602c00a44d1ea6ed921b77108839197fb291ef89a6a",
+      "base_commit": "047aeef4a31c9e93ccb975adc77fb2107067fd6e",
+      "asset_count": 1,
+      "task_image": "case-environment-audit:automattic-wp-calypso-99049",
+      "probe": [
+        "047aeef4a31c9e93ccb975adc77fb2107067fd6e",
+        "REMOTE=empty",
+        "v22.23.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    },
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:28e5166eff9ff48bddbce76825305a2427504ea18cfe56cab12da6e9ba52ae7b",
+      "base_commit": "686561a9b9c733dc3a466a26e3803c5832b3c956",
+      "asset_count": 4,
+      "task_image": "case-environment-audit:bpmn-io-bpmn-js-2396",
+      "probe": [
+        "686561a9b9c733dc3a466a26e3803c5832b3c956",
+        "REMOTE=empty",
+        "v20.20.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    },
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:b5f88c50a793667139a1721b5545ee951d7f918992f515c90823c2c6b5befd98",
+      "base_commit": "05166d4aff1dfbcef426642af124b8af4393421c",
+      "asset_count": 4,
+      "task_image": "case-environment-audit:carbon-design-system-carbon-22019",
+      "probe": [
+        "05166d4aff1dfbcef426642af124b8af4393421c",
+        "REMOTE=empty",
+        "v20.20.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:028af52db0d7fc592c95c5ea04d310e4b731ff62e22ca28967ec25c977499511",
+      "base_commit": "c92f3bebf5fc4e9a1512be368f05d800ae1b92f7",
+      "asset_count": 1,
+      "task_image": "case-environment-audit:excalidraw-excalidraw-9002",
+      "probe": [
+        "c92f3bebf5fc4e9a1512be368f05d800ae1b92f7",
+        "REMOTE=empty",
+        "v20.20.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:98cd04789d0f15a4c2710569645330438e8199edc59d2a5e3d402bcceb0e457d",
+      "base_commit": "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+      "asset_count": 1,
+      "task_image": "case-environment-audit:googlechrome-lighthouse-16403",
+      "probe": [
+        "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+        "REMOTE=empty",
+        "v20.20.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:93acf0c18d0caddbf9446f7d55423c903311d60c3eb54d3ec4c4fdbeaefc82bc",
+      "base_commit": "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e",
+      "asset_count": 6,
+      "task_image": "case-environment-audit:mermaid-js-mermaid-7711",
+      "probe": [
+        "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e",
+        "REMOTE=empty",
+        "v20.20.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    }
+  ]
+}

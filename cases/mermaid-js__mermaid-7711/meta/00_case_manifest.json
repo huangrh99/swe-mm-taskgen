@@ -1,0 +1,341 @@
+{
+  "schema_version": "report-case-archive-v1",
+  "case_id": "mermaid-js__mermaid-7711",
+  "repository": "mermaid-js/mermaid",
+  "pr_number": 7711,
+  "state": "candidate",
+  "archived_at": "2026-09-02T13:44:01.956809+00:00",
+  "sections": {
+    "visual_review": [
+      {
+        "path": "01_visual_review/solver_input_selection.json",
+        "sha256": "4bb8df332ac3c61b844e75f9a4a9ba57b1ad49d864d812c7c510b3b0895a7320",
+        "size_bytes": 1264,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/08_05_solver_inputs/20260902_wave_10_ready_gemini_restart_01/08_05_01_issue_derived_selected.jsonl"
+      },
+      {
+        "path": "01_visual_review/text_sufficiency_verifier.json",
+        "sha256": "b363f97ff8e0d7b751457b2045dcf8838d4cbccf33e6d8549949216cdab4e619",
+        "size_bytes": 6670,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_consolidated/20260902T103425452961Z/16_03_result_0011.json"
+      },
+      {
+        "path": "01_visual_review/classification_record.json",
+        "sha256": "56832a188d48f0bb951aae8de537ac2a62397487abf09bd5646ada122e146481",
+        "size_bytes": 2740,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_v3_combined_210_audit_01/16_03_09_02_category_distribution.json"
+      },
+      {
+        "path": "01_visual_review/assets/1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9.png",
+        "sha256": "1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9",
+        "size_bytes": 8529,
+        "storage": "hardlinked",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9"
+      },
+      {
+        "path": "01_visual_review/assets/4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3.png",
+        "sha256": "4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3",
+        "size_bytes": 40589,
+        "storage": "hardlinked",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3"
+      },
+      {
+        "path": "01_visual_review/assets/bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d.png",
+        "sha256": "bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d",
+        "size_bytes": 35775,
+        "storage": "hardlinked",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d"
+      },
+      {
+        "path": "01_visual_review/assets/f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd.png",
+        "sha256": "f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd",
+        "size_bytes": 18667,
+        "storage": "hardlinked",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd"
+      },
+      {
+        "path": "01_visual_review/assets/549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab.png",
+        "sha256": "549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab",
+        "size_bytes": 12519,
+        "storage": "hardlinked",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab"
+      },
+      {
+        "path": "01_visual_review/assets/2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d.png",
+        "sha256": "2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d",
+        "size_bytes": 8119,
+        "storage": "hardlinked",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_http_archive/assets/2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d"
+      }
+    ],
+    "source_archive": [
+      {
+        "path": "02_source_archive/source_archive.json",
+        "sha256": "785d9a0fcc119723d3c1f789bc7436647afbcfa82ae8327d9ef2a45a8406a13d",
+        "size_bytes": 1067590,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/11_pr_archives/20260902_wave_10_deficit_expansion/20260902T090243732146Z/11_record_0002.json"
+      }
+    ],
+    "test_construction": [
+      {
+        "path": "03_test_construction/source_test_manifest.json",
+        "sha256": "54ade3f9aaa6cc58491ec43cb997f86c447760a0590bcfdf34f938b582a7617c",
+        "size_bytes": 1123,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/test_inventory.json",
+        "sha256": "cd2aaad8017faa12725e83f5208703233cd609dda24c39888e911bda23ab2432",
+        "size_bytes": 701,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/reference.patch",
+        "sha256": "c6eaa7da9cae2ca47e5603b55478338802197ad15ef6ec166eed1d34c57bf749",
+        "size_bytes": 22845,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/author_tests.patch",
+        "sha256": "93f92e6847793c15be755a1a3390b1a4023ad1d55e49040ba39616a119563ed7",
+        "size_bytes": 10262,
+        "storage": "copied"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+        "sha256": "bee20bbd6d7e0634ce2a51cc72e26a715481a19336fed79d9cf9589f1a1d9cc6",
+        "size_bytes": 89770,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_02_system.md",
+        "sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+        "size_bytes": 9136,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_03_schema.json",
+        "sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+        "size_bytes": 6387,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_04_runner.py",
+        "sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+        "size_bytes": 26252,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+        "sha256": "7f3da2ad67cf9d2f48b967d40a339defc1f696471a1c198cb9d2b22c0a2fd80c",
+        "size_bytes": 18158,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+        "sha256": "66ae2cc079e4dcdd0e6bab6eec4c4453243d004b2f2a9d974bd5acb29523bc45",
+        "size_bytes": 613,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+        "sha256": "c18210b7e7a952e837e4be24a82bb101534ae82f3711cf5453864062fd586e52",
+        "size_bytes": 108870,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+        "sha256": "69bcdfdf20e167085c6d6d1f6346eb28ca61f68758e51348a987b73a19a1f191",
+        "size_bytes": 155,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+        "sha256": "5d0d08413c074f1e9f04f673f23bb7440c2978ec8bb513725eee5ce7bf99afd1",
+        "size_bytes": 39,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+        "sha256": "3c02ebf0c03d277c1959e625dd0ed0bb3e678f7c15293a789ba0891928df7ff4",
+        "size_bytes": 76410,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+        "sha256": "b9cb4b41bd4e73eda3a8857c4e5eba12f251f37cc05b1a6def5d905c8b9da64d",
+        "size_bytes": 22564,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_07_proposed_test_files/bundle_01_file_01.js",
+        "sha256": "512d0a6e03cb068e753429d59b7c56be5a8c131cb44265a97342e731242b6b01",
+        "size_bytes": 8871,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+        "sha256": "4ebcc2219016f64d1126cfb29ce2b59b92e4848686cd2598febec7d657f3a3ab",
+        "size_bytes": 27389,
+        "storage": "generated"
+      },
+      {
+        "path": "03_test_construction/20_11_verifier_run_01/20_11_09_manifest.json",
+        "sha256": "e46dcd31f84b69b5618fda145d62f006e702afad26c22eb0f0493b0d0e4b3a55",
+        "size_bytes": 1273,
+        "storage": "generated"
+      }
+    ],
+    "measurements": [
+      {
+        "path": "04_measurements/source_base_gold.json",
+        "sha256": "1cf87d4994e522e1917ec537649222e08bfc0bc26850082f66009daeace66513",
+        "size_bytes": 2431,
+        "storage": "copied"
+      },
+      {
+        "path": "04_measurements/mermaid_base_install_pinned_no_cypress.log",
+        "sha256": "bb2cf93871b13dfd23265f9778431ee1d6d3bbf5804d01214e05888a89e51465",
+        "size_bytes": 36064,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/logs/mermaid_base_install_pinned_no_cypress.log"
+      },
+      {
+        "path": "04_measurements/mermaid_gold_install_pinned_no_cypress.log",
+        "sha256": "aac3e7300b160b2ddf801e3cb1013c10dbfe10d33a5926840615a5d749074a08",
+        "size_bytes": 36060,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/logs/mermaid_gold_install_pinned_no_cypress.log"
+      },
+      {
+        "path": "04_measurements/mermaid_base_author_tests.log",
+        "sha256": "3b944e3cc8cdfa5fb88e2dbfeb62d54630c65694efac10fa075e5ba563605809",
+        "size_bytes": 25065,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/logs/mermaid_base_with_gold_tests_vitest_final.log"
+      },
+      {
+        "path": "04_measurements/mermaid_gold_author_tests.log",
+        "sha256": "a800d609dd8ed114c925bee5aa8edaaedc27d721fbd85e6c944d79015039a661",
+        "size_bytes": 21155,
+        "storage": "copied",
+        "source_path": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/logs/mermaid_merge_gold_vitest_final.log"
+      },
+      {
+        "path": "04_measurements/author_test_base_gold.json",
+        "sha256": "10da6c4cdd16dd6fbd2b51b20217906faaa7986e1a83093c3fb5b03f8b675248",
+        "size_bytes": 1052,
+        "storage": "copied"
+      }
+    ],
+    "harbor": [
+      {
+        "path": "@task/environment/Dockerfile",
+        "storage": "generated",
+        "size_bytes": 613,
+        "sha256": "de0171307e5137762398fd5b42ef5ba030cd0bfa4e390bd231f6b915bd4d730a"
+      },
+      {
+        "path": "@task/environment/assets/asset_01.png",
+        "storage": "generated",
+        "size_bytes": 8529,
+        "sha256": "1c6629e3a3e79cd357cf50422469e6499d2c95365936a6d580d0abca92c97ce9"
+      },
+      {
+        "path": "@task/environment/assets/asset_02.png",
+        "storage": "generated",
+        "size_bytes": 8119,
+        "sha256": "2fd4526ef0110d1c4d62decd1ce7907d8f93d40e2e39899c834af0b43dff6d4d"
+      },
+      {
+        "path": "@task/environment/assets/asset_03.png",
+        "storage": "generated",
+        "size_bytes": 40589,
+        "sha256": "4cce2540305c65daf10e72ad1f1407bc55d14f7623bc2183bd340e512673cdc3"
+      },
+      {
+        "path": "@task/environment/assets/asset_04.png",
+        "storage": "generated",
+        "size_bytes": 12519,
+        "sha256": "549b5087dd94d8b8c38d85522367b19bc2184b817048dc166499619ab0aa0bab"
+      },
+      {
+        "path": "@task/environment/assets/asset_05.png",
+        "storage": "generated",
+        "size_bytes": 35775,
+        "sha256": "bcea8e2a977c26a2cc5a853ce8cfb522367adf9dad8a382081cc247d60ab4a8d"
+      },
+      {
+        "path": "@task/environment/assets/asset_06.png",
+        "storage": "generated",
+        "size_bytes": 18667,
+        "sha256": "f57d161bef9d76f3e4a54127576f403ea4a5f7cd1b7763e0cfc976a10a7c78bd"
+      },
+      {
+        "path": "@task/environment/base_image.json",
+        "storage": "generated",
+        "size_bytes": 1361,
+        "sha256": "79a07d856e88793d3e5caa0f54c265e8a32a2fa734f7679650815027651b4419"
+      },
+      {
+        "path": "@task/environment/docker-compose.yaml",
+        "storage": "generated",
+        "size_bytes": 142,
+        "sha256": "c346613322ba0f324f14425a6537833f10f764e8b4470a3996a12fb83b1afbe1"
+      }
+    ]
+  },
+  "pipeline_status": {
+    "source_archived": "complete",
+    "test_construction": "complete",
+    "base_gold_measurement": "complete",
+    "harbor_empty": "passed",
+    "harbor_oracle": "passed",
+    "human_visual_gate": "human_review_deferred",
+    "human_test_gate": "human_review_deferred",
+    "formal_admission": false
+  },
+  "blockers": [
+    {
+      "stage": "human_visual_gate",
+      "code": "human_review_deferred",
+      "detail": "Runtime evidence does not replace the deferred visual-necessity and leakage review."
+    },
+    {
+      "stage": "human_test_gate",
+      "code": "human_review_deferred",
+      "detail": "The F2P/P2P semantic human gate remains deferred, so formal_admission is false."
+    }
+  ],
+  "notes": [
+    "User selected this case for candidate archival on 2026-09-02.",
+    "The authoritative comparison is GitHub PR base 98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e versus final PR head 9d83f061aad4afc126b434f0decd9013060ad62b; merge-parent and merge-commit measurements are superseded.",
+    "The selected executable suite has 2 F2P and 16 P2P tests across three stable Base/Gold repetitions.",
+    "Harbor controls share native task checksum ee41a787692cb703b0a3f3b2d8db09f3ca34b51d402a249cfd0e56398585653e: Gold/oracle=1 and all three no-change controls=0.",
+    "Technical controls are complete, but both human gates remain deferred and formal_admission is false."
+  ],
+  "layout": {
+    "submission_root": ".",
+    "metadata_root": "meta",
+    "metadata_deletion_safe": true
+  },
+  "pipeline_details": {
+    "test_extension_verifier": {
+      "status": "complete",
+      "runner_version": "test-extension-verifier-run-v2",
+      "backend": "gemini",
+      "model": "gemini-3.7-flash",
+      "verdict": "additional_tests_proposed",
+      "generated_bundle_count": 1,
+      "behavior_contract_required": true,
+      "oracle_quality_plan_required": true,
+      "prior_verifier_generated_tests_excluded": true,
+      "requested_batch_concurrency": 10,
+      "boundary": "The generated behavioral suite was measured three times on exact Base and exact final PR head. Human semantic review remains deferred."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+yarn run v1.22.22
+$ vitest --run --reporter=verbose packages/excalidraw/tests/arrowBinding9010.test.tsx
+
+ RUN  v2.0.5 /app
+
+ ✓ packages/excalidraw/tests/arrowBinding9010.test.tsx > arrow endpoint binding regression > [excalidraw-9010-endpoint-stability] keeps the untouched binding point stationary while dragging the other endpoint
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  20:39:28
+   Duration  3.60s (transform 2.03s, setup 105ms, collect 2.93s, tests 242ms, environment 184ms, prepare 41ms)
+
+Done in 3.87s.

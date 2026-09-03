@@ -1,0 +1,127 @@
+{
+  "case_id": "excalidraw__excalidraw-9002",
+  "repository": "excalidraw/excalidraw",
+  "pr_number": 9002,
+  "pr_id": "excalidraw/excalidraw#9002",
+  "status": "complete",
+  "ineligible_reason": null,
+  "packet": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_parallel_04/excalidraw__excalidraw-9002/20260902T120129709964Z/16_06_packet_0001.json",
+  "packet_sha256": "aae4e00b4215650b128454fcd7603931e42dc51f4d1624e1df093185a9690d5f",
+  "curator_assets": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_parallel_04/excalidraw__excalidraw-9002/20260902T120129709964Z/16_06_curator_assets_0001.json",
+  "curator_assets_sha256": "f7e90de25762a9f5025dfce398a508226bb38cde790aad3369ebaa20e880a47a",
+  "bound_schema": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_parallel_04/excalidraw__excalidraw-9002/20260902T120129709964Z/16_06_bound_schema_0001.json",
+  "bound_schema_sha256": "9569fb628c8fceb563b71e04429cff6f89fb040b69cf1f6842bee29a4e7ffbd4",
+  "visual_verifier": null,
+  "annotation": {
+    "schema_version": "text-only-repair-sufficiency-v1",
+    "case_id": "excalidraw__excalidraw-9002",
+    "evidence": {
+      "problem_sources_usable": "no",
+      "evidence_quotes": [
+        {
+          "source_id": "excalidraw/excalidraw#8798:title",
+          "quote": "Elbow arrow not updated on font size"
+        }
+      ],
+      "limitations": [
+        "Issue 描述正文为空，仅包含一行简略标题",
+        "未提供基线仓库文件列表（baseline_file_index 为空）",
+        "缺乏复现步骤、元素绑定关系及具体的渲染/更新行为说明"
+      ]
+    },
+    "localization": {
+      "target_localizable": "no",
+      "component": "elbow-arrow",
+      "candidate_paths": [],
+      "reason": "文件索引为空，且仅有标题提及 elbow arrow 与 font size，无法精确定位至具体实现文件。"
+    },
+    "repair_contract": {
+      "completeness": "insufficient",
+      "current_behavior": "修改字体大小时，折线箭头（Elbow arrow）没有相应更新。",
+      "expected_behavior": "修改字体大小时，折线箭头应正确更新。",
+      "explicit_constraints": [],
+      "unresolved_variables": [
+        "箭头是绑定到独立文本元素还是绑定到包含文本的容器元素",
+        "字号变化如何触发箭头重路由（重新计算起点/终点坐标还是重新布局路径）",
+        "涉及的具体属性监听机制与更新调用链"
+      ],
+      "reason": "仅有一句简短标题，完全没有说明交互场景、受影响的属性与具体的预期几何状态。"
+    },
+    "test_contract": {
+      "constructible": "no",
+      "assertions": [],
+      "missing_oracles": [
+        "测试场景中元素的创建与绑定方式",
+        "更改字号后箭头控制点、端点或路径包围盒的具体预期数值与断言条件"
+      ],
+      "reason": "缺少可复现的操作步骤与明确的预期状态/断言标准，无法设计自动化测试。"
+    },
+    "counterfactual": {
+      "multiple_repairs_fit_text": "yes",
+      "examples": [
+        "仅针对直接绑定到纯文本元素的折线箭头，在 fontSize 属性变更时触发路径重算",
+        "针对容器内文字因字号变化引起容器 bound 变化的情况，触发与该容器相连的折线箭头更新"
+      ],
+      "reason": "文本未限定具体是哪种与文本相关的折线箭头绑定场景，不同实现方式均符合字面描述。"
+    },
+    "confidence": "high"
+  },
+  "text_decision": {
+    "policy_version": "visual-necessity-human-funnel-v1",
+    "empirical_visual_dependence": "not_tested",
+    "bucket": "review",
+    "reason_code": "problem_sources_not_usable"
+  },
+  "provider_annotation_normalization": {
+    "applied": false,
+    "removed_fields": []
+  },
+  "reconciliation": {
+    "policy_version": "visual-necessity-human-funnel-v1",
+    "visual_bucket": "not_run",
+    "text_bucket": "review",
+    "human_required_for_acceptance": true,
+    "agent_ablation_required_now": false,
+    "queue": "visual_verifier_pending",
+    "reason_code": "stage09_visual_judgment_missing"
+  },
+  "invocation": {
+    "backend": "gemini",
+    "model": "gemini-3.7-flash",
+    "requested_model": "gemini-3.7-flash",
+    "effort": "provider_auto",
+    "attempts": 1,
+    "usage": {
+      "completion_tokens": 665,
+      "prompt_tokens": 2980,
+      "total_tokens": 4211,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "reasoning_tokens": 566,
+      "traffic_type": "ON_DEMAND",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 2980
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 665
+        }
+      ]
+    },
+    "raw_response": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_parallel_04/excalidraw__excalidraw-9002/20260902T120129709964Z/16_case_0001/16_06_model_raw.json",
+    "raw_response_sha256": "bf74eb29f77fe639fc0fc9dedb89bef59a1e97749a30d51cbc3599406103cec7",
+    "provider_response": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_parallel_04/excalidraw__excalidraw-9002/20260902T120129709964Z/16_case_0001/10_provider_response_01.json",
+    "provider_response_sha256": "7f659b5e108873ca7a58da84cfcaaca31b19dc52f27977e376d6a5c0a1942352",
+    "request": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/16_visual_necessity_selection/20260902_wave13_text_parallel_04/excalidraw__excalidraw-9002/20260902T120129709964Z/16_case_0001/10_api_request.json",
+    "request_sha256": "75a673f0c1880a4ae31b7ab1e88985358eb5e5cdc028c9ac67df05a3945eaf8e"
+  },
+  "elapsed_seconds": 23.716
+}

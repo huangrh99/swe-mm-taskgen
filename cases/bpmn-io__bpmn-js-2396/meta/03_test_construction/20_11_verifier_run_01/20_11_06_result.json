@@ -1,0 +1,169 @@
+{
+  "schema_version": "test-extension-verifier-run-v2",
+  "task_id": "bpmn-io__bpmn-js-2396",
+  "status": "complete",
+  "annotation": {
+    "schema_version": "existing-tests-extension-v2",
+    "task_id": "bpmn-io__bpmn-js-2396",
+    "status": "no_additional_tests_needed",
+    "behavioral_contract": {
+      "observable_requirements": [
+        {
+          "requirement_id": "constraint_001",
+          "contract": "When connecting a sequence flow from a corner-attached boundary event to a strictly axis-aligned target element (e.g. directly below or directly to the right), the sequence flow must form a direct straight connection between the boundary event edge and the target element edge, without inserting extraneous interior waypoints or routing into the element interior."
+        }
+      ],
+      "preserved_behaviors": [
+        "Sequence flow layout for boundary events attached to side centers of host activities remains unchanged.",
+        "Sequence flow layout for corner boundary events connecting to non-axis-aligned targets (requiring bendpoints) remains unchanged.",
+        "Self-loop routing and gateway docking rules remain unchanged."
+      ],
+      "implementation_variation": "Different layouter orientation helper structures, vector comparisons, or geometric condition checks that identify strictly axis-aligned target orientations for corner boundary events and output a straight 2-point waypoint line ('v' or 'h') are valid."
+    },
+    "coverage": [
+      {
+        "requirement_id": "constraint_001",
+        "visual_category": "空间布局与几何理解",
+        "coverage": "直接覆盖",
+        "existing_test_ids": [
+          "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for axis-aligned corner boundary event\"]",
+          "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]"
+        ],
+        "assertion_summary": "Verifies that connecting a corner boundary event to vertically and horizontally axis-aligned target tasks results in exact two-point straight waypoints ([{x: 909, y: 407}, {x: 909, y: 480}] and [{x: 927, y: 109}, {x: 1000, y: 109}]) without extra waypoints.",
+        "reason": "The existing suite already contains dedicated unit tests in LayoutSequenceFlowSpec.js asserting the exact waypoint coordinates for both vertical and horizontal axis-aligned corner boundary event connections, directly verifying constraint_001."
+      }
+    ],
+    "test_bundles": [],
+    "oracle_quality_plan": {
+      "status": "proposed_not_executed",
+      "curator_only": true,
+      "negative_variants": [
+        {
+          "variant_id": "neg_ignore_axis_aligned_vertical_target",
+          "defect_preserved_or_introduced": "Omits the verticalTargetOrientation check, causing vertical axis-aligned corner boundary connections to fall back to corner-axis comparison and produce invalid 3-point routes.",
+          "expected_failure_test_ids": [
+            "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for axis-aligned corner boundary event\"]"
+          ]
+        },
+        {
+          "variant_id": "neg_ignore_axis_aligned_horizontal_target",
+          "defect_preserved_or_introduced": "Omits the horizontalTargetOrientation check, causing horizontal axis-aligned corner boundary connections to generate unwanted interior waypoints.",
+          "expected_failure_test_ids": [
+            "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]"
+          ]
+        }
+      ],
+      "equivalent_positive_variant": {
+        "description": "An implementation that uses bounding-box center alignment checks instead of orientation string splitting to determine whether target is strictly axis-aligned before selecting 'v' or 'h' layout.",
+        "expected_pass_test_ids": [
+          "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for axis-aligned corner boundary event\"]",
+          "[[\"features/modeling - layout\",\"boundary events\",\"non-loops\"],\"should layout straight for horizontally axis-aligned corner boundary event\"]"
+        ]
+      }
+    },
+    "missing_context": [],
+    "summary": "Existing unit tests in LayoutSequenceFlowSpec.js directly cover the geometric requirement for both vertically and horizontally axis-aligned corner boundary event connections. Both tests have been measured as F2P and all 72 surrounding regression tests remain stable P2P, so no additional test bundle is needed.",
+    "human_review_required": false,
+    "human_review_reasons": []
+  },
+  "invocation": {
+    "backend": "gemini",
+    "model": "gemini-3.7-flash",
+    "requested_model": "gemini-3.7-flash",
+    "effort": "provider_auto",
+    "attempts": 1,
+    "usage": {
+      "completion_tokens": 1087,
+      "prompt_tokens": 34473,
+      "total_tokens": 36365,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "reasoning_tokens": 805,
+      "traffic_type": "ON_DEMAND",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 34473
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1087
+        }
+      ]
+    },
+    "raw_response": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+    "raw_response_sha256": "76af4bc5f82f03cf3f22402cd3538a1a7967567b4b3713648990ecd2b4a1d4b8",
+    "provider_response": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+    "provider_response_sha256": "e1334e2825a2c8f769cfa7f9ff6a4f76cc25a115dfcc7b54da45d99013446385",
+    "request": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+    "request_sha256": "04dea43e6b8336d726a40cd67fe4e6aed69258dbfa7ceae8498f6967edec661f",
+    "semantic_validation_attempts": 2,
+    "prior_validation_failures": [
+      "JSONDecodeError: Expecting ',' delimiter: line 59 column 3 (char 4266)"
+    ],
+    "semantic_attempt_records": [
+      {
+        "semantic_attempt": 1,
+        "directory": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01",
+        "files": {
+          "10_api_invocation.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+            "sha256": "5b4de791d5effe3380c3c12ee98a789a2ae7808aaa70ef497022cfb6124a3fe8"
+          },
+          "10_api_request.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+            "sha256": "1eb19f522710c1943f7dd8231de0073c25d06a9da01c699f9ba580797b67f15d"
+          },
+          "10_attempt_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+            "sha256": "575a77090d2402acb781463604bdee7a6b0d8a2e950cc76fb38ebde53facde9a"
+          },
+          "10_invocation_started.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+            "sha256": "457311d47d06f0ee1e985977dec75c3de94b59a5715e888ff8a40e1c009f6433"
+          },
+          "10_provider_response_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+            "sha256": "230812b1f8e492ff2c7b9262d82c501cc71ea1ec16badf8ad28764b3ecc8f1fa"
+          }
+        }
+      },
+      {
+        "semantic_attempt": 2,
+        "directory": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02",
+        "files": {
+          "09_model_raw.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+            "sha256": "76af4bc5f82f03cf3f22402cd3538a1a7967567b4b3713648990ecd2b4a1d4b8"
+          },
+          "10_api_invocation.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_invocation.json",
+            "sha256": "44d042b37adcbe876ebecee1131159933f471bc1d539693bcba2c33a8d93c84e"
+          },
+          "10_api_request.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+            "sha256": "04dea43e6b8336d726a40cd67fe4e6aed69258dbfa7ceae8498f6967edec661f"
+          },
+          "10_attempt_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_attempt_01.json",
+            "sha256": "6e97ad3b1b41134f1587879343ec934315bc73121e30be83df44861ff794209c"
+          },
+          "10_invocation_started.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_invocation_started.json",
+            "sha256": "b5daaaa1db5c18f779f92143d9ef22d5282133ee5edcd11b54b1dc7baf16f45e"
+          },
+          "10_provider_response_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/bpmn-io__bpmn-js-2396/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+            "sha256": "e1334e2825a2c8f769cfa7f9ff6a4f76cc25a115dfcc7b54da45d99013446385"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "number": 2396,
+  "state": "baseline",
+  "repeat": 1,
+  "started_at": "2026-08-31T20:10:58.909686+00:00",
+  "image_id": "sha256:80d6a16aaf45e19046a80bc856cb0b15955ae44ea550f63afb6492d4c54a96ef",
+  "case_manifest_sha256": "a7fd145e4857c1aa764d8961728dd3c9097c8d91a4402875e952ca70d5f21d5e",
+  "verified_environment": {
+    "case_manifest_sha256": "a7fd145e4857c1aa764d8961728dd3c9097c8d91a4402875e952ca70d5f21d5e",
+    "image_id": "sha256:80d6a16aaf45e19046a80bc856cb0b15955ae44ea550f63afb6492d4c54a96ef",
+    "runtime_image_id": "sha256:db634be1f18d3cf5bdfb6484a1ac04eec3a3062d7e7052d048dd466faab8c2e0",
+    "dependency_state": "baseline"
+  },
+  "harness_hashes": {
+    "14_run_component_tests.cjs": "890c87448681c26d0cea303d5ae75daac26bc023a878bbbba26f8b647395e3e8",
+    "14_author_tests.patch": "27f00fa9ea38487b4430621a24d3b2d521ca1782d99941c93d46ced8788e3335",
+    "14_generated_test.js": "c243438c3adaf3b3a7988dfc4b0724191814b2ae5473ab537d486be6423d7362",
+    "14_execute.sh": "e4d9f7fcb49281dfe6532720fb03470d54eb9fac1653a0fdd67fab4cb7a7c1e8",
+    "14_case_manifest.json": "3ab275ca73f5bde25be849eff4d21008e2d40d6e7e5d50b7c0915c8abc84c769"
+  },
+  "status": "observed",
+  "network": "none",
+  "cpu_limit": 2,
+  "memory_gib": 4,
+  "command": [
+    "bash",
+    "/harness/14_execute.sh"
+  ],
+  "container_name": "pr-pilot-2396-baseline-3169f786",
+  "attach_exit_code": 1,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 1,
+    "Error": "",
+    "StartedAt": "2026-08-31T20:10:59.01815722Z",
+    "FinishedAt": "2026-08-31T20:11:01.286462263Z"
+  },
+  "test_counts": {
+    "pass": 72,
+    "fail": 4,
+    "skip": 0
+  },
+  "framework_report_sha256": "367629e096fda6cecfae9406b76cb13d22214a912605186ac9e464ae71afa735",
+  "elapsed_seconds": 2.4296990420043585
+}

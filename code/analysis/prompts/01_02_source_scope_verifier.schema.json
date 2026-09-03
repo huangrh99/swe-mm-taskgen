@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "candidate_id", "overall_decision", "confidence",
+    "expand_descendants", "ancestor_issues", "human_review_required",
+    "scope_blockers"
+  ],
+  "properties": {
+    "schema_version": {"const": "source-scope-verifier-v1"},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "overall_decision": {"enum": ["include_agent_prompt", "curator_only", "exclude", "review"]},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "expand_descendants": {"const": false},
+    "human_review_required": {"type": "boolean"},
+    "scope_blockers": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "ancestor_issues": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "repository", "issue_number", "relation", "overall_decision",
+          "summary", "requirements", "descendants_excluded", "reason"
+        ],
+        "properties": {
+          "repository": {"type": "string", "minLength": 3},
+          "issue_number": {"type": "integer", "minimum": 1},
+          "relation": {"const": "acceptance_parent_reference"},
+          "overall_decision": {"enum": ["include_agent_prompt", "curator_only", "exclude", "review"]},
+          "summary": {"type": "string", "minLength": 1},
+          "descendants_excluded": {"const": true},
+          "reason": {"type": "string", "minLength": 1},
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "requirement", "source_quote", "new_information",
+                "patch_relevant", "executable", "currently_tested",
+                "decision", "requires_test_update", "reason"
+              ],
+              "properties": {
+                "requirement": {"type": "string", "minLength": 1},
+                "source_quote": {"type": "string", "minLength": 1, "maxLength": 280},
+                "new_information": {"enum": ["yes", "no", "unclear"]},
+                "patch_relevant": {"enum": ["yes", "no", "unclear"]},
+                "executable": {"enum": ["yes", "no", "unclear"]},
+                "currently_tested": {"enum": ["yes", "no", "unknown"]},
+                "decision": {"enum": ["include_agent_prompt", "curator_only", "exclude", "review"]},
+                "requires_test_update": {"type": "boolean"},
+                "reason": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

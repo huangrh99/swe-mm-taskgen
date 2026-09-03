@@ -1,0 +1,18 @@
+{
+  "schema_version": "case-environment-dependency-probe-v1",
+  "instance_id": "automattic__wp-calypso-100957",
+  "status": "complete",
+  "network": "none",
+  "image_reference": "visual-harbor-base:c5a1ad4c85bccd9b7ac8d94a94c628aeac53b75f61e09d8b05f99857b6018cd9",
+  "expected_commit": "19ed337b2b8b48d9d768b35add8a65221e512c9c",
+  "exit_code": 0,
+  "output": [
+    "HEAD=19ed337b2b8b48d9d768b35add8a65221e512c9c",
+    "CLEAN=yes",
+    "REMOTE=empty",
+    "NODE=v22.23.2",
+    "YARN=4.0.2",
+    "CHROMIUM=/usr/bin/chromium",
+    "DEPENDENCIES=present"
+  ]
+}

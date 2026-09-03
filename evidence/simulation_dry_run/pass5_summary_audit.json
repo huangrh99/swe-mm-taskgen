@@ -1,0 +1,15 @@
+{
+  "schema_version": "pass5-summary-audit-v1",
+  "status": "passed",
+  "mode": "simulation",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "attempt_count": 6,
+  "valid_trial_count": 5,
+  "infrastructure_invalid_count": 1,
+  "success_count": 1,
+  "pass_at_5": 1,
+  "summary": {
+    "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_30_final_frozen_dry_run_pass5/pass5_summary.json",
+    "sha256": "a91740ae164abdaa436c124ced27d4caeeaca875942bfc75e3e835d8df3cdc56"
+  }
+}

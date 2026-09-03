@@ -1,0 +1,22 @@
+{
+  "schema_version": "test-extension-verifier-run-v2",
+  "created_at": "2026-09-02T16:51:11.273509+00:00",
+  "status": "complete",
+  "model_invoked": true,
+  "packet": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/meta/03_test_construction/20_11_verifier_run_01/20_11_01_packet.json",
+    "sha256": "f97a73c19af0e2f0f6abea01693e9ed39ed7518a8c643089c117958bfaea075e"
+  },
+  "prompt_sha256": "1cccc338cd9b7cc5c7375b20a97ab4054b4224827853911b449a99d010980580",
+  "schema_sha256": "57e232c79b9631cc6f0cc477ffc4c4351e1027d285c428b203a9c73d850392ff",
+  "runner_sha256": "efd7314615807996c6364a41085cef8a7caec99c7cf78d21e35c319fd72af5b9",
+  "result": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/meta/03_test_construction/20_11_verifier_run_01/20_11_06_result.json",
+    "sha256": "d9e81072ec6cb0341b059c684a9801e8d4d4f14894af2dcbcaabb272a4ea638c"
+  },
+  "audit": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/excalidraw__excalidraw-9002/meta/03_test_construction/20_11_verifier_run_01/20_11_08_audit.html",
+    "sha256": "c0f72abb96d90f779d4b451aa1a0540773c0796580308deb19f57b5eded0caf6"
+  },
+  "boundary": "predicted transitions are never final F2P/P2P labels"
+}

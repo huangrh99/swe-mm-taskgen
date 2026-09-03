@@ -1,0 +1,133 @@
+{
+  "schema_version": "existing-tests-extension-v2",
+  "task_id": "googlechrome__lighthouse-16403",
+  "status": "additional_tests_proposed",
+  "behavioral_contract": {
+    "observable_requirements": [
+      {
+        "requirement_id": "constraint_001",
+        "contract": "In default view ('all' / group selector), treemap node captions must be split into distinct styleable elements (bold resource title and dimmed size text) rather than a single flat text string. The root container node must not display a duplicate caption element."
+      },
+      {
+        "requirement_id": "constraint_002",
+        "contract": "Treemap visualization and the sidebar table must maintain non-overlapping layout where both remain visible and properly positioned side-by-side on sufficiently wide viewports."
+      },
+      {
+        "requirement_id": "constraint_003",
+        "contract": "Nodes within the same script bundle must share an identifiable base hue while varying in lightness/saturation across hierarchy depths so that nested submodules are visually distinguishable from parent modules."
+      }
+    ],
+    "preserved_behaviors": [
+      "Existing URL option decoding, debug mode loading, and coverage red-shading in unused-bytes view mode must remain fully operational.",
+      "Error handling on malformed Lighthouse result payloads must continue reporting expected error strings."
+    ],
+    "implementation_variation": "Color computation may use different exact HSL depth formulas or CSS custom properties as long as nested nodes exhibit discernible depth-based shade differences and root captions are omitted in group mode."
+  },
+  "coverage": [
+    {
+      "requirement_id": "constraint_001",
+      "visual_category": "元素结构与视觉状态理解",
+      "coverage": "未覆盖",
+      "existing_test_ids": [],
+      "assertion_summary": "No existing test inspects caption inner DOM structure, styled child spans, or root caption omission in group mode.",
+      "reason": "Existing tests only query textContent of caption elements to locate nodes for coverage calculation."
+    },
+    {
+      "requirement_id": "constraint_002",
+      "visual_category": "空间布局与几何理解",
+      "coverage": "间接覆盖",
+      "existing_test_ids": [
+        "Lighthouse Treemap renders correctly correctly shades coverage of gtm node"
+      ],
+      "assertion_summary": "Existing tests verify viewport intersection of elements but do not verify layout structure.",
+      "reason": "Viewport intersection is asserted for a single node, but relative layout and table non-overlapping are not directly validated."
+    },
+    {
+      "requirement_id": "constraint_003",
+      "visual_category": "外观与渲染属性理解",
+      "coverage": "未覆盖",
+      "existing_test_ids": [],
+      "assertion_summary": "No existing test asserts background color variation by nesting depth.",
+      "reason": "Existing tests only check the pseudo-element width percentage in unused-bytes mode."
+    }
+  ],
+  "test_bundles": [
+    {
+      "bundle_id": "bundle_treemap_visual_contract",
+      "template_test_ids": [
+        "treemap/test/treemap-test-pptr.js:Lighthouse Treemap renders correctly correctly shades coverage of gtm node"
+      ],
+      "target_requirement_ids": [
+        "constraint_001",
+        "constraint_003"
+      ],
+      "target_visual_capabilities": [
+        "元素结构与视觉状态理解",
+        "外观与渲染属性理解"
+      ],
+      "coverage_gap_reason": "Existing Puppeteer tests verify data parsing and unused byte bar width, but completely lack assertions on caption DOM formatting (split title/size spans, root caption omission) and depth-based hierarchical node coloring.",
+      "why_assertions_measure_requirements": "The assertions directly query the rendered caption element children to confirm distinct title and size elements and verify that nested child nodes receive different computed background colors than their depth-1 ancestor within the same bundle.",
+      "oracle_type": "rendered_structure_state_assertion",
+      "predicted_transition": "candidate_f2p",
+      "predicted_base_behavior": "Base implementation renders flat single-string captions, does not remove the root caption in group mode, and assigns identical flat colors to all descendant nodes within a bundle regardless of depth.",
+      "predicted_reference_behavior": "Base+patch correctly splits captions into title and size spans, removes the root caption, and renders distinct background colors for nested nodes across depth levels.",
+      "working_directory": ".",
+      "test_command": "yarn mocha test/treemap-visual-contract-test.js --timeout 35000",
+      "stable_test_ids": [
+        "Lighthouse Treemap Visual Contract renders split captions and omits root caption",
+        "Lighthouse Treemap Visual Contract renders depth-dependent shades within bundles"
+      ],
+      "files": [
+        {
+          "path": "test/treemap-visual-contract-test.js",
+          "operation": "add",
+          "sha256_before": null,
+          "content": "/**\n * @license\n * Copyright 2024 Google LLC\n * SPDX-License-Identifier: Apache-2.0\n */\n\nimport puppeteer from 'puppeteer';\nimport {getChromePath} from 'chrome-launcher';\n\nimport {Server} from '../cli/test/fixtures/static-server.js';\n\nconst portNumber = 20204;\nconst treemapUrl = `http://localhost:${portNumber}/dist/gh-pages/treemap/index.html`;\n\ndescribe('Lighthouse Treemap Visual Contract', () => {\n  /** @type {import('puppeteer').Browser} */\n  let browser;\n  /** @type {import('puppeteer').Page} */\n  let page;\n  let server;\n\n  before(async function() {\n    this.timeout(40000);\n    server = new Server(portNumber);\n    await server.listen(portNumber, 'localhost');\n    browser = await puppeteer.launch({\n      headless: process.env.DEBUG ? false : 'new',\n      executablePath: getChromePath(),\n    });\n  });\n\n  after(async function() {\n    await Promise.all([\n      server && server.close(),\n      browser && browser.close(),\n    ]);\n  });\n\n  beforeEach(async () => {\n    page = await browser.newPage();\n  });\n\n  afterEach(async () => {\n    if (page) await page.close();\n  });\n\n  it('renders split captions and omits root caption', async () => {\n    await page.goto(`${treemapUrl}?debug`, {\n      waitUntil: 'networkidle0',\n      timeout: 30000,\n    });\n\n    const rootCaptions = await page.evaluate(() => {\n      const root = document.querySelector('.webtreemap-node--root');\n      if (!root) return [];\n      return Array.from(root.children)\n        .filter(el => el.classList.contains('webtreemap-caption'))\n        .map(el => el.textContent.trim());\n    });\n    expect(rootCaptions).toHaveLength(0);\n\n    const leafCaptionStructure = await page.evaluate(() => {\n      const captions = Array.from(document.querySelectorAll('.webtreemap-caption'));\n      if (captions.length === 0) return null;\n      const sample = captions[0];\n      const childSpans = Array.from(sample.querySelectorAll('span'));\n      return {\n        totalCaptions: captions.length,\n        sampleSpanCount: childSpans.length,\n        hasTextInSpans: childSpans.every(s => s.textContent.trim().length > 0),\n      };\n    });\n\n    expect(leafCaptionStructure).not.toBeNull();\n    expect(leafCaptionStructure.totalCaptions).toBeGreaterThan(0);\n    expect(leafCaptionStructure.sampleSpanCount).toBeGreaterThanOrEqual(2);\n    expect(leafCaptionStructure.hasTextInSpans).toBe(true);\n  });\n\n  it('renders depth-dependent shades within bundles', async () => {\n    await page.goto(`${treemapUrl}?debug`, {\n      waitUntil: 'networkidle0',\n      timeout: 30000,\n    });\n\n    const depthColors = await page.evaluate(() => {\n      const nodes = Array.from(document.querySelectorAll('.webtreemap-node:not(.webtreemap-node--root)'));\n      const nestedNodesWithParent = nodes.filter(n => {\n        const parent = n.parentElement && n.parentElement.closest('.webtreemap-node:not(.webtreemap-node--root)');\n        return Boolean(parent);\n      });\n\n      if (nestedNodesWithParent.length === 0) return null;\n      const sampleChild = nestedNodesWithParent[0];\n      const sampleParent = sampleChild.parentElement.closest('.webtreemap-node:not(.webtreemap-node--root)');\n\n      return {\n        parentBg: window.getComputedStyle(sampleParent).backgroundColor,\n        childBg: window.getComputedStyle(sampleChild).backgroundColor,\n      };\n    });\n\n    expect(depthColors).not.toBeNull();\n    expect(depthColors.parentBg).not.toBe('');\n    expect(depthColors.childBg).not.toBe('');\n    expect(depthColors.childBg).not.toBe(depthColors.parentBg);\n  });\n});\n"
+        }
+      ],
+      "unified_test_patch": "diff --git a/test/treemap-visual-contract-test.js b/test/treemap-visual-contract-test.js\nnew file mode 100644\nindex 0000000..c38941a\n--- /dev/null\n+++ b/test/treemap-visual-contract-test.js\n@@ -0,0 +1,97 @@\n+/**\n+ * @license\n+ * Copyright 2024 Google LLC\n+ * SPDX-License-Identifier: Apache-2.0\n+ */\n+\n+import puppeteer from 'puppeteer';\n+import {getChromePath} from 'chrome-launcher';\n+\n+import {Server} from '../cli/test/fixtures/static-server.js';\n+\n+const portNumber = 20204;\n+const treemapUrl = `http://localhost:${portNumber}/dist/gh-pages/treemap/index.html`;\n+\n+describe('Lighthouse Treemap Visual Contract', () => {\n+  /** @type {import('puppeteer').Browser} */\n+  let browser;\n+  /** @type {import('puppeteer').Page} */\n+  let page;\n+  let server;\n+\n+  before(async function() {\n+    this.timeout(40000);\n+    server = new Server(portNumber);\n+    await server.listen(portNumber, 'localhost');\n+    browser = await puppeteer.launch({\n+      headless: process.env.DEBUG ? false : 'new',\n+      executablePath: getChromePath(),\n+    });\n+  });\n+\n+  after(async function() {\n+    await Promise.all([\n+      server && server.close(),\n+      browser && browser.close(),\n+    ]);\n+  });\n+\n+  beforeEach(async () => {\n+    page = await browser.newPage();\n+  });\n+\n+  afterEach(async () => {\n+    if (page) await page.close();\n+  });\n+\n+  it('renders split captions and omits root caption', async () => {\n+    await page.goto(`${treemapUrl}?debug`, {\n+      waitUntil: 'networkidle0',\n+      timeout: 30000,\n+    });\n+\n+    const rootCaptions = await page.evaluate(() => {\n+      const root = document.querySelector('.webtreemap-node--root');\n+      if (!root) return [];\n+      return Array.from(root.children)\n+        .filter(el => el.classList.contains('webtreemap-caption'))\n+        .map(el => el.textContent.trim());\n+    });\n+    expect(rootCaptions).toHaveLength(0);\n+\n+    const leafCaptionStructure = await page.evaluate(() => {\n+      const captions = Array.from(document.querySelectorAll('.webtreemap-caption'));\n+      if (captions.length === 0) return null;\n+      const sample = captions[0];\n+      const childSpans = Array.from(sample.querySelectorAll('span'));\n+      return {\n+        totalCaptions: captions.length,\n+        sampleSpanCount: childSpans.length,\n+        hasTextInSpans: childSpans.every(s => s.textContent.trim().length > 0),\n+      };\n+    });\n+\n+    expect(leafCaptionStructure).not.toBeNull();\n+    expect(leafCaptionStructure.totalCaptions).toBeGreaterThan(0);\n+    expect(leafCaptionStructure.sampleSpanCount).toBeGreaterThanOrEqual(2);\n+    expect(leafCaptionStructure.hasTextInSpans).toBe(true);\n+  });\n+\n+  it('renders depth-dependent shades within bundles', async () => {\n+    await page.goto(`${treemapUrl}?debug`, {\n+      waitUntil: 'networkidle0',\n+      timeout: 30000,\n+    });\n+\n+    const depthColors = await page.evaluate(() => {\n+      const nodes = Array.from(document.querySelectorAll('.webtreemap-node:not(.webtreemap-node--root)'));\n+      const nestedNodesWithParent = nodes.filter(n => {\n+        const parent = n.parentElement && n.parentElement.closest('.webtreemap-node:not(.webtreemap-node--root)');\n+        return Boolean(parent);\n+      });\n+\n+      if (nestedNodesWithParent.length === 0) return null;\n+      const sampleChild = nestedNodesWithParent[0];\n+      const sampleParent = sampleChild.parentElement.closest('.webtreemap-node:not(.webtreemap-node--root)');\n+\n+      return {\n+        parentBg: window.getComputedStyle(sampleParent).backgroundColor,\n+        childBg: window.getComputedStyle(sampleChild).backgroundColor,\n+      };\n+    });\n+\n+    expect(depthColors).not.toBeNull();\n+    expect(depthColors.parentBg).not.toBe('');\n+    expect(depthColors.childBg).not.toBe('');\n+    expect(depthColors.childBg).not.toBe(depthColors.parentBg);\n+  });\n+});\n",
+      "result_parser": "mocha_tap_or_spec",
+      "environment_assumptions": [
+        "Node.js with Puppeteer and Chrome installed",
+        "Treemap static assets built into dist/gh-pages/treemap prior to running test"
+      ],
+      "equivalence_self_check": "Any valid implementation that structures captions as multiple sub-spans and distinguishes child node shades from their parent node background passes without requiring exact private classnames or specific color math.",
+      "vacuous_pass_checks": [
+        "Captions list must not be empty (totalCaptions > 0).",
+        "Nested nodes with parent must exist in debug fixture before evaluating background shades."
+      ],
+      "surface_signal_resistance": "A superficial implementation that leaves captions as raw strings or keeps all bundle nodes at a single flat color fails because span count will be 0 and parent/child computed colors will match."
+    }
+  ],
+  "oracle_quality_plan": {
+    "status": "proposed_not_executed",
+    "curator_only": true,
+    "negative_variants": [
+      {
+        "variant_id": "flat_color_all_depths",
+        "defect_preserved_or_introduced": "Keeps node coloring flat by ignoring node depth when calling getColorFromHue.",
+        "expected_failure_test_ids": [
+          "Lighthouse Treemap Visual Contract renders depth-dependent shades within bundles"
+        ]
+      },
+      {
+        "variant_id": "unsplit_caption_strings",
+        "defect_preserved_or_introduced": "Leaves webtreemap caption nodes as plain strings without splitting into title and size spans.",
+        "expected_failure_test_ids": [
+          "Lighthouse Treemap Visual Contract renders split captions and omits root caption"
+        ]
+      }
+    ],
+    "equivalent_positive_variant": {
+      "description": "An alternative implementation that computes depth lightness via CSS variables (--depth-offset) and formats captions using separate sub-elements with different class names.",
+      "expected_pass_test_ids": [
+        "Lighthouse Treemap Visual Contract renders split captions and omits root caption",
+        "Lighthouse Treemap Visual Contract renders depth-dependent shades within bundles"
+      ]
+    }
+  },
+  "missing_context": [],
+  "summary": "Added visual contract tests in test/treemap-visual-contract-test.js covering split caption DOM structure, root caption omission in group mode, and depth-based hierarchical node shading.",
+  "human_review_required": false,
+  "human_review_reasons": []
+}

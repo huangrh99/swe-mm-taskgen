@@ -1,0 +1,156 @@
+<!doctype html><meta charset=utf-8><title>20_11 test coverage verifier</title>
+<style>body{font:13px/1.45 system-ui;margin:18px;color:#202124;background:#f6f7f8}main{max-width:1280px;margin:auto}section,.card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;padding:6px;text-align:left;vertical-align:top}pre{white-space:pre-wrap;max-height:420px;overflow:auto}.warn{color:#9a6700}</style>
+<main><h1>carbon-design-system__carbon-22019 · F2P/P2P 覆盖补全 Verifier</h1>
+<div class=card><b>结论：</b>additional_tests_proposed<br>
+<b>已有实测：</b>0 F2P · 0 P2P，前后各 0 次<br>
+<span class=warn>模型只提出覆盖与测试补全建议；新增测试的 F2P/P2P 必须重新实测。正确性按功能行为，不按 gold 代码文本。</span></div>
+<section><h2>实现无关的行为契约</h2><table><tr><th>约束</th><th>可观察契约</th></tr><tr><td>constraint_001</td><td>展开搜索框内部的清除按钮触发提示时，应提供符合设计规范的图标按钮提示语义，避免仅依赖无样式的系统缺省提示。</td></tr><tr><td>constraint_002</td><td>可展开搜索框处于收起状态时，搜索放大镜图标按钮挂载的提示浮层应具备标准无箭头图标按钮提示形态与类标识（应用 icon-tooltip 变体样式），与设计系统其余标准 IconButton 的 Tooltip 视觉呈现保持一致。</td></tr></table>
+<p><b>必须保持：</b>未展开状态下放大镜按钮的 tabIndex 为 0，输入框 tabIndex 为 -1；展开状态下输入框正常聚焦与输入，支持 onChange / onKeyDown / onClear 等回调；通过点击或键盘 Enter/Space 键触发 onExpand 展开搜索框</p>
+<p><b>允许的实现差异：</b>允许组件通过在 Tooltip 上附加 icon-tooltip 类名、封装专用 IconButtonTooltip 组件或通过属性配置实现等效的无箭头图标提示视觉形态。</p></section>
+<section><h2>逐约束覆盖</h2><table><tr><th>约束</th><th>覆盖</th><th>当前断言</th><th>理由</th></tr><tr><td>constraint_001</td><td>未覆盖</td><td>仅断言了清除按钮的 aria-label 和 onClear 回调触发，未断言清除按钮的提示浮层组件形态。</td><td>现有测试仅测试按钮文字属性与点击事件，未测试 Tooltip 挂载结构或视觉变体。</td></tr><tr><td>constraint_002</td><td>未覆盖</td><td>断言了放大镜按钮在收起状态下的 tabIndex 与 onExpand 点击及键盘调用，未断言包裹放大镜按钮的 Tooltip 是否具有 icon-tooltip 标识及对应形态。</td><td>现有测试均未检查 Tooltip 的 DOM 结构及其类名配置，无法验证是否采用了标准 IconButton Tooltip 形态。</td></tr></table></section>
+<section><h3>carbon-search-tooltip-consistency</h3><p><b>预测：</b>candidate_f2p · <b>oracle：</b>rendered_structure_state_assertion</p><p>断言处于未展开状态的 ExpandableSearch 放大镜图标外层的 Tooltip 元素挂载了 icon-tooltip 类名，确保渲染为无箭头的标准 IconButton 提示浮层。</p><details><summary>完整测试补丁</summary><pre>diff --git a/src/components/Search/Search-test.js b/src/components/Search/Search-test.js
+index f015194d..57692ab6 100644
+--- a/src/components/Search/Search-test.js
++++ b/src/components/Search/Search-test.js
+@@ -168,6 +168,20 @@ describe(&#x27;Search&#x27;, () =&gt; {
+       expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveAttribute(&#x27;tabIndex&#x27;, &#x27;-1&#x27;);
+     });
+ 
++    it(&#x27;should render icon-tooltip style on magnifier button when expandable and not expanded&#x27;, () =&gt; {
++      const { container } = render(
++        &lt;Search
++          labelText=&quot;test-search&quot;
++          onExpand={() =&gt; {}}
++          isExpanded={false}
++        /&gt;
++      );
++
++      const tooltip = container.querySelector(
++        `.${prefix}--search-magnifier-tooltip`
++      );
++      expect(tooltip).toBeInTheDocument();
++      expect(tooltip).toHaveClass(`${prefix}--icon-tooltip`);
++    });
++
+     it(&#x27;should have tabbable input and untabbable button if not expandable&#x27;, async () =&gt; {
+       render(&lt;Search labelText=&quot;test-search&quot; /&gt;);
+ 
+</pre></details></section><section><h2>Oracle-quality validation 计划</h2>
+<p class=warn>proposed_not_executed；仅供构造与审计，不暴露给 solver，未执行不得视为通过。</p>
+<table><tr><th>错误/不完整变体</th><th>应暴露的问题</th><th>应失败 test ID</th></tr><tr><td>missing-icon-tooltip-class</td><td>未在 Tooltip 上添加 cds--icon-tooltip 类名，保留原有的带箭头提示浮层形态。</td><td>Search renders as expected - Component API should render icon-tooltip style on magnifier button when expandable and not expanded</td></tr></table>
+<p><b>等价正确实现：</b>使用 classnames 组合在 magnifierWithTooltip 的 Tooltip className 中包含 prefix--icon-tooltip。<br>
+<b>应通过：</b>Search renders as expected - Component API should render icon-tooltip style on magnifier button when expandable and not expanded</p></section>
+<details><summary>完整 Verifier JSON</summary><pre>{
+  &quot;schema_version&quot;: &quot;existing-tests-extension-v2&quot;,
+  &quot;task_id&quot;: &quot;carbon-design-system__carbon-22019&quot;,
+  &quot;status&quot;: &quot;additional_tests_proposed&quot;,
+  &quot;behavioral_contract&quot;: {
+    &quot;observable_requirements&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+        &quot;contract&quot;: &quot;展开搜索框内部的清除按钮触发提示时，应提供符合设计规范的图标按钮提示语义，避免仅依赖无样式的系统缺省提示。&quot;
+      },
+      {
+        &quot;requirement_id&quot;: &quot;constraint_002&quot;,
+        &quot;contract&quot;: &quot;可展开搜索框处于收起状态时，搜索放大镜图标按钮挂载的提示浮层应具备标准无箭头图标按钮提示形态与类标识（应用 icon-tooltip 变体样式），与设计系统其余标准 IconButton 的 Tooltip 视觉呈现保持一致。&quot;
+      }
+    ],
+    &quot;preserved_behaviors&quot;: [
+      &quot;未展开状态下放大镜按钮的 tabIndex 为 0，输入框 tabIndex 为 -1&quot;,
+      &quot;展开状态下输入框正常聚焦与输入，支持 onChange / onKeyDown / onClear 等回调&quot;,
+      &quot;通过点击或键盘 Enter/Space 键触发 onExpand 展开搜索框&quot;
+    ],
+    &quot;implementation_variation&quot;: &quot;允许组件通过在 Tooltip 上附加 icon-tooltip 类名、封装专用 IconButtonTooltip 组件或通过属性配置实现等效的无箭头图标提示视觉形态。&quot;
+  },
+  &quot;coverage&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+      &quot;visual_category&quot;: &quot;元素结构与视觉状态理解&quot;,
+      &quot;coverage&quot;: &quot;未覆盖&quot;,
+      &quot;existing_test_ids&quot;: [
+        &quot;Search renders as expected - Component API should respect closeButtonLabelText prop&quot;,
+        &quot;Search renders as expected - Component API should respect onClear prop&quot;
+      ],
+      &quot;assertion_summary&quot;: &quot;仅断言了清除按钮的 aria-label 和 onClear 回调触发，未断言清除按钮的提示浮层组件形态。&quot;,
+      &quot;reason&quot;: &quot;现有测试仅测试按钮文字属性与点击事件，未测试 Tooltip 挂载结构或视觉变体。&quot;
+    },
+    {
+      &quot;requirement_id&quot;: &quot;constraint_002&quot;,
+      &quot;visual_category&quot;: &quot;元素结构与视觉状态理解&quot;,
+      &quot;coverage&quot;: &quot;未覆盖&quot;,
+      &quot;existing_test_ids&quot;: [
+        &quot;Search renders as expected - Component API should have tabbable button and untabbable input if expandable and not expanded&quot;,
+        &quot;Search renders as expected - Component API should respect onExpand prop&quot;
+      ],
+      &quot;assertion_summary&quot;: &quot;断言了放大镜按钮在收起状态下的 tabIndex 与 onExpand 点击及键盘调用，未断言包裹放大镜按钮的 Tooltip 是否具有 icon-tooltip 标识及对应形态。&quot;,
+      &quot;reason&quot;: &quot;现有测试均未检查 Tooltip 的 DOM 结构及其类名配置，无法验证是否采用了标准 IconButton Tooltip 形态。&quot;
+    }
+  ],
+  &quot;test_bundles&quot;: [
+    {
+      &quot;bundle_id&quot;: &quot;carbon-search-tooltip-consistency&quot;,
+      &quot;template_test_ids&quot;: [
+        &quot;Search renders as expected - Component API should have tabbable button and untabbable input if expandable and not expanded&quot;
+      ],
+      &quot;target_requirement_ids&quot;: [
+        &quot;constraint_002&quot;
+      ],
+      &quot;target_visual_capabilities&quot;: [
+        &quot;元素结构与视觉状态理解&quot;
+      ],
+      &quot;coverage_gap_reason&quot;: &quot;现有 Search 与 ExpandableSearch 测试均未对放大镜图标的 Tooltip 进行类名或组件形态断言，导致带箭头的旧 Tooltip 缺陷无法被自动化测试拦截。&quot;,
+      &quot;why_assertions_measure_requirements&quot;: &quot;断言处于未展开状态的 ExpandableSearch 放大镜图标外层的 Tooltip 元素挂载了 icon-tooltip 类名，确保渲染为无箭头的标准 IconButton 提示浮层。&quot;,
+      &quot;oracle_type&quot;: &quot;rendered_structure_state_assertion&quot;,
+      &quot;predicted_transition&quot;: &quot;candidate_f2p&quot;,
+      &quot;predicted_base_behavior&quot;: &quot;Base 分支中放大镜 Tooltip 仅包含 cds--search-tooltip cds--search-magnifier-tooltip，断言 toHaveClass(&#x27;cds--icon-tooltip&#x27;) 失败。&quot;,
+      &quot;predicted_reference_behavior&quot;: &quot;修复后放大镜 Tooltip 包含 cds--icon-tooltip 类名，测试顺利通过。&quot;,
+      &quot;working_directory&quot;: &quot;packages/react&quot;,
+      &quot;test_command&quot;: &quot;yarn test src/components/Search/Search-test.js --runInBand&quot;,
+      &quot;stable_test_ids&quot;: [
+        &quot;Search renders as expected - Component API should render icon-tooltip style on magnifier button when expandable and not expanded&quot;
+      ],
+      &quot;files&quot;: [
+        {
+          &quot;path&quot;: &quot;src/components/Search/Search-test.js&quot;,
+          &quot;operation&quot;: &quot;modify&quot;,
+          &quot;content&quot;: &quot;/**\n * Copyright IBM Corp. 2022, 2026\n *\n * This source code is licensed under the Apache-2.0 license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\nimport React from &#x27;react&#x27;;\nimport Search from &#x27;./Search&#x27;;\nimport userEvent from &#x27;@testing-library/user-event&#x27;;\nimport { render, screen } from &#x27;@testing-library/react&#x27;;\n\nconst prefix = &#x27;cds&#x27;;\nconst contentScenarios = [\n  { label: &#x27;empty string&#x27;, value: &#x27;&#x27;, hasContent: false },\n  { label: &#x27;zero&#x27;, value: 0, hasContent: true },\n  { label: &#x27;non-empty string&#x27;, value: &#x27;hmm&#x27;, hasContent: true },\n  { label: &#x27;undefined&#x27;, value: undefined, hasContent: false },\n];\n\ndescribe(&#x27;Search&#x27;, () =&gt; {\n  describe(&#x27;renders as expected - Component API&#x27;, () =&gt; {\n    it(&#x27;should spread extra props onto the input element&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; data-testid=\&quot;test-id\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveAttribute(\n        &#x27;data-testid&#x27;,\n        &#x27;test-id&#x27;\n      );\n    });\n\n    it(&#x27;should respect autoComplete prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; autoComplete=\&quot;test\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveAttribute(\n        &#x27;autoComplete&#x27;,\n        &#x27;test&#x27;\n      );\n    });\n\n    it(&#x27;should support a custom `className` prop on the outermost element&#x27;, () =&gt; {\n      const { container } = render(\n        &lt;Search labelText=\&quot;test-search\&quot; className=\&quot;custom-class\&quot; /&gt;\n      );\n\n      expect(container.firstChild).toHaveClass(&#x27;custom-class&#x27;);\n    });\n\n    it(&#x27;should respect closeButtonLabelText prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; closeButtonLabelText=\&quot;clear\&quot; /&gt;);\n\n      expect(screen.getByLabelText(&#x27;clear&#x27;)).toBeInTheDocument();\n    });\n\n    it(&#x27;should respect defaultValue prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; defaultValue=\&quot;test-value\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveValue(&#x27;test-value&#x27;);\n    });\n\n    it.each(contentScenarios)(\n      &#x27;should treat a defaultValue of $label as content&#x27;,\n      ({ value, hasContent }) =&gt; {\n        render(&lt;Search labelText=\&quot;test-search\&quot; defaultValue={value} /&gt;);\n\n        if (hasContent) {\n          expect(screen.getByLabelText(&#x27;Clear search input&#x27;)).not.toHaveClass(\n            `${prefix}--search-close--hidden`\n          );\n        } else {\n          expect(screen.getByLabelText(&#x27;Clear search input&#x27;)).toHaveClass(\n            `${prefix}--search-close--hidden`\n          );\n        }\n      }\n    );\n\n    it(&#x27;should respect disabled prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; disabled /&gt;);\n\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).toBeDisabled();\n    });\n\n    it(&#x27;should respect id prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; id=\&quot;test-id\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveAttribute(&#x27;id&#x27;, &#x27;test-id&#x27;);\n    });\n\n    it(&#x27;should respect labelText prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;searchbox&#x27;).labels[0]).toHaveTextContent(\n        &#x27;test-search&#x27;\n      );\n    });\n\n    it(&#x27;should call onChange when expected&#x27;, async () =&gt; {\n      const onChange = jest.fn();\n      render(&lt;Search labelText=\&quot;test-search\&quot; onChange={onChange} /&gt;);\n\n      await userEvent.type(screen.getByRole(&#x27;searchbox&#x27;), &#x27;test&#x27;);\n\n      expect(onChange).toHaveBeenCalled();\n    });\n\n    it(&#x27;should respect onClear prop&#x27;, async () =&gt; {\n      const onClear = jest.fn();\n      render(\n        &lt;Search\n          labelText=\&quot;test-search\&quot;\n          closeButtonLabelText=\&quot;clear\&quot;\n          onClear={onClear}\n        /&gt;\n      );\n\n      await userEvent.click(screen.getByLabelText(&#x27;clear&#x27;));\n\n      expect(onClear).toHaveBeenCalled();\n    });\n\n    it(&#x27;should respect onExpand prop&#x27;, async () =&gt; {\n      const onExpand = jest.fn();\n      render(&lt;Search labelText=\&quot;test-search\&quot; onExpand={onExpand} /&gt;);\n\n      await userEvent.click(screen.getAllByRole(&#x27;button&#x27;)[0]);\n\n      expect(onExpand).toHaveBeenCalled();\n\n      await screen.getAllByRole(&#x27;button&#x27;)[0].focus();\n\n      await userEvent.keyboard(&#x27;[Space]&#x27;);\n\n      expect(onExpand).toHaveBeenCalledTimes(2);\n\n      await screen.getAllByRole(&#x27;button&#x27;)[0].focus();\n\n      await userEvent.keyboard(&#x27;[Enter]&#x27;);\n\n      expect(onExpand).toHaveBeenCalledTimes(3);\n    });\n\n    it(&#x27;should call onKeyDown when expected&#x27;, async () =&gt; {\n      const onKeyDown = jest.fn();\n      render(&lt;Search labelText=\&quot;test-search\&quot; onKeyDown={onKeyDown} /&gt;);\n\n      await userEvent.type(screen.getByRole(&#x27;searchbox&#x27;), &#x27;test&#x27;);\n\n      expect(onKeyDown).toHaveBeenCalled();\n    });\n\n    it(&#x27;should call focus expand button on Escape when expanded&#x27;, async () =&gt; {\n      render(\n        &lt;Search labelText=\&quot;test-search\&quot; onExpand={() =&gt; {}} isExpanded={true} /&gt;\n      );\n\n      await screen.getByRole(&#x27;searchbox&#x27;).focus();\n\n      await userEvent.keyboard(&#x27;[Escape]&#x27;);\n\n      expect(screen.getAllByRole(&#x27;button&#x27;)[0]).toHaveFocus();\n    });\n\n    it(&#x27;should have tabbable button and untabbable input if expandable and not expanded&#x27;, async () =&gt; {\n      render(\n        &lt;Search\n          labelText=\&quot;test-search\&quot;\n          onExpand={() =&gt; {}}\n          isExpanded={false}\n        /&gt;\n      );\n\n      expect(screen.getAllByRole(&#x27;button&#x27;)[0]).toHaveAttribute(&#x27;tabIndex&#x27;, &#x27;0&#x27;);\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveAttribute(&#x27;tabIndex&#x27;, &#x27;-1&#x27;);\n    });\n\n    it(&#x27;should render icon-tooltip style on magnifier button when expandable and not expanded&#x27;, () =&gt; {\n      const { container } = render(\n        &lt;Search\n          labelText=\&quot;test-search\&quot;\n          onExpand={() =&gt; {}}\n          isExpanded={false}\n        /&gt;\n      );\n\n      const tooltip = container.querySelector(\n        `.${prefix}--search-magnifier-tooltip`\n      );\n      expect(tooltip).toBeInTheDocument();\n      expect(tooltip).toHaveClass(`${prefix}--icon-tooltip`);\n    });\n\n    it(&#x27;should have tabbable input and untabbable button if not expandable&#x27;, async () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; /&gt;);\n\n      // will have 1 button which is the close button\n      expect(screen.getAllByRole(&#x27;button&#x27;).length).toBe(1);\n      // search icon not tabbable if not expandable\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).not.toHaveAttribute(\n        &#x27;tabIndex&#x27;,\n        &#x27;-1&#x27;\n      );\n    });\n\n    it(&#x27;should respect placeholder prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; placeholder=\&quot;test-placeholder\&quot; /&gt;);\n\n      expect(\n        screen.getByPlaceholderText(&#x27;test-placeholder&#x27;)\n      ).toBeInTheDocument();\n    });\n\n    it(&#x27;should respect renderIcon prop&#x27;, () =&gt; {\n      const CustomIcon = jest.fn(() =&gt; &lt;svg data-testid=\&quot;test-icon\&quot; /&gt;);\n      render(&lt;Search labelText=\&quot;test-search\&quot; renderIcon={CustomIcon} /&gt;);\n\n      expect(screen.getByRole(&#x27;search&#x27;)).toContainElement(\n        screen.getByTestId(&#x27;test-icon&#x27;)\n      );\n      expect(screen.getByTestId(&#x27;test-icon&#x27;)).toBeInTheDocument();\n    });\n\n    it(&#x27;should respect role prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; role=\&quot;combobox\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;combobox&#x27;)).toBeInTheDocument();\n    });\n\n    it(&#x27;should respect size prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; size=\&quot;sm\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;search&#x27;)).toHaveClass(`${prefix}--search--sm`);\n    });\n\n    it(&#x27;should respect type prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; type=\&quot;search\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveAttribute(&#x27;type&#x27;, &#x27;search&#x27;);\n    });\n\n    it(&#x27;should respect value prop&#x27;, () =&gt; {\n      render(&lt;Search labelText=\&quot;test-search\&quot; value=\&quot;test-value\&quot; /&gt;);\n\n      expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveValue(&#x27;test-value&#x27;);\n    });\n\n    it.each(contentScenarios)(\n      &#x27;should treat a value of $label as content&#x27;,\n      ({ value, hasContent }) =&gt; {\n        render(&lt;Search labelText=\&quot;test-search\&quot; value={value} /&gt;);\n\n        if (hasContent) {\n          expect(screen.getByLabelText(&#x27;Clear search input&#x27;)).not.toHaveClass(\n            `${prefix}--search-close--hidden`\n          );\n        } else {\n          expect(screen.getByLabelText(&#x27;Clear search input&#x27;)).toHaveClass(\n            `${prefix}--search-close--hidden`\n          );\n        }\n      }\n    );\n\n    it(&#x27;should sync clear button visibility when controlled value changes&#x27;, () =&gt; {\n      const { rerender } = render(\n        &lt;Search labelText=\&quot;test-search\&quot; value=\&quot;test-value\&quot; /&gt;\n      );\n\n      expect(screen.getByLabelText(&#x27;Clear search input&#x27;)).not.toHaveClass(\n        `${prefix}--search-close--hidden`\n      );\n\n      rerender(&lt;Search labelText=\&quot;test-search\&quot; value=\&quot;\&quot; /&gt;);\n\n      expect(screen.getByLabelText(&#x27;Clear search input&#x27;)).toHaveClass(\n        `${prefix}--search-close--hidden`\n      );\n    });\n  });\n});\n&quot;,
+          &quot;sha256_before&quot;: &quot;f015194d5d2e9a9c1c7de6d90e2abdc5335ff4be710ce948d70e67a2a4a1ce00&quot;
+        }
+      ],
+      &quot;unified_test_patch&quot;: &quot;diff --git a/src/components/Search/Search-test.js b/src/components/Search/Search-test.js\nindex f015194d..57692ab6 100644\n--- a/src/components/Search/Search-test.js\n+++ b/src/components/Search/Search-test.js\n@@ -168,6 +168,20 @@ describe(&#x27;Search&#x27;, () =&gt; {\n       expect(screen.getByRole(&#x27;searchbox&#x27;)).toHaveAttribute(&#x27;tabIndex&#x27;, &#x27;-1&#x27;);\n     });\n \n+    it(&#x27;should render icon-tooltip style on magnifier button when expandable and not expanded&#x27;, () =&gt; {\n+      const { container } = render(\n+        &lt;Search\n+          labelText=\&quot;test-search\&quot;\n+          onExpand={() =&gt; {}}\n+          isExpanded={false}\n+        /&gt;\n+      );\n+\n+      const tooltip = container.querySelector(\n+        `.${prefix}--search-magnifier-tooltip`\n+      );\n+      expect(tooltip).toBeInTheDocument();\n+      expect(tooltip).toHaveClass(`${prefix}--icon-tooltip`);\n+    });\n+\n     it(&#x27;should have tabbable input and untabbable button if not expandable&#x27;, async () =&gt; {\n       render(&lt;Search labelText=\&quot;test-search\&quot; /&gt;);\n \n&quot;,
+      &quot;result_parser&quot;: &quot;jest-json&quot;,
+      &quot;environment_assumptions&quot;: [
+        &quot;Node.js runtime with Jest test runner configured for @carbon/react workspace&quot;
+      ],
+      &quot;equivalence_self_check&quot;: &quot;任何在未展开状态下为放大镜外层 Tooltip 挂载 cds--icon-tooltip 标准变体类或相应 IconButton Tooltip 属性的有效实现均可通过测试。&quot;,
+      &quot;vacuous_pass_checks&quot;: [
+        &quot;若 Tooltip 元素未被渲染，querySelector 将返回 null，toBeInTheDocument() 会显式断言失败&quot;,
+        &quot;若 Tooltip 元素缺少 cds--icon-tooltip 类名，toHaveClass 会显式断言失败&quot;
+      ],
+      &quot;surface_signal_resistance&quot;: &quot;仅修改 magnifier button 的内部属性而不为外层 Tooltip 挂载 icon-tooltip 类名无法通过测试。&quot;
+    }
+  ],
+  &quot;oracle_quality_plan&quot;: {
+    &quot;status&quot;: &quot;proposed_not_executed&quot;,
+    &quot;curator_only&quot;: true,
+    &quot;negative_variants&quot;: [
+      {
+        &quot;variant_id&quot;: &quot;missing-icon-tooltip-class&quot;,
+        &quot;defect_preserved_or_introduced&quot;: &quot;未在 Tooltip 上添加 cds--icon-tooltip 类名，保留原有的带箭头提示浮层形态。&quot;,
+        &quot;expected_failure_test_ids&quot;: [
+          &quot;Search renders as expected - Component API should render icon-tooltip style on magnifier button when expandable and not expanded&quot;
+        ]
+      }
+    ],
+    &quot;equivalent_positive_variant&quot;: {
+      &quot;description&quot;: &quot;使用 classnames 组合在 magnifierWithTooltip 的 Tooltip className 中包含 prefix--icon-tooltip。&quot;,
+      &quot;expected_pass_test_ids&quot;: [
+        &quot;Search renders as expected - Component API should render icon-tooltip style on magnifier button when expandable and not expanded&quot;
+      ]
+    }
+  },
+  &quot;missing_context&quot;: [],
+  &quot;summary&quot;: &quot;针对 ExpandableSearch 放大镜图标按钮提示形态与标准 IconButton Tooltip 不一致的问题，在 Search-test.js 中补充了对未展开状态下放大镜 Tooltip 包含 cds--icon-tooltip 类名的断言测试，形成了精准的 candidate_f2p 验证。&quot;,
+  &quot;human_review_required&quot;: false,
+  &quot;human_review_reasons&quot;: []
+}</pre></details></main>

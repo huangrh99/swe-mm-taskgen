@@ -1,0 +1,2 @@
+-r 08_requirements_vlm_screening.txt
+-r 01_requirements_image_screening.txt

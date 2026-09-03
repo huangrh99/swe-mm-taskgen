@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pass5-summary-audit-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "mode", "instance_id", "attempt_count", "valid_trial_count", "infrastructure_invalid_count", "answer_leakage_invalid_count", "success_count", "pass_at_5", "summary"],
+  "properties": {
+    "schema_version": {"const": "pass5-summary-audit-v1"},
+    "status": {"const": "passed"},
+    "mode": {"enum": ["simulation", "real"]},
+    "instance_id": {"type": "string", "minLength": 1},
+    "attempt_count": {"type": "integer", "minimum": 5},
+    "valid_trial_count": {"const": 5},
+    "infrastructure_invalid_count": {"type": "integer", "minimum": 0},
+    "answer_leakage_invalid_count": {"type": "integer", "minimum": 0},
+    "success_count": {"type": "integer", "minimum": 0, "maximum": 5},
+    "pass_at_5": {"enum": [0, 1]},
+    "summary": {"$ref": "#/$defs/binding"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}}
+  }
+}

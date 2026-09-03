@@ -1,0 +1,125 @@
+{
+  "schema_version": "pipeline-state-ledger-v1",
+  "mode": "simulation",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "status": "completed",
+  "current_state": "frozen",
+  "packet": {
+    "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_06_promotion_packet.json",
+    "sha256": "6fd8241cdbda3738a1624fb058b3dca636d18abae2f0972bc29579dd271cb072"
+  },
+  "pipeline_freeze": {
+    "path": "report/reproducibility/09_pipeline_freeze_manifest.json",
+    "sha256": "90b2935cb929ad3f2866fb855cd8d7f1839e74aa4becf364e84c6335c45d645a"
+  },
+  "candidate_task": {
+    "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_00_provisional_candidates/carbon-design-system__carbon-20978",
+    "sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e"
+  },
+  "events": [
+    {
+      "from": "candidate",
+      "to": "visual_approved",
+      "status": "accepted",
+      "code": "visual_gate_accepted",
+      "evidence": {
+        "source": "mock",
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_01_visual_gate_mock.json",
+        "sha256": "f22de88694fad6457da53287c0ae543755af94077dc72c159e6f0ff9d6d375a5"
+      }
+    },
+    {
+      "from": "visual_approved",
+      "to": "tests_measured",
+      "status": "accepted",
+      "code": "test_measurement_accepted",
+      "evidence": {
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_02_measurement_mock.json",
+        "sha256": "99b68943aecbaed5b9d61610626c03fb5991463ec1f37d157fa2c2c90d034b83",
+        "test_manifest": {
+          "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_00_provisional_candidates/carbon-design-system__carbon-20978/tests/test_manifest.json",
+          "sha256": "de4f60a9722b7236d4d1beaf89222a7deb1c84de7333daecb43ff00a19a0d561"
+        },
+        "baseline_run_count": 2,
+        "reference_run_count": 2,
+        "f2p_ids": [
+          "f2p_ai_gradient_decorator",
+          "f2p_ai_right_divider",
+          "f2p_invalid_ai_left_divider",
+          "f2p_invalid_ai_closable_spacing"
+        ],
+        "p2p_ids": [
+          "p2p_disabled_selection_noninteractive",
+          "p2p_invalid_helper_error_color",
+          "p2p_disabled_item_semantics",
+          "p2p_selected_item_state"
+        ]
+      }
+    },
+    {
+      "from": "tests_measured",
+      "to": "tests_approved",
+      "status": "accepted",
+      "code": "tests_gate_accepted",
+      "evidence": {
+        "source": "mock",
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_03_tests_gate_mock.json",
+        "sha256": "4f5090b267481841b28c4858bc9772dc2ab1bccc1e7a8d1ad25060fcd3e58f5e"
+      }
+    },
+    {
+      "from": "tests_approved",
+      "to": "harbor_controls_passed",
+      "status": "accepted",
+      "code": "harbor_controls_accepted",
+      "evidence": {
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_04_controls_mock.json",
+        "sha256": "0d06a19f0f6316e83e7f831d09c4dd68b3c0b1a6db6252edc59719ba41445bd2",
+        "empty_reward": 0,
+        "gold_reward": 1,
+        "harbor_task_checksum": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "runs": [
+          {
+            "role": "baseline_nop",
+            "task_checksum": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "reward": 0,
+            "result": {
+              "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_04_01_nop_result.json",
+              "sha256": "340dd593751715f225562424e9f1974bda6620db79424f3b685e06e4e7162702"
+            },
+            "verifier_result": {
+              "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_04_02_nop_verifier.json",
+              "sha256": "8298ea5832d8c88fe46eefcdf1690cac41b178cb42dc48e093f3ccd5e4fe0ecf"
+            }
+          },
+          {
+            "role": "oracle",
+            "task_checksum": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "reward": 1,
+            "result": {
+              "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_04_03_oracle_result.json",
+              "sha256": "dcede10311f02adee2fe14e0a5148f92a01acb9786431f42ae2910aecf5f1745"
+            },
+            "verifier_result": {
+              "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/19_04_04_oracle_verifier.json",
+              "sha256": "a84ea912fe3b3d6b992d73cfb711b04a0fc21df509e19da0f552db1acd440685"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "from": "harbor_controls_passed",
+      "to": "frozen",
+      "status": "accepted",
+      "code": "task_frozen",
+      "evidence": {
+        "task_path": "tmp/multimodal-2025/19_pipeline_state_machine/19_29_final_frozen_dry_run_tasks/carbon-design-system__carbon-20978",
+        "task_sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+        "image_id": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "frozen_manifest": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_29_final_frozen_dry_run/carbon-design-system__carbon-20978.frozen.json"
+      }
+    }
+  ],
+  "frozen_manifest": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_29_final_frozen_dry_run/carbon-design-system__carbon-20978.frozen.json"
+}

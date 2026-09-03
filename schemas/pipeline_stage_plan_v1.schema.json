@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pipeline_stage_plan_v1.schema.json",
+  "title": "Five-stage visual candidate orchestration plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "stage", "steps"],
+  "properties": {
+    "schema_version": {"const": "pipeline-stage-plan-v1"},
+    "stage": {
+      "enum": [
+        "prepare-pr-pool",
+        "recall-and-archive",
+        "construct-solver-inputs",
+        "screen-multimodal-candidates",
+        "review-visual-gate"
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "command", "arguments", "outputs"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$"},
+          "command": {"type": "string", "minLength": 1},
+          "arguments": {"type": "array", "items": {"type": "string"}},
+          "outputs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "path", "pointer"],
+        "properties": {
+          "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]{0,63}$"},
+          "path": {"type": "string", "minLength": 1},
+          "pointer": {"type": "string", "pattern": "^(|/.*)$"}
+        }
+      }
+    }
+  }
+}

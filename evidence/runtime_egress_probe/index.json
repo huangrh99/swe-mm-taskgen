@@ -1,0 +1,72 @@
+{
+  "schema_version": "harbor-runtime-egress-evidence-index-v1",
+  "harbor_version": "0.22.0",
+  "task_checksum": "f0ec35d74391794c288afc6ddab82d25eb0ab66b44ef8f4571856f8ed9651b49",
+  "scope": {
+    "real_model_invoked": false,
+    "credentials_used": false,
+    "model_api_probe": "Unauthenticated GET used only to establish DNS, TCP, TLS, and HTTP reachability."
+  },
+  "jobs": [
+    {
+      "role": "k3",
+      "job_id": "0f89957b-44e8-41b5-83cf-1677e01330ee",
+      "trial_id": "20449dc1-2628-4e77-ad2b-c0c2e7086d1f",
+      "trial_name": "task__krUdgtL",
+      "result": "report/evidence/runtime_egress_probe/k3_resolved_result.json",
+      "setup_probe": "report/evidence/runtime_egress_probe/k3_setup_probe.json",
+      "agent_probe": "report/evidence/runtime_egress_probe/k3_agent_probe.json",
+      "resolved_policy": {
+        "environment_extra_allowed_hosts": [],
+        "agent_extra_allowed_hosts": ["ark-gateway.invalid"],
+        "skills": [],
+        "mcp_servers": []
+      },
+      "observation": "Setup blocked GitHub, raw GitHub, npm, and Ark. Agent phase still blocked GitHub/raw/npm, while an unauthenticated Ark GET completed transport and returned HTTP 401. The restored baseline was separately exercised by the reward-1 verifier."
+    },
+    {
+      "role": "codex",
+      "job_id": "a486ef57-2b38-4bda-aeb3-be4407930467",
+      "trial_id": "be47086f-c112-4cbf-abc6-c95eae505123",
+      "trial_name": "task__xq6H59n",
+      "result": "report/evidence/runtime_egress_probe/codex_resolved_result.json",
+      "setup_probe": "report/evidence/runtime_egress_probe/codex_setup_probe.json",
+      "agent_probe": "report/evidence/runtime_egress_probe/codex_agent_probe.json",
+      "resolved_policy": {
+        "environment_extra_allowed_hosts": [],
+        "agent_extra_allowed_hosts": ["api.openai.com", "auth.openai.com", "chatgpt.com"],
+        "skills": [],
+        "mcp_servers": []
+      },
+      "observation": "Setup blocked GitHub, raw GitHub, npm, and OpenAI. Agent phase still blocked GitHub/raw/npm, while an unauthenticated OpenAI GET completed transport and returned HTTP 404. The restored baseline was separately exercised by the reward-1 verifier."
+    },
+    {
+      "role": "kimi_fetchurl",
+      "job_id": "bc55af7c-fc3d-4cb9-83d4-62ff0d219426",
+      "trial_id": "dd37441c-1399-4e6f-830e-8c6b44bff084",
+      "trial_name": "task__q9eT62F",
+      "result": "report/evidence/runtime_egress_probe/kimi_fetchurl_resolved_result.json",
+      "transcript": "report/evidence/runtime_egress_probe/kimi_fetchurl_transcript.jsonl",
+      "request_summary": "report/evidence/runtime_egress_probe/kimi_fetchurl_mock_requests.jsonl",
+      "observation": "Kimi Code 0.29.0 consumed a deterministic localhost mock response instructing FetchURL against GitHub. The real CLI tool returned a network error. The mock summary records two localhost chat-completion requests and no real model call."
+    }
+  ],
+  "sha256": {
+    "report/evidence/runtime_egress_probe/k3_setup_probe.json": "5822f8baeaed76d9f51c141a4ea15cb3612ed3b099b004f1f4ba1cc7569829d6",
+    "report/evidence/runtime_egress_probe/k3_agent_probe.json": "7a2d881051ad31e6b752dc25abc89ab1a162e2b7fbdf4bcfa7ba59b8c268c238",
+    "report/evidence/runtime_egress_probe/k3_resolved_result.json": "003fa69f4b019078ebfa2f9f50cc54402bd7d2bb05ad528229d0a630b1dbe5e9",
+    "report/evidence/runtime_egress_probe/codex_setup_probe.json": "2e701b41fced8caf12298fa97f640f789b3c1518d5ca103bdeb71c6998dbfe7d",
+    "report/evidence/runtime_egress_probe/codex_agent_probe.json": "0d7b5601f756fc00c74072ae88cf5dfdfe1d6688d32b7621bf0b9392461a57e0",
+    "report/evidence/runtime_egress_probe/codex_resolved_result.json": "c5fd18f2a9e884ffab89d740b4b82ac0862c2fdca897dc26ff2238ea08aea699",
+    "report/evidence/runtime_egress_probe/kimi_fetchurl_transcript.jsonl": "06c6906988cfcac7347689cfdd94c65245c67f473f58bea9bac7f6a209f04451",
+    "report/evidence/runtime_egress_probe/kimi_fetchurl_mock_requests.jsonl": "3b63557ce1fd74ae708bcfc6018a6e1c3929d9a59f274eea98b1fd6d1d06ad79",
+    "report/evidence/runtime_egress_probe/kimi_fetchurl_resolved_result.json": "bf74fabd361046ae1dfe06b73860828d3b23bc8cfee1218580875b23a44a9c98"
+  },
+  "not_proven": [
+    "No real K3 or OpenAI model response was requested, so absence of server-side hosted-tool calls is not dynamically proven.",
+    "The probe used a frozen local probe image rather than executing a production Kimi or Codex task image.",
+    "The probe establishes the tested HTTPS/TCP paths; it is not a general proof about every protocol.",
+    "Production trajectories still require fail-closed auditing for hosted search, browser, file-search, connector, and remote MCP events."
+  ]
+}
+

@@ -1,0 +1,60 @@
+{
+  "schema_version": "external-model-run-proposal-v2",
+  "status": "blocked_not_authorized",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "candidate_state": "provisional",
+  "external_call_executed": false,
+  "task_material_sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+  "harbor": {
+    "version": "0.22.0",
+    "provider": "official kimi-code installed agent",
+    "job_config_path": "tmp/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_polish/19_10_03_kimi_k3_pass5_job.json",
+    "job_config_sha256": "183fb350fb5e809027de33a3c60c03c587465b59fc1ab2d15c29f040454e0706",
+    "agent_version": "0.29.0"
+  },
+  "model": {
+    "human_name": "Kimi K3 internal endpoint",
+    "model_id": "ep-20260817150115-9fx8h",
+    "base_url_host": "ark-gateway.invalid",
+    "thinking_effort": "max",
+    "capabilities": ["image_in", "thinking"]
+  },
+  "sampling_and_budget": {
+    "valid_independent_trials": 5,
+    "concurrency": 1,
+    "max_steps_per_trial": 20,
+    "max_completion_tokens_per_step": 8192,
+    "per_step_retry_limit": 1,
+    "replacement_attempt_limit_per_invalid_trial": 2,
+    "nominal_external_call_estimate": "5-100",
+    "configured_upper_bound_for_five_valid_trials": 200,
+    "theoretical_upper_bound_if_every_trial_needs_two_replacements": 600,
+    "note": "These are call-count bounds, not a provider billing guarantee. A valid-trial collector must classify setup/API/infrastructure failures separately and launch replacements until five valid trials exist or the replacement cap is exhausted."
+  },
+  "credential_contract": {
+    "required_environment_variable": "ARK_API_KEY",
+    "secret_value_persisted": false,
+    "secret_value_printed": false
+  },
+  "authorization": {
+    "required": true,
+    "granted": false,
+    "reason": "The previous Gemini authorization binds a different checksum, model and adapter and cannot authorize this Kimi/K3 proposal."
+  },
+  "launch_blockers": [
+    "visual_human_gate_pending",
+    "f2p_p2p_human_gate_pending",
+    "tests_require_semantic_revision_and_remeasurement",
+    "task_not_frozen",
+    "official_kimi_code_0_29_0_install_only_smoke_not_yet_recorded",
+    "fresh_exact_checksum_authorization_missing"
+  ],
+  "required_before_launch": [
+    "Revise and human-approve the visual and test contracts.",
+    "Rerun baseline, oracle and negative controls on the exact revised task.",
+    "Promote through the formal state machine and freeze task checksum plus image ID.",
+    "Run an install-only official kimi-code 0.29.0 smoke without model execution.",
+    "Generate a fresh job-config hash and receive explicit authorization for that exact checksum/model/config/budget.",
+    "Use run-frozen-pass5 so API/setup/infrastructure failures are excluded and replaced."
+  ]
+}

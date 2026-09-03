@@ -1,0 +1,20 @@
+{
+  "schema_version": "case-environment-audit-v1",
+  "status": "complete",
+  "records": [
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:93acf0c18d0caddbf9446f7d55423c903311d60c3eb54d3ec4c4fdbeaefc82bc",
+      "base_commit": "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e",
+      "asset_count": 6,
+      "task_image": "case-environment-audit:mermaid-js-mermaid-7711",
+      "probe": [
+        "98b3155bd1d2ee8e29f8f9cfcad1bd1a4b0a5c8e",
+        "REMOTE=v20.20.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    }
+  ]
+}

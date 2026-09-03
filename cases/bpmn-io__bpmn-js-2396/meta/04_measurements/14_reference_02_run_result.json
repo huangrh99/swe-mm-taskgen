@@ -1,0 +1,52 @@
+{
+  "number": 2396,
+  "state": "reference",
+  "repeat": 2,
+  "started_at": "2026-08-31T20:11:06.738094+00:00",
+  "image_id": "sha256:80d6a16aaf45e19046a80bc856cb0b15955ae44ea550f63afb6492d4c54a96ef",
+  "case_manifest_sha256": "a7fd145e4857c1aa764d8961728dd3c9097c8d91a4402875e952ca70d5f21d5e",
+  "verified_environment": {
+    "case_manifest_sha256": "a7fd145e4857c1aa764d8961728dd3c9097c8d91a4402875e952ca70d5f21d5e",
+    "image_id": "sha256:80d6a16aaf45e19046a80bc856cb0b15955ae44ea550f63afb6492d4c54a96ef",
+    "runtime_image_id": "sha256:db634be1f18d3cf5bdfb6484a1ac04eec3a3062d7e7052d048dd466faab8c2e0",
+    "dependency_state": "baseline"
+  },
+  "harness_hashes": {
+    "14_run_component_tests.cjs": "890c87448681c26d0cea303d5ae75daac26bc023a878bbbba26f8b647395e3e8",
+    "14_author_tests.patch": "27f00fa9ea38487b4430621a24d3b2d521ca1782d99941c93d46ced8788e3335",
+    "14_generated_test.js": "c243438c3adaf3b3a7988dfc4b0724191814b2ae5473ab537d486be6423d7362",
+    "14_production.patch": "d1bcc9bc7fe45c7388b08cb1f6ce9107f7b000fcf11bd0a0fdd158cccebeb56a",
+    "14_execute.sh": "ef6f0e9c3c190f5a18544cf3589c9d2ac385d1c48a7e5222659bdd10b5d646f5",
+    "14_case_manifest.json": "3ab275ca73f5bde25be849eff4d21008e2d40d6e7e5d50b7c0915c8abc84c769"
+  },
+  "status": "observed",
+  "network": "none",
+  "cpu_limit": 2,
+  "memory_gib": 4,
+  "command": [
+    "bash",
+    "/harness/14_execute.sh"
+  ],
+  "container_name": "pr-pilot-2396-reference-68c5a215",
+  "attach_exit_code": 0,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-08-31T20:11:06.819623682Z",
+    "FinishedAt": "2026-08-31T20:11:09.143975725Z"
+  },
+  "test_counts": {
+    "pass": 76,
+    "fail": 0,
+    "skip": 0
+  },
+  "framework_report_sha256": "fce38b0e7819fb58c91f6df9bcb49c7969201afe4d612681d4ae9d05945ace0e",
+  "elapsed_seconds": 2.472422541999549
+}

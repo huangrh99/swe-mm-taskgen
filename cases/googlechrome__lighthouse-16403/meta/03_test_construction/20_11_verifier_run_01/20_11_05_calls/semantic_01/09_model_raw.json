@@ -1,0 +1,136 @@
+{
+  "schema_version": "existing-tests-extension-v2",
+  "task_id": "googlechrome__lighthouse-16403",
+  "status": "additional_tests_proposed",
+  "behavioral_contract": {
+    "observable_requirements": [
+      {
+        "requirement_id": "constraint_001",
+        "contract": "In default/group scripts view, the treemap root node must not display a duplicated caption. Non-root nodes with rendered captions must split the caption into two distinct child span elements separating the resource/module name (styled with bold weight) and resource size (styled with dim secondary text)."
+      },
+      {
+        "requirement_id": "constraint_002",
+        "contract": "The treemap canvas and resource table must preserve a side-by-side split layout on desktop viewports without table elements overflowing onto or obscuring the treemap container."
+      },
+      {
+        "requirement_id": "constraint_003",
+        "contract": "Nested nodes within the same bundle/script hierarchy must have depth-dependent background color variations (saturation and lightness shifting per nesting depth) rather than a single uniform flat color across all depths."
+      }
+    ],
+    "preserved_behaviors": [
+      "Unused bytes visual coverage shading (percentage red pseudo-element) on leaf and bundle nodes must continue functioning accurately.",
+      "View mode switching (unused bytes vs. normal mode) and URL fragment data parsing must remain functional."
+    ],
+    "implementation_variation": "Different color calculation functions (HSL/RGB math), class names, or DOM manipulation strategies (DOM APIs vs template strings) are permissible as long as the root caption is omitted in group view, child captions contain two distinct spans for name and size, and nested node background colors vary by depth."
+  },
+  "coverage": [
+    {
+      "requirement_id": "constraint_001",
+      "visual_category": "元素结构与视觉状态理解",
+      "coverage": "未覆盖",
+      "existing_test_ids": [
+        "treemap/test/treemap-test-pptr.js#renders correctly correctly shades coverage of gtm node"
+      ],
+      "assertion_summary": "Existing test searches for caption text containing 'gtm.js' to calculate red coverage shading width, but does not assert root caption removal or caption DOM structure (two distinct spans).",
+      "reason": "Existing test only checks that a caption containing 'gtm.js' exists and reads its parent element width; it does not test root caption absence or structured caption formatting."
+    },
+    {
+      "requirement_id": "constraint_002",
+      "visual_category": "空间布局与几何理解",
+      "coverage": "间接覆盖",
+      "existing_test_ids": [
+        "treemap/test/treemap-test-pptr.js#renders correctly correctly shades coverage of gtm node"
+      ],
+      "assertion_summary": "Verifies that the GTM element handle is intersecting the viewport, confirming treemap visibility.",
+      "reason": "Existing test confirms treemap elements are intersecting the viewport, but does not explicitly verify the side-by-side positioning relation between the table and treemap."
+    },
+    {
+      "requirement_id": "constraint_003",
+      "visual_category": "外观与渲染属性理解",
+      "coverage": "未覆盖",
+      "existing_test_ids": [],
+      "assertion_summary": "None",
+      "reason": "No existing test inspects the background color of nodes at varying depths within the same script bundle."
+    }
+  ],
+  "test_bundles": [
+    {
+      "bundle_id": "bundle_treemap_visual_contract",
+      "template_test_ids": [
+        "treemap/test/treemap-test-pptr.js#renders correctly correctly shades coverage of gtm node"
+      ],
+      "target_requirement_ids": [
+        "constraint_001",
+        "constraint_003"
+      ],
+      "target_visual_capabilities": [
+        "元素结构与视觉状态理解",
+        "外观与渲染属性理解"
+      ],
+      "coverage_gap_reason": "Existing Puppeteer tests in treemap-test-pptr.js only verify debug loading, error handling, and coverage percentage shading width. They do not verify root caption removal, structured caption rendering (bold title + dim size spans), or nested depth color differentiation.",
+      "why_assertions_measure_requirements": "The assertions directly query the rendered DOM in Puppeteer to verify that: (1) no `.webtreemap-caption` is present under `.webtreemap-node--root`, (2) non-root `.webtreemap-caption` elements contain two child spans for label and size, and (3) background colors between depth-1 and depth-2 nodes within the same bundle are distinct.",
+      "oracle_type": "rendered_structure_state_assertion",
+      "predicted_transition": "candidate_f2p",
+      "predicted_base_behavior": "Fails because base code renders a caption in the root node, does not split caption text into child span elements, and assigns identical background colors across depths.",
+      "predicted_reference_behavior": "Passes because root caption is deleted in group view, caption spans are created with bold and dim classes, and depth-based HSL saturation/lightness colors are assigned to nested nodes.",
+      "working_directory": ".",
+      "test_command": "yarn mocha treemap/test/treemap-test-pptr.js --timeout 35000",
+      "stable_test_ids": [
+        "treemap/test/treemap-test-pptr.js#renders correctly formats captions into separate title and size elements and omits root caption in group mode",
+        "treemap/test/treemap-test-pptr.js#renders correctly applies depth-dependent background colors to nested bundle nodes"
+      ],
+      "files": [
+        {
+          "path": "treemap/test/treemap-test-pptr.js",
+          "operation": "modify",
+          "sha256_before": "abd894f67ac823c4015a6647ebfa9ab1715660adcd2d34eb5c0a486c28cbf1b9",
+          "content": "/**\n * @license\n * Copyright 2020 Google LLC\n * SPDX-License-Identifier: Apache-2.0\n */\n\nimport fs from 'fs';\n\nimport puppeteer from 'puppeteer';\nimport {getChromePath} from 'chrome-launcher';\n\nimport {Server} from '../../cli/test/fixtures/static-server.js';\nimport {LH_ROOT} from '../../shared/root.js';\n\nconst debugOptions = JSON.parse(\n  fs.readFileSync(LH_ROOT + '/treemap/app/debug.json', 'utf-8')\n);\nconst portNumber = 20202;\nconst treemapUrl = `http://localhost:${portNumber}/dist/gh-pages/treemap/index.html`;\n\nfunction getTextEncodingCode() {\n  const code = fs.readFileSync(LH_ROOT + '/report/renderer/text-encoding.js', 'utf-8');\n  return code.replace('export ', '');\n}\n\ndescribe('Lighthouse Treemap', () => {\n  // eslint-disable-next-line no-console\n  console.log('\\n✨ Be sure to have recently run this: yarn build-treemap');\n\n  /** @type {import('puppeteer').Browser} */\n  let browser;\n  /** @type {import('puppeteer').Page} */\n  let page;\n  /** @type {Array<string|Promise<string>>} */\n  let pageErrors = [];\n\n  let server;\n  before(async function() {\n    server = new Server(portNumber);\n    await server.listen(portNumber, 'localhost');\n  });\n\n  after(async function() {\n    await Promise.all([\n      server.close(),\n      browser && browser.close(),\n    ]);\n  });\n\n  beforeEach(async () => {\n    if (!browser) {\n      browser = await puppeteer.launch({\n        headless: process.env.DEBUG ? false : 'new',\n        executablePath: getChromePath(),\n      });\n    }\n    page = await browser.newPage();\n    page.on('pageerror', e => pageErrors.push(`${e.message} ${e.stack}`));\n    page.on('console', (e) => {\n      if (e.type() === 'error' || e.type() === 'warning') {\n        const describe = (jsHandle) => {\n          return jsHandle.executionContext().evaluate((obj) => {\n            return JSON.stringify(obj, null, 2);\n          }, jsHandle);\n        };\n        const promise = Promise.all(e.args().map(describe)).then(args => {\n          return `${e.text()} ${args.join(' ')} ${JSON.stringify(e.location(), null, 2)}`;\n        });\n        pageErrors.push(promise);\n      }\n    });\n  });\n\n  async function claimErrors() {\n    const theErrors = pageErrors;\n    pageErrors = [];\n    return await Promise.all(theErrors);\n  }\n\n  async function ensureNoErrors() {\n    await page.bringToFront();\n    await page.evaluate(() => new Promise(window.requestAnimationFrame));\n    const errors = (await claimErrors()).filter(error => {\n      // Filters out a cookie deprecation error that only occurs on ToT\n      // This error comes from gtag.js\n      // https://support.google.com/tagmanager/thread/288419928/error-failed-to-execute-getvalue-on-cookiedeprecationlabel?hl=en\n      return !error.match(\n        /Failed to execute 'getValue' on 'CookieDeprecationLabel': Illegal invocation/);\n    });\n    expect(errors).toHaveLength(0);\n  }\n\n  afterEach(async () => {\n    await ensureNoErrors();\n    await page.close();\n  });\n\n  describe('Recieves options', () => {\n    it('from debug data', async () => {\n      await page.goto(`${treemapUrl}?debug`, {\n        waitUntil: 'networkidle0',\n        timeout: 30000,\n      });\n      const options = await page.evaluate(() => window.__treemapOptions);\n      expect(options.lhr.finalDisplayedUrl).toBe(debugOptions.lhr.finalDisplayedUrl);\n    });\n\n    /**\n     * @param {{options: any, usesGzip: boolean}}\n     */\n    async function loadFromEncodedUrl({options, useGzip}) {\n      const json = JSON.stringify(options);\n      const encoded = await page.evaluate(`\n        ${getTextEncodingCode()}\n        TextEncoding.toBase64(${JSON.stringify(json)}, {gzip: ${useGzip}});\n      `);\n      await page.goto(`${treemapUrl}?gzip=${useGzip ? '1' : '0'}#${encoded}`);\n      await page.waitForFunction(() => {\n        if (window.__treemapOptions) return true;\n\n        const el = document.querySelector('#lh-log');\n        if (el && el.textContent.startsWith('Error')) return true;\n      });\n    }\n\n    it('from encoded fragment (no gzip)', async () => {\n      const options = JSON.parse(JSON.stringify(debugOptions));\n      options.lhr.finalDisplayedUrl += '😃😃😃';\n      await loadFromEncodedUrl({options, usesGzip: false});\n\n      const optionsInPage = await page.evaluate(() => window.__treemapOptions);\n      expect(optionsInPage.lhr.finalDisplayedUrl).toBe(options.lhr.finalDisplayedUrl);\n    });\n\n    it('from encoded fragment (gzip)', async () => {\n      const options = JSON.parse(JSON.stringify(debugOptions));\n      options.lhr.finalDisplayedUrl += '😃😃😃';\n      await loadFromEncodedUrl({options, usesGzip: true});\n\n      const optionsInPage = await page.evaluate(() => window.__treemapOptions);\n      expect(optionsInPage.lhr.finalDisplayedUrl).toBe(options.lhr.finalDisplayedUrl);\n    });\n\n    describe('handles errors', () => {\n      const errorTestCases = [\n        {\n          options: {lhr: 'lol'},\n          error: 'Error: provided json is not a Lighthouse result',\n        },\n        {\n          options: {lhr: {noaudits: {}}},\n          error: 'Error: provided json is not a Lighthouse result',\n        },\n        {\n          options: {lhr: {audits: {}}},\n          error: 'Error: provided Lighthouse result is missing audit: `script-treemap-data`',\n        },\n      ];\n      for (let i = 0; i < errorTestCases.length; i++) {\n        it(`case #${i + 1}`, async () => {\n          const testCase = errorTestCases[i];\n          await loadFromEncodedUrl({options: testCase.options, usesGzip: false});\n          const optionsInPage = await page.evaluate(() => window.__treemapOptions);\n          expect(optionsInPage).toBeUndefined();\n          const error = await page.evaluate(() => document.querySelector('#lh-log').textContent);\n          expect(error).toBe(testCase.error);\n          pageErrors = [];\n        });\n      }\n    });\n  });\n\n  describe('renders correctly', () => {\n    it('correctly shades coverage of gtm node', async () => {\n      await page.goto(`${treemapUrl}?debug`, {\n        waitUntil: 'networkidle0',\n        timeout: 30000,\n      });\n\n      await page.select('.view-mode-selector', '1'); // unused bytes\n      await page.waitForSelector('.lh-treemap--view-mode--unused-bytes');\n\n      // Identify the JS data.\n      const gtmNode = await page.evaluate(() => {\n        const d1Nodes = window.__treemapOptions.lhr.audits['script-treemap-data'].details.nodes;\n        const gtmNode = d1Nodes.find(n => n.name.includes('gtm.js'));\n        return gtmNode;\n      });\n\n      expect(gtmNode.unusedBytes).toBeGreaterThan(20_000);\n      expect(gtmNode.resourceBytes).toBeGreaterThan(20_000);\n\n      // Identify the DOM node.\n      const gtmElemHandle = await page.evaluateHandle(() => {\n        const captionEls = Array.from(document.querySelectorAll('.webtreemap-caption'));\n        return captionEls.find(el => el.textContent.includes('gtm.js')).parentElement;\n      });\n\n      expect(await gtmElemHandle.isIntersectingViewport()).toBeTruthy();\n\n      // Determine visual red shading percentage.\n      const percentRed = await gtmElemHandle.evaluate(node => {\n        const redWidthPx = parseInt(window.getComputedStyle(node, ':before').width);\n        const completeWidthPx = node.getBoundingClientRect().width;\n        return redWidthPx / completeWidthPx;\n      });\n\n      // Reminder! UNUSED == RED\n      const percentDataUnused = gtmNode.unusedBytes / gtmNode.resourceBytes;\n      expect(percentDataUnused).toBeGreaterThan(0);\n\n      // Assert 0.2520 ~= 0.2602 w/ 1 decimal place of precision.\n      // CSS pixels won't let us go to 2 decimal places.\n      expect(percentRed).toBeApproximately(percentDataUnused, 1);\n    });\n\n    it('formats captions into separate title and size elements and omits root caption in group mode', async () => {\n      await page.goto(`${treemapUrl}?debug`, {\n        waitUntil: 'networkidle0',\n        timeout: 30000,\n      });\n\n      const captionInfo = await page.evaluate(() => {\n        const rootNode = document.querySelector('.webtreemap-node--root');\n        const rootCaption = rootNode ? rootNode.querySelector(':scope > .webtreemap-caption') : null;\n        const captions = Array.from(document.querySelectorAll('.webtreemap-caption'));\n        const spanCounts = captions.map(el => el.querySelectorAll('span').length);\n        return {\n          hasRootCaption: Boolean(rootCaption),\n          totalCaptions: captions.length,\n          spanCounts,\n        };\n      });\n\n      expect(captionInfo.totalCaptions).toBeGreaterThan(0);\n      expect(captionInfo.hasRootCaption).toBe(false);\n      expect(captionInfo.spanCounts.every(count => count >= 2)).toBe(true);\n    });\n\n    it('applies depth-dependent background colors to nested bundle nodes', async () => {\n      await page.goto(`${treemapUrl}?debug`, {\n        waitUntil: 'networkidle0',\n        timeout: 30000,\n      });\n\n      const colors = await page.evaluate(() => {\n        const nodesWithChildren = Array.from(document.querySelectorAll('.webtreemap-node')).filter(el => {\n          return el.querySelector('.webtreemap-node') !== null;\n        });\n        for (const parent of nodesWithChildren) {\n          const child = parent.querySelector('.webtreemap-node');\n          if (!child) continue;\n          const parentBg = window.getComputedStyle(parent).backgroundColor;\n          const childBg = window.getComputedStyle(child).backgroundColor;\n          if (parentBg && childBg && parentBg !== 'transparent' && childBg !== 'transparent') {\n            return {parentBg, childBg};\n          }\n        }\n        return null;\n      });\n\n      expect(colors).not.toBeNull();\n      expect(colors.parentBg).not.toBe(colors.childBg);\n    });\n  });\n});\n"
+        }
+      ],
+      "unified_test_patch": "diff --git a/treemap/test/treemap-test-pptr.js b/treemap/test/treemap-test-pptr.js\n--- a/treemap/test/treemap-test-pptr.js\n+++ b/treemap/test/treemap-test-pptr.js\n@@ -206,5 +206,47 @@ describe('Lighthouse Treemap', () => {\n       expect(percentRed).toBeApproximately(percentDataUnused, 1);\n     });\n+\n+    it('formats captions into separate title and size elements and omits root caption in group mode', async () => {\n+      await page.goto(`${treemapUrl}?debug`, {\n+        waitUntil: 'networkidle0',\n+        timeout: 30000,\n+      });\n+\n+      const captionInfo = await page.evaluate(() => {\n+        const rootNode = document.querySelector('.webtreemap-node--root');\n+        const rootCaption = rootNode ? rootNode.querySelector(':scope > .webtreemap-caption') : null;\n+        const captions = Array.from(document.querySelectorAll('.webtreemap-caption'));\n+        const spanCounts = captions.map(el => el.querySelectorAll('span').length);\n+        return {\n+          hasRootCaption: Boolean(rootCaption),\n+          totalCaptions: captions.length,\n+          spanCounts,\n+        };\n+      });\n+\n+      expect(captionInfo.totalCaptions).toBeGreaterThan(0);\n+      expect(captionInfo.hasRootCaption).toBe(false);\n+      expect(captionInfo.spanCounts.every(count => count >= 2)).toBe(true);\n+    });\n+\n+    it('applies depth-dependent background colors to nested bundle nodes', async () => {\n+      await page.goto(`${treemapUrl}?debug`, {\n+        waitUntil: 'networkidle0',\n+        timeout: 30000,\n+      });\n+\n+      const colors = await page.evaluate(() => {\n+        const nodesWithChildren = Array.from(document.querySelectorAll('.webtreemap-node')).filter(el => {\n+          return el.querySelector('.webtreemap-node') !== null;\n+        });\n+        for (const parent of nodesWithChildren) {\n+          const child = parent.querySelector('.webtreemap-node');\n+          if (!child) continue;\n+          const parentBg = window.getComputedStyle(parent).backgroundColor;\n+          const childBg = window.getComputedStyle(child).backgroundColor;\n+          if (parentBg && childBg && parentBg !== 'transparent' && childBg !== 'transparent') {\n+            return {parentBg, childBg};\n+          }\n+        }\n+        return null;\n+      });\n+\n+      expect(colors).not.toBeNull();\n+      expect(colors.parentBg).not.toBe(colors.childBg);\n+    });\n   });\n });\n",
+      "result_parser": "Mocha standard test reporter; passing assertions exit code 0.",
+      "environment_assumptions": [
+        "Headless Chrome / Puppeteer can launch locally using getChromePath().",
+        "StaticServer listens on port 20202 and serves the built treemap application.",
+        "yarn build-treemap is executed before running the Mocha suite."
+      ],
+      "equivalence_self_check": "The test verifies the public rendered DOM and computed styles (root caption absence, span child count in captions, computed background color difference between parent and child nodes) rather than inspecting private methods like getColorFromHue or private maps.",
+      "vacuous_pass_checks": [
+        "expect(captionInfo.totalCaptions).toBeGreaterThan(0) ensures the treemap actually rendered captions.",
+        "expect(colors).not.toBeNull() ensures parent and child node candidates were found and had non-transparent background colors."
+      ],
+      "surface_signal_resistance": "A patch that simply adds dummy CSS classes without removing the root caption or without actually splitting text into span children will fail expect(captionInfo.hasRootCaption).toBe(false) or expect(captionInfo.spanCounts.every(count => count >= 2)).toBe(true)."
+    }
+  ],
+  "oracle_quality_plan": {
+    "status": "proposed_not_executed",
+    "curator_only": true,
+    "negative_variants": [
+      {
+        "variant_id": "neg_keep_root_caption",
+        "defect_preserved_or_introduced": "Omits root node caption removal in group selector mode.",
+        "expected_failure_test_ids": [
+          "treemap/test/treemap-test-pptr.js#renders correctly formats captions into separate title and size elements and omits root caption in group mode"
+        ]
+      },
+      {
+        "variant_id": "neg_flat_node_coloring",
+        "defect_preserved_or_introduced": "Retains depth-independent flat HSL colors for all nodes in the bundle.",
+        "expected_failure_test_ids": [
+          "treemap/test/treemap-test-pptr.js#renders correctly applies depth-dependent background colors to nested bundle nodes"
+        ]
+      }
+    ],
+    "equivalent_positive_variant": {
+      "description": "An implementation that uses RGB lightness shifting or alternate helper functions to shade nested nodes and uses document fragments to insert caption spans.",
+      "expected_pass_test_ids": [
+        "treemap/test/treemap-test-pptr.js#renders correctly formats captions into separate title and size elements and omits root caption in group mode",
+        "treemap/test/treemap-test-pptr.js#renders correctly applies depth-dependent background colors to nested bundle nodes"
+      ]
+    }
+  },
+  "missing_context": [],
+  "summary": "Extended treemap/test/treemap-test-pptr.js with two new Puppeteer test cases directly asserting the visual and DOM behavioral contract: root caption removal with 2-span caption formatting for constraint_001, and depth-differentiated background coloring for constraint_003.",
+  "human_review_required": false,
+  "human_review_reasons": []
+}

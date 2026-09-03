@@ -1,0 +1,392 @@
+Scope: all 12 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +2240
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 2240, reused 649, downloaded 0, added 0
+Progress: resolved 2240, reused 2228, downloaded 0, added 34
+Progress: resolved 2240, reused 2228, downloaded 0, added 101
+Progress: resolved 2240, reused 2228, downloaded 0, added 152
+Progress: resolved 2240, reused 2228, downloaded 0, added 211
+Progress: resolved 2240, reused 2228, downloaded 0, added 304
+Progress: resolved 2240, reused 2228, downloaded 0, added 359
+Progress: resolved 2240, reused 2228, downloaded 0, added 401
+Progress: resolved 2240, reused 2228, downloaded 0, added 427
+Progress: resolved 2240, reused 2228, downloaded 0, added 440
+Progress: resolved 2240, reused 2228, downloaded 0, added 470
+Progress: resolved 2240, reused 2228, downloaded 0, added 504
+Progress: resolved 2240, reused 2228, downloaded 0, added 513
+Progress: resolved 2240, reused 2228, downloaded 0, added 529
+Progress: resolved 2240, reused 2228, downloaded 0, added 581
+Progress: resolved 2240, reused 2228, downloaded 0, added 650
+Progress: resolved 2240, reused 2228, downloaded 0, added 666
+Progress: resolved 2240, reused 2228, downloaded 0, added 684
+Progress: resolved 2240, reused 2228, downloaded 0, added 708
+Progress: resolved 2240, reused 2228, downloaded 0, added 757
+Progress: resolved 2240, reused 2228, downloaded 0, added 831
+Progress: resolved 2240, reused 2228, downloaded 0, added 887
+Progress: resolved 2240, reused 2228, downloaded 0, added 974
+Progress: resolved 2240, reused 2228, downloaded 0, added 1085
+Progress: resolved 2240, reused 2228, downloaded 0, added 1167
+Progress: resolved 2240, reused 2228, downloaded 0, added 1212
+Progress: resolved 2240, reused 2228, downloaded 0, added 1271
+Progress: resolved 2240, reused 2228, downloaded 0, added 1300
+Progress: resolved 2240, reused 2228, downloaded 0, added 1346
+Progress: resolved 2240, reused 2228, downloaded 0, added 1412
+Progress: resolved 2240, reused 2228, downloaded 0, added 1489
+Progress: resolved 2240, reused 2228, downloaded 0, added 1593
+Progress: resolved 2240, reused 2228, downloaded 0, added 1690
+Progress: resolved 2240, reused 2228, downloaded 0, added 1794
+Progress: resolved 2240, reused 2228, downloaded 0, added 1834
+Progress: resolved 2240, reused 2228, downloaded 0, added 1943
+Progress: resolved 2240, reused 2228, downloaded 0, added 2076
+Progress: resolved 2240, reused 2228, downloaded 0, added 2146
+Progress: resolved 2240, reused 2228, downloaded 0, added 2158
+Progress: resolved 2240, reused 2228, downloaded 0, added 2162
+Progress: resolved 2240, reused 2228, downloaded 0, added 2183
+Progress: resolved 2240, reused 2228, downloaded 0, added 2235
+Progress: resolved 2240, reused 2228, downloaded 0, added 2240, done
+.../cypress@14.5.4/node_modules/cypress postinstall$ node index.js --exec install
+.../cypress@14.5.4/node_modules/cypress postinstall: Note: Skipping binary installation: Environment variable CYPRESS_INSTALL_BINARY = 0.
+.../cypress@14.5.4/node_modules/cypress postinstall: Done
+
+. prepare$ husky && pnpm build
+. prepare: [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
+. prepare: $ pnpm build:esbuild && pnpm build:types
+. prepare: [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
+. prepare: $ pnpm run -r clean && tsx .esbuild/build.ts
+. prepare: [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
+. prepare: Scope: 11 of 12 workspace projects
+. prepare: packages/parser clean$ rimraf dist src/language/generated
+. prepare: packages/tiny clean$ rimraf dist
+. prepare: packages/parser clean: Done
+. prepare: packages/tiny clean: Done
+. prepare: packages/mermaid clean$ rimraf dist
+. prepare: packages/mermaid clean: Done
+. prepare: packages/mermaid-layout-elk clean$ rimraf dist
+. prepare: packages/examples clean$ rimraf dist
+. prepare: packages/mermaid-zenuml clean$ rimraf dist
+. prepare: packages/mermaid-layout-tidy-tree clean$ rimraf dist
+. prepare: packages/mermaid-layout-elk clean: Done
+. prepare: packages/examples clean: Done
+. prepare: packages/mermaid-zenuml clean: Done
+. prepare: packages/mermaid-layout-tidy-tree clean: Done
+. prepare: Reading config from /Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-gold/packages/parser/langium-config.json
+. prepare: src/language/info/info.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/info/info.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/info/info.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/common/common.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/common/common.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/common/common.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/packet/packet.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/packet/packet.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/packet/packet.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/pie/pie.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/pie/pie.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/pie/pie.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:33:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:33:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:33:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:33:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:33:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:33:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:62:6 - Found multiple assignments to 'classAnnotation' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:62:41 - Found multiple assignments to 'iconAnnotation' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treeView/treeView.langium:62:74 - Found multiple assignments to 'descAnnotation' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/architecture/architecture.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/architecture/architecture.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/architecture/architecture.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:29:15 - Found multiple assignments to 'id' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:30:18 - Found multiple assignments to 'message' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:32:18 - Found multiple assignments to 'type' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:42:15 - Found multiple assignments to 'id' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:44:18 - Found multiple assignments to 'type' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:53:15 - Found multiple assignments to 'id' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/gitGraph/gitGraph.langium:55:20 - Found multiple assignments to 'parent' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/eventmodeling/event-modeling.langium:11:6 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/eventmodeling/event-modeling.langium:11:30 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/eventmodeling/event-modeling.langium:11:54 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/radar/radar.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/radar/radar.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/radar/radar.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treemap/treemap.langium:14:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treemap/treemap.langium:14:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treemap/treemap.langium:14:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treemap/treemap.langium:14:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treemap/treemap.langium:14:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treemap/treemap.langium:14:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/wardley/wardley.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/wardley/wardley.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/wardley/wardley.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/wardley/wardley.langium:15:5 - Found multiple assignments to 'size' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/wardley/wardley.langium:16:7 - Found multiple assignments to 'evolution' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/cynefin/cynefin.langium:9:5 - Found multiple assignments to 'accDescr' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/cynefin/cynefin.langium:9:26 - Found multiple assignments to 'accTitle' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/cynefin/cynefin.langium:9:47 - Found multiple assignments to 'title' with the '=' assignment operator. Consider using '+=' instead to prevent data loss.
+. prepare: src/language/treemap/treemap.langium:17:10 - This rule is declared but never referenced.
+. prepare: Writing generated files to /Users/bytedance/Documents/ChatGPT/kimi/tmp/archive_mermaid_excalidraw/worktrees/mermaid-gold/packages/parser/src/language/generated
+. prepare: [21:38:49] Langium generator finished successfully in 80ms
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-ASNIWWTQ.mjs   161.7kb
+. prepare:   packages/parser/dist/mermaid-parser.core.mjs                           8.7kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-K57L2VVQ.mjs     3.8kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-75WH3KQX.mjs     3.8kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-XFKSYI7W.mjs     2.1kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-LTUARKB7.mjs     2.1kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-TX5D4MAT.mjs     1.5kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-YIBQN6B5.mjs     1.3kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-CDSVHMDY.mjs     1.3kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-YCGLK7LA.mjs     1.2kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-JZYGYS3H.mjs     1.2kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-RGSAMXS4.mjs     1.2kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.core/chunk-7EWMQGVQ.mjs     1.2kb
+. prepare:   ...arser/dist/chunks/mermaid-parser.core/eventmodeling-JYIT4C4Z.mjs    189b 
+. prepare:   ...parser/dist/chunks/mermaid-parser.core/architecture-CMXAMXP5.mjs    185b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.core/gitGraph-4UNPNOLH.mjs    169b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.core/treeView-YWTT4MGP.mjs    169b 
+. prepare:   ...ages/parser/dist/chunks/mermaid-parser.core/cynefin-44ZEDIVF.mjs    165b 
+. prepare:   ...ages/parser/dist/chunks/mermaid-parser.core/treemap-R3XCPSQI.mjs    165b 
+. prepare:   ...ages/parser/dist/chunks/mermaid-parser.core/wardley-TRDX3MCX.mjs    165b 
+. prepare:   ...and 28 more output files...
+. prepare: ⚡ Done in 1015ms
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-TFOSHC6J.mjs    1.2mb ⚠️
+. prepare:   packages/parser/dist/mermaid-parser.esm.mjs                          8.6kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-QGLZIGOJ.mjs    3.7kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-RKPW445Y.mjs    3.7kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-S7FFJYOT.mjs    2.1kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-3M2WPK6P.mjs    2.0kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-JBUGYYY7.mjs    1.5kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-T6LOIG2T.mjs    1.2kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-UHSFVRRA.mjs    1.2kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-NLDZ4S7A.mjs    1.2kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-FXUQU6DH.mjs    1.2kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-ICBIE3NW.mjs    1.2kb
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/chunk-PK2J3TUZ.mjs    1.2kb
+. prepare:   ...parser/dist/chunks/mermaid-parser.esm/eventmodeling-KT3YQEFD.mjs  189b 
+. prepare:   .../parser/dist/chunks/mermaid-parser.esm/architecture-TDXMFOEL.mjs  185b 
+. prepare:   ...ages/parser/dist/chunks/mermaid-parser.esm/gitGraph-4PH5IFVM.mjs  169b 
+. prepare:   ...ages/parser/dist/chunks/mermaid-parser.esm/treeView-PDYEISZN.mjs  169b 
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/cynefin-UDDAXRFJ.mjs  165b 
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/treemap-DQU7CSE4.mjs  165b 
+. prepare:   packages/parser/dist/chunks/mermaid-parser.esm/wardley-DFORTNBA.mjs  165b 
+. prepare:   ...and 28 more output files...
+. prepare: ⚡ Done in 15199ms
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-WDAQZ7LY.mjs  593.7kb
+. prepare:   packages/parser/dist/mermaid-parser.esm.min.mjs                        5.7kb
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-J577B2ZX.mjs    1.6kb
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-HD77HVBL.mjs    1.6kb
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-36KPOML2.mjs    916b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-DQQHGILW.mjs    885b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-BA67WQ5E.mjs    609b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-SGFMEGDG.mjs    501b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-TUJI7UV6.mjs    472b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-7GQUSJIF.mjs    468b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-TPLRFXXQ.mjs    467b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-6CEMAMPC.mjs    466b 
+. prepare:   ...ges/parser/dist/chunks/mermaid-parser.esm.min/chunk-R3LMAMD2.mjs    464b 
+. prepare:   ...er/dist/chunks/mermaid-parser.esm.min/eventmodeling-DVXJLURK.mjs    134b 
+. prepare:   ...ser/dist/chunks/mermaid-parser.esm.min/architecture-USTGLJGO.mjs    132b 
+. prepare:   .../parser/dist/chunks/mermaid-parser.esm.min/gitGraph-GESDYCIG.mjs    124b 
+. prepare:   .../parser/dist/chunks/mermaid-parser.esm.min/treeView-DFRQT7U6.mjs    124b 
+. prepare:   ...s/parser/dist/chunks/mermaid-parser.esm.min/cynefin-G4P3CJB7.mjs    122b 
+. prepare:   ...s/parser/dist/chunks/mermaid-parser.esm.min/treemap-LXGOCY7H.mjs    122b 
+. prepare:   ...s/parser/dist/chunks/mermaid-parser.esm.min/wardley-KF5FLBQD.mjs    122b 
+. prepare:   ...and 28 more output files...
+. prepare: ⚡ Done in 16382ms
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/chunk-WT5VN7BY.mjs         258.2kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/chunk-VMNDAQQE.mjs         212.0kb
+. prepare:   ...es/mermaid/dist/chunks/mermaid.core/sequenceDiagram-3BRSRPB4.mjs  199.2kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/blockDiagram-UFJWWDVK.mjs  135.5kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/c4Diagram-4ZTLTCWJ.mjs     117.6kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/flowDiagram-BLXZ7FMZ.mjs   102.5kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/chunk-XPW4576I.mjs          91.1kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/chunk-UE6GA5KH.mjs          84.2kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/ganttDiagram-5YBIJRV6.mjs   74.6kb
+. prepare:   ...ges/mermaid/dist/chunks/mermaid.core/xychartDiagram-S5ALD6RV.mjs   73.2kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/chunk-YI2BQNSH.mjs          71.4kb
+. prepare:   ...es/mermaid/dist/chunks/mermaid.core/gitGraphDiagram-UAVTSH27.mjs   71.0kb
+. prepare:   ...es/mermaid/dist/chunks/mermaid.core/quadrantDiagram-PX5RW76L.mjs   61.4kb
+. prepare:   ...ermaid/dist/chunks/mermaid.core/timeline-definition-44HSQU5V.mjs   60.1kb
+. prepare:   ...mermaid/dist/chunks/mermaid.core/requirementDiagram-ZGWP4RGL.mjs   53.2kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/chunk-L27QKSHF.mjs          53.1kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.core/erDiagram-BSIIJWYD.mjs      49.3kb
+. prepare:   packages/mermaid/dist/mermaid.core.mjs                                45.6kb
+. prepare:   ...ges/mermaid/dist/chunks/mermaid.core/journeyDiagram-3KPT6TXG.mjs   45.0kb
+. prepare:   ...ermaid/dist/chunks/mermaid.core/architectureDiagram-AZU3D2BV.mjs   44.9kb
+. prepare:   ...and 88 more output files...
+. prepare: ⚡ Done in 19759ms
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-6FJIS2P7.mjs          1.1mb ⚠️
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-MDI5NGGP.mjs        991.0kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/katex-CFV4PT7P.mjs        493.7kb
+. prepare:   ...rmaid/dist/chunks/mermaid.esm/architectureDiagram-JKJKVEKB.mjs  419.0kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-RIO3RP52.mjs        332.1kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-GRVEB7DL.mjs        240.3kb
+. prepare:   ...ages/mermaid/dist/chunks/mermaid.esm/cose-bilkent-MPYRLQ2G.mjs  215.7kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-XUWDDETI.mjs        209.7kb
+. prepare:   ...s/mermaid/dist/chunks/mermaid.esm/sequenceDiagram-ZBOQDX53.mjs  199.3kb
+. prepare:   ...ages/mermaid/dist/chunks/mermaid.esm/blockDiagram-W65JXINF.mjs  135.5kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/c4Diagram-YZMN4MNL.mjs    117.7kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/flowDiagram-KFA72MV2.mjs  102.6kb
+. prepare:   ...ages/mermaid/dist/chunks/mermaid.esm/ganttDiagram-5NLHBIW3.mjs   92.9kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-7R7ZEKEL.mjs         91.1kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/vennDiagram-4BIOGN7P.mjs   89.1kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-ROSDCAJP.mjs         84.2kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-7NDCWPIF.mjs         80.4kb
+. prepare:   ...es/mermaid/dist/chunks/mermaid.esm/xychartDiagram-7QCHF7GL.mjs   73.1kb
+. prepare:   ...s/mermaid/dist/chunks/mermaid.esm/gitGraphDiagram-IAGCGBHD.mjs   71.4kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm/chunk-D7ZWLRUM.mjs         71.4kb
+. prepare:   ...and 152 more output files...
+. prepare: ⚡ Done in 41061ms
+. prepare:   packages/mermaid/dist/mermaid.tiny.min.js  2.2mb ⚠️
+. prepare: ⚡ Done in 45407ms
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-7ONHN7V6.mjs      572.4kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-7RZVMHOQ.mjs      457.8kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/katex-GD7MH7QM.mjs      270.0kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-UUAASMAI.mjs      225.2kb
+. prepare:   ...aid/dist/chunks/mermaid.esm.min/architectureDiagram-BLXW7NP3.mjs  149.4kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-MGPAVIPZ.mjs      117.7kb
+. prepare:   ...mermaid/dist/chunks/mermaid.esm.min/sequenceDiagram-H5XJUWMZ.mjs  114.1kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-G5QYIKTJ.mjs       97.3kb
+. prepare:   ...es/mermaid/dist/chunks/mermaid.esm.min/cose-bilkent-PNC4W37J.mjs   82.2kb
+. prepare:   ...es/mermaid/dist/chunks/mermaid.esm.min/blockDiagram-HUQE2Z5C.mjs   70.2kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/c4Diagram-SKKOTUIW.mjs   68.7kb
+. prepare:   ...ges/mermaid/dist/chunks/mermaid.esm.min/flowDiagram-F4XFVRPA.mjs   59.6kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-E5XB42EL.mjs       52.0kb
+. prepare:   ...es/mermaid/dist/chunks/mermaid.esm.min/ganttDiagram-ENGOWSSG.mjs   49.1kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-6V2GEGEE.mjs       47.9kb
+. prepare:   ...ges/mermaid/dist/chunks/mermaid.esm.min/vennDiagram-OWVIBDMI.mjs   41.5kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-NN2NZ22Q.mjs       41.5kb
+. prepare:   .../mermaid/dist/chunks/mermaid.esm.min/xychartDiagram-WMUSJC7C.mjs   38.3kb
+. prepare:   packages/mermaid/dist/chunks/mermaid.esm.min/chunk-SJM7SCN7.mjs       36.6kb
+. prepare:   ...mermaid/dist/chunks/mermaid.esm.min/quadrantDiagram-5TE5H6M4.mjs   33.2kb
+. prepare:   ...and 152 more output files...
+. prepare: ⚡ Done in 48114ms
+. prepare:   packages/mermaid/dist/mermaid.js       7.3mb ⚠️
+. prepare:   packages/mermaid/dist/mermaid.js.map  12.2mb
+. prepare: ⚡ Done in 48622ms
+. prepare:   packages/mermaid/dist/mermaid.min.js       3.2mb ⚠️
+. prepare:   packages/mermaid/dist/mermaid.min.js.map  12.2mb
+. prepare: ⚡ Done in 51343ms
+. prepare:   ...unks/mermaid-example-diagram.core/diagram-definition-X4SOUORS.mjs  22.5kb
+. prepare:   ...ges/mermaid-example-diagram/dist/mermaid-example-diagram.core.mjs   557b 
+. prepare:   ...agram/dist/chunks/mermaid-example-diagram.core/chunk-AKMCXCCK.mjs   291b 
+. prepare:   .../mermaid-example-diagram.core/diagram-definition-X4SOUORS.mjs.map  40.9kb
+. prepare:   ...mermaid-example-diagram/dist/mermaid-example-diagram.core.mjs.map   786b 
+. prepare:   ...m/dist/chunks/mermaid-example-diagram.core/chunk-AKMCXCCK.mjs.map    93b 
+. prepare: ⚡ Done in 321ms
+. prepare:   ...unks/mermaid-example-diagram.esm/diagram-definition-VI6YCWBK.mjs  109.0kb
+. prepare:   ...ges/mermaid-example-diagram/dist/mermaid-example-diagram.esm.mjs    555b 
+. prepare:   ...agram/dist/chunks/mermaid-example-diagram.esm/chunk-6XSXFHVP.mjs    291b 
+. prepare:   .../mermaid-example-diagram.esm/diagram-definition-VI6YCWBK.mjs.map  215.0kb
+. prepare:   ...mermaid-example-diagram/dist/mermaid-example-diagram.esm.mjs.map    786b 
+. prepare:   ...m/dist/chunks/mermaid-example-diagram.esm/chunk-6XSXFHVP.mjs.map     93b 
+. prepare: ⚡ Done in 6413ms
+. prepare:   .../mermaid-example-diagram.esm.min/diagram-definition-27SU7RCF.mjs   53.0kb
+. prepare:   ...mermaid-example-diagram/dist/mermaid-example-diagram.esm.min.mjs    355b 
+. prepare:   ...m/dist/chunks/mermaid-example-diagram.esm.min/chunk-D2P5M7FY.mjs    164b 
+. prepare:   ...maid-example-diagram.esm.min/diagram-definition-27SU7RCF.mjs.map  227.2kb
+. prepare:   ...aid-example-diagram/dist/mermaid-example-diagram.esm.min.mjs.map    860b 
+. prepare:   ...st/chunks/mermaid-example-diagram.esm.min/chunk-D2P5M7FY.mjs.map     93b 
+. prepare: ⚡ Done in 6414ms
+. prepare:   ...uml/dist/chunks/mermaid-zenuml.core/zenuml-definition-ZCSB3OVJ.mjs  2.9kb
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.core.mjs                   520b 
+. prepare:   .../mermaid-zenuml/dist/chunks/mermaid-zenuml.core/chunk-CJCKSLXZ.mjs  151b 
+. prepare:   ...dist/chunks/mermaid-zenuml.core/zenuml-definition-ZCSB3OVJ.mjs.map  6.4kb
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.core.mjs.map               765b 
+. prepare:   ...maid-zenuml/dist/chunks/mermaid-zenuml.core/chunk-CJCKSLXZ.mjs.map   93b 
+. prepare: ⚡ Done in 797ms
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.min.js      3.3mb ⚠️
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.min.js.map  5.0mb
+. prepare: ⚡ Done in 2465ms
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.js      4.2mb ⚠️
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.js.map  5.2mb
+. prepare: ⚡ Done in 2483ms
+. prepare:   ...ml/dist/chunks/mermaid-zenuml.esm/zenuml-definition-PXHHV43P.mjs  2.4mb ⚠️
+. prepare:   ...mermaid-zenuml/dist/chunks/mermaid-zenuml.esm/chunk-2QIYEC2I.mjs  1.5mb ⚠️
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.esm.mjs                  518b 
+. prepare:   ...dist/chunks/mermaid-zenuml.esm/cloud-icons-eHuugVSv-ANWVY4YK.mjs  273b 
+. prepare:   ...mermaid-zenuml/dist/chunks/mermaid-zenuml.esm/chunk-OS44DIFC.mjs  151b 
+. prepare:   ...ist/chunks/mermaid-zenuml.esm/zenuml-definition-PXHHV43P.mjs.map  3.6mb
+. prepare:   ...aid-zenuml/dist/chunks/mermaid-zenuml.esm/chunk-2QIYEC2I.mjs.map  1.6mb
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.esm.mjs.map              765b 
+. prepare:   ...aid-zenuml/dist/chunks/mermaid-zenuml.esm/chunk-OS44DIFC.mjs.map   93b 
+. prepare:   .../chunks/mermaid-zenuml.esm/cloud-icons-eHuugVSv-ANWVY4YK.mjs.map   93b 
+. prepare: ⚡ Done in 2696ms
+. prepare:   ...ist/chunks/mermaid-zenuml.esm.min/zenuml-definition-EPHX7WPJ.mjs  1.8mb ⚠️
+. prepare:   ...aid-zenuml/dist/chunks/mermaid-zenuml.esm.min/chunk-PPGA74DV.mjs  1.5mb ⚠️
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.esm.min.mjs              323b 
+. prepare:   .../chunks/mermaid-zenuml.esm.min/cloud-icons-eHuugVSv-MANGUYXV.mjs  180b 
+. prepare:   ...aid-zenuml/dist/chunks/mermaid-zenuml.esm.min/chunk-VDOFMJQL.mjs   95b 
+. prepare:   ...chunks/mermaid-zenuml.esm.min/zenuml-definition-EPHX7WPJ.mjs.map  3.5mb
+. prepare:   ...zenuml/dist/chunks/mermaid-zenuml.esm.min/chunk-PPGA74DV.mjs.map  1.6mb
+. prepare:   packages/mermaid-zenuml/dist/mermaid-zenuml.esm.min.mjs.map          837b 
+. prepare:   ...zenuml/dist/chunks/mermaid-zenuml.esm.min/chunk-VDOFMJQL.mjs.map   93b 
+. prepare:   ...nks/mermaid-zenuml.esm.min/cloud-icons-eHuugVSv-MANGUYXV.mjs.map   93b 
+. prepare: ⚡ Done in 2713ms
+. prepare:   ...ayout-elk/dist/chunks/mermaid-layout-elk.core/render-TAZW7USW.mjs  35.2kb
+. prepare:   packages/mermaid-layout-elk/dist/mermaid-layout-elk.core.mjs           543b 
+. prepare:   ...layout-elk/dist/chunks/mermaid-layout-elk.core/chunk-ZW26E7AF.mjs   151b 
+. prepare:   ...t-elk/dist/chunks/mermaid-layout-elk.core/render-TAZW7USW.mjs.map  67.0kb
+. prepare:   packages/mermaid-layout-elk/dist/mermaid-layout-elk.core.mjs.map       827b 
+. prepare:   ...ut-elk/dist/chunks/mermaid-layout-elk.core/chunk-ZW26E7AF.mjs.map    93b 
+. prepare: ⚡ Done in 987ms
+. prepare:   ...ayout-elk/dist/chunks/mermaid-layout-elk.esm/render-BHGI7IPK.mjs  3.6mb ⚠️
+. prepare:   ...layout-elk/dist/chunks/mermaid-layout-elk.esm/chunk-TWI3KLJS.mjs  1.8kb
+. prepare:   packages/mermaid-layout-elk/dist/mermaid-layout-elk.esm.mjs          541b 
+. prepare:   ...t-elk/dist/chunks/mermaid-layout-elk.esm/render-BHGI7IPK.mjs.map  4.5mb
+. prepare:   packages/mermaid-layout-elk/dist/mermaid-layout-elk.esm.mjs.map      827b 
+. prepare:   ...ut-elk/dist/chunks/mermaid-layout-elk.esm/chunk-TWI3KLJS.mjs.map   93b 
+. prepare: ⚡ Done in 5750ms
+. prepare:   ...t-elk/dist/chunks/mermaid-layout-elk.esm.min/render-T6MDALS3.mjs  1.6mb ⚠️
+. prepare:   ...ut-elk/dist/chunks/mermaid-layout-elk.esm.min/chunk-SP2CHFBE.mjs  854b 
+. prepare:   packages/mermaid-layout-elk/dist/mermaid-layout-elk.esm.min.mjs      356b 
+. prepare:   ...k/dist/chunks/mermaid-layout-elk.esm.min/render-T6MDALS3.mjs.map  4.9mb
+. prepare:   packages/mermaid-layout-elk/dist/mermaid-layout-elk.esm.min.mjs.map  842b 
+. prepare:   ...lk/dist/chunks/mermaid-layout-elk.esm.min/chunk-SP2CHFBE.mjs.map   93b 
+. prepare: ⚡ Done in 5753ms
+. prepare:   ...-tree/dist/chunks/mermaid-layout-tidy-tree.esm/chunk-2X5ZM2SM.mjs  27.9kb
+. prepare:   ...es/mermaid-layout-tidy-tree/dist/mermaid-layout-tidy-tree.esm.mjs   527b 
+. prepare:   ...tree/dist/chunks/mermaid-layout-tidy-tree.esm/render-7MEQXA7U.mjs    70b 
+. prepare:   ...e/dist/chunks/mermaid-layout-tidy-tree.esm/chunk-2X5ZM2SM.mjs.map  53.7kb
+. prepare:   ...ermaid-layout-tidy-tree/dist/mermaid-layout-tidy-tree.esm.mjs.map   548b 
+. prepare:   .../dist/chunks/mermaid-layout-tidy-tree.esm/render-7MEQXA7U.mjs.map    93b 
+. prepare: ⚡ Done in 377ms
+. prepare:   ...e/dist/chunks/mermaid-layout-tidy-tree.esm.min/chunk-H272UMWP.mjs  11.2kb
+. prepare:   ...ermaid-layout-tidy-tree/dist/mermaid-layout-tidy-tree.esm.min.mjs   350b 
+. prepare:   .../dist/chunks/mermaid-layout-tidy-tree.esm.min/render-X6XP6GL3.mjs    62b 
+. prepare:   ...st/chunks/mermaid-layout-tidy-tree.esm.min/chunk-H272UMWP.mjs.map  54.9kb
+. prepare:   ...id-layout-tidy-tree/dist/mermaid-layout-tidy-tree.esm.min.mjs.map   573b 
+. prepare:   ...t/chunks/mermaid-layout-tidy-tree.esm.min/render-X6XP6GL3.mjs.map    93b 
+. prepare: ⚡ Done in 378ms
+. prepare:   ...tree/dist/chunks/mermaid-layout-tidy-tree.core/chunk-Z6Y5CIZP.mjs  27.9kb
+. prepare:   ...s/mermaid-layout-tidy-tree/dist/mermaid-layout-tidy-tree.core.mjs   529b 
+. prepare:   ...ree/dist/chunks/mermaid-layout-tidy-tree.core/render-DLZURBVE.mjs    70b 
+. prepare:   .../dist/chunks/mermaid-layout-tidy-tree.core/chunk-Z6Y5CIZP.mjs.map  53.7kb
+. prepare:   ...rmaid-layout-tidy-tree/dist/mermaid-layout-tidy-tree.core.mjs.map   548b 
+. prepare:   ...dist/chunks/mermaid-layout-tidy-tree.core/render-DLZURBVE.mjs.map    93b 
+. prepare: ⚡ Done in 379ms
+. prepare:   packages/examples/dist/mermaid-examples.esm.mjs      24.3kb
+. prepare:   packages/examples/dist/mermaid-examples.esm.mjs.map  37.1kb
+. prepare: ⚡ Done in 230ms
+. prepare:   packages/examples/dist/mermaid-examples.esm.min.mjs      20.9kb
+. prepare:   packages/examples/dist/mermaid-examples.esm.min.mjs.map  36.6kb
+. prepare: ⚡ Done in 229ms
+. prepare:   packages/examples/dist/mermaid-examples.core.mjs      24.3kb
+. prepare:   packages/examples/dist/mermaid-examples.core.mjs.map  37.1kb
+. prepare: ⚡ Done in 245ms
+. prepare: [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
+. prepare: $ pnpm --filter mermaid types:build-config && tsx .build/types.ts
+. prepare: [WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
+. prepare: $ tsx scripts/create-types-from-json-schema.mts
+. prepare: Writing typescript file to ./src/config.type.ts
+. prepare: Building types for parser
+. prepare: Building types for mermaid
+. prepare: Building types for mermaid-example-diagram
+. prepare: Building types for mermaid-zenuml
+. prepare: Building types for mermaid-layout-elk
+. prepare: Building types for mermaid-layout-tidy-tree
+. prepare: Building types for examples
+. prepare: Done
+Done in 3m 13.6s using pnpm v10.30.3

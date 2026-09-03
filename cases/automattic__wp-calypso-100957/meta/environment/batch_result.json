@@ -1,0 +1,27 @@
+{
+  "schema_version": "case-environment-build-batch-v1",
+  "results": {
+    "automattic__wp-calypso-100957": {
+      "schema_version": "case-environment-build-v1",
+      "status": "complete",
+      "instance_id": "automattic__wp-calypso-100957",
+      "repository": "automattic/wp-calypso",
+      "source_baseline_sha": "19ed337b2b8b48d9d768b35add8a65221e512c9c",
+      "image_id": "sha256:c5a1ad4c85bccd9b7ac8d94a94c628aeac53b75f61e09d8b05f99857b6018cd9",
+      "build_reference": "visual-harbor-base:c5a1ad4c85bccd9b7ac8d94a94c628aeac53b75f61e09d8b05f99857b6018cd9",
+      "architecture": "arm64",
+      "node_base": "node@sha256:8a34c4ab3ea2c5cd194f07e317b2a8f09461d3c8b05c4e34c8ccd56d56024c4d",
+      "browser_base": "visual-harbor-base:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+      "node_overlay": "node@sha256:8a34c4ab3ea2c5cd194f07e317b2a8f09461d3c8b05c4e34c8ccd56d56024c4d",
+      "asset_inventory": [
+        {
+          "name": "asset_01.png",
+          "sha256": "4b36ae858e6cc6b3886b43444dc09c28a4aa718a47188f462977f8887d1d8552"
+        }
+      ],
+      "built_at": "2026-09-02T16:49:56.258168+00:00",
+      "build_log": "meta/environment/build.log"
+    }
+  },
+  "failures": {}
+}

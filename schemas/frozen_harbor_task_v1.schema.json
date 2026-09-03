@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "frozen-harbor-task-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "state", "mode", "instance_id", "task", "harbor_task_checksum", "image", "promotion_packet", "promotion_ledger", "pipeline_freeze", "pass5_config"],
+  "properties": {
+    "schema_version": {"const": "frozen-harbor-task-v1"}, "state": {"const": "frozen"},
+    "mode": {"enum": ["simulation", "real"]}, "instance_id": {"type": "string"},
+    "harbor_task_checksum": {"$ref": "#/$defs/sha256"},
+    "task": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "files"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}, "files": {"type": "object", "additionalProperties": {"$ref": "#/$defs/sha256"}}}},
+    "image": {"type": "object", "additionalProperties": false, "required": ["reference", "image_id"], "properties": {"reference": {"type": "string", "minLength": 1}, "image_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}}},
+    "promotion_packet": {"$ref": "#/$defs/binding"},
+    "promotion_ledger": {"$ref": "#/$defs/binding"},
+    "pipeline_freeze": {"$ref": "#/$defs/binding"},
+    "pass5_config": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "model_id", "agent", "agent_version"], "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}, "model_id": {"type": "string", "minLength": 1}, "agent": {"type": "string", "minLength": 1}, "agent_version": {"type": "string", "minLength": 1}}}
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "binding": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}}}
+}

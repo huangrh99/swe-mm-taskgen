@@ -1,0 +1,17 @@
+{
+  "task_id": "googlechrome__lighthouse-16403",
+  "problem_statement": "Update Treemap to new design\n\n[Figma](https://www.figma.com/design/YzfTbApaJu7ZnKpZGSAwjH/RPP?node-id=9418-218944&m=dev)\n\nexample:\n\n\n\n> **视觉材料 1**：见下方对应图片。",
+  "assets": [
+    {
+      "asset_id": "b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e",
+      "attachment_index": 1,
+      "source_ids": [
+        "googlechrome/lighthouse#16400:body"
+      ],
+      "model_input_representation": {
+        "kind": "original_static_image",
+        "source_sha256": "b8fed5a73f32c45b4b3d6fbc386dc4e82ca738d74142537b11d3d33fc3dc9e0e"
+      }
+    }
+  ]
+}

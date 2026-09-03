@@ -1,0 +1,7 @@
+services:
+  main:
+    cap_drop: [ALL]
+    cap_add: [FOWNER]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 2048
+    shm_size: 1gb

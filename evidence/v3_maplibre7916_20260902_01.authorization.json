@@ -1,0 +1,64 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_targeted_maplibre_7916/16_06_01_text_sufficiency/20260902T150532255367Z",
+  "source_manifest_sha256": "77f486ccd0d6431f3e5660ea82c04e920bfa98ee8b9aaba660ce95b304df5ab2",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "c2a003a53ce0ae30279373c5482d748f9bf969bd90308cbf4838fd1fd6d5f565",
+  "run_id": "v3-maplibre7916-20260902-01",
+  "nonce": "maplibre7916-20260902-nonce01",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_maplibre7916_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "maplibre__maplibre-gl-js-7916",
+      "source_result_sha256": "f56dc598f64e53db3d133aa6c297488bacb7bacedbf1beb338f973d5f846d569",
+      "source_packet_sha256": "9d93ebce6533fc3bcd9eeabf4c3b16aaa725afbb6bfc9849a75d7ac376ffd457",
+      "source_archive_sha256": "ad7a6193099bc50cc6c39dbe968c80bf1cd4f5925c02b66526d28cfaafa9cf0d",
+      "problem_statement_sha256": "00241f39eca0d20f8060caded3117e84e1a53acc6382f1591711b2b3a61c2a21",
+      "available_asset_ids": [
+        "74aaaa0128a004fb5cb302344083d4d43637e9ef86485660f9f293582949aa1b",
+        "7e4728c8652a1b4ad95385d5cd564f55a7c9ea467b6140605a79c6720e0b5bac",
+        "c7220a6b1ecf4a43cb32b31daad9320e56d137549a40d084c337d7cd41f98539"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "0d62c8b9a658c5abfaf8a91065ac5b193fe6fc602bed543b6ee07ec96a38308b"
+    }
+  ],
+  "expected_case_calls": 1,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 6,
+  "authorized": true
+}

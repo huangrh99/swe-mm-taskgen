@@ -1,0 +1,11 @@
+{
+  "schema_version": "visual-gate-ui-audit-v1",
+  "status": "passed",
+  "run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_14_unified_visual_review/20260903_v4_unified_07/16_14_02_visual_gate_review",
+  "manifest_sha256": "6a37b1325784cbb31ceaeea8b02096697a34cc9f0f77f1bd1976a1a857327319",
+  "candidate_count": 39,
+  "asset_count": 79,
+  "offline": true,
+  "inline_event_attribute_count": 0,
+  "human_export": null
+}

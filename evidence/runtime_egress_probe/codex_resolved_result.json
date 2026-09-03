@@ -1,0 +1,46 @@
+{
+  "schema_version": "harbor-runtime-egress-resolved-result-v1",
+  "harbor_version": "0.22.0",
+  "job_id": "a486ef57-2b38-4bda-aeb3-be4407930467",
+  "id": "be47086f-c112-4cbf-abc6-c95eae505123",
+  "task_name": "local/runtime-egress-probe",
+  "trial_name": "task__xq6H59n",
+  "task_checksum": "f0ec35d74391794c288afc6ddab82d25eb0ab66b44ef8f4571856f8ed9651b49",
+  "agent_info": {
+    "name": "runtime-egress-probe",
+    "version": "1.0.0",
+    "model_info": null
+  },
+  "resolved_config": {
+    "agent": {
+      "name": null,
+      "import_path": "probe_agent:RuntimeEgressProbeAgent",
+      "model_name": null,
+      "skills": [],
+      "extra_allowed_hosts": [
+        "api.openai.com",
+        "auth.openai.com",
+        "chatgpt.com"
+      ],
+      "mcp_servers": []
+    },
+    "environment": {
+      "type": "docker",
+      "extra_allowed_hosts": [],
+      "extra_docker_compose": []
+    },
+    "verifier": {
+      "override_timeout_sec": null,
+      "max_timeout_sec": null,
+      "disable": false
+    }
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 1.0
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-03T00:33:35.974481Z",
+  "finished_at": "2026-09-03T00:33:58.087036Z"
+}

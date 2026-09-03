@@ -1,0 +1,33 @@
+schema_version = "1.2"
+
+[task]
+name = "swe-bench-multimodal/excalidraw__excalidraw-9002"
+description = "Recompute bound elbow-arrow geometry after a text font-size change."
+authors = [{ name = "benchmark-construction" }]
+keywords = ["swe-bench", "swe-bench-multimodal", "typescript", "visual-geometry"]
+
+[metadata]
+repository = "excalidraw/excalidraw"
+repo = "excalidraw/excalidraw"
+instance_id = "excalidraw__excalidraw-9002"
+pr_number = 9002
+base_commit = "c92f3bebf5fc4e9a1512be368f05d800ae1b92f7"
+final_head_commit = "192692a0b72aefaac769db8cd0864e1d66fc5183"
+status = "provisional_smoke"
+human_review = "deferred"
+formal_admission = false
+
+[agent]
+timeout_sec = 7200.0
+override_setup_timeout_sec = 1800.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 2400.0
+cpus = 6
+memory_mb = 12288
+storage_mb = 20480
+workdir = "/testbed"
+allow_internet = false

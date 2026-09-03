@@ -1,0 +1,10 @@
+{
+  "schema_version": "case-measurement-status-v1",
+  "case_id": "googlechrome__lighthouse-16403",
+  "base_gold_measurement": "stable_three_repeats",
+  "reason": "The rejected Gemini bundle was replaced by a curator rewrite. The exact replacement bundle produced four fail-to-pass and one pass-to-pass transition in three independent Base/Gold repetitions.",
+  "evidence": "outputs/01_base_gold/04_stability_summary.json",
+  "human_test_semantic_review": "deferred",
+  "infra_failure": false,
+  "model_failure": false
+}

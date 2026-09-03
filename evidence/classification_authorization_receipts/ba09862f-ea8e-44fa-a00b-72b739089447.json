@@ -1,0 +1,13 @@
+{
+  "schema_version": "classification-authorization-receipt-v1",
+  "status": "consumed",
+  "run_id": "20260902-wave16-backfill-shard-01-02-01",
+  "nonce": "ba09862f-ea8e-44fa-a00b-72b739089447",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave16_backfill_shard_01_02_01",
+  "authorization": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/evidence/v3_wave16_backfill_shard_01_02_20260902_01.authorization.json",
+    "sha256": "4e46c0d9d52714184a74c24565db3c41a8ea71525481b5b9f06d7a6ae40c5f3d"
+  },
+  "consumed_at": "2026-09-02T14:06:34.201317+00:00"
+}

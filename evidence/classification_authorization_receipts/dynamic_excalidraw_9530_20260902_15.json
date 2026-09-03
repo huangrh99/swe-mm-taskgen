@@ -1,0 +1,13 @@
+{
+  "schema_version": "classification-authorization-receipt-v1",
+  "status": "consumed",
+  "run_id": "dynamic-excalidraw-9530-15",
+  "nonce": "dynamic_excalidraw_9530_20260902_15",
+  "expires_at": "2026-09-04T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_dynamic_excalidraw_9530_15_run",
+  "authorization": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/evidence/dynamic_excalidraw_9530_20260902_15.authorization.json",
+    "sha256": "cb10537c1d8f83ae1e92079127d05d1becfd7c6d348a8820b36920a15e7ad179"
+  },
+  "consumed_at": "2026-09-02T15:52:43.453197+00:00"
+}

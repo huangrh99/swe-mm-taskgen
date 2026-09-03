@@ -1,0 +1,34 @@
+{
+  "schema_version": "case-test-plan-v1",
+  "case_id": "automattic__wp-calypso-99049",
+  "base_commit": "047aeef4a31c9e93ccb975adc77fb2107067fd6e",
+  "gold_commit": "c865012ecea983f5924e599fa5e472b52531a001",
+  "author_test_changes_in_pr": [],
+  "candidate_f2p": [
+    {
+      "test_id": "WPC-99049-LINK-COLOR",
+      "oracle": "Chromium getComputedStyle for the Add forward action equals the page --color-link value after compiling the repository SCSS.",
+      "status": "implemented_and_measured",
+      "source": "verifier_generated"
+    }
+  ],
+  "candidate_p2p": [
+    {
+      "test_id": "WPC-99049-P2P-COLOR-SCOPE",
+      "oracle": "The color rule does not recolor an unrelated link-button outside Domain Forwarding.",
+      "status": "implemented_and_measured",
+      "source": "verifier_generated"
+    },
+    {
+      "test_id": "WPC-99049-P2P-DOMAIN-OVERVIEW",
+      "oracle": "The repository existing DomainOverviewPane suite remains green.",
+      "status": "implemented_and_measured",
+      "source": "repository_existing"
+    }
+  ],
+  "contamination_risk": {
+    "status": "resolved_by_frozen_policy",
+    "detail": "The executable Gold boundary is the complete final PR head c865012ecea983f5924e599fa5e472b52531a001 relative to base 047aeef4a31c9e93ccb975adc77fb2107067fd6e. The earlier first-commit-only interpretation is rejected."
+  },
+  "classification_rule": "F2P/P2P labels require actual base/gold execution; source equality is not accepted."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "test-material-archive-v1",
+  "instance_id": "xyflow__xyflow-4991",
+  "archived_at": "2026-09-03T13:51:00+08:00",
+  "reason": "Verifier v1 omitted direct off-screen element.focus(), asserted a hard-coded zero scroll state, and used a synthetic scroll event for P2P.",
+  "moves": [
+    {
+      "from": "tests/test.patch",
+      "to": "tests/archive/test.patch.v1",
+      "sha256": "b548c07b1cc5e4ff7f863ee321c63ba0043d0ec1e07be472274b8feed46cd062"
+    }
+  ]
+}

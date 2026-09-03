@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_manifest_sha256", "exported_at", "rows"],
+  "properties": {
+    "schema_version": {"const": "visual-gate-human-export-v1"},
+    "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reviewer": {"type": "string"},
+    "exported_at": {"type": "string", "minLength": 1},
+    "rows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case_id", "candidate_binding_sha256", "source_route", "problem_statement", "problem_statement_leak_free", "text_only_sufficient", "ocr_replaceable", "non_text_visual_fact", "images", "decision", "reason", "reviewed_at"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "candidate_binding_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_route": {"enum": ["issue_derived", "pr_derived"]},
+          "problem_statement": {"type": "string", "minLength": 1},
+          "problem_statement_leak_free": {"type": "boolean"},
+          "text_only_sufficient": {"enum": ["yes", "no", "unclear"]},
+          "ocr_replaceable": {"enum": ["yes", "no", "unclear"]},
+          "non_text_visual_fact": {"type": "string"},
+          "images": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["asset_id", "role", "solver_visible", "contains_fixed_after", "contains_solution_evidence", "crop_required", "reason"],
+              "properties": {
+                "asset_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "role": {"enum": ["before_only", "after_only", "before_after_composite", "expected_design", "temporal_sequence", "unclear"]},
+                "solver_visible": {"type": "boolean"},
+                "contains_fixed_after": {"type": "boolean"},
+                "contains_solution_evidence": {"type": "boolean"},
+                "crop_required": {"type": "boolean"},
+                "reason": {"type": "string"}
+              }
+            }
+          },
+          "decision": {"enum": ["keep", "exclude", "needs_review"]},
+          "reason": {"type": "string", "minLength": 1},
+          "reviewed_at": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "classification-authorization-receipt-v1",
+  "status": "consumed",
+  "run_id": "v3_dynamic_short_issue_recall_05_20260902_01",
+  "nonce": "dynamic-short-issue-recall-05-20260902-01",
+  "expires_at": "2026-09-03T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_dynamic_short_issue_recall_05_run",
+  "authorization": {
+    "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/evidence/v3_dynamic_short_issue_recall_05_20260902_01.authorization.json",
+    "sha256": "4a72eacecbc2f3c4f333f94196f296bd0d9bc4f6e3db2f0cc8c211d91039131c"
+  },
+  "consumed_at": "2026-09-02T15:32:16.082880+00:00"
+}

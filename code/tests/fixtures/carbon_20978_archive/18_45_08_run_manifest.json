@@ -1,0 +1,51 @@
+{
+  "schema_version": "source-scope-verifier-run-v1",
+  "status": "complete",
+  "candidate_id": "carbon-design-system__carbon-20978",
+  "model_invoked": true,
+  "descendants_fetched": false,
+  "ancestor_count": 1,
+  "packet": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_01_source_scope_packet.json",
+  "packet_sha256": "7fac50e26ee472f96cee1d63f09255e67eb516fc765b2c3b27ff78fd26dc588c",
+  "prompt_sha256": "1aca87dd1eb4e545fbbec61bcff244d2919e3b6c86128f4b75b1cccb4d055b21",
+  "schema_sha256": "99cb3dffd70deb279532994a8c4085dacdde404e516add383b4cc5a208508dc2",
+  "result": "code/tests/fixtures/carbon_20978_archive/18_45_07_verifier_result.json",
+  "result_sha256": "22f5954a5442ba89ff5e2194cc7d95837706b36b12f884abbf987627e360ce6a",
+  "invocation": {
+    "backend": "gemini",
+    "model": "gemini-3.7-flash",
+    "requested_model": "gemini-3.7-flash",
+    "effort": "provider_auto",
+    "attempts": 1,
+    "usage": {
+      "completion_tokens": 908,
+      "prompt_tokens": 4567,
+      "total_tokens": 6448,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "reasoning_tokens": 973,
+      "traffic_type": "ON_DEMAND",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 4567
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 908
+        }
+      ]
+    },
+    "raw_response": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_06_invocation/09_model_raw.json",
+    "raw_response_sha256": "22f5954a5442ba89ff5e2194cc7d95837706b36b12f884abbf987627e360ce6a",
+    "provider_response": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_06_invocation/10_provider_response_01.json",
+    "provider_response_sha256": "4b52b2c6ed790de16da29201f61bd613154863b7069d2ca9fa543d350e69d6e5",
+    "request": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/18_visual_harbor_pass5/18_45_parent_issue_scope_verifier/18_45_01_carbon_20978_gemini/18_45_06_invocation/10_api_request.json",
+    "request_sha256": "b7d9b05e69379a7cfb620427acc557c9a11161a51034c9e3cd284a98493148eb"
+  }
+}

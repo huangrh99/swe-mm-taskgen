@@ -1,0 +1,16 @@
+{
+  "schema_version": "lighthouse-16403-test-manifest-v2",
+  "instance_id": "googlechrome__lighthouse-16403",
+  "source": "curator semantic rewrite replacing exact Gold CSS and DOM assertions with deterministic visual and behavior contracts",
+  "working_directory": "/testbed",
+  "commands": [
+    "yarn build-treemap",
+    "yarn mocha --testMatch treemap/test/treemap-design-test-pptr.js --timeout 35000"
+  ],
+  "measurement_boundary": {
+    "base": "9ab6a2f970094a9ae45280d47215e3cbce5e1937",
+    "gold": "base plus the complete base-to-final-head patch ending at cc05eab5272d191247834664bfc24a33c83e5bad"
+  },
+  "human_review": "deferred",
+  "prior_test_bundle": "superseded"
+}

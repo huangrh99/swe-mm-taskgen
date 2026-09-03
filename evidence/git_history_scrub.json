@@ -1,0 +1,26 @@
+{
+  "schema_version": "git-history-scrub-evidence-v1",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "image_id": "sha256:2d2bae49bcfaebaa7cf686750cc7e15e834d5a3dc47ceada8a13401b343addf7",
+  "image_repo_digest": "visual-harbor-carbon-20978-exam@sha256:2d2bae49bcfaebaa7cf686750cc7e15e834d5a3dc47ceada8a13401b343addf7",
+  "produced_image_id": "sha256:2d2bae49bcfaebaa7cf686750cc7e15e834d5a3dc47ceada8a13401b343addf7",
+  "produced_repo_digest": "sha256:2d2bae49bcfaebaa7cf686750cc7e15e834d5a3dc47ceada8a13401b343addf7",
+  "architecture": "linux/arm64",
+  "observed_commit_count": 1,
+  "observed_commit": "ee51e949824527aafc832a7bb022d5a51af2743c",
+  "observed_commit_subject": "benchmark baseline",
+  "observed_remote_count": 0,
+  "forbidden_commits": {
+    "b2982e815c656aaa630c50231c70dc74945739e6": "absent",
+    "9a1475a6271f474762267134bc921c5a8aa8ca97": "absent",
+    "e9edd1387f27276d2e23cc2d99c419d754ad8ae4": "absent",
+    "b1d5ecd6a7e48d82f4469fd8aca74ab962a19f80": "absent"
+  },
+  "verifier_enforcement": [
+    "source_git_history_leak",
+    "source_git_remote_leak"
+  ],
+  "intentional_untracked_files": "four Issue-derived assets under /testbed/assets; no source, patch, test, or PR-history material",
+  "observed_runtime_user": "10001:10001",
+  "observed_workdir": "/testbed"
+}

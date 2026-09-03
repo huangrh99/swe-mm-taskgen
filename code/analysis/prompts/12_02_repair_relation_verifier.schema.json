@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Repair relation review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "edge_id", "relation_type", "confidence", "chronology", "evidence", "counterevidence", "missing_evidence", "discovery_time", "oracle_risk", "reason", "action", "runtime_validation"],
+  "properties": {
+    "schema_version": {"const": "repair-relation-review-v1"},
+    "edge_id": {"type": "string", "minLength": 1},
+    "relation_type": {"enum": ["incomplete_fix", "fix_induced_regression", "later_regression", "revert_and_refix", "deferred_scope_or_enhancement", "backport_or_release_rollup", "duplicate", "related_only", "unknown"]},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "chronology": {"enum": ["a_then_b_verified", "b_then_a_verified", "same_time_or_ambiguous", "unknown"]},
+    "evidence": {"type": "array", "items": {"$ref": "#/$defs/citation"}},
+    "counterevidence": {"type": "array", "items": {"$ref": "#/$defs/citation"}},
+    "missing_evidence": {"type": "array", "items": {"type": "string"}},
+    "discovery_time": {"type": ["string", "null"]},
+    "oracle_risk": {"type": "array", "items": {"type": "string"}},
+    "reason": {"type": "string"},
+    "action": {"const": "retain_both_pending_runtime_validation"},
+    "runtime_validation": {"const": "not_executed"}
+  },
+  "allOf": [{"if": {"properties": {"relation_type": {"not": {"const": "unknown"}}}}, "then": {"properties": {"evidence": {"minItems": 1}}}}],
+  "$defs": {
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pr_id", "source_id", "quote", "interpretation"],
+      "properties": {
+        "pr_id": {"type": "string"},
+        "source_id": {"type": "string"},
+        "quote": {"type": "string"},
+        "interpretation": {"type": "string"}
+      }
+    }
+  }
+}

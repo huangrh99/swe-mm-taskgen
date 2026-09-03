@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pipeline-test-measurement-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "mode", "instance_id", "task_sha256",
+    "test_manifest", "baseline_runs", "reference_runs", "transitions",
+    "all_transitions_match", "FAIL_TO_PASS", "PASS_TO_PASS", "rationale"
+  ],
+  "properties": {
+    "schema_version": {"const": "pipeline-test-measurement-v1"},
+    "mode": {"enum": ["simulation", "real"]},
+    "instance_id": {"type": "string", "minLength": 1},
+    "task_sha256": {"$ref": "#/$defs/sha256"},
+    "test_manifest": {"$ref": "#/$defs/binding"},
+    "baseline_runs": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/binding"}},
+    "reference_runs": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/binding"}},
+    "transitions": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["test_id", "class", "expected", "actual", "matches"],
+        "properties": {
+          "test_id": {"type": "string", "minLength": 1},
+          "class": {"enum": ["F2P", "P2P"]},
+          "expected": {"enum": ["fail->pass", "pass->pass"]},
+          "actual": {"enum": ["fail->pass", "pass->pass"]},
+          "matches": {"const": true}
+        }
+      }
+    },
+    "all_transitions_match": {"const": true},
+    "FAIL_TO_PASS": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "PASS_TO_PASS": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "oracle_quality_validation": {"$ref": "#/$defs/binding"},
+    "rationale": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}
+    }
+  }
+}

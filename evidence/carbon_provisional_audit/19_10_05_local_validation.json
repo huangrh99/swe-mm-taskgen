@@ -1,0 +1,53 @@
+{
+  "schema_version": "carbon-provisional-local-validation-v1",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "validated_at": "2026-09-01T23:32:24+08:00",
+  "external_model_calls": 0,
+  "checks": [
+    {
+      "check": "candidate_task_checksum",
+      "status": "passed",
+      "observed": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e"
+    },
+    {
+      "check": "base_image_present_on_local_daemon",
+      "status": "passed",
+      "expected": "sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9",
+      "observed": "sha256:aacaed53a4cd54d4c052c3d808808d0f15252a655076c584305804586df67ef9"
+    },
+    {
+      "check": "secret_free_harbor_job_config_parses",
+      "status": "passed",
+      "harbor_version": "0.22.0",
+      "job_config_sha256": "183fb350fb5e809027de33a3c60c03c587465b59fc1ab2d15c29f040454e0706"
+    },
+    {
+      "check": "provisional_nop_control",
+      "status": "infrastructure_failed_not_a_reward_zero",
+      "failure_class": "docker_storage_exhausted",
+      "reason": "Docker BuildKit failed while unpacking the task image: no space left on device.",
+      "job_result": {
+        "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_controls/19_10_carbon_provisional_nop/result.json",
+        "sha256": "75e4bbea35b2be77e3a6f34fa42496cb60c405f367c3c4ba5eebad9b419ae7b8"
+      },
+      "trial_result": {
+        "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_controls/19_10_carbon_provisional_nop/carbon-design-system__carbon-209__XGLNL2i/result.json",
+        "sha256": "60ba30868ee1415c16087ae8bbde39400a7dd1c59b17a632b4157d3a40b35f0c"
+      },
+      "exception": {
+        "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_10_carbon_provisional_controls/19_10_carbon_provisional_nop/carbon-design-system__carbon-209__XGLNL2i/exception.txt",
+        "sha256": "4a77fce8650eccff70771eeb65a9e1a9eabf465264d738ebff1f7a49d199ee7e"
+      },
+      "reward": null,
+      "counts_as_model_failure": false
+    },
+    {
+      "check": "provisional_oracle_control",
+      "status": "not_run",
+      "reason": "Stopped after the nop infrastructure failure; another image build would hit the same exhausted Docker storage and would not add model-quality evidence."
+    }
+  ],
+  "overall_status": "static_contract_prepared_runtime_controls_blocked_by_local_docker_storage",
+  "destructive_cleanup_performed": false,
+  "next_runtime_action": "After an authorized human frees Docker storage, rerun nop and oracle on the unchanged checksum. If material changes first, discard this control attempt and bind all new controls to the new checksum."
+}

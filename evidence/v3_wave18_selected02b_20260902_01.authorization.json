@@ -1,0 +1,77 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_targeted_wave18_selected02b/16_06_01_text_sufficiency/20260902T145655927699Z",
+  "source_manifest_sha256": "79978293eedb40c20fda3d8e92cf09d6e407b23e3aeefb2f5fa2d4a2f346f717",
+  "prompt_sha256": "4f671666763a0efcacb8bdcb2783d9ebac53ba240ee2c9347ff4ebeb168a1f23",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "c2a003a53ce0ae30279373c5482d748f9bf969bd90308cbf4838fd1fd6d5f565",
+  "run_id": "v3-wave18-selected02b-20260902-01",
+  "nonce": "wave18-selected02b-20260902-nonce01",
+  "expires_at": "2026-09-04T00:00:00+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave18_selected02b_01",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 3,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "tldraw__tldraw-5888",
+      "source_result_sha256": "0a26e449030a028a73fa69da5dd3211a141897b0d865f1624b9da2b4d3fe9881",
+      "source_packet_sha256": "1a2354aa45d108d6e141a2b5013e3b000033343fe2a6abfd4a96d27aea0cac5b",
+      "source_archive_sha256": "00844d7aaffd6146d314795a897bcc73c3f4f55354f2b738bc9d89bf8196092d",
+      "problem_statement_sha256": "58542784228d1fd6c596dad9f98beac62765b6daf4d24b310a7b7d4e5966969f",
+      "available_asset_ids": [
+        "6cbe42344e86cf3ef4a1e002632e4b76387c8dfe7a9494f900b2d976c47119e6"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "9f07bc5aeb0b5831e66f15ab23d9bf44dea4d7c1a5227ace64d9831242dd7437"
+    },
+    {
+      "case_id": "tldraw__tldraw-8664",
+      "source_result_sha256": "f53920fb6c0049c69d59adbac60ade6e8528248647c70e4de3e7dda1a09f9b9c",
+      "source_packet_sha256": "49f05809f272f3118f3e162af93a9e562092344bbe73f03964d8e8055340d295",
+      "source_archive_sha256": "490ca1a6c5299e41e8de5bfc30d4b698c2891ae1b1cc06f14083cb1094d6192c",
+      "problem_statement_sha256": "5d3ce1453ab53804840558a8a8061f8a09d56f766d0482de6155d8ff5b924569",
+      "available_asset_ids": [
+        "8d65076402d39f9c118b4575bffd56f3c0810791d572411b14ef92c88c580d58",
+        "45d7e3656b12f090552b9a77a8b858d4a21064b1d05cfe7e78618a8517387743"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "4fad5e97ad79b2896982e3a087053d5ca1786ceaf0f09b3d1bfa94658a5fbcc9"
+    }
+  ],
+  "expected_case_calls": 2,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 3,
+  "maximum_api_requests": 12,
+  "authorized": true
+}

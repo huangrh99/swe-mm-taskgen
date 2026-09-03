@@ -1,0 +1,1079 @@
+{
+  "schema_version": "seven-case-runtime-audit-v1",
+  "status": "incomplete",
+  "policy": {
+    "fail_closed": true,
+    "raw_unreviewed_results_are_valid": false,
+    "human_review": "deferred",
+    "formal_admission": false,
+    "checksum_semantics": {
+      "task_checksum": "Harbor result.json task_checksum",
+      "trial_lock_digest": "Harbor TrialLock task.digest"
+    }
+  },
+  "summary": {
+    "case_count": 7,
+    "runtime_complete_count": 0,
+    "formal_admission_count": 0
+  },
+  "cases": [
+    {
+      "instance_id": "carbon-design-system__carbon-22019",
+      "status": "incomplete",
+      "task_checksum": "f0bef3f6b122851b33e760330b569ad74cf775cb2eda45b8fcf903491b9fc6bd",
+      "trial_lock_digest": "sha256:85ad20c7e9e5241627f34d4c02b67502698243e2e55291d5c0324d461af1be92",
+      "measurement": {
+        "base": "passed",
+        "gold": "passed",
+        "evidence": "report/cases/carbon-design-system__carbon-22019/outputs/03_base_gold/03_02_transition_summary.json"
+      },
+      "controls": {
+        "status": "passed",
+        "reason": null,
+        "task_checksum": "f0bef3f6b122851b33e760330b569ad74cf775cb2eda45b8fcf903491b9fc6bd",
+        "trial_lock_digest": "sha256:85ad20c7e9e5241627f34d4c02b67502698243e2e55291d5c0324d461af1be92",
+        "checks": {
+          "gold_oracle": {
+            "name": "gold_oracle",
+            "reward": 1.0,
+            "expected_reward": 1.0,
+            "exception_count": 0,
+            "evidence": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+            "status": "passed"
+          },
+          "empty_patch": {
+            "name": "empty_patch",
+            "reward": 0.0,
+            "expected_reward": 0.0,
+            "exception_count": 0,
+            "evidence": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+            "status": "passed"
+          },
+          "nop": {
+            "name": "nop",
+            "reward": 0.0,
+            "expected_reward": 0.0,
+            "exception_count": 0,
+            "evidence": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+            "status": "passed"
+          },
+          "empty_reply": {
+            "name": "empty_reply",
+            "reward": 0.0,
+            "expected_reward": 0.0,
+            "exception_count": 0,
+            "evidence": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+            "status": "passed"
+          }
+        }
+      },
+      "providers": {
+        "kimi-k3": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 1,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "prepared_not_started",
+            "records": [
+              {
+                "path": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "prepared_not_started",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/kimi-k3/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/kimi-k3/05_preflight.json",
+                "status": "ready_for_technical_pass5_after_active_bpmn_job",
+                "checks_passed": true
+              }
+            ]
+          }
+        },
+        "codex-luna-max": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 0,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "controls_need_rerun_under_overlay",
+            "records": [
+              {
+                "path": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/codex-luna-max/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "controls_need_rerun_under_overlay",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/codex-luna-max/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/carbon-design-system__carbon-22019/outputs/06_freeze/codex-luna-max/05_preflight.json",
+                "status": "not_ready_for_pass5",
+                "checks_passed": false
+              }
+            ]
+          }
+        }
+      },
+      "human_review": "deferred",
+      "formal_admission": false
+    },
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "status": "incomplete",
+      "task_checksum": "f9e6160c9a3ecacd358709cdf6a85b9b0ec9dc770c1e00af948c91b6129d5baa",
+      "trial_lock_digest": "sha256:d8b0bf95249b72a53f5973463b6e5af0a6ff04ab2eecd989b62caf40f70e4d4b",
+      "measurement": {
+        "base": "passed",
+        "gold": "passed",
+        "evidence": "report/cases/bpmn-io__bpmn-js-2396/meta/04_measurements/14_transition_audit.json"
+      },
+      "controls": {
+        "status": "passed",
+        "reason": null,
+        "task_checksum": "f9e6160c9a3ecacd358709cdf6a85b9b0ec9dc770c1e00af948c91b6129d5baa",
+        "trial_lock_digest": "sha256:d8b0bf95249b72a53f5973463b6e5af0a6ff04ab2eecd989b62caf40f70e4d4b",
+        "checks": {
+          "gold_oracle": {
+            "name": "gold_oracle",
+            "reward": 1.0,
+            "exception": null,
+            "task_checksum": "f9e6160c9a3ecacd358709cdf6a85b9b0ec9dc770c1e00af948c91b6129d5baa",
+            "trial_lock_digest": "sha256:d8b0bf95249b72a53f5973463b6e5af0a6ff04ab2eecd989b62caf40f70e4d4b",
+            "evidence": "report/cases/bpmn-io__bpmn-js-2396/outputs/05_controls/05_20_codex_ready_gold_oracle/task__ECG5m5t/result.json",
+            "expected_reward": 1.0,
+            "status": "passed"
+          },
+          "empty_patch": {
+            "name": "empty_patch",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "f9e6160c9a3ecacd358709cdf6a85b9b0ec9dc770c1e00af948c91b6129d5baa",
+            "trial_lock_digest": "sha256:d8b0bf95249b72a53f5973463b6e5af0a6ff04ab2eecd989b62caf40f70e4d4b",
+            "evidence": "report/cases/bpmn-io__bpmn-js-2396/outputs/05_controls/05_21_codex_ready_empty_patch/task__AP7s8Ya/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "nop": {
+            "name": "nop",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "f9e6160c9a3ecacd358709cdf6a85b9b0ec9dc770c1e00af948c91b6129d5baa",
+            "trial_lock_digest": "sha256:d8b0bf95249b72a53f5973463b6e5af0a6ff04ab2eecd989b62caf40f70e4d4b",
+            "evidence": "report/cases/bpmn-io__bpmn-js-2396/outputs/05_controls/05_22_codex_ready_nop/task__5vfsrLn/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "empty_reply": {
+            "name": "empty_reply",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "f9e6160c9a3ecacd358709cdf6a85b9b0ec9dc770c1e00af948c91b6129d5baa",
+            "trial_lock_digest": "sha256:d8b0bf95249b72a53f5973463b6e5af0a6ff04ab2eecd989b62caf40f70e4d4b",
+            "evidence": "report/cases/bpmn-io__bpmn-js-2396/outputs/05_controls/05_23_codex_ready_empty_reply/task__fW6SSWY/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          }
+        }
+      },
+      "providers": {
+        "kimi-k3": {
+          "status": "incomplete",
+          "valid": 1,
+          "infrastructure_invalid": 22,
+          "pending": 8,
+          "running": 0,
+          "audit_records": [
+            {
+              "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/audit_pre_retry_04/pass5_audit.json",
+              "status": "needs_replacement_trials"
+            },
+            {
+              "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/audit_retry_01_network_invalid/pass5_audit.json",
+              "status": "needs_replacement_trials"
+            },
+            {
+              "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/audit_retry_04_trace_invalid/pass5_audit.json",
+              "status": "needs_replacement_trials"
+            },
+            {
+              "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/audit_trace_proof_01/pass5_audit.json",
+              "status": "needs_replacement_trials"
+            }
+          ],
+          "trace_files": [
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-02/task__7QUw7p6/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_5a75df64-73d2-4b2d-b0a4-c4e231bd5207/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-02/task__7QUw7p6/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-02/task__Sp8EPVj/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_bd59b747-05b6-4d98-8bd7-baa37343d096/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-02/task__Sp8EPVj/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-02/task__rFT2UtD/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_fd9f34fa-5105-4eb9-abf3-4016a09cd86d/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-02/task__rFT2UtD/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-03/task__DRscY39/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_910424f5-85e0-4ee2-acc2-15a3cba19264/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-03/task__DRscY39/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-03/task__WZjrBdE/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_f0b82d6b-143f-495a-8086-3f6520b35e23/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-03/task__WZjrBdE/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-03/task__aD6hbrd/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_845543c6-0e1c-4ce0-beeb-665632752af1/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-03/task__aD6hbrd/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-03/task__mDE4oME/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_59f9125e-2ee5-40f3-9b11-f0bdfe3fccb3/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-03/task__mDE4oME/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-04/task__8jbb9kp/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_eb0562ae-1105-4aea-aab0-6e0a59b377f3/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-04/task__8jbb9kp/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-04/task__KTkuMX8/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_5d7ff31a-4290-428c-b558-99e13cf20b77/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-04/task__KTkuMX8/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-04/task__SpvTt6G/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_9163ec3e-93e9-4713-a32a-87fbb507e12f/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-04/task__SpvTt6G/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-04/task__qJXnS7j/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_8a0f1d47-c6ba-430c-a9b5-d348391bf043/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5-retry-04/task__qJXnS7j/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__BtxhjpW/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_86b08bae-953a-4e42-82c5-a18a1704ea71/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__BtxhjpW/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__K8ntA76/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_965c8488-77f3-479b-a6eb-f6144544465c/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__K8ntA76/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__eAt8bE2/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_40da7549-8891-4542-81ac-4105f4818fad/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__eAt8bE2/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__fYnQRTq/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_8df69e29-7777-4b86-9d8b-ccd2f490b277/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__fYnQRTq/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__s5VWnMz/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_54a786d3-2cc3-40fe-8ec8-9cf0980a6efe/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-pass5/task__s5VWnMz/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-trace-proof-01/task__eTvyTxq/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_13a5c4d5-776a-427a-9627-4ed467beb079/agents/main/wire.jsonl",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-trace-proof-01/task__eTvyTxq/agent/kimi-code.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/kimi-k3/jobs/bpmn-2396-kimi-k3-trace-proof-01/task__eTvyTxq/agent/trajectory.json"
+          ],
+          "freeze": {
+            "status": "prepared_retry_after_trace_redaction",
+            "records": [
+              {
+                "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "prepared_retry_after_trace_redaction",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/06_freeze/kimi-k3/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/06_freeze/kimi-k3/05_preflight.json",
+                "status": "ready_for_technical_pass5_retry_05",
+                "checks_passed": true
+              }
+            ]
+          }
+        },
+        "codex-luna-max": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 23,
+          "pending": 0,
+          "running": 0,
+          "audit_records": [
+            {
+              "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/audit_initial_invalid/pass5_audit.json",
+              "status": "needs_replacement_trials"
+            },
+            {
+              "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/audit_pre_auth_fix/pass5_audit.json",
+              "status": "needs_replacement_trials"
+            }
+          ],
+          "trace_files": [
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__KezfSiX/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__KezfSiX/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__RhURHF6/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__RhURHF6/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__fhipbgC/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__fhipbgC/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__irEGb4q/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__irEGb4q/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__vsrEEXz/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-02/task__vsrEEXz/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__ChhUjeY/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__ChhUjeY/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__WZLEZUe/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__WZLEZUe/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__fWFyTUa/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__fWFyTUa/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__fi7PDw3/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__fi7PDw3/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__tyx4Gmr/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-03/task__tyx4Gmr/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-04/task__8AKVvJC/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-04/task__8AKVvJC/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-04/task__mFp6cBk/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-04/task__mFp6cBk/agent/trajectory.json",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-04/task__x8bS6bR/agent/codex.txt",
+            "report/cases/bpmn-io__bpmn-js-2396/outputs/07_pass5/codex-luna-max/jobs/bpmn-2396-codex-luna-max-pass5-retry-04/task__x8bS6bR/agent/trajectory.json"
+          ],
+          "freeze": {
+            "status": "controls_need_rerun_under_overlay",
+            "records": [
+              {
+                "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/06_freeze/codex-luna-max/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "controls_need_rerun_under_overlay",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/06_freeze/codex-luna-max/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/bpmn-io__bpmn-js-2396/outputs/06_freeze/codex-luna-max/05_preflight.json",
+                "status": "not_ready_for_pass5",
+                "checks_passed": false
+              }
+            ]
+          }
+        }
+      },
+      "human_review": "deferred",
+      "formal_admission": false
+    },
+    {
+      "instance_id": "googlechrome__lighthouse-16403",
+      "status": "incomplete",
+      "task_checksum": "104f1be9fc2e3021cb85d3458c1f93ad2b6fc0022fd5f4a1209a0dea9ba94041",
+      "trial_lock_digest": "sha256:74a0dcbb2c983822409bd091e5cf41eeab4a9e165a84197923910d60105b4258",
+      "measurement": {
+        "base": "passed",
+        "gold": "passed",
+        "evidence": "report/cases/googlechrome__lighthouse-16403/outputs/01_base_gold/04_stability_summary.json"
+      },
+      "controls": {
+        "status": "passed",
+        "reason": null,
+        "task_checksum": "104f1be9fc2e3021cb85d3458c1f93ad2b6fc0022fd5f4a1209a0dea9ba94041",
+        "trial_lock_digest": "sha256:74a0dcbb2c983822409bd091e5cf41eeab4a9e165a84197923910d60105b4258",
+        "checks": {
+          "gold_oracle": {
+            "name": "gold_oracle",
+            "reward": 1.0,
+            "expected_reward": 1.0,
+            "exception_count": 0,
+            "evidence": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+            "status": "passed"
+          },
+          "empty_patch": {
+            "name": "empty_patch",
+            "reward": 0.0,
+            "expected_reward": 0.0,
+            "exception_count": 0,
+            "evidence": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+            "status": "passed"
+          },
+          "nop": {
+            "name": "nop",
+            "reward": 0.0,
+            "expected_reward": 0.0,
+            "exception_count": 0,
+            "evidence": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+            "status": "passed"
+          },
+          "empty_reply": {
+            "name": "empty_reply",
+            "reward": 0.0,
+            "expected_reward": 0.0,
+            "exception_count": 0,
+            "evidence": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+            "status": "passed"
+          }
+        }
+      },
+      "providers": {
+        "kimi-k3": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 6,
+          "pending": 0,
+          "running": 1,
+          "audit_records": [
+            {
+              "path": "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/audit_initial_setup_invalid/pass5_audit.json",
+              "status": "needs_replacement_trials"
+            },
+            {
+              "path": "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/audit_retry_01_proactive_stop/pass5_audit.json",
+              "status": "needs_replacement_trials"
+            }
+          ],
+          "trace_files": [
+            "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-kimi-k3-pass5-retry-01/task__NtWRVcA/agent/.kimi-code/sessions/wd_app_f53b52ad6d21/session_4a3d31e8-8608-4d0d-8f94-cf3fe3b39216/agents/main/wire.jsonl",
+            "report/cases/googlechrome__lighthouse-16403/outputs/07_pass5/kimi-k3/jobs/lighthouse-16403-kimi-k3-pass5-retry-01/task__NtWRVcA/agent/kimi-code.txt"
+          ],
+          "freeze": {
+            "status": "prepared_retry_after_trace_redaction",
+            "records": [
+              {
+                "path": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "prepared_retry_after_trace_redaction",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/kimi-k3/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/kimi-k3/05_preflight.json",
+                "status": "ready_for_technical_pass5_retry_03",
+                "checks_passed": true
+              }
+            ]
+          }
+        },
+        "codex-luna-max": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 0,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "controls_need_rerun_under_overlay",
+            "records": [
+              {
+                "path": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/codex-luna-max/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "controls_need_rerun_under_overlay",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/codex-luna-max/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/googlechrome__lighthouse-16403/outputs/06_freeze/codex-luna-max/05_preflight.json",
+                "status": "not_ready_for_pass5",
+                "checks_passed": false
+              }
+            ]
+          }
+        }
+      },
+      "human_review": "deferred",
+      "formal_admission": false
+    },
+    {
+      "instance_id": "automattic__wp-calypso-100957",
+      "status": "incomplete",
+      "task_checksum": "0d9a7288f65c4cef83a895ae9fd34deca4893c7da92f891b213178543923379f",
+      "trial_lock_digest": "sha256:d6a26e8249c9ea9ce094a4d51e53b3b9cdd50a5c36b2629bb0eabce142c4b13a",
+      "measurement": {
+        "base": "passed",
+        "gold": "passed",
+        "evidence": "report/cases/automattic__wp-calypso-100957/outputs/04_measurements/04_02_base_gold_summary.json"
+      },
+      "controls": {
+        "status": "passed",
+        "reason": null,
+        "task_checksum": "0d9a7288f65c4cef83a895ae9fd34deca4893c7da92f891b213178543923379f",
+        "trial_lock_digest": "sha256:d6a26e8249c9ea9ce094a4d51e53b3b9cdd50a5c36b2629bb0eabce142c4b13a",
+        "checks": {
+          "gold_oracle": {
+            "name": "gold_oracle",
+            "reward": 1.0,
+            "exception": null,
+            "task_checksum": "0d9a7288f65c4cef83a895ae9fd34deca4893c7da92f891b213178543923379f",
+            "trial_lock_digest": "sha256:d6a26e8249c9ea9ce094a4d51e53b3b9cdd50a5c36b2629bb0eabce142c4b13a",
+            "evidence": "report/cases/automattic__wp-calypso-100957/outputs/05_controls/05_05_gold_oracle_retry/task__ReyKjBc/result.json",
+            "expected_reward": 1.0,
+            "status": "passed"
+          },
+          "empty_patch": {
+            "name": "empty_patch",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "0d9a7288f65c4cef83a895ae9fd34deca4893c7da92f891b213178543923379f",
+            "trial_lock_digest": "sha256:d6a26e8249c9ea9ce094a4d51e53b3b9cdd50a5c36b2629bb0eabce142c4b13a",
+            "evidence": "report/cases/automattic__wp-calypso-100957/outputs/05_controls/05_06_empty_patch_retry/task__33P38U5/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "nop": {
+            "name": "nop",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "0d9a7288f65c4cef83a895ae9fd34deca4893c7da92f891b213178543923379f",
+            "trial_lock_digest": "sha256:d6a26e8249c9ea9ce094a4d51e53b3b9cdd50a5c36b2629bb0eabce142c4b13a",
+            "evidence": "report/cases/automattic__wp-calypso-100957/outputs/05_controls/05_07_nop_retry/task__DTdjZDE/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "empty_reply": {
+            "name": "empty_reply",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "0d9a7288f65c4cef83a895ae9fd34deca4893c7da92f891b213178543923379f",
+            "trial_lock_digest": "sha256:d6a26e8249c9ea9ce094a4d51e53b3b9cdd50a5c36b2629bb0eabce142c4b13a",
+            "evidence": "report/cases/automattic__wp-calypso-100957/outputs/05_controls/05_08_empty_no_reply_retry/task__AjkWzu4/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          }
+        }
+      },
+      "providers": {
+        "kimi-k3": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 1,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "prepared_not_started",
+            "records": [
+              {
+                "path": "report/cases/automattic__wp-calypso-100957/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "prepared_not_started",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/automattic__wp-calypso-100957/outputs/06_freeze/kimi-k3/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/automattic__wp-calypso-100957/outputs/06_freeze/kimi-k3/05_preflight.json",
+                "status": "ready_for_technical_pass5_after_active_bpmn_job",
+                "checks_passed": true
+              }
+            ]
+          }
+        },
+        "codex-luna-max": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 0,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "controls_need_rerun_under_overlay",
+            "records": [
+              {
+                "path": "report/cases/automattic__wp-calypso-100957/outputs/06_freeze/codex-luna-max/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "controls_need_rerun_under_overlay",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/automattic__wp-calypso-100957/outputs/06_freeze/codex-luna-max/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/automattic__wp-calypso-100957/outputs/06_freeze/codex-luna-max/05_preflight.json",
+                "status": "not_ready_for_pass5",
+                "checks_passed": false
+              }
+            ]
+          }
+        }
+      },
+      "human_review": "deferred",
+      "formal_admission": false
+    },
+    {
+      "instance_id": "automattic__wp-calypso-99049",
+      "status": "incomplete",
+      "task_checksum": "e5b8f9fe5a90b1ba13036b5d05f98723aed9062ce37d26f69196991c8e34d538",
+      "trial_lock_digest": "sha256:84a3b2b7ccaa599f2af96da8cecab2d205b23055d9ebb3e27b502da0e0d5b844",
+      "measurement": {
+        "base": "passed",
+        "gold": "passed",
+        "evidence": "report/cases/automattic__wp-calypso-99049/outputs/04_base_gold/04_04_stability_summary.json"
+      },
+      "controls": {
+        "status": "passed",
+        "reason": null,
+        "task_checksum": "e5b8f9fe5a90b1ba13036b5d05f98723aed9062ce37d26f69196991c8e34d538",
+        "trial_lock_digest": "sha256:84a3b2b7ccaa599f2af96da8cecab2d205b23055d9ebb3e27b502da0e0d5b844",
+        "checks": {
+          "gold_oracle": {
+            "name": "gold_oracle",
+            "reward": 1.0,
+            "exception": null,
+            "task_checksum": "e5b8f9fe5a90b1ba13036b5d05f98723aed9062ce37d26f69196991c8e34d538",
+            "trial_lock_digest": "sha256:84a3b2b7ccaa599f2af96da8cecab2d205b23055d9ebb3e27b502da0e0d5b844",
+            "evidence": "report/cases/automattic__wp-calypso-99049/outputs/05_controls/05_15_codex_ready_gold_oracle/task__8Tky4Xi/result.json",
+            "expected_reward": 1.0,
+            "status": "passed"
+          },
+          "empty_patch": {
+            "name": "empty_patch",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "e5b8f9fe5a90b1ba13036b5d05f98723aed9062ce37d26f69196991c8e34d538",
+            "trial_lock_digest": "sha256:84a3b2b7ccaa599f2af96da8cecab2d205b23055d9ebb3e27b502da0e0d5b844",
+            "evidence": "report/cases/automattic__wp-calypso-99049/outputs/05_controls/05_16_codex_ready_empty_patch/task__jhoESQ2/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "nop": {
+            "name": "nop",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "e5b8f9fe5a90b1ba13036b5d05f98723aed9062ce37d26f69196991c8e34d538",
+            "trial_lock_digest": "sha256:84a3b2b7ccaa599f2af96da8cecab2d205b23055d9ebb3e27b502da0e0d5b844",
+            "evidence": "report/cases/automattic__wp-calypso-99049/outputs/05_controls/05_17_codex_ready_nop/task__MuvvWP2/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "empty_reply": {
+            "name": "empty_reply",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "e5b8f9fe5a90b1ba13036b5d05f98723aed9062ce37d26f69196991c8e34d538",
+            "trial_lock_digest": "sha256:84a3b2b7ccaa599f2af96da8cecab2d205b23055d9ebb3e27b502da0e0d5b844",
+            "evidence": "report/cases/automattic__wp-calypso-99049/outputs/05_controls/05_18_codex_ready_empty_reply/task__9GySYDR/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          }
+        }
+      },
+      "providers": {
+        "kimi-k3": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 1,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "prepared_not_started",
+            "records": [
+              {
+                "path": "report/cases/automattic__wp-calypso-99049/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "prepared_not_started",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/automattic__wp-calypso-99049/outputs/06_freeze/kimi-k3/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/automattic__wp-calypso-99049/outputs/06_freeze/kimi-k3/05_preflight.json",
+                "status": "ready_for_technical_pass5_after_active_bpmn_job",
+                "checks_passed": true
+              }
+            ]
+          }
+        },
+        "codex-luna-max": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 0,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "controls_need_rerun_under_overlay",
+            "records": [
+              {
+                "path": "report/cases/automattic__wp-calypso-99049/outputs/06_freeze/codex-luna-max/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "controls_need_rerun_under_overlay",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/automattic__wp-calypso-99049/outputs/06_freeze/codex-luna-max/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/automattic__wp-calypso-99049/outputs/06_freeze/codex-luna-max/05_preflight.json",
+                "status": "not_ready_for_pass5",
+                "checks_passed": false
+              }
+            ]
+          }
+        }
+      },
+      "human_review": "deferred",
+      "formal_admission": false
+    },
+    {
+      "instance_id": "mermaid-js__mermaid-7711",
+      "status": "incomplete",
+      "task_checksum": "ee41a787692cb703b0a3f3b2d8db09f3ca34b51d402a249cfd0e56398585653e",
+      "trial_lock_digest": "sha256:998620ab5aea6c7205b07890ab797fcbebaf8e7f02163a3ccdee1e56ef930ba2",
+      "measurement": {
+        "base": "passed",
+        "gold": "passed",
+        "evidence": "report/cases/mermaid-js__mermaid-7711/outputs/04_measurements/04_00_exact_boundary_summary.json"
+      },
+      "controls": {
+        "status": "passed",
+        "reason": null,
+        "task_checksum": "ee41a787692cb703b0a3f3b2d8db09f3ca34b51d402a249cfd0e56398585653e",
+        "trial_lock_digest": "sha256:998620ab5aea6c7205b07890ab797fcbebaf8e7f02163a3ccdee1e56ef930ba2",
+        "checks": {
+          "gold_oracle": {
+            "name": "gold_oracle",
+            "reward": 1.0,
+            "exception": null,
+            "task_checksum": "ee41a787692cb703b0a3f3b2d8db09f3ca34b51d402a249cfd0e56398585653e",
+            "trial_lock_digest": "sha256:998620ab5aea6c7205b07890ab797fcbebaf8e7f02163a3ccdee1e56ef930ba2",
+            "evidence": "report/cases/mermaid-js__mermaid-7711/outputs/05_controls/05_01_gold_oracle/task__gZAjJmG/result.json",
+            "expected_reward": 1.0,
+            "status": "passed"
+          },
+          "empty_patch": {
+            "name": "empty_patch",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "ee41a787692cb703b0a3f3b2d8db09f3ca34b51d402a249cfd0e56398585653e",
+            "trial_lock_digest": "sha256:998620ab5aea6c7205b07890ab797fcbebaf8e7f02163a3ccdee1e56ef930ba2",
+            "evidence": "report/cases/mermaid-js__mermaid-7711/outputs/05_controls/05_02_empty_patch/task__a4GXRCT/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "nop": {
+            "name": "nop",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "ee41a787692cb703b0a3f3b2d8db09f3ca34b51d402a249cfd0e56398585653e",
+            "trial_lock_digest": "sha256:998620ab5aea6c7205b07890ab797fcbebaf8e7f02163a3ccdee1e56ef930ba2",
+            "evidence": "report/cases/mermaid-js__mermaid-7711/outputs/05_controls/05_03_nop/task__M7iTd5g/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "empty_reply": {
+            "name": "empty_reply",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "ee41a787692cb703b0a3f3b2d8db09f3ca34b51d402a249cfd0e56398585653e",
+            "trial_lock_digest": "sha256:998620ab5aea6c7205b07890ab797fcbebaf8e7f02163a3ccdee1e56ef930ba2",
+            "evidence": "report/cases/mermaid-js__mermaid-7711/outputs/05_controls/05_04_empty_reply/task__NfbXi9h/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          }
+        }
+      },
+      "providers": {
+        "kimi-k3": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 1,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "prepared_not_started",
+            "records": [
+              {
+                "path": "report/cases/mermaid-js__mermaid-7711/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "prepared_not_started",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/mermaid-js__mermaid-7711/outputs/06_freeze/kimi-k3/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/mermaid-js__mermaid-7711/outputs/06_freeze/kimi-k3/05_preflight.json",
+                "status": "ready_for_technical_pass5_after_active_bpmn_job",
+                "checks_passed": true
+              }
+            ]
+          }
+        },
+        "codex-luna-max": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 0,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "controls_need_rerun_under_overlay",
+            "records": [
+              {
+                "path": "report/cases/mermaid-js__mermaid-7711/outputs/06_freeze/codex-luna-max/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "controls_need_rerun_under_overlay",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/mermaid-js__mermaid-7711/outputs/06_freeze/codex-luna-max/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/mermaid-js__mermaid-7711/outputs/06_freeze/codex-luna-max/05_preflight.json",
+                "status": "not_ready_for_pass5",
+                "checks_passed": false
+              }
+            ]
+          }
+        }
+      },
+      "human_review": "deferred",
+      "formal_admission": false
+    },
+    {
+      "instance_id": "excalidraw__excalidraw-9002",
+      "status": "incomplete",
+      "task_checksum": "db4f9d560a03a0976be71e27a2897f8c0ebe25055c584f77ed88c54d258cd088",
+      "trial_lock_digest": "sha256:5fe40bd7b41f21dda9a8e2bf2937760e39df8f9a5f8745ca7d54314873ea901c",
+      "measurement": {
+        "base": "passed",
+        "gold": "passed",
+        "evidence": "report/cases/excalidraw__excalidraw-9002/outputs/04_measurements/04_08_schema12_measurement_summary.json"
+      },
+      "controls": {
+        "status": "passed",
+        "reason": null,
+        "task_checksum": "db4f9d560a03a0976be71e27a2897f8c0ebe25055c584f77ed88c54d258cd088",
+        "trial_lock_digest": "sha256:5fe40bd7b41f21dda9a8e2bf2937760e39df8f9a5f8745ca7d54314873ea901c",
+        "checks": {
+          "gold_oracle": {
+            "name": "gold_oracle",
+            "reward": 1.0,
+            "exception": null,
+            "task_checksum": "db4f9d560a03a0976be71e27a2897f8c0ebe25055c584f77ed88c54d258cd088",
+            "trial_lock_digest": "sha256:5fe40bd7b41f21dda9a8e2bf2937760e39df8f9a5f8745ca7d54314873ea901c",
+            "evidence": "report/cases/excalidraw__excalidraw-9002/outputs/05_controls/05_07_schema12_gold_oracle/task__uM7Jg7d/result.json",
+            "expected_reward": 1.0,
+            "status": "passed"
+          },
+          "empty_patch": {
+            "name": "empty_patch",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "db4f9d560a03a0976be71e27a2897f8c0ebe25055c584f77ed88c54d258cd088",
+            "trial_lock_digest": "sha256:5fe40bd7b41f21dda9a8e2bf2937760e39df8f9a5f8745ca7d54314873ea901c",
+            "evidence": "report/cases/excalidraw__excalidraw-9002/outputs/05_controls/05_08_schema12_empty_patch/task__JgoPMJY/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "nop": {
+            "name": "nop",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "db4f9d560a03a0976be71e27a2897f8c0ebe25055c584f77ed88c54d258cd088",
+            "trial_lock_digest": "sha256:5fe40bd7b41f21dda9a8e2bf2937760e39df8f9a5f8745ca7d54314873ea901c",
+            "evidence": "report/cases/excalidraw__excalidraw-9002/outputs/05_controls/05_09_schema12_nop/task__KHviYg4/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          },
+          "empty_reply": {
+            "name": "empty_reply",
+            "reward": 0.0,
+            "exception": null,
+            "task_checksum": "db4f9d560a03a0976be71e27a2897f8c0ebe25055c584f77ed88c54d258cd088",
+            "trial_lock_digest": "sha256:5fe40bd7b41f21dda9a8e2bf2937760e39df8f9a5f8745ca7d54314873ea901c",
+            "evidence": "report/cases/excalidraw__excalidraw-9002/outputs/05_controls/05_10_schema12_empty_no_reply/task__mCC2xnf/result.json",
+            "expected_reward": 0.0,
+            "status": "passed"
+          }
+        }
+      },
+      "providers": {
+        "kimi-k3": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 0,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "prepared_not_started",
+            "records": [
+              {
+                "path": "report/cases/excalidraw__excalidraw-9002/outputs/06_freeze/kimi-k3/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "prepared_not_started",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/excalidraw__excalidraw-9002/outputs/06_freeze/kimi-k3/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/excalidraw__excalidraw-9002/outputs/06_freeze/kimi-k3/05_preflight.json",
+                "status": "ready_for_technical_pass5_after_active_bpmn_job",
+                "checks_passed": true
+              }
+            ]
+          }
+        },
+        "codex-luna-max": {
+          "status": "incomplete",
+          "valid": 0,
+          "infrastructure_invalid": 0,
+          "pending": 0,
+          "running": 0,
+          "audit_records": [],
+          "trace_files": [],
+          "freeze": {
+            "status": "controls_need_rerun_under_overlay",
+            "records": [
+              {
+                "path": "report/cases/excalidraw__excalidraw-9002/outputs/06_freeze/codex-luna-max/03_technical_readiness.json",
+                "kind": "technical_readiness",
+                "status": "controls_need_rerun_under_overlay",
+                "formal_admission": false,
+                "human_gates": {
+                  "visual_necessity": "deferred",
+                  "test_semantics": "deferred"
+                }
+              },
+              {
+                "path": "report/cases/excalidraw__excalidraw-9002/outputs/06_freeze/codex-luna-max/02_frozen_pass5_config.json",
+                "kind": "frozen_config",
+                "status": null,
+                "formal_admission": null,
+                "human_gates": null
+              }
+            ],
+            "preflight_records": [
+              {
+                "path": "report/cases/excalidraw__excalidraw-9002/outputs/06_freeze/codex-luna-max/05_preflight.json",
+                "status": "not_ready_for_pass5",
+                "checks_passed": false
+              }
+            ]
+          }
+        }
+      },
+      "human_review": "deferred",
+      "formal_admission": false
+    }
+  ]
+}

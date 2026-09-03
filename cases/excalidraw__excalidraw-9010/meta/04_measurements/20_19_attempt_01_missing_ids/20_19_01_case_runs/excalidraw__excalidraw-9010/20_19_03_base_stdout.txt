@@ -1,0 +1,13 @@
+yarn run v1.22.22
+$ vitest --run packages/excalidraw/tests/arrowBinding9010.test.tsx
+
+ RUN  v2.0.5 /app
+
+ ✓ packages/excalidraw/tests/arrowBinding9010.test.tsx  (1 test) 222ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  20:38:31
+   Duration  3.73s (transform 2.11s, setup 107ms, collect 3.03s, tests 222ms, environment 196ms, prepare 50ms)
+
+Done in 4.06s.

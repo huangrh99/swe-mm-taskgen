@@ -1,0 +1,15 @@
+{
+  "schema_version": "wp-calypso-component-jest-v4",
+  "candidate_id": "automattic__wp-calypso-100957",
+  "test_source": "curator_revised_from_verifier_proposal",
+  "repository_author_tests_added_by_pr": 0,
+  "selected_test_file": "packages/global-styles/src/components/global-styles-variations/__tests__/preview.test.tsx",
+  "jest_config": "packages/global-styles/jest.config.js",
+  "acceptance_seam": "Final rendered distinction between each of two circular swatches and its card background",
+  "minimum_swatch_count": 2,
+  "minimum_contrast_ratio": 2.0,
+  "threshold_derivation": "Human calibration decision: use 2:1 as the minimum visible swatch-to-card contrast. This remains above both reproduced Before cases and below the weakest matching After screenshot.",
+  "curator_measurement_evidence": "outputs/12_contrast_verifier_v3/12_02_screenshot_measurements.json",
+  "threshold_decision_evidence": "outputs/14_contrast_verifier_v4/14_01_threshold_decision.json",
+  "implementation_constraints": []
+}

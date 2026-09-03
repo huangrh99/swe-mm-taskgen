@@ -1,0 +1,30 @@
+schema_version = "1.2"
+
+[task]
+name = "swe-bench-multimodal/carbon-design-system__carbon-22019"
+description = "Correct the collapsed ExpandableSearch activation tooltip using visual context."
+authors = [{ name = "benchmark-construction" }]
+keywords = ["swe-bench", "swe-bench-multimodal", "react", "tooltip", "visual-state"]
+
+[metadata]
+repository = "carbon-design-system/carbon"
+repo = "carbon-design-system/carbon"
+instance_id = "carbon-design-system__carbon-22019"
+pr_number = 22019
+base_commit = "05166d4aff1dfbcef426642af124b8af4393421c"
+reference_head = "3a3a51221b1952497d37797d35032c5be28d141f"
+status = "provisional_human_review_deferred"
+
+[agent]
+timeout_sec = 7200.0
+override_setup_timeout_sec = 1800.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1800.0
+cpus = 6
+memory_mb = 12288
+storage_mb = 20480
+allow_internet = false

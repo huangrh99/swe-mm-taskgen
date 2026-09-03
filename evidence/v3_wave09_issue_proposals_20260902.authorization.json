@@ -1,0 +1,119 @@
+{
+  "schema_version": "classification-run-authorization-v1",
+  "source_run": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_02_issue_proposals_wave09/20260902T085421366249Z",
+  "source_manifest_sha256": "136da77efae6439dabbcc4a7669e3a59fde78278f24e86162424d1a7ea9e616d",
+  "prompt_sha256": "d1f5db123c64e9c9447ae5adb4724e365b816d77474f18462b54f50beb8f0cb6",
+  "schema_sha256": "38f540eb3451be633439486872e52a7422c2339d91d1c90445175807833d3d78",
+  "classification_runner_sha256": "3cbb12c5b2b939cbb4c9e6c5c87dd7ea9565c385a0b1516d41fcf99a65203afa",
+  "run_id": "v3_wave09_issue_20260902_01",
+  "nonce": "v3_wave09_issue_20260902_nonce01",
+  "expires_at": "2026-09-04T23:59:59+08:00",
+  "canonical_output": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_03_v3_runs/20260902_wave09_issue_proposals",
+  "evaluator_contract": {
+    "backend": "gemini",
+    "requested_model": "gemini-3.7-flash",
+    "accepted_response_models": [
+      "gemini-3.7-flash"
+    ],
+    "provider_profile": {
+      "protocol": "chat",
+      "endpoint": "https://modelhub-gateway.invalid/api/modelhub/online/v2/crawl",
+      "model": "gemini-3.7-flash",
+      "api_version": "2024-03-01-preview",
+      "key_name": "AIDP_API_KEY",
+      "key_file": "gemini_key_env.sh"
+    },
+    "max_tokens": 16384,
+    "transport_attempt_limit": 2,
+    "credential_identity": {
+      "source_kind": "key_file",
+      "key_name": "AIDP_API_KEY",
+      "fingerprint": "fb13cc4193869be51368cc72b0dc8c74830a4da0194f878b784ed288688547bd"
+    },
+    "client_factory": {
+      "kind": "api_engine_default",
+      "name": "openai.AzureOpenAI"
+    },
+    "runner": "pr_crawler.api_engines.ApiEvaluator",
+    "runner_path": "/Users/bytedance/Documents/ChatGPT/kimi/report/code/pr_crawler/api_engines.py",
+    "runner_sha256": "628a74c5ea976ab5c6740209af718368c72e1a0a4530347fc4b6a64644adcf41"
+  },
+  "case_bindings": [
+    {
+      "case_id": "antvis__g6-7481",
+      "source_result_sha256": "0e4ae8cdf362664362edbc5b8e69662a9031aea681763538789247b1aefd0f6d",
+      "source_packet_sha256": "8cbc1f1d0f3c95952f67d19dd56057e2aaa92203a813a467205c917c5edf3834",
+      "source_archive_sha256": "6dbea79e5f54f02c97afc355fda31d2617aa71fc0fca3c9a5326eaf94d324649",
+      "problem_statement_sha256": "eff0d6fecfe09df17547273c20b4513a035f01445f5e30b422e0aa18cbdb6950",
+      "available_asset_ids": [
+        "265ad47c358f2196373326f4c362f6b964ffaa8380af91d59e00f1885fba353b"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "bf0944341a6196faf69223c1ceea193c837e9cf1ccc925e4a12dd02e272d638d"
+    },
+    {
+      "case_id": "apache__superset-41311",
+      "source_result_sha256": "fa1aee588c47242358356f6f460c1b7d8891440ff2f368dab851343e6b5f6fe6",
+      "source_packet_sha256": "5d10bfee83f7d0278d141cca0c2ecf063c6018e28ff8859b740d7cc87846c96b",
+      "source_archive_sha256": "264251c377dd71f61adcf8ff152a1529cfd82c428193bcb802eb083a883b635a",
+      "problem_statement_sha256": "dc930968dec12470d3ffb4536e4c575a6590d06b2d36599e97c09f127c002dac",
+      "available_asset_ids": [
+        "f74f737ec374ac78f532d0aeeb0db6af8849043e3ad69368bef4b31b4583df9d"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "ae8d98aa85aa88ebb0ecef87bf5bbea1ecac75edce231aaf8b4cfd4d271733af"
+    },
+    {
+      "case_id": "pixijs__pixijs-11549",
+      "source_result_sha256": "b37b4bd744606c03505b769adc0e0796ff0c1cd0d0d2d15cf4bd447d92fda05e",
+      "source_packet_sha256": "58ac8bff744202aebb2885ed44a66b4339fb44e2fd386839ccd35436a3be044d",
+      "source_archive_sha256": "c40042499cb1540da0658076c57109ffc1352d0280a586fb2f00ea53051d99f3",
+      "problem_statement_sha256": "a82b1b400c1f1de5cd20364a41093723c71fe973923b5a185f07cc706b27afc3",
+      "available_asset_ids": [
+        "408747a494f271a282a52b42154fee31f2a39181a3877cda8814f5e5f7133b25",
+        "5638a4db47f90d9e12e74be1af69a3425fc1948170309cb6f5293a9fae0e71f8"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "81c3af7ee72a76a9f02d8f48ac2248fe20da1a8504bd801fbf8d660789e8f5b5"
+    },
+    {
+      "case_id": "excalidraw__excalidraw-11803",
+      "source_result_sha256": "936625e84f56de272c181f09852f2cd22b7878c481ce12c3f92aa8c22a360d4e",
+      "source_packet_sha256": "2349ef6bc3510ce188bacd2c11bff921a5e2f0a8b695a321706f57cdf79b9f23",
+      "source_archive_sha256": "0a84465ee000ca1fefc999c83fc0fe20a25981be2bf008af55e55ddffa98676d",
+      "problem_statement_sha256": "e29c92e3d2496d5954c6da51d784d857809165bf709ddbc3528c550fc4867db6",
+      "available_asset_ids": [
+        "9556775541f9764aeffcb0c08c72541b634f4481f7fbe549e1b16765971ee713"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "0289eeeb8e1d30b65d3bb574081bbe4badf5daaeaeccbdd567b7601e437d5a6f"
+    },
+    {
+      "case_id": "mermaid-js__mermaid-6944",
+      "source_result_sha256": "eb961bcd11897f690a89994a6f02910243faa64ec179fdda7c85cb0a2ebab438",
+      "source_packet_sha256": "f83342e614d01166b09738e54f9b7b1c50a7bbba32a0a2d100d32e16a4368d72",
+      "source_archive_sha256": "0767bdd9aed3473c1ed162d0f8a9d04d67553143451aff49e506e116ed9448db",
+      "problem_statement_sha256": "12909673a0e578ba8a6cc1def18592a278d2b05fbf001319c344132bd0a02cf1",
+      "available_asset_ids": [
+        "4486ebf35bc780dcb230437b37c1f221e9196b11fc691aeeeb70c80128032ca6"
+      ],
+      "source_media_binding_status": "valid",
+      "source_media_binding_error": null,
+      "eligible_for_model_call": true,
+      "case_binding_sha256": "4798726d4ca65e8d4ec31719e5e69abdb9a908ebbebbbd807047974e2b7f559d"
+    }
+  ],
+  "expected_case_calls": 5,
+  "semantic_attempt_limit_per_case": 2,
+  "transport_attempt_limit_per_semantic_call": 2,
+  "maximum_api_requests": 20,
+  "authorized": true
+}

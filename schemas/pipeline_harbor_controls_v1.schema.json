@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pipeline-harbor-controls-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "mode", "instance_id", "task_sha256",
+    "harbor_task_checksum", "empty_reward", "gold_reward", "exception_count",
+    "negative_controls", "runs"
+  ],
+  "properties": {
+    "schema_version": {"const": "pipeline-harbor-controls-v1"},
+    "mode": {"enum": ["simulation", "real"]},
+    "instance_id": {"type": "string", "minLength": 1},
+    "task_sha256": {"$ref": "#/$defs/sha256"},
+    "harbor_task_checksum": {"$ref": "#/$defs/sha256"},
+    "empty_reward": {"const": 0},
+    "gold_reward": {"const": 1},
+    "exception_count": {"const": 0},
+    "negative_controls": {"$ref": "#/$defs/binding"},
+    "runs": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/baselineRun"},
+        {"$ref": "#/$defs/oracleRun"}
+      ],
+      "items": false
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "runBase": {
+      "type": "object", "additionalProperties": false,
+      "required": ["role", "agent", "task_checksum", "reward", "result", "verifier_result"],
+      "properties": {
+        "role": {"enum": ["baseline_nop", "oracle"]},
+        "agent": {"enum": ["nop", "oracle"]},
+        "task_checksum": {"$ref": "#/$defs/sha256"},
+        "reward": {"enum": [0, 1]},
+        "result": {"$ref": "#/$defs/binding"},
+        "verifier_result": {"$ref": "#/$defs/binding"}
+      }
+    },
+    "baselineRun": {"allOf": [{"$ref": "#/$defs/runBase"}, {"properties": {"role": {"const": "baseline_nop"}, "agent": {"const": "nop"}, "reward": {"const": 0}}}]},
+    "oracleRun": {"allOf": [{"$ref": "#/$defs/runBase"}, {"properties": {"role": {"const": "oracle"}, "agent": {"const": "oracle"}, "reward": {"const": 1}}}]}
+  }
+}

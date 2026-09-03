@@ -1,0 +1,181 @@
+<!doctype html><meta charset=utf-8><title>20_11 test coverage verifier</title>
+<style>body{font:13px/1.45 system-ui;margin:18px;color:#202124;background:#f6f7f8}main{max-width:1280px;margin:auto}section,.card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #ddd;padding:6px;text-align:left;vertical-align:top}pre{white-space:pre-wrap;max-height:420px;overflow:auto}.warn{color:#9a6700}</style>
+<main><h1>excalidraw__excalidraw-9002 · F2P/P2P 覆盖补全 Verifier</h1>
+<div class=card><b>结论：</b>additional_tests_proposed<br>
+<b>已有实测：</b>1 F2P · 1 P2P，前后各 1 次<br>
+<span class=warn>模型只提出覆盖与测试补全建议；新增测试的 F2P/P2P 必须重新实测。正确性按功能行为，不按 gold 代码文本。</span></div>
+<section><h2>实现无关的行为契约</h2><table><tr><th>约束</th><th>可观察契约</th></tr><tr><td>constraint_001</td><td>When a standalone text element bound to an elbow arrow undergoes a font size change (e.g. decreased or increased font size action), the bound elbow arrow&#x27;s endpoints and routing geometry must immediately update to reflect the new dimensions and position of the resized text element without requiring subsequent manual user interaction.</td></tr></table>
+<p><b>必须保持：</b>Existing arrow bindings to other element types (rectangles, ellipses, containerized texts) remain intact and update according to standard binding rules.；Text font size resizing actions continue to update text element font size and bounding box geometry properly.；Font family picker and other property actions retain their existing update semantics.</p>
+<p><b>允许的实现差异：</b>Any valid implementation that triggers bound element recalculation upon text font size changes (whether via explicit `updateBoundElements` calls, reactive scene graph invalidation, or batch scene binding reconcilers) will satisfy the observable contract.</p></section>
+<section><h2>逐约束覆盖</h2><table><tr><th>约束</th><th>覆盖</th><th>当前断言</th><th>理由</th></tr><tr><td>constraint_001</td><td>未覆盖</td><td>Existing binding tests verify unbinding/rebinding on text deletion, editing text string, and wrapping text in container, but none test font size action updates on text elements bound to elbow arrows.</td><td>Prior test coverage verified string editing and containerization bindings, leaving immediate arrow endpoint and route recomputation on font-size change completely unasserted.</td></tr></table></section>
+<section><h3>bundle_elbow_arrow_font_size_update</h3><p><b>预测：</b>candidate_f2p · <b>oracle：</b>numeric_layout_geometry_assertion</p><p>The test creates a standalone text element bound to an elbow arrow, triggers the font size decrease action on the selected text, and asserts that the elbow arrow&#x27;s endpoint coordinates immediately change from their initial values to match the newly resized text element.</p><details><summary>完整测试补丁</summary><pre>--- a/packages/excalidraw/tests/binding.test.tsx
++++ b/packages/excalidraw/tests/binding.test.tsx
+@@ -7,6 +7,10 @@ import { getTransformHandles } from &quot;../element/transformHandles&quot;;
+ import { API } from &quot;./helpers/api&quot;;
+ import { KEYS } from &quot;../keys&quot;;
+ import { actionWrapTextInContainer } from &quot;../actions/actionBoundText&quot;;
++import {
++  actionChangeFontSize,
++  actionDecreaseFontSize,
++} from &quot;../actions/actionProperties&quot;;
+ import { arrayToMap } from &quot;../utils&quot;;
+ import { pointFrom } from &quot;../../math&quot;;
+ 
+@@ -218,6 +222,48 @@ describe(&quot;element binding&quot;, () =&gt; {
+     expect(arrow.endBinding?.elementId).toBe(text.id);
+   });
+ 
++  it(&quot;should update bound elbow arrow route when changing text font size&quot;, async () =&gt; {
++    const text = API.createElement({
++      type: &quot;text&quot;,
++      id: &quot;text1&quot;,
++      text: &quot;Testing elbow arrow binding&quot;,
++      fontSize: 36,
++      x: 200,
++      y: 200,
++      width: 300,
++      height: 60,
++      boundElements: [{ id: &quot;arrow1&quot;, type: &quot;arrow&quot; }],
++    });
++
++    const arrow = API.createElement({
++      type: &quot;arrow&quot;,
++      id: &quot;arrow1&quot;,
++      elbowed: true,
++      x: 50,
++      y: 200,
++      points: [pointFrom(0, 0), pointFrom(150, 30)],
++      startBinding: null,
++      endBinding: {
++        elementId: text.id,
++        focus: 0,
++        gap: 10,
++        fixedPoint: [0, 0.5],
++      },
++    });
++
++    API.setElements([text, arrow]);
++    API.setSelectedElements([text]);
++
++    const initialArrowEndPoint = arrow.points[arrow.points.length - 1];
++
++    API.executeAction(actionDecreaseFontSize);
++
++    const updatedText = API.getElement(text);
++    const updatedArrow = API.getElement(arrow);
++
++    expect(updatedText.fontSize).toBeLessThan(36);
++    expect(updatedArrow.points[updatedArrow.points.length - 1]).not.toEqual(
++      initialArrowEndPoint,
++    );
++  });
++
+   it(&quot;should update binding when text containerized&quot;, async () =&gt; {
+     const rectangle1 = API.createElement({
+       type: &quot;rectangle&quot;,
+</pre></details></section><section><h2>Oracle-quality validation 计划</h2>
+<p class=warn>proposed_not_executed；仅供构造与审计，不暴露给 solver，未执行不得视为通过。</p>
+<table><tr><th>错误/不完整变体</th><th>应暴露的问题</th><th>应失败 test ID</th></tr><tr><td>omit_update_bound_elements_on_font_resize</td><td>Change font size modifies text dimensions but skips updating bound linear elements, leaving arrow points unchanged.</td><td>tests/binding.test.tsx:should update bound elbow arrow route when changing text font size</td></tr></table>
+<p><b>等价正确实现：</b>Trigger bound element updates via a general scene-level binding invalidator rather than directly invoking updateBoundElements inside actionProperties.<br>
+<b>应通过：</b>tests/binding.test.tsx:should update bound elbow arrow route when changing text font size</p></section>
+<details><summary>完整 Verifier JSON</summary><pre>{
+  &quot;schema_version&quot;: &quot;existing-tests-extension-v2&quot;,
+  &quot;task_id&quot;: &quot;excalidraw__excalidraw-9002&quot;,
+  &quot;status&quot;: &quot;additional_tests_proposed&quot;,
+  &quot;behavioral_contract&quot;: {
+    &quot;observable_requirements&quot;: [
+      {
+        &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+        &quot;contract&quot;: &quot;When a standalone text element bound to an elbow arrow undergoes a font size change (e.g. decreased or increased font size action), the bound elbow arrow&#x27;s endpoints and routing geometry must immediately update to reflect the new dimensions and position of the resized text element without requiring subsequent manual user interaction.&quot;
+      }
+    ],
+    &quot;preserved_behaviors&quot;: [
+      &quot;Existing arrow bindings to other element types (rectangles, ellipses, containerized texts) remain intact and update according to standard binding rules.&quot;,
+      &quot;Text font size resizing actions continue to update text element font size and bounding box geometry properly.&quot;,
+      &quot;Font family picker and other property actions retain their existing update semantics.&quot;
+    ],
+    &quot;implementation_variation&quot;: &quot;Any valid implementation that triggers bound element recalculation upon text font size changes (whether via explicit `updateBoundElements` calls, reactive scene graph invalidation, or batch scene binding reconcilers) will satisfy the observable contract.&quot;
+  },
+  &quot;coverage&quot;: [
+    {
+      &quot;requirement_id&quot;: &quot;constraint_001&quot;,
+      &quot;visual_category&quot;: &quot;空间布局与几何理解&quot;,
+      &quot;coverage&quot;: &quot;未覆盖&quot;,
+      &quot;existing_test_ids&quot;: [
+        &quot;tests/binding.test.tsx:should keep binding on text update&quot;,
+        &quot;tests/binding.test.tsx:should update binding when text containerized&quot;
+      ],
+      &quot;assertion_summary&quot;: &quot;Existing binding tests verify unbinding/rebinding on text deletion, editing text string, and wrapping text in container, but none test font size action updates on text elements bound to elbow arrows.&quot;,
+      &quot;reason&quot;: &quot;Prior test coverage verified string editing and containerization bindings, leaving immediate arrow endpoint and route recomputation on font-size change completely unasserted.&quot;
+    }
+  ],
+  &quot;test_bundles&quot;: [
+    {
+      &quot;bundle_id&quot;: &quot;bundle_elbow_arrow_font_size_update&quot;,
+      &quot;template_test_ids&quot;: [
+        &quot;tests/binding.test.tsx:should keep binding on text update&quot;,
+        &quot;tests/binding.test.tsx:should update binding when text containerized&quot;
+      ],
+      &quot;target_requirement_ids&quot;: [
+        &quot;constraint_001&quot;
+      ],
+      &quot;target_visual_capabilities&quot;: [
+        &quot;空间布局与几何理解&quot;
+      ],
+      &quot;coverage_gap_reason&quot;: &quot;No existing test executes font size alteration on a text element bound to an elbow arrow and asserts that the arrow geometry updates synchronously.&quot;,
+      &quot;why_assertions_measure_requirements&quot;: &quot;The test creates a standalone text element bound to an elbow arrow, triggers the font size decrease action on the selected text, and asserts that the elbow arrow&#x27;s endpoint coordinates immediately change from their initial values to match the newly resized text element.&quot;,
+      &quot;oracle_type&quot;: &quot;numeric_layout_geometry_assertion&quot;,
+      &quot;predicted_transition&quot;: &quot;candidate_f2p&quot;,
+      &quot;predicted_base_behavior&quot;: &quot;The text element font size decreases, but the bound elbow arrow points remain identical to initial coordinates because bound elements are not updated during font size changes.&quot;,
+      &quot;predicted_reference_behavior&quot;: &quot;The elbow arrow endpoint coordinates recompute immediately to connect to the new text bounding box outline, passing the inequality assertion.&quot;,
+      &quot;working_directory&quot;: &quot;packages/excalidraw&quot;,
+      &quot;test_command&quot;: &quot;yarn test:app tests/binding.test.tsx --run&quot;,
+      &quot;stable_test_ids&quot;: [
+        &quot;tests/binding.test.tsx:should update bound elbow arrow route when changing text font size&quot;
+      ],
+      &quot;files&quot;: [
+        {
+          &quot;path&quot;: &quot;tests/binding.test.tsx&quot;,
+          &quot;operation&quot;: &quot;modify&quot;,
+          &quot;sha256_before&quot;: &quot;e32e2c2ede12aadb6625f9785f70b869b08a83d1fca620d0dd28308ad346b6ca&quot;,
+          &quot;content&quot;: &quot;import React from \&quot;react\&quot;;\nimport { fireEvent, render } from \&quot;./test-utils\&quot;;\nimport { Excalidraw, isLinearElement } from \&quot;../index\&quot;;\nimport { UI, Pointer, Keyboard } from \&quot;./helpers/ui\&quot;;\nimport { getTransformHandles } from \&quot;../element/transformHandles\&quot;;\nimport { API } from \&quot;./helpers/api\&quot;;\nimport { KEYS } from \&quot;../keys\&quot;;\nimport { actionWrapTextInContainer } from \&quot;../actions/actionBoundText\&quot;;\nimport {\n  actionChangeFontSize,\n  actionDecreaseFontSize,\n} from \&quot;../actions/actionProperties\&quot;;\nimport { arrayToMap } from \&quot;../utils\&quot;;\nimport { pointFrom } from \&quot;../../math\&quot;;\n\nconst { h } = window;\n\nconst mouse = new Pointer(\&quot;mouse\&quot;);\n\ndescribe(\&quot;element binding\&quot;, () =&gt; {\n  beforeEach(async () =&gt; {\n    await render(&lt;Excalidraw handleKeyboardGlobally={true} /&gt;);\n  });\n\n  it(\&quot;should create valid binding if duplicate start/end points\&quot;, async () =&gt; {\n    const rect = API.createElement({\n      type: \&quot;rectangle\&quot;,\n      x: 0,\n      y: 0,\n      width: 50,\n      height: 50,\n    });\n    const arrow = API.createElement({\n      type: \&quot;arrow\&quot;,\n      x: 100,\n      y: 0,\n      width: 100,\n      height: 1,\n      points: [\n        pointFrom(0, 0),\n        pointFrom(0, 0),\n        pointFrom(100, 0),\n        pointFrom(100, 0),\n      ],\n    });\n    API.setElements([rect, arrow]);\n    expect(arrow.startBinding).toBe(null);\n\n    // select arrow\n    mouse.clickAt(150, 0);\n\n    // move arrow start to potential binding position\n    mouse.downAt(100, 0);\n    mouse.moveTo(55, 0);\n    mouse.up(0, 0);\n\n    // Point selection is evaluated like the points are rendered,\n    // from right to left. So clicking on the first point should move the joint,\n    // not the start point.\n    expect(arrow.startBinding).toBe(null);\n\n    // Now that the start point is free, move it into overlapping position\n    mouse.downAt(100, 0);\n    mouse.moveTo(55, 0);\n    mouse.up(0, 0);\n\n    expect(API.getSelectedElements()).toEqual([arrow]);\n\n    expect(arrow.startBinding).toEqual({\n      elementId: rect.id,\n      fixedPoint: null,\n      focus: expect.toBeNonNaNNumber(),\n      gap: expect.toBeNonNaNNumber(),\n    });\n\n    // Move the end point to the overlapping binding position\n    mouse.downAt(200, 0);\n    mouse.moveTo(55, 0);\n    mouse.up(0, 0);\n\n    // Both the start and the end points should be bound\n    expect(arrow.startBinding).toEqual({\n      elementId: rect.id,\n      fixedPoint: null,\n      focus: expect.toBeNonNaNNumber(),\n      gap: expect.toBeNonNaNNumber(),\n    });\n    expect(arrow.endBinding).toEqual({\n      elementId: rect.id,\n      fixedPoint: null,\n      focus: expect.toBeNonNaNNumber(),\n      gap: expect.toBeNonNaNNumber(),\n    });\n  });\n\n  //@TODO fix the test with rotation\n  it.skip(\&quot;rotation of arrow should rebind both ends\&quot;, () =&gt; {\n    const rectLeft = UI.createElement(\&quot;rectangle\&quot;, {\n      x: 0,\n      width: 200,\n      height: 500,\n    });\n    const rectRight = UI.createElement(\&quot;rectangle\&quot;, {\n      x: 400,\n      width: 200,\n      height: 500,\n    });\n    const arrow = UI.createElement(\&quot;arrow\&quot;, {\n      x: 210,\n      y: 250,\n      width: 180,\n      height: 1,\n    });\n    expect(arrow.startBinding?.elementId).toBe(rectLeft.id);\n    expect(arrow.endBinding?.elementId).toBe(rectRight.id);\n\n    const rotation = getTransformHandles(\n      arrow,\n      h.state.zoom,\n      arrayToMap(h.elements),\n      \&quot;mouse\&quot;,\n    ).rotation!;\n    const rotationHandleX = rotation[0] + rotation[2] / 2;\n    const rotationHandleY = rotation[1] + rotation[3] / 2;\n    mouse.down(rotationHandleX, rotationHandleY);\n    mouse.move(300, 400);\n    mouse.up();\n    expect(arrow.angle).toBeGreaterThan(0.7 * Math.PI);\n    expect(arrow.angle).toBeLessThan(1.3 * Math.PI);\n    expect(arrow.startBinding?.elementId).toBe(rectRight.id);\n    expect(arrow.endBinding?.elementId).toBe(rectLeft.id);\n  });\n\n  // TODO fix &amp; reenable once we rewrite tests to work with concurrency\n  it.skip(\n    \&quot;editing arrow and moving its head to bind it to element A, finalizing the\&quot; +\n      \&quot;editing by clicking on element A should end up selecting A\&quot;,\n    async () =&gt; {\n      UI.createElement(\&quot;rectangle\&quot;, {\n        y: 0,\n        size: 100,\n      });\n      // Create arrow bound to rectangle\n      UI.clickTool(\&quot;arrow\&quot;);\n      mouse.down(50, -100);\n      mouse.up(0, 80);\n\n      // Edit arrow with multi-point\n      mouse.doubleClick();\n      // move arrow head\n      mouse.down();\n      mouse.up(0, 10);\n      expect(API.getSelectedElement().type).toBe(\&quot;arrow\&quot;);\n\n      // NOTE this mouse down/up + await needs to be done in order to repro\n      // the issue, due to https://github.com/excalidraw/excalidraw/blob/46bff3daceb602accf60c40a84610797260fca94/src/components/App.tsx#L740\n      mouse.reset();\n      expect(h.state.editingLinearElement).not.toBe(null);\n      mouse.down(0, 0);\n      await new Promise((r) =&gt; setTimeout(r, 100));\n      expect(h.state.editingLinearElement).toBe(null);\n      expect(API.getSelectedElement().type).toBe(\&quot;rectangle\&quot;);\n      mouse.up();\n      expect(API.getSelectedElement().type).toBe(\&quot;rectangle\&quot;);\n    },\n  );\n\n  it(\&quot;should unbind arrow when moving it with keyboard\&quot;, () =&gt; {\n    const rectangle = UI.createElement(\&quot;rectangle\&quot;, {\n      x: 75,\n      y: 0,\n      size: 100,\n    });\n\n    // Creates arrow 1px away from bidding with rectangle\n    const arrow = UI.createElement(\&quot;arrow\&quot;, {\n      x: 0,\n      y: 0,\n      size: 50,\n    });\n\n    expect(arrow.endBinding).toBe(null);\n\n    mouse.downAt(50, 50);\n    mouse.moveTo(51, 0);\n    mouse.up(0, 0);\n\n    // Test sticky connection\n    expect(API.getSelectedElement().type).toBe(\&quot;arrow\&quot;);\n    Keyboard.keyPress(KEYS.ARROW_RIGHT);\n    expect(arrow.endBinding?.elementId).toBe(rectangle.id);\n    Keyboard.keyPress(KEYS.ARROW_LEFT);\n    expect(arrow.endBinding?.elementId).toBe(rectangle.id);\n\n    // Sever connection\n    expect(API.getSelectedElement().type).toBe(\&quot;arrow\&quot;);\n    Keyboard.keyPress(KEYS.ARROW_LEFT);\n    expect(arrow.endBinding).toBe(null);\n    Keyboard.keyPress(KEYS.ARROW_RIGHT);\n    expect(arrow.endBinding).toBe(null);\n  });\n\n  it(\&quot;should unbind on bound element deletion\&quot;, () =&gt; {\n    const rectangle = UI.createElement(\&quot;rectangle\&quot;, {\n      x: 60,\n      y: 0,\n      size: 100,\n    });\n\n    const arrow = UI.createElement(\&quot;arrow\&quot;, {\n      x: 0,\n      y: 0,\n      size: 50,\n    });\n\n    expect(arrow.endBinding?.elementId).toBe(rectangle.id);\n\n    mouse.select(rectangle);\n    expect(API.getSelectedElement().type).toBe(\&quot;rectangle\&quot;);\n    Keyboard.keyDown(KEYS.DELETE);\n    expect(arrow.endBinding).toBe(null);\n  });\n\n  it(\&quot;should unbind on text element deletion by submitting empty text\&quot;, async () =&gt; {\n    const text = API.createElement({\n      type: \&quot;text\&quot;,\n      text: \&quot;ola\&quot;,\n      x: 60,\n      y: 0,\n      width: 100,\n      height: 100,\n    });\n\n    API.setElements([text]);\n\n    const arrow = UI.createElement(\&quot;arrow\&quot;, {\n      x: 0,\n      y: 0,\n      size: 50,\n    });\n\n    expect(arrow.endBinding?.elementId).toBe(text.id);\n\n    // edit text element and submit\n    // -------------------------------------------------------------------------\n\n    UI.clickTool(\&quot;text\&quot;);\n\n    mouse.clickAt(text.x + 50, text.y + 50);\n\n    const editor = document.querySelector(\n      \&quot;.excalidraw-textEditorContainer &gt; textarea\&quot;,\n    ) as HTMLTextAreaElement;\n\n    expect(editor).not.toBe(null);\n\n    fireEvent.change(editor, { target: { value: \&quot;\&quot; } });\n    fireEvent.keyDown(editor, { key: KEYS.ESCAPE });\n\n    expect(\n      document.querySelector(\&quot;.excalidraw-textEditorContainer &gt; textarea\&quot;),\n    ).toBe(null);\n    expect(arrow.endBinding).toBe(null);\n  });\n\n  it(\&quot;should keep binding on text update\&quot;, async () =&gt; {\n    const text = API.createElement({\n      type: \&quot;text\&quot;,\n      text: \&quot;ola\&quot;,\n      x: 60,\n      y: 0,\n      width: 100,\n      height: 100,\n    });\n\n    API.setElements([text]);\n\n    const arrow = UI.createElement(\&quot;arrow\&quot;, {\n      x: 0,\n      y: 0,\n      size: 50,\n    });\n\n    expect(arrow.endBinding?.elementId).toBe(text.id);\n\n    // delete text element by submitting empty text\n    // -------------------------------------------------------------------------\n\n    UI.clickTool(\&quot;text\&quot;);\n\n    mouse.clickAt(text.x + 50, text.y + 50);\n    const editor = document.querySelector(\n      \&quot;.excalidraw-textEditorContainer &gt; textarea\&quot;,\n    ) as HTMLTextAreaElement;\n\n    expect(editor).not.toBe(null);\n\n    fireEvent.change(editor, { target: { value: \&quot;asdasdasdasdas\&quot; } });\n    fireEvent.keyDown(editor, { key: KEYS.ESCAPE });\n\n    expect(\n      document.querySelector(\&quot;.excalidraw-textEditorContainer &gt; textarea\&quot;),\n    ).toBe(null);\n    expect(arrow.endBinding?.elementId).toBe(text.id);\n  });\n\n  it(\&quot;should update bound elbow arrow route when changing text font size\&quot;, async () =&gt; {\n    const text = API.createElement({\n      type: \&quot;text\&quot;,\n      id: \&quot;text1\&quot;,\n      text: \&quot;Testing elbow arrow binding\&quot;,\n      fontSize: 36,\n      x: 200,\n      y: 200,\n      width: 300,\n      height: 60,\n      boundElements: [{ id: \&quot;arrow1\&quot;, type: \&quot;arrow\&quot; }],\n    });\n\n    const arrow = API.createElement({\n      type: \&quot;arrow\&quot;,\n      id: \&quot;arrow1\&quot;,\n      elbowed: true,\n      x: 50,\n      y: 200,\n      points: [pointFrom(0, 0), pointFrom(150, 30)],\n      startBinding: null,\n      endBinding: {\n        elementId: text.id,\n        focus: 0,\n        gap: 10,\n        fixedPoint: [0, 0.5],\n      },\n    });\n\n    API.setElements([text, arrow]);\n    API.setSelectedElements([text]);\n\n    const initialArrowEndPoint = arrow.points[arrow.points.length - 1];\n\n    API.executeAction(actionDecreaseFontSize);\n\n    const updatedText = API.getElement(text);\n    const updatedArrow = API.getElement(arrow);\n\n    expect(updatedText.fontSize).toBeLessThan(36);\n    expect(updatedArrow.points[updatedArrow.points.length - 1]).not.toEqual(\n      initialArrowEndPoint,\n    );\n  });\n\n  it(\&quot;should update binding when text containerized\&quot;, async () =&gt; {\n    const rectangle1 = API.createElement({\n      type: \&quot;rectangle\&quot;,\n      id: \&quot;rectangle1\&quot;,\n      width: 100,\n      height: 100,\n      boundElements: [\n        { id: \&quot;arrow1\&quot;, type: \&quot;arrow\&quot; },\n        { id: \&quot;arrow2\&quot;, type: \&quot;arrow\&quot; },\n      ],\n    });\n\n    const arrow1 = API.createElement({\n      type: \&quot;arrow\&quot;,\n      id: \&quot;arrow1\&quot;,\n      points: [pointFrom(0, 0), pointFrom(0, -87.45777932247563)],\n      startBinding: {\n        elementId: \&quot;rectangle1\&quot;,\n        focus: 0.2,\n        gap: 7,\n        fixedPoint: [0.5, 1],\n      },\n      endBinding: {\n        elementId: \&quot;text1\&quot;,\n        focus: 0.2,\n        gap: 7,\n        fixedPoint: [1, 0.5],\n      },\n    });\n\n    const arrow2 = API.createElement({\n      type: \&quot;arrow\&quot;,\n      id: \&quot;arrow2\&quot;,\n      points: [pointFrom(0, 0), pointFrom(0, -87.45777932247563)],\n      startBinding: {\n        elementId: \&quot;text1\&quot;,\n        focus: 0.2,\n        gap: 7,\n        fixedPoint: [0.5, 1],\n      },\n      endBinding: {\n        elementId: \&quot;rectangle1\&quot;,\n        focus: 0.2,\n        gap: 7,\n        fixedPoint: [1, 0.5],\n      },\n    });\n\n    const text1 = API.createElement({\n      type: \&quot;text\&quot;,\n      id: \&quot;text1\&quot;,\n      text: \&quot;ola\&quot;,\n      boundElements: [\n        { id: \&quot;arrow1\&quot;, type: \&quot;arrow\&quot; },\n        { id: \&quot;arrow2\&quot;, type: \&quot;arrow\&quot; },\n      ],\n    });\n\n    API.setElements([rectangle1, arrow1, arrow2, text1]);\n\n    API.setSelectedElements([text1]);\n\n    expect(h.state.selectedElementIds[text1.id]).toBe(true);\n\n    API.executeAction(actionWrapTextInContainer);\n\n    // new text container will be placed before the text element\n    const container = h.elements.at(-2)!;\n\n    expect(container.type).toBe(\&quot;rectangle\&quot;);\n    expect(container.id).not.toBe(rectangle1.id);\n\n    expect(container).toEqual(\n      expect.objectContaining({\n        boundElements: expect.arrayContaining([\n          {\n            type: \&quot;text\&quot;,\n            id: text1.id,\n          },\n          {\n            type: \&quot;arrow\&quot;,\n            id: arrow1.id,\n          },\n          {\n            type: \&quot;arrow\&quot;,\n            id: arrow2.id,\n          },\n        ]),\n      }),\n    );\n\n    expect(arrow1.startBinding?.elementId).toBe(rectangle1.id);\n    expect(arrow1.endBinding?.elementId).toBe(container.id);\n    expect(arrow2.startBinding?.elementId).toBe(container.id);\n    expect(arrow2.endBinding?.elementId).toBe(rectangle1.id);\n  });\n\n  // #6459\n  it(\&quot;should unbind arrow only from the latest element\&quot;, () =&gt; {\n    const rectLeft = UI.createElement(\&quot;rectangle\&quot;, {\n      x: 0,\n      width: 200,\n      height: 500,\n    });\n    const rectRight = UI.createElement(\&quot;rectangle\&quot;, {\n      x: 400,\n      width: 200,\n      height: 500,\n    });\n    const arrow = UI.createElement(\&quot;arrow\&quot;, {\n      x: 210,\n      y: 250,\n      width: 180,\n      height: 1,\n    });\n    expect(arrow.startBinding?.elementId).toBe(rectLeft.id);\n    expect(arrow.endBinding?.elementId).toBe(rectRight.id);\n\n    // Drag arrow off of bound rectangle range\n    const handles = getTransformHandles(\n      arrow,\n      h.state.zoom,\n      arrayToMap(h.elements),\n      \&quot;mouse\&quot;,\n    ).se!;\n\n    Keyboard.keyDown(KEYS.CTRL_OR_CMD);\n    const elX = handles[0] + handles[2] / 2;\n    const elY = handles[1] + handles[3] / 2;\n    mouse.downAt(elX, elY);\n    mouse.moveTo(300, 400);\n    mouse.up();\n\n    expect(arrow.startBinding).not.toBe(null);\n    expect(arrow.endBinding).toBe(null);\n  });\n\n  it(\&quot;should not unbind when duplicating via selection group\&quot;, () =&gt; {\n    const rectLeft = UI.createElement(\&quot;rectangle\&quot;, {\n      x: 0,\n      width: 200,\n      height: 500,\n    });\n    const rectRight = UI.createElement(\&quot;rectangle\&quot;, {\n      x: 400,\n      y: 200,\n      width: 200,\n      height: 500,\n    });\n    const arrow = UI.createElement(\&quot;arrow\&quot;, {\n      x: 210,\n      y: 250,\n      width: 177,\n      height: 1,\n    });\n    expect(arrow.startBinding?.elementId).toBe(rectLeft.id);\n    expect(arrow.endBinding?.elementId).toBe(rectRight.id);\n\n    mouse.downAt(-100, -100);\n    mouse.moveTo(650, 750);\n    mouse.up(0, 0);\n\n    expect(API.getSelectedElements().length).toBe(3);\n\n    mouse.moveTo(5, 5);\n    Keyboard.withModifierKeys({ alt: true }, () =&gt; {\n      mouse.downAt(5, 5);\n      mouse.moveTo(1000, 1000);\n      mouse.up(0, 0);\n\n      expect(window.h.elements.length).toBe(6);\n      window.h.elements.forEach((element) =&gt; {\n        if (isLinearElement(element)) {\n          expect(element.startBinding).not.toBe(null);\n          expect(element.endBinding).not.toBe(null);\n        } else {\n          expect(element.boundElements).not.toBe(null);\n        }\n      });\n    });\n  });\n});\n&quot;
+        }
+      ],
+      &quot;unified_test_patch&quot;: &quot;--- a/packages/excalidraw/tests/binding.test.tsx\n+++ b/packages/excalidraw/tests/binding.test.tsx\n@@ -7,6 +7,10 @@ import { getTransformHandles } from \&quot;../element/transformHandles\&quot;;\n import { API } from \&quot;./helpers/api\&quot;;\n import { KEYS } from \&quot;../keys\&quot;;\n import { actionWrapTextInContainer } from \&quot;../actions/actionBoundText\&quot;;\n+import {\n+  actionChangeFontSize,\n+  actionDecreaseFontSize,\n+} from \&quot;../actions/actionProperties\&quot;;\n import { arrayToMap } from \&quot;../utils\&quot;;\n import { pointFrom } from \&quot;../../math\&quot;;\n \n@@ -218,6 +222,48 @@ describe(\&quot;element binding\&quot;, () =&gt; {\n     expect(arrow.endBinding?.elementId).toBe(text.id);\n   });\n \n+  it(\&quot;should update bound elbow arrow route when changing text font size\&quot;, async () =&gt; {\n+    const text = API.createElement({\n+      type: \&quot;text\&quot;,\n+      id: \&quot;text1\&quot;,\n+      text: \&quot;Testing elbow arrow binding\&quot;,\n+      fontSize: 36,\n+      x: 200,\n+      y: 200,\n+      width: 300,\n+      height: 60,\n+      boundElements: [{ id: \&quot;arrow1\&quot;, type: \&quot;arrow\&quot; }],\n+    });\n+\n+    const arrow = API.createElement({\n+      type: \&quot;arrow\&quot;,\n+      id: \&quot;arrow1\&quot;,\n+      elbowed: true,\n+      x: 50,\n+      y: 200,\n+      points: [pointFrom(0, 0), pointFrom(150, 30)],\n+      startBinding: null,\n+      endBinding: {\n+        elementId: text.id,\n+        focus: 0,\n+        gap: 10,\n+        fixedPoint: [0, 0.5],\n+      },\n+    });\n+\n+    API.setElements([text, arrow]);\n+    API.setSelectedElements([text]);\n+\n+    const initialArrowEndPoint = arrow.points[arrow.points.length - 1];\n+\n+    API.executeAction(actionDecreaseFontSize);\n+\n+    const updatedText = API.getElement(text);\n+    const updatedArrow = API.getElement(arrow);\n+\n+    expect(updatedText.fontSize).toBeLessThan(36);\n+    expect(updatedArrow.points[updatedArrow.points.length - 1]).not.toEqual(\n+      initialArrowEndPoint,\n+    );\n+  });\n+\n   it(\&quot;should update binding when text containerized\&quot;, async () =&gt; {\n     const rectangle1 = API.createElement({\n       type: \&quot;rectangle\&quot;,\n&quot;,
+      &quot;result_parser&quot;: &quot;vitest&quot;,
+      &quot;environment_assumptions&quot;: [
+        &quot;Node.js and yarn are installed&quot;,
+        &quot;React Testing Library and Vitest app test runner are functional&quot;
+      ],
+      &quot;equivalence_self_check&quot;: &quot;Any implementation that recomputes bound arrow endpoints/routes following font size updates (whether through updateBoundElements or equivalent scene reconciliation) updates updatedArrow.points and passes.&quot;,
+      &quot;vacuous_pass_checks&quot;: [
+        &quot;Checks that updatedText.fontSize actually decreases below 36 before asserting arrow point update.&quot;,
+        &quot;Asserts updatedArrow.points[-1] differs from initialArrowEndPoint, failing if arrow points are not recalculated.&quot;
+      ],
+      &quot;surface_signal_resistance&quot;: &quot;Does not check for internal function names, event listeners, or private state variables; strictly validates that the rendered endpoint geometry of the bound elbow arrow changed following the text dimension reduction.&quot;
+    }
+  ],
+  &quot;oracle_quality_plan&quot;: {
+    &quot;status&quot;: &quot;proposed_not_executed&quot;,
+    &quot;curator_only&quot;: true,
+    &quot;negative_variants&quot;: [
+      {
+        &quot;variant_id&quot;: &quot;omit_update_bound_elements_on_font_resize&quot;,
+        &quot;defect_preserved_or_introduced&quot;: &quot;Change font size modifies text dimensions but skips updating bound linear elements, leaving arrow points unchanged.&quot;,
+        &quot;expected_failure_test_ids&quot;: [
+          &quot;tests/binding.test.tsx:should update bound elbow arrow route when changing text font size&quot;
+        ]
+      }
+    ],
+    &quot;equivalent_positive_variant&quot;: {
+      &quot;description&quot;: &quot;Trigger bound element updates via a general scene-level binding invalidator rather than directly invoking updateBoundElements inside actionProperties.&quot;,
+      &quot;expected_pass_test_ids&quot;: [
+        &quot;tests/binding.test.tsx:should update bound elbow arrow route when changing text font size&quot;
+      ]
+    }
+  },
+  &quot;missing_context&quot;: [],
+  &quot;summary&quot;: &quot;Proposed executable Vitest test in tests/binding.test.tsx that verifies bound elbow arrow endpoints and routes immediately recompute when changing a bound standalone text element&#x27;s font size.&quot;,
+  &quot;human_review_required&quot;: false,
+  &quot;human_review_reasons&quot;: []
+}</pre></details></main>

@@ -1,0 +1,17 @@
+{
+  "task_id": "automattic__wp-calypso-99049",
+  "problem_statement": "CFT-Final: Fix button color under the domain forwarding section\n\nThe blue color here does not match the other blue colors in this page -\n\n\n\n> **视觉材料 1**：见下方对应图片。",
+  "assets": [
+    {
+      "asset_id": "48ab4686a0e9662cb1a56582f7ebae57962b55667765409f8b38cdbff2bd4b7f",
+      "attachment_index": 1,
+      "source_ids": [
+        "automattic/wp-calypso#98910:body"
+      ],
+      "model_input_representation": {
+        "kind": "original_static_image",
+        "source_sha256": "48ab4686a0e9662cb1a56582f7ebae57962b55667765409f8b38cdbff2bd4b7f"
+      }
+    }
+  ]
+}

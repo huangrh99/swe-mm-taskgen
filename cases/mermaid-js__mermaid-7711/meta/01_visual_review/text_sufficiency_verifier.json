@@ -1,0 +1,137 @@
+{
+  "case_id": "mermaid-js__mermaid-7711",
+  "repository": "mermaid-js/mermaid",
+  "pr_number": 7711,
+  "pr_id": "mermaid-js/mermaid#7711",
+  "status": "complete",
+  "ineligible_reason": null,
+  "packet": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_only_retry_01/20260902T102747885930Z/16_06_packet_0001.json",
+  "packet_sha256": "80452a2033c1ba9ce065417800e16833eece761219f3929b30f11341c1d0e41a",
+  "curator_assets": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_only_retry_01/20260902T102747885930Z/16_06_curator_assets_0001.json",
+  "curator_assets_sha256": "add676d170098f5567eff95abd807aa742f350821efe97036513412e2e42b613",
+  "bound_schema": "/Users/bytedance/Documents/ChatGPT/kimi/crawler-output/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_only_retry_01/20260902T102747885930Z/16_06_bound_schema_0001.json",
+  "bound_schema_sha256": "e9fa89776a5dc2ea301cb9932c134e8588e20e483c3b53656ac42191903e6a0d",
+  "visual_verifier": null,
+  "annotation": {
+    "schema_version": "text-only-repair-sufficiency-v1",
+    "case_id": "mermaid-js__mermaid-7711",
+    "evidence": {
+      "problem_sources_usable": "yes",
+      "evidence_quotes": [
+        {
+          "source_id": "mermaid-js/mermaid#6336:title",
+          "quote": "Self-edges/loops look very awkward in state diagrams"
+        },
+        {
+          "source_id": "mermaid-js/mermaid#6336:body",
+          "quote": "In state diagrams where a state connects to itself, it looks, well... ugly. Like the edge was about to point to a different node, but then realized it was heading in the wrong direction and doubled-back on itself."
+        },
+        {
+          "source_id": "mermaid-js/mermaid#6336:body",
+          "quote": "The salient differences are the fact that the edge is to the _side_ of the node, and that it doesn't have the unfortunate kink in it."
+        }
+      ],
+      "limitations": [
+        "未提供文件索引和代码内容，且截图等视觉参考已被扣留",
+        "自环边的平滑度与具体几何布局参数仅有定性主观描述，无精确定义"
+      ]
+    },
+    "localization": {
+      "target_localizable": "unknown",
+      "component": "stateDiagram / edge rendering layout",
+      "candidate_paths": [],
+      "reason": "提供的 baseline_file_index 为空，无法从索引中精确指定候选文件路径。"
+    },
+    "repair_contract": {
+      "completeness": "partial",
+      "current_behavior": "状态图中指向自身的状态边（self-edge/loop）在渲染时呈现不自然的折返与拐点（kink）。",
+      "expected_behavior": "状态图中的自环边应更自然地布局在节点侧边，并消除不必要的曲折拐角。",
+      "explicit_constraints": [
+        "适用于 stateDiagram / stateDiagram-v2 中的自环连接 (Node --> Node)"
+      ],
+      "unresolved_variables": [
+        "自环曲线的具体几何控制点算法（如贝塞尔曲线半径、出入锚点位置）",
+        "自环边标签（label）的具体偏移和对齐规则"
+      ],
+      "reason": "问题描述主要通过主观视觉体验（如'awkward'、'ugly'）和 Graphviz 对比定性说明期望改善自环边渲染，但未给出精确的路径几何或布局坐标规范。"
+    },
+    "test_contract": {
+      "constructible": "no",
+      "assertions": [],
+      "missing_oracles": [
+        "自环边 SVG path 的精确 d 属性计算规则或控制点坐标",
+        "自环边与节点的具体出入锚点与切线方向"
+      ],
+      "reason": "纯文本仅提供定性外观期望，缺少可直接用于构建确定性断言的数值或几何断言依据。"
+    },
+    "counterfactual": {
+      "multiple_repairs_fit_text": "yes",
+      "examples": [
+        "在节点右侧绘制固定半径的圆弧形自环边并在线条上方居中放置标签",
+        "在节点右上角与右下角锚点间生成三次贝塞尔曲线自环并在线条外侧放置标签"
+      ],
+      "reason": "两种几何实现均消除了拐点并置于节点侧面，符合文本定性描述，但生成的渲染几何形态完全不同。"
+    },
+    "confidence": "high"
+  },
+  "text_decision": {
+    "policy_version": "visual-necessity-human-funnel-v1",
+    "empirical_visual_dependence": "not_tested",
+    "bucket": "visual_candidate",
+    "reason_code": "text_leaves_testable_contract_ambiguous"
+  },
+  "provider_annotation_normalization": {
+    "applied": true,
+    "removed_fields": [
+      "$schema"
+    ]
+  },
+  "reconciliation": {
+    "policy_version": "visual-necessity-human-funnel-v1",
+    "visual_bucket": "not_run",
+    "text_bucket": "visual_candidate",
+    "human_required_for_acceptance": true,
+    "agent_ablation_required_now": false,
+    "queue": "visual_verifier_pending",
+    "reason_code": "stage09_visual_judgment_missing"
+  },
+  "invocation": {
+    "backend": "gemini",
+    "model": "gemini-3.7-flash",
+    "requested_model": "gemini-3.7-flash",
+    "effort": "provider_auto",
+    "attempts": 1,
+    "usage": {
+      "completion_tokens": 883,
+      "prompt_tokens": 3409,
+      "total_tokens": 4760,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "reasoning_tokens": 468,
+      "traffic_type": "ON_DEMAND",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 3409
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 883
+        }
+      ]
+    },
+    "raw_response": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_only_retry_01/20260902T102747885930Z/16_case_0001/16_06_model_raw.json",
+    "raw_response_sha256": "35238d8c2df1478a666f73d2ca332545aa14a26f208830e72178410c43d756a5",
+    "provider_response": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_only_retry_01/20260902T102747885930Z/16_case_0001/10_provider_response_01.json",
+    "provider_response_sha256": "6ad0f0ba79323bc428e9bcbfb8223c79702e578d3349c2ec21789d032cbdf77b",
+    "request": "/Users/bytedance/Documents/ChatGPT/kimi/tmp/multimodal-2025/16_visual_necessity_selection/20260902_wave_10_text_only_retry_01/20260902T102747885930Z/16_case_0001/10_api_request.json",
+    "request_sha256": "7b13ca36a32068704f02315905e500bcd2339a00df6b92abf67b1e428054d7d9"
+  },
+  "elapsed_seconds": 23.97
+}

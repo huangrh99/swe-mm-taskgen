@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "task_id", "status", "repository_observations", "behavioral_contract", "test_bundle", "missing_context", "summary"],
+  "properties": {
+    "schema_version": {"const": "v4-test-constructor-v1"},
+    "task_id": {"type": "string"},
+    "status": {"enum": ["test_bundle_proposed", "existing_tests_sufficient", "insufficient_context", "no_executable_oracle"]},
+    "repository_observations": {
+      "type": "object", "additionalProperties": false,
+      "required": ["framework", "package_manager", "working_directory", "manifest_paths", "test_config_paths", "nearby_test_paths", "author_test_paths"],
+      "properties": {
+        "framework": {"type": "string"}, "package_manager": {"type": "string"}, "working_directory": {"type": "string"},
+        "manifest_paths": {"type": "array", "items": {"type": "string"}},
+        "test_config_paths": {"type": "array", "items": {"type": "string"}},
+        "nearby_test_paths": {"type": "array", "items": {"type": "string"}},
+        "author_test_paths": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "behavioral_contract": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object", "additionalProperties": false,
+        "required": ["requirement_id", "observable_behavior", "preserved_behavior", "oracle"],
+        "properties": {"requirement_id": {"type": "string"}, "observable_behavior": {"type": "string"}, "preserved_behavior": {"type": "string"}, "oracle": {"type": "string"}}
+      }
+    },
+    "test_bundle": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["working_directory", "test_command", "stable_test_ids", "predicted_transition", "files", "collection_evidence", "functional_oracle_evidence", "equivalent_implementation_check", "incomplete_implementation_check"],
+      "properties": {
+        "working_directory": {"type": "string"}, "test_command": {"type": "string"},
+        "stable_test_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "predicted_transition": {"enum": ["candidate_f2p", "candidate_p2p", "unknown_until_measured"]},
+        "files": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false,
+          "required": ["path", "operation", "content"],
+          "properties": {"path": {"type": "string"}, "operation": {"enum": ["add", "modify"]}, "content": {"type": "string"}}}
+        },
+        "collection_evidence": {"type": "string"}, "functional_oracle_evidence": {"type": "string"},
+        "equivalent_implementation_check": {"type": "string"}, "incomplete_implementation_check": {"type": "string"}
+      }
+    },
+    "missing_context": {"type": "array", "items": {"type": "string"}},
+    "summary": {"type": "string"}
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "candidate-functional-measurement-v1",
+  "case_id": "mermaid-js__mermaid-7711",
+  "package_manager": "pnpm@10.30.3",
+  "install": {
+    "frozen_lockfile": true,
+    "cypress_binary_skipped": true
+  },
+  "test_file": "packages/mermaid/src/rendering-util/layout-algorithms/dagre/index.spec.js",
+  "baseline": {
+    "commit": "8b52e5378903e01f6da8c760717b3c80f41f9ffd",
+    "test_payload": "author_tests.patch applied without production patch",
+    "exit_code": 1,
+    "result": "5 failed / 5"
+  },
+  "reference": {
+    "commit": "f50fb4f0facfb432b27877921af2e30a01854265",
+    "exit_code": 0,
+    "result": "5 passed / 5"
+  },
+  "observed_transition": "fail->pass",
+  "classification": "candidate_f2p",
+  "repetitions": 1,
+  "semantic_review": "pending",
+  "notes": [
+    "The same author test file was executed on both commits.",
+    "Baseline failures include missing getEdgesToRender and a rendered-path count mismatch.",
+    "One repetition is evidence for construction, not the required stable three-run admission gate."
+  ]
+}

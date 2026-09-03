@@ -1,0 +1,223 @@
+{
+  "schema_version": "test-extension-verifier-run-v2",
+  "task_id": "carbon-design-system__carbon-22019",
+  "status": "complete",
+  "annotation": {
+    "schema_version": "existing-tests-extension-v2",
+    "task_id": "carbon-design-system__carbon-22019",
+    "status": "additional_tests_proposed",
+    "behavioral_contract": {
+      "observable_requirements": [
+        {
+          "requirement_id": "constraint_001",
+          "contract": "展开搜索框内部的清除按钮触发提示时，应提供符合设计规范的图标按钮提示语义，避免仅依赖无样式的系统缺省提示。"
+        },
+        {
+          "requirement_id": "constraint_002",
+          "contract": "可展开搜索框处于收起状态时，搜索放大镜图标按钮挂载的提示浮层应具备标准无箭头图标按钮提示形态与类标识（应用 icon-tooltip 变体样式），与设计系统其余标准 IconButton 的 Tooltip 视觉呈现保持一致。"
+        }
+      ],
+      "preserved_behaviors": [
+        "未展开状态下放大镜按钮的 tabIndex 为 0，输入框 tabIndex 为 -1",
+        "展开状态下输入框正常聚焦与输入，支持 onChange / onKeyDown / onClear 等回调",
+        "通过点击或键盘 Enter/Space 键触发 onExpand 展开搜索框"
+      ],
+      "implementation_variation": "允许组件通过在 Tooltip 上附加 icon-tooltip 类名、封装专用 IconButtonTooltip 组件或通过属性配置实现等效的无箭头图标提示视觉形态。"
+    },
+    "coverage": [
+      {
+        "requirement_id": "constraint_001",
+        "visual_category": "元素结构与视觉状态理解",
+        "coverage": "未覆盖",
+        "existing_test_ids": [
+          "Search renders as expected - Component API should respect closeButtonLabelText prop",
+          "Search renders as expected - Component API should respect onClear prop"
+        ],
+        "assertion_summary": "仅断言了清除按钮的 aria-label 和 onClear 回调触发，未断言清除按钮的提示浮层组件形态。",
+        "reason": "现有测试仅测试按钮文字属性与点击事件，未测试 Tooltip 挂载结构或视觉变体。"
+      },
+      {
+        "requirement_id": "constraint_002",
+        "visual_category": "元素结构与视觉状态理解",
+        "coverage": "未覆盖",
+        "existing_test_ids": [
+          "Search renders as expected - Component API should have tabbable button and untabbable input if expandable and not expanded",
+          "Search renders as expected - Component API should respect onExpand prop"
+        ],
+        "assertion_summary": "断言了放大镜按钮在收起状态下的 tabIndex 与 onExpand 点击及键盘调用，未断言包裹放大镜按钮的 Tooltip 是否具有 icon-tooltip 标识及对应形态。",
+        "reason": "现有测试均未检查 Tooltip 的 DOM 结构及其类名配置，无法验证是否采用了标准 IconButton Tooltip 形态。"
+      }
+    ],
+    "test_bundles": [
+      {
+        "bundle_id": "carbon-search-tooltip-consistency",
+        "template_test_ids": [
+          "Search renders as expected - Component API should have tabbable button and untabbable input if expandable and not expanded"
+        ],
+        "target_requirement_ids": [
+          "constraint_002"
+        ],
+        "target_visual_capabilities": [
+          "元素结构与视觉状态理解"
+        ],
+        "coverage_gap_reason": "现有 Search 与 ExpandableSearch 测试均未对放大镜图标的 Tooltip 进行类名或组件形态断言，导致带箭头的旧 Tooltip 缺陷无法被自动化测试拦截。",
+        "why_assertions_measure_requirements": "断言处于未展开状态的 ExpandableSearch 放大镜图标外层的 Tooltip 元素挂载了 icon-tooltip 类名，确保渲染为无箭头的标准 IconButton 提示浮层。",
+        "oracle_type": "rendered_structure_state_assertion",
+        "predicted_transition": "candidate_f2p",
+        "predicted_base_behavior": "Base 分支中放大镜 Tooltip 仅包含 cds--search-tooltip cds--search-magnifier-tooltip，断言 toHaveClass('cds--icon-tooltip') 失败。",
+        "predicted_reference_behavior": "修复后放大镜 Tooltip 包含 cds--icon-tooltip 类名，测试顺利通过。",
+        "working_directory": "packages/react",
+        "test_command": "yarn test src/components/Search/Search-test.js --runInBand",
+        "stable_test_ids": [
+          "Search renders as expected - Component API should render icon-tooltip style on magnifier button when expandable and not expanded"
+        ],
+        "files": [
+          {
+            "path": "src/components/Search/Search-test.js",
+            "operation": "modify",
+            "content": "/**\n * Copyright IBM Corp. 2022, 2026\n *\n * This source code is licensed under the Apache-2.0 license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\nimport React from 'react';\nimport Search from './Search';\nimport userEvent from '@testing-library/user-event';\nimport { render, screen } from '@testing-library/react';\n\nconst prefix = 'cds';\nconst contentScenarios = [\n  { label: 'empty string', value: '', hasContent: false },\n  { label: 'zero', value: 0, hasContent: true },\n  { label: 'non-empty string', value: 'hmm', hasContent: true },\n  { label: 'undefined', value: undefined, hasContent: false },\n];\n\ndescribe('Search', () => {\n  describe('renders as expected - Component API', () => {\n    it('should spread extra props onto the input element', () => {\n      render(<Search labelText=\"test-search\" data-testid=\"test-id\" />);\n\n      expect(screen.getByRole('searchbox')).toHaveAttribute(\n        'data-testid',\n        'test-id'\n      );\n    });\n\n    it('should respect autoComplete prop', () => {\n      render(<Search labelText=\"test-search\" autoComplete=\"test\" />);\n\n      expect(screen.getByRole('searchbox')).toHaveAttribute(\n        'autoComplete',\n        'test'\n      );\n    });\n\n    it('should support a custom `className` prop on the outermost element', () => {\n      const { container } = render(\n        <Search labelText=\"test-search\" className=\"custom-class\" />\n      );\n\n      expect(container.firstChild).toHaveClass('custom-class');\n    });\n\n    it('should respect closeButtonLabelText prop', () => {\n      render(<Search labelText=\"test-search\" closeButtonLabelText=\"clear\" />);\n\n      expect(screen.getByLabelText('clear')).toBeInTheDocument();\n    });\n\n    it('should respect defaultValue prop', () => {\n      render(<Search labelText=\"test-search\" defaultValue=\"test-value\" />);\n\n      expect(screen.getByRole('searchbox')).toHaveValue('test-value');\n    });\n\n    it.each(contentScenarios)(\n      'should treat a defaultValue of $label as content',\n      ({ value, hasContent }) => {\n        render(<Search labelText=\"test-search\" defaultValue={value} />);\n\n        if (hasContent) {\n          expect(screen.getByLabelText('Clear search input')).not.toHaveClass(\n            `${prefix}--search-close--hidden`\n          );\n        } else {\n          expect(screen.getByLabelText('Clear search input')).toHaveClass(\n            `${prefix}--search-close--hidden`\n          );\n        }\n      }\n    );\n\n    it('should respect disabled prop', () => {\n      render(<Search labelText=\"test-search\" disabled />);\n\n      expect(screen.getByRole('searchbox')).toBeDisabled();\n    });\n\n    it('should respect id prop', () => {\n      render(<Search labelText=\"test-search\" id=\"test-id\" />);\n\n      expect(screen.getByRole('searchbox')).toHaveAttribute('id', 'test-id');\n    });\n\n    it('should respect labelText prop', () => {\n      render(<Search labelText=\"test-search\" />);\n\n      expect(screen.getByRole('searchbox').labels[0]).toHaveTextContent(\n        'test-search'\n      );\n    });\n\n    it('should call onChange when expected', async () => {\n      const onChange = jest.fn();\n      render(<Search labelText=\"test-search\" onChange={onChange} />);\n\n      await userEvent.type(screen.getByRole('searchbox'), 'test');\n\n      expect(onChange).toHaveBeenCalled();\n    });\n\n    it('should respect onClear prop', async () => {\n      const onClear = jest.fn();\n      render(\n        <Search\n          labelText=\"test-search\"\n          closeButtonLabelText=\"clear\"\n          onClear={onClear}\n        />\n      );\n\n      await userEvent.click(screen.getByLabelText('clear'));\n\n      expect(onClear).toHaveBeenCalled();\n    });\n\n    it('should respect onExpand prop', async () => {\n      const onExpand = jest.fn();\n      render(<Search labelText=\"test-search\" onExpand={onExpand} />);\n\n      await userEvent.click(screen.getAllByRole('button')[0]);\n\n      expect(onExpand).toHaveBeenCalled();\n\n      await screen.getAllByRole('button')[0].focus();\n\n      await userEvent.keyboard('[Space]');\n\n      expect(onExpand).toHaveBeenCalledTimes(2);\n\n      await screen.getAllByRole('button')[0].focus();\n\n      await userEvent.keyboard('[Enter]');\n\n      expect(onExpand).toHaveBeenCalledTimes(3);\n    });\n\n    it('should call onKeyDown when expected', async () => {\n      const onKeyDown = jest.fn();\n      render(<Search labelText=\"test-search\" onKeyDown={onKeyDown} />);\n\n      await userEvent.type(screen.getByRole('searchbox'), 'test');\n\n      expect(onKeyDown).toHaveBeenCalled();\n    });\n\n    it('should call focus expand button on Escape when expanded', async () => {\n      render(\n        <Search labelText=\"test-search\" onExpand={() => {}} isExpanded={true} />\n      );\n\n      await screen.getByRole('searchbox').focus();\n\n      await userEvent.keyboard('[Escape]');\n\n      expect(screen.getAllByRole('button')[0]).toHaveFocus();\n    });\n\n    it('should have tabbable button and untabbable input if expandable and not expanded', async () => {\n      render(\n        <Search\n          labelText=\"test-search\"\n          onExpand={() => {}}\n          isExpanded={false}\n        />\n      );\n\n      expect(screen.getAllByRole('button')[0]).toHaveAttribute('tabIndex', '0');\n      expect(screen.getByRole('searchbox')).toHaveAttribute('tabIndex', '-1');\n    });\n\n    it('should render icon-tooltip style on magnifier button when expandable and not expanded', () => {\n      const { container } = render(\n        <Search\n          labelText=\"test-search\"\n          onExpand={() => {}}\n          isExpanded={false}\n        />\n      );\n\n      const tooltip = container.querySelector(\n        `.${prefix}--search-magnifier-tooltip`\n      );\n      expect(tooltip).toBeInTheDocument();\n      expect(tooltip).toHaveClass(`${prefix}--icon-tooltip`);\n    });\n\n    it('should have tabbable input and untabbable button if not expandable', async () => {\n      render(<Search labelText=\"test-search\" />);\n\n      // will have 1 button which is the close button\n      expect(screen.getAllByRole('button').length).toBe(1);\n      // search icon not tabbable if not expandable\n      expect(screen.getByRole('searchbox')).not.toHaveAttribute(\n        'tabIndex',\n        '-1'\n      );\n    });\n\n    it('should respect placeholder prop', () => {\n      render(<Search labelText=\"test-search\" placeholder=\"test-placeholder\" />);\n\n      expect(\n        screen.getByPlaceholderText('test-placeholder')\n      ).toBeInTheDocument();\n    });\n\n    it('should respect renderIcon prop', () => {\n      const CustomIcon = jest.fn(() => <svg data-testid=\"test-icon\" />);\n      render(<Search labelText=\"test-search\" renderIcon={CustomIcon} />);\n\n      expect(screen.getByRole('search')).toContainElement(\n        screen.getByTestId('test-icon')\n      );\n      expect(screen.getByTestId('test-icon')).toBeInTheDocument();\n    });\n\n    it('should respect role prop', () => {\n      render(<Search labelText=\"test-search\" role=\"combobox\" />);\n\n      expect(screen.getByRole('combobox')).toBeInTheDocument();\n    });\n\n    it('should respect size prop', () => {\n      render(<Search labelText=\"test-search\" size=\"sm\" />);\n\n      expect(screen.getByRole('search')).toHaveClass(`${prefix}--search--sm`);\n    });\n\n    it('should respect type prop', () => {\n      render(<Search labelText=\"test-search\" type=\"search\" />);\n\n      expect(screen.getByRole('searchbox')).toHaveAttribute('type', 'search');\n    });\n\n    it('should respect value prop', () => {\n      render(<Search labelText=\"test-search\" value=\"test-value\" />);\n\n      expect(screen.getByRole('searchbox')).toHaveValue('test-value');\n    });\n\n    it.each(contentScenarios)(\n      'should treat a value of $label as content',\n      ({ value, hasContent }) => {\n        render(<Search labelText=\"test-search\" value={value} />);\n\n        if (hasContent) {\n          expect(screen.getByLabelText('Clear search input')).not.toHaveClass(\n            `${prefix}--search-close--hidden`\n          );\n        } else {\n          expect(screen.getByLabelText('Clear search input')).toHaveClass(\n            `${prefix}--search-close--hidden`\n          );\n        }\n      }\n    );\n\n    it('should sync clear button visibility when controlled value changes', () => {\n      const { rerender } = render(\n        <Search labelText=\"test-search\" value=\"test-value\" />\n      );\n\n      expect(screen.getByLabelText('Clear search input')).not.toHaveClass(\n        `${prefix}--search-close--hidden`\n      );\n\n      rerender(<Search labelText=\"test-search\" value=\"\" />);\n\n      expect(screen.getByLabelText('Clear search input')).toHaveClass(\n        `${prefix}--search-close--hidden`\n      );\n    });\n  });\n});\n",
+            "sha256_before": "f015194d5d2e9a9c1c7de6d90e2abdc5335ff4be710ce948d70e67a2a4a1ce00"
+          }
+        ],
+        "unified_test_patch": "diff --git a/src/components/Search/Search-test.js b/src/components/Search/Search-test.js\nindex f015194d..57692ab6 100644\n--- a/src/components/Search/Search-test.js\n+++ b/src/components/Search/Search-test.js\n@@ -168,6 +168,20 @@ describe('Search', () => {\n       expect(screen.getByRole('searchbox')).toHaveAttribute('tabIndex', '-1');\n     });\n \n+    it('should render icon-tooltip style on magnifier button when expandable and not expanded', () => {\n+      const { container } = render(\n+        <Search\n+          labelText=\"test-search\"\n+          onExpand={() => {}}\n+          isExpanded={false}\n+        />\n+      );\n+\n+      const tooltip = container.querySelector(\n+        `.${prefix}--search-magnifier-tooltip`\n+      );\n+      expect(tooltip).toBeInTheDocument();\n+      expect(tooltip).toHaveClass(`${prefix}--icon-tooltip`);\n+    });\n+\n     it('should have tabbable input and untabbable button if not expandable', async () => {\n       render(<Search labelText=\"test-search\" />);\n \n",
+        "result_parser": "jest-json",
+        "environment_assumptions": [
+          "Node.js runtime with Jest test runner configured for @carbon/react workspace"
+        ],
+        "equivalence_self_check": "任何在未展开状态下为放大镜外层 Tooltip 挂载 cds--icon-tooltip 标准变体类或相应 IconButton Tooltip 属性的有效实现均可通过测试。",
+        "vacuous_pass_checks": [
+          "若 Tooltip 元素未被渲染，querySelector 将返回 null，toBeInTheDocument() 会显式断言失败",
+          "若 Tooltip 元素缺少 cds--icon-tooltip 类名，toHaveClass 会显式断言失败"
+        ],
+        "surface_signal_resistance": "仅修改 magnifier button 的内部属性而不为外层 Tooltip 挂载 icon-tooltip 类名无法通过测试。"
+      }
+    ],
+    "oracle_quality_plan": {
+      "status": "proposed_not_executed",
+      "curator_only": true,
+      "negative_variants": [
+        {
+          "variant_id": "missing-icon-tooltip-class",
+          "defect_preserved_or_introduced": "未在 Tooltip 上添加 cds--icon-tooltip 类名，保留原有的带箭头提示浮层形态。",
+          "expected_failure_test_ids": [
+            "Search renders as expected - Component API should render icon-tooltip style on magnifier button when expandable and not expanded"
+          ]
+        }
+      ],
+      "equivalent_positive_variant": {
+        "description": "使用 classnames 组合在 magnifierWithTooltip 的 Tooltip className 中包含 prefix--icon-tooltip。",
+        "expected_pass_test_ids": [
+          "Search renders as expected - Component API should render icon-tooltip style on magnifier button when expandable and not expanded"
+        ]
+      }
+    },
+    "missing_context": [],
+    "summary": "针对 ExpandableSearch 放大镜图标按钮提示形态与标准 IconButton Tooltip 不一致的问题，在 Search-test.js 中补充了对未展开状态下放大镜 Tooltip 包含 cds--icon-tooltip 类名的断言测试，形成了精准的 candidate_f2p 验证。",
+    "human_review_required": false,
+    "human_review_reasons": []
+  },
+  "invocation": {
+    "backend": "gemini",
+    "model": "gemini-3.7-flash",
+    "requested_model": "gemini-3.7-flash",
+    "effort": "provider_auto",
+    "attempts": 1,
+    "usage": {
+      "completion_tokens": 4582,
+      "prompt_tokens": 16227,
+      "total_tokens": 23056,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "reasoning_tokens": 2247,
+      "traffic_type": "ON_DEMAND",
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 16227
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 4582
+        }
+      ]
+    },
+    "raw_response": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+    "raw_response_sha256": "f9354e8783b37c315e37e69af03bf9d8f2eaa0dacfc0120babfdea5163e9fdb9",
+    "provider_response": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+    "provider_response_sha256": "1fe4a6578cb908d6a3ca2d8dd41a48c5140ac95fdea67808ae8212a229986579",
+    "request": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+    "request_sha256": "d188c4a79473ad22f4b1be84cbe0ce714a02aa71a72eaa4551009732c9ef5862",
+    "semantic_validation_attempts": 2,
+    "prior_validation_failures": [
+      "ValueError: behavioral contract must cover every decision-critical requirement exactly once"
+    ],
+    "semantic_attempt_records": [
+      {
+        "semantic_attempt": 1,
+        "directory": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01",
+        "files": {
+          "09_model_raw.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/09_model_raw.json",
+            "sha256": "2301c4fdf6bff0226b43186bbd25ce04b1861dc12e9dd1ed20171314d755cd12"
+          },
+          "10_api_invocation.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_invocation.json",
+            "sha256": "6aade9e476071e213338f3973c25ce68a9a22dc2abe36f80ebdae5cb7bbb5beb"
+          },
+          "10_api_request.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_api_request.json",
+            "sha256": "1a2761838510b35d396a6489fe434155fc5fa837429bf5d11e44051f015d016c"
+          },
+          "10_attempt_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_attempt_01.json",
+            "sha256": "820e168b5437d4df05e8cd5960be6e490aed4e03b8a49573d41ecc9ffe8b6efb"
+          },
+          "10_invocation_started.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_invocation_started.json",
+            "sha256": "0a1c45facfef80235cd8c31d74baa2663230c377a46eae00440c2e3277a9023b"
+          },
+          "10_provider_response_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_01/10_provider_response_01.json",
+            "sha256": "8e86b4e2c184dc51623e1058dd2d0e6aed0ba5ace125c7c6b478b2614c576e25"
+          }
+        }
+      },
+      {
+        "semantic_attempt": 2,
+        "directory": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02",
+        "files": {
+          "09_model_raw.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/09_model_raw.json",
+            "sha256": "f9354e8783b37c315e37e69af03bf9d8f2eaa0dacfc0120babfdea5163e9fdb9"
+          },
+          "10_api_invocation.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_invocation.json",
+            "sha256": "972685f762c7986f74b602762d610efaf54020a6d219fd98db553ab06f84c230"
+          },
+          "10_api_request.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_api_request.json",
+            "sha256": "d188c4a79473ad22f4b1be84cbe0ce714a02aa71a72eaa4551009732c9ef5862"
+          },
+          "10_attempt_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_attempt_01.json",
+            "sha256": "293873811ced04f6e731358248a79fcdd4ab78936e832c18a2688b9ab922f510"
+          },
+          "10_invocation_started.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_invocation_started.json",
+            "sha256": "aeb4d3355903e1d023b50091d8e690954ac0ba8c1d5d12fc646d29a248957556"
+          },
+          "10_provider_response_01.json": {
+            "path": "/Users/bytedance/Documents/ChatGPT/kimi/report/cases/carbon-design-system__carbon-22019/meta/03_test_construction/20_11_verifier_run_01/20_11_05_calls/semantic_02/10_provider_response_01.json",
+            "sha256": "1fe4a6578cb908d6a3ca2d8dd41a48c5140ac95fdea67808ae8212a229986579"
+          }
+        }
+      }
+    ]
+  }
+}

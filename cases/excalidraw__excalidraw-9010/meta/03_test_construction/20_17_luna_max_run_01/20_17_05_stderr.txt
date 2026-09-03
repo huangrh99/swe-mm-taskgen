@@ -1,0 +1,72 @@
+Reading prompt from stdin...
+2026-09-02T19:59:47.593862Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-09-02T19:59:47.593891Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-09-02T19:59:47.619488Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.633119Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.654771Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.664433Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.676612Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.677322Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/api-validation/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677333Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/audit/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677334Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/automate/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677337Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/config-doctor/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677338Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/debug/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677339Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/debug-triage/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677340Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/demo/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677341Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/performance/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677342Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/qa/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677343Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/regression-test/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677344Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/release-readiness/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677346Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/reliability/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677347Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/security-redaction/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677348Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/site-audit/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677349Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/test-coverage/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.677350Z ERROR codex_core::session::session: failed to load skill /Users/bytedance/.codex/skills/ux-audit/SKILL.md: missing YAML frontmatter delimited by ---
+2026-09-02T19:59:47.689916Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.706560Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.756082Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.765614Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.775927Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.787635Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.800972Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.813210Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.825190Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.838734Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.850197Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.861618Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.872778Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.882265Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.892361Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.901732Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.912003Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.921857Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.931469Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.940788Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.950318Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.959013Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.967764Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.977881Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.988183Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:47.998428Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.007766Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.017720Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.027974Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.038116Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.046897Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.056864Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.066549Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.076760Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.086402Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.095707Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.105563Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.114853Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.124894Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.134095Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.143933Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.153267Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.162703Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-02T19:59:48.493798Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-09-02T19:59:48.493813Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-09-02T19:59:51.164790Z  WARN codex_core::image_preparation: failed to prepare message image error=unsupported image `unknown`
+2026-09-02T19:59:51.170226Z  WARN codex_core::image_preparation: failed to prepare message image error=unsupported image `unknown`
+2026-09-02T20:10:56.478695Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf("/Users/bytedance/.codex/shell_snapshots/01a063b4-c965-7fb0-a2d7-17bd4096acd1.1788379187599570000.sh"): Os { code: 2, kind: NotFound, message: "No such file or directory" }

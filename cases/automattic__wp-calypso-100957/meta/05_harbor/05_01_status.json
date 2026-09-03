@@ -1,0 +1,15 @@
+{
+  "schema_version": "case-harbor-status-v1",
+  "case_id": "automattic__wp-calypso-100957",
+  "task_export": "stale_after_contrast_verifier_v3",
+  "empty_control": "rerun_required",
+  "nop_control": "rerun_required",
+  "empty_no_reply_control": "rerun_required",
+  "oracle_control": "rerun_required",
+  "harbor_native_task_checksum": null,
+  "case_image_id": "sha256:b9415f1d3f2c2833b4b7635f2780501ed9b53d669ddac0f1760c83bf99a2384e",
+  "reason": "The verifier acceptance contract changed to a screenshot-derived final rendered distinction test. Historical Harbor controls remain archived but do not bind the v3 checksum.",
+  "formal_admission": false,
+  "evidence": "../../outputs/05_controls/05_09_controls_summary.json",
+  "local_probe": {"docker_daemon":"available","docker_server_version":"29.5.2","harbor_cli":"0.22.0","controls_started":true}
+}

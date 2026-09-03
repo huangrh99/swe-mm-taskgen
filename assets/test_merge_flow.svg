@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="880" viewBox="0 0 1240 880" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">三个测试来源如何合入 F2P / P2P 清单</title>
+  <desc id="svgdesc">仓库原有测试、PR 作者测试与 VLM 补全测试合并为同一份冻结 test patch，在 Base 与 Gold 两侧运行后按逐 test ID 的转移结果判定 F2P 或 P2P，再经人工语义审核冻结进 config.json。审核不通过或出现其他转移组合时，与 LLM 反复修订测试，重新合入同一份 patch 并在两侧重跑，构成迭代回环。</desc>
+  <style>
+    text {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+                   "Microsoft YaHei", "Noto Sans CJK SC", "Segoe UI", sans-serif;
+      fill: #161616;
+    }
+    .box   { fill: #f4f4f4; stroke: #525252; stroke-width: 1.5; }
+    .pass  { fill: #defbe6; stroke: #198038; stroke-width: 2; }
+    .stop  { fill: #f4f4f4; stroke: #8d8d8d; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .human { fill: #fff1f1; stroke: #da1e28; stroke-width: 2; }
+    .final { fill: #e8f5ff; stroke: #0f62fe; stroke-width: 2; }
+    .head  { font-size: 15px; font-weight: 700; }
+    .sub   { font-size: 12px; fill: #525252; }
+    .cond  { font-size: 12px; font-weight: 600; fill: #198038; }
+    .no    { font-size: 12px; fill: #a2191f; }
+    .line  { stroke: #525252; stroke-width: 2; fill: none; }
+    .arrow { stroke: #525252; stroke-width: 2; fill: none; marker-end: url(#a); }
+    .loop  { stroke: #da1e28; stroke-width: 2; fill: none; marker-end: url(#r); }
+    .loopn { stroke: #da1e28; stroke-width: 2; fill: none; }
+    .looplbl { font-size: 12px; font-weight: 600; fill: #a2191f; }
+  </style>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#525252"/>
+    </marker>
+    <marker id="r" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#da1e28"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="42" font-size="21" font-weight="750">三个测试来源如何合入 F2P / P2P 清单</text>
+
+  <rect class="box" x="40" y="72" width="320" height="96" rx="10"/>
+  <text class="head" x="200" y="102" text-anchor="middle">1. 仓库原有测试</text>
+  <text class="sub" x="200" y="128" text-anchor="middle">base commit 已有、且 PR 未改动</text>
+  <text class="sub" x="200" y="150" text-anchor="middle">主要提供 P2P 候选</text>
+
+  <rect class="box" x="400" y="72" width="320" height="96" rx="10"/>
+  <text class="head" x="560" y="102" text-anchor="middle">2. PR 作者测试</text>
+  <text class="sub" x="560" y="128" text-anchor="middle">从 PR 分离出的 test-only patch</text>
+  <text class="sub" x="560" y="150" text-anchor="middle">最强的 F2P 候选</text>
+
+  <rect class="box" x="760" y="72" width="320" height="96" rx="10"/>
+  <text class="head" x="920" y="102" text-anchor="middle">3. VLM 补全测试</text>
+  <text class="sub" x="920" y="128" text-anchor="middle">仅当 1、2 未覆盖全部验收条件时生成</text>
+  <text class="sub" x="920" y="150" text-anchor="middle">信息不足必须返回「无法构造」</text>
+
+  <path class="line" d="M200,168 V188 M560,168 V188 M920,168 V188 M200,188 H920"/>
+  <path class="arrow" d="M560,188 V206"/>
+
+  <rect class="box" x="240" y="206" width="640" height="88" rx="10"/>
+  <text class="head" x="560" y="234" text-anchor="middle">合并为一份冻结的 test patch</text>
+  <text class="sub" x="560" y="256" text-anchor="middle">来源只决定测试从哪来，不决定它算 F2P 还是 P2P</text>
+  <text class="sub" x="560" y="276" text-anchor="middle">两侧运行必须使用完全相同的这一份 patch</text>
+
+  <path class="line" d="M560,294 V312 M360,312 H760"/>
+  <path class="arrow" d="M360,312 V330"/>
+  <path class="arrow" d="M760,312 V330"/>
+
+  <rect class="box" x="190" y="330" width="340" height="76" rx="10"/>
+  <text class="head" x="360" y="362" text-anchor="middle">在 Base 代码上运行</text>
+  <text class="sub" x="360" y="386" text-anchor="middle">PR 修改前</text>
+
+  <rect class="box" x="590" y="330" width="340" height="76" rx="10"/>
+  <text class="head" x="760" y="362" text-anchor="middle">在 Gold 代码上运行</text>
+  <text class="sub" x="760" y="386" text-anchor="middle">应用参考修复后</text>
+
+  <path class="line" d="M360,406 V424 M760,406 V424 M360,424 H760"/>
+  <path class="arrow" d="M560,424 V442"/>
+
+  <rect class="box" x="340" y="442" width="440" height="58" rx="10"/>
+  <text class="head" x="560" y="477" text-anchor="middle">逐 test ID 比对两侧结果</text>
+
+  <path class="line" d="M560,500 V518 M200,518 H920"/>
+  <path class="arrow" d="M200,518 V536"/>
+  <path class="arrow" d="M560,518 V536"/>
+  <path class="arrow" d="M920,518 V536"/>
+
+  <rect class="pass" x="40" y="536" width="320" height="90" rx="10"/>
+  <text class="cond" x="200" y="566" text-anchor="middle">Base 失败 + Gold 通过</text>
+  <text class="head" x="200" y="596" text-anchor="middle">F2P</text>
+  <text class="sub" x="200" y="616" text-anchor="middle">修复带来的新增通过</text>
+
+  <rect class="pass" x="400" y="536" width="320" height="90" rx="10"/>
+  <text class="cond" x="560" y="566" text-anchor="middle">两侧都通过</text>
+  <text class="head" x="560" y="596" text-anchor="middle">P2P</text>
+  <text class="sub" x="560" y="616" text-anchor="middle">不允许回归的既有行为</text>
+
+  <rect class="stop" x="760" y="536" width="320" height="90" rx="10"/>
+  <text class="no" x="920" y="566" text-anchor="middle">其他组合</text>
+  <text class="head" x="920" y="596" text-anchor="middle">拒绝或转人工调查</text>
+  <text class="sub" x="920" y="616" text-anchor="middle">不进入冻结清单</text>
+
+  <path class="line" d="M200,626 V644 M200,644 H560"/>
+  <path class="arrow" d="M560,626 V662"/>
+
+  <rect class="human" x="240" y="662" width="640" height="66" rx="10"/>
+  <text class="head" x="560" y="690" text-anchor="middle">人工语义审核（见 1.3.2）</text>
+  <text class="sub" x="560" y="712" text-anchor="middle">测试是否忠实编码验收条件、是否误测实现细节</text>
+
+  <path class="arrow" d="M560,728 V766"/>
+  <text class="cond" x="576" y="752">通过</text>
+
+  <rect class="final" x="240" y="766" width="640" height="68" rx="10"/>
+  <text class="head" x="560" y="795" text-anchor="middle">冻结进 tests/config.json</text>
+  <text class="sub" x="560" y="818" text-anchor="middle">FAIL_TO_PASS / PASS_TO_PASS，非空且互斥</text>
+
+  <path class="loop" d="M880,695 H950"/>
+  <text class="looplbl" x="915" y="686" text-anchor="middle">不通过</text>
+
+  <path class="loop" d="M920,626 V648 H1065 V670"/>
+  <text class="looplbl" x="1075" y="644">转人工调查</text>
+
+  <rect class="human" x="950" y="670" width="230" height="90" rx="10"/>
+  <text class="head" x="1065" y="700" text-anchor="middle">与 LLM 反复修订测试</text>
+  <text class="sub" x="1065" y="723" text-anchor="middle">补齐覆盖缺口</text>
+  <text class="sub" x="1065" y="743" text-anchor="middle">去掉绑定具体实现的断言</text>
+
+  <path class="loopn" d="M1180,715 H1210 V250"/>
+  <path class="loop" d="M1210,250 H884"/>
+  <text class="looplbl" x="1040" y="240" text-anchor="middle">修订后重新合入，两侧重跑</text>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "schema_version": "case-visual-review-summary-v1",
+  "case_id": "automattic__wp-calypso-100957",
+  "source_route": "issue_derived",
+  "category": "外观与渲染属性理解",
+  "visual_evidence": "单张实际状态图",
+  "solver_visible_asset": "01_02_solver_visible.png",
+  "visual_constraints": ["样式变体卡片中的前景圆点与背景必须具有最低可辨识对比度"],
+  "admission": "user_selected_candidate",
+  "formal_visual_gate": "not_recorded",
+  "note": "用户在 2026-09-02 明确要求归档并继续测试；这不是 frozen 状态或正式人工门记录。"
+}

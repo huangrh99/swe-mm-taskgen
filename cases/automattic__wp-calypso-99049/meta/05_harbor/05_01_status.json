@@ -1,0 +1,20 @@
+{
+  "schema_version": "case-harbor-status-v2",
+  "case_id": "automattic__wp-calypso-99049",
+  "task_path": "../../task",
+  "task_export": "stale_after_verifier_v2",
+  "task_checksum": null,
+  "trial_lock_task_digest": null,
+  "base_image_id": "sha256:237b924780c64a21c5121602c00a44d1ea6ed921b77108839197fb291ef89a6a",
+  "gold_oracle": "rerun_required",
+  "empty_patch": "rerun_required",
+  "nop": "rerun_required",
+  "empty_no_reply": "rerun_required",
+  "case_image_id": "sha256:a662dc0fd7ee53253d054e987a044d4c913d5715280a0f5b1b5a89946e5b3abc",
+  "controls_summary": "../../outputs/05_controls/05_19_codex_ready_controls_summary.json",
+  "docker_server_version": "29.5.2",
+  "harbor_version": "0.22.0",
+  "human_visual_gate": "deferred",
+  "human_test_semantic_gate": "deferred",
+  "formal_admission": false
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "measurement-command-normalization-v1",
+  "case_id": "excalidraw__excalidraw-9010",
+  "source_model_result_sha256": "673322eeaca0a65fabb560922ce4677eae35e617336c0ddf2d39d92a8f25c751",
+  "normalized_model_result_sha256": "1c7b625659898f4caf47eb5db340b04e9f47ceda6f9ca08b14b17aca4d43ed26",
+  "change": "Added Vitest --reporter=verbose so the frozen stable test ID appears in stdout.",
+  "semantic_test_change": false,
+  "reason": "The first Base/Gold execution passed one test on both sides, but the default reporter omitted the test name and the evidence parser correctly rejected the unbound result."
+}

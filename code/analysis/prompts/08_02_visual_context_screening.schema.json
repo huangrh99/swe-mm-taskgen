@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["prompt_version", "pr_id", "images", "disposition", "candidate_asset_ids", "decision_reason", "leakage_risk", "leakage_notes", "limitations", "confidence"],
+  "properties": {
+    "prompt_version": {"type": "string", "enum": ["visual-context-v2"]},
+    "pr_id": {"type": "string"},
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["asset_id", "observed", "content_kind", "content_kind_reason", "observation", "relation_to_fix", "temporal_role", "body_quote", "ocr_sufficient", "ocr_reason", "visual_contribution"],
+        "properties": {
+          "asset_id": {"type": "string"},
+          "observed": {"type": "boolean"},
+          "content_kind": {"type": ["string", "null"], "enum": ["code_snippet_screenshot", "web_interface", "map_geospatial", "diagram", "data_visualization", "artwork_photography", "error_message", "miscellaneous", null]},
+          "content_kind_reason": {"type": "string", "minLength": 1},
+          "observation": {"type": "string"},
+          "relation_to_fix": {"type": "string", "enum": ["relevant", "unrelated", "unknown"]},
+          "temporal_role": {"type": "string", "enum": ["before", "expected", "after", "mixed", "unknown"]},
+          "body_quote": {"type": ["string", "null"]},
+          "ocr_sufficient": {"type": "string", "enum": ["yes", "no", "unknown"]},
+          "ocr_reason": {"type": "string"},
+          "visual_contribution": {"type": "string", "enum": ["necessary_candidate", "helpful", "redundant", "unrelated", "unknown"]}
+        }
+      }
+    },
+    "disposition": {"type": "string", "enum": ["visual_candidate", "ocr_auxiliary", "not_visual", "review"]},
+    "candidate_asset_ids": {"type": "array", "items": {"type": "string"}},
+    "decision_reason": {"type": "string"},
+    "leakage_risk": {"type": "string", "enum": ["present", "unknown", "none_verified"]},
+    "leakage_notes": {"type": "string"},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
+  }
+}

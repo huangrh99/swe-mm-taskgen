@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pipeline-promotion-packet-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "instance_id", "pipeline_freeze", "candidate_task", "review_context", "visual_gate", "measurement", "tests_gate", "controls", "image", "pass5_config"],
+  "properties": {
+    "schema_version": {"const": "pipeline-promotion-packet-v1"},
+    "instance_id": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+__[A-Za-z0-9_.-]+-[1-9][0-9]*$"},
+    "pipeline_freeze": {"$ref": "#/$defs/binding"},
+    "candidate_task": {"$ref": "#/$defs/binding"},
+    "review_context": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dossier", "test_manifest", "test_review_context"],
+      "properties": {
+        "dossier": {"$ref": "#/$defs/binding"},
+        "test_manifest": {"$ref": "#/$defs/binding"},
+        "test_review_context": {"$ref": "#/$defs/binding"}
+      }
+    },
+    "visual_gate": {"$ref": "#/$defs/gate"},
+    "measurement": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "all_transitions_match", "f2p_ids", "p2p_ids", "evidence"],
+      "properties": {
+        "status": {"enum": ["pending", "measured", "rejected"]}, "all_transitions_match": {"type": "boolean"},
+        "f2p_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "p2p_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "evidence": {"$ref": "#/$defs/binding"}
+      }
+    },
+    "tests_gate": {"$ref": "#/$defs/gate"},
+    "controls": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "task_sha256", "empty_reward", "gold_reward", "exception_count", "evidence"],
+      "properties": {
+        "status": {"enum": ["pending", "passed", "failed"]}, "task_sha256": {"$ref": "#/$defs/sha256"},
+        "empty_reward": {"type": "number"}, "gold_reward": {"type": "number"},
+        "exception_count": {"type": "integer", "minimum": 0}, "evidence": {"$ref": "#/$defs/binding"}
+      }
+    },
+    "image": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "mode": {"enum": ["docker_build", "simulation"]}, "reference": {"type": "string", "minLength": 1},
+        "simulated_image_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      }, "required": ["mode", "reference"]
+    },
+    "pass5_config": {"$ref": "#/$defs/binding"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "gate": {
+      "type": "object", "additionalProperties": false, "required": ["status", "source", "evidence"],
+      "properties": {
+        "status": {"enum": ["pending", "approved", "rejected"]},
+        "source": {"enum": ["human", "mock", "verifier"]},
+        "evidence": {"$ref": "#/$defs/binding"},
+        "context": {
+          "type": "object", "additionalProperties": false,
+          "required": ["dossier", "test_manifest", "test_review_context", "measurement"],
+          "properties": {
+            "dossier": {"$ref": "#/$defs/binding"},
+            "test_manifest": {"$ref": "#/$defs/binding"},
+            "test_review_context": {"$ref": "#/$defs/binding"},
+            "measurement": {"$ref": "#/$defs/binding"}
+          }
+        }
+      }
+    }
+  }
+}

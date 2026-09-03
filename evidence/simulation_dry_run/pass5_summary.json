@@ -1,0 +1,100 @@
+{
+  "schema_version": "frozen-pass5-summary-v1",
+  "state": "pass5_completed",
+  "mode": "simulation",
+  "instance_id": "carbon-design-system__carbon-20978",
+  "frozen_manifest": {
+    "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_29_final_frozen_dry_run/carbon-design-system__carbon-20978.frozen.json",
+    "sha256": "8b12478e1891b048628887415f572bc5fbbef8b953f6e177cfae58fb87d0ee9b"
+  },
+  "pipeline_freeze": {
+    "path": "report/reproducibility/09_pipeline_freeze_manifest.json",
+    "sha256": "90b2935cb929ad3f2866fb855cd8d7f1839e74aa4becf364e84c6335c45d645a"
+  },
+  "task_sha256": "7a09fc4066c86f8b6df96d1b692cbd9a4daed3219d54889b2978154f1b09499e",
+  "harbor_task_checksum": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "image_id": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "model_id": "mock-model-no-api",
+  "agent": "mock-harbor-agent",
+  "agent_version": "1.0",
+  "trial_concurrency": 1,
+  "run_authorization": {
+    "mode": "simulation_exempt"
+  },
+  "state_ledger": {
+    "path": "crawler-output/multimodal-2025/19_pipeline_state_machine/19_30_final_frozen_dry_run_pass5/pipeline_state_ledger.json",
+    "sha256": "1561d2395b0a77438e6d7fd44852e6d402c1740d48a86c96a9a4d5cd330e8de3"
+  },
+  "valid_trial_count": 5,
+  "infrastructure_invalid_count": 1,
+  "success_count": 1,
+  "pass_at_5": 1,
+  "attempts": [
+    {
+      "classification": "infrastructure_invalid",
+      "reason": "simulated_api_failure",
+      "attempt_ordinal": 1
+    },
+    {
+      "classification": "valid",
+      "reward": 0,
+      "agent": "nop",
+      "trajectory": {
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/trajectories/19_01_nop.jsonl",
+        "sha256": "123c684d00a6608aa9177230738979e7284df495f1cabcd318cd6f96ca14131d"
+      },
+      "attempt_ordinal": 2,
+      "valid_trial_index": 1
+    },
+    {
+      "classification": "valid",
+      "reward": 1,
+      "agent": "oracle",
+      "trajectory": {
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/trajectories/19_02_oracle.jsonl",
+        "sha256": "779b4328054861836c85209de86ee8b5b0c17a181c723d7d3f84275f651afd9c"
+      },
+      "attempt_ordinal": 3,
+      "valid_trial_index": 2
+    },
+    {
+      "classification": "valid",
+      "reward": 0,
+      "agent": "nop",
+      "trajectory": {
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/trajectories/19_03_nop.jsonl",
+        "sha256": "6443d1f1d8191eda195ea67b10b0173f0fc8025a68717a0955722ae019b80750"
+      },
+      "attempt_ordinal": 4,
+      "valid_trial_index": 3
+    },
+    {
+      "classification": "valid",
+      "reward": 0,
+      "agent": "nop",
+      "trajectory": {
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/trajectories/19_04_nop.jsonl",
+        "sha256": "711bbbcbb2a964ff146d7baa668d290b62abe00b52aa88fcb6487bcccc21f0f2"
+      },
+      "attempt_ordinal": 5,
+      "valid_trial_index": 4
+    },
+    {
+      "classification": "valid",
+      "reward": 0,
+      "agent": "nop",
+      "trajectory": {
+        "path": "tmp/multimodal-2025/19_pipeline_state_machine/19_01_dry_run_inputs/trajectories/19_05_nop.jsonl",
+        "sha256": "1a5b1ae26830b5ce5b05d6be8633200a15a6a5aa2cd48649d6c3d2e8551f1226"
+      },
+      "attempt_ordinal": 6,
+      "valid_trial_index": 5
+    }
+  ],
+  "unexecuted_real_work": [
+    "real_visual_human_gate",
+    "real_f2p_p2p_human_gate",
+    "real_docker_image_build_and_freeze",
+    "real_frontier_model_pass5"
+  ]
+}

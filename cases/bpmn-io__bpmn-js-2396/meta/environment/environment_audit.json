@@ -1,0 +1,20 @@
+{
+  "schema_version": "case-environment-audit-v1",
+  "status": "complete",
+  "records": [
+    {
+      "instance_id": "bpmn-io__bpmn-js-2396",
+      "status": "complete",
+      "errors": [],
+      "image_id": "sha256:28e5166eff9ff48bddbce76825305a2427504ea18cfe56cab12da6e9ba52ae7b",
+      "base_commit": "686561a9b9c733dc3a466a26e3803c5832b3c956",
+      "asset_count": 4,
+      "task_image": "case-environment-audit:bpmn-io-bpmn-js-2396",
+      "probe": [
+        "686561a9b9c733dc3a466a26e3803c5832b3c956",
+        "REMOTE=v20.20.2",
+        "CHROMIUM=/usr/bin/chromium"
+      ]
+    }
+  ]
+}
